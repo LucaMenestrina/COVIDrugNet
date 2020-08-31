@@ -36,9 +36,16 @@ layout=dbc.Container([
             # html.Br(),
             # html.H1("COVID-19 Networker", style={"text-align":"center"}),
             html.Br(),
-            dbc.Col(
-                [html.P("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.") for n in range(20)]
-            ),
+            dbc.Col([
+                html.Br(),
+                html.Center([
+                    html.Img(src="https://drive.google.com/uc?export=view&id=1Wz-BWDC-hbsm1GMoGlHcE2UpvW6xnEwy", style={"width":"100%"})
+                ]),
+                html.Br(),
+                html.Br(),
+                html.P([html.Font("If there still is something unclear feel free to "),html.A("reach us out", href="/contacts")]),
+                html.Br(),
+            ]),
         ]),
         footer()
     ], no_gutters=True)

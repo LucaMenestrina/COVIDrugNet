@@ -36,25 +36,50 @@ layout=dbc.Container([
             # html.Br(),
             # html.H1("COVID-19 Networker", style={"text-align":"center"}),
             html.Br(),
+            html.H3("Contacts"),
+            html.Br(),
             dbc.Col([
                 html.Div([
-                    html.Strong("Maurizio Recanatini"),
-                    html.P("Principal Investigator"),
-                    html.Address("maurizio.recanatini@unibo.it")
+                    dbc.Row([
+                        dbc.Col([html.Img(src="https://icon-library.com/images/user-icon-image/user-icon-image-13.jpg", style={"width":"75%"})], width=1),
+                        dbc.Col([
+                            html.Strong("Maurizio Recanatini"),
+                            html.P("Principal Investigator"),
+                            html.Address("maurizio.recanatini@unibo.it")
+                        ])
+                    ]),
+                    html.P("Brief introduction/description "*10)
                 ]),
+                html.Br(),
+                html.Br(),
                 html.Div([
-                    html.Strong("Chiara Cabrelle"),
-                    html.P("PhD Student"),
-                    html.Address("chiara.cabrelle2@unibo.it")
+                    dbc.Row([
+                        dbc.Col([html.Img(src="https://f0.pngfuel.com/png/363/793/person-with-brown-hair-illustration-png-clip-art.png", style={"width":"75%"})], width=1),
+                        dbc.Col([
+                            html.Strong("Chiara Cabrelle"),
+                            html.P("PhD Student in Biotechnological, Biocomputational, Pharmaceutical and Pharmacological Science"),
+                            html.Address("chiara.cabrelle2@unibo.it")
+                        ])
+                    ]),
+                    html.P("Brief introduction/description "*10)
                 ]),
+                html.Br(),
+                html.Br(),
                 html.Div([
-                    html.Strong("Luca Menestrina"),
-                    html.P("PhD Student"),
-                    html.Address("luca.menestrina2@unibo.it")
-                ])
+                    dbc.Row([
+                        dbc.Col([html.Img(src="https://icon-library.com/images/user-icon-image/user-icon-image-13.jpg", style={"width":"75%"})], width=1),
+                        dbc.Col([
+                            html.Strong("Luca Menestrina"),
+                            html.P("PhD Student in Data Science and Computation"),
+                            html.Address("luca.menestrina2@unibo.it")
+                        ])
+                    ]),
+                    html.P("Brief introduction/description "*10)
+                ]),
+            html.Br()
             ]),
-        footer()
         ]),
+        footer()
     ], no_gutters=True)
 ], fluid=True)
 

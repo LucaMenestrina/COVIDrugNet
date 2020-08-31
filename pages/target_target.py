@@ -27,17 +27,14 @@ from callbacks import *
 # app.title="COVID-19 Networker"
 prefix="tt"
 graph_title="Target Target"
+file_prefix="target_target"
 
-G=nx.read_gpickle("data/target_target.pickle")
+G=nx.read_gpickle("data/graphs/target_target.gpickle")
 nx.set_node_attributes(G,nx.get_node_attributes(G,"name"),"id")
 
 nodes=[{"data":{key:value for key,value in attributes.items()}} for node,attributes in dict(G.nodes(data=True)).items()]#, "position":{"x":attributes["pos"][0]*1000,"y":attributes["pos"][1]*1000}
 edges=[{"data":{"source":source,"target":target}} for source,target in G.edges]
-# [node for node in nodes if node["data"]["name"]=="Remdesivir"]
 
-graph_properties_df=pd.DataFrame({node:{prop:values[prop] for prop in ["name","degree", "Closeness_Centrality", "Betweenness_Centrality"]} for node,values in dict(G.nodes(data=True)).items()}).T
-
-cyto.load_extra_layouts()
 
 layout=dbc.Container([
     dbc.Row([
@@ -69,17 +66,20 @@ layout=dbc.Container([
 
 ##  ----------  CALLBACKS   ------------
 
-displayHoverNodeData_callback(prefix,G)
-selectedTable_callback(prefix)
-propertiesTable_callback(prefix,graph_properties_df)
-highlighter_callback(prefix,G,nodes)
-toggle_download_img_callback(prefix)
-toggle_help_callback(prefix)
-toggle_legend_callback(prefix)
-get_img_callback(prefix)
-get_range_clusters_callback(prefix,G)
-custom_clustering_section_callback(prefix,G)
-toggle_view_clusters_callback(prefix)
+build_callbacks(prefix,G,nodes,*common_data_generator(prefix,G),file_prefix)
+
+# displayHoverNodeData_callback(prefix,G)
+# selectedTable_callback(prefix)
+# propertiesTable_callback(prefix,graph_properties_df)
+# highlighter_callback(prefix,G,nodes)
+# toggle_download_graph_callback(prefix)
+# toggle_help_callback(prefix)
+# toggle_legend_callback(prefix)
+# get_img_callback(prefix)
+# download_graph_callback(prefix,file_prefix)
+# get_range_clusters_callback(prefix,G)
+# custom_clustering_section_callback(prefix,G)
+# toggle_view_clusters_callback(prefix)
 
 # if __name__=="__main__":
 #     app.run_server(debug=False)

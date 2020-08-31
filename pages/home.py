@@ -41,30 +41,36 @@ layout=dbc.Container([
                 html.P("Welcome to ... bla bla bla..."),
                 html.Br(),
                 html.H4("Available Graphs:"),
+                html.Br(),
                 dbc.Row([
                     dbc.Col([
                         html.A([
-                            html.Img(src="data/drug_target_img.jpg"),
-                            html.H5(html.Strong("Drug Target"))
-                        ], href="/drug_target"),
+                            html.Center([
+                                html.Img(src="https://drive.google.com/uc?export=view&id=1Dsog5C3jKZXHssGqVCd9BOiP15KULK8W", style={"width":"95%"}),
+                                html.H5(html.Strong("Drug Target"), className="card-header")
+                            ])
+                        ], href="/drug_target", className="card border-primary mb-3"),
                     ]),
                     dbc.Col([
                         html.A([
-                            html.Img(src="data/drug_drug_img.jpg"),
-                            html.H5(html.Strong("Drug Drug"))
-                        ], href="/drug_drug"),
+                            html.Center([
+                                html.Img(src="https://drive.google.com/uc?export=view&id=1RMYDzIHpfsqYWMTd4qA2zWEWT0eYCAfd", style={"width":"95%"}),
+                                html.H5(html.Strong("Drug Drug"), className="card-header")
+                            ])
+                        ], href="/drug_drug", className="card border-primary mb-3"),
                     ]),
                     dbc.Col([
                         html.A([
-                            html.Img(src="data/target_target_img.jpg"),
-                            html.H5(html.Strong("Target Target"))
-                        ], href="/target_target"),
+                            html.Center([
+                                html.Img(src="https://drive.google.com/uc?export=view&id=1iDDwsBgJanpOjUAYEE6yuwMmS9D43ap4", style={"width":"95%"}),
+                                html.H5(html.Strong("Target Target"), className="card-header")
+                            ])
+                        ], href="/target_target", className="card border-primary mb-3"),
                     ])
                 ]),
-                html.Br(),
+                html.Div(style={"height":"100px"}),
                 html.P([html.Font("For help browising the app check the "),html.A("Help", href="/help"),html.Font(" section")]),
                 html.P([html.Font("Otherwise feel free to "),html.A("reach us out", href="/contacts")]),
-                html.Br(),
                 html.P([html.Font("Info and credits about the project can be found in the "),html.A("About", href="/about"),html.Font(" section")])
             ]),
         ]),

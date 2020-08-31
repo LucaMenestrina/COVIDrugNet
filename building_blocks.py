@@ -12,6 +12,9 @@ from urllib.request import quote
 
 import pandas as pd
 import numpy as np
+import os
+import pickle
+from tqdm import tqdm
 
 import networkx as nx
 
@@ -26,8 +29,8 @@ def headbar(prefix):
             dbc.NavItem(dbc.NavLink("About",href="/about", active=True, className="nav-link active"), className="nav-item"),
             dbc.NavItem(dbc.NavLink("Contacts",href="/contacts", active=True, className="nav-link active"), className="nav-item"),
             dbc.DropdownMenu([
-                dbc.DropdownMenuItem("Drug Target", href="/drug_target", id=prefix+"_dropdown_drug_target", className="dropdown-item"),
-                dbc.DropdownMenuItem("Drug Drug", href="/drug_drug", id=prefix+"_dropdown_drug_drug", className="dropdown-item"),
+                dbc.DropdownMenuItem("Drug Target", href="/drug_target", className="dropdown-item"),
+                dbc.DropdownMenuItem("Drug Drug", href="/drug_drug", className="dropdown-item"),
                 dbc.DropdownMenuItem("Target Target", href="/target_target", className="dropdown-item"),
                 # dbc.DropdownMenuItem("Target Disease", href="/target_disease", className="dropdown-item"),
                 # dbc.DropdownMenuItem("Target Interactors", href="/target_interactors", className="dropdown-item"),
@@ -53,7 +56,7 @@ def sidebar(prefix):
                     dbc.NavItem(dbc.NavLink("Graph Properties", href="#"+prefix+"_graph_properties_table", external_link=True, active=True), className="nav-item"),
                     dbc.NavItem(dbc.NavLink("Clustering", href="#"+prefix+"_clustering",external_link=True, active=True), className="nav-item"),
                     dbc.NavItem(dbc.NavLink("Plots", href="#"+prefix+"_plots",external_link=True, active=True), className="nav-item"),
-                ], align="center", ), fluid=True, color="light", sticky="top", className="navbar navbar-light bg-light position-sticky")
+                ], align="left", ), fluid=True, color="light", sticky="top", className="navbar navbar-light bg-light position-sticky")
     else:
         return dbc.NavbarSimple(fluid=True, color="light", sticky="top", className="navbar navbar-light bg-light position-sticky")
 
@@ -89,24 +92,29 @@ def legend(prefix):
             ], id=prefix+"_legend_popover", target=prefix+"_legend_open", placement="bottom")
         ])
 
-def save_img(prefix): # che diventerà salve graph
+def save_graph(prefix):
     return html.Div([
-            dbc.Button("Save Img", id=prefix+"_save_img_open", block=True),
+            dbc.Button("Save", id=prefix+"_save_graph_open", block=True),
             dbc.Modal([
-                dbc.ModalHeader("Save Graph Image"),
+                dbc.ModalHeader("Save Graph"),
                 dbc.ModalBody([
                     html.P("Format"),
-                    dcc.Dropdown(id=prefix+"_save_img", options=[
+                    dcc.Dropdown(id=prefix+"_save_graph", options=[
+                        {"label":"Download as Adjacency List", "value":"adjlist"},
+                        {"label":"Download as Pickle", "value":"pickle"},
+                        {"label":"Download as Edges List", "value":"edgelist"},
+                        {"label":"Download as GEXF", "value":"gexf"},
+                        {"label":"Download as GRAPHML", "value":"graphml"},
                         {"label":"Download as SVG", "value":"svg"},
                         {"label":"Download as PNG", "value":"png"},
                         {"label":"Download as JPEG", "value":"jpg"}
-                    ], placeholder="Image Format", clearable=False, searchable=False, className="DropdownMenu")
+                    ], placeholder="Download as ...", clearable=False, searchable=False, className="DropdownMenu")
                 ]),
                 dbc.ModalFooter([
-                    dbc.Button("Download", id=prefix+"_download_img_button", className="ml-auto"),
-                    dbc.Button("Close", id=prefix+"_save_img_close", className="ml-auto")
+                    html.A(dbc.Button("Download", id=prefix+"_download_graph_button", className="ml-auto"),id=prefix+"_download_graph_button_href", target="_blank"),
+                    dbc.Button("Close", id=prefix+"_save_graph_close", className="ml-auto")
                 ]),
-            ], id=prefix+"_save_img_modal")
+            ], id=prefix+"_save_graph_modal")
         ])
 
 def coloring_dropdown(prefix):
@@ -136,14 +144,15 @@ def highlighting(prefix, nodes):
     return dcc.Dropdown(id=prefix+"_highlighter_dropdown",options=[{"label":data["name"],"value":data["ID"]} for data in [node["data"] for node in nodes]], placeholder="Highlight a node", multi=True, className="DropdownMenu")
 
 def graph(prefix,title,nodes,edges):#es. title="Drug Target"
+    cyto.load_extra_layouts()
     return dbc.Container([
                 html.H4(title,id=prefix+"_name_graph", className="card-header"),
                 dbc.Row([
                     dbc.Col(graph_help(prefix), width=1),
                     dbc.Col(legend(prefix), width=1),
-                    dbc.Col(save_img(prefix), width=2),
+                    dbc.Col(save_graph(prefix), width=1),
                     dbc.Col(coloring_dropdown(prefix), width=4),
-                    dbc.Col(highlighting(prefix, nodes), width=4),
+                    dbc.Col(highlighting(prefix, nodes), width=5),
                     # dbc.Col(html.A("download", href="data:text/csv;charset=utf-8,"+quote(pd.read_csv("https://raw.githubusercontent.com/LucaMenestrina/SARS-CoV-2_Networker/master/drugtarget.tsv",index_col=0, sep="\t").to_csv(sep="\t", index=False, encoding="utf-8")), target="_blank", download="sparsematrix.tsv"), width=1.5),
                 ], no_gutters=True, className="card-title"),
                 cyto.Cytoscape(
@@ -162,10 +171,11 @@ def graph(prefix,title,nodes,edges):#es. title="Drug Target"
 
 def graph_properties(prefix):
     return dbc.Container([
-                dbc.Row(dbc.Col([
+                dbc.Col([
+                    dbc.Row(html.H3("Graph Properties")),
                     dbc.Row([
-                        dbc.Col(html.H3("Graph Properties"), width=5),
-                        html.P("Sort by: "),
+                        dbc.Col(width=3), # just to move everything to the right (justify doesn't work)
+                        dbc.Col(html.P("Sort by: "),align="center"),
                         dbc.Col([
                             dcc.Dropdown(id=prefix+"_properties_table_sorting",  options=[
                                 {"label":"Degree: Low to High","value":"degree,1"},
@@ -176,7 +186,7 @@ def graph_properties(prefix):
                                 {"label":"Betweenness Centrality: High to Low","value":"Betweenness_Centrality,0"}
                             ], value="degree,0", clearable=False, searchable=False, optionHeight=25,className="DropdownMenu")
                         ],align="center", width=4),
-                        html.P("Rows to show: "),
+                        dbc.Col(html.P("Rows to show: "),align="center"),
                         dbc.Col([
                             dcc.Dropdown(id=prefix+"_properties_table_rows",options=[
                                 {"label":"10","value":10},
@@ -185,10 +195,11 @@ def graph_properties(prefix):
                                 {"label":"100","value":100},
                                 {"label":"all","value":"all"}
                             ], value=10, className="DropdownMenu", clearable=False, searchable=False, optionHeight=25)
-                        ],align="center", width=1)
-                    ]),
-                dbc.Container(id=prefix+"_graph_properties_table_container", fluid=True)],
-                ), justify="center"),
+                        ],align="center", width=1),
+                        dbc.Col(html.A(dbc.Button("Download", className="ml-auto"), target="_blank", download="graph_properties.tsv", id=prefix+"_download_graph_properties"), align="center")
+                    ], justify="end"),
+                    dbc.Container(id=prefix+"_graph_properties_table_container", fluid=True)
+                ])
             ])
 
 def view_custom_clusters(prefix):
@@ -202,6 +213,7 @@ def view_custom_clusters(prefix):
                     ]),
                     dbc.ModalFooter([
                         html.A(dbc.Button("Download", className="ml-auto"), target="_blank", download="custom_clusters.tsv", id=prefix+"_download_custom_clusters_modal"),
+                        html.A("file",href="https://drive.google.com/drive/u/0/folders/1lrxTNWDsjKPTGa4FW2QeV0yHdna6eux4"),
                         dbc.Button("Close", id=prefix+"_view_clusters_close", className="ml-auto")
                     ]),
                 ],id=prefix+"_custom_clusters_modal", size="xl"),
@@ -228,6 +240,20 @@ def custom_clustering(prefix):
                     ], align="center")
                 ], justify="center")
             ], id=prefix+"_clustering")
+
+def common_data_generator(prefix,graph):
+    print(prefix)
+    graph_properties_df=pd.DataFrame({node:{prop:values[prop] for prop in ["name","degree", "Closeness_Centrality", "Betweenness_Centrality"]} for node,values in dict(graph.nodes(data=True)).items()}).T
+    maj=graph.subgraph(max(list(nx.connected_components(graph)), key=len))
+    if os.path.isfile("data/gn_communities/"+prefix+"_communities.pickle"):
+        with open("data/gn_communities/"+prefix+"_communities.pickle","rb") as bkp:
+            girvan_newman,girvan_newman_maj=pickle.load(bkp)
+    else:
+        girvan_newman={len(comm):comm for comm in tqdm(nx.algorithms.community.girvan_newman(graph))}
+        girvan_newman_maj={len(comm):comm for comm in tqdm(nx.algorithms.community.girvan_newman(maj))}
+        with open("data/gn_communities/"+prefix+"_communities.pickle","wb") as bkp:
+            pickle.dump([girvan_newman,girvan_newman_maj],bkp)
+    return graph_properties_df,girvan_newman,maj,girvan_newman_maj
 
 def get_frequency(list):
   d={}

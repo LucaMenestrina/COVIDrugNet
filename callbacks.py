@@ -50,11 +50,15 @@ def displayHoverNodeData_callback(prefix,G):
     )
     def displayHoverNodeData(data):
         if not data:
-            if prefix == "dt" or prefix == "dd":
-                data={key:value for key,value in G.nodes(data=True)["Remdesivir"].items()}
-            if prefix == "tt":
-                data={key:value for key,value in G.nodes(data=True)["Angiotensin-converting enzyme 2"].items()}
-        if data["kind"]=="Drug":
+            data={"id":"","structure":"","Properties":"Hover over a node to show its properties"}
+            attributes=["id","Properties"]
+            link_drugbank=""
+            # if prefix == "dt" or prefix == "dd":
+            #     data={key:value for key,value in G.nodes(data=True)["Remdesivir"].items()}
+            #     print(data)
+            # if prefix == "tt":
+            #     data={key:value for key,value in G.nodes(data=True)["Angiotensin-converting enzyme 2"].items()}
+        elif data["kind"]=="Drug":
             attributes=["ID","SMILES","ATC_Code1","ATC_Code5","Targets","Enzymes","Carriers","Transporters","Drug_Interactions"]
             link_drugbank="https://www.drugbank.ca/drugs/"+data["ID"]
         else:
@@ -111,15 +115,19 @@ def selectedTable_callback(prefix):
                         html.H3("Selected Targets"),
                         targets_table]
 
-                    return dbc.Container(results, fluid=True), True, False
-            return None, False, True
+                return dbc.Container(results, fluid=True), True, False
+            else:
+                return None, False, True
         else:
             return None, False, True
     return selectedTable
 
 def propertiesTable_callback(prefix,graph_properties_df):
     @app.callback(
-        Output(prefix+"_graph_properties_table_container","children"),
+        [
+            Output(prefix+"_graph_properties_table_container","children"),
+            Output(prefix+"_download_graph_properties","href")
+        ],
         [
             Input(prefix+"_properties_table_sorting","value"),
             Input(prefix+"_properties_table_rows","value")
@@ -129,6 +137,7 @@ def propertiesTable_callback(prefix,graph_properties_df):
         sorting=sorting.split(",")
         sorting={"by":[sorting[0]],"ascending":bool(int(sorting[1]))}
         df=graph_properties_df.sort_values(**sorting)
+        href="data:text/csv;charset=utf-8,"+quote(df.to_csv(sep="\t", index=False, encoding="utf-8"))
         if rows == "all":
             return dbc.Table.from_dataframe(df, bordered=True, className="table table-hover", id=prefix+"_graph_properties_table")
         else:
@@ -137,18 +146,20 @@ def propertiesTable_callback(prefix,graph_properties_df):
             table_header=[html.Thead(html.Tr([html.Th(attribute) for attribute in ["Name", "Degree", "Closeness Centrality", "Betweenness Centrality"]]))]
             table_body=[html.Tbody([html.Tr([html.Td(d[attribute]) for attribute in attributes]) for d in df.to_dict("records")])]
             table=dbc.Table(table_header+table_body, className="table table-hover", bordered=True, id=prefix+"_graph_properties_table")
-            return table
+            return table,href
     return propertiesTable
 
-def highlighter_callback(prefix,G,nodes):
+def highlighter_callback(prefix,G,nodes, girvan_newman,maj,girvan_newman_maj):
     ##coloring precomputing
     L=nx.normalized_laplacian_matrix(G).toarray()
     evals,evects=np.linalg.eigh(L)
-    n_comp=[n for n,dif in enumerate(np.diff(evals)) if dif > 2*np.average(np.diff(evals))][0]+1
-    maj=G.subgraph(max(list(nx.connected_components(G))))
+    # n_comp=[n for n,dif in enumerate(np.diff(evals)) if dif > 2*np.average(np.diff(evals))][0]+1
+    n_comp=[n for n,dif in enumerate(np.diff(evals)) if dif > 2*np.average([d for d in np.diff([v for v in evals if v<1]) if d>0.00001])][0]+1
+    # maj=G.subgraph(max(list(nx.connected_components(G)), key=len))
     L_maj=nx.normalized_laplacian_matrix(maj).toarray()
     evals_maj,evects_maj=np.linalg.eigh(L_maj)
-    n_maj=[n for n,dif in enumerate(np.diff(evals_maj)) if dif > 2*np.average(np.diff(evals_maj))][0]+1
+    # n_maj=[n for n,dif in enumerate(np.diff(evals_maj)) if dif > 2*np.average(np.diff(evals_maj))][0]+1
+    n_maj=[n for n,dif in enumerate(np.diff(evals_maj)) if dif > 2*np.average([d for d in np.diff([v for v in evals_maj if v<1]) if d>0.00001])][0]+1
     #components
     components=list(nx.connected_components(G))
     d_comp={}
@@ -176,7 +187,7 @@ def highlighter_callback(prefix,G,nodes):
     legend_body_spectral=html.P(["Nodes are colored on the corresponding cluster, check the ",html.A("clustering section", href="#dt_clustering")," for more info"])
     #spectral_maj
     km=KMeans(n_clusters=n_maj)
-    clusters=km.fit_predict(evects[:,:n_maj])
+    clusters=km.fit_predict(evects_maj[:,:n_maj])
     cmap=dict(zip(set(clusters),[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/n_maj)]))
     id_cluster=dict(zip(dict(nx.get_node_attributes(maj,"ID")).values(),clusters))
     stylesheet_spectral_maj=[]
@@ -186,10 +197,11 @@ def highlighter_callback(prefix,G,nodes):
     pie_spectral_maj=px.pie(pie_data,values="Nodes",names="Cluster", title="Clusters' Node Distribution",color_discrete_sequence=[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/len(set(clusters)))])
     legend_body_spectral_maj=html.P(["Nodes are colored on the corresponding cluster, check the ",html.A("clustering section", href="#"+prefix+"_clustering")," for more info"])
     #girvan_newman
-    girvan_newman=nx.algorithms.community.girvan_newman(G)
-    communities = []
-    while len(communities) != n_comp:
-        communities=next(girvan_newman)
+    # girvan_newman=nx.algorithms.community.girvan_newman(G)
+    # communities = []
+    # while len(communities) != n_comp:
+    #     communities=next(girvan_newman)
+    communities=girvan_newman[n_comp]
     d_comm={}
     for n,comm in enumerate(communities):
         d_comm.update({d:n for d in comm})
@@ -203,10 +215,11 @@ def highlighter_callback(prefix,G,nodes):
     pie_girvan_newman=px.pie(pie_data,values="Nodes",names="Community", title="Communities' Node Distribution",color_discrete_sequence=[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/len(communities))])
     legend_body_girvan_newman=html.P(["Nodes are colored on the corresponding community, check the ",html.A("clustering section", href="#"+prefix+"_clustering")," for more info"])
     #girvan_newman_maj
-    girvan_newman=nx.algorithms.community.girvan_newman(maj)
-    communities = []
-    while len(communities) != n_maj:
-        communities=next(girvan_newman)
+    # girvan_newman_maj=nx.algorithms.community.girvan_newman(maj)
+    # communities = []
+    # while len(communities) != n_maj:
+    #     communities=next(girvan_newman_maj)
+    communities=girvan_newman_maj[n_maj]
     d_comm={}
     for i,comm in enumerate(communities):
         d_comm.update({d:i for d in comm})
@@ -239,7 +252,7 @@ def highlighter_callback(prefix,G,nodes):
             State(prefix+"_legend_popover_body","children")
         ]
     )
-    def highlighter(highlighted,coloring,custom_method,custom_component,custom_n_clusters, current_stylesheet, current_pie, current_legend_body):
+    def highlighter(highlighted,coloring,custom_method,custom_component,custom_n, current_stylesheet, current_pie, current_legend_body):
         changed_id = [p['prop_id'] for p in dash.callback_context.triggered][0]
         if changed_id != prefix+"_highlighter_dropdown.value":
             if coloring == "categorical":
@@ -321,31 +334,38 @@ def highlighter_callback(prefix,G,nodes):
                 legend_body=legend_body_girvan_newman_maj
             elif coloring == "custom":
                 if custom_component=="maj":
-                    graph=G.subgraph(max(list(nx.connected_components(G))))
+                    # graph=G.subgraph(max(list(nx.connected_components(G)),key=len))
+                    graph=maj.copy()
+                    girvan_newman_custom=girvan_newman_maj
                 else:
                     graph=G.copy()
+                    girvan_newman_custom=girvan_newman
                 if custom_method == "spectral":
                     L_custom=nx.normalized_laplacian_matrix(graph).toarray()
-                    evals_custom,evects_custom=np.linalg.eigh(L)
-                    km=KMeans(n_clusters=custom_n_clusters)
-                    clusters=km.fit_predict(evects_custom[:,:custom_n_clusters])
-                    cmap=dict(zip(set(clusters),[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/custom_n_clusters)]))
-                    id_cluster=dict(zip(dict(nx.get_node_attributes(graph,"ID")).values(),clusters))
+                    evals_custom,evects_custom=np.linalg.eigh(L_custom)
+                    km_custom=KMeans(n_clusters=custom_n)
+                    clusters_custom=km_custom.fit_predict(evects_custom[:,:custom_n])
+                    cmap_custom=dict(zip(set(clusters_custom),[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/custom_n)]))
+                    id_cluster_custom=dict(zip(dict(nx.get_node_attributes(graph,"ID")).values(),clusters_custom))
                     stylesheet=[]
-                    for ID in id_cluster:
-                        stylesheet.append({"selector":"[ID = '"+ID+"']", "style":{"border-color":"#303633","border-width":2,"background-color":cmap[id_cluster[ID]]}})
-                    pie_data=pd.DataFrame({"Cluster":range(1,len(set(clusters))+1),"Nodes":[list(clusters).count(cluster) for cluster in range(len(set(clusters)))]})
-                    pie=px.pie(pie_data,values="Nodes",names="Cluster", title="Clusters' Node Distribution",color_discrete_sequence=[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/len(set(clusters)))])
+                    for ID in id_cluster_custom:
+                        stylesheet.append({"selector":"[ID = '"+ID+"']", "style":{"border-color":"#303633","border-width":2,"background-color":cmap_custom[id_cluster_custom[ID]]}})
+                    pie_data=pd.DataFrame({"Cluster":range(1,len(set(clusters_custom))+1),"Nodes":[list(clusters_custom).count(cluster_custom) for cluster_custom in range(len(set(clusters_custom)))]})
+                    pie=px.pie(pie_data,values="Nodes",names="Cluster", title="Clusters' Node Distribution",color_discrete_sequence=[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/len(set(clusters_custom)))])
                 else:
-                    girvan_newman=nx.algorithms.community.girvan_newman(graph)
-                    communities = []
-                    while len(communities) != n_comp:
-                        communities=next(girvan_newman)
+                    # girvan_newman_custom=nx.algorithms.community.girvan_newman(graph)
+                    # communities = []
+                    # m=0
+                    # while len(communities) != custom_n:
+                    #     communities=girvan_newman_custom[m]
+                    #     print(len(communities))
+                    #     m+=1
+                    communities=girvan_newman_custom[custom_n]
                     d_comm={}
                     for n,comm in enumerate(communities):
                         d_comm.update({d:n for d in comm})
                     name2id=dict(dict(nx.get_node_attributes(graph,"ID")))
-                    cmap=dict(zip(set(d_comm.values()),[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/len(communities))]))
+                    cmap=dict(zip(set(d_comm.values()),[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/custom_n)]))
                     id2community={name2id[node]:cmap.get(d_comm[node],"#708090") for node in graph.nodes()}
                     stylesheet=[]
                     for ID in id2community:
@@ -383,17 +403,17 @@ def highlighter_callback(prefix,G,nodes):
         return stylesheet, pie, legend_body
     return highlighter
 
-def toggle_download_img_callback(prefix):
+def toggle_download_graph_callback(prefix):
     @app.callback(
-        Output(prefix+"_save_img_modal", "is_open"),
-        [Input(prefix+"_save_img_open", "n_clicks"), Input(prefix+"_save_img_close", "n_clicks")],
-        [State(prefix+"_save_img_modal", "is_open")],
+        Output(prefix+"_save_graph_modal", "is_open"),
+        [Input(prefix+"_save_graph_open", "n_clicks"), Input(prefix+"_save_graph_close", "n_clicks")],
+        [State(prefix+"_save_graph_modal", "is_open")],
     )
-    def toggle_download_img(n1, n2, is_open):
+    def toggle_download_graph(n1, n2, is_open):
         if n1 or n2:
             return not is_open
         return is_open
-    return toggle_download_img
+    return toggle_download_graph
 
 def toggle_help_callback(prefix):
     @app.callback(
@@ -422,18 +442,59 @@ def toggle_legend_callback(prefix):
 def get_img_callback(prefix):
     @app.callback(
         Output(prefix+"_graph","generateImage"),
-        [Input(prefix+"_download_img_button","n_clicks")],
-        [State(prefix+"_save_img","value")]
+        [Input(prefix+"_download_graph_button","n_clicks")],
+        [State(prefix+"_save_graph","value")]
     )
     def get_img(n_clicks,value):
-        if n_clicks:
-            if value:
+        if value in ["svg", "png", "jpg"]:
+            if n_clicks:
                 return {"type":value,"action":"download"}
         else:
             return {"action":"store"}
     return get_img
 
-def get_range_clusters_callback(prefix,G):
+def download_graph_file_callback(prefix,file_prefix):
+    @app.callback(
+        [
+            Output(prefix+"_download_graph_button_href","download"),
+            Output(prefix+"_download_graph_button_href","href")
+        ],
+        [Input(prefix+"_save_graph","value")]
+    )
+    def download_graph_file(value):
+        if value not in ["svg", "png", "jpg"]:
+            if value:
+                download=file_prefix+"."+value
+                href="https://raw.githubusercontent.com/LucaMenestrina/programming_luca_menestrina/master/execises/align_score.py"
+                # href="https://raw.githubusercontent.com/LucaMenestrina/SARS-CoV-2_Networker/master/"+download
+                return download, href
+            else:
+                return None,None
+    return download_graph_file
+
+# #### da controllare perchè non funziona
+# def download_graph_callback(prefix,file_prefix):
+#     @app.callback(
+#         Output(prefix+"_download_graph_div","children"),
+#         [Input(prefix+"_save_graph","value")]
+#     )
+#     def download_graph(value):
+#         if value:
+#             print("ok")
+#             if value in ["svg", "png", "jpg"]:
+#                 print("img")
+#                 div=dbc.Button("Download", id=prefix+"_download_graph_button", className="ml-auto")
+#                 get_img_callback(prefix)
+#             else:
+#                 print("file")
+#                 div=html.A(dbc.Button("Download", id=prefix+"_download_graph_button_placeholder", className="ml-auto"), download=file_prefix+"."+value, href="https://drive.google.com/uc?export=view&id=1RMYDzIHpfsqYWMTd4qA2zWEWT0eYCAfd", id=prefix+"_download_graph_button_href")
+#                 # download_graph_file_callback(prefix,file_prefix)
+#         else:
+#             div=dbc.Button("Download", id=prefix+"_download_graph_button", className="ml-auto", active=False)
+#         return div
+#     return download_graph
+
+def get_range_clusters_callback(prefix,G,maj):
     @app.callback(
         [
             Output(prefix+"_custom_clustering_number_clusters","options"),
@@ -446,7 +507,8 @@ def get_range_clusters_callback(prefix,G):
     )
     def get_range_clusters(component,method):
         if component=="maj":
-            graph=G.subgraph(max(list(nx.connected_components(G))))
+            # graph=G.subgraph(max(list(nx.connected_components(G)), key=len))
+            graph=maj.copy()
         else:
             graph=G.copy()
         L=nx.normalized_laplacian_matrix(graph).toarray()
@@ -462,7 +524,7 @@ def get_range_clusters_callback(prefix,G):
         return options,n
     return get_range_clusters
 
-def custom_clustering_section_callback(prefix,G):
+def custom_clustering_section_callback(prefix,G,girvan_newman,maj,girvan_newman_maj):
     @app.callback(
         [
             Output(prefix+"_custom_clustering_graph","figure"),
@@ -477,12 +539,15 @@ def custom_clustering_section_callback(prefix,G):
     )
     def custom_clustering_section(component, method, n_clusters):
         if component=="maj":
-            graph=G.subgraph(max(list(nx.connected_components(G))))
+            # graph=G.subgraph(max(list(nx.connected_components(G)), key=len))
+            graph=maj.copy()
+            girvan_newman_custom=girvan_newman_maj
         else:
             graph=G.copy()
+            girvan_newman_custom=girvan_newman
         L=nx.normalized_laplacian_matrix(graph).toarray()
         evals,evects=np.linalg.eigh(L)
-        n=[n for n,dif in enumerate(np.diff(evals)) if dif > 2*np.average(np.diff(evals))][0]+1
+        # n=[n for n,dif in enumerate(np.diff(evals)) if dif > 2*np.average(np.diff(evals))][0]+1
         clustering_data=pd.DataFrame({"Eigenvalue Number":range(len(evals)),"Eigenvalue":evals})
         figure=px.scatter(data_frame=clustering_data,x="Eigenvalue Number",y="Eigenvalue", title="Eigenvalues Distribution", height=600, width=800)
         if method == "spectral":
@@ -502,10 +567,11 @@ def custom_clustering_section_callback(prefix,G):
             table=dbc.Table(table_header+[html.Tbody(table_body)], className="table table-hover", bordered=True, id=prefix+"_custom_clusters_table")
             href="data:text/csv;charset=utf-8,"+quote(pd.DataFrame({"Cluster":list(clusters_data.keys()),"Nodes":list(clusters_data.values())}).to_csv(sep="\t", index=False, encoding="utf-8"))
         if method == "girvan_newman":
-            girvan_newman=nx.algorithms.community.girvan_newman(graph)
-            communities = []
-            while len(communities) != n:
-                communities=next(girvan_newman)
+            # girvan_newman=nx.algorithms.community.girvan_newman(graph)
+            # communities = []
+            # while len(communities) != n_clusters:
+            #     communities=next(girvan_newman)
+            communities=girvan_newman_custom[n_clusters]
             table_header=[html.Thead(html.Tr([html.Th("Community"),html.Th("Nodes")]))]
             table_body=[]
             for n, community in enumerate(communities):
@@ -526,3 +592,17 @@ def toggle_view_clusters_callback(prefix):
             return not is_open
         return is_open
     return toggle_view_clusters
+
+def build_callbacks(prefix,G,nodes,graph_properties_df,girvan_newman,maj,girvan_newman_maj,file_prefix):
+    displayHoverNodeData_callback(prefix,G)
+    selectedTable_callback(prefix)
+    propertiesTable_callback(prefix,graph_properties_df)
+    highlighter_callback(prefix,G,nodes, girvan_newman,maj,girvan_newman_maj)
+    toggle_download_graph_callback(prefix)
+    toggle_help_callback(prefix)
+    toggle_legend_callback(prefix)
+    get_img_callback(prefix)
+    download_graph_file_callback(prefix,file_prefix)
+    get_range_clusters_callback(prefix,G,maj)
+    custom_clustering_section_callback(prefix,G,girvan_newman,maj,girvan_newman_maj)
+    toggle_view_clusters_callback(prefix)

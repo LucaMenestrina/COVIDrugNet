@@ -99,7 +99,7 @@ class drug():
         self.carriers=self.__proteins["carriers"]
         self.transporters=self.__proteins["transporters"]
         #drug interactions
-        interactions = soup.find('table', attrs = {'id':'drug-interactions'})
+        interactions = soup.find('table', attrs = {'id':'drug-interactions-table'})
         if interactions != None:
             temp_int_names=[tag.get_text() for tag in interactions.findAll("a")]
             temp_int_ids=[tag["href"].split("/")[-1] for tag in interactions.findAll("a")]
@@ -189,6 +189,16 @@ def get_frequency(list):
       d[el]=1
   return d
 
+def stringify_list_attributes(graph):
+    #converts all attributes of type list to string, in order to be able to save le graph also in gexf, gml and graphml formats
+    graph=graph.copy()
+    for node in graph.nodes():
+        for attribute, val in graph.nodes[node].items():
+            if isinstance(val,list):
+                val=", ".join(val)
+                graph.nodes[node][attribute]=val
+    return graph
+
 class collector():
     def __init__(self):
         self.drugs=[]
@@ -204,8 +214,8 @@ class collector():
         clinical_trials=pd.read_html(str(tables[2]))[0]
         #clinical_trials_num=pd.read_html(str(tables[3]))[0]
         drug_tags=set([h for h in tables[0].findAll("a")+tables[2].findAll("a") if "/drugs/" in h["href"]])
-        if os.path.isfile("SARS-CoV-2_drug_database.pkl"):
-            with open("SARS-CoV-2_drug_database.pkl","rb") as bkp:
+        if os.path.isfile("data/SARS-CoV-2_drug_database.pickle"):
+            with open("data/SARS-CoV-2_drug_database.pickle","rb") as bkp:
                 bkp_class=pickle.load(bkp)
             self.drugs=bkp_class.drugs
             self.excluded=bkp_class.excluded
@@ -227,7 +237,7 @@ class collector():
                         self.__proteins.update(added_proteins)
                     except:
                         self.excluded.append(d.get_text())
-        with open("SARS-CoV-2_drug_database.pkl","wb") as bkp:
+        with open("data/SARS-CoV-2_drug_database.pickle","wb") as bkp:
             pickle.dump(self,bkp)
     def summary(self,group):
         if group in ["drugs","targets"]:
@@ -235,15 +245,25 @@ class collector():
                 return pd.concat([drug.summary() for drug in self.drugs])
             elif group == "targets":
                 return pd.concat([target.summary() for target in self.drugs])
+    def graph_properties(self,graph):
+        K=dict(nx.degree(graph))
+        CC=dict(nx.closeness_centrality(graph))
+        BC=dict(nx.betweenness_centrality(graph))
+        EBC=dict(nx.edge_betweenness_centrality(graph))
+        nx.set_node_attributes(graph,K,"degree")
+        nx.set_node_attributes(graph,CC,"Closeness_Centrality")
+        nx.set_node_attributes(graph,BC,"Betweenness_Centrality")
+        nx.set_node_attributes(graph,EBC,"Edge_Betweenness_Centrality")
+        return graph
     def similarity(self,sparse=True,save=True):
         self.similarities={drug1.name:{drug2.name:DataStructs.FingerprintSimilarity(drug1.fingerprint,drug2.fingerprint) for drug2 in self.drugs if drug2.fingerprint} for drug1 in self.drugs if drug1.fingerprint}
         df=pd.DataFrame(self.similarities)
         if sparse:
             df=pd.DataFrame([(drug1,drug2,df[drug1][drug2]) for drug1,drug2 in itertools.combinations(list(df),2) if df[drug1][drug2] != 0], columns=["Source","Target","Weight"])
             if filename:
-                df.to_csv("data/similarity.tsv",sep="\t")
+                df.to_csv("data/graphs/similarity.tsv",sep="\t")
         elif save:
-            df.to_csv("data/similarity.tsv",sep="\t")
+            df.to_csv("data/graphs/similarity.tsv",sep="\t")
         return df
     def chemicalspace(self,tab=False):
         self.similarities={drug1.name:{drug2.name:DataStructs.FingerprintSimilarity(drug1.fingerprint,drug2.fingerprint) for drug2 in self.drugs if drug2.fingerprint} for drug1 in self.drugs if drug1.fingerprint}
@@ -259,10 +279,10 @@ class collector():
         nx.set_node_attributes(G,structures,"structure")
         nx.set_node_attributes(G,{node:"#FC5F67" for node in G.nodes()},"fill_color")
         nx.set_node_attributes(G,{node:"#CC6540" for node in G.nodes()},"line_color") #idem
-        K=dict(nx.degree(G))
-        nx.set_node_attributes(G,K,"degree")
-        df.to_csv("data/chemicalspace.tsv",sep="\t")
-        nx.write_gpickle(G,"data/chemicalspace.pickle")
+        self.graph_properties(G)
+        self.chemicalspace=G
+        df.to_csv("data/graphs/chemicalspace.tsv",sep="\t")
+        nx.write_gpickle(G,"data/graphs/chemicalspace.pickle")
     def drugtarget(self,tab=False):
         drugtarget=[{"Drug":drug.name,"Target":target.name} for drug in self.drugs for target in drug.targets.values()]
         df=pd.DataFrame(drugtarget)
@@ -277,36 +297,67 @@ class collector():
         nx.set_node_attributes(G,{node:node for node in G.nodes},"name")
         nx.set_node_attributes(G,structures,"structure")
         nx.set_node_attributes(G,{node:("Drug" if node in set(df["Drug"]) else "Target") for node in G.nodes()},"kind")
+        self.graph_properties(G)
         #cosmetics
         nx.set_node_attributes(G,{node:("#FC5F67" if G.nodes[node]["kind"] == "Drug" else "#12EAEA") for node in G.nodes()},"fill_color")
         nx.set_node_attributes(G,{node:("#FB3640" if G.nodes[node]["kind"] == "Drug" else "#0EBEBE") for node in G.nodes()},"line_color")
-        df.to_csv("data/drugtarget.tsv",sep="\t")
-        nx.write_gpickle(G,"data/drug_target.pickle")
+        self.__drugtarget=G
+        df.to_csv("data/graphs/drug_target.tsv",sep="\t")
+        nx.write_gpickle(G,"data/graphs/drug_target.gpickle")
+        nx.write_adjlist(G,"data/graphs/drug_target.adjlist",delimiter="\t")
+        nx.write_multiline_adjlist(G,"data/graphs/drug_target.multiline_adjlist",delimiter="\t")
+        nx.write_edgelist(G,"data/graphs/drug_target.edgelist",delimiter="\t")
+        G=stringify_list_attributes(G)
+        nx.write_gexf(G,"data/graphs/drug_target.gexf")
+        nx.write_graphml(G,"data/graphs/drug_target.graphml")
     def drugdrug(self,tab=False):
         drug_attributes={drug.name:(drug.summary().T.to_dict()[drug.name]) for drug in self.drugs}
         structures={mol.name:"https://www.drugbank.ca/structures/%s/image.svg"%mol.id for mol in self.drugs} # direttamente da drugbank
         nodes=[d.name for d in self.drugs if d.targets != {}]
         G=bipartite.weighted_projected_graph(self.__drugtarget,nodes)
+        self.graph_properties(G)
+        self.__drugdrug=G
         df=nx.to_pandas_edgelist(G)
-        df.to_csv("data/drugdrug.tsv",sep="\t")
-        nx.write_gpickle(G,"data/drug_drug.pickle")
+        df.to_csv("data/graphs/drug_drug.tsv",sep="\t")
+        nx.write_gpickle(G,"data/graphs/drug_drug.gpickle")
+        nx.write_adjlist(G,"data/graphs/drug_drug.adjlist",delimiter="\t")
+        nx.write_multiline_adjlist(G,"data/graphs/drug_drug.multiline_adjlist",delimiter="\t")
+        nx.write_edgelist(G,"data/graphs/drug_drug.edgelist",delimiter="\t")
+        G=stringify_list_attributes(G)
+        nx.write_gexf(G,"data/graphs/drug_drug.gexf")
+        nx.write_graphml(G,"data/graphs/drug_drug.graphml")
     def targettarget(self,tab=False):
         nodes=[t for d in self.drugs for t in d.targets]
         G=bipartite.weighted_projected_graph(self.__drugtarget,nodes)
+        self.graph_properties(G)
+        self.__targettarget=G
         df=nx.to_pandas_edgelist(G)
-        df.to_csv("data/targettarget.tsv",sep="\t")
-        nx.write_gpickle(G,"data/target_target.pickle")
+        df.to_csv("data/graphs/target_target.tsv",sep="\t")
+        nx.write_gpickle(G,"data/graphs/target_target.gpickle")
+        nx.write_adjlist(G,"data/graphs/target_target.adjlist",delimiter="\t")
+        nx.write_multiline_adjlist(G,"data/graphs/target_target.multiline_adjlist",delimiter="\t")
+        nx.write_edgelist(G,"data/graphs/target_target.edgelist",delimiter="\t")
+        G=stringify_list_attributes(G)
+        nx.write_gexf(G,"data/graphs/target_target.gexf")
+        nx.write_graphml(G,"data/graphs/target_target.graphml")
     def targetinteractors(self,tab=False):
         targets_list=set([target for drug in self.drugs for target in drug.targets.values()])
         targetinteractors=[{"Source":source.gene,"Target":target,"Score":source.string_interaction_partners[target]["score"]} for source in targets_list for target in source.string_interaction_partners]
         df=pd.DataFrame(targetinteractors)
         protein_attributes={target.name:(target.summary().T.to_dict()[target.name]) for target in targets_list}
-
         G=nx.from_pandas_edgelist(df,source="Source",target="Target", edge_attr="Score")
         nx.set_node_attributes(G,protein_attributes)
         nx.set_node_attributes(G,{node:node for node in G.nodes},"gene")
-        df.to_csv("data/targetinteractors.tsv",sep="\t")
-        nx.write_gpickle(G,"data/target_interactors.pickle")
+        self.graph_properties(G)
+        self.targetinteractors=G
+        df.to_csv("data/graphs/target_interactors.tsv",sep="\t")
+        nx.write_gpickle(G,"data/graphs/target_interactors.gpickle")
+        nx.write_adjlist(G,"data/graphs/target_interactors.adjlist",delimiter="\t")
+        nx.write_multiline_adjlist(G,"data/graphs/target_interactors.multiline_adjlist",delimiter="\t")
+        nx.write_edgelist(G,"data/graphs/target_interactors.edgelist",delimiter="\t")
+        G=stringify_list_attributes(G)
+        nx.write_gexf(G,"data/graphs/target_interactors.gexf")
+        nx.write_graphml(G,"data/graphs/target_interactors.graphml")
     def targetdiseases(self,tab=False):
         proteins_list=set([target for drug in self.drugs for target in drug.targets.values()])
         targetdiseases=[{"Source":protein.name,"Target":disease} for protein in proteins_list for disease in protein.diseases]
@@ -316,8 +367,16 @@ class collector():
         nx.set_node_attributes(G,protein_attributes)
         nx.set_node_attributes(G,{node:node for node in G.nodes},"name")
         nx.set_node_attributes(G,{node:("protein" if node in set(df["Source"]) else "disease") for node in G.nodes()},"kind")
-        df.to_csv("data/targetdiseases.tsv",sep="\t")
-        nx.write_gpickle(G,"data/drug_disease.pickle")
+        self.graph_properties(G)
+        self.__targetdiseases=G
+        df.to_csv("data/graphs/target_diseases.tsv",sep="\t")
+        nx.write_gpickle(G,"data/graphs/target_diseases.gpickle")
+        nx.write_adjlist(G,"data/graphs/target_diseases.adjlist",delimiter="\t")
+        nx.write_multiline_adjlist(G,"data/graphs/target_diseases.multiline_adjlist",delimiter="\t")
+        nx.write_edgelist(G,"data/graphs/target_diseases.edgelist",delimiter="\t")
+        G=stringify_list_attributes(G)
+        nx.write_gexf(G,"data/graphs/target_diseases.gexf")
+        nx.write_graphml(G,"data/graphs/target_diseases.graphml")
 
 
 COVID_drugs=collector()
@@ -326,9 +385,9 @@ COVID_drugs=collector()
 # rem=drug("Remdesivir","DB14761").advanced_init([])
 
 
-COVID_drugs.chemicalspace()
+# COVID_drugs.chemicalspace()
 COVID_drugs.drugtarget()
 COVID_drugs.drugdrug()
 COVID_drugs.targettarget()
-COVID_drugs.targetinteractors()
-COVID_drugs.targetdiseases()
+# COVID_drugs.targetinteractors()
+# COVID_drugs.targetdiseases()
