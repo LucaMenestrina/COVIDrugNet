@@ -51,14 +51,14 @@ def headbar(prefix):
 def sidebar(prefix):
     if prefix in ["dt","dd","tt"]:
         return dbc.NavbarSimple(dbc.Col([
-                    dbc.NavItem(dbc.NavLink("Graph", href="#"+prefix+"_graph_container", external_link=True, active=True), className="nav-item"),
-                    dbc.NavItem(dbc.NavLink("Selected Data", href="#"+prefix+"_selected_table", external_link=True, id=prefix+"_side_selected_table", active=False, disabled=True), className="nav-item"),
-                    dbc.NavItem(dbc.NavLink("Graph Properties", href="#"+prefix+"_graph_properties_table", external_link=True, active=True), className="nav-item"),
-                    dbc.NavItem(dbc.NavLink("Clustering", href="#"+prefix+"_clustering",external_link=True, active=True), className="nav-item"),
-                    dbc.NavItem(dbc.NavLink("Plots", href="#"+prefix+"_plots",external_link=True, active=True), className="nav-item"),
-                ], align="left", ), fluid=True, color="light", sticky="top", className="navbar navbar-light bg-light position-sticky")
+                    dbc.NavItem(dbc.NavLink("Graph", href="#"+prefix+"_graph_container", external_link=True, active=True, className="nav-link"), className="nav-item"),
+                    dbc.NavItem(dbc.NavLink("Selected Data", href="#"+prefix+"_selected_table", external_link=True, id=prefix+"_side_selected_table", active=False, disabled=True, className="nav-link"), className="nav-item"),
+                    dbc.NavItem(dbc.NavLink("Graph Properties", href="#"+prefix+"_graph_properties_table", external_link=True, active=True, className="nav-link"), className="nav-item"),
+                    dbc.NavItem(dbc.NavLink("Clustering", href="#"+prefix+"_clustering",external_link=True, active=True, className="nav-link"), className="nav-item"),
+                    dbc.NavItem(dbc.NavLink("Plots", href="#"+prefix+"_plots",external_link=True, active=True, className="nav-link"), className="nav-item"),
+                ], align="center", style={"padding":"0rem"}), expand="xl", color="light", sticky="top", className="navbar navbar-light bg-light position-sticky")
     else:
-        return dbc.NavbarSimple(fluid=True, color="light", sticky="top", className="navbar navbar-light bg-light position-sticky")
+        return dbc.NavbarSimple(color="light", sticky="top", className="navbar navbar-light bg-light position-sticky")
 
 def nodes_info(prefix):
     return html.Div([
@@ -101,6 +101,7 @@ def save_graph(prefix):
                     html.P("Format"),
                     dcc.Dropdown(id=prefix+"_save_graph", options=[
                         {"label":"Download as Adjacency List", "value":"adjlist"},
+                        {"label":"Download as Multiline Adjacency List", "value":"multiline_adjlist"},
                         {"label":"Download as Pickle", "value":"pickle"},
                         {"label":"Download as Edges List", "value":"edgelist"},
                         {"label":"Download as GEXF", "value":"gexf"},
