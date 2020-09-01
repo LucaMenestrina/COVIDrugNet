@@ -153,13 +153,13 @@ def highlighter_callback(prefix,G,nodes, girvan_newman,maj,girvan_newman_maj):
     ##coloring precomputing
     L=nx.normalized_laplacian_matrix(G).toarray()
     evals,evects=np.linalg.eigh(L)
-    # n_comp=[n for n,dif in enumerate(np.diff(evals)) if dif > 2*np.average(np.diff(evals))][0]+1
-    n_comp=[n for n,dif in enumerate(np.diff(evals)) if dif > 2*np.average([d for d in np.diff([v for v in evals if v<1]) if d>0.00001])][0]+1
+    # n_comp=[n for n,dif in enumerate(np.diff(evals)) if dif > 1.5*np.average(np.diff(evals))][0]+1
+    n_comp=[n for n,dif in enumerate(np.diff(evals)) if dif > 1.5*np.average([d for d in np.diff([v for v in evals if v<1]) if d>0.00001])][0]+1
     # maj=G.subgraph(max(list(nx.connected_components(G)), key=len))
     L_maj=nx.normalized_laplacian_matrix(maj).toarray()
     evals_maj,evects_maj=np.linalg.eigh(L_maj)
-    # n_maj=[n for n,dif in enumerate(np.diff(evals_maj)) if dif > 2*np.average(np.diff(evals_maj))][0]+1
-    n_maj=[n for n,dif in enumerate(np.diff(evals_maj)) if dif > 2*np.average([d for d in np.diff([v for v in evals_maj if v<1]) if d>0.00001])][0]+1
+    # n_maj=[n for n,dif in enumerate(np.diff(evals_maj)) if dif > 1.5*np.average(np.diff(evals_maj))][0]+1
+    n_maj=[n for n,dif in enumerate(np.diff(evals_maj)) if dif > 1.5*np.average([d for d in np.diff([v for v in evals_maj if v<1]) if d>0.00001])][0]+1
     #components
     components=list(nx.connected_components(G))
     d_comp={}
@@ -232,6 +232,34 @@ def highlighter_callback(prefix,G,nodes, girvan_newman,maj,girvan_newman_maj):
     pie_data=pd.DataFrame({"Community":range(1,len(communities)+1),"Nodes":[len(community) for community in communities]})
     pie_girvan_newman_maj=px.pie(pie_data,values="Nodes",names="Community", title="Communities' Node Distribution",color_discrete_sequence=[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/len(communities))])
     legend_body_girvan_newman_maj=html.P(["Nodes are colored on the corresponding community, check the ",html.A("clustering section", href="#"+prefix+"_clustering")," for more info"])
+    #greedy_modularity
+    communities=nx.algorithms.community.greedy_modularity_communities(G)
+    d_comm={}
+    for i,comm in enumerate(communities):
+        d_comm.update({d:i for d in comm})
+    name2id=dict(dict(nx.get_node_attributes(G,"ID")))
+    cmap=dict(zip(set(d_comm.values()),[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/len(communities))]))
+    id2community={name2id[node]:cmap.get(d_comm[node],"#708090") for node in G.nodes()}
+    stylesheet_greedy_modularity=[]
+    for ID in id2community:
+        stylesheet_greedy_modularity.append({"selector":"[ID = '"+ID+"']", "style":{"border-color":"#303633","border-width":2,"background-color":id2community.get(ID,"#708090")}})
+    pie_data=pd.DataFrame({"Community":range(1,len(communities)+1),"Nodes":[len(community) for community in communities]})
+    pie_greedy_modularity=px.pie(pie_data,values="Nodes",names="Community", title="Communities' Node Distribution",color_discrete_sequence=[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/len(communities))])
+    legend_body_greedy_modularity=html.P(["Nodes are colored on the corresponding community, check the ",html.A("clustering section", href="#"+prefix+"_clustering")," for more info"])
+    #greedy_modularity_maj
+    communities=nx.algorithms.community.greedy_modularity_communities(maj)
+    d_comm={}
+    for i,comm in enumerate(communities):
+        d_comm.update({d:i for d in comm})
+    name2id=dict(dict(nx.get_node_attributes(maj,"ID")))
+    cmap=dict(zip(set(d_comm.values()),[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/len(communities))]))
+    id2community={name2id[node]:cmap.get(d_comm[node],"#708090") for node in maj.nodes()}
+    stylesheet_greedy_modularity_maj=[]
+    for ID in id2community:
+        stylesheet_greedy_modularity_maj.append({"selector":"[ID = '"+ID+"']", "style":{"border-color":"#303633","border-width":2,"background-color":id2community.get(ID,"#708090")}})
+    pie_data=pd.DataFrame({"Community":range(1,len(communities)+1),"Nodes":[len(community) for community in communities]})
+    pie_greedy_modularity_maj=px.pie(pie_data,values="Nodes",names="Community", title="Communities' Node Distribution",color_discrete_sequence=[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/len(communities))])
+    legend_body_greedy_modularity_maj=html.P(["Nodes are colored on the corresponding community, check the ",html.A("clustering section", href="#"+prefix+"_clustering")," for more info"])
 
     @app.callback(
         [
@@ -332,14 +360,26 @@ def highlighter_callback(prefix,G,nodes, girvan_newman,maj,girvan_newman_maj):
                 stylesheet=stylesheet_girvan_newman_maj.copy()
                 pie=pie_girvan_newman_maj
                 legend_body=legend_body_girvan_newman_maj
+            elif coloring == "greedy_modularity":
+                stylesheet=stylesheet_greedy_modularity.copy()
+                pie=pie_greedy_modularity
+                legend_body=legend_body_greedy_modularity
+            elif coloring == "greedy_modularity_maj":
+                stylesheet=stylesheet_greedy_modularity_maj.copy()
+                pie=pie_greedy_modularity_maj
+                legend_body=legend_body_greedy_modularity_maj
             elif coloring == "custom":
                 if custom_component=="maj":
                     # graph=G.subgraph(max(list(nx.connected_components(G)),key=len))
                     graph=maj.copy()
                     girvan_newman_custom=girvan_newman_maj
+                    greedy_modularity_custom_stylesheet=stylesheet_greedy_modularity_maj.copy()
+                    greedy_modularity_custom_pie=pie_greedy_modularity_maj
                 else:
                     graph=G.copy()
                     girvan_newman_custom=girvan_newman
+                    greedy_modularity_custom_stylesheet=stylesheet_greedy_modularity.copy()
+                    greedy_modularity_custom_pie=pie_greedy_modularity
                 if custom_method == "spectral":
                     L_custom=nx.normalized_laplacian_matrix(graph).toarray()
                     evals_custom,evects_custom=np.linalg.eigh(L_custom)
@@ -352,7 +392,7 @@ def highlighter_callback(prefix,G,nodes, girvan_newman,maj,girvan_newman_maj):
                         stylesheet.append({"selector":"[ID = '"+ID+"']", "style":{"border-color":"#303633","border-width":2,"background-color":cmap_custom[id_cluster_custom[ID]]}})
                     pie_data=pd.DataFrame({"Cluster":range(1,len(set(clusters_custom))+1),"Nodes":[list(clusters_custom).count(cluster_custom) for cluster_custom in range(len(set(clusters_custom)))]})
                     pie=px.pie(pie_data,values="Nodes",names="Cluster", title="Clusters' Node Distribution",color_discrete_sequence=[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/len(set(clusters_custom)))])
-                else:
+                elif custom_method == "girvan_newman":
                     # girvan_newman_custom=nx.algorithms.community.girvan_newman(graph)
                     # communities = []
                     # m=0
@@ -372,6 +412,10 @@ def highlighter_callback(prefix,G,nodes, girvan_newman,maj,girvan_newman_maj):
                         stylesheet.append({"selector":"[ID = '"+ID+"']", "style":{"border-color":"#303633","border-width":2,"background-color":id2community.get(ID,"#708090")}})
                     pie_data=pd.DataFrame({"Community":range(1,len(communities)+1),"Nodes":[len(community) for community in communities]})
                     pie=px.pie(pie_data,values="Nodes",names="Community", title="Communities' Node Distribution",color_discrete_sequence=[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/len(communities))])
+                elif custom_method == "greedy_modularity":
+                    stylesheet=greedy_modularity_custom_stylesheet
+                    pie=greedy_modularity_custom_pie
+
                 legend_body=html.P(["Nodes are colored on the corresponding cluster/community, check the ",html.A("clustering section", href="#"+prefix+"_clustering")," for more info"])
         else:
             stylesheet=[style for style in current_stylesheet if style["style"].get("border-style") != "double"]
@@ -498,7 +542,8 @@ def get_range_clusters_callback(prefix,G,maj):
     @app.callback(
         [
             Output(prefix+"_custom_clustering_number_clusters","options"),
-            Output(prefix+"_custom_clustering_number_clusters","value")
+            Output(prefix+"_custom_clustering_number_clusters","value"),
+            Output(prefix+"_custom_clustering_number_clusters","disabled"),
         ],
         [
             Input(prefix+"_custom_clustering_component","value"),
@@ -511,9 +556,13 @@ def get_range_clusters_callback(prefix,G,maj):
             graph=maj.copy()
         else:
             graph=G.copy()
+        if method == "greedy_modularity":
+            n=len(nx.algorithms.community.greedy_modularity_communities(graph))
+            options=[{"label":str(n),"value":n}]
+            return options,n,True
         L=nx.normalized_laplacian_matrix(graph).toarray()
         evals,evects=np.linalg.eigh(L)
-        n=[n for n,dif in enumerate(np.diff(evals)) if dif > 2*np.average(np.diff(evals))][0]+1
+        n=[n for n,dif in enumerate(np.diff(evals)) if dif > 1.5*np.average([d for d in np.diff([v for v in evals if v<1]) if d>0.00001])][0]+1
         if method == "spectral":
             min_n=2
         elif nx.is_connected(graph):
@@ -521,7 +570,7 @@ def get_range_clusters_callback(prefix,G,maj):
         else:
             min_n=nx.number_connected_components(graph)
         options=[{"label":str(n),"value":n} for n in range(min_n,len(evals)-1)]
-        return options,n
+        return options,n,False
     return get_range_clusters
 
 def custom_clustering_section_callback(prefix,G,girvan_newman,maj,girvan_newman_maj):
@@ -547,7 +596,7 @@ def custom_clustering_section_callback(prefix,G,girvan_newman,maj,girvan_newman_
             girvan_newman_custom=girvan_newman
         L=nx.normalized_laplacian_matrix(graph).toarray()
         evals,evects=np.linalg.eigh(L)
-        # n=[n for n,dif in enumerate(np.diff(evals)) if dif > 2*np.average(np.diff(evals))][0]+1
+        # n=[n for n,dif in enumerate(np.diff(evals)) if dif > 1.5*np.average(np.diff(evals))][0]+1
         clustering_data=pd.DataFrame({"Eigenvalue Number":range(len(evals)),"Eigenvalue":evals})
         figure=px.scatter(data_frame=clustering_data,x="Eigenvalue Number",y="Eigenvalue", title="Eigenvalues Distribution", height=600, width=800)
         if method == "spectral":
@@ -566,12 +615,20 @@ def custom_clustering_section_callback(prefix,G,girvan_newman,maj,girvan_newman_
                 table_body+=[html.Tr([html.Td(cluster), html.Td(clusters_data[cluster])])]
             table=dbc.Table(table_header+[html.Tbody(table_body)], className="table table-hover", bordered=True, id=prefix+"_custom_clusters_table")
             href="data:text/csv;charset=utf-8,"+quote(pd.DataFrame({"Cluster":list(clusters_data.keys()),"Nodes":list(clusters_data.values())}).to_csv(sep="\t", index=False, encoding="utf-8"))
-        if method == "girvan_newman":
+        elif method == "girvan_newman":
             # girvan_newman=nx.algorithms.community.girvan_newman(graph)
             # communities = []
             # while len(communities) != n_clusters:
             #     communities=next(girvan_newman)
             communities=girvan_newman_custom[n_clusters]
+            table_header=[html.Thead(html.Tr([html.Th("Community"),html.Th("Nodes")]))]
+            table_body=[]
+            for n, community in enumerate(communities):
+                table_body+=[html.Tr([html.Td(n), html.Td(", ".join(community))])]
+            table=dbc.Table(table_header+[html.Tbody(table_body)], className="table table-hover", bordered=True, id=prefix+"_custom_clusters_table")
+            href="data:text/csv;charset=utf-8,"+quote(pd.DataFrame({"Cluster":range(len(communities)),"Nodes":[", ".join(comm) for comm in communities]}).to_csv(sep="\t", index=False, encoding="utf-8"))
+        elif method == "greedy_modularity":
+            communities=nx.algorithms.community.greedy_modularity_communities(graph)
             table_header=[html.Thead(html.Tr([html.Th("Community"),html.Th("Nodes")]))]
             table_body=[]
             for n, community in enumerate(communities):

@@ -289,7 +289,7 @@ class collector():
         drug_attributes={drug.name:(drug.summary().T.to_dict()[drug.name]) for drug in self.drugs}
         protein_attributes={target.name:(target.summary().T.to_dict()[target.name]) for target in self.__proteins.values() if target.name in set(df["Target"])}
         structures={mol.name:"https://www.drugbank.ca/structures/%s/image.svg"%mol.id for mol in self.drugs} # direttamente da drugbank
-        structures.update({prot.name:"https://cdn.rcsb.org/images/structures/%s/%s/%s_assembly-1.jpeg"%(prot.pdbid[1:3],prot.pdbid,prot.pdbid) for prot in self.__proteins.values() if prot.name in set(df["Target"])})
+        structures.update({prot.name:"https://cdn.rcsb.org/images/structures/%s/%s/%s_assembly-1.jpeg"%(prot.pdbid[1:3].lower(),prot.pdbid.lower(),prot.pdbid.lower()) for prot in self.__proteins.values() if prot.name in set(df["Target"])})
 
         G=nx.from_pandas_edgelist(df,source="Drug",target="Target")
         nx.set_node_attributes(G,drug_attributes)

@@ -45,7 +45,8 @@ def headbar(prefix):
             color="primary",
             dark=True,
             sticky="top",
-            fluid=True
+            fluid=True,
+            style={"box-shadow":"0px 2px 5px black"}
             )
 
 def sidebar(prefix):
@@ -56,7 +57,7 @@ def sidebar(prefix):
                     dbc.NavItem(dbc.NavLink("Graph Properties", href="#"+prefix+"_graph_properties_table", external_link=True, active=True, className="nav-link"), className="nav-item"),
                     dbc.NavItem(dbc.NavLink("Clustering", href="#"+prefix+"_clustering",external_link=True, active=True, className="nav-link"), className="nav-item"),
                     dbc.NavItem(dbc.NavLink("Plots", href="#"+prefix+"_plots",external_link=True, active=True, className="nav-link"), className="nav-item"),
-                ], align="center", style={"padding":"0rem"}), expand="xl", color="light", sticky="top", className="navbar navbar-light bg-light position-sticky")
+                ], align="center", style={"padding":"0rem"}), expand="xl", color="light", sticky="top", className="navbar navbar-light bg-light position-sticky", style={"z-index":"1050"})
     else:
         return dbc.NavbarSimple(color="light", sticky="top", className="navbar navbar-light bg-light position-sticky")
 
@@ -132,8 +133,10 @@ def coloring_dropdown(prefix):
         {"label":"Components", "value":"components"},
         {"label":"Spectral Clustering", "value":"spectral"},
         {"label":"Spectral Clustering (Major Component)", "value":"spectral_maj"},
-        {"label":"Girvan-Newman Clustering", "value":"girvan_newman"},
-        {"label":"Girvan-Newman Clustering (Major Component)", "value":"girvan_newman_maj"},
+        {"label":"Girvan-Newman Communities", "value":"girvan_newman"},
+        {"label":"Girvan-Newman Communities (Major Component)", "value":"girvan_newman_maj"},
+        {"label":"Greedy Modularity Communities", "value":"greedy_modularity"},
+        {"label":"Greedy Modularity Communities (Major Component)", "value":"greedy_modularity_maj"},
         {"label":"Custom (It might take a few seconds to update...)", "value":"custom"},
     ]
     return html.Div([
@@ -145,7 +148,7 @@ def highlighting(prefix, nodes):
     return dcc.Dropdown(id=prefix+"_highlighter_dropdown",options=[{"label":data["name"],"value":data["ID"]} for data in [node["data"] for node in nodes]], placeholder="Highlight a node", multi=True, className="DropdownMenu")
 
 def graph(prefix,title,nodes,edges):#es. title="Drug Target"
-    cyto.load_extra_layouts()
+    # cyto.load_extra_layouts()
     return dbc.Container([
                 html.H4(title,id=prefix+"_name_graph", className="card-header"),
                 dbc.Row([
@@ -164,6 +167,7 @@ def graph(prefix,title,nodes,edges):#es. title="Drug Target"
                     boxSelectionEnabled=True,
                     minZoom=0.05,
                     maxZoom=10,
+                    responsive=True,
                     className="card border-secondary mb-3")
             ], fluid=True, id=prefix+"_graph_container")
 
@@ -233,7 +237,8 @@ def custom_clustering(prefix):
                         html.Label("Method:"),
                         dcc.Dropdown(id=prefix+"_custom_clustering_method", options=[
                             {"label":"Spectral Clustering","value":"spectral"},
-                            {"label":"Girvan Newman","value":"girvan_newman"}
+                            {"label":"Girvan Newman","value":"girvan_newman"},
+                            {"label":"Greedy Modularity","value":"greedy_modularity"}
                         ], value="spectral", clearable=False, searchable=False, optionHeight=25,className="DropdownMenu"),
                         html.Label("Number of clusters:"),
                         dcc.Dropdown(id=prefix+"_custom_clustering_number_clusters", clearable=False, optionHeight=25,className="DropdownMenu"),
