@@ -28,8 +28,7 @@ from callbacks import *
 
 prefix="contacts"
 
-layout=dbc.Container([
-    dbc.Row([
+layout=dbc.Row([
         dbc.Col(sidebar(prefix), width=1, className="bg-light"),
         dbc.Col([
             headbar(prefix),
@@ -78,10 +77,9 @@ layout=dbc.Container([
                 ]),
             html.Br()
             ]),
-        ]),
+        ], className="h-100"),
         footer()
-    ], no_gutters=True)
-], fluid=True)
+    ], no_gutters=True, style={"height":"100vh"})
 
 # if __name__=="__main__":
 #     app.run_server(debug=False)

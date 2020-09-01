@@ -26,7 +26,7 @@ from callbacks import *
 # app=dash.Dash(__name__, external_stylesheets=[dbc.themes.FLATLY])
 # app.title="COVID-19 Networker"
 
-prefix="help"
+prefix="about"
 
 layout=dbc.Row([
         dbc.Col(sidebar(prefix), width=1, className="bg-light"),
@@ -36,18 +36,26 @@ layout=dbc.Row([
             # html.H1("COVID-19 Networker", style={"text-align":"center"}),
             html.Br(),
             dbc.Col([
-                html.Br(),
                 html.Center([
-                    html.Img(src="https://drive.google.com/uc?export=view&id=1Wz-BWDC-hbsm1GMoGlHcE2UpvW6xnEwy", style={"width":"100%"})
+                    html.Div(style={"height":"10vh"}),
+                    html.H2("404 Page Not Found"),
+                    html.Br(),
+                    html.H3("Sorry, we can't find that page ..."),
+                    html.Br(),
+                    html.H5("Please check the URL and try again ..."),
+                    html.Div(style={"height":"25vh"})
                 ]),
-                html.Br(),
-                html.Br(),
-                html.P([html.Font("If there still is something unclear feel free to "),html.A("reach us out", href="/contacts")]),
-                html.Br(),
-            ]),
+                dbc.Row([
+                    dbc.Col(width=1),
+                    dbc.Col([
+                        html.P([html.Font("Try to go back to our "),html.A("homepage", href="/home")]),
+                        html.P([html.Font("If the problem persists feel free to "),html.A("reach us out", href="mailto:luca.menestrina2@unibo.it")])
+                    ])
+                ])
+            ])
         ], className="h-100"),
         footer()
-    ], no_gutters=True)
+    ], no_gutters=True, style={"height":"100vh"})
 
 # if __name__=="__main__":
 #     app.run_server(debug=False)

@@ -288,7 +288,6 @@ def plots(prefix, graph):
 def footer():
     return dbc.Container([
                 html.Br(),
-                html.Br(),
                 html.P([html.A(html.Small("Write us"), href="mailto:luca.menestrina2@unibo.it"),html.Small(" if you have questions and suggestions"), html.Br(), html.Small("App developed by Luca Menestrina, Department of Pharmacy and Biotechnology, University of Bologna, Italy")]),
                 # dbc.Row(html.Small("Copyright \u00A9 2020 Luca Menestrina All rights reserved")) # controllo le licenze di github
             ], fluid=True, className="bg-light")

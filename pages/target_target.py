@@ -36,8 +36,7 @@ nodes=[{"data":{key:value for key,value in attributes.items()}} for node,attribu
 edges=[{"data":{"source":source,"target":target}} for source,target in G.edges]
 
 
-layout=dbc.Container([
-    dbc.Row([
+layout=dbc.Row([
         dbc.Col(sidebar(prefix), width=1, className="bg-light"),
         dbc.Col([
         headbar(prefix),
@@ -47,9 +46,9 @@ layout=dbc.Container([
         dbc.Row([
             dbc.Col(graph(prefix, title=graph_title, nodes=nodes, edges=edges), width=9),
             dbc.Col(nodes_info(prefix), width=3)
-        ], justify="left"),
+        ],no_gutters=True),
         html.Br(),
-        dbc.Row(dbc.Col(id=prefix+"_selected_table", width=10), justify="center"),
+        dbc.Row(dbc.Col(id=prefix+"_selected_table", width=10)),
         html.Br(),
         graph_properties(prefix),
         html.Br(),
@@ -59,7 +58,6 @@ layout=dbc.Container([
         ]),
         footer()
     ], no_gutters=True)
-], fluid=True)
 
 
 

@@ -28,8 +28,7 @@ from callbacks import *
 
 prefix="about"
 
-layout=dbc.Container([
-    dbc.Row([
+layout=dbc.Row([
         dbc.Col(sidebar(prefix), width=1, className="bg-light"),
         dbc.Col([
             headbar(prefix),
@@ -58,11 +57,9 @@ layout=dbc.Container([
             html.H4("Terms of Use"),
             html.P("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
             ])
-        ]),
+        ], className="h-100"),
         footer()
-
-    ], no_gutters=True)
-], fluid=True)
+    ], no_gutters=True, style={"height":"100vh"})
 
 # if __name__=="__main__":
 #     app.run_server(debug=False)

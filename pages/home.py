@@ -28,8 +28,7 @@ from callbacks import *
 #SARS-CoV-2_Networker
 prefix="home"
 
-layout=dbc.Container([
-    dbc.Row([
+layout=dbc.Row([
         dbc.Col(sidebar(prefix), width=1, className="bg-light"),
         dbc.Col([
             headbar(prefix),
@@ -68,15 +67,14 @@ layout=dbc.Container([
                         ], href="/target_target", className="card border-primary mb-3"),
                     ])
                 ]),
-                html.Div(style={"height":"100px"}),
+                html.Div(style={"height":"10vh"}),
                 html.P([html.Font("For help browising the app check the "),html.A("Help", href="/help"),html.Font(" section")]),
                 html.P([html.Font("Otherwise feel free to "),html.A("reach us out", href="/contacts")]),
                 html.P([html.Font("Info and credits about the project can be found in the "),html.A("About", href="/about"),html.Font(" section")])
             ]),
-        ]),
+        ], className="h-100"),
         footer()
-    ], no_gutters=True)
-], fluid=True)
+    ], no_gutters=True, style={"height":"100vh"})
 
 # if __name__=="__main__":
 #     app.run_server(debug=False)
