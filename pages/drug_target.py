@@ -45,9 +45,9 @@ layout=dbc.Row([
         dbc.Row([
             dbc.Col(graph(prefix, title=graph_title, nodes=nodes, edges=edges), width=9),
             dbc.Col(nodes_info(prefix), width=3)
-        ], no_gutters=True),
+        ], no_gutters=True, justify="center"),
         html.Br(),
-        dbc.Row(dbc.Col(id=prefix+"_selected_table", width=10)),
+        dbc.Row(dbc.Col(id=prefix+"_selected_table", width=10), no_gutters=True, justify="center"),
         html.Br(),
         graph_properties(prefix),
         html.Br(),

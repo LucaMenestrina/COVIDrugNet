@@ -59,16 +59,16 @@ def displayHoverNodeData_callback(prefix,G):
             # if prefix == "tt":
             #     data={key:value for key,value in G.nodes(data=True)["Angiotensin-converting enzyme 2"].items()}
         elif data["kind"]=="Drug":
-            attributes=["ID","SMILES","ATC_Code1","ATC_Code5","Targets","Enzymes","Carriers","Transporters","Drug_Interactions"]
+            attributes=["ID","SMILES","ATC Code1","ATC Code5","Targets","Enzymes","Carriers","Transporters","Drug Interactions"]
             link_drugbank="https://www.drugbank.ca/drugs/"+data["ID"]
         else:
-            attributes=["ID","Gene","PDBID","Organism","Cellular_Location","String_Interaction_Partners","Drugs"]#,"Diseases"
+            attributes=["ID","Gene","PDBID","Organism","Cellular Location","String Interaction Partners","Drugs"]#,"Diseases"
             link_drugbank=data["drugbank_url"]
 
         attributes_list=[]
         for attribute in attributes:
-            if data[attribute] != "":
-                if attribute in ["ATC_Code1","ATC_Code5"]:
+            if data[attribute] != "" and data[attribute] != []:
+                if attribute in ["ATC Code1","ATC Code5","Targets","Enzymes","Carriers","Transporters","Drug Interactions","String Interaction Partners","Drugs"]:
                     attributes_list.append(html.Li([html.Strong(attribute+": "),", ".join(data[attribute])], className="list-group-item"))
                 elif attribute == "ID":
                     attributes_list.append(html.Li([html.Strong(attribute+": "),html.A(data[attribute], href=link_drugbank, target="_blank")], className="list-group-item"))
@@ -96,9 +96,9 @@ def selectedTable_callback(prefix):
                 results=[]
                 drugs_data=[d for d in data if d["kind"]=="Drug"]
                 if len(drugs_data)>0:
-                    attributes=["name","ID","ATC_Code1","ATC_Code5","SMILES","Targets","Enzymes","Carriers","Transporters","Drug_Interactions"]
-                    table_header=[html.Thead(html.Tr([html.Th(attribute) for attribute in ["Name","ID","ATC_Code Level 1", "ATC Identifier", "SMILES","Targets","Enzymes","Carriers","Transporters","Drug Interactions"]]))]#,"ATC_Code1","ATC_Code5"
-                    table_body=[html.Tbody([html.Tr([html.Td(d[attribute]) if attribute not in ["ATC_Code1","ATC_Code5"] else html.Td(", ".join(d[attribute])) for attribute in attributes]) for d in drugs_data])]
+                    attributes=["name","ID","ATC Code1","ATC Code5","SMILES","Targets","Enzymes","Carriers","Transporters","Drug Interactions"]
+                    table_header=[html.Thead(html.Tr([html.Th(attribute) for attribute in ["Name","ID","ATC Code Level 1", "ATC Identifier", "SMILES","Targets","Enzymes","Carriers","Transporters","Drug Interactions"]]))]
+                    table_body=[html.Tbody([html.Tr([html.Td(d[attribute]) if attribute in ["name","ID","SMILES"] else html.Td(", ".join(d[attribute])) for attribute in attributes]) for d in drugs_data])]
                     drugs_table=dbc.Table(table_header+table_body, className="table table-hover", bordered=True)
                     results+=[
                         html.Br(),
@@ -106,9 +106,9 @@ def selectedTable_callback(prefix):
                         drugs_table]
                 targets_data=[d for d in data if d["kind"]=="Target"]
                 if len(targets_data)>0:
-                    attributes=["name","ID","Gene","PDBID","Organism","Cellular_Location","String_Interaction_Partners","Drugs","Diseases"]
-                    table_header=[html.Thead(html.Tr([html.Th(attribute) for attribute in ["Name","ID","Gene","PDBID","Organism","Cellular_Location","String Interaction Partners","Drugs","Diseases"]]))]#,"ATC_Code1","ATC_Code5"
-                    table_body=[html.Tbody([html.Tr([html.Td(d[attribute]) for attribute in attributes]) for d in targets_data])]
+                    attributes=["name","ID","Gene","PDBID","Organism","Cellular Location","String Interaction Partners","Drugs","Diseases"]
+                    table_header=[html.Thead(html.Tr([html.Th(attribute) for attribute in ["Name","ID","Gene","PDBID","Organism","Cellular Location","String Interaction Partners","Drugs","Diseases"]]))]
+                    table_body=[html.Tbody([html.Tr([html.Td(d[attribute]) if attribute not in ["String Interaction Partners","Drugs","Diseases"] else html.Td(", ".join(d[attribute])) for attribute in attributes]) for d in targets_data])]
                     targets_table=dbc.Table(table_header+table_body, className="table table-hover", bordered=True)
                     results+=[
                         html.Br(),
@@ -298,11 +298,11 @@ def highlighter_callback(prefix,G,nodes, girvan_newman,maj,girvan_newman_maj):
                 for node in nodes:
                     stylesheet={"selector":"[ID = '"+node["data"]["ID"]+"']"}
                     style={"pie-size":"100%", "border-color":"#303633","border-width":2}
-                    for atc in node["data"]["ATC_Code1"]:
-                        style.update({"pie-"+atc2num[atc]+"-background-color":cmap[atc],"pie-"+atc2num[atc]+"-background-size":100/len(node["data"]["ATC_Code1"])})
+                    for atc in node["data"]["ATC Code1"]:
+                        style.update({"pie-"+atc2num[atc]+"-background-color":cmap[atc],"pie-"+atc2num[atc]+"-background-size":100/len(node["data"]["ATC Code1"])})
                     stylesheet.update({"style":style})
                     stylesheets.append(stylesheet)
-                ATC_dict=dict(nx.get_node_attributes(G,"ATC_Code1"))
+                ATC_dict=dict(nx.get_node_attributes(G,"ATC Code1"))
                 ATC_count={}
                 tot_codes=0
                 for drug,atcs in ATC_dict.items():
@@ -314,7 +314,7 @@ def highlighter_callback(prefix,G,nodes, girvan_newman,maj,girvan_newman_maj):
                         tot_codes+=1
                 stylesheet=stylesheets
 
-                pie_data=pd.DataFrame({"ATC_Code":list(ATC_count.keys()),"Value":list(ATC_count.values()), "Color":[cmap[code] for code in ATC_count.keys()], "Label":[long_atc[code] for code in ATC_count.keys()]}).sort_values(by="Value", ascending=False)
+                pie_data=pd.DataFrame({"ATC Code":list(ATC_count.keys()),"Value":list(ATC_count.values()), "Color":[cmap[code] for code in ATC_count.keys()], "Label":[long_atc[code] for code in ATC_count.keys()]}).sort_values(by="Value", ascending=False)
                 pie=px.pie(pie_data,values="Value",names="Label", title="Drug-Target's Node Distribution",color_discrete_sequence=pie_data["Color"])
                 table_body=[]
                 for code in cmap:
@@ -330,7 +330,7 @@ def highlighter_callback(prefix,G,nodes, girvan_newman,maj,girvan_newman_maj):
                     style={"background-color":cmap[node["data"]["Cellular_Location"]], "border-color":"#303633","border-width":2}
                     stylesheet.update({"style":style})
                     stylesheets.append(stylesheet)
-                Location_dict=dict(nx.get_node_attributes(G,"Cellular_Location"))
+                Location_dict=dict(nx.get_node_attributes(G,"Cellular Location"))
                 Location_count={location:list(Location_dict.values()).count(location) for location in all_locations}
                 stylesheet=stylesheets
 
@@ -514,6 +514,8 @@ def download_graph_file_callback(prefix,file_prefix):
                 return download, href
             else:
                 return None,None
+        else:
+            return None,None
     return download_graph_file
 
 # #### da controllare perchè non funziona

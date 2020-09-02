@@ -102,11 +102,13 @@ def save_graph(prefix):
                     html.P("Format"),
                     dcc.Dropdown(id=prefix+"_save_graph", options=[
                         {"label":"Download as Adjacency List", "value":"adjlist"},
-                        {"label":"Download as Multiline Adjacency List", "value":"multiline_adjlist"},
                         {"label":"Download as Pickle", "value":"pickle"},
-                        {"label":"Download as Edges List", "value":"edgelist"},
-                        {"label":"Download as GEXF", "value":"gexf"},
+                        {"label":"Download as Cytoscape JSON", "value":"cyjs"},
                         {"label":"Download as GRAPHML", "value":"graphml"},
+                        {"label":"Download as GEXF", "value":"gexf"},
+                        {"label":"Download as Edges List", "value":"edgelist"},
+                        {"label":"Download as Multiline Adjacency List", "value":"multiline_adjlist"},
+                        {"label":"Download as TSV", "value":"tsv"},
                         {"label":"Download as SVG", "value":"svg"},
                         {"label":"Download as PNG", "value":"png"},
                         {"label":"Download as JPEG", "value":"jpg"}
@@ -257,8 +259,11 @@ def common_data_generator(prefix,graph):
     else:
         girvan_newman={len(comm):comm for comm in tqdm(nx.algorithms.community.girvan_newman(graph))}
         girvan_newman_maj={len(comm):comm for comm in tqdm(nx.algorithms.community.girvan_newman(maj))}
-        with open("data/gn_communities/"+prefix+"_communities.pickle","wb") as bkp:
+        name="data/gn_communities/"+prefix+"_communities.pickle"
+        with open(name,"wb") as bkp:
             pickle.dump([girvan_newman,girvan_newman_maj],bkp)
+        if os.path.isfile(name+".bkp"):
+                os.remove(name+".bkp")
     return graph_properties_df,girvan_newman,maj,girvan_newman_maj
 
 def get_frequency(list):

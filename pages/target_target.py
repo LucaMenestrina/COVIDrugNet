@@ -32,9 +32,8 @@ file_prefix="target_target"
 G=nx.read_gpickle("data/graphs/target_target.gpickle")
 nx.set_node_attributes(G,nx.get_node_attributes(G,"name"),"id")
 
-nodes=[{"data":{key:value for key,value in attributes.items()}} for node,attributes in dict(G.nodes(data=True)).items()]#, "position":{"x":attributes["pos"][0]*1000,"y":attributes["pos"][1]*1000}
+nodes=[{"data":{key:value for key,value in attributes.items()}} for node,attributes in dict(G.nodes(data=True)).items()]
 edges=[{"data":{"source":source,"target":target}} for source,target in G.edges]
-
 
 layout=dbc.Row([
         dbc.Col(sidebar(prefix), width=1, className="bg-light"),
@@ -46,9 +45,9 @@ layout=dbc.Row([
         dbc.Row([
             dbc.Col(graph(prefix, title=graph_title, nodes=nodes, edges=edges), width=9),
             dbc.Col(nodes_info(prefix), width=3)
-        ],no_gutters=True),
+        ], no_gutters=True, justify="center"),
         html.Br(),
-        dbc.Row(dbc.Col(id=prefix+"_selected_table", width=10)),
+        dbc.Row(dbc.Col(id=prefix+"_selected_table", width=10), no_gutters=True, justify="center"),
         html.Br(),
         graph_properties(prefix),
         html.Br(),
