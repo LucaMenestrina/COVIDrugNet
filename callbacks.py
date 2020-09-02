@@ -152,7 +152,7 @@ def propertiesTable_callback(prefix,graph_properties_df):
         df=graph_properties_df.sort_values(**sorting)
         href="data:text/csv;charset=utf-8,"+quote(df.to_csv(sep="\t", index=False, encoding="utf-8"))
         if rows == "all":
-            return dbc.Table.from_dataframe(df, bordered=True, className="table table-hover", id=prefix+"_graph_properties_table")
+            return dbc.Table.from_dataframe(df, bordered=True, className="table table-hover", id=prefix+"_graph_properties_table"), href
         else:
             df=df.head(rows)
             attributes=df.columns
@@ -551,7 +551,7 @@ def download_graph_file_callback(prefix,file_prefix):
 #         return div
 #     return download_graph
 
-def get_range_clusters_callback(prefix,G,maj):
+def get_range_clusters_callback(prefix,G,maj,girvan_newman,girvan_newman_maj):
     @app.callback(
         [
             Output(prefix+"_custom_clustering_number_clusters","options"),
@@ -567,23 +567,27 @@ def get_range_clusters_callback(prefix,G,maj):
         if component=="maj":
             # graph=G.subgraph(max(list(nx.connected_components(G)), key=len))
             graph=maj.copy()
+            girvan_newman_keys=list(girvan_newman_maj.keys())
         else:
             graph=G.copy()
+            girvan_newman_keys=list(girvan_newman.keys())
+        if method == "spectral":
+            L=nx.normalized_laplacian_matrix(graph).toarray()
+            evals,evects=np.linalg.eigh(L)
+            n=[n for n,dif in enumerate(np.diff(evals)) if dif > 1.5*np.average([d for d in np.diff([v for v in evals if v<1]) if d>0.00001])][0]+1
+            options=[{"label":str(n),"value":n} for n in range(2,len(evals)-1)]
+            disabled=False
         if method == "greedy_modularity":
             n=len(nx.algorithms.community.greedy_modularity_communities(graph))
             options=[{"label":str(n),"value":n}]
-            return options,n,True
-        L=nx.normalized_laplacian_matrix(graph).toarray()
-        evals,evects=np.linalg.eigh(L)
-        n=[n for n,dif in enumerate(np.diff(evals)) if dif > 1.5*np.average([d for d in np.diff([v for v in evals if v<1]) if d>0.00001])][0]+1
-        if method == "spectral":
-            min_n=2
-        elif nx.is_connected(graph):
-            min_n=2
-        else:
-            min_n=nx.number_connected_components(graph)
-        options=[{"label":str(n),"value":n} for n in range(min_n,len(evals)-1)]
-        return options,n,False
+            disabled=True
+        if method == "girvan_newman":
+            L=nx.normalized_laplacian_matrix(graph).toarray()
+            evals,evects=np.linalg.eigh(L)
+            n=[n for n,dif in enumerate(np.diff(evals)) if dif > 1.5*np.average([d for d in np.diff([v for v in evals if v<1]) if d>0.00001])][0]+1
+            options=[{"label":str(n),"value":n} for n in girvan_newman_keys]
+            disabled=False
+        return options,n,disabled
     return get_range_clusters
 
 def custom_clustering_section_callback(prefix,G,girvan_newman,maj,girvan_newman_maj):
@@ -629,10 +633,6 @@ def custom_clustering_section_callback(prefix,G,girvan_newman,maj,girvan_newman_
             table=dbc.Table(table_header+[html.Tbody(table_body)], className="table table-hover", bordered=True, id=prefix+"_custom_clusters_table")
             href="data:text/csv;charset=utf-8,"+quote(pd.DataFrame({"Cluster":list(clusters_data.keys()),"Nodes":list(clusters_data.values())}).to_csv(sep="\t", index=False, encoding="utf-8"))
         elif method == "girvan_newman":
-            # girvan_newman=nx.algorithms.community.girvan_newman(graph)
-            # communities = []
-            # while len(communities) != n_clusters:
-            #     communities=next(girvan_newman)
             communities=girvan_newman_custom[n_clusters]
             table_header=[html.Thead(html.Tr([html.Th("Community"),html.Th("Nodes")]))]
             table_body=[]
@@ -673,6 +673,6 @@ def build_callbacks(prefix,G,nodes,graph_properties_df,girvan_newman,maj,girvan_
     toggle_legend_callback(prefix)
     get_img_callback(prefix)
     download_graph_file_callback(prefix,file_prefix)
-    get_range_clusters_callback(prefix,G,maj)
+    get_range_clusters_callback(prefix,G,maj,girvan_newman,girvan_newman_maj)
     custom_clustering_section_callback(prefix,G,girvan_newman,maj,girvan_newman_maj)
     toggle_view_clusters_callback(prefix)

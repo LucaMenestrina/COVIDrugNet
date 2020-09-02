@@ -70,7 +70,7 @@ def nodes_info(prefix):
                     html.Ul(id=prefix+"_attributes-list-card",className="list-group list-group-flush")
                 ],className="card border-primary mb-3", id=prefix+"_card"),
                 dbc.Toast(
-                    html.P("The node's info are locked on the selected node, to show those relative to the hovered nodes unselect it"),
+                    html.P("The node's info are locked on the selected node, to show those relative to the hovered ones unselect it"),
                     header="One node selected",
                     id=prefix+"_selected_node_warning",
                     dismissable=True,
@@ -197,7 +197,7 @@ def graph_properties(prefix):
                     dbc.Row(html.H3("Graph Properties")),
                     dbc.Row([
                         dbc.Col(width=3), # just to move everything to the right (justify doesn't work)
-                        dbc.Col(html.P("Sort by: "),align="center"),
+                        dbc.Col(html.Font("Sort by: ", style={"white-space":"nowrap"}),align="end"),
                         dbc.Col([
                             dcc.Dropdown(id=prefix+"_properties_table_sorting",  options=[
                                 {"label":"Degree: Low to High","value":"degree,1"},
@@ -208,7 +208,7 @@ def graph_properties(prefix):
                                 {"label":"Betweenness Centrality: High to Low","value":"Betweenness_Centrality,0"}
                             ], value="degree,0", clearable=False, searchable=False, optionHeight=25,className="DropdownMenu")
                         ],align="center", width=4),
-                        dbc.Col(html.P("Rows to show: "),align="center"),
+                        dbc.Col(html.Font("Rows to show: ", style={"white-space":"nowrap"}),align="end"),
                         dbc.Col([
                             dcc.Dropdown(id=prefix+"_properties_table_rows",options=[
                                 {"label":"10","value":10},
@@ -219,7 +219,7 @@ def graph_properties(prefix):
                             ], value=10, className="DropdownMenu", clearable=False, searchable=False, optionHeight=25)
                         ],align="center", width=1),
                         dbc.Col(html.A(dbc.Button("Download", className="ml-auto"), target="_blank", download="graph_properties.tsv", id=prefix+"_download_graph_properties"), align="center")
-                    ], justify="end"),
+                    ], justify="end", align="center"),
                     dbc.Container(id=prefix+"_graph_properties_table_container", fluid=True)
                 ])
             ])
@@ -235,7 +235,6 @@ def view_custom_clusters(prefix):
                     ]),
                     dbc.ModalFooter([
                         html.A(dbc.Button("Download", className="ml-auto"), target="_blank", download="custom_clusters.tsv", id=prefix+"_download_custom_clusters_modal"),
-                        html.A("file",href="https://drive.google.com/drive/u/0/folders/1lrxTNWDsjKPTGa4FW2QeV0yHdna6eux4"),
                         dbc.Button("Close", id=prefix+"_view_clusters_close", className="ml-auto")
                     ]),
                 ],id=prefix+"_custom_clusters_modal", size="xl"),
