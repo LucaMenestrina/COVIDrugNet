@@ -44,13 +44,20 @@ def displayHoverNodeData_callback(prefix,G):
         [
             Output(prefix+"_title_card","children"),
             Output(prefix+"_img_card","src"),
-            Output(prefix+"_attributes-list-card","children")
+            Output(prefix+"_attributes-list-card","children"),
+            Output(prefix+"_selected_node_warning","is_open")
         ],
-        [Input(prefix+"_graph", "mouseoverNodeData")]
+        [
+            Input(prefix+"_graph", "mouseoverNodeData"),
+            Input(prefix+"_graph", "selectedNodeData")
+        ],
+        [
+            State(prefix+"_selected_node_warning","is_open")
+        ]
     )
-    def displayHoverNodeData(data):
+    def displayHoverNodeData(data,selected_data,warning):
         if not data:
-            data={"id":"","structure":"","Properties":"Hover over a node to show its properties"}
+            data={"id":"","structure":"","Properties":"Hover over a node (or select it) to show its properties"}
             attributes=["id","Properties"]
             link_drugbank=""
             # if prefix == "dt" or prefix == "dd":
@@ -58,12 +65,17 @@ def displayHoverNodeData_callback(prefix,G):
             #     print(data)
             # if prefix == "tt":
             #     data={key:value for key,value in G.nodes(data=True)["Angiotensin-converting enzyme 2"].items()}
-        elif data["kind"]=="Drug":
-            attributes=["ID","SMILES","ATC Code1","ATC Code5","Targets","Enzymes","Carriers","Transporters","Drug Interactions"]
-            link_drugbank="https://www.drugbank.ca/drugs/"+data["ID"]
         else:
-            attributes=["ID","Gene","PDBID","Organism","Cellular Location","String Interaction Partners","Drugs"]#,"Diseases"
-            link_drugbank=data["drugbank_url"]
+            if selected_data and len(selected_data)==1:
+                data=selected_data[0]
+                if not warning:
+                    warning = not warning
+            if data["kind"]=="Drug":
+                attributes=["ID","SMILES","ATC Code1","ATC Code5","Targets","Enzymes","Carriers","Transporters","Drug Interactions"]
+                link_drugbank="https://www.drugbank.ca/drugs/"+data["ID"]
+            else:
+                attributes=["ID","Gene","PDBID","Organism","Cellular Location","String Interaction Partners","Drugs"]#,"Diseases"
+                link_drugbank=data["drugbank_url"]
 
         attributes_list=[]
         for attribute in attributes:
@@ -78,7 +90,8 @@ def displayHoverNodeData_callback(prefix,G):
                     attributes_list.append(html.Li([html.Strong(attribute+": "),html.A(data[attribute], href="https://www.uniprot.org/uniprot/"+data["ID"], target="_blank")], className="list-group-item"))
                 else:
                     attributes_list.append(html.Li([html.Strong(attribute+": "),data[attribute]], className="list-group-item"))
-        return data["id"],data["structure"],attributes_list
+        print(warning)
+        return data["id"],data["structure"],attributes_list,warning
     return displayHoverNodeData
 
 def selectedTable_callback(prefix):
@@ -265,7 +278,7 @@ def highlighter_callback(prefix,G,nodes, girvan_newman,maj,girvan_newman_maj):
         [
             Output(prefix+"_graph","stylesheet"),
             Output(prefix+"_piechart","figure"),
-            Output(prefix+"_legend_popover_body","children")
+            Output(prefix+"_legend_toast","children")
         ],
         [
             Input(prefix+"_highlighter_dropdown", "value"),
@@ -277,7 +290,7 @@ def highlighter_callback(prefix,G,nodes, girvan_newman,maj,girvan_newman_maj):
         [
             State(prefix+"_graph","stylesheet"),
             State(prefix+"_piechart","figure"),
-            State(prefix+"_legend_popover_body","children")
+            State(prefix+"_legend_toast","children")
         ]
     )
     def highlighter(highlighted,coloring,custom_method,custom_component,custom_n, current_stylesheet, current_pie, current_legend_body):
@@ -473,15 +486,13 @@ def toggle_help_callback(prefix):
 
 def toggle_legend_callback(prefix):
     @app.callback(
-        Output(prefix+"_legend_popover", "is_open"),
+        Output(prefix+"_legend_toast", "is_open"),
         [Input(prefix+"_legend_open", "n_clicks")],
-        [State(prefix+"_legend_popover", "is_open")],
     )
-    def toggle_legend(n, is_open):
+    def open_legend(n):
         if n:
-            return not is_open
-        return is_open
-    return toggle_legend
+            return True
+    return open_legend
 
 def get_img_callback(prefix):
     @app.callback(

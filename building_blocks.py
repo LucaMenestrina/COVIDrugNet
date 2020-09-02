@@ -62,12 +62,24 @@ def sidebar(prefix):
         return dbc.NavbarSimple(color="light", sticky="top", className="navbar navbar-light bg-light position-sticky")
 
 def nodes_info(prefix):
-    return html.Div([
-                html.H4("Node Info",id=prefix+"_name_card", className="card-header"),
-                html.Div(html.H5(id=prefix+"_title_card",className="card-title"),className="card-body"),
-                html.Img(id=prefix+"_img_card",src="", height="auto", width="100%", alt=""),#Structure Image Not Available
-                html.Ul(id=prefix+"_attributes-list-card",className="list-group list-group-flush")
-            ],className="card border-primary mb-3", id=prefix+"_card")
+    return dbc.Container([
+                html.Div([
+                    html.H4("Node Info",id=prefix+"_name_card", className="card-header"),
+                    html.Div(html.H5(id=prefix+"_title_card",className="card-title"),className="card-body"),
+                    html.Img(id=prefix+"_img_card",src="", height="auto", width="100%", alt=""),#Structure Image Not Available
+                    html.Ul(id=prefix+"_attributes-list-card",className="list-group list-group-flush")
+                ],className="card border-primary mb-3", id=prefix+"_card"),
+                dbc.Toast(
+                    html.P("The node's info are locked on the selected node, to show those relative to the hovered nodes unselect it"),
+                    header="One node selected",
+                    id=prefix+"_selected_node_warning",
+                    dismissable=True,
+                    is_open=False,
+                    duration=7500,
+                    icon="warning",
+                    style={"position":"fixed","top":"20vh","left":"70vw","width":"20vw"}
+                )
+            ])
 
 def graph_help(prefix):
     return html.Div([
@@ -87,10 +99,13 @@ def graph_help(prefix):
 def legend(prefix):
     return html.Div([
             dbc.Button("Legend", id=prefix+"_legend_open", block=True),
-            dbc.Popover([
-                dbc.PopoverHeader("Graph's Legend"),
-                dbc.PopoverBody(id=prefix+"_legend_popover_body")
-            ], id=prefix+"_legend_popover", target=prefix+"_legend_open", placement="bottom")
+            dbc.Toast(
+                header="Graph's Legend",
+                id=prefix+"_legend_toast",
+                dismissable=True,
+                style={"position":"absolute","top":"-4vh","left":"-12vw", "width":"200%","z-index":"1100"},
+                is_open=False
+            )
         ])
 
 def save_graph(prefix):
