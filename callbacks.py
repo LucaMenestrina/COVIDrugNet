@@ -321,13 +321,13 @@ def highlighter_callback(prefix,G,nodes, girvan_newman,maj,girvan_newman_maj):
                     table_body.append(html.Tr([html.Td("",style={"background-color":cmap[code]}),html.Td(long_atc[code])]))
                 legend_body=dbc.Table(html.Tbody(table_body), borderless=True, size="sm")
             if coloring == "location":
-                all_locations=list(set([node["data"]["Cellular_Location"] for node in nodes]))
+                all_locations=list(set([node["data"]["Cellular Location"] for node in nodes]))
                 cmap=dict(zip(all_locations,[rgb2hex(plt.cm.Spectral(n)) for n in np.arange(0,1.1,1/len(all_locations))]))
                 cmap.update({"Not Available":"#708090"})
                 stylesheets=[]
                 for node in nodes:
                     stylesheet={"selector":"[ID = '"+node["data"]["ID"]+"']"}
-                    style={"background-color":cmap[node["data"]["Cellular_Location"]], "border-color":"#303633","border-width":2}
+                    style={"background-color":cmap[node["data"]["Cellular Location"]], "border-color":"#303633","border-width":2}
                     stylesheet.update({"style":style})
                     stylesheets.append(stylesheet)
                 Location_dict=dict(nx.get_node_attributes(G,"Cellular Location"))

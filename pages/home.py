@@ -67,7 +67,7 @@ layout=dbc.Row([
                         ], href="/target_target", className="card border-primary mb-3"),
                     ])
                 ]),
-                html.Div(style={"height":"10vh"}),
+                html.Br(),
                 html.P([html.Font("For help browising the app check the "),html.A("Help", href="/help"),html.Font(" section")]),
                 html.P([html.Font("Otherwise feel free to "),html.A("reach us out", href="/contacts")]),
                 html.P([html.Font("Info and credits about the project can be found in the "),html.A("About", href="/about"),html.Font(" section")])
