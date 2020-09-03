@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <gexf version="1.2" xmlns="http://www.gexf.net/1.2draft" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.2draft http://www.gexf.net/1.2draft/gexf.xsd">
-  <meta lastmodifieddate="2020-09-02">
+  <meta lastmodifieddate="2020-09-03">
     <creator>NetworkX 2.4</creator>
   </meta>
   <graph defaultedgetype="undirected" mode="static" name="">
@@ -3890,169 +3890,169 @@
       </node>
     </nodes>
     <edges>
-      <edge id="0" source="Camphor" target="Resiniferatoxin" weight="1" />
-      <edge id="1" source="Camphor" target="Icosapent" weight="1" />
-      <edge id="2" source="Camphor" target="Acetaminophen" weight="1" />
-      <edge id="3" source="Camphor" target="alpha-Linolenic acid" weight="1" />
-      <edge id="4" source="Ginseng" target="Ibuprofen" weight="1" />
-      <edge id="5" source="Ginseng" target="Leflunomide" weight="1" />
-      <edge id="6" source="Ginseng" target="Omeprazole" weight="1" />
-      <edge id="7" source="Ginseng" target="Icosapent" weight="1" />
-      <edge id="8" source="Ginseng" target="Lenalidomide" weight="1" />
-      <edge id="9" source="Ginseng" target="Quercetin" weight="1" />
-      <edge id="10" source="Ginseng" target="Indomethacin" weight="1" />
-      <edge id="11" source="Ginseng" target="Resveratrol" weight="2" />
-      <edge id="12" source="Ginseng" target="Celecoxib" weight="1" />
-      <edge id="13" source="Ginseng" target="Naproxen" weight="1" />
-      <edge id="14" source="Ginseng" target="Acetaminophen" weight="1" />
-      <edge id="15" source="Ginseng" target="Atorvastatin" weight="1" />
-      <edge id="16" source="Emtricitabine" target="Tenofovir disoproxil" weight="1" />
-      <edge id="17" source="Emtricitabine" target="Tenofovir" weight="1" />
-      <edge id="18" source="Emtricitabine" target="Tenofovir alafenamide" weight="1" />
+      <edge id="0" source="Camphor" target="Acetaminophen" weight="1" />
+      <edge id="1" source="Camphor" target="alpha-Linolenic acid" weight="1" />
+      <edge id="2" source="Camphor" target="Icosapent" weight="1" />
+      <edge id="3" source="Camphor" target="Resiniferatoxin" weight="1" />
+      <edge id="4" source="Ginseng" target="Acetaminophen" weight="1" />
+      <edge id="5" source="Ginseng" target="Resveratrol" weight="2" />
+      <edge id="6" source="Ginseng" target="Celecoxib" weight="1" />
+      <edge id="7" source="Ginseng" target="Indomethacin" weight="1" />
+      <edge id="8" source="Ginseng" target="Leflunomide" weight="1" />
+      <edge id="9" source="Ginseng" target="Ibuprofen" weight="1" />
+      <edge id="10" source="Ginseng" target="Naproxen" weight="1" />
+      <edge id="11" source="Ginseng" target="Icosapent" weight="1" />
+      <edge id="12" source="Ginseng" target="Lenalidomide" weight="1" />
+      <edge id="13" source="Ginseng" target="Quercetin" weight="1" />
+      <edge id="14" source="Ginseng" target="Atorvastatin" weight="1" />
+      <edge id="15" source="Ginseng" target="Omeprazole" weight="1" />
+      <edge id="16" source="Emtricitabine" target="Tenofovir" weight="1" />
+      <edge id="17" source="Emtricitabine" target="Tenofovir alafenamide" weight="1" />
+      <edge id="18" source="Emtricitabine" target="Tenofovir disoproxil" weight="1" />
       <edge id="19" source="Naltrexone" target="Metenkefalin" weight="2" />
       <edge id="20" source="Naltrexone" target="Progesterone" weight="1" />
-      <edge id="21" source="Prednisone" target="Budesonide" weight="1" />
-      <edge id="22" source="Prednisone" target="Prednisolone" weight="1" />
-      <edge id="23" source="Prednisone" target="Dexamethasone" weight="1" />
-      <edge id="24" source="Prednisone" target="Methylprednisolone" weight="1" />
-      <edge id="25" source="Prednisone" target="Hydrocortisone" weight="1" />
-      <edge id="26" source="Prednisone" target="Progesterone" weight="1" />
-      <edge id="27" source="Prednisone" target="Ciclesonide" weight="1" />
-      <edge id="28" source="Atorvastatin" target="Omeprazole" weight="1" />
-      <edge id="29" source="Atorvastatin" target="Leflunomide" weight="1" />
-      <edge id="30" source="Atorvastatin" target="Quercetin" weight="1" />
-      <edge id="31" source="Atorvastatin" target="Linagliptin" weight="1" />
-      <edge id="32" source="Atorvastatin" target="Resveratrol" weight="2" />
-      <edge id="33" source="Atorvastatin" target="Simvastatin" weight="2" />
-      <edge id="34" source="Atorvastatin" target="Cholesterol" weight="1" />
+      <edge id="21" source="Prednisone" target="Ciclesonide" weight="1" />
+      <edge id="22" source="Prednisone" target="Dexamethasone" weight="1" />
+      <edge id="23" source="Prednisone" target="Progesterone" weight="1" />
+      <edge id="24" source="Prednisone" target="Budesonide" weight="1" />
+      <edge id="25" source="Prednisone" target="Prednisolone" weight="1" />
+      <edge id="26" source="Prednisone" target="Hydrocortisone" weight="1" />
+      <edge id="27" source="Prednisone" target="Methylprednisolone" weight="1" />
+      <edge id="28" source="Atorvastatin" target="Resveratrol" weight="2" />
+      <edge id="29" source="Atorvastatin" target="Simvastatin" weight="2" />
+      <edge id="30" source="Atorvastatin" target="Cholesterol" weight="1" />
+      <edge id="31" source="Atorvastatin" target="Leflunomide" weight="1" />
+      <edge id="32" source="Atorvastatin" target="Quercetin" weight="1" />
+      <edge id="33" source="Atorvastatin" target="Linagliptin" weight="1" />
+      <edge id="34" source="Atorvastatin" target="Omeprazole" weight="1" />
       <edge id="35" source="Atorvastatin" target="Sitagliptin" weight="1" />
       <edge id="36" source="Ceftriaxone" target="Piperacillin" weight="1" />
-      <edge id="37" source="Nafamostat" target="Camostat" weight="1" />
-      <edge id="38" source="Nafamostat" target="Heparin" weight="1" />
-      <edge id="39" source="Nafamostat" target="Enoxaparin" weight="1" />
-      <edge id="40" source="Nafamostat" target="Bemiparin" weight="1" />
-      <edge id="41" source="Nafamostat" target="Fondaparinux" weight="1" />
+      <edge id="37" source="Nafamostat" target="Bemiparin" weight="1" />
+      <edge id="38" source="Nafamostat" target="Aprotinin" weight="2" />
+      <edge id="39" source="Nafamostat" target="Camostat" weight="1" />
+      <edge id="40" source="Nafamostat" target="Heparin" weight="1" />
+      <edge id="41" source="Nafamostat" target="Argatroban" weight="1" />
       <edge id="42" source="Nafamostat" target="Suramin" weight="1" />
-      <edge id="43" source="Nafamostat" target="Argatroban" weight="1" />
-      <edge id="44" source="Nafamostat" target="Aprotinin" weight="2" />
-      <edge id="45" source="Nafamostat" target="Rivaroxaban" weight="1" />
-      <edge id="46" source="Vitamin D" target="Cholecalciferol" weight="1" />
-      <edge id="47" source="Vitamin D" target="Cholesterol" weight="1" />
-      <edge id="48" source="Vitamin D" target="Calcifediol" weight="1" />
-      <edge id="49" source="Vitamin D" target="Curcumin" weight="1" />
-      <edge id="50" source="Icosapent" target="Curcumin" weight="1" />
-      <edge id="51" source="Icosapent" target="alpha-Linolenic acid" weight="6" />
-      <edge id="52" source="Icosapent" target="Resveratrol" weight="4" />
-      <edge id="53" source="Icosapent" target="Celecoxib" weight="1" />
-      <edge id="54" source="Icosapent" target="Naproxen" weight="2" />
-      <edge id="55" source="Icosapent" target="Resiniferatoxin" weight="1" />
-      <edge id="56" source="Icosapent" target="Ibuprofen" weight="4" />
-      <edge id="57" source="Icosapent" target="Lenalidomide" weight="1" />
-      <edge id="58" source="Icosapent" target="Indomethacin" weight="4" />
-      <edge id="59" source="Icosapent" target="Omega-3 fatty acids" weight="2" />
-      <edge id="60" source="Icosapent" target="Telmisartan" weight="1" />
-      <edge id="61" source="Icosapent" target="Acetaminophen" weight="3" />
-      <edge id="62" source="Icosapent" target="Oleic Acid" weight="3" />
+      <edge id="43" source="Nafamostat" target="Rivaroxaban" weight="1" />
+      <edge id="44" source="Nafamostat" target="Enoxaparin" weight="1" />
+      <edge id="45" source="Nafamostat" target="Fondaparinux" weight="1" />
+      <edge id="46" source="Vitamin D" target="Cholesterol" weight="1" />
+      <edge id="47" source="Vitamin D" target="Curcumin" weight="1" />
+      <edge id="48" source="Vitamin D" target="Cholecalciferol" weight="1" />
+      <edge id="49" source="Vitamin D" target="Calcifediol" weight="1" />
+      <edge id="50" source="Icosapent" target="Resveratrol" weight="4" />
+      <edge id="51" source="Icosapent" target="Naproxen" weight="2" />
+      <edge id="52" source="Icosapent" target="alpha-Linolenic acid" weight="6" />
+      <edge id="53" source="Icosapent" target="Telmisartan" weight="1" />
+      <edge id="54" source="Icosapent" target="Acetaminophen" weight="3" />
+      <edge id="55" source="Icosapent" target="Celecoxib" weight="1" />
+      <edge id="56" source="Icosapent" target="Indomethacin" weight="4" />
+      <edge id="57" source="Icosapent" target="Oleic Acid" weight="3" />
+      <edge id="58" source="Icosapent" target="Ibuprofen" weight="4" />
+      <edge id="59" source="Icosapent" target="Lenalidomide" weight="1" />
+      <edge id="60" source="Icosapent" target="Curcumin" weight="1" />
+      <edge id="61" source="Icosapent" target="Omega-3 fatty acids" weight="2" />
+      <edge id="62" source="Icosapent" target="Resiniferatoxin" weight="1" />
       <edge id="63" source="Tirofiban" target="Resveratrol" weight="1" />
       <edge id="64" source="Pantoprazole" target="Rabeprazole" weight="1" />
-      <edge id="65" source="Pantoprazole" target="Omeprazole" weight="1" />
-      <edge id="66" source="Pantoprazole" target="Citrulline" weight="1" />
-      <edge id="67" source="Acetaminophen" target="Ibuprofen" weight="2" />
-      <edge id="68" source="Acetaminophen" target="Lenalidomide" weight="1" />
-      <edge id="69" source="Acetaminophen" target="Indomethacin" weight="2" />
-      <edge id="70" source="Acetaminophen" target="alpha-Linolenic acid" weight="1" />
-      <edge id="71" source="Acetaminophen" target="Celecoxib" weight="1" />
-      <edge id="72" source="Acetaminophen" target="Resveratrol" weight="2" />
-      <edge id="73" source="Acetaminophen" target="Naproxen" weight="2" />
+      <edge id="65" source="Pantoprazole" target="Citrulline" weight="1" />
+      <edge id="66" source="Pantoprazole" target="Omeprazole" weight="1" />
+      <edge id="67" source="Acetaminophen" target="Resveratrol" weight="2" />
+      <edge id="68" source="Acetaminophen" target="Indomethacin" weight="2" />
+      <edge id="69" source="Acetaminophen" target="Celecoxib" weight="1" />
+      <edge id="70" source="Acetaminophen" target="Ibuprofen" weight="2" />
+      <edge id="71" source="Acetaminophen" target="Naproxen" weight="2" />
+      <edge id="72" source="Acetaminophen" target="Lenalidomide" weight="1" />
+      <edge id="73" source="Acetaminophen" target="alpha-Linolenic acid" weight="1" />
       <edge id="74" source="Acetaminophen" target="Resiniferatoxin" weight="1" />
-      <edge id="75" source="Suramin" target="Nicotinamide" weight="1" />
+      <edge id="75" source="Suramin" target="Argatroban" weight="1" />
       <edge id="76" source="Suramin" target="Indomethacin" weight="1" />
-      <edge id="77" source="Suramin" target="Argatroban" weight="1" />
-      <edge id="78" source="Losartan" target="Candesartan" weight="1" />
+      <edge id="77" source="Suramin" target="Nicotinamide" weight="1" />
+      <edge id="78" source="Losartan" target="Angiotensin II" weight="1" />
       <edge id="79" source="Losartan" target="Olmesartan" weight="1" />
       <edge id="80" source="Losartan" target="Valsartan" weight="1" />
-      <edge id="81" source="Losartan" target="Irbesartan" weight="1" />
-      <edge id="82" source="Losartan" target="Candesartan cilexetil" weight="1" />
-      <edge id="83" source="Losartan" target="Eprosartan" weight="1" />
-      <edge id="84" source="Losartan" target="Telmisartan" weight="1" />
-      <edge id="85" source="Losartan" target="Angiotensin II" weight="1" />
-      <edge id="86" source="Naproxen" target="Ibuprofen" weight="2" />
-      <edge id="87" source="Naproxen" target="Lenalidomide" weight="1" />
-      <edge id="88" source="Naproxen" target="Indomethacin" weight="2" />
-      <edge id="89" source="Naproxen" target="Celecoxib" weight="1" />
-      <edge id="90" source="Naproxen" target="Resveratrol" weight="2" />
+      <edge id="81" source="Losartan" target="Candesartan" weight="1" />
+      <edge id="82" source="Losartan" target="Eprosartan" weight="1" />
+      <edge id="83" source="Losartan" target="Candesartan cilexetil" weight="1" />
+      <edge id="84" source="Losartan" target="Irbesartan" weight="1" />
+      <edge id="85" source="Losartan" target="Telmisartan" weight="1" />
+      <edge id="86" source="Naproxen" target="Celecoxib" weight="1" />
+      <edge id="87" source="Naproxen" target="Indomethacin" weight="2" />
+      <edge id="88" source="Naproxen" target="Resveratrol" weight="2" />
+      <edge id="89" source="Naproxen" target="Ibuprofen" weight="2" />
+      <edge id="90" source="Naproxen" target="Lenalidomide" weight="1" />
       <edge id="91" source="Colchicine" target="Artenimol" weight="1" />
-      <edge id="92" source="alpha-Linolenic acid" target="Ibuprofen" weight="2" />
-      <edge id="93" source="alpha-Linolenic acid" target="Curcumin" weight="1" />
-      <edge id="94" source="alpha-Linolenic acid" target="Indomethacin" weight="2" />
-      <edge id="95" source="alpha-Linolenic acid" target="Omega-3 fatty acids" weight="2" />
-      <edge id="96" source="alpha-Linolenic acid" target="Resveratrol" weight="2" />
-      <edge id="97" source="alpha-Linolenic acid" target="Tretinoin" weight="1" />
-      <edge id="98" source="alpha-Linolenic acid" target="Telmisartan" weight="1" />
-      <edge id="99" source="alpha-Linolenic acid" target="Resiniferatoxin" weight="1" />
-      <edge id="100" source="alpha-Linolenic acid" target="Oleic Acid" weight="4" />
-      <edge id="101" source="Lopinavir" target="Atazanavir" weight="1" />
-      <edge id="102" source="Lopinavir" target="Ritonavir" weight="1" />
-      <edge id="103" source="Lopinavir" target="Darunavir" weight="1" />
-      <edge id="104" source="Tinzaparin" target="Heparin" weight="1" />
-      <edge id="105" source="Tinzaparin" target="Nadroparin" weight="1" />
-      <edge id="106" source="Tinzaparin" target="Enoxaparin" weight="1" />
-      <edge id="107" source="Tinzaparin" target="Bemiparin" weight="1" />
-      <edge id="108" source="Tinzaparin" target="Fondaparinux" weight="1" />
-      <edge id="109" source="Tinzaparin" target="Sulodexide" weight="1" />
-      <edge id="110" source="Quercetin" target="Leflunomide" weight="1" />
-      <edge id="111" source="Quercetin" target="Omeprazole" weight="1" />
-      <edge id="112" source="Quercetin" target="Artenimol" weight="1" />
+      <edge id="92" source="alpha-Linolenic acid" target="Resveratrol" weight="2" />
+      <edge id="93" source="alpha-Linolenic acid" target="Indomethacin" weight="2" />
+      <edge id="94" source="alpha-Linolenic acid" target="Oleic Acid" weight="4" />
+      <edge id="95" source="alpha-Linolenic acid" target="Curcumin" weight="1" />
+      <edge id="96" source="alpha-Linolenic acid" target="Ibuprofen" weight="2" />
+      <edge id="97" source="alpha-Linolenic acid" target="Resiniferatoxin" weight="1" />
+      <edge id="98" source="alpha-Linolenic acid" target="Tretinoin" weight="1" />
+      <edge id="99" source="alpha-Linolenic acid" target="Telmisartan" weight="1" />
+      <edge id="100" source="alpha-Linolenic acid" target="Omega-3 fatty acids" weight="2" />
+      <edge id="101" source="Lopinavir" target="Darunavir" weight="1" />
+      <edge id="102" source="Lopinavir" target="Atazanavir" weight="1" />
+      <edge id="103" source="Lopinavir" target="Ritonavir" weight="1" />
+      <edge id="104" source="Tinzaparin" target="Bemiparin" weight="1" />
+      <edge id="105" source="Tinzaparin" target="Sulodexide" weight="1" />
+      <edge id="106" source="Tinzaparin" target="Fondaparinux" weight="1" />
+      <edge id="107" source="Tinzaparin" target="Nadroparin" weight="1" />
+      <edge id="108" source="Tinzaparin" target="Enoxaparin" weight="1" />
+      <edge id="109" source="Tinzaparin" target="Heparin" weight="1" />
+      <edge id="110" source="Quercetin" target="Resveratrol" weight="6" />
+      <edge id="111" source="Quercetin" target="Estradiol" weight="3" />
+      <edge id="112" source="Quercetin" target="Vitamin E" weight="1" />
       <edge id="113" source="Quercetin" target="Dexamethasone" weight="1" />
-      <edge id="114" source="Quercetin" target="Curcumin" weight="1" />
-      <edge id="115" source="Quercetin" target="Piperine" weight="1" />
-      <edge id="116" source="Quercetin" target="Resveratrol" weight="6" />
-      <edge id="117" source="Quercetin" target="Melatonin" weight="2" />
-      <edge id="118" source="Quercetin" target="Progesterone" weight="3" />
-      <edge id="119" source="Quercetin" target="Estradiol" weight="3" />
-      <edge id="120" source="Quercetin" target="Ritonavir" weight="1" />
-      <edge id="121" source="Quercetin" target="Vitamin E" weight="1" />
+      <edge id="114" source="Quercetin" target="Melatonin" weight="2" />
+      <edge id="115" source="Quercetin" target="Leflunomide" weight="1" />
+      <edge id="116" source="Quercetin" target="Progesterone" weight="3" />
+      <edge id="117" source="Quercetin" target="Ritonavir" weight="1" />
+      <edge id="118" source="Quercetin" target="Piperine" weight="1" />
+      <edge id="119" source="Quercetin" target="Artenimol" weight="1" />
+      <edge id="120" source="Quercetin" target="Curcumin" weight="1" />
+      <edge id="121" source="Quercetin" target="Omeprazole" weight="1" />
       <edge id="122" source="Ruxolitinib" target="Tofacitinib" weight="2" />
       <edge id="123" source="Ruxolitinib" target="Baricitinib" weight="2" />
       <edge id="124" source="Ruxolitinib" target="Zanubrutinib" weight="1" />
       <edge id="125" source="Methylene blue" target="Citrulline" weight="1" />
-      <edge id="126" source="Angiotensin II" target="Candesartan" weight="1" />
-      <edge id="127" source="Angiotensin II" target="Olmesartan" weight="1" />
-      <edge id="128" source="Angiotensin II" target="Valsartan" weight="1" />
-      <edge id="129" source="Angiotensin II" target="Irbesartan" weight="1" />
+      <edge id="126" source="Angiotensin II" target="Olmesartan" weight="1" />
+      <edge id="127" source="Angiotensin II" target="Valsartan" weight="1" />
+      <edge id="128" source="Angiotensin II" target="Candesartan" weight="1" />
+      <edge id="129" source="Angiotensin II" target="Eprosartan" weight="1" />
       <edge id="130" source="Angiotensin II" target="Candesartan cilexetil" weight="1" />
-      <edge id="131" source="Angiotensin II" target="Eprosartan" weight="1" />
+      <edge id="131" source="Angiotensin II" target="Irbesartan" weight="1" />
       <edge id="132" source="Angiotensin II" target="Telmisartan" weight="1" />
-      <edge id="133" source="Valsartan" target="Candesartan" weight="1" />
-      <edge id="134" source="Valsartan" target="Olmesartan" weight="1" />
-      <edge id="135" source="Valsartan" target="Irbesartan" weight="1" />
+      <edge id="133" source="Valsartan" target="Olmesartan" weight="1" />
+      <edge id="134" source="Valsartan" target="Candesartan" weight="1" />
+      <edge id="135" source="Valsartan" target="Eprosartan" weight="1" />
       <edge id="136" source="Valsartan" target="Candesartan cilexetil" weight="1" />
-      <edge id="137" source="Valsartan" target="Eprosartan" weight="1" />
+      <edge id="137" source="Valsartan" target="Irbesartan" weight="1" />
       <edge id="138" source="Valsartan" target="Telmisartan" weight="1" />
-      <edge id="139" source="Fondaparinux" target="Heparin" weight="2" />
-      <edge id="140" source="Fondaparinux" target="Nadroparin" weight="1" />
-      <edge id="141" source="Fondaparinux" target="Enoxaparin" weight="2" />
-      <edge id="142" source="Fondaparinux" target="Bemiparin" weight="2" />
-      <edge id="143" source="Fondaparinux" target="Sulodexide" weight="1" />
-      <edge id="144" source="Fondaparinux" target="Rivaroxaban" weight="1" />
-      <edge id="145" source="Omeprazole" target="Leflunomide" weight="1" />
-      <edge id="146" source="Omeprazole" target="Resveratrol" weight="1" />
+      <edge id="139" source="Fondaparinux" target="Bemiparin" weight="2" />
+      <edge id="140" source="Fondaparinux" target="Sulodexide" weight="1" />
+      <edge id="141" source="Fondaparinux" target="Heparin" weight="2" />
+      <edge id="142" source="Fondaparinux" target="Nadroparin" weight="1" />
+      <edge id="143" source="Fondaparinux" target="Rivaroxaban" weight="1" />
+      <edge id="144" source="Fondaparinux" target="Enoxaparin" weight="2" />
+      <edge id="145" source="Omeprazole" target="Resveratrol" weight="1" />
+      <edge id="146" source="Omeprazole" target="Leflunomide" weight="1" />
       <edge id="147" source="Omeprazole" target="Rabeprazole" weight="1" />
-      <edge id="148" source="Iloprost" target="Indomethacin" weight="1" />
-      <edge id="149" source="Iloprost" target="Dipyridamole" weight="1" />
-      <edge id="150" source="Irbesartan" target="Candesartan" weight="1" />
-      <edge id="151" source="Irbesartan" target="Olmesartan" weight="1" />
-      <edge id="152" source="Irbesartan" target="Candesartan cilexetil" weight="1" />
-      <edge id="153" source="Irbesartan" target="Eprosartan" weight="1" />
+      <edge id="148" source="Iloprost" target="Dipyridamole" weight="1" />
+      <edge id="149" source="Iloprost" target="Indomethacin" weight="1" />
+      <edge id="150" source="Irbesartan" target="Olmesartan" weight="1" />
+      <edge id="151" source="Irbesartan" target="Candesartan" weight="1" />
+      <edge id="152" source="Irbesartan" target="Eprosartan" weight="1" />
+      <edge id="153" source="Irbesartan" target="Candesartan cilexetil" weight="1" />
       <edge id="154" source="Irbesartan" target="Telmisartan" weight="1" />
-      <edge id="155" source="Tenofovir alafenamide" target="Tenofovir disoproxil" weight="1" />
-      <edge id="156" source="Tenofovir alafenamide" target="Tenofovir" weight="3" />
+      <edge id="155" source="Tenofovir alafenamide" target="Tenofovir" weight="3" />
+      <edge id="156" source="Tenofovir alafenamide" target="Tenofovir disoproxil" weight="1" />
       <edge id="157" source="Trifluoperazine" target="Melatonin" weight="1" />
       <edge id="158" source="Trifluoperazine" target="Verapamil" weight="1" />
-      <edge id="159" source="Celecoxib" target="Ibuprofen" weight="1" />
-      <edge id="160" source="Celecoxib" target="Lenalidomide" weight="1" />
-      <edge id="161" source="Celecoxib" target="Indomethacin" weight="1" />
-      <edge id="162" source="Celecoxib" target="Resveratrol" weight="1" />
+      <edge id="159" source="Celecoxib" target="Indomethacin" weight="1" />
+      <edge id="160" source="Celecoxib" target="Resveratrol" weight="1" />
+      <edge id="161" source="Celecoxib" target="Ibuprofen" weight="1" />
+      <edge id="162" source="Celecoxib" target="Lenalidomide" weight="1" />
       <edge id="163" source="Sildenafil" target="Dipyridamole" weight="1" />
       <edge id="164" source="Elbasvir" target="Velpatasvir" weight="1" />
       <edge id="165" source="Elbasvir" target="Daclatasvir" weight="1" />
@@ -4060,156 +4060,156 @@
       <edge id="167" source="Moxifloxacin" target="Levofloxacin" weight="2" />
       <edge id="168" source="Mecobalamin" target="Cyanocobalamin" weight="1" />
       <edge id="169" source="Olmesartan" target="Candesartan" weight="1" />
-      <edge id="170" source="Olmesartan" target="Candesartan cilexetil" weight="1" />
-      <edge id="171" source="Olmesartan" target="Eprosartan" weight="1" />
+      <edge id="170" source="Olmesartan" target="Eprosartan" weight="1" />
+      <edge id="171" source="Olmesartan" target="Candesartan cilexetil" weight="1" />
       <edge id="172" source="Olmesartan" target="Telmisartan" weight="1" />
       <edge id="173" source="Sitagliptin" target="Linagliptin" weight="1" />
       <edge id="174" source="Montelukast" target="Resveratrol" weight="1" />
       <edge id="175" source="Montelukast" target="Vitamin E" weight="1" />
       <edge id="176" source="Ribavirin" target="GS-441524" weight="1" />
-      <edge id="177" source="Ribavirin" target="Remdesivir" weight="1" />
+      <edge id="177" source="Ribavirin" target="Danoprevir" weight="1" />
       <edge id="178" source="Ribavirin" target="Favipiravir" weight="1" />
       <edge id="179" source="Ribavirin" target="Galidesivir" weight="1" />
-      <edge id="180" source="Ribavirin" target="Danoprevir" weight="1" />
+      <edge id="180" source="Ribavirin" target="Remdesivir" weight="1" />
       <edge id="181" source="Tranexamic acid" target="Aprotinin" weight="1" />
       <edge id="182" source="Nicotinamide" target="Artenimol" weight="1" />
-      <edge id="183" source="Oleic Acid" target="Ibuprofen" weight="2" />
-      <edge id="184" source="Oleic Acid" target="Curcumin" weight="1" />
-      <edge id="185" source="Oleic Acid" target="Indomethacin" weight="2" />
-      <edge id="186" source="Oleic Acid" target="Omega-3 fatty acids" weight="2" />
-      <edge id="187" source="Oleic Acid" target="Resveratrol" weight="2" />
-      <edge id="188" source="Oleic Acid" target="Tretinoin" weight="1" />
+      <edge id="183" source="Oleic Acid" target="Resveratrol" weight="2" />
+      <edge id="184" source="Oleic Acid" target="Indomethacin" weight="2" />
+      <edge id="185" source="Oleic Acid" target="Curcumin" weight="1" />
+      <edge id="186" source="Oleic Acid" target="Ibuprofen" weight="2" />
+      <edge id="187" source="Oleic Acid" target="Tretinoin" weight="1" />
+      <edge id="188" source="Oleic Acid" target="Omega-3 fatty acids" weight="2" />
       <edge id="189" source="Oleic Acid" target="Telmisartan" weight="1" />
       <edge id="190" source="Clarithromycin" target="Fluoxetine" weight="1" />
       <edge id="191" source="Clarithromycin" target="Fluvoxamine" weight="1" />
       <edge id="192" source="Clarithromycin" target="Roxithromycin" weight="1" />
       <edge id="193" source="Clarithromycin" target="Verapamil" weight="1" />
-      <edge id="194" source="Artenimol" target="Pyridostigmine" weight="1" />
+      <edge id="194" source="Artenimol" target="Resveratrol" weight="1" />
       <edge id="195" source="Artenimol" target="Cyclosporine" weight="1" />
-      <edge id="196" source="Artenimol" target="Resveratrol" weight="1" />
-      <edge id="197" source="Artenimol" target="Dipyridamole" weight="1" />
-      <edge id="198" source="Telmisartan" target="Candesartan" weight="1" />
-      <edge id="199" source="Telmisartan" target="Curcumin" weight="1" />
-      <edge id="200" source="Telmisartan" target="Candesartan cilexetil" weight="1" />
-      <edge id="201" source="Telmisartan" target="Resveratrol" weight="1" />
-      <edge id="202" source="Telmisartan" target="Eprosartan" weight="1" />
-      <edge id="203" source="Telmisartan" target="Ibuprofen" weight="1" />
-      <edge id="204" source="Telmisartan" target="Indomethacin" weight="1" />
+      <edge id="196" source="Artenimol" target="Dipyridamole" weight="1" />
+      <edge id="197" source="Artenimol" target="Pyridostigmine" weight="1" />
+      <edge id="198" source="Telmisartan" target="Resveratrol" weight="1" />
+      <edge id="199" source="Telmisartan" target="Candesartan" weight="1" />
+      <edge id="200" source="Telmisartan" target="Eprosartan" weight="1" />
+      <edge id="201" source="Telmisartan" target="Indomethacin" weight="1" />
+      <edge id="202" source="Telmisartan" target="Ibuprofen" weight="1" />
+      <edge id="203" source="Telmisartan" target="Curcumin" weight="1" />
+      <edge id="204" source="Telmisartan" target="Candesartan cilexetil" weight="1" />
       <edge id="205" source="Telmisartan" target="Omega-3 fatty acids" weight="1" />
       <edge id="206" source="Vitamin A" target="Tretinoin" weight="2" />
       <edge id="207" source="Tenofovir" target="Tenofovir disoproxil" weight="1" />
       <edge id="208" source="Tetrandrine" target="Roxithromycin" weight="1" />
-      <edge id="209" source="Rivaroxaban" target="Heparin" weight="1" />
-      <edge id="210" source="Rivaroxaban" target="Enoxaparin" weight="1" />
-      <edge id="211" source="Rivaroxaban" target="Bemiparin" weight="1" />
-      <edge id="212" source="GS-441524" target="Remdesivir" weight="2" />
-      <edge id="213" source="GS-441524" target="Galidesivir" weight="1" />
+      <edge id="209" source="Rivaroxaban" target="Bemiparin" weight="1" />
+      <edge id="210" source="Rivaroxaban" target="Heparin" weight="1" />
+      <edge id="211" source="Rivaroxaban" target="Enoxaparin" weight="1" />
+      <edge id="212" source="GS-441524" target="Galidesivir" weight="1" />
+      <edge id="213" source="GS-441524" target="Remdesivir" weight="2" />
       <edge id="214" source="Velpatasvir" target="Daclatasvir" weight="1" />
-      <edge id="215" source="Cholesterol" target="Curcumin" weight="1" />
-      <edge id="216" source="Cholesterol" target="Cholecalciferol" weight="1" />
-      <edge id="217" source="Cholesterol" target="Resveratrol" weight="1" />
-      <edge id="218" source="Cholesterol" target="Calcifediol" weight="1" />
-      <edge id="219" source="Dipyridamole" target="Lidocaine" weight="1" />
-      <edge id="220" source="Dipyridamole" target="Progesterone" weight="1" />
-      <edge id="221" source="Bemiparin" target="Heparin" weight="2" />
-      <edge id="222" source="Bemiparin" target="Nadroparin" weight="1" />
-      <edge id="223" source="Bemiparin" target="Enoxaparin" weight="2" />
-      <edge id="224" source="Bemiparin" target="Sulodexide" weight="2" />
+      <edge id="215" source="Cholesterol" target="Resveratrol" weight="1" />
+      <edge id="216" source="Cholesterol" target="Calcifediol" weight="1" />
+      <edge id="217" source="Cholesterol" target="Cholecalciferol" weight="1" />
+      <edge id="218" source="Cholesterol" target="Curcumin" weight="1" />
+      <edge id="219" source="Dipyridamole" target="Progesterone" weight="1" />
+      <edge id="220" source="Dipyridamole" target="Lidocaine" weight="1" />
+      <edge id="221" source="Bemiparin" target="Sulodexide" weight="2" />
+      <edge id="222" source="Bemiparin" target="Heparin" weight="2" />
+      <edge id="223" source="Bemiparin" target="Nadroparin" weight="1" />
+      <edge id="224" source="Bemiparin" target="Enoxaparin" weight="2" />
       <edge id="225" source="Melatonin" target="Resveratrol" weight="4" />
-      <edge id="226" source="Melatonin" target="Progesterone" weight="1" />
-      <edge id="227" source="Melatonin" target="Estradiol" weight="1" />
-      <edge id="228" source="Vitamin E" target="Dexamethasone" weight="1" />
-      <edge id="229" source="Vitamin E" target="Piperine" weight="1" />
-      <edge id="230" source="Vitamin E" target="Resveratrol" weight="2" />
-      <edge id="231" source="Vitamin E" target="Estradiol" weight="1" />
-      <edge id="232" source="Vitamin E" target="Ritonavir" weight="1" />
-      <edge id="233" source="Tretinoin" target="Tranilast" weight="1" />
-      <edge id="234" source="Tretinoin" target="Isotretinoin" weight="2" />
-      <edge id="235" source="Nadroparin" target="Heparin" weight="2" />
-      <edge id="236" source="Nadroparin" target="Enoxaparin" weight="1" />
-      <edge id="237" source="Nadroparin" target="Sulodexide" weight="1" />
-      <edge id="238" source="Ibuprofen" target="Lenalidomide" weight="1" />
-      <edge id="239" source="Ibuprofen" target="Curcumin" weight="1" />
-      <edge id="240" source="Ibuprofen" target="Indomethacin" weight="4" />
-      <edge id="241" source="Ibuprofen" target="Omega-3 fatty acids" weight="2" />
-      <edge id="242" source="Ibuprofen" target="Resveratrol" weight="4" />
+      <edge id="226" source="Melatonin" target="Estradiol" weight="1" />
+      <edge id="227" source="Melatonin" target="Progesterone" weight="1" />
+      <edge id="228" source="Vitamin E" target="Estradiol" weight="1" />
+      <edge id="229" source="Vitamin E" target="Resveratrol" weight="2" />
+      <edge id="230" source="Vitamin E" target="Dexamethasone" weight="1" />
+      <edge id="231" source="Vitamin E" target="Ritonavir" weight="1" />
+      <edge id="232" source="Vitamin E" target="Piperine" weight="1" />
+      <edge id="233" source="Tretinoin" target="Isotretinoin" weight="2" />
+      <edge id="234" source="Tretinoin" target="Tranilast" weight="1" />
+      <edge id="235" source="Nadroparin" target="Sulodexide" weight="1" />
+      <edge id="236" source="Nadroparin" target="Heparin" weight="2" />
+      <edge id="237" source="Nadroparin" target="Enoxaparin" weight="1" />
+      <edge id="238" source="Ibuprofen" target="Indomethacin" weight="4" />
+      <edge id="239" source="Ibuprofen" target="Resveratrol" weight="4" />
+      <edge id="240" source="Ibuprofen" target="Lenalidomide" weight="1" />
+      <edge id="241" source="Ibuprofen" target="Curcumin" weight="1" />
+      <edge id="242" source="Ibuprofen" target="Omega-3 fatty acids" weight="2" />
       <edge id="243" source="Tacrolimus" target="Sirolimus" weight="1" />
       <edge id="244" source="Galidesivir" target="Remdesivir" weight="1" />
       <edge id="245" source="Atovaquone" target="Leflunomide" weight="1" />
-      <edge id="246" source="Ciclesonide" target="Budesonide" weight="1" />
-      <edge id="247" source="Ciclesonide" target="Prednisolone" weight="1" />
-      <edge id="248" source="Ciclesonide" target="Dexamethasone" weight="1" />
-      <edge id="249" source="Ciclesonide" target="Methylprednisolone" weight="1" />
+      <edge id="246" source="Ciclesonide" target="Dexamethasone" weight="1" />
+      <edge id="247" source="Ciclesonide" target="Progesterone" weight="1" />
+      <edge id="248" source="Ciclesonide" target="Budesonide" weight="1" />
+      <edge id="249" source="Ciclesonide" target="Prednisolone" weight="1" />
       <edge id="250" source="Ciclesonide" target="Hydrocortisone" weight="1" />
-      <edge id="251" source="Ciclesonide" target="Progesterone" weight="1" />
-      <edge id="252" source="Acalabrutinib" target="Ibrutinib" weight="1" />
-      <edge id="253" source="Acalabrutinib" target="Zanubrutinib" weight="1" />
+      <edge id="251" source="Ciclesonide" target="Methylprednisolone" weight="1" />
+      <edge id="252" source="Acalabrutinib" target="Zanubrutinib" weight="1" />
+      <edge id="253" source="Acalabrutinib" target="Ibrutinib" weight="1" />
       <edge id="254" source="Methotrexate" target="Trimethoprim" weight="1" />
-      <edge id="255" source="Candesartan" target="Candesartan cilexetil" weight="1" />
-      <edge id="256" source="Candesartan" target="Eprosartan" weight="1" />
+      <edge id="255" source="Candesartan" target="Eprosartan" weight="1" />
+      <edge id="256" source="Candesartan" target="Candesartan cilexetil" weight="1" />
       <edge id="257" source="Aprotinin" target="Camostat" weight="1" />
       <edge id="258" source="Citrulline" target="Dexamethasone" weight="1" />
-      <edge id="259" source="Prednisolone" target="Budesonide" weight="1" />
-      <edge id="260" source="Prednisolone" target="Dexamethasone" weight="1" />
-      <edge id="261" source="Prednisolone" target="Methylprednisolone" weight="1" />
+      <edge id="259" source="Prednisolone" target="Dexamethasone" weight="1" />
+      <edge id="260" source="Prednisolone" target="Progesterone" weight="1" />
+      <edge id="261" source="Prednisolone" target="Budesonide" weight="1" />
       <edge id="262" source="Prednisolone" target="Hydrocortisone" weight="1" />
-      <edge id="263" source="Prednisolone" target="Progesterone" weight="1" />
+      <edge id="263" source="Prednisolone" target="Methylprednisolone" weight="1" />
       <edge id="264" source="Captopril" target="Ramipril" weight="2" />
       <edge id="265" source="Captopril" target="Enalapril" weight="1" />
       <edge id="266" source="Bicalutamide" target="Progesterone" weight="1" />
       <edge id="267" source="Eprosartan" target="Candesartan cilexetil" weight="1" />
-      <edge id="268" source="Enoxaparin" target="Heparin" weight="2" />
-      <edge id="269" source="Enoxaparin" target="Sulodexide" weight="1" />
+      <edge id="268" source="Enoxaparin" target="Sulodexide" weight="1" />
+      <edge id="269" source="Enoxaparin" target="Heparin" weight="2" />
       <edge id="270" source="Sirolimus" target="Heparin" weight="1" />
-      <edge id="271" source="Progesterone" target="Budesonide" weight="1" />
-      <edge id="272" source="Progesterone" target="Methylprednisolone" weight="1" />
-      <edge id="273" source="Progesterone" target="Resveratrol" weight="1" />
-      <edge id="274" source="Progesterone" target="Estradiol" weight="2" />
-      <edge id="275" source="Progesterone" target="Lidocaine" weight="1" />
-      <edge id="276" source="Progesterone" target="Dexamethasone" weight="1" />
-      <edge id="277" source="Progesterone" target="Hydrocortisone" weight="1" />
+      <edge id="271" source="Progesterone" target="Resveratrol" weight="1" />
+      <edge id="272" source="Progesterone" target="Dexamethasone" weight="1" />
+      <edge id="273" source="Progesterone" target="Budesonide" weight="1" />
+      <edge id="274" source="Progesterone" target="Lidocaine" weight="1" />
+      <edge id="275" source="Progesterone" target="Hydrocortisone" weight="1" />
+      <edge id="276" source="Progesterone" target="Estradiol" weight="2" />
+      <edge id="277" source="Progesterone" target="Methylprednisolone" weight="1" />
       <edge id="278" source="Sulodexide" target="Heparin" weight="1" />
-      <edge id="279" source="Fluoxetine" target="Fluvoxamine" weight="2" />
-      <edge id="280" source="Fluoxetine" target="Verapamil" weight="2" />
-      <edge id="281" source="Fluoxetine" target="Levamisole" weight="1" />
+      <edge id="279" source="Fluoxetine" target="Levamisole" weight="1" />
+      <edge id="280" source="Fluoxetine" target="Fluvoxamine" weight="2" />
+      <edge id="281" source="Fluoxetine" target="Verapamil" weight="2" />
       <edge id="282" source="Tofacitinib" target="Baricitinib" weight="3" />
       <edge id="283" source="Tofacitinib" target="Zanubrutinib" weight="2" />
       <edge id="284" source="Fingolimod" target="Ozanimod" weight="2" />
       <edge id="285" source="Ramipril" target="Enalapril" weight="1" />
       <edge id="286" source="Baricitinib" target="Leflunomide" weight="1" />
       <edge id="287" source="Baricitinib" target="Zanubrutinib" weight="2" />
-      <edge id="288" source="Curcumin" target="Indomethacin" weight="1" />
-      <edge id="289" source="Curcumin" target="Omega-3 fatty acids" weight="1" />
-      <edge id="290" source="Curcumin" target="Resveratrol" weight="2" />
+      <edge id="288" source="Curcumin" target="Resveratrol" weight="2" />
+      <edge id="289" source="Curcumin" target="Indomethacin" weight="1" />
+      <edge id="290" source="Curcumin" target="Calcifediol" weight="1" />
       <edge id="291" source="Curcumin" target="Cholecalciferol" weight="1" />
-      <edge id="292" source="Curcumin" target="Calcifediol" weight="1" />
+      <edge id="292" source="Curcumin" target="Omega-3 fatty acids" weight="1" />
       <edge id="293" source="Lidocaine" target="Zanubrutinib" weight="1" />
       <edge id="294" source="Fluvoxamine" target="Verapamil" weight="2" />
-      <edge id="295" source="Estradiol" target="Dexamethasone" weight="1" />
-      <edge id="296" source="Estradiol" target="Piperine" weight="1" />
-      <edge id="297" source="Estradiol" target="Resveratrol" weight="2" />
-      <edge id="298" source="Estradiol" target="Ritonavir" weight="1" />
+      <edge id="295" source="Estradiol" target="Resveratrol" weight="2" />
+      <edge id="296" source="Estradiol" target="Dexamethasone" weight="1" />
+      <edge id="297" source="Estradiol" target="Ritonavir" weight="1" />
+      <edge id="298" source="Estradiol" target="Piperine" weight="1" />
       <edge id="299" source="Indomethacin" target="Resveratrol" weight="4" />
       <edge id="300" source="Indomethacin" target="Lenalidomide" weight="1" />
       <edge id="301" source="Indomethacin" target="Omega-3 fatty acids" weight="2" />
-      <edge id="302" source="Hydrocortisone" target="Budesonide" weight="2" />
-      <edge id="303" source="Hydrocortisone" target="Dexamethasone" weight="2" />
+      <edge id="302" source="Hydrocortisone" target="Dexamethasone" weight="2" />
+      <edge id="303" source="Hydrocortisone" target="Budesonide" weight="2" />
       <edge id="304" source="Hydrocortisone" target="Methylprednisolone" weight="2" />
-      <edge id="305" source="Darunavir" target="Atazanavir" weight="1" />
-      <edge id="306" source="Darunavir" target="Ritonavir" weight="1" />
-      <edge id="307" source="Piperine" target="Dexamethasone" weight="1" />
-      <edge id="308" source="Piperine" target="Resveratrol" weight="1" />
+      <edge id="305" source="Darunavir" target="Ritonavir" weight="1" />
+      <edge id="306" source="Darunavir" target="Atazanavir" weight="1" />
+      <edge id="307" source="Piperine" target="Resveratrol" weight="1" />
+      <edge id="308" source="Piperine" target="Dexamethasone" weight="1" />
       <edge id="309" source="Piperine" target="Ritonavir" weight="1" />
       <edge id="310" source="Verapamil" target="Diltiazem" weight="1" />
       <edge id="311" source="Cholecalciferol" target="Calcifediol" weight="1" />
-      <edge id="312" source="Methylprednisolone" target="Budesonide" weight="2" />
-      <edge id="313" source="Methylprednisolone" target="Dexamethasone" weight="2" />
+      <edge id="312" source="Methylprednisolone" target="Dexamethasone" weight="2" />
+      <edge id="313" source="Methylprednisolone" target="Budesonide" weight="2" />
       <edge id="314" source="Imatinib" target="Nintedanib" weight="2" />
       <edge id="315" source="Omega-3 fatty acids" target="Resveratrol" weight="2" />
       <edge id="316" source="Atazanavir" target="Ritonavir" weight="1" />
       <edge id="317" source="Heparin" target="Nintedanib" weight="2" />
-      <edge id="318" source="Ritonavir" target="Dexamethasone" weight="1" />
-      <edge id="319" source="Ritonavir" target="Resveratrol" weight="1" />
+      <edge id="318" source="Ritonavir" target="Resveratrol" weight="1" />
+      <edge id="319" source="Ritonavir" target="Dexamethasone" weight="1" />
       <edge id="320" source="Budesonide" target="Dexamethasone" weight="2" />
       <edge id="321" source="Leflunomide" target="Resveratrol" weight="1" />
       <edge id="322" source="Nintedanib" target="Zanubrutinib" weight="1" />

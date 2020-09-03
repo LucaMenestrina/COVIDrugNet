@@ -110,25 +110,69 @@ def selectedTable_callback(prefix):
                 drugs_data=[d for d in data if d["kind"]=="Drug"]
                 if len(drugs_data)>0:
                     attributes=["name","ID","ATC Code1","ATC Code5","SMILES","Targets","Enzymes","Carriers","Transporters","Drug Interactions"]
-                    table_header=[html.Thead(html.Tr([html.Th(attribute) for attribute in ["Name","ID","ATC Code Level 1", "ATC Identifier", "SMILES","Targets","Enzymes","Carriers","Transporters","Drug Interactions"]]))]
-                    table_body=[html.Tbody([html.Tr([html.Td(d[attribute]) if attribute in ["name","ID","SMILES"] else html.Td(", ".join(d[attribute])) for attribute in attributes]) for d in drugs_data])]
+                    table_header=[html.Thead(html.Tr([html.Th(attribute, style={"white-space": "nowrap"}) for attribute in ["Name","ID","ATC Level 1", "ATC Identifier", "SMILES","Targets","Enzymes","Carriers","Transporters","Drug Interactions"]]))]
+                    # table_body=[html.Tbody([html.Tr([html.Td(d[attribute]) if attribute in ["name","ID"] else html.Td(d[attribute], style={"width":"25vw","word-break": "break-word"}) if attribute in ["SMILES"] else html.Td(", ".join(d[attribute])) for attribute in attributes]) for d in drugs_data])]
+                    table_body=[]
+                    for drug in drugs_data:
+                        row=[]
+                        for attribute in attributes:
+                            if attribute == "name":
+                                row.append(html.Td(drug["name"]))
+                            elif attribute == "ID":
+                                row.append(html.Td(html.A(drug["ID"],href="https://www.drugbank.ca/drugs/"+drug["ID"], target="_blank")))
+                            elif attribute == "SMILES":
+                                row.append(html.Td(dbc.Container(drug["SMILES"], style={"max-height":"20vh","overflow-y":"auto", "padding":"0px"}, fluid=True), style={"min-width":"12vw","max-width":"20vw","word-break": "break-word","padding-right":"0px"}))
+                            elif "ATC" in attribute:
+                                row.append(html.Td(dbc.Container(", ".join(drug[attribute]), style={"max-height":"20vh","overflow-y":"auto","word-break": "break-word", "padding":"0px"}, fluid=True), style={"min-width":"7vw","max-width":"15vw","padding-right":"0px"}))
+                            else:
+                                row.append(html.Td(dbc.Container(", ".join(drug[attribute]), style={"max-height":"20vh","overflow-y":"auto","word-break": "break-word", "padding":"0px"}, fluid=True), style={"min-width":"10vw","max-width":"20vw","padding-right":"0px"}))
+                        table_body.append(html.Tr(row))
+                    table_body=[html.Tbody(table_body)]
                     drugs_table=dbc.Table(table_header+table_body, className="table table-hover", bordered=True)
+                    drugs_href="data:text/csv;charset=utf-8,"+quote(pd.DataFrame([{key:(value if not isinstance(value,list) else ", ".join(value)) for key,value in d.items()} for d in drugs_data], columns=attributes).to_csv(sep="\t", index=False, encoding="utf-8"))
                     results+=[
                         html.Br(),
-                        html.H3("Selected Drugs"),
+                        dbc.Row([
+                            html.H3("Selected Drugs"),
+                            dbc.Button("Download", href=drugs_href, target="_blank")
+                        ], justify="around", align="center"),
+                        html.Br(),
                         drugs_table]
                 targets_data=[d for d in data if d["kind"]=="Target"]
                 if len(targets_data)>0:
+                    if len(drugs_data)>0:
+                        results+=[html.Br()]
                     attributes=["name","ID","Gene","PDBID","Organism","Cellular Location","String Interaction Partners","Drugs","Diseases"]
-                    table_header=[html.Thead(html.Tr([html.Th(attribute) for attribute in ["Name","ID","Gene","PDBID","Organism","Cellular Location","String Interaction Partners","Drugs","Diseases"]]))]
-                    table_body=[html.Tbody([html.Tr([html.Td(d[attribute]) if attribute not in ["String Interaction Partners","Drugs","Diseases"] else html.Td(", ".join(d[attribute])) for attribute in attributes]) for d in targets_data])]
+                    table_header=[html.Thead(html.Tr([html.Th(attribute, style={"white-space": "nowrap"}) for attribute in ["Name","ID","Gene","PDBID","Organism","Cellular Location","String Interaction Partners","Drugs","Diseases"]]))]
+                    # table_body=[html.Tbody([html.Tr([html.Td(d[attribute]) if attribute not in ["String Interaction Partners","Drugs","Diseases"] else html.Td(", ".join(d[attribute])) for attribute in attributes]) for d in targets_data])]
+                    table_body=[]
+                    for target in targets_data:
+                        row=[]
+                        for attribute in attributes:
+                            if attribute == "name":
+                                row.append(html.Td(target["name"], style={"min-width":"8vw","max-width":"15vw"}))
+                            elif attribute == "ID":
+                                row.append(html.Td(html.A(target["ID"],href=target["drugbank_url"], target="_blank")))
+                            elif attribute == "Gene":
+                                row.append(html.Td(html.A(target["Gene"],href="https://www.uniprot.org/uniprot/"+target["ID"], target="_blank")))
+                            elif attribute in ["PDBID","Organism","Cellular Location"]:
+                                row.append(html.Td(target[attribute]))
+                            else:
+                                row.append(html.Td(dbc.Container(", ".join(target[attribute]), style={"max-height":"20vh","overflow-y":"auto","word-break": "break-word", "padding":"0px"}, fluid=True), style={"min-width":"10vw","max-width":"20vw","padding-right":"0px"}))
+                        table_body.append(html.Tr(row))
+                    table_body=[html.Tbody(table_body)]
                     targets_table=dbc.Table(table_header+table_body, className="table table-hover", bordered=True)
+                    targets_href="data:text/csv;charset=utf-8,"+quote(pd.DataFrame([{key:(value if not isinstance(value,list) else ", ".join(value)) for key,value in d.items()} for d in targets_data], columns=attributes).to_csv(sep="\t", index=False, encoding="utf-8"))
                     results+=[
                         html.Br(),
-                        html.H3("Selected Targets"),
+                        dbc.Row([
+                            html.H3("Selected Targets"),
+                            dbc.Button("Download", href=targets_href, target="_blank")
+                        ], justify="around", align="center"),
+                        html.Br(),
                         targets_table]
 
-                return dbc.Container(results, fluid=True), True, False
+                return dbc.Container(results, fluid=True, style={"padding":"3%"}), True, False
             else:
                 return None, False, True
         else:

@@ -200,17 +200,18 @@ def stringify_list_attributes(graph):
                 graph.nodes[node][attribute]=val
     return graph
 
-def save_graph(df,graph,name):
-    df.to_csv("data/graphs/"+name+".tsv",sep="\t")
-    nx.write_gpickle(graph,"data/graphs/"+name+".gpickle")
-    nx.write_adjlist(graph,"data/graphs/"+name+".adjlist",delimiter="\t")
-    nx.write_multiline_adjlist(graph,"data/graphs/"+name+".multiline_adjlist",delimiter="\t")
-    nx.write_edgelist(graph,"data/graphs/"+name+".edgelist",delimiter="\t")
-    with open("data/graphs/"+name+".cyjs","w") as outfile:
-        outfile.write(json.dumps(nx.cytoscape_data(graph), indent=2))
-    graph=stringify_list_attributes(graph)
-    nx.write_gexf(graph,"data/graphs/"+name+".gexf")
-    nx.write_graphml(graph,"data/graphs/"+name+".graphml")
+def save_graph(is_needed,df,graph,name):
+    if is_needed:
+        df.to_csv("data/graphs/"+name+".tsv",sep="\t")
+        nx.write_gpickle(graph,"data/graphs/"+name+".gpickle")
+        nx.write_adjlist(graph,"data/graphs/"+name+".adjlist",delimiter="\t")
+        nx.write_multiline_adjlist(graph,"data/graphs/"+name+".multiline_adjlist",delimiter="\t")
+        nx.write_edgelist(graph,"data/graphs/"+name+".edgelist",delimiter="\t")
+        with open("data/graphs/"+name+".cyjs","w") as outfile:
+            outfile.write(json.dumps(nx.cytoscape_data(graph), indent=2))
+        graph=stringify_list_attributes(graph)
+        nx.write_gexf(graph,"data/graphs/"+name+".gexf")
+        nx.write_graphml(graph,"data/graphs/"+name+".graphml")
 
 class collector():
     def __init__(self):
@@ -318,7 +319,7 @@ class collector():
         nx.set_node_attributes(G,{node:("#FC5F67" if G.nodes[node]["kind"] == "Drug" else "#12EAEA") for node in G.nodes()},"fill_color")
         nx.set_node_attributes(G,{node:("#FB3640" if G.nodes[node]["kind"] == "Drug" else "#0EBEBE") for node in G.nodes()},"line_color")
         self.__drugtarget=G
-        save_graph(df,G,"drug_target")
+        save_graph(self.added_new_drugs,df,G,"drug_target")
         # df.to_csv("data/graphs/drug_target.tsv",sep="\t")
         # nx.write_gpickle(G,"data/graphs/drug_target.gpickle")
         # nx.write_adjlist(G,"data/graphs/drug_target.adjlist",delimiter="\t")
@@ -335,7 +336,7 @@ class collector():
         self.graph_properties(G)
         self.__drugdrug=G
         df=nx.to_pandas_edgelist(G)
-        save_graph(df,G,"drug_drug")
+        save_graph(self.added_new_drugs,df,G,"drug_drug")
         # df.to_csv("data/graphs/drug_drug.tsv",sep="\t")
         # nx.write_gpickle(G,"data/graphs/drug_drug.gpickle")
         # nx.write_adjlist(G,"data/graphs/drug_drug.adjlist",delimiter="\t")
@@ -350,7 +351,7 @@ class collector():
         self.graph_properties(G)
         self.__targettarget=G
         df=nx.to_pandas_edgelist(G)
-        save_graph(df,G,"target_target")
+        save_graph(self.added_new_drugs,df,G,"target_target")
         # df.to_csv("data/graphs/target_target.tsv",sep="\t")
         # nx.write_gpickle(G,"data/graphs/target_target.gpickle")
         # nx.write_adjlist(G,"data/graphs/target_target.adjlist",delimiter="\t")
@@ -369,7 +370,7 @@ class collector():
         nx.set_node_attributes(G,{node:node for node in G.nodes},"gene")
         self.graph_properties(G)
         self.targetinteractors=G
-        save_graph(df,G,"target_interactors")
+        save_graph(self.added_new_drugs,df,G,"target_interactors")
         # df.to_csv("data/graphs/target_interactors.tsv",sep="\t")
         # nx.write_gpickle(G,"data/graphs/target_interactors.gpickle")
         # nx.write_adjlist(G,"data/graphs/target_interactors.adjlist",delimiter="\t")
@@ -389,7 +390,7 @@ class collector():
         nx.set_node_attributes(G,{node:("protein" if node in set(df["Source"]) else "disease") for node in G.nodes()},"kind")
         self.graph_properties(G)
         self.__targetdiseases=G
-        save_graph(df,G,"target_diseases")
+        save_graph(self.added_new_drugs,df,G,"target_diseases")
         # df.to_csv("data/graphs/target_diseases.tsv",sep="\t")
         # nx.write_gpickle(G,"data/graphs/target_diseases.gpickle")
         # nx.write_adjlist(G,"data/graphs/target_diseases.adjlist",delimiter="\t")

@@ -9590,20 +9590,6 @@
         "data": {
           "weight": 1,
           "source": "Camphor",
-          "target": "Resiniferatoxin"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Camphor",
-          "target": "Icosapent"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Camphor",
           "target": "Acetaminophen"
         }
       },
@@ -9617,8 +9603,43 @@
       {
         "data": {
           "weight": 1,
+          "source": "Camphor",
+          "target": "Icosapent"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Camphor",
+          "target": "Resiniferatoxin"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
           "source": "Ginseng",
-          "target": "Ibuprofen"
+          "target": "Acetaminophen"
+        }
+      },
+      {
+        "data": {
+          "weight": 2,
+          "source": "Ginseng",
+          "target": "Resveratrol"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Ginseng",
+          "target": "Celecoxib"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Ginseng",
+          "target": "Indomethacin"
         }
       },
       {
@@ -9632,7 +9653,14 @@
         "data": {
           "weight": 1,
           "source": "Ginseng",
-          "target": "Omeprazole"
+          "target": "Ibuprofen"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Ginseng",
+          "target": "Naproxen"
         }
       },
       {
@@ -9660,49 +9688,14 @@
         "data": {
           "weight": 1,
           "source": "Ginseng",
-          "target": "Indomethacin"
-        }
-      },
-      {
-        "data": {
-          "weight": 2,
-          "source": "Ginseng",
-          "target": "Resveratrol"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Ginseng",
-          "target": "Celecoxib"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Ginseng",
-          "target": "Naproxen"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Ginseng",
-          "target": "Acetaminophen"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Ginseng",
           "target": "Atorvastatin"
         }
       },
       {
         "data": {
           "weight": 1,
-          "source": "Emtricitabine",
-          "target": "Tenofovir disoproxil"
+          "source": "Ginseng",
+          "target": "Omeprazole"
         }
       },
       {
@@ -9721,6 +9714,13 @@
       },
       {
         "data": {
+          "weight": 1,
+          "source": "Emtricitabine",
+          "target": "Tenofovir disoproxil"
+        }
+      },
+      {
+        "data": {
           "weight": 2,
           "source": "Naltrexone",
           "target": "Metenkefalin"
@@ -9730,6 +9730,27 @@
         "data": {
           "weight": 1,
           "source": "Naltrexone",
+          "target": "Progesterone"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Prednisone",
+          "target": "Ciclesonide"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Prednisone",
+          "target": "Dexamethasone"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Prednisone",
           "target": "Progesterone"
         }
       },
@@ -9751,20 +9772,6 @@
         "data": {
           "weight": 1,
           "source": "Prednisone",
-          "target": "Dexamethasone"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Prednisone",
-          "target": "Methylprednisolone"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Prednisone",
           "target": "Hydrocortisone"
         }
       },
@@ -9772,42 +9779,7 @@
         "data": {
           "weight": 1,
           "source": "Prednisone",
-          "target": "Progesterone"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Prednisone",
-          "target": "Ciclesonide"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Atorvastatin",
-          "target": "Omeprazole"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Atorvastatin",
-          "target": "Leflunomide"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Atorvastatin",
-          "target": "Quercetin"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Atorvastatin",
-          "target": "Linagliptin"
+          "target": "Methylprednisolone"
         }
       },
       {
@@ -9835,6 +9807,34 @@
         "data": {
           "weight": 1,
           "source": "Atorvastatin",
+          "target": "Leflunomide"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Atorvastatin",
+          "target": "Quercetin"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Atorvastatin",
+          "target": "Linagliptin"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Atorvastatin",
+          "target": "Omeprazole"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Atorvastatin",
           "target": "Sitagliptin"
         }
       },
@@ -9843,6 +9843,20 @@
           "weight": 1,
           "source": "Ceftriaxone",
           "target": "Piperacillin"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Nafamostat",
+          "target": "Bemiparin"
+        }
+      },
+      {
+        "data": {
+          "weight": 2,
+          "source": "Nafamostat",
+          "target": "Aprotinin"
         }
       },
       {
@@ -9863,21 +9877,7 @@
         "data": {
           "weight": 1,
           "source": "Nafamostat",
-          "target": "Enoxaparin"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Nafamostat",
-          "target": "Bemiparin"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Nafamostat",
-          "target": "Fondaparinux"
+          "target": "Argatroban"
         }
       },
       {
@@ -9891,28 +9891,21 @@
         "data": {
           "weight": 1,
           "source": "Nafamostat",
-          "target": "Argatroban"
-        }
-      },
-      {
-        "data": {
-          "weight": 2,
-          "source": "Nafamostat",
-          "target": "Aprotinin"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Nafamostat",
           "target": "Rivaroxaban"
         }
       },
       {
         "data": {
           "weight": 1,
-          "source": "Vitamin D",
-          "target": "Cholecalciferol"
+          "source": "Nafamostat",
+          "target": "Enoxaparin"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Nafamostat",
+          "target": "Fondaparinux"
         }
       },
       {
@@ -9926,28 +9919,21 @@
         "data": {
           "weight": 1,
           "source": "Vitamin D",
-          "target": "Calcifediol"
+          "target": "Curcumin"
         }
       },
       {
         "data": {
           "weight": 1,
           "source": "Vitamin D",
-          "target": "Curcumin"
+          "target": "Cholecalciferol"
         }
       },
       {
         "data": {
           "weight": 1,
-          "source": "Icosapent",
-          "target": "Curcumin"
-        }
-      },
-      {
-        "data": {
-          "weight": 6,
-          "source": "Icosapent",
-          "target": "alpha-Linolenic acid"
+          "source": "Vitamin D",
+          "target": "Calcifediol"
         }
       },
       {
@@ -9959,13 +9945,6 @@
       },
       {
         "data": {
-          "weight": 1,
-          "source": "Icosapent",
-          "target": "Celecoxib"
-        }
-      },
-      {
-        "data": {
           "weight": 2,
           "source": "Icosapent",
           "target": "Naproxen"
@@ -9973,37 +9952,9 @@
       },
       {
         "data": {
-          "weight": 1,
+          "weight": 6,
           "source": "Icosapent",
-          "target": "Resiniferatoxin"
-        }
-      },
-      {
-        "data": {
-          "weight": 4,
-          "source": "Icosapent",
-          "target": "Ibuprofen"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Icosapent",
-          "target": "Lenalidomide"
-        }
-      },
-      {
-        "data": {
-          "weight": 4,
-          "source": "Icosapent",
-          "target": "Indomethacin"
-        }
-      },
-      {
-        "data": {
-          "weight": 2,
-          "source": "Icosapent",
-          "target": "Omega-3 fatty acids"
+          "target": "alpha-Linolenic acid"
         }
       },
       {
@@ -10022,9 +9973,58 @@
       },
       {
         "data": {
+          "weight": 1,
+          "source": "Icosapent",
+          "target": "Celecoxib"
+        }
+      },
+      {
+        "data": {
+          "weight": 4,
+          "source": "Icosapent",
+          "target": "Indomethacin"
+        }
+      },
+      {
+        "data": {
           "weight": 3,
           "source": "Icosapent",
           "target": "Oleic Acid"
+        }
+      },
+      {
+        "data": {
+          "weight": 4,
+          "source": "Icosapent",
+          "target": "Ibuprofen"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Icosapent",
+          "target": "Lenalidomide"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Icosapent",
+          "target": "Curcumin"
+        }
+      },
+      {
+        "data": {
+          "weight": 2,
+          "source": "Icosapent",
+          "target": "Omega-3 fatty acids"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Icosapent",
+          "target": "Resiniferatoxin"
         }
       },
       {
@@ -10045,49 +10045,14 @@
         "data": {
           "weight": 1,
           "source": "Pantoprazole",
-          "target": "Omeprazole"
+          "target": "Citrulline"
         }
       },
       {
         "data": {
           "weight": 1,
           "source": "Pantoprazole",
-          "target": "Citrulline"
-        }
-      },
-      {
-        "data": {
-          "weight": 2,
-          "source": "Acetaminophen",
-          "target": "Ibuprofen"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Acetaminophen",
-          "target": "Lenalidomide"
-        }
-      },
-      {
-        "data": {
-          "weight": 2,
-          "source": "Acetaminophen",
-          "target": "Indomethacin"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Acetaminophen",
-          "target": "alpha-Linolenic acid"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Acetaminophen",
-          "target": "Celecoxib"
+          "target": "Omeprazole"
         }
       },
       {
@@ -10101,7 +10066,42 @@
         "data": {
           "weight": 2,
           "source": "Acetaminophen",
+          "target": "Indomethacin"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Acetaminophen",
+          "target": "Celecoxib"
+        }
+      },
+      {
+        "data": {
+          "weight": 2,
+          "source": "Acetaminophen",
+          "target": "Ibuprofen"
+        }
+      },
+      {
+        "data": {
+          "weight": 2,
+          "source": "Acetaminophen",
           "target": "Naproxen"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Acetaminophen",
+          "target": "Lenalidomide"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Acetaminophen",
+          "target": "alpha-Linolenic acid"
         }
       },
       {
@@ -10115,7 +10115,7 @@
         "data": {
           "weight": 1,
           "source": "Suramin",
-          "target": "Nicotinamide"
+          "target": "Argatroban"
         }
       },
       {
@@ -10129,14 +10129,14 @@
         "data": {
           "weight": 1,
           "source": "Suramin",
-          "target": "Argatroban"
+          "target": "Nicotinamide"
         }
       },
       {
         "data": {
           "weight": 1,
           "source": "Losartan",
-          "target": "Candesartan"
+          "target": "Angiotensin II"
         }
       },
       {
@@ -10157,14 +10157,7 @@
         "data": {
           "weight": 1,
           "source": "Losartan",
-          "target": "Irbesartan"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Losartan",
-          "target": "Candesartan cilexetil"
+          "target": "Candesartan"
         }
       },
       {
@@ -10178,14 +10171,42 @@
         "data": {
           "weight": 1,
           "source": "Losartan",
-          "target": "Telmisartan"
+          "target": "Candesartan cilexetil"
         }
       },
       {
         "data": {
           "weight": 1,
           "source": "Losartan",
-          "target": "Angiotensin II"
+          "target": "Irbesartan"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Losartan",
+          "target": "Telmisartan"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Naproxen",
+          "target": "Celecoxib"
+        }
+      },
+      {
+        "data": {
+          "weight": 2,
+          "source": "Naproxen",
+          "target": "Indomethacin"
+        }
+      },
+      {
+        "data": {
+          "weight": 2,
+          "source": "Naproxen",
+          "target": "Resveratrol"
         }
       },
       {
@@ -10204,27 +10225,6 @@
       },
       {
         "data": {
-          "weight": 2,
-          "source": "Naproxen",
-          "target": "Indomethacin"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Naproxen",
-          "target": "Celecoxib"
-        }
-      },
-      {
-        "data": {
-          "weight": 2,
-          "source": "Naproxen",
-          "target": "Resveratrol"
-        }
-      },
-      {
-        "data": {
           "weight": 1,
           "source": "Colchicine",
           "target": "Artenimol"
@@ -10234,7 +10234,21 @@
         "data": {
           "weight": 2,
           "source": "alpha-Linolenic acid",
-          "target": "Ibuprofen"
+          "target": "Resveratrol"
+        }
+      },
+      {
+        "data": {
+          "weight": 2,
+          "source": "alpha-Linolenic acid",
+          "target": "Indomethacin"
+        }
+      },
+      {
+        "data": {
+          "weight": 4,
+          "source": "alpha-Linolenic acid",
+          "target": "Oleic Acid"
         }
       },
       {
@@ -10248,21 +10262,14 @@
         "data": {
           "weight": 2,
           "source": "alpha-Linolenic acid",
-          "target": "Indomethacin"
+          "target": "Ibuprofen"
         }
       },
       {
         "data": {
-          "weight": 2,
+          "weight": 1,
           "source": "alpha-Linolenic acid",
-          "target": "Omega-3 fatty acids"
-        }
-      },
-      {
-        "data": {
-          "weight": 2,
-          "source": "alpha-Linolenic acid",
-          "target": "Resveratrol"
+          "target": "Resiniferatoxin"
         }
       },
       {
@@ -10281,16 +10288,16 @@
       },
       {
         "data": {
-          "weight": 1,
+          "weight": 2,
           "source": "alpha-Linolenic acid",
-          "target": "Resiniferatoxin"
+          "target": "Omega-3 fatty acids"
         }
       },
       {
         "data": {
-          "weight": 4,
-          "source": "alpha-Linolenic acid",
-          "target": "Oleic Acid"
+          "weight": 1,
+          "source": "Lopinavir",
+          "target": "Darunavir"
         }
       },
       {
@@ -10310,15 +10317,22 @@
       {
         "data": {
           "weight": 1,
-          "source": "Lopinavir",
-          "target": "Darunavir"
+          "source": "Tinzaparin",
+          "target": "Bemiparin"
         }
       },
       {
         "data": {
           "weight": 1,
           "source": "Tinzaparin",
-          "target": "Heparin"
+          "target": "Sulodexide"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Tinzaparin",
+          "target": "Fondaparinux"
         }
       },
       {
@@ -10339,63 +10353,7 @@
         "data": {
           "weight": 1,
           "source": "Tinzaparin",
-          "target": "Bemiparin"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Tinzaparin",
-          "target": "Fondaparinux"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Tinzaparin",
-          "target": "Sulodexide"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Quercetin",
-          "target": "Leflunomide"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Quercetin",
-          "target": "Omeprazole"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Quercetin",
-          "target": "Artenimol"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Quercetin",
-          "target": "Dexamethasone"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Quercetin",
-          "target": "Curcumin"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Quercetin",
-          "target": "Piperine"
+          "target": "Heparin"
         }
       },
       {
@@ -10403,20 +10361,6 @@
           "weight": 6,
           "source": "Quercetin",
           "target": "Resveratrol"
-        }
-      },
-      {
-        "data": {
-          "weight": 2,
-          "source": "Quercetin",
-          "target": "Melatonin"
-        }
-      },
-      {
-        "data": {
-          "weight": 3,
-          "source": "Quercetin",
-          "target": "Progesterone"
         }
       },
       {
@@ -10430,6 +10374,41 @@
         "data": {
           "weight": 1,
           "source": "Quercetin",
+          "target": "Vitamin E"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Quercetin",
+          "target": "Dexamethasone"
+        }
+      },
+      {
+        "data": {
+          "weight": 2,
+          "source": "Quercetin",
+          "target": "Melatonin"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Quercetin",
+          "target": "Leflunomide"
+        }
+      },
+      {
+        "data": {
+          "weight": 3,
+          "source": "Quercetin",
+          "target": "Progesterone"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Quercetin",
           "target": "Ritonavir"
         }
       },
@@ -10437,7 +10416,28 @@
         "data": {
           "weight": 1,
           "source": "Quercetin",
-          "target": "Vitamin E"
+          "target": "Piperine"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Quercetin",
+          "target": "Artenimol"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Quercetin",
+          "target": "Curcumin"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Quercetin",
+          "target": "Omeprazole"
         }
       },
       {
@@ -10472,13 +10472,6 @@
         "data": {
           "weight": 1,
           "source": "Angiotensin II",
-          "target": "Candesartan"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Angiotensin II",
           "target": "Olmesartan"
         }
       },
@@ -10493,14 +10486,7 @@
         "data": {
           "weight": 1,
           "source": "Angiotensin II",
-          "target": "Irbesartan"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Angiotensin II",
-          "target": "Candesartan cilexetil"
+          "target": "Candesartan"
         }
       },
       {
@@ -10514,14 +10500,21 @@
         "data": {
           "weight": 1,
           "source": "Angiotensin II",
-          "target": "Telmisartan"
+          "target": "Candesartan cilexetil"
         }
       },
       {
         "data": {
           "weight": 1,
-          "source": "Valsartan",
-          "target": "Candesartan"
+          "source": "Angiotensin II",
+          "target": "Irbesartan"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Angiotensin II",
+          "target": "Telmisartan"
         }
       },
       {
@@ -10535,14 +10528,7 @@
         "data": {
           "weight": 1,
           "source": "Valsartan",
-          "target": "Irbesartan"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Valsartan",
-          "target": "Candesartan cilexetil"
+          "target": "Candesartan"
         }
       },
       {
@@ -10556,28 +10542,21 @@
         "data": {
           "weight": 1,
           "source": "Valsartan",
-          "target": "Telmisartan"
-        }
-      },
-      {
-        "data": {
-          "weight": 2,
-          "source": "Fondaparinux",
-          "target": "Heparin"
+          "target": "Candesartan cilexetil"
         }
       },
       {
         "data": {
           "weight": 1,
-          "source": "Fondaparinux",
-          "target": "Nadroparin"
+          "source": "Valsartan",
+          "target": "Irbesartan"
         }
       },
       {
         "data": {
-          "weight": 2,
-          "source": "Fondaparinux",
-          "target": "Enoxaparin"
+          "weight": 1,
+          "source": "Valsartan",
+          "target": "Telmisartan"
         }
       },
       {
@@ -10596,6 +10575,20 @@
       },
       {
         "data": {
+          "weight": 2,
+          "source": "Fondaparinux",
+          "target": "Heparin"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Fondaparinux",
+          "target": "Nadroparin"
+        }
+      },
+      {
+        "data": {
           "weight": 1,
           "source": "Fondaparinux",
           "target": "Rivaroxaban"
@@ -10603,9 +10596,9 @@
       },
       {
         "data": {
-          "weight": 1,
-          "source": "Omeprazole",
-          "target": "Leflunomide"
+          "weight": 2,
+          "source": "Fondaparinux",
+          "target": "Enoxaparin"
         }
       },
       {
@@ -10619,14 +10612,14 @@
         "data": {
           "weight": 1,
           "source": "Omeprazole",
-          "target": "Rabeprazole"
+          "target": "Leflunomide"
         }
       },
       {
         "data": {
           "weight": 1,
-          "source": "Iloprost",
-          "target": "Indomethacin"
+          "source": "Omeprazole",
+          "target": "Rabeprazole"
         }
       },
       {
@@ -10639,8 +10632,8 @@
       {
         "data": {
           "weight": 1,
-          "source": "Irbesartan",
-          "target": "Candesartan"
+          "source": "Iloprost",
+          "target": "Indomethacin"
         }
       },
       {
@@ -10654,7 +10647,7 @@
         "data": {
           "weight": 1,
           "source": "Irbesartan",
-          "target": "Candesartan cilexetil"
+          "target": "Candesartan"
         }
       },
       {
@@ -10668,14 +10661,14 @@
         "data": {
           "weight": 1,
           "source": "Irbesartan",
-          "target": "Telmisartan"
+          "target": "Candesartan cilexetil"
         }
       },
       {
         "data": {
           "weight": 1,
-          "source": "Tenofovir alafenamide",
-          "target": "Tenofovir disoproxil"
+          "source": "Irbesartan",
+          "target": "Telmisartan"
         }
       },
       {
@@ -10683,6 +10676,13 @@
           "weight": 3,
           "source": "Tenofovir alafenamide",
           "target": "Tenofovir"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Tenofovir alafenamide",
+          "target": "Tenofovir disoproxil"
         }
       },
       {
@@ -10703,20 +10703,6 @@
         "data": {
           "weight": 1,
           "source": "Celecoxib",
-          "target": "Ibuprofen"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Celecoxib",
-          "target": "Lenalidomide"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Celecoxib",
           "target": "Indomethacin"
         }
       },
@@ -10725,6 +10711,20 @@
           "weight": 1,
           "source": "Celecoxib",
           "target": "Resveratrol"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Celecoxib",
+          "target": "Ibuprofen"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Celecoxib",
+          "target": "Lenalidomide"
         }
       },
       {
@@ -10780,14 +10780,14 @@
         "data": {
           "weight": 1,
           "source": "Olmesartan",
-          "target": "Candesartan cilexetil"
+          "target": "Eprosartan"
         }
       },
       {
         "data": {
           "weight": 1,
           "source": "Olmesartan",
-          "target": "Eprosartan"
+          "target": "Candesartan cilexetil"
         }
       },
       {
@@ -10829,7 +10829,7 @@
         "data": {
           "weight": 1,
           "source": "Ribavirin",
-          "target": "Remdesivir"
+          "target": "Danoprevir"
         }
       },
       {
@@ -10850,7 +10850,7 @@
         "data": {
           "weight": 1,
           "source": "Ribavirin",
-          "target": "Danoprevir"
+          "target": "Remdesivir"
         }
       },
       {
@@ -10871,7 +10871,14 @@
         "data": {
           "weight": 2,
           "source": "Oleic Acid",
-          "target": "Ibuprofen"
+          "target": "Resveratrol"
+        }
+      },
+      {
+        "data": {
+          "weight": 2,
+          "source": "Oleic Acid",
+          "target": "Indomethacin"
         }
       },
       {
@@ -10885,21 +10892,7 @@
         "data": {
           "weight": 2,
           "source": "Oleic Acid",
-          "target": "Indomethacin"
-        }
-      },
-      {
-        "data": {
-          "weight": 2,
-          "source": "Oleic Acid",
-          "target": "Omega-3 fatty acids"
-        }
-      },
-      {
-        "data": {
-          "weight": 2,
-          "source": "Oleic Acid",
-          "target": "Resveratrol"
+          "target": "Ibuprofen"
         }
       },
       {
@@ -10907,6 +10900,13 @@
           "weight": 1,
           "source": "Oleic Acid",
           "target": "Tretinoin"
+        }
+      },
+      {
+        "data": {
+          "weight": 2,
+          "source": "Oleic Acid",
+          "target": "Omega-3 fatty acids"
         }
       },
       {
@@ -10948,7 +10948,7 @@
         "data": {
           "weight": 1,
           "source": "Artenimol",
-          "target": "Pyridostigmine"
+          "target": "Resveratrol"
         }
       },
       {
@@ -10962,14 +10962,21 @@
         "data": {
           "weight": 1,
           "source": "Artenimol",
-          "target": "Resveratrol"
+          "target": "Dipyridamole"
         }
       },
       {
         "data": {
           "weight": 1,
           "source": "Artenimol",
-          "target": "Dipyridamole"
+          "target": "Pyridostigmine"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Telmisartan",
+          "target": "Resveratrol"
         }
       },
       {
@@ -10977,6 +10984,27 @@
           "weight": 1,
           "source": "Telmisartan",
           "target": "Candesartan"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Telmisartan",
+          "target": "Eprosartan"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Telmisartan",
+          "target": "Indomethacin"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Telmisartan",
+          "target": "Ibuprofen"
         }
       },
       {
@@ -10991,34 +11019,6 @@
           "weight": 1,
           "source": "Telmisartan",
           "target": "Candesartan cilexetil"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Telmisartan",
-          "target": "Resveratrol"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Telmisartan",
-          "target": "Eprosartan"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Telmisartan",
-          "target": "Ibuprofen"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Telmisartan",
-          "target": "Indomethacin"
         }
       },
       {
@@ -11053,6 +11053,13 @@
         "data": {
           "weight": 1,
           "source": "Rivaroxaban",
+          "target": "Bemiparin"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Rivaroxaban",
           "target": "Heparin"
         }
       },
@@ -11066,8 +11073,8 @@
       {
         "data": {
           "weight": 1,
-          "source": "Rivaroxaban",
-          "target": "Bemiparin"
+          "source": "GS-441524",
+          "target": "Galidesivir"
         }
       },
       {
@@ -11080,29 +11087,8 @@
       {
         "data": {
           "weight": 1,
-          "source": "GS-441524",
-          "target": "Galidesivir"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
           "source": "Velpatasvir",
           "target": "Daclatasvir"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Cholesterol",
-          "target": "Curcumin"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Cholesterol",
-          "target": "Cholecalciferol"
         }
       },
       {
@@ -11122,8 +11108,15 @@
       {
         "data": {
           "weight": 1,
-          "source": "Dipyridamole",
-          "target": "Lidocaine"
+          "source": "Cholesterol",
+          "target": "Cholecalciferol"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Cholesterol",
+          "target": "Curcumin"
         }
       },
       {
@@ -11131,6 +11124,20 @@
           "weight": 1,
           "source": "Dipyridamole",
           "target": "Progesterone"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Dipyridamole",
+          "target": "Lidocaine"
+        }
+      },
+      {
+        "data": {
+          "weight": 2,
+          "source": "Bemiparin",
+          "target": "Sulodexide"
         }
       },
       {
@@ -11156,16 +11163,16 @@
       },
       {
         "data": {
-          "weight": 2,
-          "source": "Bemiparin",
-          "target": "Sulodexide"
+          "weight": 4,
+          "source": "Melatonin",
+          "target": "Resveratrol"
         }
       },
       {
         "data": {
-          "weight": 4,
+          "weight": 1,
           "source": "Melatonin",
-          "target": "Resveratrol"
+          "target": "Estradiol"
         }
       },
       {
@@ -11178,8 +11185,15 @@
       {
         "data": {
           "weight": 1,
-          "source": "Melatonin",
+          "source": "Vitamin E",
           "target": "Estradiol"
+        }
+      },
+      {
+        "data": {
+          "weight": 2,
+          "source": "Vitamin E",
+          "target": "Resveratrol"
         }
       },
       {
@@ -11193,28 +11207,21 @@
         "data": {
           "weight": 1,
           "source": "Vitamin E",
+          "target": "Ritonavir"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Vitamin E",
           "target": "Piperine"
         }
       },
       {
         "data": {
           "weight": 2,
-          "source": "Vitamin E",
-          "target": "Resveratrol"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Vitamin E",
-          "target": "Estradiol"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Vitamin E",
-          "target": "Ritonavir"
+          "source": "Tretinoin",
+          "target": "Isotretinoin"
         }
       },
       {
@@ -11226,9 +11233,9 @@
       },
       {
         "data": {
-          "weight": 2,
-          "source": "Tretinoin",
-          "target": "Isotretinoin"
+          "weight": 1,
+          "source": "Nadroparin",
+          "target": "Sulodexide"
         }
       },
       {
@@ -11247,9 +11254,16 @@
       },
       {
         "data": {
-          "weight": 1,
-          "source": "Nadroparin",
-          "target": "Sulodexide"
+          "weight": 4,
+          "source": "Ibuprofen",
+          "target": "Indomethacin"
+        }
+      },
+      {
+        "data": {
+          "weight": 4,
+          "source": "Ibuprofen",
+          "target": "Resveratrol"
         }
       },
       {
@@ -11268,23 +11282,9 @@
       },
       {
         "data": {
-          "weight": 4,
-          "source": "Ibuprofen",
-          "target": "Indomethacin"
-        }
-      },
-      {
-        "data": {
           "weight": 2,
           "source": "Ibuprofen",
           "target": "Omega-3 fatty acids"
-        }
-      },
-      {
-        "data": {
-          "weight": 4,
-          "source": "Ibuprofen",
-          "target": "Resveratrol"
         }
       },
       {
@@ -11312,6 +11312,20 @@
         "data": {
           "weight": 1,
           "source": "Ciclesonide",
+          "target": "Dexamethasone"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Ciclesonide",
+          "target": "Progesterone"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Ciclesonide",
           "target": "Budesonide"
         }
       },
@@ -11326,7 +11340,7 @@
         "data": {
           "weight": 1,
           "source": "Ciclesonide",
-          "target": "Dexamethasone"
+          "target": "Hydrocortisone"
         }
       },
       {
@@ -11339,15 +11353,8 @@
       {
         "data": {
           "weight": 1,
-          "source": "Ciclesonide",
-          "target": "Hydrocortisone"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Ciclesonide",
-          "target": "Progesterone"
+          "source": "Acalabrutinib",
+          "target": "Zanubrutinib"
         }
       },
       {
@@ -11355,13 +11362,6 @@
           "weight": 1,
           "source": "Acalabrutinib",
           "target": "Ibrutinib"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Acalabrutinib",
-          "target": "Zanubrutinib"
         }
       },
       {
@@ -11375,14 +11375,14 @@
         "data": {
           "weight": 1,
           "source": "Candesartan",
-          "target": "Candesartan cilexetil"
+          "target": "Eprosartan"
         }
       },
       {
         "data": {
           "weight": 1,
           "source": "Candesartan",
-          "target": "Eprosartan"
+          "target": "Candesartan cilexetil"
         }
       },
       {
@@ -11403,13 +11403,6 @@
         "data": {
           "weight": 1,
           "source": "Prednisolone",
-          "target": "Budesonide"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Prednisolone",
           "target": "Dexamethasone"
         }
       },
@@ -11417,7 +11410,14 @@
         "data": {
           "weight": 1,
           "source": "Prednisolone",
-          "target": "Methylprednisolone"
+          "target": "Progesterone"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Prednisolone",
+          "target": "Budesonide"
         }
       },
       {
@@ -11431,7 +11431,7 @@
         "data": {
           "weight": 1,
           "source": "Prednisolone",
-          "target": "Progesterone"
+          "target": "Methylprednisolone"
         }
       },
       {
@@ -11464,16 +11464,16 @@
       },
       {
         "data": {
-          "weight": 2,
+          "weight": 1,
           "source": "Enoxaparin",
-          "target": "Heparin"
+          "target": "Sulodexide"
         }
       },
       {
         "data": {
-          "weight": 1,
+          "weight": 2,
           "source": "Enoxaparin",
-          "target": "Sulodexide"
+          "target": "Heparin"
         }
       },
       {
@@ -11487,35 +11487,7 @@
         "data": {
           "weight": 1,
           "source": "Progesterone",
-          "target": "Budesonide"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Progesterone",
-          "target": "Methylprednisolone"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Progesterone",
           "target": "Resveratrol"
-        }
-      },
-      {
-        "data": {
-          "weight": 2,
-          "source": "Progesterone",
-          "target": "Estradiol"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Progesterone",
-          "target": "Lidocaine"
         }
       },
       {
@@ -11529,7 +11501,35 @@
         "data": {
           "weight": 1,
           "source": "Progesterone",
+          "target": "Budesonide"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Progesterone",
+          "target": "Lidocaine"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Progesterone",
           "target": "Hydrocortisone"
+        }
+      },
+      {
+        "data": {
+          "weight": 2,
+          "source": "Progesterone",
+          "target": "Estradiol"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Progesterone",
+          "target": "Methylprednisolone"
         }
       },
       {
@@ -11537,6 +11537,13 @@
           "weight": 1,
           "source": "Sulodexide",
           "target": "Heparin"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Fluoxetine",
+          "target": "Levamisole"
         }
       },
       {
@@ -11551,13 +11558,6 @@
           "weight": 2,
           "source": "Fluoxetine",
           "target": "Verapamil"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Fluoxetine",
-          "target": "Levamisole"
         }
       },
       {
@@ -11604,6 +11604,13 @@
       },
       {
         "data": {
+          "weight": 2,
+          "source": "Curcumin",
+          "target": "Resveratrol"
+        }
+      },
+      {
+        "data": {
           "weight": 1,
           "source": "Curcumin",
           "target": "Indomethacin"
@@ -11613,14 +11620,7 @@
         "data": {
           "weight": 1,
           "source": "Curcumin",
-          "target": "Omega-3 fatty acids"
-        }
-      },
-      {
-        "data": {
-          "weight": 2,
-          "source": "Curcumin",
-          "target": "Resveratrol"
+          "target": "Calcifediol"
         }
       },
       {
@@ -11634,7 +11634,7 @@
         "data": {
           "weight": 1,
           "source": "Curcumin",
-          "target": "Calcifediol"
+          "target": "Omega-3 fatty acids"
         }
       },
       {
@@ -11653,20 +11653,6 @@
       },
       {
         "data": {
-          "weight": 1,
-          "source": "Estradiol",
-          "target": "Dexamethasone"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Estradiol",
-          "target": "Piperine"
-        }
-      },
-      {
-        "data": {
           "weight": 2,
           "source": "Estradiol",
           "target": "Resveratrol"
@@ -11676,7 +11662,21 @@
         "data": {
           "weight": 1,
           "source": "Estradiol",
+          "target": "Dexamethasone"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Estradiol",
           "target": "Ritonavir"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Estradiol",
+          "target": "Piperine"
         }
       },
       {
@@ -11704,14 +11704,14 @@
         "data": {
           "weight": 2,
           "source": "Hydrocortisone",
-          "target": "Budesonide"
+          "target": "Dexamethasone"
         }
       },
       {
         "data": {
           "weight": 2,
           "source": "Hydrocortisone",
-          "target": "Dexamethasone"
+          "target": "Budesonide"
         }
       },
       {
@@ -11725,21 +11725,14 @@
         "data": {
           "weight": 1,
           "source": "Darunavir",
-          "target": "Atazanavir"
-        }
-      },
-      {
-        "data": {
-          "weight": 1,
-          "source": "Darunavir",
           "target": "Ritonavir"
         }
       },
       {
         "data": {
           "weight": 1,
-          "source": "Piperine",
-          "target": "Dexamethasone"
+          "source": "Darunavir",
+          "target": "Atazanavir"
         }
       },
       {
@@ -11747,6 +11740,13 @@
           "weight": 1,
           "source": "Piperine",
           "target": "Resveratrol"
+        }
+      },
+      {
+        "data": {
+          "weight": 1,
+          "source": "Piperine",
+          "target": "Dexamethasone"
         }
       },
       {
@@ -11774,14 +11774,14 @@
         "data": {
           "weight": 2,
           "source": "Methylprednisolone",
-          "target": "Budesonide"
+          "target": "Dexamethasone"
         }
       },
       {
         "data": {
           "weight": 2,
           "source": "Methylprednisolone",
-          "target": "Dexamethasone"
+          "target": "Budesonide"
         }
       },
       {
@@ -11816,14 +11816,14 @@
         "data": {
           "weight": 1,
           "source": "Ritonavir",
-          "target": "Dexamethasone"
+          "target": "Resveratrol"
         }
       },
       {
         "data": {
           "weight": 1,
           "source": "Ritonavir",
-          "target": "Resveratrol"
+          "target": "Dexamethasone"
         }
       },
       {

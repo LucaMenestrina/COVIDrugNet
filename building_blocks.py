@@ -197,7 +197,7 @@ def graph_properties(prefix):
                     dbc.Row(html.H3("Graph Properties")),
                     dbc.Row([
                         dbc.Col(width=3), # just to move everything to the right (justify doesn't work)
-                        dbc.Col(html.Font("Sort by: ", style={"white-space":"nowrap"}),align="end"),
+                        dbc.Col(html.Font("Sort by: ", style={"white-space":"nowrap"}),align="center", style={"text-align":"right"}),
                         dbc.Col([
                             dcc.Dropdown(id=prefix+"_properties_table_sorting",  options=[
                                 {"label":"Degree: Low to High","value":"degree,1"},
@@ -208,7 +208,7 @@ def graph_properties(prefix):
                                 {"label":"Betweenness Centrality: High to Low","value":"Betweenness_Centrality,0"}
                             ], value="degree,0", clearable=False, searchable=False, optionHeight=25,className="DropdownMenu")
                         ],align="center", width=4),
-                        dbc.Col(html.Font("Rows to show: ", style={"white-space":"nowrap"}),align="end"),
+                        dbc.Col(html.Font("Rows to show: ", style={"white-space":"nowrap", "text-align":"right"}),align="center"),
                         dbc.Col([
                             dcc.Dropdown(id=prefix+"_properties_table_rows",options=[
                                 {"label":"10","value":10},
@@ -220,6 +220,7 @@ def graph_properties(prefix):
                         ],align="center", width=1),
                         dbc.Col(html.A(dbc.Button("Download", className="ml-auto"), target="_blank", download="graph_properties.tsv", id=prefix+"_download_graph_properties"), align="center")
                     ], justify="end", align="center"),
+                    html.Br(),
                     dbc.Container(id=prefix+"_graph_properties_table_container", fluid=True)
                 ])
             ])
