@@ -1,5 +1,5 @@
 #collector.py
-# GMT Thu Sep  3 07:10:26 2020
+# GMT Fri Sep  4 07:43:17 2020
 # 
 Piclidenoson	Adenosine receptor A3
 Adenosine receptor A3
@@ -471,7 +471,7 @@ Nicotinate-nucleotide pyrophosphorylase [carboxylating]
 Nicotinamide N-methyltransferase
 Rivaroxaban
 GS-441524	Replicase polyprotein 1ab
-Replicase polyprotein 1ab	Remdesivir
+Replicase polyprotein 1ab	Remdesivir	GC-376 free acid
 Velpatasvir
 Cholesterol	Nuclear receptor ROR-alpha	C-type lectin domain family 4 member E
 Nuclear receptor ROR-alpha
@@ -829,3 +829,5 @@ Cyclosporine	Calcium signal-modulating cyclophilin ligand	Calcineurin subunit B 
 Calcium signal-modulating cyclophilin ligand
 Calcineurin subunit B type 2
 Peptidyl-prolyl cis-trans isomerase F, mitochondrial
+GC-376 free acid	Replicase polyprotein 1a
+Replicase polyprotein 1a

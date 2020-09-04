@@ -28,34 +28,34 @@ from callbacks import *
 
 prefix="about"
 
-layout=dbc.Row([
-        dbc.Col(sidebar(prefix), width=1, className="bg-light"),
-        dbc.Col([
+layout=dbc.Col([
             headbar(prefix),
-            # html.Br(),
-            # html.H1("COVID-19 Networker", style={"text-align":"center"}),
-            html.Br(),
-            dbc.Col([
-                html.Center([
-                    html.Div(style={"height":"10vh"}),
-                    html.H2("404 Page Not Found"),
+            dbc.Row([
+                dbc.Col(sidebar(prefix), width=1, className="bg-light"),
+                dbc.Col([
                     html.Br(),
-                    html.H3("Sorry, we can't find that page ..."),
-                    html.Br(),
-                    html.H5("Please check the URL and try again ..."),
-                    html.Div(style={"height":"25vh"})
-                ]),
-                dbc.Row([
-                    dbc.Col(width=1),
                     dbc.Col([
-                        html.P([html.Font("Try to go back to our "),html.A("homepage", href="/home")]),
-                        html.P([html.Font("If the problem persists feel free to "),html.A("reach us out", href="mailto:luca.menestrina2@unibo.it")])
+                        html.Center([
+                            html.Div(style={"height":"10vh"}),
+                            html.H2("404 Page Not Found"),
+                            html.Br(),
+                            html.H3("Sorry, we can't find that page ..."),
+                            html.Br(),
+                            html.H5("Please check the URL and try again ..."),
+                            html.Div(style={"height":"25vh"})
+                        ]),
+                        dbc.Row([
+                            dbc.Col(width=1),
+                            dbc.Col([
+                                html.P([html.Font("Try to go back to our "),html.A("homepage", href="/home")]),
+                                html.P([html.Font("If the problem persists feel free to "),html.A("reach us out", href="mailto:luca.menestrina2@unibo.it")])
+                            ])
+                        ])
                     ])
-                ])
-            ])
-        ], className="h-100"),
-        footer()
-    ], no_gutters=True, style={"height":"100vh"})
+                ], className="h-100"),
+                footer()
+            ], no_gutters=True, style={"height":"100vh"})
+        ], style={"padding":"0px"})
 
 # if __name__=="__main__":
 #     app.run_server(debug=False)

@@ -1,5 +1,5 @@
 #collector.py
-# GMT Thu Sep  3 07:10:26 2020
+# GMT Fri Sep  4 07:43:17 2020
 # 
 Piclidenoson	1
 Adenosine receptor A3	{}
@@ -1022,8 +1022,9 @@ Nicotinamide N-methyltransferase	0
 Rivaroxaban	0
 GS-441524	1
 Replicase polyprotein 1ab	{}
-Replicase polyprotein 1ab	1
+Replicase polyprotein 1ab	2
 Remdesivir	{}
+GC-376 free acid	{}
 Velpatasvir	0
 Cholesterol	2
 Nuclear receptor ROR-alpha	{}
@@ -1670,3 +1671,6 @@ Peptidyl-prolyl cis-trans isomerase F, mitochondrial	{}
 Calcium signal-modulating cyclophilin ligand	0
 Calcineurin subunit B type 2	0
 Peptidyl-prolyl cis-trans isomerase F, mitochondrial	0
+GC-376 free acid	1
+Replicase polyprotein 1a	{}
+Replicase polyprotein 1a	0

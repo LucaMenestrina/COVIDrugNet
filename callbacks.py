@@ -81,7 +81,7 @@ def displayHoverNodeData_callback(prefix,G):
         for attribute in attributes:
             if data[attribute] != "" and data[attribute] != []:
                 if attribute in ["ATC Code1","ATC Code5","Targets","Enzymes","Carriers","Transporters","Drug Interactions","String Interaction Partners","Drugs"]:
-                    attributes_list.append(html.Li([html.Strong(attribute+": "),", ".join(data[attribute])], className="list-group-item"))
+                    attributes_list.append(html.Li([html.Strong({"ATC Code1":"ATC Code Level 1","ATC Code5":"ATC Identifier"}.get(attribute,attribute)+": "),", ".join(data[attribute])], className="list-group-item"))
                 elif attribute == "ID":
                     attributes_list.append(html.Li([html.Strong(attribute+": "),html.A(data[attribute], href=link_drugbank, target="_blank")], className="list-group-item"))
                 elif attribute == "PDBID" and data[attribute] != "Not Available":

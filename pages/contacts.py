@@ -28,58 +28,58 @@ from callbacks import *
 
 prefix="contacts"
 
-layout=dbc.Row([
-        dbc.Col(sidebar(prefix), width=1, className="bg-light"),
-        dbc.Col([
+layout=dbc.Col([
             headbar(prefix),
-            # html.Br(),
-            # html.H1("COVID-19 Networker", style={"text-align":"center"}),
-            html.Br(),
-            html.H3("Contacts"),
-            html.Br(),
-            dbc.Col([
-                html.Div([
-                    dbc.Row([
-                        dbc.Col([html.Img(src="https://icon-library.com/images/user-icon-image/user-icon-image-13.jpg", style={"width":"75%"})], width=1),
-                        dbc.Col([
-                            html.Strong("Maurizio Recanatini"),
-                            html.P("Principal Investigator"),
-                            html.Address("maurizio.recanatini@unibo.it")
-                        ])
+            dbc.Row([
+                dbc.Col(sidebar(prefix), width=1, className="bg-light"),
+                dbc.Col([
+                    html.Br(),
+                    dbc.Col([
+                        html.H3("Contacts"),
+                        html.Br(),
+                        html.Div([
+                            dbc.Row([
+                                dbc.Col([html.Img(src="https://icon-library.com/images/user-icon-image/user-icon-image-13.jpg", style={"width":"75%"})], width=1),
+                                dbc.Col([
+                                    html.Strong("Maurizio Recanatini"),
+                                    html.P("Principal Investigator"),
+                                    html.Address("maurizio.recanatini@unibo.it")
+                                ])
+                            ]),
+                            html.P("Brief introduction/description "*10)
+                        ]),
+                        html.Br(),
+                        html.Br(),
+                        html.Div([
+                            dbc.Row([
+                                dbc.Col([html.Img(src="https://f0.pngfuel.com/png/363/793/person-with-brown-hair-illustration-png-clip-art.png", style={"width":"75%"})], width=1),
+                                dbc.Col([
+                                    html.Strong("Chiara Cabrelle"),
+                                    html.P("PhD Student in Biotechnological, Biocomputational, Pharmaceutical and Pharmacological Science"),
+                                    html.Address("chiara.cabrelle2@unibo.it")
+                                ])
+                            ]),
+                            html.P("Brief introduction/description "*10)
+                        ]),
+                        html.Br(),
+                        html.Br(),
+                        html.Div([
+                            dbc.Row([
+                                dbc.Col([html.Img(src="https://icon-library.com/images/user-icon-image/user-icon-image-13.jpg", style={"width":"75%"})], width=1),
+                                dbc.Col([
+                                    html.Strong("Luca Menestrina"),
+                                    html.P("PhD Student in Data Science and Computation"),
+                                    html.Address("luca.menestrina2@unibo.it")
+                                ])
+                            ]),
+                            html.P("Brief introduction/description "*10)
+                        ]),
+                        html.Br()
                     ]),
-                    html.P("Brief introduction/description "*10)
-                ]),
-                html.Br(),
-                html.Br(),
-                html.Div([
-                    dbc.Row([
-                        dbc.Col([html.Img(src="https://f0.pngfuel.com/png/363/793/person-with-brown-hair-illustration-png-clip-art.png", style={"width":"75%"})], width=1),
-                        dbc.Col([
-                            html.Strong("Chiara Cabrelle"),
-                            html.P("PhD Student in Biotechnological, Biocomputational, Pharmaceutical and Pharmacological Science"),
-                            html.Address("chiara.cabrelle2@unibo.it")
-                        ])
-                    ]),
-                    html.P("Brief introduction/description "*10)
-                ]),
-                html.Br(),
-                html.Br(),
-                html.Div([
-                    dbc.Row([
-                        dbc.Col([html.Img(src="https://icon-library.com/images/user-icon-image/user-icon-image-13.jpg", style={"width":"75%"})], width=1),
-                        dbc.Col([
-                            html.Strong("Luca Menestrina"),
-                            html.P("PhD Student in Data Science and Computation"),
-                            html.Address("luca.menestrina2@unibo.it")
-                        ])
-                    ]),
-                    html.P("Brief introduction/description "*10)
-                ]),
-            html.Br()
-            ]),
-        ], className="h-100"),
-        footer()
-    ], no_gutters=True, style={"height":"100vh"})
+                ], className="h-100"),
+                footer()
+            ], no_gutters=True, style={"height":"100vh"})
+        ], style={"padding":"0px"})
 
 # if __name__=="__main__":
 #     app.run_server(debug=False)

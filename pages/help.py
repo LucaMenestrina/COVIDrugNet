@@ -28,26 +28,26 @@ from callbacks import *
 
 prefix="help"
 
-layout=dbc.Row([
-        dbc.Col(sidebar(prefix), width=1, className="bg-light"),
-        dbc.Col([
+layout=dbc.Col([
             headbar(prefix),
-            # html.Br(),
-            # html.H1("COVID-19 Networker", style={"text-align":"center"}),
-            html.Br(),
-            dbc.Col([
-                html.Br(),
-                html.Center([
-                    html.Img(src="https://drive.google.com/uc?export=view&id=1Wz-BWDC-hbsm1GMoGlHcE2UpvW6xnEwy", style={"width":"100%"})
-                ]),
-                html.Br(),
-                html.Br(),
-                html.P([html.Font("If there still is something unclear feel free to "),html.A("reach us out", href="/contacts")]),
-                html.Br(),
-            ]),
-        ], className="h-100"),
-        footer()
-    ], no_gutters=True)
+            dbc.Row([
+                dbc.Col(sidebar(prefix), width=1, className="bg-light"),
+                dbc.Col([
+                    html.Br(),
+                    dbc.Col([
+                        html.Br(),
+                        html.Center([
+                            html.Img(src="https://drive.google.com/uc?export=view&id=1Wz-BWDC-hbsm1GMoGlHcE2UpvW6xnEwy", style={"width":"100%"})
+                        ]),
+                        html.Br(),
+                        html.Br(),
+                        html.P([html.Font("If there still is something unclear feel free to "),html.A("reach us out", href="/contacts")]),
+                        html.Br(),
+                    ]),
+                ], className="h-100"),
+                footer()
+            ], no_gutters=True)
+        ], style={"padding":"0px"})
 
 # if __name__=="__main__":
 #     app.run_server(debug=False)

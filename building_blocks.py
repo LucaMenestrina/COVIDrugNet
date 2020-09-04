@@ -57,9 +57,9 @@ def sidebar(prefix):
                     dbc.NavItem(dbc.NavLink("Graph Properties", href="#"+prefix+"_graph_properties_table", external_link=True, active=True, className="nav-link"), className="nav-item"),
                     dbc.NavItem(dbc.NavLink("Clustering", href="#"+prefix+"_clustering",external_link=True, active=True, className="nav-link"), className="nav-item"),
                     dbc.NavItem(dbc.NavLink("Plots", href="#"+prefix+"_plots",external_link=True, active=True, className="nav-link"), className="nav-item"),
-                ], align="center", style={"padding":"0rem"}), expand="xl", color="light", sticky="top", className="navbar navbar-light bg-light position-sticky", style={"z-index":"1050"})
+                ], align="center", style={"padding":"0rem"}), expand="xl", color="light", className="navbar navbar-light bg-light position-sticky", style={"position":"sticky", "top":"10vh"})
     else:
-        return dbc.NavbarSimple(color="light", sticky="top", className="navbar navbar-light bg-light position-sticky")
+        return dbc.NavbarSimple(color="light", className="navbar navbar-light bg-light position-sticky")
 
 def nodes_info(prefix):
     return dbc.Container([
@@ -70,14 +70,14 @@ def nodes_info(prefix):
                     html.Ul(id=prefix+"_attributes-list-card",className="list-group list-group-flush")
                 ],className="card border-primary mb-3", id=prefix+"_card"),
                 dbc.Toast(
-                    html.P("The node's info are locked on the selected node, to show those relative to the hovered ones unselect it"),
+                    html.P(["The node's info are locked on the selected node.",html.Br(),"To show those relative to the hovered ones unselect it"]),
                     header="One node selected",
                     id=prefix+"_selected_node_warning",
                     dismissable=True,
                     is_open=False,
-                    duration=7500,
+                    duration=10000,
                     icon="warning",
-                    style={"position":"fixed","top":"20vh","left":"70vw","width":"20vw"}
+                    style={"position":"fixed","top":"22vh","left":"65vw","min-width":"20vw", "max-width":"20vw"}#just width doesn't work
                 )
             ])
 
@@ -89,7 +89,7 @@ def graph_help(prefix):
                 dbc.PopoverBody([
                     html.P("Pan to move around"),
                     html.P("Scroll to zoom"),
-                    html.P("Click to select"),
+                    html.P("Click to select (and lock node's info)"),
                     html.P("CTRL or MAIUSC + Click for multiple selection"),
                     html.P("CTRL + Drag for square selection")
                 ])
@@ -178,7 +178,19 @@ def graph(prefix,title,nodes,edges):#es. title="Drug Target"
                 ], no_gutters=True, className="card-title"),
                 cyto.Cytoscape(
                     id=prefix+"_graph",
-                    layout={"name":"cose-bilkent"},
+                    layout={
+                        "name":"cose-bilkent",
+                        "nodeRepulsion":1e4,
+                        "numIter":2500,
+                        "tile":False,
+                        "quality":"draft",
+                        "gravity":100,
+                        "animate":False,
+                        # "idealEdgeLength":100,
+                        # "gravity":0.2,
+                        # "gravityRange":0.05
+
+                    },
                     style={"width":"100%","height":"1000px"},
                     elements=nodes+edges,
                     boxSelectionEnabled=True,

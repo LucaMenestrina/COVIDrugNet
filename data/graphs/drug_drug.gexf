@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <gexf version="1.2" xmlns="http://www.gexf.net/1.2draft" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.2draft http://www.gexf.net/1.2draft/gexf.xsd">
-  <meta lastmodifieddate="2020-09-03">
+  <meta lastmodifieddate="2020-09-04">
     <creator>NetworkX 2.4</creator>
   </meta>
   <graph defaultedgetype="undirected" mode="static" name="">
@@ -60,7 +60,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB01744/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="4" />
-          <attvalue for="13" value="0.1493890683791366" />
+          <attvalue for="13" value="0.1485771712683804" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -102,8 +102,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB01404/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="12" />
-          <attvalue for="13" value="0.19368740411301302" />
-          <attvalue for="14" value="0.00824768517976949" />
+          <attvalue for="13" value="0.19263475517761622" />
+          <attvalue for="14" value="0.008158036427815474" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -123,7 +123,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00879/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="3" />
-          <attvalue for="13" value="0.01639344262295082" />
+          <attvalue for="13" value="0.016304347826086956" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -144,8 +144,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00704/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="2" />
-          <attvalue for="13" value="0.1512288352310964" />
-          <attvalue for="14" value="0.006305170239596469" />
+          <attvalue for="13" value="0.15040693938744915" />
+          <attvalue for="14" value="0.006236635780470421" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -165,7 +165,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00635/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="7" />
-          <attvalue for="13" value="0.15623131578581462" />
+          <attvalue for="13" value="0.15538223254784822" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -207,8 +207,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB01076/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="9" />
-          <attvalue for="13" value="0.18273484257090813" />
-          <attvalue for="14" value="0.019573907747209858" />
+          <attvalue for="13" value="0.18174171842650103" />
+          <attvalue for="14" value="0.019361147880392362" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -228,7 +228,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB01212/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="1" />
-          <attvalue for="13" value="0.00546448087431694" />
+          <attvalue for="13" value="0.005434782608695652" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -249,8 +249,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB12598/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="9" />
-          <attvalue for="13" value="0.14723958538087561" />
-          <attvalue for="14" value="0.06225650487945574" />
+          <attvalue for="13" value="0.14643937024293607" />
+          <attvalue for="14" value="0.061579803739461654" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -270,7 +270,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB11094/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="4" />
-          <attvalue for="13" value="0.14866563463395918" />
+          <attvalue for="13" value="0.14785766922833984" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -333,8 +333,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00159/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="15" />
-          <attvalue for="13" value="0.19616264250423365" />
-          <attvalue for="14" value="0.005728446243668727" />
+          <attvalue for="13" value="0.19509654118627587" />
+          <attvalue for="14" value="0.0056661805236288484" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -375,7 +375,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00775/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="1" />
-          <attvalue for="13" value="0.17008007507984804" />
+          <attvalue for="13" value="0.16915572684571845" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -396,8 +396,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00213/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="3" />
-          <attvalue for="13" value="0.142127099777373" />
-          <attvalue for="14" value="0.0007125843191416961" />
+          <attvalue for="13" value="0.1413546698872786" />
+          <attvalue for="14" value="0.0007048388374118951" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -501,8 +501,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00316/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="11" />
-          <attvalue for="13" value="0.1871917899506864" />
-          <attvalue for="14" value="0.0036542215699124376" />
+          <attvalue for="13" value="0.1861744432661718" />
+          <attvalue for="14" value="0.0036145017702394764" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -522,8 +522,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB04786/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="4" />
-          <attvalue for="13" value="0.17295466789809896" />
-          <attvalue for="14" value="0.06730564517449765" />
+          <attvalue for="13" value="0.17201469687691365" />
+          <attvalue for="14" value="0.06657406207477486" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -585,7 +585,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00678/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="8" />
-          <attvalue for="13" value="0.1497534319605491" />
+          <attvalue for="13" value="0.14893955461293745" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -627,7 +627,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00788/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="8" />
-          <attvalue for="13" value="0.18328031971291084" />
+          <attvalue for="13" value="0.18228423101881894" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -648,7 +648,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB01394/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="1" />
-          <attvalue for="13" value="0.1427881560554073" />
+          <attvalue for="13" value="0.14201213346814964" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -690,8 +690,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00132/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="12" />
-          <attvalue for="13" value="0.19616264250423365" />
-          <attvalue for="14" value="0.01654664183938188" />
+          <attvalue for="13" value="0.19509654118627587" />
+          <attvalue for="14" value="0.016366787036779906" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -711,7 +711,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB01601/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="3" />
-          <attvalue for="13" value="0.13797507214342727" />
+          <attvalue for="13" value="0.13722520762090865" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -732,7 +732,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB06822/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="6" />
-          <attvalue for="13" value="0.10659532483302975" />
+          <attvalue for="13" value="0.10601600241545894" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -753,8 +753,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB04216/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="14" />
-          <attvalue for="13" value="0.20398308007915325" />
-          <attvalue for="14" value="0.024249741931240746" />
+          <attvalue for="13" value="0.2028744763830709" />
+          <attvalue for="14" value="0.023986157779814218" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -795,7 +795,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB08877/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="3" />
-          <attvalue for="13" value="0.1331863494659981" />
+          <attvalue for="13" value="0.13246251061020467" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -816,7 +816,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB09241/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="1" />
-          <attvalue for="13" value="0.11650646509264731" />
+          <attvalue for="13" value="0.1158732777823612" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -837,7 +837,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB11842/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="8" />
-          <attvalue for="13" value="0.1497534319605491" />
+          <attvalue for="13" value="0.14893955461293745" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -858,7 +858,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00177/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="8" />
-          <attvalue for="13" value="0.1497534319605491" />
+          <attvalue for="13" value="0.14893955461293745" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -879,8 +879,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00569/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="8" />
-          <attvalue for="13" value="0.12255270879007013" />
-          <attvalue for="14" value="0.0032116335395023913" />
+          <attvalue for="13" value="0.12188666145968932" />
+          <attvalue for="14" value="0.0031767244792904087" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -900,8 +900,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00338/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="7" />
-          <attvalue for="13" value="0.18111772007028065" />
-          <attvalue for="14" value="0.011853720050441373" />
+          <attvalue for="13" value="0.18013338463511608" />
+          <attvalue for="14" value="0.0117248752672844" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -942,8 +942,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB01088/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="2" />
-          <attvalue for="13" value="0.1668448562603944" />
-          <attvalue for="14" value="0.0018109135205153933" />
+          <attvalue for="13" value="0.16593809073724008" />
+          <attvalue for="14" value="0.0017912296779010956" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -984,7 +984,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB01029/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="8" />
-          <attvalue for="13" value="0.1497534319605491" />
+          <attvalue for="13" value="0.14893955461293745" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -1026,7 +1026,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB09299/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="3" />
-          <attvalue for="13" value="0.01639344262295082" />
+          <attvalue for="13" value="0.016304347826086956" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -1047,8 +1047,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00831/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="2" />
-          <attvalue for="13" value="0.14902647355297363" />
-          <attvalue for="14" value="0.047078604455653636" />
+          <attvalue for="13" value="0.14821654706627269" />
+          <attvalue for="14" value="0.04656688049417914" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -1068,7 +1068,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00482/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="8" />
-          <attvalue for="13" value="0.18328031971291084" />
+          <attvalue for="13" value="0.18228423101881894" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -1089,7 +1089,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00203/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="1" />
-          <attvalue for="13" value="0.12980741459582482" />
+          <attvalue for="13" value="0.12910193951649968" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -1110,7 +1110,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB11574/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="2" />
-          <attvalue for="13" value="0.01092896174863388" />
+          <attvalue for="13" value="0.010869565217391304" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -1131,8 +1131,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00218/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="2" />
-          <attvalue for="13" value="0.01092896174863388" />
-          <attvalue for="14" value="6.004924037710923e-05" />
+          <attvalue for="13" value="0.010869565217391304" />
+          <attvalue for="14" value="5.9396531242575434e-05" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -1152,7 +1152,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB03614/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="1" />
-          <attvalue for="13" value="0.00546448087431694" />
+          <attvalue for="13" value="0.005434782608695652" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -1173,7 +1173,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB01129/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="2" />
-          <attvalue for="13" value="0.1392265467206919" />
+          <attvalue for="13" value="0.13846988070590555" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -1194,7 +1194,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00275/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="8" />
-          <attvalue for="13" value="0.1497534319605491" />
+          <attvalue for="13" value="0.14893955461293745" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -1215,7 +1215,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB01261/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="2" />
-          <attvalue for="13" value="0.13954297069051166" />
+          <attvalue for="13" value="0.13878458498023716" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -1236,7 +1236,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00471/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="2" />
-          <attvalue for="13" value="0.1705525197328476" />
+          <attvalue for="13" value="0.1696256038647343" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -1278,8 +1278,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00811/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="5" />
-          <attvalue for="13" value="0.0273224043715847" />
-          <attvalue for="14" value="0.0004203446826397646" />
+          <attvalue for="13" value="0.02795031055900621" />
+          <attvalue for="14" value="0.0005345687811831789" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -1299,7 +1299,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00302/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="1" />
-          <attvalue for="13" value="0.09839568446125824" />
+          <attvalue for="13" value="0.09786092530657749" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -1341,8 +1341,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB02701/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="2" />
-          <attvalue for="13" value="0.1554402711489244" />
-          <attvalue for="14" value="0.004618787405672653" />
+          <attvalue for="13" value="0.1545954870665933" />
+          <attvalue for="14" value="0.004568583194741428" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -1362,8 +1362,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB04224/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="9" />
-          <attvalue for="13" value="0.1943003389361555" />
-          <attvalue for="14" value="0.011716274011355977" />
+          <attvalue for="13" value="0.19324435883324162" />
+          <attvalue for="14" value="0.011588923206884717" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -1383,7 +1383,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB01137/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="1" />
-          <attvalue for="13" value="0.007285974499089253" />
+          <attvalue for="13" value="0.007246376811594202" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -1425,8 +1425,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB01211/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="4" />
-          <attvalue for="13" value="0.10216124310120656" />
-          <attvalue for="14" value="0.01249024199843872" />
+          <attvalue for="13" value="0.1016060189539174" />
+          <attvalue for="14" value="0.01235447849845569" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -1446,8 +1446,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB11638/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="7" />
-          <attvalue for="13" value="0.1889197141656158" />
-          <attvalue for="14" value="0.0259515659984044" />
+          <attvalue for="13" value="0.18789297658862875" />
+          <attvalue for="14" value="0.025669483759291307" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -1467,8 +1467,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00966/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="16" />
-          <attvalue for="13" value="0.19679136892251647" />
-          <attvalue for="14" value="0.047078604455653636" />
+          <attvalue for="13" value="0.19572185061315497" />
+          <attvalue for="14" value="0.04656688049417914" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -1530,7 +1530,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00162/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="1" />
-          <attvalue for="13" value="0.11899013004617275" />
+          <attvalue for="13" value="0.11834344455679137" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -1551,7 +1551,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB14126/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="3" />
-          <attvalue for="13" value="0.01639344262295082" />
+          <attvalue for="13" value="0.016304347826086956" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -1572,7 +1572,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB14066/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="1" />
-          <attvalue for="13" value="0.07589481718643404" />
+          <attvalue for="13" value="0.07548234535389908" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -1593,7 +1593,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB12668/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="1" />
-          <attvalue for="13" value="0.1201544170329259" />
+          <attvalue for="13" value="0.11950140389687738" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -1635,7 +1635,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB06228/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="5" />
-          <attvalue for="13" value="0.12182322838060543" />
+          <attvalue for="13" value="0.12116114561766736" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -1655,9 +1655,9 @@
           <attvalue for="9" value="GS-441524" />
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB15686/image.svg" />
           <attvalue for="11" value="Drug" />
-          <attvalue for="12" value="3" />
-          <attvalue for="13" value="0.0195160031225605" />
-          <attvalue for="14" value="0.0" />
+          <attvalue for="12" value="4" />
+          <attvalue for="13" value="0.024456521739130432" />
+          <attvalue for="14" value="0.00011879306248515087" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -1677,7 +1677,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB11613/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="2" />
-          <attvalue for="13" value="0.01092896174863388" />
+          <attvalue for="13" value="0.010869565217391304" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -1698,8 +1698,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB04540/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="6" />
-          <attvalue for="13" value="0.17542544886807182" />
-          <attvalue for="14" value="0.004597484222776962" />
+          <attvalue for="13" value="0.17447204968944102" />
+          <attvalue for="14" value="0.00454751156818156" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -1740,8 +1740,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00975/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="5" />
-          <attvalue for="13" value="0.1668448562603944" />
-          <attvalue for="14" value="0.010907944514501892" />
+          <attvalue for="13" value="0.16593809073724008" />
+          <attvalue for="14" value="0.010789379900213829" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -1761,8 +1761,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB09258/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="8" />
-          <attvalue for="13" value="0.12255270879007013" />
-          <attvalue for="14" value="0.0032116335395023913" />
+          <attvalue for="13" value="0.12188666145968932" />
+          <attvalue for="14" value="0.0031767244792904087" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -1782,8 +1782,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB01065/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="5" />
-          <attvalue for="13" value="0.1900894956774772" />
-          <attvalue for="14" value="0.052422986849216355" />
+          <attvalue for="13" value="0.18905640059227352" />
+          <attvalue for="14" value="0.05185317177476836" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -1845,8 +1845,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00778/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="2" />
-          <attvalue for="13" value="0.0872143566815698" />
-          <attvalue for="14" value="0.006305170239596469" />
+          <attvalue for="13" value="0.08674036561264822" />
+          <attvalue for="14" value="0.006236635780470421" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -1866,7 +1866,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00278/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="2" />
-          <attvalue for="13" value="0.13986083622739212" />
+          <attvalue for="13" value="0.13910072298702586" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -1887,8 +1887,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00163/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="7" />
-          <attvalue for="13" value="0.1784851950692591" />
-          <attvalue for="14" value="0.0004203446826397647" />
+          <attvalue for="13" value="0.17751516683518706" />
+          <attvalue for="14" value="0.00041577571869802813" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -1929,8 +1929,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00755/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="5" />
-          <attvalue for="13" value="0.1493890683791366" />
-          <attvalue for="14" value="0.01873536299765808" />
+          <attvalue for="13" value="0.1485771712683804" />
+          <attvalue for="14" value="0.018531717747683536" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -1950,7 +1950,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB12466/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="1" />
-          <attvalue for="13" value="0.015179113539769277" />
+          <attvalue for="13" value="0.016304347826086956" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -1971,7 +1971,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB08813/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="6" />
-          <attvalue for="13" value="0.10659532483302975" />
+          <attvalue for="13" value="0.10601600241545894" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -1992,8 +1992,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB01050/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="13" />
-          <attvalue for="13" value="0.1949171654089687" />
-          <attvalue for="14" value="0.0012871030435433247" />
+          <attvalue for="13" value="0.19385783298826778" />
+          <attvalue for="14" value="0.0012731127930700277" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -2013,7 +2013,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB07615/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="1" />
-          <attvalue for="13" value="0.11899013004617275" />
+          <attvalue for="13" value="0.11834344455679137" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -2034,7 +2034,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00864/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="1" />
-          <attvalue for="13" value="0.08976448406991978" />
+          <attvalue for="13" value="0.08927663361301805" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -2055,7 +2055,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB11676/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="3" />
-          <attvalue for="13" value="0.0195160031225605" />
+          <attvalue for="13" value="0.021739130434782608" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -2076,7 +2076,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB01117/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="1" />
-          <attvalue for="13" value="0.14179886167165157" />
+          <attvalue for="13" value="0.14102821568430565" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -2097,7 +2097,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB01410/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="7" />
-          <attvalue for="13" value="0.15623131578581462" />
+          <attvalue for="13" value="0.15538223254784822" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -2118,7 +2118,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB11703/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="2" />
-          <attvalue for="13" value="0.11991974043715846" />
+          <attvalue for="13" value="0.11926800271739131" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -2139,7 +2139,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00563/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="1" />
-          <attvalue for="13" value="0.00546448087431694" />
+          <attvalue for="13" value="0.005434782608695652" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -2160,7 +2160,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB13919/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="8" />
-          <attvalue for="13" value="0.1497534319605491" />
+          <attvalue for="13" value="0.14893955461293745" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -2181,8 +2181,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB06692/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="3" />
-          <attvalue for="13" value="0.11830232582625266" />
-          <attvalue for="14" value="0.006305170239596469" />
+          <attvalue for="13" value="0.1176593784032839" />
+          <attvalue for="14" value="0.006236635780470421" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -2265,8 +2265,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00155/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="3" />
-          <attvalue for="13" value="0.1454950405303913" />
-          <attvalue for="14" value="0.007081807081807082" />
+          <attvalue for="13" value="0.14470430661446526" />
+          <attvalue for="14" value="0.007004830917874396" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -2286,7 +2286,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00860/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="7" />
-          <attvalue for="13" value="0.15623131578581462" />
+          <attvalue for="13" value="0.15538223254784822" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -2307,7 +2307,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB01197/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="2" />
-          <attvalue for="13" value="0.01092896174863388" />
+          <attvalue for="13" value="0.010869565217391304" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -2328,7 +2328,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00545/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="1" />
-          <attvalue for="13" value="0.1427881560554073" />
+          <attvalue for="13" value="0.14201213346814964" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -2349,7 +2349,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB13729/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="2" />
-          <attvalue for="13" value="0.11807482135350987" />
+          <attvalue for="13" value="0.11743311036789297" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -2370,7 +2370,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB01128/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="1" />
-          <attvalue for="13" value="0.15048751741133612" />
+          <attvalue for="13" value="0.14966965046888323" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -2412,7 +2412,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00876/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="8" />
-          <attvalue for="13" value="0.1497534319605491" />
+          <attvalue for="13" value="0.14893955461293745" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -2433,7 +2433,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB09102/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="2" />
-          <attvalue for="13" value="0.01092896174863388" />
+          <attvalue for="13" value="0.010869565217391304" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -2454,8 +2454,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB01225/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="8" />
-          <attvalue for="13" value="0.12255270879007013" />
-          <attvalue for="14" value="0.0032116335395023913" />
+          <attvalue for="13" value="0.12188666145968932" />
+          <attvalue for="14" value="0.0031767244792904087" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -2475,8 +2475,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00877/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="2" />
-          <attvalue for="13" value="0.10604301745047519" />
-          <attvalue for="14" value="0.006305170239596469" />
+          <attvalue for="13" value="0.10546669670346175" />
+          <attvalue for="14" value="0.006236635780470421" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -2496,8 +2496,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00396/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="15" />
-          <attvalue for="13" value="0.20263665710833378" />
-          <attvalue for="14" value="0.06031262518381956" />
+          <attvalue for="13" value="0.20153537092839718" />
+          <attvalue for="14" value="0.059657053170951956" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -2517,7 +2517,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB06271/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="6" />
-          <attvalue for="13" value="0.10659532483302975" />
+          <attvalue for="13" value="0.10601600241545894" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -2538,8 +2538,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00472/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="4" />
-          <attvalue for="13" value="0.10199154003957663" />
-          <attvalue for="14" value="0.006305170239596469" />
+          <attvalue for="13" value="0.10143723819153545" />
+          <attvalue for="14" value="0.006236635780470421" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -2559,7 +2559,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB08895/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="3" />
-          <attvalue for="13" value="0.1331863494659981" />
+          <attvalue for="13" value="0.13246251061020467" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -2580,7 +2580,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00300/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="3" />
-          <attvalue for="13" value="0.01639344262295082" />
+          <attvalue for="13" value="0.016304347826086956" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -2601,7 +2601,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB08868/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="1" />
-          <attvalue for="13" value="0.00546448087431694" />
+          <attvalue for="13" value="0.005434782608695652" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -2643,7 +2643,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00178/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="2" />
-          <attvalue for="13" value="0.01092896174863388" />
+          <attvalue for="13" value="0.010869565217391304" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -2664,7 +2664,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00319/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="1" />
-          <attvalue for="13" value="0.00546448087431694" />
+          <attvalue for="13" value="0.005434782608695652" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -2685,7 +2685,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00584/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="2" />
-          <attvalue for="13" value="0.01092896174863388" />
+          <attvalue for="13" value="0.010869565217391304" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -2727,8 +2727,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB11817/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="4" />
-          <attvalue for="13" value="0.15703045295095944" />
-          <attvalue for="14" value="0.017765229826119767" />
+          <attvalue for="13" value="0.15617702657622595" />
+          <attvalue for="14" value="0.017572129501922815" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -2748,8 +2748,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB11672/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="13" />
-          <attvalue for="13" value="0.1949171654089687" />
-          <attvalue for="14" value="0.015813538530166166" />
+          <attvalue for="13" value="0.19385783298826778" />
+          <attvalue for="14" value="0.015641652241794795" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -2769,7 +2769,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00796/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="8" />
-          <attvalue for="13" value="0.1497534319605491" />
+          <attvalue for="13" value="0.14893955461293745" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -2811,8 +2811,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00281/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="3" />
-          <attvalue for="13" value="0.1705525197328476" />
-          <attvalue for="14" value="0.0246510970164366" />
+          <attvalue for="13" value="0.1696256038647343" />
+          <attvalue for="14" value="0.0243831503097362" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -2832,7 +2832,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB06515/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="4" />
-          <attvalue for="13" value="0.1493890683791366" />
+          <attvalue for="13" value="0.1485771712683804" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -2895,7 +2895,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00176/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="3" />
-          <attvalue for="13" value="0.10182239984050603" />
+          <attvalue for="13" value="0.1012690172326772" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -2916,8 +2916,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00783/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="8" />
-          <attvalue for="13" value="0.1900894956774772" />
-          <attvalue for="14" value="0.0025220680958385876" />
+          <attvalue for="13" value="0.18905640059227352" />
+          <attvalue for="14" value="0.0024946543121881683" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -2937,7 +2937,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00982/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="1" />
-          <attvalue for="13" value="0.11899013004617275" />
+          <attvalue for="13" value="0.11834344455679137" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -2958,8 +2958,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00328/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="15" />
-          <attvalue for="13" value="0.20955258397209944" />
-          <attvalue for="14" value="0.07131540937161544" />
+          <attvalue for="13" value="0.20841371123312064" />
+          <attvalue for="14" value="0.07054024187844572" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -2979,7 +2979,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00641/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="1" />
-          <attvalue for="13" value="0.1392265467206919" />
+          <attvalue for="13" value="0.13846988070590555" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -3000,7 +3000,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00741/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="7" />
-          <attvalue for="13" value="0.15623131578581462" />
+          <attvalue for="13" value="0.15538223254784822" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -3021,7 +3021,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB01264/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="3" />
-          <attvalue for="13" value="0.13797507214342727" />
+          <attvalue for="13" value="0.13722520762090865" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -3042,7 +3042,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB12582/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="6" />
-          <attvalue for="13" value="0.17796784667775403" />
+          <attvalue for="13" value="0.17700063011972275" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -3063,7 +3063,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00848/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="1" />
-          <attvalue for="13" value="0.08684428161785733" />
+          <attvalue for="13" value="0.08637230182645593" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -3084,8 +3084,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00661/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="5" />
-          <attvalue for="13" value="0.12206542167758476" />
-          <attvalue for="14" value="0.04197441902359935" />
+          <attvalue for="13" value="0.12140202264672832" />
+          <attvalue for="14" value="0.041518175338560226" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -3105,7 +3105,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00773/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="1" />
-          <attvalue for="13" value="0.007285974499089253" />
+          <attvalue for="13" value="0.007246376811594202" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -3126,7 +3126,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00115/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="1" />
-          <attvalue for="13" value="0.00546448087431694" />
+          <attvalue for="13" value="0.005434782608695652" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -3168,7 +3168,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB11779/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="1" />
-          <attvalue for="13" value="0.015179113539769277" />
+          <attvalue for="13" value="0.016304347826086956" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -3189,7 +3189,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00169/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="4" />
-          <attvalue for="13" value="0.14866563463395918" />
+          <attvalue for="13" value="0.14785766922833984" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -3231,7 +3231,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00959/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="7" />
-          <attvalue for="13" value="0.15623131578581462" />
+          <attvalue for="13" value="0.15538223254784822" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -3294,7 +3294,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00619/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="1" />
-          <attvalue for="13" value="0.10549640395846242" />
+          <attvalue for="13" value="0.10492305393694905" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -3357,7 +3357,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB11133/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="8" />
-          <attvalue for="13" value="0.19187158469945353" />
+          <attvalue for="13" value="0.1908288043478261" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -3377,9 +3377,9 @@
           <attvalue for="9" value="Remdesivir" />
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB14761/image.svg" />
           <attvalue for="11" value="Drug" />
-          <attvalue for="12" value="3" />
-          <attvalue for="13" value="0.0195160031225605" />
-          <attvalue for="14" value="0.0" />
+          <attvalue for="12" value="4" />
+          <attvalue for="13" value="0.024456521739130432" />
+          <attvalue for="14" value="0.00011879306248515087" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -3420,7 +3420,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB01072/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="3" />
-          <attvalue for="13" value="0.13797507214342727" />
+          <attvalue for="13" value="0.13722520762090865" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -3462,7 +3462,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB12612/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="1" />
-          <attvalue for="13" value="0.00546448087431694" />
+          <attvalue for="13" value="0.005434782608695652" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -3483,8 +3483,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB01109/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="10" />
-          <attvalue for="13" value="0.12898930063828812" />
-          <attvalue for="14" value="0.028105501056320738" />
+          <attvalue for="13" value="0.12828827183047134" />
+          <attvalue for="14" value="0.027800006479621598" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -3504,8 +3504,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00503/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="9" />
-          <attvalue for="13" value="0.17952896813983957" />
-          <attvalue for="14" value="0.018555215276526753" />
+          <attvalue for="13" value="0.1785532672260361" />
+          <attvalue for="14" value="0.01835352815395581" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -3525,7 +3525,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB01222/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="7" />
-          <attvalue for="13" value="0.15623131578581462" />
+          <attvalue for="13" value="0.15538223254784822" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -3546,8 +3546,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB01097/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="7" />
-          <attvalue for="13" value="0.1871917899506864" />
-          <attvalue for="14" value="0.026920737342283" />
+          <attvalue for="13" value="0.1861744432661718" />
+          <attvalue for="14" value="0.026628120632040796" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -3588,7 +3588,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00343/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="1" />
-          <attvalue for="13" value="0.10098504457865976" />
+          <attvalue for="13" value="0.1004362128146453" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -3609,7 +3609,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00146/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="4" />
-          <attvalue for="13" value="0.14866563463395918" />
+          <attvalue for="13" value="0.14785766922833984" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -3651,8 +3651,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB09079/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="3" />
-          <attvalue for="13" value="0.12871888281724347" />
-          <attvalue for="14" value="0.02147661082087312" />
+          <attvalue for="13" value="0.12801932367149757" />
+          <attvalue for="14" value="0.021243169398907105" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -3672,7 +3672,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00440/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="1" />
-          <attvalue for="13" value="0.00546448087431694" />
+          <attvalue for="13" value="0.005434782608695652" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -3714,7 +3714,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00480/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="8" />
-          <attvalue for="13" value="0.18328031971291084" />
+          <attvalue for="13" value="0.18228423101881894" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -3735,7 +3735,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB09053/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="2" />
-          <attvalue for="13" value="0.11991974043715846" />
+          <attvalue for="13" value="0.11926800271739131" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -3777,7 +3777,7 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB08882/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="2" />
-          <attvalue for="13" value="0.13954297069051166" />
+          <attvalue for="13" value="0.13878458498023716" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -3798,8 +3798,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB02709/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="28" />
-          <attvalue for="13" value="0.23983948087431692" />
-          <attvalue for="14" value="0.1487973991486872" />
+          <attvalue for="13" value="0.23853600543478262" />
+          <attvalue for="14" value="0.14718003611446234" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -3840,8 +3840,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB01234/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="14" />
-          <attvalue for="13" value="0.189502799703164" />
-          <attvalue for="14" value="0.025855201265037334" />
+          <attvalue for="13" value="0.18847289318303811" />
+          <attvalue for="14" value="0.025574166468678234" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -3861,8 +3861,8 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB15035/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="7" />
-          <attvalue for="13" value="0.15048751741133612" />
-          <attvalue for="14" value="0.03672666131682525" />
+          <attvalue for="13" value="0.14966965046888323" />
+          <attvalue for="14" value="0.03632745847642497" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
         </attvalues>
@@ -3882,7 +3882,28 @@
           <attvalue for="10" value="https://www.drugbank.ca/structures/DB00091/image.svg" />
           <attvalue for="11" value="Drug" />
           <attvalue for="12" value="1" />
-          <attvalue for="13" value="0.1427881560554073" />
+          <attvalue for="13" value="0.14201213346814964" />
+          <attvalue for="14" value="0.0" />
+          <attvalue for="15" value="#FC5F67" />
+          <attvalue for="16" value="#FB3640" />
+        </attvalues>
+      </node>
+      <node id="GC-376 free acid" label="GC-376 free acid">
+        <attvalues>
+          <attvalue for="0" value="DB15796" />
+          <attvalue for="1" value="CC(C)C[C@@H](C(=O)N[C@@H](CC1CCNC1=O)C(O)S(=O)(=O)O)NC(=O)OCC2=CC=CC=C2" />
+          <attvalue for="2" value="Not Available" />
+          <attvalue for="3" value="Not Available" />
+          <attvalue for="4" value="Replicase polyprotein 1ab, Replicase polyprotein 1a" />
+          <attvalue for="5" value="" />
+          <attvalue for="6" value="" />
+          <attvalue for="7" value="" />
+          <attvalue for="8" value="" />
+          <attvalue for="9" value="GC-376 free acid" />
+          <attvalue for="10" value="https://www.drugbank.ca/structures/DB15796/image.svg" />
+          <attvalue for="11" value="Drug" />
+          <attvalue for="12" value="2" />
+          <attvalue for="13" value="0.016304347826086956" />
           <attvalue for="14" value="0.0" />
           <attvalue for="15" value="#FC5F67" />
           <attvalue for="16" value="#FB3640" />
@@ -3890,211 +3911,211 @@
       </node>
     </nodes>
     <edges>
-      <edge id="0" source="Camphor" target="Acetaminophen" weight="1" />
-      <edge id="1" source="Camphor" target="alpha-Linolenic acid" weight="1" />
-      <edge id="2" source="Camphor" target="Icosapent" weight="1" />
-      <edge id="3" source="Camphor" target="Resiniferatoxin" weight="1" />
-      <edge id="4" source="Ginseng" target="Acetaminophen" weight="1" />
-      <edge id="5" source="Ginseng" target="Resveratrol" weight="2" />
-      <edge id="6" source="Ginseng" target="Celecoxib" weight="1" />
-      <edge id="7" source="Ginseng" target="Indomethacin" weight="1" />
-      <edge id="8" source="Ginseng" target="Leflunomide" weight="1" />
-      <edge id="9" source="Ginseng" target="Ibuprofen" weight="1" />
-      <edge id="10" source="Ginseng" target="Naproxen" weight="1" />
-      <edge id="11" source="Ginseng" target="Icosapent" weight="1" />
-      <edge id="12" source="Ginseng" target="Lenalidomide" weight="1" />
-      <edge id="13" source="Ginseng" target="Quercetin" weight="1" />
-      <edge id="14" source="Ginseng" target="Atorvastatin" weight="1" />
-      <edge id="15" source="Ginseng" target="Omeprazole" weight="1" />
-      <edge id="16" source="Emtricitabine" target="Tenofovir" weight="1" />
+      <edge id="0" source="Camphor" target="Resiniferatoxin" weight="1" />
+      <edge id="1" source="Camphor" target="Icosapent" weight="1" />
+      <edge id="2" source="Camphor" target="Acetaminophen" weight="1" />
+      <edge id="3" source="Camphor" target="alpha-Linolenic acid" weight="1" />
+      <edge id="4" source="Ginseng" target="Celecoxib" weight="1" />
+      <edge id="5" source="Ginseng" target="Icosapent" weight="1" />
+      <edge id="6" source="Ginseng" target="Lenalidomide" weight="1" />
+      <edge id="7" source="Ginseng" target="Naproxen" weight="1" />
+      <edge id="8" source="Ginseng" target="Atorvastatin" weight="1" />
+      <edge id="9" source="Ginseng" target="Quercetin" weight="1" />
+      <edge id="10" source="Ginseng" target="Resveratrol" weight="2" />
+      <edge id="11" source="Ginseng" target="Leflunomide" weight="1" />
+      <edge id="12" source="Ginseng" target="Ibuprofen" weight="1" />
+      <edge id="13" source="Ginseng" target="Indomethacin" weight="1" />
+      <edge id="14" source="Ginseng" target="Omeprazole" weight="1" />
+      <edge id="15" source="Ginseng" target="Acetaminophen" weight="1" />
+      <edge id="16" source="Emtricitabine" target="Tenofovir disoproxil" weight="1" />
       <edge id="17" source="Emtricitabine" target="Tenofovir alafenamide" weight="1" />
-      <edge id="18" source="Emtricitabine" target="Tenofovir disoproxil" weight="1" />
+      <edge id="18" source="Emtricitabine" target="Tenofovir" weight="1" />
       <edge id="19" source="Naltrexone" target="Metenkefalin" weight="2" />
       <edge id="20" source="Naltrexone" target="Progesterone" weight="1" />
-      <edge id="21" source="Prednisone" target="Ciclesonide" weight="1" />
-      <edge id="22" source="Prednisone" target="Dexamethasone" weight="1" />
-      <edge id="23" source="Prednisone" target="Progesterone" weight="1" />
-      <edge id="24" source="Prednisone" target="Budesonide" weight="1" />
-      <edge id="25" source="Prednisone" target="Prednisolone" weight="1" />
-      <edge id="26" source="Prednisone" target="Hydrocortisone" weight="1" />
-      <edge id="27" source="Prednisone" target="Methylprednisolone" weight="1" />
-      <edge id="28" source="Atorvastatin" target="Resveratrol" weight="2" />
+      <edge id="21" source="Prednisone" target="Progesterone" weight="1" />
+      <edge id="22" source="Prednisone" target="Budesonide" weight="1" />
+      <edge id="23" source="Prednisone" target="Dexamethasone" weight="1" />
+      <edge id="24" source="Prednisone" target="Prednisolone" weight="1" />
+      <edge id="25" source="Prednisone" target="Methylprednisolone" weight="1" />
+      <edge id="26" source="Prednisone" target="Ciclesonide" weight="1" />
+      <edge id="27" source="Prednisone" target="Hydrocortisone" weight="1" />
+      <edge id="28" source="Atorvastatin" target="Quercetin" weight="1" />
       <edge id="29" source="Atorvastatin" target="Simvastatin" weight="2" />
-      <edge id="30" source="Atorvastatin" target="Cholesterol" weight="1" />
-      <edge id="31" source="Atorvastatin" target="Leflunomide" weight="1" />
-      <edge id="32" source="Atorvastatin" target="Quercetin" weight="1" />
+      <edge id="30" source="Atorvastatin" target="Resveratrol" weight="2" />
+      <edge id="31" source="Atorvastatin" target="Cholesterol" weight="1" />
+      <edge id="32" source="Atorvastatin" target="Leflunomide" weight="1" />
       <edge id="33" source="Atorvastatin" target="Linagliptin" weight="1" />
       <edge id="34" source="Atorvastatin" target="Omeprazole" weight="1" />
       <edge id="35" source="Atorvastatin" target="Sitagliptin" weight="1" />
       <edge id="36" source="Ceftriaxone" target="Piperacillin" weight="1" />
       <edge id="37" source="Nafamostat" target="Bemiparin" weight="1" />
-      <edge id="38" source="Nafamostat" target="Aprotinin" weight="2" />
-      <edge id="39" source="Nafamostat" target="Camostat" weight="1" />
-      <edge id="40" source="Nafamostat" target="Heparin" weight="1" />
-      <edge id="41" source="Nafamostat" target="Argatroban" weight="1" />
-      <edge id="42" source="Nafamostat" target="Suramin" weight="1" />
-      <edge id="43" source="Nafamostat" target="Rivaroxaban" weight="1" />
-      <edge id="44" source="Nafamostat" target="Enoxaparin" weight="1" />
-      <edge id="45" source="Nafamostat" target="Fondaparinux" weight="1" />
-      <edge id="46" source="Vitamin D" target="Cholesterol" weight="1" />
-      <edge id="47" source="Vitamin D" target="Curcumin" weight="1" />
-      <edge id="48" source="Vitamin D" target="Cholecalciferol" weight="1" />
-      <edge id="49" source="Vitamin D" target="Calcifediol" weight="1" />
-      <edge id="50" source="Icosapent" target="Resveratrol" weight="4" />
-      <edge id="51" source="Icosapent" target="Naproxen" weight="2" />
-      <edge id="52" source="Icosapent" target="alpha-Linolenic acid" weight="6" />
-      <edge id="53" source="Icosapent" target="Telmisartan" weight="1" />
-      <edge id="54" source="Icosapent" target="Acetaminophen" weight="3" />
-      <edge id="55" source="Icosapent" target="Celecoxib" weight="1" />
-      <edge id="56" source="Icosapent" target="Indomethacin" weight="4" />
-      <edge id="57" source="Icosapent" target="Oleic Acid" weight="3" />
-      <edge id="58" source="Icosapent" target="Ibuprofen" weight="4" />
-      <edge id="59" source="Icosapent" target="Lenalidomide" weight="1" />
+      <edge id="38" source="Nafamostat" target="Camostat" weight="1" />
+      <edge id="39" source="Nafamostat" target="Heparin" weight="1" />
+      <edge id="40" source="Nafamostat" target="Rivaroxaban" weight="1" />
+      <edge id="41" source="Nafamostat" target="Enoxaparin" weight="1" />
+      <edge id="42" source="Nafamostat" target="Fondaparinux" weight="1" />
+      <edge id="43" source="Nafamostat" target="Suramin" weight="1" />
+      <edge id="44" source="Nafamostat" target="Aprotinin" weight="2" />
+      <edge id="45" source="Nafamostat" target="Argatroban" weight="1" />
+      <edge id="46" source="Vitamin D" target="Calcifediol" weight="1" />
+      <edge id="47" source="Vitamin D" target="Cholesterol" weight="1" />
+      <edge id="48" source="Vitamin D" target="Curcumin" weight="1" />
+      <edge id="49" source="Vitamin D" target="Cholecalciferol" weight="1" />
+      <edge id="50" source="Icosapent" target="Lenalidomide" weight="1" />
+      <edge id="51" source="Icosapent" target="Resiniferatoxin" weight="1" />
+      <edge id="52" source="Icosapent" target="Oleic Acid" weight="3" />
+      <edge id="53" source="Icosapent" target="Ibuprofen" weight="4" />
+      <edge id="54" source="Icosapent" target="alpha-Linolenic acid" weight="6" />
+      <edge id="55" source="Icosapent" target="Indomethacin" weight="4" />
+      <edge id="56" source="Icosapent" target="Acetaminophen" weight="3" />
+      <edge id="57" source="Icosapent" target="Celecoxib" weight="1" />
+      <edge id="58" source="Icosapent" target="Telmisartan" weight="1" />
+      <edge id="59" source="Icosapent" target="Naproxen" weight="2" />
       <edge id="60" source="Icosapent" target="Curcumin" weight="1" />
-      <edge id="61" source="Icosapent" target="Omega-3 fatty acids" weight="2" />
-      <edge id="62" source="Icosapent" target="Resiniferatoxin" weight="1" />
+      <edge id="61" source="Icosapent" target="Resveratrol" weight="4" />
+      <edge id="62" source="Icosapent" target="Omega-3 fatty acids" weight="2" />
       <edge id="63" source="Tirofiban" target="Resveratrol" weight="1" />
-      <edge id="64" source="Pantoprazole" target="Rabeprazole" weight="1" />
-      <edge id="65" source="Pantoprazole" target="Citrulline" weight="1" />
-      <edge id="66" source="Pantoprazole" target="Omeprazole" weight="1" />
-      <edge id="67" source="Acetaminophen" target="Resveratrol" weight="2" />
-      <edge id="68" source="Acetaminophen" target="Indomethacin" weight="2" />
-      <edge id="69" source="Acetaminophen" target="Celecoxib" weight="1" />
-      <edge id="70" source="Acetaminophen" target="Ibuprofen" weight="2" />
-      <edge id="71" source="Acetaminophen" target="Naproxen" weight="2" />
-      <edge id="72" source="Acetaminophen" target="Lenalidomide" weight="1" />
+      <edge id="64" source="Pantoprazole" target="Citrulline" weight="1" />
+      <edge id="65" source="Pantoprazole" target="Omeprazole" weight="1" />
+      <edge id="66" source="Pantoprazole" target="Rabeprazole" weight="1" />
+      <edge id="67" source="Acetaminophen" target="Celecoxib" weight="1" />
+      <edge id="68" source="Acetaminophen" target="Lenalidomide" weight="1" />
+      <edge id="69" source="Acetaminophen" target="Naproxen" weight="2" />
+      <edge id="70" source="Acetaminophen" target="Resiniferatoxin" weight="1" />
+      <edge id="71" source="Acetaminophen" target="Resveratrol" weight="2" />
+      <edge id="72" source="Acetaminophen" target="Ibuprofen" weight="2" />
       <edge id="73" source="Acetaminophen" target="alpha-Linolenic acid" weight="1" />
-      <edge id="74" source="Acetaminophen" target="Resiniferatoxin" weight="1" />
-      <edge id="75" source="Suramin" target="Argatroban" weight="1" />
-      <edge id="76" source="Suramin" target="Indomethacin" weight="1" />
-      <edge id="77" source="Suramin" target="Nicotinamide" weight="1" />
-      <edge id="78" source="Losartan" target="Angiotensin II" weight="1" />
-      <edge id="79" source="Losartan" target="Olmesartan" weight="1" />
-      <edge id="80" source="Losartan" target="Valsartan" weight="1" />
-      <edge id="81" source="Losartan" target="Candesartan" weight="1" />
+      <edge id="74" source="Acetaminophen" target="Indomethacin" weight="2" />
+      <edge id="75" source="Suramin" target="Indomethacin" weight="1" />
+      <edge id="76" source="Suramin" target="Nicotinamide" weight="1" />
+      <edge id="77" source="Suramin" target="Argatroban" weight="1" />
+      <edge id="78" source="Losartan" target="Irbesartan" weight="1" />
+      <edge id="79" source="Losartan" target="Telmisartan" weight="1" />
+      <edge id="80" source="Losartan" target="Candesartan cilexetil" weight="1" />
+      <edge id="81" source="Losartan" target="Olmesartan" weight="1" />
       <edge id="82" source="Losartan" target="Eprosartan" weight="1" />
-      <edge id="83" source="Losartan" target="Candesartan cilexetil" weight="1" />
-      <edge id="84" source="Losartan" target="Irbesartan" weight="1" />
-      <edge id="85" source="Losartan" target="Telmisartan" weight="1" />
+      <edge id="83" source="Losartan" target="Candesartan" weight="1" />
+      <edge id="84" source="Losartan" target="Angiotensin II" weight="1" />
+      <edge id="85" source="Losartan" target="Valsartan" weight="1" />
       <edge id="86" source="Naproxen" target="Celecoxib" weight="1" />
-      <edge id="87" source="Naproxen" target="Indomethacin" weight="2" />
+      <edge id="87" source="Naproxen" target="Lenalidomide" weight="1" />
       <edge id="88" source="Naproxen" target="Resveratrol" weight="2" />
       <edge id="89" source="Naproxen" target="Ibuprofen" weight="2" />
-      <edge id="90" source="Naproxen" target="Lenalidomide" weight="1" />
+      <edge id="90" source="Naproxen" target="Indomethacin" weight="2" />
       <edge id="91" source="Colchicine" target="Artenimol" weight="1" />
-      <edge id="92" source="alpha-Linolenic acid" target="Resveratrol" weight="2" />
-      <edge id="93" source="alpha-Linolenic acid" target="Indomethacin" weight="2" />
-      <edge id="94" source="alpha-Linolenic acid" target="Oleic Acid" weight="4" />
-      <edge id="95" source="alpha-Linolenic acid" target="Curcumin" weight="1" />
-      <edge id="96" source="alpha-Linolenic acid" target="Ibuprofen" weight="2" />
-      <edge id="97" source="alpha-Linolenic acid" target="Resiniferatoxin" weight="1" />
-      <edge id="98" source="alpha-Linolenic acid" target="Tretinoin" weight="1" />
-      <edge id="99" source="alpha-Linolenic acid" target="Telmisartan" weight="1" />
+      <edge id="92" source="alpha-Linolenic acid" target="Telmisartan" weight="1" />
+      <edge id="93" source="alpha-Linolenic acid" target="Curcumin" weight="1" />
+      <edge id="94" source="alpha-Linolenic acid" target="Resiniferatoxin" weight="1" />
+      <edge id="95" source="alpha-Linolenic acid" target="Oleic Acid" weight="4" />
+      <edge id="96" source="alpha-Linolenic acid" target="Resveratrol" weight="2" />
+      <edge id="97" source="alpha-Linolenic acid" target="Ibuprofen" weight="2" />
+      <edge id="98" source="alpha-Linolenic acid" target="Indomethacin" weight="2" />
+      <edge id="99" source="alpha-Linolenic acid" target="Tretinoin" weight="1" />
       <edge id="100" source="alpha-Linolenic acid" target="Omega-3 fatty acids" weight="2" />
       <edge id="101" source="Lopinavir" target="Darunavir" weight="1" />
       <edge id="102" source="Lopinavir" target="Atazanavir" weight="1" />
       <edge id="103" source="Lopinavir" target="Ritonavir" weight="1" />
       <edge id="104" source="Tinzaparin" target="Bemiparin" weight="1" />
-      <edge id="105" source="Tinzaparin" target="Sulodexide" weight="1" />
-      <edge id="106" source="Tinzaparin" target="Fondaparinux" weight="1" />
+      <edge id="105" source="Tinzaparin" target="Heparin" weight="1" />
+      <edge id="106" source="Tinzaparin" target="Enoxaparin" weight="1" />
       <edge id="107" source="Tinzaparin" target="Nadroparin" weight="1" />
-      <edge id="108" source="Tinzaparin" target="Enoxaparin" weight="1" />
-      <edge id="109" source="Tinzaparin" target="Heparin" weight="1" />
-      <edge id="110" source="Quercetin" target="Resveratrol" weight="6" />
-      <edge id="111" source="Quercetin" target="Estradiol" weight="3" />
-      <edge id="112" source="Quercetin" target="Vitamin E" weight="1" />
-      <edge id="113" source="Quercetin" target="Dexamethasone" weight="1" />
-      <edge id="114" source="Quercetin" target="Melatonin" weight="2" />
-      <edge id="115" source="Quercetin" target="Leflunomide" weight="1" />
-      <edge id="116" source="Quercetin" target="Progesterone" weight="3" />
-      <edge id="117" source="Quercetin" target="Ritonavir" weight="1" />
-      <edge id="118" source="Quercetin" target="Piperine" weight="1" />
-      <edge id="119" source="Quercetin" target="Artenimol" weight="1" />
-      <edge id="120" source="Quercetin" target="Curcumin" weight="1" />
-      <edge id="121" source="Quercetin" target="Omeprazole" weight="1" />
+      <edge id="108" source="Tinzaparin" target="Fondaparinux" weight="1" />
+      <edge id="109" source="Tinzaparin" target="Sulodexide" weight="1" />
+      <edge id="110" source="Quercetin" target="Progesterone" weight="3" />
+      <edge id="111" source="Quercetin" target="Melatonin" weight="2" />
+      <edge id="112" source="Quercetin" target="Curcumin" weight="1" />
+      <edge id="113" source="Quercetin" target="Ritonavir" weight="1" />
+      <edge id="114" source="Quercetin" target="Dexamethasone" weight="1" />
+      <edge id="115" source="Quercetin" target="Artenimol" weight="1" />
+      <edge id="116" source="Quercetin" target="Resveratrol" weight="6" />
+      <edge id="117" source="Quercetin" target="Piperine" weight="1" />
+      <edge id="118" source="Quercetin" target="Estradiol" weight="3" />
+      <edge id="119" source="Quercetin" target="Leflunomide" weight="1" />
+      <edge id="120" source="Quercetin" target="Omeprazole" weight="1" />
+      <edge id="121" source="Quercetin" target="Vitamin E" weight="1" />
       <edge id="122" source="Ruxolitinib" target="Tofacitinib" weight="2" />
       <edge id="123" source="Ruxolitinib" target="Baricitinib" weight="2" />
       <edge id="124" source="Ruxolitinib" target="Zanubrutinib" weight="1" />
       <edge id="125" source="Methylene blue" target="Citrulline" weight="1" />
-      <edge id="126" source="Angiotensin II" target="Olmesartan" weight="1" />
-      <edge id="127" source="Angiotensin II" target="Valsartan" weight="1" />
-      <edge id="128" source="Angiotensin II" target="Candesartan" weight="1" />
-      <edge id="129" source="Angiotensin II" target="Eprosartan" weight="1" />
-      <edge id="130" source="Angiotensin II" target="Candesartan cilexetil" weight="1" />
-      <edge id="131" source="Angiotensin II" target="Irbesartan" weight="1" />
-      <edge id="132" source="Angiotensin II" target="Telmisartan" weight="1" />
-      <edge id="133" source="Valsartan" target="Olmesartan" weight="1" />
-      <edge id="134" source="Valsartan" target="Candesartan" weight="1" />
-      <edge id="135" source="Valsartan" target="Eprosartan" weight="1" />
-      <edge id="136" source="Valsartan" target="Candesartan cilexetil" weight="1" />
-      <edge id="137" source="Valsartan" target="Irbesartan" weight="1" />
-      <edge id="138" source="Valsartan" target="Telmisartan" weight="1" />
+      <edge id="126" source="Angiotensin II" target="Irbesartan" weight="1" />
+      <edge id="127" source="Angiotensin II" target="Telmisartan" weight="1" />
+      <edge id="128" source="Angiotensin II" target="Candesartan cilexetil" weight="1" />
+      <edge id="129" source="Angiotensin II" target="Olmesartan" weight="1" />
+      <edge id="130" source="Angiotensin II" target="Eprosartan" weight="1" />
+      <edge id="131" source="Angiotensin II" target="Candesartan" weight="1" />
+      <edge id="132" source="Angiotensin II" target="Valsartan" weight="1" />
+      <edge id="133" source="Valsartan" target="Irbesartan" weight="1" />
+      <edge id="134" source="Valsartan" target="Telmisartan" weight="1" />
+      <edge id="135" source="Valsartan" target="Candesartan cilexetil" weight="1" />
+      <edge id="136" source="Valsartan" target="Olmesartan" weight="1" />
+      <edge id="137" source="Valsartan" target="Eprosartan" weight="1" />
+      <edge id="138" source="Valsartan" target="Candesartan" weight="1" />
       <edge id="139" source="Fondaparinux" target="Bemiparin" weight="2" />
-      <edge id="140" source="Fondaparinux" target="Sulodexide" weight="1" />
-      <edge id="141" source="Fondaparinux" target="Heparin" weight="2" />
-      <edge id="142" source="Fondaparinux" target="Nadroparin" weight="1" />
-      <edge id="143" source="Fondaparinux" target="Rivaroxaban" weight="1" />
-      <edge id="144" source="Fondaparinux" target="Enoxaparin" weight="2" />
-      <edge id="145" source="Omeprazole" target="Resveratrol" weight="1" />
-      <edge id="146" source="Omeprazole" target="Leflunomide" weight="1" />
-      <edge id="147" source="Omeprazole" target="Rabeprazole" weight="1" />
-      <edge id="148" source="Iloprost" target="Dipyridamole" weight="1" />
-      <edge id="149" source="Iloprost" target="Indomethacin" weight="1" />
-      <edge id="150" source="Irbesartan" target="Olmesartan" weight="1" />
-      <edge id="151" source="Irbesartan" target="Candesartan" weight="1" />
-      <edge id="152" source="Irbesartan" target="Eprosartan" weight="1" />
-      <edge id="153" source="Irbesartan" target="Candesartan cilexetil" weight="1" />
-      <edge id="154" source="Irbesartan" target="Telmisartan" weight="1" />
-      <edge id="155" source="Tenofovir alafenamide" target="Tenofovir" weight="3" />
-      <edge id="156" source="Tenofovir alafenamide" target="Tenofovir disoproxil" weight="1" />
-      <edge id="157" source="Trifluoperazine" target="Melatonin" weight="1" />
-      <edge id="158" source="Trifluoperazine" target="Verapamil" weight="1" />
-      <edge id="159" source="Celecoxib" target="Indomethacin" weight="1" />
+      <edge id="140" source="Fondaparinux" target="Heparin" weight="2" />
+      <edge id="141" source="Fondaparinux" target="Rivaroxaban" weight="1" />
+      <edge id="142" source="Fondaparinux" target="Enoxaparin" weight="2" />
+      <edge id="143" source="Fondaparinux" target="Nadroparin" weight="1" />
+      <edge id="144" source="Fondaparinux" target="Sulodexide" weight="1" />
+      <edge id="145" source="Omeprazole" target="Rabeprazole" weight="1" />
+      <edge id="146" source="Omeprazole" target="Resveratrol" weight="1" />
+      <edge id="147" source="Omeprazole" target="Leflunomide" weight="1" />
+      <edge id="148" source="Iloprost" target="Indomethacin" weight="1" />
+      <edge id="149" source="Iloprost" target="Dipyridamole" weight="1" />
+      <edge id="150" source="Irbesartan" target="Telmisartan" weight="1" />
+      <edge id="151" source="Irbesartan" target="Candesartan cilexetil" weight="1" />
+      <edge id="152" source="Irbesartan" target="Olmesartan" weight="1" />
+      <edge id="153" source="Irbesartan" target="Eprosartan" weight="1" />
+      <edge id="154" source="Irbesartan" target="Candesartan" weight="1" />
+      <edge id="155" source="Tenofovir alafenamide" target="Tenofovir disoproxil" weight="1" />
+      <edge id="156" source="Tenofovir alafenamide" target="Tenofovir" weight="3" />
+      <edge id="157" source="Trifluoperazine" target="Verapamil" weight="1" />
+      <edge id="158" source="Trifluoperazine" target="Melatonin" weight="1" />
+      <edge id="159" source="Celecoxib" target="Lenalidomide" weight="1" />
       <edge id="160" source="Celecoxib" target="Resveratrol" weight="1" />
       <edge id="161" source="Celecoxib" target="Ibuprofen" weight="1" />
-      <edge id="162" source="Celecoxib" target="Lenalidomide" weight="1" />
+      <edge id="162" source="Celecoxib" target="Indomethacin" weight="1" />
       <edge id="163" source="Sildenafil" target="Dipyridamole" weight="1" />
-      <edge id="164" source="Elbasvir" target="Velpatasvir" weight="1" />
-      <edge id="165" source="Elbasvir" target="Daclatasvir" weight="1" />
-      <edge id="166" source="Moxifloxacin" target="Etoposide" weight="1" />
-      <edge id="167" source="Moxifloxacin" target="Levofloxacin" weight="2" />
+      <edge id="164" source="Elbasvir" target="Daclatasvir" weight="1" />
+      <edge id="165" source="Elbasvir" target="Velpatasvir" weight="1" />
+      <edge id="166" source="Moxifloxacin" target="Levofloxacin" weight="2" />
+      <edge id="167" source="Moxifloxacin" target="Etoposide" weight="1" />
       <edge id="168" source="Mecobalamin" target="Cyanocobalamin" weight="1" />
-      <edge id="169" source="Olmesartan" target="Candesartan" weight="1" />
-      <edge id="170" source="Olmesartan" target="Eprosartan" weight="1" />
-      <edge id="171" source="Olmesartan" target="Candesartan cilexetil" weight="1" />
-      <edge id="172" source="Olmesartan" target="Telmisartan" weight="1" />
+      <edge id="169" source="Olmesartan" target="Telmisartan" weight="1" />
+      <edge id="170" source="Olmesartan" target="Candesartan cilexetil" weight="1" />
+      <edge id="171" source="Olmesartan" target="Eprosartan" weight="1" />
+      <edge id="172" source="Olmesartan" target="Candesartan" weight="1" />
       <edge id="173" source="Sitagliptin" target="Linagliptin" weight="1" />
-      <edge id="174" source="Montelukast" target="Resveratrol" weight="1" />
-      <edge id="175" source="Montelukast" target="Vitamin E" weight="1" />
-      <edge id="176" source="Ribavirin" target="GS-441524" weight="1" />
-      <edge id="177" source="Ribavirin" target="Danoprevir" weight="1" />
+      <edge id="174" source="Montelukast" target="Vitamin E" weight="1" />
+      <edge id="175" source="Montelukast" target="Resveratrol" weight="1" />
+      <edge id="176" source="Ribavirin" target="Galidesivir" weight="1" />
+      <edge id="177" source="Ribavirin" target="GS-441524" weight="1" />
       <edge id="178" source="Ribavirin" target="Favipiravir" weight="1" />
-      <edge id="179" source="Ribavirin" target="Galidesivir" weight="1" />
-      <edge id="180" source="Ribavirin" target="Remdesivir" weight="1" />
+      <edge id="179" source="Ribavirin" target="Remdesivir" weight="1" />
+      <edge id="180" source="Ribavirin" target="Danoprevir" weight="1" />
       <edge id="181" source="Tranexamic acid" target="Aprotinin" weight="1" />
       <edge id="182" source="Nicotinamide" target="Artenimol" weight="1" />
-      <edge id="183" source="Oleic Acid" target="Resveratrol" weight="2" />
-      <edge id="184" source="Oleic Acid" target="Indomethacin" weight="2" />
-      <edge id="185" source="Oleic Acid" target="Curcumin" weight="1" />
+      <edge id="183" source="Oleic Acid" target="Telmisartan" weight="1" />
+      <edge id="184" source="Oleic Acid" target="Curcumin" weight="1" />
+      <edge id="185" source="Oleic Acid" target="Resveratrol" weight="2" />
       <edge id="186" source="Oleic Acid" target="Ibuprofen" weight="2" />
-      <edge id="187" source="Oleic Acid" target="Tretinoin" weight="1" />
-      <edge id="188" source="Oleic Acid" target="Omega-3 fatty acids" weight="2" />
-      <edge id="189" source="Oleic Acid" target="Telmisartan" weight="1" />
-      <edge id="190" source="Clarithromycin" target="Fluoxetine" weight="1" />
-      <edge id="191" source="Clarithromycin" target="Fluvoxamine" weight="1" />
-      <edge id="192" source="Clarithromycin" target="Roxithromycin" weight="1" />
-      <edge id="193" source="Clarithromycin" target="Verapamil" weight="1" />
+      <edge id="187" source="Oleic Acid" target="Indomethacin" weight="2" />
+      <edge id="188" source="Oleic Acid" target="Tretinoin" weight="1" />
+      <edge id="189" source="Oleic Acid" target="Omega-3 fatty acids" weight="2" />
+      <edge id="190" source="Clarithromycin" target="Fluvoxamine" weight="1" />
+      <edge id="191" source="Clarithromycin" target="Roxithromycin" weight="1" />
+      <edge id="192" source="Clarithromycin" target="Verapamil" weight="1" />
+      <edge id="193" source="Clarithromycin" target="Fluoxetine" weight="1" />
       <edge id="194" source="Artenimol" target="Resveratrol" weight="1" />
       <edge id="195" source="Artenimol" target="Cyclosporine" weight="1" />
       <edge id="196" source="Artenimol" target="Dipyridamole" weight="1" />
       <edge id="197" source="Artenimol" target="Pyridostigmine" weight="1" />
-      <edge id="198" source="Telmisartan" target="Resveratrol" weight="1" />
-      <edge id="199" source="Telmisartan" target="Candesartan" weight="1" />
-      <edge id="200" source="Telmisartan" target="Eprosartan" weight="1" />
-      <edge id="201" source="Telmisartan" target="Indomethacin" weight="1" />
-      <edge id="202" source="Telmisartan" target="Ibuprofen" weight="1" />
-      <edge id="203" source="Telmisartan" target="Curcumin" weight="1" />
-      <edge id="204" source="Telmisartan" target="Candesartan cilexetil" weight="1" />
+      <edge id="198" source="Telmisartan" target="Candesartan" weight="1" />
+      <edge id="199" source="Telmisartan" target="Ibuprofen" weight="1" />
+      <edge id="200" source="Telmisartan" target="Indomethacin" weight="1" />
+      <edge id="201" source="Telmisartan" target="Curcumin" weight="1" />
+      <edge id="202" source="Telmisartan" target="Candesartan cilexetil" weight="1" />
+      <edge id="203" source="Telmisartan" target="Eprosartan" weight="1" />
+      <edge id="204" source="Telmisartan" target="Resveratrol" weight="1" />
       <edge id="205" source="Telmisartan" target="Omega-3 fatty acids" weight="1" />
       <edge id="206" source="Vitamin A" target="Tretinoin" weight="2" />
       <edge id="207" source="Tenofovir" target="Tenofovir disoproxil" weight="1" />
@@ -4102,120 +4123,122 @@
       <edge id="209" source="Rivaroxaban" target="Bemiparin" weight="1" />
       <edge id="210" source="Rivaroxaban" target="Heparin" weight="1" />
       <edge id="211" source="Rivaroxaban" target="Enoxaparin" weight="1" />
-      <edge id="212" source="GS-441524" target="Galidesivir" weight="1" />
+      <edge id="212" source="GS-441524" target="GC-376 free acid" weight="1" />
       <edge id="213" source="GS-441524" target="Remdesivir" weight="2" />
-      <edge id="214" source="Velpatasvir" target="Daclatasvir" weight="1" />
-      <edge id="215" source="Cholesterol" target="Resveratrol" weight="1" />
-      <edge id="216" source="Cholesterol" target="Calcifediol" weight="1" />
+      <edge id="214" source="GS-441524" target="Galidesivir" weight="1" />
+      <edge id="215" source="Velpatasvir" target="Daclatasvir" weight="1" />
+      <edge id="216" source="Cholesterol" target="Curcumin" weight="1" />
       <edge id="217" source="Cholesterol" target="Cholecalciferol" weight="1" />
-      <edge id="218" source="Cholesterol" target="Curcumin" weight="1" />
-      <edge id="219" source="Dipyridamole" target="Progesterone" weight="1" />
-      <edge id="220" source="Dipyridamole" target="Lidocaine" weight="1" />
-      <edge id="221" source="Bemiparin" target="Sulodexide" weight="2" />
+      <edge id="218" source="Cholesterol" target="Resveratrol" weight="1" />
+      <edge id="219" source="Cholesterol" target="Calcifediol" weight="1" />
+      <edge id="220" source="Dipyridamole" target="Progesterone" weight="1" />
+      <edge id="221" source="Dipyridamole" target="Lidocaine" weight="1" />
       <edge id="222" source="Bemiparin" target="Heparin" weight="2" />
-      <edge id="223" source="Bemiparin" target="Nadroparin" weight="1" />
-      <edge id="224" source="Bemiparin" target="Enoxaparin" weight="2" />
-      <edge id="225" source="Melatonin" target="Resveratrol" weight="4" />
-      <edge id="226" source="Melatonin" target="Estradiol" weight="1" />
-      <edge id="227" source="Melatonin" target="Progesterone" weight="1" />
-      <edge id="228" source="Vitamin E" target="Estradiol" weight="1" />
-      <edge id="229" source="Vitamin E" target="Resveratrol" weight="2" />
+      <edge id="223" source="Bemiparin" target="Enoxaparin" weight="2" />
+      <edge id="224" source="Bemiparin" target="Nadroparin" weight="1" />
+      <edge id="225" source="Bemiparin" target="Sulodexide" weight="2" />
+      <edge id="226" source="Melatonin" target="Progesterone" weight="1" />
+      <edge id="227" source="Melatonin" target="Resveratrol" weight="4" />
+      <edge id="228" source="Melatonin" target="Estradiol" weight="1" />
+      <edge id="229" source="Vitamin E" target="Ritonavir" weight="1" />
       <edge id="230" source="Vitamin E" target="Dexamethasone" weight="1" />
-      <edge id="231" source="Vitamin E" target="Ritonavir" weight="1" />
+      <edge id="231" source="Vitamin E" target="Resveratrol" weight="2" />
       <edge id="232" source="Vitamin E" target="Piperine" weight="1" />
-      <edge id="233" source="Tretinoin" target="Isotretinoin" weight="2" />
-      <edge id="234" source="Tretinoin" target="Tranilast" weight="1" />
-      <edge id="235" source="Nadroparin" target="Sulodexide" weight="1" />
+      <edge id="233" source="Vitamin E" target="Estradiol" weight="1" />
+      <edge id="234" source="Tretinoin" target="Isotretinoin" weight="2" />
+      <edge id="235" source="Tretinoin" target="Tranilast" weight="1" />
       <edge id="236" source="Nadroparin" target="Heparin" weight="2" />
       <edge id="237" source="Nadroparin" target="Enoxaparin" weight="1" />
-      <edge id="238" source="Ibuprofen" target="Indomethacin" weight="4" />
-      <edge id="239" source="Ibuprofen" target="Resveratrol" weight="4" />
+      <edge id="238" source="Nadroparin" target="Sulodexide" weight="1" />
+      <edge id="239" source="Ibuprofen" target="Curcumin" weight="1" />
       <edge id="240" source="Ibuprofen" target="Lenalidomide" weight="1" />
-      <edge id="241" source="Ibuprofen" target="Curcumin" weight="1" />
-      <edge id="242" source="Ibuprofen" target="Omega-3 fatty acids" weight="2" />
-      <edge id="243" source="Tacrolimus" target="Sirolimus" weight="1" />
-      <edge id="244" source="Galidesivir" target="Remdesivir" weight="1" />
-      <edge id="245" source="Atovaquone" target="Leflunomide" weight="1" />
-      <edge id="246" source="Ciclesonide" target="Dexamethasone" weight="1" />
+      <edge id="241" source="Ibuprofen" target="Resveratrol" weight="4" />
+      <edge id="242" source="Ibuprofen" target="Indomethacin" weight="4" />
+      <edge id="243" source="Ibuprofen" target="Omega-3 fatty acids" weight="2" />
+      <edge id="244" source="Tacrolimus" target="Sirolimus" weight="1" />
+      <edge id="245" source="Galidesivir" target="Remdesivir" weight="1" />
+      <edge id="246" source="Atovaquone" target="Leflunomide" weight="1" />
       <edge id="247" source="Ciclesonide" target="Progesterone" weight="1" />
       <edge id="248" source="Ciclesonide" target="Budesonide" weight="1" />
-      <edge id="249" source="Ciclesonide" target="Prednisolone" weight="1" />
-      <edge id="250" source="Ciclesonide" target="Hydrocortisone" weight="1" />
+      <edge id="249" source="Ciclesonide" target="Dexamethasone" weight="1" />
+      <edge id="250" source="Ciclesonide" target="Prednisolone" weight="1" />
       <edge id="251" source="Ciclesonide" target="Methylprednisolone" weight="1" />
-      <edge id="252" source="Acalabrutinib" target="Zanubrutinib" weight="1" />
+      <edge id="252" source="Ciclesonide" target="Hydrocortisone" weight="1" />
       <edge id="253" source="Acalabrutinib" target="Ibrutinib" weight="1" />
-      <edge id="254" source="Methotrexate" target="Trimethoprim" weight="1" />
-      <edge id="255" source="Candesartan" target="Eprosartan" weight="1" />
+      <edge id="254" source="Acalabrutinib" target="Zanubrutinib" weight="1" />
+      <edge id="255" source="Methotrexate" target="Trimethoprim" weight="1" />
       <edge id="256" source="Candesartan" target="Candesartan cilexetil" weight="1" />
-      <edge id="257" source="Aprotinin" target="Camostat" weight="1" />
-      <edge id="258" source="Citrulline" target="Dexamethasone" weight="1" />
-      <edge id="259" source="Prednisolone" target="Dexamethasone" weight="1" />
+      <edge id="257" source="Candesartan" target="Eprosartan" weight="1" />
+      <edge id="258" source="Aprotinin" target="Camostat" weight="1" />
+      <edge id="259" source="Citrulline" target="Dexamethasone" weight="1" />
       <edge id="260" source="Prednisolone" target="Progesterone" weight="1" />
       <edge id="261" source="Prednisolone" target="Budesonide" weight="1" />
-      <edge id="262" source="Prednisolone" target="Hydrocortisone" weight="1" />
+      <edge id="262" source="Prednisolone" target="Dexamethasone" weight="1" />
       <edge id="263" source="Prednisolone" target="Methylprednisolone" weight="1" />
-      <edge id="264" source="Captopril" target="Ramipril" weight="2" />
-      <edge id="265" source="Captopril" target="Enalapril" weight="1" />
-      <edge id="266" source="Bicalutamide" target="Progesterone" weight="1" />
-      <edge id="267" source="Eprosartan" target="Candesartan cilexetil" weight="1" />
-      <edge id="268" source="Enoxaparin" target="Sulodexide" weight="1" />
+      <edge id="264" source="Prednisolone" target="Hydrocortisone" weight="1" />
+      <edge id="265" source="Captopril" target="Ramipril" weight="2" />
+      <edge id="266" source="Captopril" target="Enalapril" weight="1" />
+      <edge id="267" source="Bicalutamide" target="Progesterone" weight="1" />
+      <edge id="268" source="Eprosartan" target="Candesartan cilexetil" weight="1" />
       <edge id="269" source="Enoxaparin" target="Heparin" weight="2" />
-      <edge id="270" source="Sirolimus" target="Heparin" weight="1" />
-      <edge id="271" source="Progesterone" target="Resveratrol" weight="1" />
-      <edge id="272" source="Progesterone" target="Dexamethasone" weight="1" />
-      <edge id="273" source="Progesterone" target="Budesonide" weight="1" />
-      <edge id="274" source="Progesterone" target="Lidocaine" weight="1" />
-      <edge id="275" source="Progesterone" target="Hydrocortisone" weight="1" />
-      <edge id="276" source="Progesterone" target="Estradiol" weight="2" />
-      <edge id="277" source="Progesterone" target="Methylprednisolone" weight="1" />
-      <edge id="278" source="Sulodexide" target="Heparin" weight="1" />
-      <edge id="279" source="Fluoxetine" target="Levamisole" weight="1" />
+      <edge id="270" source="Enoxaparin" target="Sulodexide" weight="1" />
+      <edge id="271" source="Sirolimus" target="Heparin" weight="1" />
+      <edge id="272" source="Progesterone" target="Hydrocortisone" weight="1" />
+      <edge id="273" source="Progesterone" target="Lidocaine" weight="1" />
+      <edge id="274" source="Progesterone" target="Budesonide" weight="1" />
+      <edge id="275" source="Progesterone" target="Dexamethasone" weight="1" />
+      <edge id="276" source="Progesterone" target="Resveratrol" weight="1" />
+      <edge id="277" source="Progesterone" target="Estradiol" weight="2" />
+      <edge id="278" source="Progesterone" target="Methylprednisolone" weight="1" />
+      <edge id="279" source="Sulodexide" target="Heparin" weight="1" />
       <edge id="280" source="Fluoxetine" target="Fluvoxamine" weight="2" />
       <edge id="281" source="Fluoxetine" target="Verapamil" weight="2" />
-      <edge id="282" source="Tofacitinib" target="Baricitinib" weight="3" />
-      <edge id="283" source="Tofacitinib" target="Zanubrutinib" weight="2" />
-      <edge id="284" source="Fingolimod" target="Ozanimod" weight="2" />
-      <edge id="285" source="Ramipril" target="Enalapril" weight="1" />
-      <edge id="286" source="Baricitinib" target="Leflunomide" weight="1" />
-      <edge id="287" source="Baricitinib" target="Zanubrutinib" weight="2" />
-      <edge id="288" source="Curcumin" target="Resveratrol" weight="2" />
-      <edge id="289" source="Curcumin" target="Indomethacin" weight="1" />
-      <edge id="290" source="Curcumin" target="Calcifediol" weight="1" />
-      <edge id="291" source="Curcumin" target="Cholecalciferol" weight="1" />
-      <edge id="292" source="Curcumin" target="Omega-3 fatty acids" weight="1" />
-      <edge id="293" source="Lidocaine" target="Zanubrutinib" weight="1" />
-      <edge id="294" source="Fluvoxamine" target="Verapamil" weight="2" />
-      <edge id="295" source="Estradiol" target="Resveratrol" weight="2" />
-      <edge id="296" source="Estradiol" target="Dexamethasone" weight="1" />
-      <edge id="297" source="Estradiol" target="Ritonavir" weight="1" />
+      <edge id="282" source="Fluoxetine" target="Levamisole" weight="1" />
+      <edge id="283" source="Tofacitinib" target="Baricitinib" weight="3" />
+      <edge id="284" source="Tofacitinib" target="Zanubrutinib" weight="2" />
+      <edge id="285" source="Fingolimod" target="Ozanimod" weight="2" />
+      <edge id="286" source="Ramipril" target="Enalapril" weight="1" />
+      <edge id="287" source="Baricitinib" target="Leflunomide" weight="1" />
+      <edge id="288" source="Baricitinib" target="Zanubrutinib" weight="2" />
+      <edge id="289" source="Curcumin" target="Cholecalciferol" weight="1" />
+      <edge id="290" source="Curcumin" target="Resveratrol" weight="2" />
+      <edge id="291" source="Curcumin" target="Calcifediol" weight="1" />
+      <edge id="292" source="Curcumin" target="Indomethacin" weight="1" />
+      <edge id="293" source="Curcumin" target="Omega-3 fatty acids" weight="1" />
+      <edge id="294" source="Lidocaine" target="Zanubrutinib" weight="1" />
+      <edge id="295" source="Fluvoxamine" target="Verapamil" weight="2" />
+      <edge id="296" source="Estradiol" target="Ritonavir" weight="1" />
+      <edge id="297" source="Estradiol" target="Dexamethasone" weight="1" />
       <edge id="298" source="Estradiol" target="Piperine" weight="1" />
-      <edge id="299" source="Indomethacin" target="Resveratrol" weight="4" />
+      <edge id="299" source="Estradiol" target="Resveratrol" weight="2" />
       <edge id="300" source="Indomethacin" target="Lenalidomide" weight="1" />
-      <edge id="301" source="Indomethacin" target="Omega-3 fatty acids" weight="2" />
-      <edge id="302" source="Hydrocortisone" target="Dexamethasone" weight="2" />
+      <edge id="301" source="Indomethacin" target="Resveratrol" weight="4" />
+      <edge id="302" source="Indomethacin" target="Omega-3 fatty acids" weight="2" />
       <edge id="303" source="Hydrocortisone" target="Budesonide" weight="2" />
-      <edge id="304" source="Hydrocortisone" target="Methylprednisolone" weight="2" />
-      <edge id="305" source="Darunavir" target="Ritonavir" weight="1" />
+      <edge id="304" source="Hydrocortisone" target="Dexamethasone" weight="2" />
+      <edge id="305" source="Hydrocortisone" target="Methylprednisolone" weight="2" />
       <edge id="306" source="Darunavir" target="Atazanavir" weight="1" />
-      <edge id="307" source="Piperine" target="Resveratrol" weight="1" />
-      <edge id="308" source="Piperine" target="Dexamethasone" weight="1" />
-      <edge id="309" source="Piperine" target="Ritonavir" weight="1" />
-      <edge id="310" source="Verapamil" target="Diltiazem" weight="1" />
-      <edge id="311" source="Cholecalciferol" target="Calcifediol" weight="1" />
-      <edge id="312" source="Methylprednisolone" target="Dexamethasone" weight="2" />
+      <edge id="307" source="Darunavir" target="Ritonavir" weight="1" />
+      <edge id="308" source="Piperine" target="Ritonavir" weight="1" />
+      <edge id="309" source="Piperine" target="Dexamethasone" weight="1" />
+      <edge id="310" source="Piperine" target="Resveratrol" weight="1" />
+      <edge id="311" source="Verapamil" target="Diltiazem" weight="1" />
+      <edge id="312" source="Cholecalciferol" target="Calcifediol" weight="1" />
       <edge id="313" source="Methylprednisolone" target="Budesonide" weight="2" />
-      <edge id="314" source="Imatinib" target="Nintedanib" weight="2" />
-      <edge id="315" source="Omega-3 fatty acids" target="Resveratrol" weight="2" />
-      <edge id="316" source="Atazanavir" target="Ritonavir" weight="1" />
-      <edge id="317" source="Heparin" target="Nintedanib" weight="2" />
-      <edge id="318" source="Ritonavir" target="Resveratrol" weight="1" />
-      <edge id="319" source="Ritonavir" target="Dexamethasone" weight="1" />
-      <edge id="320" source="Budesonide" target="Dexamethasone" weight="2" />
-      <edge id="321" source="Leflunomide" target="Resveratrol" weight="1" />
-      <edge id="322" source="Nintedanib" target="Zanubrutinib" weight="1" />
-      <edge id="323" source="Lenalidomide" target="Resveratrol" weight="1" />
-      <edge id="324" source="Ibrutinib" target="Zanubrutinib" weight="1" />
-      <edge id="325" source="Resveratrol" target="Dexamethasone" weight="1" />
+      <edge id="314" source="Methylprednisolone" target="Dexamethasone" weight="2" />
+      <edge id="315" source="Imatinib" target="Nintedanib" weight="2" />
+      <edge id="316" source="Omega-3 fatty acids" target="Resveratrol" weight="2" />
+      <edge id="317" source="Remdesivir" target="GC-376 free acid" weight="1" />
+      <edge id="318" source="Atazanavir" target="Ritonavir" weight="1" />
+      <edge id="319" source="Heparin" target="Nintedanib" weight="2" />
+      <edge id="320" source="Ritonavir" target="Dexamethasone" weight="1" />
+      <edge id="321" source="Ritonavir" target="Resveratrol" weight="1" />
+      <edge id="322" source="Budesonide" target="Dexamethasone" weight="2" />
+      <edge id="323" source="Leflunomide" target="Resveratrol" weight="1" />
+      <edge id="324" source="Nintedanib" target="Zanubrutinib" weight="1" />
+      <edge id="325" source="Lenalidomide" target="Resveratrol" weight="1" />
+      <edge id="326" source="Ibrutinib" target="Zanubrutinib" weight="1" />
+      <edge id="327" source="Resveratrol" target="Dexamethasone" weight="1" />
     </edges>
   </graph>
 </gexf>

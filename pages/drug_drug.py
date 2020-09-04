@@ -35,28 +35,28 @@ nx.set_node_attributes(G,nx.get_node_attributes(G,"name"),"id")
 nodes=[{"data":{key:value for key,value in attributes.items()}} for node,attributes in dict(G.nodes(data=True)).items()]
 edges=[{"data":{"source":source,"target":target}} for source,target in G.edges]
 
-layout=dbc.Row([
-        dbc.Col(sidebar(prefix), width=1, className="bg-light"),
-        dbc.Col([
-        headbar(prefix),
-        # html.Br(),
-        # html.H1("COVID-19 Networker", style={"text-align":"center"}),
-        html.Br(),
-        dbc.Row([
-            dbc.Col(graph(prefix, title=graph_title, nodes=nodes, edges=edges), width=9),
-            dbc.Col(nodes_info(prefix), width=3)
-        ], no_gutters=True, justify="center"),
-        html.Br(),
-        dbc.Row(dbc.Col(id=prefix+"_selected_table", align="center"), no_gutters=True, justify="center", align="center"),
-        html.Br(),
-        graph_properties(prefix),
-        html.Br(),
-        custom_clustering(prefix),
-        html.Br(),
-        plots(prefix,graph=G),
-        ]),
-        footer()
-    ], no_gutters=True)
+layout=dbc.Col([
+            headbar(prefix),
+            dbc.Row([
+                dbc.Col(sidebar(prefix), width=1, className="bg-light"),
+                dbc.Col([
+                    html.Br(),
+                    dbc.Row([
+                        dbc.Col(graph(prefix, title=graph_title, nodes=nodes, edges=edges), width=9),
+                        dbc.Col(nodes_info(prefix), width=3)
+                    ], no_gutters=True, justify="center"),
+                    html.Br(),
+                    dbc.Row(dbc.Col(id=prefix+"_selected_table", align="center"), no_gutters=True, justify="center", align="center"),
+                    html.Br(),
+                    graph_properties(prefix),
+                    html.Br(),
+                    custom_clustering(prefix),
+                    html.Br(),
+                    plots(prefix,graph=G),
+                ]),
+                footer()
+            ], no_gutters=True)
+        ], style={"padding":"0px"})
 
 
 

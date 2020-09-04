@@ -28,53 +28,53 @@ from callbacks import *
 #SARS-CoV-2_Networker
 prefix="home"
 
-layout=dbc.Row([
-        dbc.Col(sidebar(prefix), width=1, className="bg-light"),
-        dbc.Col([
+layout=dbc.Col([
             headbar(prefix),
-            # html.Br(),
-            # html.H1("COVID-19 Networker", style={"text-align":"center"}),
-            html.Br(),
-            dbc.Col([
-                html.Center(html.H2(html.Strong("SARS-CoV-2 Networker"))),
-                html.P("Welcome to ... bla bla bla..."),
-                html.Br(),
-                html.H4("Available Graphs:"),
-                html.Br(),
-                dbc.Row([
+            dbc.Row([
+                dbc.Col(sidebar(prefix), width=1, className="bg-light"),
+                dbc.Col([
+                    html.Br(),
                     dbc.Col([
-                        html.A([
-                            html.Center([
-                                html.Img(src="https://drive.google.com/uc?export=view&id=1Dsog5C3jKZXHssGqVCd9BOiP15KULK8W", style={"width":"95%"}),
-                                html.H5(html.Strong("Drug Target"), className="card-header")
+                        html.Center(html.H2(html.Strong("SARS-CoV-2 Networker"))),
+                        html.P("Welcome to ... bla bla bla..."),
+                        html.Br(),
+                        html.H4("Available Graphs:"),
+                        html.Br(),
+                        dbc.Row([
+                            dbc.Col([
+                                html.A([
+                                    html.Center([
+                                        html.Img(src="https://drive.google.com/uc?export=view&id=1Dsog5C3jKZXHssGqVCd9BOiP15KULK8W", style={"width":"95%"}),
+                                        html.H5(html.Strong("Drug Target"), className="card-header")
+                                    ])
+                                ], href="/drug_target", className="card border-primary mb-3"),
+                            ]),
+                            dbc.Col([
+                                html.A([
+                                    html.Center([
+                                        html.Img(src="https://drive.google.com/uc?export=view&id=1RMYDzIHpfsqYWMTd4qA2zWEWT0eYCAfd", style={"width":"95%"}),
+                                        html.H5(html.Strong("Drug Drug"), className="card-header")
+                                    ])
+                                ], href="/drug_drug", className="card border-primary mb-3"),
+                            ]),
+                            dbc.Col([
+                                html.A([
+                                    html.Center([
+                                        html.Img(src="https://drive.google.com/uc?export=view&id=1iDDwsBgJanpOjUAYEE6yuwMmS9D43ap4", style={"width":"95%"}),
+                                        html.H5(html.Strong("Target Target"), className="card-header")
+                                    ])
+                                ], href="/target_target", className="card border-primary mb-3"),
                             ])
-                        ], href="/drug_target", className="card border-primary mb-3"),
+                        ]),
+                        html.Br(),
+                        html.P([html.Font("For help browsing the app check the "),html.A("Help", href="/help"),html.Font(" section")]),
+                        html.P([html.Font("Otherwise feel free to "),html.A("reach us out", href="/contacts")]),
+                        html.P([html.Font("Info and credits about the project can be found in the "),html.A("About", href="/about"),html.Font(" section")])
                     ]),
-                    dbc.Col([
-                        html.A([
-                            html.Center([
-                                html.Img(src="https://drive.google.com/uc?export=view&id=1RMYDzIHpfsqYWMTd4qA2zWEWT0eYCAfd", style={"width":"95%"}),
-                                html.H5(html.Strong("Drug Drug"), className="card-header")
-                            ])
-                        ], href="/drug_drug", className="card border-primary mb-3"),
-                    ]),
-                    dbc.Col([
-                        html.A([
-                            html.Center([
-                                html.Img(src="https://drive.google.com/uc?export=view&id=1iDDwsBgJanpOjUAYEE6yuwMmS9D43ap4", style={"width":"95%"}),
-                                html.H5(html.Strong("Target Target"), className="card-header")
-                            ])
-                        ], href="/target_target", className="card border-primary mb-3"),
-                    ])
-                ]),
-                html.Br(),
-                html.P([html.Font("For help browising the app check the "),html.A("Help", href="/help"),html.Font(" section")]),
-                html.P([html.Font("Otherwise feel free to "),html.A("reach us out", href="/contacts")]),
-                html.P([html.Font("Info and credits about the project can be found in the "),html.A("About", href="/about"),html.Font(" section")])
-            ]),
-        ], className="h-100"),
-        footer()
-    ], no_gutters=True, style={"height":"100vh"})
+                ], className="h-100"),
+                footer()
+            ], no_gutters=True, style={"height":"100vh"})
+        ], style={"padding":"0px"})
 
 # if __name__=="__main__":
 #     app.run_server(debug=False)

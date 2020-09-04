@@ -550,6 +550,7 @@ Niacin	Nicotinate-nucleotide pyrophosphorylase [carboxylating]	{}
 Niacin	Nicotinamide N-methyltransferase	{}
 GS-441524	Replicase polyprotein 1ab	{}
 Replicase polyprotein 1ab	Remdesivir	{}
+Replicase polyprotein 1ab	GC-376 free acid	{}
 Cholesterol	Nuclear receptor ROR-alpha	{}
 Cholesterol	C-type lectin domain family 4 member E	{}
 Almitrine	Sodium/potassium-transporting ATPase subunit alpha-1	{}
@@ -839,3 +840,4 @@ Zanubrutinib	Tyrosine-protein kinase TXK	{}
 Cyclosporine	Calcium signal-modulating cyclophilin ligand	{}
 Cyclosporine	Calcineurin subunit B type 2	{}
 Cyclosporine	Peptidyl-prolyl cis-trans isomerase F, mitochondrial	{}
+GC-376 free acid	Replicase polyprotein 1a	{}
