@@ -106,7 +106,7 @@ def selectedTable_callback(prefix):
     def selectedTable(data):
         if data:
             if len(data)>1:
-                results=[]
+                results=[html.H3("Selected Data")]
                 drugs_data=[d for d in data if d["kind"]=="Drug"]
                 if len(drugs_data)>0:
                     attributes=["name","ID","ATC Code1","ATC Code5","SMILES","Targets","Enzymes","Carriers","Transporters","Drug Interactions"]
@@ -155,7 +155,12 @@ def selectedTable_callback(prefix):
                                 row.append(html.Td(html.A(target["ID"],href=target["drugbank_url"], target="_blank")))
                             elif attribute == "Gene":
                                 row.append(html.Td(html.A(target["Gene"],href="https://www.uniprot.org/uniprot/"+target["ID"], target="_blank")))
-                            elif attribute in ["PDBID","Organism","Cellular Location"]:
+                            elif attribute == "PDBID":
+                                if target["PDBID"] != "Not Available":
+                                    row.append(html.Td(html.A(target["PDBID"], href="https://www.rcsb.org/structure/"+target["PDBID"], target="_blank")))
+                                else:
+                                    row.append(html.Td(target["PDBID"]))
+                            elif attribute in ["Organism","Cellular Location"]:
                                 row.append(html.Td(target[attribute]))
                             else:
                                 row.append(html.Td(dbc.Container(", ".join(target[attribute]), style={"max-height":"20vh","overflow-y":"auto","word-break": "break-word", "padding":"0px"}, fluid=True), style={"min-width":"10vw","max-width":"20vw","padding-right":"0px"}))
@@ -373,6 +378,7 @@ def highlighter_callback(prefix,G,nodes, girvan_newman,maj,girvan_newman_maj):
 
                 pie_data=pd.DataFrame({"ATC Code":list(ATC_count.keys()),"Value":list(ATC_count.values()), "Color":[cmap[code] for code in ATC_count.keys()], "Label":[long_atc[code] for code in ATC_count.keys()]}).sort_values(by="Value", ascending=False)
                 pie=px.pie(pie_data,values="Value",names="Label", title="Drug-Target's Node Distribution",color_discrete_sequence=pie_data["Color"])
+                pie.update_layout(legend={"x":3})
                 table_body=[]
                 for code in cmap:
                     table_body.append(html.Tr([html.Td("",style={"background-color":cmap[code]}),html.Td(long_atc[code])]))
@@ -478,6 +484,14 @@ def highlighter_callback(prefix,G,nodes, girvan_newman,maj,girvan_newman_maj):
             stylesheet=[style for style in current_stylesheet if style["style"].get("border-style") != "double"]
             pie=current_pie
             legend_body=current_legend_body
+        stylesheet+=[{
+            "selector":"node:selected",
+            "style":{
+                "background-color":"#FFE985",
+                "border-color":"#FFDD4A",
+                "border-width":6
+            }
+        }]
         if highlighted:
             for val in highlighted:
                 stylesheet+=[
@@ -493,14 +507,6 @@ def highlighter_callback(prefix,G,nodes, girvan_newman,maj,girvan_newman_maj):
                         }
                     }
                 ]
-        stylesheet+=[{
-            "selector":"node:selected",
-            "style":{
-                "background-color":"#FFE985",
-                "border-color":"#FFDD4A",
-                "border-width":4
-            }
-        }]
         return stylesheet, pie, legend_body
     return highlighter
 

@@ -220,7 +220,7 @@ def graph_properties(prefix):
                                 {"label":"Betweenness Centrality: High to Low","value":"Betweenness_Centrality,0"}
                             ], value="degree,0", clearable=False, searchable=False, optionHeight=25,className="DropdownMenu")
                         ],align="center", width=4),
-                        dbc.Col(html.Font("Rows to show: ", style={"white-space":"nowrap", "text-align":"right"}),align="center"),
+                        dbc.Col(html.Font("Rows to show: ", style={"white-space":"nowrap"}),align="center", style={"text-align":"right"}),
                         dbc.Col([
                             dcc.Dropdown(id=prefix+"_properties_table_rows",options=[
                                 {"label":"10","value":10},
@@ -231,11 +231,11 @@ def graph_properties(prefix):
                             ], value=10, className="DropdownMenu", clearable=False, searchable=False, optionHeight=25)
                         ],align="center", width=1),
                         dbc.Col(html.A(dbc.Button("Download", className="ml-auto"), target="_blank", download="graph_properties.tsv", id=prefix+"_download_graph_properties"), align="center")
-                    ], justify="end", align="center"),
+                    ], justify="around", align="center"),
                     html.Br(),
                     dbc.Container(id=prefix+"_graph_properties_table_container", fluid=True)
                 ])
-            ])
+            ], fluid=True, style={"padding":"3%"})
 
 def view_custom_clusters(prefix):
     return dbc.Container([
@@ -257,7 +257,7 @@ def custom_clustering(prefix):
     return dbc.Container([
                 html.H3("Clustering"),
                 dbc.Row([
-                    dbc.Col(dcc.Graph(id=prefix+"_custom_clustering_graph"), width=9),
+                    dbc.Col(dcc.Graph(id=prefix+"_custom_clustering_graph"), width=6),
                     dbc.Col([
                         dcc.Dropdown(id=prefix+"_custom_clustering_component", options=[
                             {"label":"Entire Graph","value":"entire"},
@@ -272,9 +272,9 @@ def custom_clustering(prefix):
                         html.Label("Number of clusters:"),
                         dcc.Dropdown(id=prefix+"_custom_clustering_number_clusters", clearable=False, optionHeight=25,className="DropdownMenu"),
                         view_custom_clusters(prefix)
-                    ], align="center")
-                ], justify="center")
-            ], id=prefix+"_clustering")
+                    ], align="center", width=2)
+                ], justify="center", align="center", no_gutters=True)
+            ], id=prefix+"_clustering", fluid=True, style={"padding":"3%"})
 
 def common_data_generator(prefix,graph):
     print(prefix)
@@ -312,10 +312,10 @@ def plots(prefix, graph):
     return dbc.Container([
                 html.H3("Plots"),
                 dbc.Row([
-                    dbc.Col([dcc.Graph(figure=powerplot(graph), id=prefix+"_powerplot")], width=6, align="center"),
-                    dbc.Col([dcc.Graph(id=prefix+"_piechart")],width=6, align="center")
-                ], justify="center")
-            ], id=prefix+"_plots")
+                    dbc.Col([dcc.Graph(figure=powerplot(graph), id=prefix+"_powerplot")], width=4, align="center"),
+                    dbc.Col([dcc.Graph(id=prefix+"_piechart")],width=6 , align="center")
+                ], justify="center", align="around", no_gutters=True)
+            ], id=prefix+"_plots", fluid=True, style={"padding":"3%"})
 
 def footer():
     return dbc.Container([
