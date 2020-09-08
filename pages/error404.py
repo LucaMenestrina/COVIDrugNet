@@ -48,7 +48,7 @@ layout=dbc.Col([
                             dbc.Col(width=1),
                             dbc.Col([
                                 html.P([html.Font("Try to go back to our "),html.A("homepage", href="/covid19drugsnetworker")]),
-                                html.P([html.Font("If the problem persists feel free to "),html.A("reach us out", href="mailto:luca.menestrina2@unibo.it")])
+                                html.P([html.Font("If the problem persists, please "),html.A("let us know", href="mailto:luca.menestrina2@unibo.it")])
                             ])
                         ])
                     ])

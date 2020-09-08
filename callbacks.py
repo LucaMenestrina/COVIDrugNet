@@ -43,7 +43,7 @@ def displayHoverNodeData_callback(prefix,G):
     @app.callback(
         [
             Output(prefix+"_title_card","children"),
-            Output(prefix+"_img_card","src"),
+            Output(prefix+"_img_card","children"),
             Output(prefix+"_attributes-list-card","children"),
             Output(prefix+"_selected_node_warning","is_open")
         ],
@@ -57,9 +57,10 @@ def displayHoverNodeData_callback(prefix,G):
     )
     def displayHoverNodeData(data,selected_data,warning):
         if not data:
-            data={"id":"","structure":"","Properties":"Hover over a node (or select it) to show its properties"}
+            data={"id":"","Properties":"Hover over a node (or select it) to show its properties"}
             attributes=["id","Properties"]
             link_drugbank=""
+            img=None
             # if prefix == "dt" or prefix == "dd":
             #     data={key:value for key,value in G.nodes(data=True)["Remdesivir"].items()}
             #     print(data)
@@ -73,10 +74,11 @@ def displayHoverNodeData_callback(prefix,G):
             if data["kind"]=="Drug":
                 attributes=["ID","SMILES","ATC Code1","ATC Code5","Targets","Enzymes","Carriers","Transporters","Drug Interactions"]
                 link_drugbank="https://www.drugbank.ca/drugs/"+data["ID"]
+                img=html.A(html.Img(src=data["structure"], height="auto", width="100%", alt=None), href="https://www.drugbank.ca/structures/small_molecule_drugs/"+data["ID"] ,target="_blank")
             else:
                 attributes=["ID","Gene","PDBID","Organism","Cellular Location","String Interaction Partners","Drugs"]#,"Diseases"
                 link_drugbank=data["drugbank_url"]
-
+                img=[html.A(html.Img(src=data["structure"], height="auto", width="100%", alt=None), href="https://www.rcsb.org/3d-view/"+data["PDBID"], target="_blank"), html.A(html.Small("Structure Reference", style={"position":"absolute","bottom":"1em","right":"1em", "color":"grey"}), href="http://doi.org/10.2210/pdb%s/pdb"%data["PDBID"], target="_blank")]
         attributes_list=[]
         for attribute in attributes:
             if data[attribute] != "" and data[attribute] != []:
@@ -90,8 +92,7 @@ def displayHoverNodeData_callback(prefix,G):
                     attributes_list.append(html.Li([html.Strong(attribute+": "),html.A(data[attribute], href="https://www.uniprot.org/uniprot/"+data["ID"], target="_blank")], className="list-group-item"))
                 else:
                     attributes_list.append(html.Li([html.Strong(attribute+": "),data[attribute]], className="list-group-item"))
-        print(warning)
-        return data["id"],data["structure"],attributes_list,warning
+        return data["id"],img,attributes_list,warning
     return displayHoverNodeData
 
 def selectedTable_callback(prefix):
