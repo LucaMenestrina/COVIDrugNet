@@ -1,2 +1,2 @@
-# SARS-CoV-2_Networker
-Collect and visualize network info about drugs and targets related to SARS-CoV-2
+# COVID-19_Drugs_Networker
+Collect and visualize network info about drugs and targets related to COVID-19

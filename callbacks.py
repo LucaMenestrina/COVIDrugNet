@@ -237,7 +237,7 @@ def highlighter_callback(prefix,G,nodes, girvan_newman,maj,girvan_newman_maj):
     pie_components=px.pie(pie_data,values="Nodes",names="Component", title="Components' Node Distribution",color_discrete_sequence=[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/len(components))])
     legend_body_components=html.P("Nodes are colored on the corresponding component")
     #spectral
-    km=KMeans(n_clusters=n_comp)
+    km=KMeans(n_clusters=n_comp, n_init=100)
     clusters=km.fit_predict(evects[:,:n_comp])
     cmap=dict(zip(set(clusters),[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/n_comp)]))
     id_cluster=dict(zip(dict(nx.get_node_attributes(G,"ID")).values(),clusters))
@@ -248,7 +248,7 @@ def highlighter_callback(prefix,G,nodes, girvan_newman,maj,girvan_newman_maj):
     pie_spectral=px.pie(pie_data,values="Nodes",names="Cluster", title="Clusters' Node Distribution",color_discrete_sequence=[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/len(set(clusters)))])
     legend_body_spectral=html.P(["Nodes are colored on the corresponding cluster, check the ",html.A("clustering section", href="#dt_clustering")," for more info"])
     #spectral_maj
-    km=KMeans(n_clusters=n_maj)
+    km=KMeans(n_clusters=n_maj, n_init=100)
     clusters=km.fit_predict(evects_maj[:,:n_maj])
     cmap=dict(zip(set(clusters),[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/n_maj)]))
     id_cluster=dict(zip(dict(nx.get_node_attributes(maj,"ID")).values(),clusters))
@@ -446,7 +446,7 @@ def highlighter_callback(prefix,G,nodes, girvan_newman,maj,girvan_newman_maj):
                 if custom_method == "spectral":
                     L_custom=nx.normalized_laplacian_matrix(graph).toarray()
                     evals_custom,evects_custom=np.linalg.eigh(L_custom)
-                    km_custom=KMeans(n_clusters=custom_n)
+                    km_custom=KMeans(n_clusters=custom_n, n_init=100)
                     clusters_custom=km_custom.fit_predict(evects_custom[:,:custom_n])
                     cmap_custom=dict(zip(set(clusters_custom),[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/custom_n)]))
                     id_cluster_custom=dict(zip(dict(nx.get_node_attributes(graph,"ID")).values(),clusters_custom))
@@ -454,7 +454,7 @@ def highlighter_callback(prefix,G,nodes, girvan_newman,maj,girvan_newman_maj):
                     for ID in id_cluster_custom:
                         stylesheet.append({"selector":"[ID = '"+ID+"']", "style":{"border-color":"#303633","border-width":2,"background-color":cmap_custom[id_cluster_custom[ID]]}})
                     pie_data=pd.DataFrame({"Cluster":range(1,len(set(clusters_custom))+1),"Nodes":[list(clusters_custom).count(cluster_custom) for cluster_custom in range(len(set(clusters_custom)))]})
-                    pie=px.pie(pie_data,values="Nodes",names="Cluster", title="Clusters' Node Distribution",color_discrete_sequence=[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/len(set(clusters_custom)))])
+                    pie=px.pie(pie_data,values="Nodes",names="Cluster", title="Clusters' Node Distribution",color_discrete_sequence=[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/custom_n)])
                 elif custom_method == "girvan_newman":
                     # girvan_newman_custom=nx.algorithms.community.girvan_newman(graph)
                     # communities = []
@@ -667,7 +667,7 @@ def custom_clustering_section_callback(prefix,G,girvan_newman,maj,girvan_newman_
         clustering_data=pd.DataFrame({"Eigenvalue Number":range(len(evals)),"Eigenvalue":evals})
         figure=px.scatter(data_frame=clustering_data,x="Eigenvalue Number",y="Eigenvalue", title="Eigenvalues Distribution", height=600, width=800)
         if method == "spectral":
-            km=KMeans(n_clusters=n_clusters)
+            km=KMeans(n_clusters=n_clusters, n_init=100)
             clusters=km.fit_predict(evects[:,:n_clusters])
             clusters_data={}
             for n,cl in enumerate(clusters):

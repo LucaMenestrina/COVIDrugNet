@@ -24,7 +24,7 @@ from sklearn.cluster import KMeans
 
 def headbar(prefix):
     return dbc.NavbarSimple([
-            dbc.NavItem(dbc.NavLink("Home",href="/home", active=True, className="nav-link active"), className="nav-item"),
+            dbc.NavItem(dbc.NavLink("Home",href="/covid19drugsnetworker", active=True, className="nav-link active"), className="nav-item"),
             dbc.NavItem(dbc.NavLink("Help",href="/help", active=True, className="nav-link active"), className="nav-item"),
             dbc.NavItem(dbc.NavLink("About",href="/about", active=True, className="nav-link active"), className="nav-item"),
             dbc.NavItem(dbc.NavLink("Contacts",href="/contacts", active=True, className="nav-link active"), className="nav-item"),
@@ -41,7 +41,7 @@ def headbar(prefix):
                 className="nav-item dropdown"
             )],
             className="navbar navbar-primary bg-primary m-auto position-sticky",
-            brand="COVID-19 Networker",
+            brand="COVID-19 Drugs Networker",
             color="primary",
             dark=True,
             sticky="top",

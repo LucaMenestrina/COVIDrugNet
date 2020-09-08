@@ -24,7 +24,7 @@ from building_blocks import *
 from callbacks import *
 
 # app=dash.Dash(__name__, external_stylesheets=[dbc.themes.FLATLY])
-# app.title="COVID-19 Networker"
+# app.title="COVID-19 Drugs Networker"
 
 prefix="about"
 
@@ -47,7 +47,7 @@ layout=dbc.Col([
                         dbc.Row([
                             dbc.Col(width=1),
                             dbc.Col([
-                                html.P([html.Font("Try to go back to our "),html.A("homepage", href="/home")]),
+                                html.P([html.Font("Try to go back to our "),html.A("homepage", href="/covid19drugsnetworker")]),
                                 html.P([html.Font("If the problem persists feel free to "),html.A("reach us out", href="mailto:luca.menestrina2@unibo.it")])
                             ])
                         ])
