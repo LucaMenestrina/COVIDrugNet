@@ -209,7 +209,11 @@ def graph_properties(prefix):
                 dbc.Col([
                     dbc.Row(html.H3("Graph Properties")),
                     dbc.Row([
-                        dbc.Col(width=3), # just to move everything to the right (justify doesn't work)
+                        # dbc.Col(width=1), # just to move everything to the right (justify doesn't work)
+                        dbc.Col([dcc.Checklist(options=[{"label":"Only Selected","value":True}],id=prefix+"_only_selected_properties", labelStyle={"white-space":"nowrap", "margin-left":"1rem"}),dbc.Tooltip(["Show only those nodes that are manually selected in the Graph",html.Br(),"(If there are ...)"], target=prefix+"_only_selected_properties", placement="top")], align="center"),
+                        dbc.Col([
+                            dcc.Dropdown(id=prefix+"_search_properties", placeholder="Search Specific Nodes ...", multi=True, className="DropdownMenu")
+                        ], align="center", width=4),
                         dbc.Col(html.Font("Sort by: ", style={"white-space":"nowrap"}),align="center", style={"text-align":"right"}),
                         dbc.Col([
                             dcc.Dropdown(id=prefix+"_properties_table_sorting",  options=[
@@ -220,7 +224,7 @@ def graph_properties(prefix):
                                 {"label":"Betweenness Centrality: Low to High","value":"Betweenness_Centrality,1"},
                                 {"label":"Betweenness Centrality: High to Low","value":"Betweenness_Centrality,0"}
                             ], value="degree,0", clearable=False, searchable=False, optionHeight=25,className="DropdownMenu")
-                        ],align="center", width=4),
+                        ],align="center", width=3),
                         dbc.Col(html.Font("Rows to show: ", style={"white-space":"nowrap"}),align="center", style={"text-align":"right"}),
                         dbc.Col([
                             dcc.Dropdown(id=prefix+"_properties_table_rows",options=[
@@ -230,9 +234,9 @@ def graph_properties(prefix):
                                 {"label":"100","value":100},
                                 {"label":"all","value":"all"}
                             ], value=10, className="DropdownMenu", clearable=False, searchable=False, optionHeight=25)
-                        ],align="center", width=1),
+                        ],align="center"),
                         dbc.Col(html.A(dbc.Button("Download", className="ml-auto"), target="_blank", download="graph_properties.tsv", id=prefix+"_download_graph_properties"), align="center")
-                    ], justify="around", align="center"),
+                    ], justify="center", align="center"),
                     html.Br(),
                     dbc.Container(id=prefix+"_graph_properties_table_container", fluid=True)
                 ])
@@ -258,7 +262,7 @@ def custom_clustering(prefix):
     return dbc.Container([
                 html.H3("Clustering"),
                 dbc.Row([
-                    dbc.Col(dcc.Graph(id=prefix+"_custom_clustering_graph"), width=6),
+                    dbc.Col(dbc.Spinner(dcc.Graph(id=prefix+"_custom_clustering_graph")), width=6),
                     dbc.Col([
                         dcc.Dropdown(id=prefix+"_custom_clustering_component", options=[
                             {"label":"Entire Graph","value":"entire"},
@@ -313,8 +317,8 @@ def plots(prefix, graph):
     return dbc.Container([
                 html.H3("Plots"),
                 dbc.Row([
-                    dbc.Col([dcc.Graph(figure=powerplot(graph), id=prefix+"_powerplot")], width=4, align="center"),
-                    dbc.Col([dcc.Graph(id=prefix+"_piechart")],width=6 , align="center")
+                    dbc.Col([dbc.Spinner(dcc.Graph(figure=powerplot(graph), id=prefix+"_powerplot"))], width=4, align="center"),
+                    dbc.Col([dbc.Spinner(dcc.Graph(id=prefix+"_piechart"))],width=6 , align="center")
                 ], justify="center", align="around", no_gutters=True)
             ], id=prefix+"_plots", fluid=True, style={"padding":"3%"})
 

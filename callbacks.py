@@ -56,11 +56,11 @@ def displayHoverNodeData_callback(prefix,G):
         ]
     )
     def displayHoverNodeData(data,selected_data,warning):
+        img=None
         if not data:
             data={"id":"","Properties":"Hover over a node (or select it) to show its properties"}
             attributes=["id","Properties"]
             link_drugbank=""
-            img=None
             # if prefix == "dt" or prefix == "dd":
             #     data={key:value for key,value in G.nodes(data=True)["Remdesivir"].items()}
             #     print(data)
@@ -74,11 +74,13 @@ def displayHoverNodeData_callback(prefix,G):
             if data["kind"]=="Drug":
                 attributes=["ID","SMILES","ATC Code1","ATC Code5","Targets","Enzymes","Carriers","Transporters","Drug Interactions"]
                 link_drugbank="https://www.drugbank.ca/drugs/"+data["ID"]
-                img=html.A(html.Img(src=data["structure"], height="auto", width="100%", alt=None), href="https://www.drugbank.ca/structures/small_molecule_drugs/"+data["ID"] ,target="_blank")
+                if data["ID"] != "Not Available":
+                    img=html.A(html.Img(src=data["structure"], height="auto", width="100%", alt="Structure Image not Available"), href="https://www.drugbank.ca/structures/small_molecule_drugs/"+data["ID"] ,target="_blank")
             else:
                 attributes=["ID","Gene","PDBID","Organism","Cellular Location","String Interaction Partners","Drugs"]#,"Diseases"
                 link_drugbank=data["drugbank_url"]
-                img=[html.A(html.Img(src=data["structure"], height="auto", width="100%", alt=None), href="https://www.rcsb.org/3d-view/"+data["PDBID"], target="_blank"), html.A(html.Small("Structure Reference", style={"position":"absolute","bottom":"1em","right":"1em", "color":"grey"}), href="http://doi.org/10.2210/pdb%s/pdb"%data["PDBID"], target="_blank")]
+                if data["PDBID"] != "Not Available":
+                    img=[html.A(html.Img(src=data["structure"], height="auto", width="100%", alt="Structure Image not Available"), href="https://www.rcsb.org/3d-view/"+data["PDBID"], target="_blank"), html.A(html.Small("Structure Reference", style={"position":"absolute","bottom":"1em","right":"1em", "color":"grey"}), href="http://doi.org/10.2210/pdb%s/pdb"%data["PDBID"], target="_blank")]
         attributes_list=[]
         for attribute in attributes:
             if data[attribute] != "" and data[attribute] != []:
@@ -185,21 +187,33 @@ def selectedTable_callback(prefix):
             return None, False, True
     return selectedTable
 
-def propertiesTable_callback(prefix,graph_properties_df):
+def propertiesTable_callback(prefix,graph_properties_df,nodes):
     @app.callback(
         [
             Output(prefix+"_graph_properties_table_container","children"),
-            Output(prefix+"_download_graph_properties","href")
+            Output(prefix+"_download_graph_properties","href"),
+            Output(prefix+"_search_properties","options")
         ],
         [
+            Input(prefix+"_search_properties","value"),
             Input(prefix+"_properties_table_sorting","value"),
-            Input(prefix+"_properties_table_rows","value")
+            Input(prefix+"_properties_table_rows","value"),
+            Input(prefix+"_only_selected_properties","value"),
+            Input(prefix+"_graph", "selectedNodeData")
         ]
     )
-    def propertiesTable(sorting,rows):
+    def propertiesTable(search,sorting,rows,only_selected,selected_data):
+        df=graph_properties_df.copy()
+        if only_selected and selected_data != None:
+            df=df.loc[[node["name"] for node in selected_data]]
+            options=[{"label":name,"value":name} for name in [node["name"] for node in selected_data]]
+        else:
+            options=[{"label":data["name"],"value":data["name"]} for data in [node["data"] for node in nodes]]
+        if search:
+            df=df.loc[search]
         sorting=sorting.split(",")
         sorting={"by":[sorting[0]],"ascending":bool(int(sorting[1]))}
-        df=graph_properties_df.sort_values(**sorting)
+        df=df.sort_values(**sorting)
         href="data:text/csv;charset=utf-8,"+quote(df.to_csv(sep="\t", index=False, encoding="utf-8"))
         if rows == "all":
             return dbc.Table.from_dataframe(df, bordered=True, className="table table-hover", id=prefix+"_graph_properties_table"), href
@@ -209,7 +223,7 @@ def propertiesTable_callback(prefix,graph_properties_df):
             table_header=[html.Thead(html.Tr([html.Th(attribute) for attribute in ["Name", "Degree", "Closeness Centrality", "Betweenness Centrality"]]))]
             table_body=[html.Tbody([html.Tr([html.Td(d[attribute]) for attribute in attributes]) for d in df.to_dict("records")])]
             table=dbc.Table(table_header+table_body, className="table table-hover", bordered=True, id=prefix+"_graph_properties_table")
-            return table,href
+            return table,href,options
     return propertiesTable
 
 def highlighter_callback(prefix,G,nodes, girvan_newman,maj,girvan_newman_maj):
@@ -503,7 +517,7 @@ def highlighter_callback(prefix,G,nodes, girvan_newman,maj,girvan_newman_maj):
                             "content":"data(id)",
                             # "font-size":24,
                             "border-style":"double",
-                            "border-width":20,
+                            "border-width":25,
                             "border-color":"#0ddfa6"
                         }
                     }
@@ -717,7 +731,7 @@ def toggle_view_clusters_callback(prefix):
 def build_callbacks(prefix,G,nodes,graph_properties_df,girvan_newman,maj,girvan_newman_maj,file_prefix):
     displayHoverNodeData_callback(prefix,G)
     selectedTable_callback(prefix)
-    propertiesTable_callback(prefix,graph_properties_df)
+    propertiesTable_callback(prefix,graph_properties_df,nodes)
     highlighter_callback(prefix,G,nodes, girvan_newman,maj,girvan_newman_maj)
     toggle_download_graph_callback(prefix)
     toggle_help_callback(prefix)

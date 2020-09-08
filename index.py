@@ -5,7 +5,6 @@ from dash.dependencies import Input, Output
 from app import app
 from pages import home,help,about,contacts,drug_target,drug_drug,target_target,error404#, target_disease, target_interactors
 
-app.title="COVID-19 Drugs Networker"
 
 app.layout = html.Div([
     dcc.Location(id="url", refresh=False),
