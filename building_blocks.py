@@ -24,10 +24,10 @@ from sklearn.cluster import KMeans
 
 def headbar(prefix):
     return dbc.NavbarSimple([
-            dbc.NavItem(dbc.NavLink("Home",href="/covid19drugsnetworker", active=True, className="nav-link active"), className="nav-item"),
-            dbc.NavItem(dbc.NavLink("Help",href="/help", active=True, className="nav-link active"), className="nav-item"),
-            dbc.NavItem(dbc.NavLink("About",href="/about", active=True, className="nav-link active"), className="nav-item"),
-            dbc.NavItem(dbc.NavLink("Contacts",href="/contacts", active=True, className="nav-link active"), className="nav-item"),
+            dbc.NavItem(dbc.NavLink("Home",href="/covid19drugsnetworker", active=True, className="nav-link active"), className="nav-item", id=prefix+"_home_nav"),
+            dbc.NavItem(dbc.NavLink("Help",href="/help", active=True, className="nav-link active"), className="nav-item", id=prefix+"_help_nav"),
+            dbc.NavItem(dbc.NavLink("About",href="/about", active=True, className="nav-link active"), className="nav-item", id=prefix+"_about_nav"),
+            dbc.NavItem(dbc.NavLink("Contacts",href="/contacts", active=True, className="nav-link active"), className="nav-item", id=prefix+"_contacts_nav"),
             dbc.DropdownMenu([
                 dbc.DropdownMenuItem("Drug Target", href="/drug_target", className="dropdown-item"),
                 dbc.DropdownMenuItem("Drug Drug", href="/drug_drug", className="dropdown-item"),
@@ -38,8 +38,14 @@ def headbar(prefix):
                 nav=True,
                 in_navbar=True,
                 label="Other Graphs ...",
-                className="nav-item dropdown"
-            )],
+                className="nav-item dropdown",
+                id=prefix+"_other_graphs_nav"),
+            dbc.Tooltip("COVID-19 Drugs Networker Homepage", target=prefix+"_home_nav", placement="bottom", hide_arrow=True, delay={"show":500, "hide":250}),
+            dbc.Tooltip("Page Structure and Main Possible Interactions", target=prefix+"_help_nav", placement="bottom", hide_arrow=True, delay={"show":500, "hide":250}),
+            dbc.Tooltip("Info About the Project", target=prefix+"_about_nav", placement="bottom", hide_arrow=True, delay={"show":500, "hide":250}),
+            dbc.Tooltip("Project Participant's Contacts", target=prefix+"_contacts_nav", placement="bottom", hide_arrow=True, delay={"show":500, "hide":250}),
+            dbc.Tooltip("Browse Other Available Graphs", target=prefix+"_other_graphs_nav", placement="bottom", hide_arrow=True, delay={"show":500, "hide":250})
+            ],
             className="navbar navbar-primary bg-primary m-auto position-sticky",
             brand="COVID-19 Drugs Networker",
             color="primary",
@@ -51,13 +57,20 @@ def headbar(prefix):
 
 def sidebar(prefix):
     if prefix in ["dt","dd","tt"]:
-        return dbc.NavbarSimple(dbc.Col([
-                    dbc.NavItem(dbc.NavLink("Graph", href="#"+prefix+"_graph_container", external_link=True, active=True, className="nav-link"), className="nav-item"),
-                    dbc.NavItem(dbc.NavLink("Selected Data", href="#"+prefix+"_selected_table", external_link=True, id=prefix+"_side_selected_table", active=False, disabled=True, className="nav-link"), className="nav-item"),
-                    dbc.NavItem(dbc.NavLink("Graph Properties", href="#"+prefix+"_graph_properties_table", external_link=True, active=True, className="nav-link"), className="nav-item"),
-                    dbc.NavItem(dbc.NavLink("Clustering", href="#"+prefix+"_clustering",external_link=True, active=True, className="nav-link"), className="nav-item"),
-                    dbc.NavItem(dbc.NavLink("Plots", href="#"+prefix+"_plots",external_link=True, active=True, className="nav-link"), className="nav-item"),
-                ], align="center", style={"padding":"0rem"}), expand="xl", color="light", className="navbar navbar-light bg-light position-sticky", style={"position":"sticky", "top":"10vh"})
+        return dbc.NavbarSimple([
+                    dbc.Col([
+                        dbc.NavItem(dbc.NavLink("Graph", href="#"+prefix+"_graph_container", external_link=True, active=True, className="nav-link"), className="nav-item", id=prefix+"_graph_side"),
+                        dbc.NavItem(dbc.NavLink("Selected Data", href="#"+prefix+"_selected_table", external_link=True, id=prefix+"_side_selected_table", active=False, disabled=True, className="nav-link"), className="nav-item", id=prefix+"_selected_data_side"),
+                        dbc.NavItem(dbc.NavLink("Graph Properties", href="#"+prefix+"_graph_properties_table", external_link=True, active=True, className="nav-link"), className="nav-item", id=prefix+"_graph_properties_side"),
+                        dbc.NavItem(dbc.NavLink("Clustering", href="#"+prefix+"_clustering",external_link=True, active=True, className="nav-link"), className="nav-item", id=prefix+"_clustering_side"),
+                        dbc.NavItem(dbc.NavLink("Plots", href="#"+prefix+"_plots",external_link=True, active=True, className="nav-link"), className="nav-item", id=prefix+"_plots_side"),
+                    ], align="center", style={"padding":"0rem"}),
+                    dbc.Tooltip("Jump to Graph' Section", target=prefix+"_graph_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}),
+                    dbc.Tooltip("Jump to Selected Data' Section", target=prefix+"_selected_data_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}, id=prefix+"_selected_data_side_tooltip"),
+                    dbc.Tooltip("Jump to Graph Properties' Section", target=prefix+"_graph_properties_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}),
+                    dbc.Tooltip("Jump to Clustering' Section", target=prefix+"_clustering_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}),
+                    dbc.Tooltip("Jump to Plots' Section", target=prefix+"_plots_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}),
+                ],expand="xl", color="light", className="navbar navbar-light bg-light position-sticky", style={"position":"sticky", "top":"10vh"}),
     else:
         return dbc.NavbarSimple(color="light", className="navbar navbar-light bg-light position-sticky")
 
@@ -94,7 +107,8 @@ def graph_help(prefix):
                     html.P("CTRL or MAIUSC + Click for multiple selection"),
                     html.P("CTRL + Drag for square selection")
                 ])
-            ], id=prefix+"_help_popover", target=prefix+"_help_open", placement="bottom")
+            ], id=prefix+"_help_popover", target=prefix+"_help_open", placement="bottom"),
+            dbc.Tooltip("Tips for Graph's Interactions", target=prefix+"_help_open", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
         ])
 
 def legend(prefix):
@@ -106,7 +120,8 @@ def legend(prefix):
                 dismissable=True,
                 style={"position":"absolute","top":"-4vh","left":"-12vw", "width":"200%","z-index":"1100"},
                 is_open=False
-            )
+            ),
+            dbc.Tooltip(["Graph's Legend",html.Br(),"(when available)"], target=prefix+"_legend_open", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
         ])
 
 def save_graph(prefix):
@@ -134,7 +149,8 @@ def save_graph(prefix):
                     html.A(dbc.Button("Download", id=prefix+"_download_graph_button", className="ml-auto"),id=prefix+"_download_graph_button_href", target="_blank"),
                     dbc.Button("Close", id=prefix+"_save_graph_close", className="ml-auto")
                 ]),
-            ], id=prefix+"_save_graph_modal")
+            ], id=prefix+"_save_graph_modal"),
+            dbc.Tooltip("Download Graph File", target=prefix+"_save_graph_open", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
         ])
 
 def coloring_dropdown(prefix):
@@ -159,11 +175,14 @@ def coloring_dropdown(prefix):
     ]
     return html.Div([
             dcc.Dropdown(id=prefix+"_coloring_dropdown", options=options, value=value, clearable=False),
-            dbc.Tooltip("Select Graph Coloring", target=prefix+"_coloring_div", placement="top")
-        ], id=prefix+"_coloring_div")
+            dbc.Tooltip("Select Graph Coloring", target=prefix+"_coloring_dropdown_div", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
+        ], id=prefix+"_coloring_dropdown_div")
 
 def highlighting(prefix, nodes):
-    return dcc.Dropdown(id=prefix+"_highlighter_dropdown",options=[{"label":data["name"],"value":data["ID"]} for data in [node["data"] for node in nodes]], placeholder="Highlight a node", multi=True, className="DropdownMenu")
+    return html.Div([
+            dcc.Dropdown(id=prefix+"_highlighter_dropdown",options=[{"label":data["name"],"value":data["ID"]} for data in [node["data"] for node in nodes]], placeholder="Highlight a node", multi=True, className="DropdownMenu"),
+            dbc.Tooltip("Highlight Specific Nodes for Easier Spotting", target=prefix+"_highlighter_dropdown_div", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
+        ],id=prefix+"_highlighter_dropdown_div")
 
 def graph(prefix,title,nodes,edges):#es. title="Drug Target"
     # cyto.load_extra_layouts()
@@ -210,7 +229,10 @@ def graph_properties(prefix):
                     dbc.Row(html.H3("Graph Properties")),
                     dbc.Row([
                         # dbc.Col(width=1), # just to move everything to the right (justify doesn't work)
-                        dbc.Col([dcc.Checklist(options=[{"label":"Only Selected","value":True}],id=prefix+"_only_selected_properties", labelStyle={"white-space":"nowrap", "margin-left":"1rem"}),dbc.Tooltip(["Show only those nodes that are manually selected in the Graph",html.Br(),"(If there are ...)"], target=prefix+"_only_selected_properties", placement="top")], align="center"),
+                        dbc.Col([
+                            dbc.Checklist(options=[{"label":"Only Selected","value":True}],id=prefix+"_only_selected_properties", labelStyle={"white-space":"nowrap"}, switch=True),
+                            dbc.Tooltip(["Show only those nodes that are manually selected in the Graph",html.Br(),"(If there are...)"], target=prefix+"_only_selected_properties", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
+                        ], align="center"),
                         dbc.Col([
                             dcc.Dropdown(id=prefix+"_search_properties", placeholder="Search Specific Nodes ...", multi=True, className="DropdownMenu")
                         ], align="center", width=4),
@@ -256,7 +278,7 @@ def view_custom_clusters(prefix):
                         dbc.Button("Close", id=prefix+"_view_clusters_close", className="ml-auto")
                     ]),
                 ],id=prefix+"_custom_clusters_modal", size="xl"),
-            ])
+            ], fluid=True)
 
 def custom_clustering(prefix):
     return dbc.Container([
@@ -278,7 +300,7 @@ def custom_clustering(prefix):
                         dcc.Dropdown(id=prefix+"_custom_clustering_number_clusters", clearable=False, optionHeight=25,className="DropdownMenu"),
                         view_custom_clusters(prefix)
                     ], align="center", width=2)
-                ], justify="center", align="center", no_gutters=True)
+                ], justify="around", align="center", no_gutters=True)
             ], id=prefix+"_clustering", fluid=True, style={"padding":"3%"})
 
 def common_data_generator(prefix,graph):
@@ -319,7 +341,7 @@ def plots(prefix, graph):
                 dbc.Row([
                     dbc.Col([dbc.Spinner(dcc.Graph(figure=powerplot(graph), id=prefix+"_powerplot"))], width=4, align="center"),
                     dbc.Col([dbc.Spinner(dcc.Graph(id=prefix+"_piechart"))],width=6 , align="center")
-                ], justify="center", align="around", no_gutters=True)
+                ], justify="around", align="center", no_gutters=True)
             ], id=prefix+"_plots", fluid=True, style={"padding":"3%"})
 
 def footer():

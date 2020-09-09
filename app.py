@@ -13,6 +13,10 @@ meta=[
     {
         "name": "description",
         "content": "Collects and visualizes network info about drugs and targets related to COVID-19 "
+    },
+    {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
     }
 ]
 

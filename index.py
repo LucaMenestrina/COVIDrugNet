@@ -10,6 +10,42 @@ app.layout = html.Div([
     dcc.Location(id="url", refresh=False),
     html.Div(id="page-content")
 ])
+            # @media (min-device-width: 1200px) { body {initial-scale:1;} }
+            # @media (min-device-width: 768px) { body {initial-scale:0.8;} }
+            # @media (min-device-width: 600px) { body {initial-scale:0.6;} }
+            # @media (max-device-width: 600px) { body {initial-scale:0.5;} }
+            # @media (min-device-width: 1366px) { body {font-size:1rem;} }
+            # @media (min-device-width: 1024px) { body {font-size:0.8rem;} }
+            # @media (min-device-width: 720px) { body {font-size:0.6rem;} }
+            # @media (max-device-width: 720px) { body {font-size:0.5rem;} }
+
+# app.index_string='''
+# <!DOCTYPE html>
+# <html>
+#     <head>
+#         {%metas%}
+#         <title>{%title%}</title>
+#         {%favicon%}
+#         {%css%}
+#         <style>
+#             @media (min-device-width: 1200px) { body {font-size:1.25rem;} }
+#             @media (min-device-width: 1000px) { body {font-size:1rem;} }
+#             @media (min-device-width: 768px) { body {font-size:0.8rem;} }
+#             @media (min-device-width: 600px) { body {font-size:0.6rem;} }
+#             @media (max-device-width: 600px) { body {font-size:0.5rem;} }
+#         </style>
+#     </head>
+#     <body>
+#         {%app_entry%}
+#         <footer>
+#             {%config%}
+#             {%scripts%}
+#             {%renderer%}
+#         </footer>
+#     </body>
+# </html>
+# '''
+
 
 
 @app.callback(Output("page-content", "children"),

@@ -102,7 +102,8 @@ def selectedTable_callback(prefix):
         [
             Output(prefix+"_selected_table","children"),
             Output(prefix+"_side_selected_table","active"),
-            Output(prefix+"_side_selected_table","disabled")
+            Output(prefix+"_side_selected_table","disabled"),
+            Output(prefix+"_selected_data_side_tooltip","style")
         ],
         [Input(prefix+"_graph", "selectedNodeData")]
     )
@@ -180,11 +181,11 @@ def selectedTable_callback(prefix):
                         html.Br(),
                         targets_table]
 
-                return dbc.Container(results, fluid=True, style={"padding":"3%"}), True, False
+                return dbc.Container(results, fluid=True, style={"padding":"3%"}), True, False, None
             else:
-                return None, False, True
+                return None, False, True, {"visibility":"hidden"}
         else:
-            return None, False, True
+            return None, False, True, {"visibility":"hidden"}
     return selectedTable
 
 def propertiesTable_callback(prefix,graph_properties_df,nodes):
@@ -216,7 +217,7 @@ def propertiesTable_callback(prefix,graph_properties_df,nodes):
         df=df.sort_values(**sorting)
         href="data:text/csv;charset=utf-8,"+quote(df.to_csv(sep="\t", index=False, encoding="utf-8"))
         if rows == "all":
-            return dbc.Table.from_dataframe(df, bordered=True, className="table table-hover", id=prefix+"_graph_properties_table"), href
+            return dbc.Table.from_dataframe(df, bordered=True, className="table table-hover", id=prefix+"_graph_properties_table"), href, options
         else:
             df=df.head(rows)
             attributes=df.columns
