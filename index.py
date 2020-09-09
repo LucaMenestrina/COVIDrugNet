@@ -19,32 +19,33 @@ app.layout = html.Div([
             # @media (min-device-width: 720px) { body {font-size:0.6rem;} }
             # @media (max-device-width: 720px) { body {font-size:0.5rem;} }
 
-# app.index_string='''
-# <!DOCTYPE html>
-# <html>
-#     <head>
-#         {%metas%}
-#         <title>{%title%}</title>
-#         {%favicon%}
-#         {%css%}
-#         <style>
-#             @media (min-device-width: 1200px) { body {font-size:1.25rem;} }
-#             @media (min-device-width: 1000px) { body {font-size:1rem;} }
-#             @media (min-device-width: 768px) { body {font-size:0.8rem;} }
-#             @media (min-device-width: 600px) { body {font-size:0.6rem;} }
-#             @media (max-device-width: 600px) { body {font-size:0.5rem;} }
-#         </style>
-#     </head>
-#     <body>
-#         {%app_entry%}
-#         <footer>
-#             {%config%}
-#             {%scripts%}
-#             {%renderer%}
-#         </footer>
-#     </body>
-# </html>
-# '''
+app.index_string='''
+<!DOCTYPE html>
+<html>
+    <head>
+        {%metas%}
+        <title>{%title%}</title>
+        {%favicon%}
+        {%css%}
+        <style>
+            @media (max-width: 600px) { html {font-size:60%;} }
+            @media (min-width: 600px) { html {font-size:70%;} }
+            @media (min-width: 768px) { html {font-size:80%;} }
+            @media (min-width: 1024px) { html {font-size:90%;} }
+            @media (min-width: 1280px) { html {font-size:95%;} }
+            @media (min-width: 1536px) { html {font-size:100%;} }
+        </style>
+    </head>
+    <body>
+        {%app_entry%}
+        <footer>
+            {%config%}
+            {%scripts%}
+            {%renderer%}
+        </footer>
+    </body>
+</html>
+'''
 
 
 

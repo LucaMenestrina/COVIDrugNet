@@ -24,14 +24,18 @@ from sklearn.cluster import KMeans
 
 def headbar(prefix):
     return dbc.NavbarSimple([
-            dbc.NavItem(dbc.NavLink("Home",href="/covid19drugsnetworker", active=True, className="nav-link active"), className="nav-item", id=prefix+"_home_nav"),
-            dbc.NavItem(dbc.NavLink("Help",href="/help", active=True, className="nav-link active"), className="nav-item", id=prefix+"_help_nav"),
-            dbc.NavItem(dbc.NavLink("About",href="/about", active=True, className="nav-link active"), className="nav-item", id=prefix+"_about_nav"),
-            dbc.NavItem(dbc.NavLink("Contacts",href="/contacts", active=True, className="nav-link active"), className="nav-item", id=prefix+"_contacts_nav"),
+            dbc.NavItem(dbc.NavLink("Home",href="/covid19drugsnetworker", active=True, className="nav-link active", external_link=True), className="nav-item", id=prefix+"_home_nav"),
+            dbc.Tooltip("COVID-19 Drugs Networker Homepage", target=prefix+"_home_nav", placement="bottom", hide_arrow=True, delay={"show":500, "hide":250}),
+            dbc.NavItem(dbc.NavLink("Help",href="/help", active=True, className="nav-link active", external_link=True), className="nav-item", id=prefix+"_help_nav"),
+            dbc.Tooltip("Page Structure and Main Possible Interactions", target=prefix+"_help_nav", placement="bottom", hide_arrow=True, delay={"show":500, "hide":250}),
+            dbc.NavItem(dbc.NavLink("About",href="/about", active=True, className="nav-link active", external_link=True), className="nav-item", id=prefix+"_about_nav"),
+            dbc.Tooltip("Info About the Project", target=prefix+"_about_nav", placement="bottom", hide_arrow=True, delay={"show":500, "hide":250}),
+            dbc.NavItem(dbc.NavLink("Contacts",href="/contacts", active=True, className="nav-link active", external_link=True), className="nav-item", id=prefix+"_contacts_nav"),
+            dbc.Tooltip("Project Participant's Contacts", target=prefix+"_contacts_nav", placement="bottom", hide_arrow=True, delay={"show":500, "hide":250}),
             dbc.DropdownMenu([
-                dbc.DropdownMenuItem("Drug Target", href="/drug_target", className="dropdown-item"),
-                dbc.DropdownMenuItem("Drug Drug", href="/drug_drug", className="dropdown-item"),
-                dbc.DropdownMenuItem("Target Target", href="/target_target", className="dropdown-item"),
+                dbc.DropdownMenuItem("Drug Target", href="/drug_target", className="dropdown-item", external_link=True),
+                dbc.DropdownMenuItem("Drug Drug", href="/drug_drug", className="dropdown-item", external_link=True),
+                dbc.DropdownMenuItem("Target Target", href="/target_target", className="dropdown-item", external_link=True),
                 # dbc.DropdownMenuItem("Target Disease", href="/target_disease", className="dropdown-item"),
                 # dbc.DropdownMenuItem("Target Interactors", href="/target_interactors", className="dropdown-item"),
                 ],
@@ -40,10 +44,6 @@ def headbar(prefix):
                 label="Other Graphs ...",
                 className="nav-item dropdown",
                 id=prefix+"_other_graphs_nav"),
-            dbc.Tooltip("COVID-19 Drugs Networker Homepage", target=prefix+"_home_nav", placement="bottom", hide_arrow=True, delay={"show":500, "hide":250}),
-            dbc.Tooltip("Page Structure and Main Possible Interactions", target=prefix+"_help_nav", placement="bottom", hide_arrow=True, delay={"show":500, "hide":250}),
-            dbc.Tooltip("Info About the Project", target=prefix+"_about_nav", placement="bottom", hide_arrow=True, delay={"show":500, "hide":250}),
-            dbc.Tooltip("Project Participant's Contacts", target=prefix+"_contacts_nav", placement="bottom", hide_arrow=True, delay={"show":500, "hide":250}),
             dbc.Tooltip("Browse Other Available Graphs", target=prefix+"_other_graphs_nav", placement="bottom", hide_arrow=True, delay={"show":500, "hide":250})
             ],
             className="navbar navbar-primary bg-primary m-auto position-sticky",
@@ -60,19 +60,19 @@ def sidebar(prefix):
         return dbc.NavbarSimple([
                     dbc.Col([
                         dbc.NavItem(dbc.NavLink("Graph", href="#"+prefix+"_graph_container", external_link=True, active=True, className="nav-link"), className="nav-item", id=prefix+"_graph_side"),
+                        dbc.Tooltip("Jump to Graph' Section", target=prefix+"_graph_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}),
                         dbc.NavItem(dbc.NavLink("Selected Data", href="#"+prefix+"_selected_table", external_link=True, id=prefix+"_side_selected_table", active=False, disabled=True, className="nav-link"), className="nav-item", id=prefix+"_selected_data_side"),
+                        dbc.Tooltip("Jump to Selected Data' Section", target=prefix+"_selected_data_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}, id=prefix+"_selected_data_side_tooltip"),
                         dbc.NavItem(dbc.NavLink("Graph Properties", href="#"+prefix+"_graph_properties_table", external_link=True, active=True, className="nav-link"), className="nav-item", id=prefix+"_graph_properties_side"),
+                        dbc.Tooltip("Jump to Graph Properties' Section", target=prefix+"_graph_properties_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}),
                         dbc.NavItem(dbc.NavLink("Clustering", href="#"+prefix+"_clustering",external_link=True, active=True, className="nav-link"), className="nav-item", id=prefix+"_clustering_side"),
+                        dbc.Tooltip("Jump to Clustering' Section", target=prefix+"_clustering_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}),
                         dbc.NavItem(dbc.NavLink("Plots", href="#"+prefix+"_plots",external_link=True, active=True, className="nav-link"), className="nav-item", id=prefix+"_plots_side"),
+                        dbc.Tooltip("Jump to Plots' Section", target=prefix+"_plots_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}),
                     ], align="center", style={"padding":"0rem"}),
-                    dbc.Tooltip("Jump to Graph' Section", target=prefix+"_graph_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}),
-                    dbc.Tooltip("Jump to Selected Data' Section", target=prefix+"_selected_data_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}, id=prefix+"_selected_data_side_tooltip"),
-                    dbc.Tooltip("Jump to Graph Properties' Section", target=prefix+"_graph_properties_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}),
-                    dbc.Tooltip("Jump to Clustering' Section", target=prefix+"_clustering_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}),
-                    dbc.Tooltip("Jump to Plots' Section", target=prefix+"_plots_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}),
                 ],expand="xl", color="light", className="navbar navbar-light bg-light position-sticky", style={"position":"sticky", "top":"10vh"}),
     else:
-        return dbc.NavbarSimple(color="light", className="navbar navbar-light bg-light position-sticky")
+        return dbc.NavbarSimple(color="light", className="navbar navbar-light bg-light position-sticky", expand=True)
 
 def nodes_info(prefix):
     return dbc.Container([
@@ -195,7 +195,7 @@ def graph(prefix,title,nodes,edges):#es. title="Drug Target"
                     dbc.Col(coloring_dropdown(prefix), width=4),
                     dbc.Col(highlighting(prefix, nodes), width=5),
                     # dbc.Col(html.A("download", href="data:text/csv;charset=utf-8,"+quote(pd.read_csv("https://raw.githubusercontent.com/LucaMenestrina/SARS-CoV-2_Networker/master/drugtarget.tsv",index_col=0, sep="\t").to_csv(sep="\t", index=False, encoding="utf-8")), target="_blank", download="sparsematrix.tsv"), width=1.5),
-                ], no_gutters=True, className="card-title"),
+                ], no_gutters=True, className="card-title", justify="around", align="center"),
                 cyto.Cytoscape(
                     id=prefix+"_graph",
                     layout={
@@ -211,7 +211,7 @@ def graph(prefix,title,nodes,edges):#es. title="Drug Target"
                         # "gravityRange":0.05
 
                     },
-                    style={"width":"100%","height":"1000px"},
+                    style={"width":"100%","height":"80vh"},
                     elements=nodes+edges,
                     boxSelectionEnabled=True,
                     minZoom=0.05,
@@ -284,7 +284,7 @@ def custom_clustering(prefix):
     return dbc.Container([
                 html.H3("Clustering"),
                 dbc.Row([
-                    dbc.Col(dbc.Spinner(dcc.Graph(id=prefix+"_custom_clustering_graph")), width=6),
+                    dbc.Col([dbc.Spinner(dcc.Graph(id=prefix+"_custom_clustering_graph", responsive=True))], style={"padding":"0px"}, xs=12, md=7),
                     dbc.Col([
                         dcc.Dropdown(id=prefix+"_custom_clustering_component", options=[
                             {"label":"Entire Graph","value":"entire"},
@@ -299,7 +299,7 @@ def custom_clustering(prefix):
                         html.Label("Number of clusters:"),
                         dcc.Dropdown(id=prefix+"_custom_clustering_number_clusters", clearable=False, optionHeight=25,className="DropdownMenu"),
                         view_custom_clusters(prefix)
-                    ], align="center", width=2)
+                    ], align="center", style={"padding":"1%"}, xs=12, md=5)
                 ], justify="around", align="center", no_gutters=True)
             ], id=prefix+"_clustering", fluid=True, style={"padding":"3%"})
 
@@ -332,15 +332,16 @@ def get_frequency(list):
 def powerplot(graph):
     K=dict(nx.get_node_attributes(graph,"degree"))
     power_data=pd.DataFrame({"Node degree, k":list(get_frequency(K.values()).values()),"Number of Nodes with degree k, n(k)":list(get_frequency(K.values()).keys())})
-
-    return px.scatter(data_frame=power_data,x="Node degree, k",y="Number of Nodes with degree k, n(k)", title="Node Degree Distribution", height=600, width=600)
+    plot=px.scatter(data_frame=power_data,x="Node degree, k",y="Number of Nodes with degree k, n(k)", title="Node Degree Distribution", template="ggplot2")
+    plot.update_layout({"paper_bgcolor": "rgba(0, 0, 0, 0)", "modebar":{"bgcolor":"rgba(0, 0, 0, 0)","color":"silver","activecolor":"grey"}}) # for a transparent background but keeping modebar acceptable colors
+    return plot
 
 def plots(prefix, graph):
     return dbc.Container([
                 html.H3("Plots"),
                 dbc.Row([
-                    dbc.Col([dbc.Spinner(dcc.Graph(figure=powerplot(graph), id=prefix+"_powerplot"))], width=4, align="center"),
-                    dbc.Col([dbc.Spinner(dcc.Graph(id=prefix+"_piechart"))],width=6 , align="center")
+                    dbc.Col([dbc.Spinner(dcc.Graph(figure=powerplot(graph), id=prefix+"_powerplot", responsive=True))], style={"padding":"0px"}, xs=12, lg=5),
+                    dbc.Col([dbc.Spinner(dcc.Graph(id=prefix+"_piechart", responsive=True))], style={"padding":"0px"}, xs=12, lg=7)
                 ], justify="around", align="center", no_gutters=True)
             ], id=prefix+"_plots", fluid=True, style={"padding":"3%"})
 

@@ -48,7 +48,7 @@ layout=dbc.Col([
                                         html.H5(html.Strong("Drug Target"), className="card-header")
                                     ])
                                 ], href="/drug_target", className="card border-primary mb-3"),
-                            ]),
+                            ], xs=12, md=4),
                             dbc.Col([
                                 html.A([
                                     html.Center([
@@ -56,7 +56,7 @@ layout=dbc.Col([
                                         html.H5(html.Strong("Drug Drug"), className="card-header")
                                     ])
                                 ], href="/drug_drug", className="card border-primary mb-3"),
-                            ]),
+                            ], xs=12, md=4),
                             dbc.Col([
                                 html.A([
                                     html.Center([
@@ -64,7 +64,7 @@ layout=dbc.Col([
                                         html.H5(html.Strong("Target Target"), className="card-header")
                                     ])
                                 ], href="/target_target", className="card border-primary mb-3"),
-                            ])
+                            ], xs=12, md=4)
                         ]),
                         html.Br(),
                         html.P([html.Font("For help browsing the app check the "),html.A("Help", href="/help"),html.Font(" section")]),

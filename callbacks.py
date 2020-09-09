@@ -523,6 +523,7 @@ def highlighter_callback(prefix,G,nodes, girvan_newman,maj,girvan_newman_maj):
                         }
                     }
                 ]
+        pie.update_layout({"plot_bgcolor":"rgba(0, 0, 0, 0)", "paper_bgcolor": "rgba(0, 0, 0, 0)", "modebar":{"bgcolor":"rgba(0, 0, 0, 0)","color":"silver","activecolor":"grey"}})
         return stylesheet, pie, legend_body
     return highlighter
 
@@ -681,7 +682,8 @@ def custom_clustering_section_callback(prefix,G,girvan_newman,maj,girvan_newman_
         evals,evects=np.linalg.eigh(L)
         # n=[n for n,dif in enumerate(np.diff(evals)) if dif > 1.5*np.average(np.diff(evals))][0]+1
         clustering_data=pd.DataFrame({"Eigenvalue Number":range(len(evals)),"Eigenvalue":evals})
-        figure=px.scatter(data_frame=clustering_data,x="Eigenvalue Number",y="Eigenvalue", title="Eigenvalues Distribution", height=600, width=800)
+        figure=px.scatter(data_frame=clustering_data,x="Eigenvalue Number",y="Eigenvalue", title="Eigenvalues Distribution", template="ggplot2")
+        figure.update_layout({"paper_bgcolor": "rgba(0, 0, 0, 0)", "modebar":{"bgcolor":"rgba(0, 0, 0, 0)","color":"silver","activecolor":"grey"}})
         if method == "spectral":
             km=KMeans(n_clusters=n_clusters, n_init=100)
             clusters=km.fit_predict(evects[:,:n_clusters])
