@@ -73,7 +73,7 @@ layout=dbc.Col([
                     ]),
                 ], className="h-100"),
                 footer()
-            ], no_gutters=True, style={"height":"100vh"})
+            ], no_gutters=True)
         ], style={"padding":"0px"})
 
 # if __name__=="__main__":

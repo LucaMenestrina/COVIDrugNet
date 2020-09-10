@@ -226,17 +226,20 @@ def graph(prefix,title,nodes,edges):#es. title="Drug Target"
 def graph_properties(prefix):
     return dbc.Container([
                 dbc.Col([
-                    dbc.Row(html.H3("Graph Properties")),
+                    dbc.Row([
+                        html.H3("Graph Properties"),
+                        html.A(dbc.Button("Download", className="ml-auto"), target="_blank", download="graph_properties.tsv", id=prefix+"_download_graph_properties")
+                    ], justify="between", align="center"),
                     dbc.Row([
                         # dbc.Col(width=1), # just to move everything to the right (justify doesn't work)
                         dbc.Col([
-                            dbc.Checklist(options=[{"label":"Only Selected","value":True}],id=prefix+"_only_selected_properties", labelStyle={"white-space":"nowrap"}, switch=True),
+                            dbc.Checklist(options=[{"label":"Selected","value":True}],id=prefix+"_only_selected_properties", labelStyle={"white-space":"nowrap"}, switch=True),
                             dbc.Tooltip(["Show only those nodes that are manually selected in the Graph",html.Br(),"(If there are...)"], target=prefix+"_only_selected_properties", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
-                        ], align="center"),
+                        ], align="center", xs=2, lg=1),
                         dbc.Col([
                             dcc.Dropdown(id=prefix+"_search_properties", placeholder="Search Specific Nodes ...", multi=True, className="DropdownMenu")
-                        ], align="center", width=4),
-                        dbc.Col(html.Font("Sort by: ", style={"white-space":"nowrap"}),align="center", style={"text-align":"right"}),
+                        ], align="center", xs=10, lg=4),
+                        dbc.Col(html.Font("Sort by: ", style={"white-space":"nowrap"}),align="center", style={"text-align":"right"}, xs=2, lg=1),
                         dbc.Col([
                             dcc.Dropdown(id=prefix+"_properties_table_sorting",  options=[
                                 {"label":"Degree: Low to High","value":"degree,1"},
@@ -246,8 +249,8 @@ def graph_properties(prefix):
                                 {"label":"Betweenness Centrality: Low to High","value":"Betweenness_Centrality,1"},
                                 {"label":"Betweenness Centrality: High to Low","value":"Betweenness_Centrality,0"}
                             ], value="degree,0", clearable=False, searchable=False, optionHeight=25,className="DropdownMenu")
-                        ],align="center", width=3),
-                        dbc.Col(html.Font("Rows to show: ", style={"white-space":"nowrap"}),align="center", style={"text-align":"right"}),
+                        ], align="center", xs=10, lg=4),
+                        dbc.Col(html.Font("Rows to show: ", style={"white-space":"nowrap"}),align="center", style={"text-align":"right"}, xs=2, lg=1),
                         dbc.Col([
                             dcc.Dropdown(id=prefix+"_properties_table_rows",options=[
                                 {"label":"10","value":10},
@@ -256,9 +259,9 @@ def graph_properties(prefix):
                                 {"label":"100","value":100},
                                 {"label":"all","value":"all"}
                             ], value=10, className="DropdownMenu", clearable=False, searchable=False, optionHeight=25)
-                        ],align="center"),
-                        dbc.Col(html.A(dbc.Button("Download", className="ml-auto"), target="_blank", download="graph_properties.tsv", id=prefix+"_download_graph_properties"), align="center")
-                    ], justify="center", align="center"),
+                        ], align="center", xs=10, lg=1),
+                        # dbc.Col(, align="center")
+                    ], justify="around", align="center"),
                     html.Br(),
                     dbc.Container(id=prefix+"_graph_properties_table_container", fluid=True)
                 ])
