@@ -30,50 +30,57 @@ prefix="home"
 
 layout=dbc.Col([
             headbar(prefix),
-            dbc.Row([
-                dbc.Col(sidebar(prefix), width=1, className="bg-light"),
                 dbc.Col([
-                    html.Br(),
-                    dbc.Col([
-                        html.Center(html.H2(html.Strong("COVID-19 Drugs Networker"))),
-                        html.P("Welcome to ... bla bla bla..."),
-                        html.Br(),
-                        html.H4("Available Graphs:"),
-                        html.Br(),
-                        dbc.Row([
-                            dbc.Col([
-                                html.A([
-                                    html.Center([
-                                        html.Img(src="https://drive.google.com/uc?export=view&id=1Dsog5C3jKZXHssGqVCd9BOiP15KULK8W", style={"width":"95%"}),
-                                        html.H5(html.Strong("Drug Target"), className="card-header")
-                                    ])
-                                ], href="/drug_target", className="card border-primary mb-3"),
-                            ], xs=12, md=4),
-                            dbc.Col([
-                                html.A([
-                                    html.Center([
-                                        html.Img(src="https://drive.google.com/uc?export=view&id=1RMYDzIHpfsqYWMTd4qA2zWEWT0eYCAfd", style={"width":"95%"}),
-                                        html.H5(html.Strong("Drug Drug"), className="card-header")
-                                    ])
-                                ], href="/drug_drug", className="card border-primary mb-3"),
-                            ], xs=12, md=4),
-                            dbc.Col([
-                                html.A([
-                                    html.Center([
-                                        html.Img(src="https://drive.google.com/uc?export=view&id=1iDDwsBgJanpOjUAYEE6yuwMmS9D43ap4", style={"width":"95%"}),
-                                        html.H5(html.Strong("Target Target"), className="card-header")
-                                    ])
-                                ], href="/target_target", className="card border-primary mb-3"),
-                            ], xs=12, md=4)
-                        ]),
-                        html.Br(),
-                        html.P([html.Font("For help browsing the app check the "),html.A("Help", href="/help"),html.Font(" section")]),
-                        html.P([html.Font("Otherwise feel free to "),html.A("reach us out", href="/contacts")]),
-                        html.P([html.Font("Info and credits about the project can be found in the "),html.A("About", href="/about"),html.Font(" section")])
-                    ]),
-                ], className="h-100"),
-                footer()
-            ], no_gutters=True)
+                    # html.Center(html.H1(html.Strong("COVID-19 Drugs Networker"))),
+                    html.Center(html.Img(src="https://drive.google.com/uc?export=view&id=1yDefAeLULelX6loC3g68Tk_CNyFGi4kg", alt="COVID-19 Drugs Networker", style={"width":"80%"})),
+                    # html.Center(html.H4("Visualize and Analyze Networks about Drugs and Targets Related to COVID-19")),
+                    # html.P([
+                    #     "Welcome to ... bla bla bla...",
+                    #     html.Br(),
+                    #     "More bla bla bla..."
+                    # ]),
+                    # html.Br(),
+                    # html.H4("Available Graphs:"),
+                    # html.Br(),
+                    dbc.Row([
+                        dbc.Col([
+                            html.A([
+                                html.Center([
+                                    html.Img(src="https://drive.google.com/uc?export=view&id=1Dsog5C3jKZXHssGqVCd9BOiP15KULK8W", style={"width":"95%"}, alt="Drug Target Graph"),
+                                    html.H5(html.Strong("Drug Target"), className="card-header")
+                                ], style={"box-shadow":"0rem 0rem 0.25rem darkgrey"})
+                            ], href="/drug_target", className="card"), #border-primary mb-3
+                        ], xs=12, md=3),
+                        dbc.Col([
+                            html.A([
+                                html.Center([
+                                    html.Img(src="https://drive.google.com/uc?export=view&id=1RMYDzIHpfsqYWMTd4qA2zWEWT0eYCAfd", style={"width":"95%"}, alt="Drug Drug Graph"),
+                                    html.H5(html.Strong("Drug Drug"), className="card-header")
+                                ], style={"box-shadow":"0rem 0rem 0.25rem darkgrey"})
+                            ], href="/drug_drug", className="card"), #border-primary mb-3
+                        ], xs=12, md=3),
+                        dbc.Col([
+                            html.A([
+                                html.Center([
+                                    html.Img(src="https://drive.google.com/uc?export=view&id=1iDDwsBgJanpOjUAYEE6yuwMmS9D43ap4", style={"width":"95%"}, alt="Target Target Graph"),
+                                    html.H5(html.Strong("Target Target"), className="card-header")
+                                ], style={"box-shadow":"0rem 0rem 0.25rem darkgrey"})
+                            ], href="/target_target", className="card"),#border-primary mb-3
+                        ], xs=12, md=3)
+                    ], justify="center", align="center"),
+                    html.Div(style={"height":"10vh"}),
+                    dbc.Row([
+                        dbc.Col([
+                            html.Center([
+                                html.P([html.Font("For help browsing the app check the "),html.A("Help", href="/help"),html.Font(" section")]),
+                                html.P([html.Font("Otherwise feel free to "),html.A("reach us out", href="/contacts")]),
+                                html.P([html.Font("Info and credits about the project can be found in the "),html.A("About", href="/about"),html.Font(" section")])
+                            ])
+                        ], width=10)
+                    ], no_gutters=True, justify="center", align="center"),
+                    html.Div(style={"height":"10vh"})
+                ]),
+            footer()
         ], style={"padding":"0px"})
 
 # if __name__=="__main__":

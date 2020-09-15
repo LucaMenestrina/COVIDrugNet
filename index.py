@@ -52,7 +52,7 @@ app.index_string='''
 @app.callback(Output("page-content", "children"),
               [Input("url", "pathname")])
 def display_page(pathname):
-    if pathname == "/covid19drugsnetworker":
+    if pathname == "/covid19drugsnetworker" or pathname == "/covid19drugsnetworker/home":
         return home.layout
     if pathname == "/help":
         return help.layout

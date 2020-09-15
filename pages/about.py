@@ -30,35 +30,32 @@ prefix="about"
 
 layout=dbc.Col([
             headbar(prefix),
-            dbc.Row([
-                dbc.Col(sidebar(prefix), width=1, className="bg-light"),
+            dbc.Col([
+                html.Br(),
                 dbc.Col([
+                    html.H3("Info about the project..."),
+                    html.P("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
                     html.Br(),
-                    dbc.Col([
-                        html.H3("Info about the project..."),
-                        html.P("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
-                        html.Br(),
-                        html.H4("Citing:"),
-                        html.P("Articolo"),
-                        html.Br(),
-                        html.H4("Credits:"),
-                        html.Ul([
-                            html.Li("DrugBank"),
-                            html.Li("Uniprot"),
-                            html.Li("String"),
-                            html.Li("Dash"),
-                            html.Li("Networkx"),
-                            html.Li("PDB"),
-                            html.Li("DisGeNet"),
-                            html.Li(html.P([html.Font("Favicon made by "),html.A("Becris", href="https://creativemarket.com/Becris"),html.Font(" from "),html.A("www.flaticon.com", href="https://www.flaticon.com/")]))
-                        ]),
-                        html.Br(),
-                        html.H4("Terms of Use"),
-                        html.P("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
-                    ])
-                ], className="h-100"),
-                footer()
-            ], no_gutters=True, style={"height":"100vh"})
+                    html.H4("Citing:"),
+                    html.P("Articolo"),
+                    html.Br(),
+                    html.H4("Credits:"),
+                    html.Ul([
+                        html.Li("DrugBank"),
+                        html.Li("Uniprot"),
+                        html.Li("String"),
+                        html.Li("Dash"),
+                        html.Li("Networkx"),
+                        html.Li("PDB"),
+                        html.Li("DisGeNet"),
+                        html.Li(html.P([html.Font("Favicon made by "),html.A("Becris", href="https://creativemarket.com/Becris"),html.Font(" from "),html.A("www.flaticon.com", href="https://www.flaticon.com/")]))
+                    ]),
+                    html.Br(),
+                    html.H4("Terms of Use"),
+                    html.P("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+                ], style={"padding":"2%", "width":"100%"})
+            ], style={"height":"100vh"}),
+            footer()
         ], style={"padding":"0px"})
 
 # if __name__=="__main__":

@@ -28,33 +28,52 @@ from callbacks import *
 
 prefix="about"
 
+# layout=dbc.Col([
+#             headbar(prefix),
+#             dbc.Col([
+#                 html.Br(),
+#                 dbc.Col([
+#                     html.Center([
+#                         html.Div(style={"height":"10vh"}),
+#                         html.H2("404 Page Not Found"),
+#                         html.Br(),
+#                         html.H3("Sorry, we can't find that page ..."),
+#                         html.Br(),
+#                         html.H5("Please check the URL and try again ..."),
+#                         html.Div(style={"height":"25vh"})
+#                     ]),
+#                     dbc.Row([
+#                         dbc.Col(width=1),
+#                         dbc.Col([
+#                             html.P([html.Font("Try to go back to our "),html.A("homepage", href="/covid19drugsnetworker")]),
+#                             html.P([html.Font("If the problem persists, please "),html.A("let us know", href="mailto:luca.menestrina2@unibo.it")])
+#                         ])
+#                     ])
+#                 ], style={"padding":"2%", "width":"100%"})
+#             ], style={"height":"100vh"}),
+#             footer()
+#         ], style={"padding":"0px"})
+
 layout=dbc.Col([
             headbar(prefix),
-            dbc.Row([
-                dbc.Col(sidebar(prefix), width=1, className="bg-light"),
+            dbc.Col([
+                html.Br(),
                 dbc.Col([
-                    html.Br(),
-                    dbc.Col([
-                        html.Center([
-                            html.Div(style={"height":"10vh"}),
-                            html.H2("404 Page Not Found"),
-                            html.Br(),
+                    html.Center([
+                        dbc.Jumbotron([
+                            html.H1("404 Page Not Found"),
                             html.H3("Sorry, we can't find that page ..."),
-                            html.Br(),
                             html.H5("Please check the URL and try again ..."),
-                            html.Div(style={"height":"25vh"})
-                        ]),
-                        dbc.Row([
-                            dbc.Col(width=1),
-                            dbc.Col([
-                                html.P([html.Font("Try to go back to our "),html.A("homepage", href="/covid19drugsnetworker")]),
-                                html.P([html.Font("If the problem persists, please "),html.A("let us know", href="mailto:luca.menestrina2@unibo.it")])
-                            ])
-                        ])
+                            html.Br(),
+                            html.Hr(),
+                            html.Br(),
+                            html.P([html.Font("Try to go back to our "),html.A("homepage", href="/covid19drugsnetworker")]),
+                            html.P([html.Font("If the problem persists, please "),html.A("let us know", href="mailto:luca.menestrina2@unibo.it")])
+                        ], style={"width":"50vw"})
                     ])
-                ], className="h-100"),
-                footer()
-            ], no_gutters=True, style={"height":"100vh"})
+                ], style={"padding":"2%", "width":"100%"})
+            ], style={"height":"100vh"}),
+            footer()
         ], style={"padding":"0px"})
 
 # if __name__=="__main__":

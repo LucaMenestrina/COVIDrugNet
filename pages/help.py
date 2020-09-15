@@ -30,23 +30,22 @@ prefix="help"
 
 layout=dbc.Col([
             headbar(prefix),
-            dbc.Row([
-                dbc.Col(sidebar(prefix), width=1, className="bg-light"),
-                dbc.Col([
-                    html.Br(),
+            dbc.Col([
+                html.Br(),
+                html.Br(),
+                html.Center([
+                    html.Img(src="https://drive.google.com/uc?export=view&id=1Wz-BWDC-hbsm1GMoGlHcE2UpvW6xnEwy", style={"width":"100%"})
+                ]),
+                html.Br(),
+                html.Br(),
+                dbc.Row([
                     dbc.Col([
-                        html.Br(),
-                        html.Center([
-                            html.Img(src="https://drive.google.com/uc?export=view&id=1Wz-BWDC-hbsm1GMoGlHcE2UpvW6xnEwy", style={"width":"100%"})
-                        ]),
-                        html.Br(),
-                        html.Br(),
-                        html.P([html.Font("If there still is something unclear feel free to "),html.A("reach us out", href="/contacts")]),
-                        html.Br(),
-                    ]),
-                ], className="h-100"),
-                footer()
-            ], no_gutters=True)
+                        html.Center(html.H5([html.Font("If there still is something unclear feel free to "),html.A("reach us out", href="/contacts")], style={"margin":"0px"}))
+                    ], className="card border-primary", width=4, align="center", style={"padding":"2%"})
+                ], no_gutters=True, justify="center", align="center"),
+                html.Br()
+            ]),
+        footer()
         ], style={"padding":"0px"})
 
 # if __name__=="__main__":

@@ -39,6 +39,18 @@ stylesheet_base=[
     }
 ]
 
+def collabse_headbar_callback(prefix):
+    @app.callback(
+        Output(prefix+"_headbar_collapse", "is_open"),
+        [Input(prefix+"_headbar_toggler", "n_clicks")],
+        [State(prefix+"_headbar_collapse", "is_open")],
+    )
+    def collapse_headbar(n, is_open):
+        if n:
+            return not is_open
+        return is_open
+
+
 def displayHoverNodeData_callback(prefix,G):
     @app.callback(
         [
@@ -221,7 +233,7 @@ def propertiesTable_callback(prefix,graph_properties_df,nodes):
         else:
             df=df.head(rows)
             attributes=df.columns
-            table_header=[html.Thead(html.Tr([html.Th(attribute) for attribute in ["Name", "Degree", "Closeness Centrality", "Betweenness Centrality"]]))]
+            table_header=[html.Thead(html.Tr([html.Th(attribute) for attribute in ["Name", "Degree", "Closeness Centrality", "Betweenness Centrality", "Harmonic Centrality", "Eigenvector Centrality", "Vote Rank Score"]]))]
             table_body=[html.Tbody([html.Tr([html.Td(d[attribute]) for attribute in attributes]) for d in df.to_dict("records")])]
             table=dbc.Table(table_header+table_body, className="table table-hover", bordered=True, id=prefix+"_graph_properties_table")
             return table,href,options
@@ -496,6 +508,7 @@ def highlighter_callback(prefix,G,nodes, girvan_newman,maj,girvan_newman_maj):
                     pie=greedy_modularity_custom_pie
 
                 legend_body=html.P(["Nodes are colored on the corresponding cluster/community, check the ",html.A("clustering section", href="#"+prefix+"_clustering")," for more info"])
+                pie.update_layout({"plot_bgcolor":"rgba(0, 0, 0, 0)", "paper_bgcolor": "rgba(0, 0, 0, 0)", "modebar":{"bgcolor":"rgba(0, 0, 0, 0)","color":"silver","activecolor":"grey"}})
         else:
             stylesheet=[style for style in current_stylesheet if style["style"].get("border-style") != "double"]
             pie=current_pie
@@ -523,7 +536,6 @@ def highlighter_callback(prefix,G,nodes, girvan_newman,maj,girvan_newman_maj):
                         }
                     }
                 ]
-        pie.update_layout({"plot_bgcolor":"rgba(0, 0, 0, 0)", "paper_bgcolor": "rgba(0, 0, 0, 0)", "modebar":{"bgcolor":"rgba(0, 0, 0, 0)","color":"silver","activecolor":"grey"}})
         return stylesheet, pie, legend_body
     return highlighter
 
@@ -732,15 +744,16 @@ def toggle_view_clusters_callback(prefix):
     return toggle_view_clusters
 
 def build_callbacks(prefix,G,nodes,graph_properties_df,girvan_newman,maj,girvan_newman_maj,file_prefix):
+    collabse_headbar_callback(prefix)
     displayHoverNodeData_callback(prefix,G)
-    selectedTable_callback(prefix)
-    propertiesTable_callback(prefix,graph_properties_df,nodes)
     highlighter_callback(prefix,G,nodes, girvan_newman,maj,girvan_newman_maj)
+    custom_clustering_section_callback(prefix,G,girvan_newman,maj,girvan_newman_maj)
+    get_img_callback(prefix)
+    download_graph_file_callback(prefix,file_prefix)
     toggle_download_graph_callback(prefix)
     toggle_help_callback(prefix)
     toggle_legend_callback(prefix)
-    get_img_callback(prefix)
-    download_graph_file_callback(prefix,file_prefix)
     get_range_clusters_callback(prefix,G,maj,girvan_newman,girvan_newman_maj)
-    custom_clustering_section_callback(prefix,G,girvan_newman,maj,girvan_newman_maj)
     toggle_view_clusters_callback(prefix)
+    selectedTable_callback(prefix)
+    propertiesTable_callback(prefix,graph_properties_df,nodes)

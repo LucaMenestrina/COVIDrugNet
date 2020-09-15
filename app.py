@@ -20,7 +20,9 @@ meta=[
     }
 ]
 
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.FLATLY], suppress_callback_exceptions=True, meta_tags=meta)
+font_awesome="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/css/all.min.css"
+
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.LUMEN, font_awesome], suppress_callback_exceptions=True, meta_tags=meta)
 
 # server = app.server
 app.title="COVID-19 Drugs Networker"
