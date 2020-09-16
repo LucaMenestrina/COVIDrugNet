@@ -22,7 +22,7 @@ import matplotlib.pyplot as plt
 from matplotlib.colors import rgb2hex
 from sklearn.cluster import KMeans
 
-#html.I(className="fa fa-home")
+#html.I(className="fa fa-project-diagram"),
 def headbar(prefix):
     return dbc.Navbar(
                 dbc.Container([
@@ -35,22 +35,25 @@ def headbar(prefix):
                     dbc.NavbarToggler(id=prefix+"_headbar_toggler"),
                     dbc.Collapse([
                         dbc.Nav([
-                            dbc.NavItem(dbc.NavLink("Home",href="/covid19drugsnetworker", active=True, className="nav-link active", external_link=True), className="nav-item", id=prefix+"_home_nav"),
+                            dbc.NavItem(dbc.NavLink([html.I(className="fa fa-home", style={"margin-right":"0.4rem"}),"Home"],href="/covid19drugsnetworker", active=True, className="nav-link active", external_link=True), className="nav-item", id=prefix+"_home_nav"),
                             dbc.Tooltip("COVID-19 Drugs Networker Homepage", target=prefix+"_home_nav", placement="bottom", hide_arrow=True, delay={"show":500, "hide":250}),
-                            dbc.NavItem(dbc.NavLink("Help",href="/help", active=True, className="nav-link active", external_link=True), className="nav-item", id=prefix+"_help_nav"),
+                            dbc.NavItem(dbc.NavLink([html.I(className="fa fa-question", style={"margin-right":"0.4rem"}),"Help"],href="/help", active=True, className="nav-link active", external_link=True), className="nav-item", id=prefix+"_help_nav"),
                             dbc.Tooltip("Page Structure and Main Possible Interactions", target=prefix+"_help_nav", placement="bottom", hide_arrow=True, delay={"show":500, "hide":250}),
-                            dbc.NavItem(dbc.NavLink("About",href="/about", active=True, className="nav-link active", external_link=True), className="nav-item", id=prefix+"_about_nav"),
+                            dbc.NavItem(dbc.NavLink([html.I(className="fa fa-info", style={"margin-right":"0.4rem"}),"About"],href="/about", active=True, className="nav-link active", external_link=True), className="nav-item", id=prefix+"_about_nav"),
                             dbc.Tooltip("Info About the Project", target=prefix+"_about_nav", placement="bottom", hide_arrow=True, delay={"show":500, "hide":250}),
-                            dbc.NavItem(dbc.NavLink("Contacts",href="/contacts", active=True, className="nav-link active", external_link=True), className="nav-item", id=prefix+"_contacts_nav"),
+                            dbc.NavItem(dbc.NavLink([html.I(className="fa fa-address-book", style={"margin-right":"0.4rem"}),"Contacts"],href="/contacts", active=True, className="nav-link active", external_link=True), className="nav-item", id=prefix+"_contacts_nav"),
                             dbc.Tooltip("Project Participant's Contacts", target=prefix+"_contacts_nav", placement="bottom", hide_arrow=True, delay={"show":500, "hide":250}),
-                            dbc.DropdownMenu([
-                                dbc.DropdownMenuItem("Drug Target", href="/drug_target", className="dropdown-item", external_link=True),
-                                dbc.DropdownMenuItem("Drug Drug", href="/drug_drug", className="dropdown-item", external_link=True),
-                                dbc.DropdownMenuItem("Target Target", href="/target_target", className="dropdown-item", external_link=True),
-                                # dbc.DropdownMenuItem("Target Disease", href="/target_disease", className="dropdown-item"), # not yet available
-                                # dbc.DropdownMenuItem("Target Interactors", href="/target_interactors", className="dropdown-item") # not yet available
-                            ],nav=True, in_navbar=True, label="Graphs ...", className="nav-item dropdown active", id=prefix+"_other_graphs_nav"),
-                            dbc.Tooltip("Browse Other Available Graphs", target=prefix+"_other_graphs_nav", placement="left", hide_arrow=True, delay={"show":500, "hide":250}) # temporary removed because it gives problems with the dropdown
+                            dbc.Nav([
+                                dbc.NavLink(html.I(className="fa fa-project-diagram"), active=True, className="nav-link active", style={"margin-right":"-0.6rem"}), # patch for graphs label icon
+                                dbc.DropdownMenu([
+                                    dbc.DropdownMenuItem("Drug Target", href="/drug_target", className="dropdown-item", external_link=True),
+                                    dbc.DropdownMenuItem("Drug Drug", href="/drug_drug", className="dropdown-item", external_link=True),
+                                    dbc.DropdownMenuItem("Target Target", href="/target_target", className="dropdown-item", external_link=True),
+                                    # dbc.DropdownMenuItem("Target Disease", href="/target_disease", className="dropdown-item"), # not yet available
+                                    # dbc.DropdownMenuItem("Target Interactors", href="/target_interactors", className="dropdown-item") # not yet available
+                                ], nav=True, in_navbar=True, label="Graphs ...", className="nav-item dropdown active"),
+                            ], className="nav-item", id=prefix+"_other_graphs_nav"),#patch for dropdownmeno label icon , style={"margin-right":"-0.5rem"}
+                            dbc.Tooltip("Browse Other Available Graphs", target=prefix+"_other_graphs_nav", placement="left", hide_arrow=True, delay={"show":500, "hide":250})
                         ], className="ml-auto", navbar=True)
                     ], id=prefix+"_headbar_collapse", navbar=True)
                 ], fluid=True),

@@ -32,7 +32,7 @@ layout=dbc.Col([
             headbar(prefix),
                 dbc.Col([
                     # html.Center(html.H1(html.Strong("COVID-19 Drugs Networker"))),
-                    html.Center(html.Img(src="https://drive.google.com/uc?export=view&id=1yDefAeLULelX6loC3g68Tk_CNyFGi4kg", alt="COVID-19 Drugs Networker", style={"width":"80%"})),
+                    html.Center(html.Img(src="https://drive.google.com/uc?export=view&id=1yDefAeLULelX6loC3g68Tk_CNyFGi4kg", alt="COVID-19 Drugs Networker", style={"width":"75%"})),
                     # html.Center(html.H4("Visualize and Analyze Networks about Drugs and Targets Related to COVID-19")),
                     # html.P([
                     #     "Welcome to ... bla bla bla...",
@@ -82,6 +82,11 @@ layout=dbc.Col([
                 ]),
             footer()
         ], style={"padding":"0px"})
+
+
+##  ----------  CALLBACKS   ------------
+
+collapse_headbar_callback(prefix)
 
 # if __name__=="__main__":
 #     app.run_server(debug=False)

@@ -48,7 +48,8 @@ layout=dbc.Col([
                         html.Li("Networkx"),
                         html.Li("PDB"),
                         html.Li("DisGeNet"),
-                        html.Li(html.P([html.Font("Favicon made by "),html.A("Becris", href="https://creativemarket.com/Becris"),html.Font(" from "),html.A("www.flaticon.com", href="https://www.flaticon.com/")]))
+                        # html.Li(html.P([html.Font("Favicon made by "),html.A("Becris", href="https://creativemarket.com/Becris"),html.Font(" from "),html.A("www.flaticon.com", href="https://www.flaticon.com/")]))
+                        html.Li("Fontawesome")
                     ]),
                     html.Br(),
                     html.H4("Terms of Use"),
@@ -57,6 +58,11 @@ layout=dbc.Col([
             ], style={"height":"100vh"}),
             footer()
         ], style={"padding":"0px"})
+
+
+##  ----------  CALLBACKS   ------------
+
+collapse_headbar_callback(prefix)
 
 # if __name__=="__main__":
 #     app.run_server(debug=False)

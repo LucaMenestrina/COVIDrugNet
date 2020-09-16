@@ -20,7 +20,12 @@ meta=[
     }
 ]
 
-font_awesome="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/css/all.min.css"
+font_awesome = {
+        "href": "https://use.fontawesome.com/releases/v5.8.1/css/all.css",
+        "rel": "stylesheet",
+        "integrity": "sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf",
+        "crossorigin": "anonymous"
+    }
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.LUMEN, font_awesome], suppress_callback_exceptions=True, meta_tags=meta)
 

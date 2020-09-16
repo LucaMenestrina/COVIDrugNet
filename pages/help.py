@@ -41,12 +41,17 @@ layout=dbc.Col([
                 dbc.Row([
                     dbc.Col([
                         html.Center(html.H5([html.Font("If there still is something unclear feel free to "),html.A("reach us out", href="/contacts")], style={"margin":"0px"}))
-                    ], className="card border-primary", width=4, align="center", style={"padding":"2%"})
+                    ], className="card border-primary", width=5, align="center", style={"padding":"2%"})
                 ], no_gutters=True, justify="center", align="center"),
                 html.Br()
             ]),
         footer()
         ], style={"padding":"0px"})
+
+
+##  ----------  CALLBACKS   ------------
+
+collapse_headbar_callback(prefix)
 
 # if __name__=="__main__":
 #     app.run_server(debug=False)

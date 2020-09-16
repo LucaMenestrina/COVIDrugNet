@@ -63,18 +63,7 @@ layout=dbc.Col([
 ##  ----------  CALLBACKS   ------------
 
 build_callbacks(prefix,G,nodes,*common_data_generator(prefix,G),file_prefix)
-# displayHoverNodeData_callback(prefix,G)
-# selectedTable_callback(prefix)
-# propertiesTable_callback(prefix,graph_properties_df)
-# highlighter_callback(prefix,G,nodes)
-# toggle_download_graph_callback(prefix)
-# toggle_help_callback(prefix)
-# toggle_legend_callback(prefix)
-# get_img_callback(prefix)
-# download_graph_callback(prefix,file_prefix)
-# get_range_clusters_callback(prefix,G)
-# custom_clustering_section_callback(prefix,G)
-# toggle_view_clusters_callback(prefix)
+
 
 # if __name__=="__main__":
 #     app.run_server(debug=False)

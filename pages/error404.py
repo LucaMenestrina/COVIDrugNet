@@ -26,7 +26,7 @@ from callbacks import *
 # app=dash.Dash(__name__, external_stylesheets=[dbc.themes.FLATLY])
 # app.title="COVID-19 Drugs Networker"
 
-prefix="about"
+prefix="error404"
 
 # layout=dbc.Col([
 #             headbar(prefix),
@@ -75,6 +75,11 @@ layout=dbc.Col([
             ], style={"height":"100vh"}),
             footer()
         ], style={"padding":"0px"})
+
+
+##  ----------  CALLBACKS   ------------
+
+collapse_headbar_callback(prefix)
 
 # if __name__=="__main__":
 #     app.run_server(debug=False)

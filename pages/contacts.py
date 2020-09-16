@@ -36,7 +36,7 @@ layout=dbc.Col([
                     html.H3("Contacts"),
                     html.Br(),
                     dbc.Row([
-                        dbc.Col([html.Img(src="https://icon-library.com/images/user-icon-image/user-icon-image-13.jpg", style={"width":"100%"})], width=1, align="center"),
+                        dbc.Col([html.Img(src="https://icon-library.com/images/user-icon-image/user-icon-image-13.jpg", style={"width":"100%"})], xs=3, md=2, xl=1, align="center"),
                         dbc.Col([
                             html.H5(html.Strong("Maurizio Recanatini")),
                             html.P("Principal Investigator"),
@@ -49,7 +49,7 @@ layout=dbc.Col([
                     html.Br(),
                     html.Br(),
                     dbc.Row([
-                        dbc.Col([html.Img(src="https://f0.pngfuel.com/png/363/793/person-with-brown-hair-illustration-png-clip-art.png", style={"width":"100%"})], width=1, align="center"),
+                        dbc.Col([html.Img(src="https://f0.pngfuel.com/png/363/793/person-with-brown-hair-illustration-png-clip-art.png", style={"width":"100%"})], xs=3, md=2, xl=1, align="center"),
                         dbc.Col([
                             html.H5(html.Strong("Chiara Cabrelle")),
                             html.P("PhD Student in Biotechnological, Biocomputational, Pharmaceutical and Pharmacological Science"),
@@ -62,7 +62,7 @@ layout=dbc.Col([
                     html.Br(),
                     html.Br(),
                     dbc.Row([
-                        dbc.Col([html.Img(src="https://icon-library.com/images/user-icon-image/user-icon-image-13.jpg", style={"width":"100%"})], width=1, align="center"),
+                        dbc.Col([html.Img(src="https://icon-library.com/images/user-icon-image/user-icon-image-13.jpg", style={"width":"100%"})], xs=3, md=2, xl=1, align="center"),
                         dbc.Col([
                             html.H5(html.Strong("Luca Menestrina")),
                             html.P("PhD Student in Data Science and Computation"),
@@ -81,6 +81,11 @@ layout=dbc.Col([
             ], style={"height":"100vh"}),
             footer()
         ], style={"padding":"0px"})
+
+
+##  ----------  CALLBACKS   ------------
+
+collapse_headbar_callback(prefix)
 
 # if __name__=="__main__":
 #     app.run_server(debug=False)

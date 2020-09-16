@@ -39,7 +39,7 @@ stylesheet_base=[
     }
 ]
 
-def collabse_headbar_callback(prefix):
+def collapse_headbar_callback(prefix):
     @app.callback(
         Output(prefix+"_headbar_collapse", "is_open"),
         [Input(prefix+"_headbar_toggler", "n_clicks")],
@@ -744,7 +744,7 @@ def toggle_view_clusters_callback(prefix):
     return toggle_view_clusters
 
 def build_callbacks(prefix,G,nodes,graph_properties_df,girvan_newman,maj,girvan_newman_maj,file_prefix):
-    collabse_headbar_callback(prefix)
+    collapse_headbar_callback(prefix)
     displayHoverNodeData_callback(prefix,G)
     highlighter_callback(prefix,G,nodes, girvan_newman,maj,girvan_newman_maj)
     custom_clustering_section_callback(prefix,G,girvan_newman,maj,girvan_newman_maj)
