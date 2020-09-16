@@ -183,7 +183,7 @@ def selectedTable_callback(prefix):
                         table_body.append(html.Tr(row))
                     table_body=[html.Tbody(table_body)]
                     targets_table=dbc.Table(table_header+table_body, className="table table-hover", bordered=True)
-                    targets_href="data:text/csv;charset=utf-8,"+quote(pd.DataFrame([{key:(value if not isinstance(value,list) else ", ".join(value)) for key,value in d.items()} for d in targets_data], columns=attributes).to_csv(sep="\t", index=False, encoding="utf-8"))
+                    targets_href="data:text/csv;charset=utf-8,"+quote(pd.DataFrame([{key:(", ".join(value) if isinstance(value,list) else value) for key,value in d.items() if key in attributes} for d in targets_data], columns=attributes).to_csv(sep="\t", index=False, encoding="utf-8"))
                     results+=[
                         html.Br(),
                         dbc.Row([
