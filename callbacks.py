@@ -89,15 +89,15 @@ def displayHoverNodeData_callback(prefix,G):
                 if data["ID"] != "Not Available":
                     img=html.A(html.Img(src=data["structure"], height="auto", width="100%", alt="Structure Image not Available"), href="https://www.drugbank.ca/structures/small_molecule_drugs/"+data["ID"] ,target="_blank")
             else:
-                attributes=["ID","Gene","PDBID","Organism","Cellular Location","String Interaction Partners","Drugs"]#,"Diseases"
+                attributes=["ID","Gene","PDBID","Organism","Cellular Location","String Interaction Partners","Drugs", "Diseases"]
                 link_drugbank=data["drugbank_url"]
                 if data["PDBID"] != "Not Available":
                     img=[html.A(html.Img(src=data["structure"], height="auto", width="100%", alt="Structure Image not Available"), href="https://www.rcsb.org/3d-view/"+data["PDBID"], target="_blank"), html.A(html.Small("Structure Reference", style={"position":"absolute","bottom":"1em","right":"1em", "color":"grey"}), href="http://doi.org/10.2210/pdb%s/pdb"%data["PDBID"], target="_blank")]
         attributes_list=[]
         for attribute in attributes:
             if data[attribute] != "" and data[attribute] != []:
-                if attribute in ["ATC Code1","ATC Code5","Targets","Enzymes","Carriers","Transporters","Drug Interactions","String Interaction Partners","Drugs"]:
-                    attributes_list.append(html.Li([html.Strong({"ATC Code1":"ATC Code Level 1","ATC Code5":"ATC Identifier"}.get(attribute,attribute)+": "),", ".join(data[attribute])], className="list-group-item"))
+                if attribute in ["ATC Code1","ATC Code5","Targets","Enzymes","Carriers","Transporters","Drug Interactions","String Interaction Partners","Drugs", "Diseases"]:
+                    attributes_list.append(dbc.Container(html.Li([html.Strong({"ATC Code1":"ATC Code Level 1","ATC Code5":"ATC Identifier"}.get(attribute,attribute)+": "),", ".join(data[attribute])], className="list-group-item"), style={"max-height":"20vh","overflow-y":"auto", "padding":"0"}, fluid=True))
                 elif attribute == "ID":
                     attributes_list.append(html.Li([html.Strong(attribute+": "),html.A(data[attribute], href=link_drugbank, target="_blank")], className="list-group-item"))
                 elif attribute == "PDBID" and data[attribute] != "Not Available":
@@ -145,12 +145,12 @@ def selectedTable_callback(prefix):
                         table_body.append(html.Tr(row))
                     table_body=[html.Tbody(table_body)]
                     drugs_table=dbc.Table(table_header+table_body, className="table table-hover", bordered=True)
-                    drugs_href="data:text/csv;charset=utf-8,"+quote(pd.DataFrame([{key:(value if not isinstance(value,list) else ", ".join(value)) for key,value in d.items()} for d in drugs_data], columns=attributes).to_csv(sep="\t", index=False, encoding="utf-8"))
+                    drugs_href="data:text/csv;charset=utf-8,"+quote(pd.DataFrame([{key:(", ".join(value) if isinstance(value,list) else value) for key,value in d.items() if key in attributes} for d in drugs_data], columns=attributes).to_csv(sep="\t", index=False, encoding="utf-8"))
                     results+=[
                         html.Br(),
                         dbc.Row([
                             html.H3("Selected Drugs"),
-                            dbc.Button("Download", href=drugs_href, target="_blank")
+                            dbc.Button("Download", href=drugs_href, target="_blank", className="btn btn-outline-primary")
                         ], justify="around", align="center"),
                         html.Br(),
                         drugs_table]
@@ -188,7 +188,7 @@ def selectedTable_callback(prefix):
                         html.Br(),
                         dbc.Row([
                             html.H3("Selected Targets"),
-                            dbc.Button("Download", href=targets_href, target="_blank")
+                            dbc.Button("Download", href=targets_href, target="_blank", className="btn btn-outline-primary")
                         ], justify="around", align="center"),
                         html.Br(),
                         targets_table]

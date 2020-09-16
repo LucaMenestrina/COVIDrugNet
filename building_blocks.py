@@ -81,7 +81,7 @@ def sidebar(prefix):
                     ], align="center", style={"padding":"0px"}),
                 ],expand="xl", color="light", className="navbar navbar-light bg-light position-sticky nav", style={"position":"sticky", "top":"10vh"}),
     else:
-        return []#dbc.NavbarSimple(color="light", className="navbar navbar-light bg-light position-sticky", expand=True)
+        return []
 
 def nodes_info(prefix):
     return dbc.Container([
@@ -89,7 +89,6 @@ def nodes_info(prefix):
                     html.H4("Node Info",id=prefix+"_name_card", className="card-header"),
                     html.Div(html.H5(id=prefix+"_title_card",className="card-title"),className="card-body"),
                     dbc.Container(id=prefix+"_img_card", fluid=True, style={"padding":"0px", "position":"relative"}),
-                    # html.A(html.Img(id=prefix+"_img_card", height="auto", width="100%"), target="_blank", id=prefix+"_structure3d_href"),#Structure Image Not Available
                     html.Ul(id=prefix+"_attributes-list-card",className="list-group list-group-flush")
                 ],className="card border-primary mb-3", id=prefix+"_card"),
                 dbc.Toast(
