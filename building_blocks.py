@@ -345,27 +345,33 @@ def common_data_generator(prefix,graph):
                 os.remove(name+".bkp")
     return graph_properties_df,girvan_newman,maj,girvan_newman_maj
 
-def get_frequency(list):
-  d={}
-  for el in list:
-    try:
-      d[el]+=1
-    except:
-      d[el]=1
-  return d
+def get_frequency(l):
+    l=list(l)
+    d={}
+    for el in set(l):
+        d[el]=l.count(el)/len(l)
+    # try:
+    #   d[el]+=1
+    # except:
+    #   d[el]=1
+    return d
 
-def powerplot(graph):
+def degree_distribution(graph, title):
     K=dict(nx.get_node_attributes(graph,"degree"))
-    power_data=pd.DataFrame({"Node degree, k":list(get_frequency(K.values()).values()),"Number of Nodes with degree k, n(k)":list(get_frequency(K.values()).keys())})
-    plot=px.scatter(data_frame=power_data,x="Node degree, k",y="Number of Nodes with degree k, n(k)", title="Node Degree Distribution", template="ggplot2")
+    n=len(graph.nodes())
+    p=len(graph.edges())/(n*(n-1)/2)
+    ER=nx.fast_gnp_random_graph(n,p)
+    ERK=dict(nx.degree(ER))
+    power_data=pd.DataFrame({"Node degree, k":list(get_frequency(K.values()).keys())+list(get_frequency(ERK.values()).keys()),"Frequency of Nodes with degree k, n(k)":list(get_frequency(K.values()).values())+list(get_frequency(ERK.values()).values()), "Graph":[title]*len(set(K.values()))+["Erdősh Rényi Equivalent Graph"]*len(set(ERK.values()))})
+    plot=px.scatter(data_frame=power_data,x="Node degree, k",y="Frequency of Nodes with degree k, n(k)", title="Node Degree Distribution", log_x=True, log_y=True, template="ggplot2", color="Graph")
     plot.update_layout({"paper_bgcolor": "rgba(0, 0, 0, 0)", "modebar":{"bgcolor":"rgba(0, 0, 0, 0)","color":"silver","activecolor":"grey"}}) # for a transparent background but keeping modebar acceptable colors
     return plot
 
-def plots(prefix, graph):
+def plots(prefix, graph,title):
     return dbc.Container([
                 html.H3("Plots"),
                 dbc.Row([
-                    dbc.Col([dbc.Spinner(dcc.Graph(figure=powerplot(graph), id=prefix+"_powerplot", responsive=True))], style={"padding":"0px"}, xs=12, lg=5),
+                    dbc.Col([dbc.Spinner(dcc.Graph(figure=degree_distribution(graph,title), id=prefix+"_degree_distribution", responsive=True))], style={"padding":"0px"}, xs=12, lg=5),
                     dbc.Col([dbc.Spinner(dbc.Container(dcc.Graph(id=prefix+"_piechart", responsive=True)))], style={"padding":"0px"}, xs=12, lg=7)
                 ], justify="around", align="center", no_gutters=True)
             ], id=prefix+"_plots", fluid=True, style={"padding":"3%"})

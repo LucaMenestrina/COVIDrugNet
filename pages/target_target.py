@@ -52,7 +52,7 @@ layout=dbc.Col([
                     html.Br(),
                     custom_clustering(prefix),
                     html.Br(),
-                    plots(prefix,graph=G),
+                    plots(prefix,graph=G, title=graph_title),
                     ]),
                     footer()
                 ], no_gutters=True)
