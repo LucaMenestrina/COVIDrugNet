@@ -229,7 +229,7 @@ def propertiesTable_callback(prefix,graph_properties_df,nodes):
         df=df.sort_values(**sorting)
         href="data:text/csv;charset=utf-8,"+quote(df.to_csv(sep="\t", index=False, encoding="utf-8"))
         if rows == "all":
-            return dbc.Table.from_dataframe(df, bordered=True, className="table table-hover", id=prefix+"_graph_properties_table"), href, options
+            return dbc.Table.from_dataframe(df.rename(columns={"name":"Name", "degree":"Degree", "Closeness_Centrality":"Closeness Centrality", "Betweenness_Centrality":"Betweenness Centrality", "Harmonic_Centrality":"Harmonic Centrality", "Eigenvector_Centrality":"Eigenvector Centrality", "Vote_Rank_Score":"Vote Rank Score"}), bordered=True, className="table table-hover", id=prefix+"_graph_properties_table"), href, options
         else:
             df=df.head(rows)
             attributes=df.columns
@@ -607,28 +607,6 @@ def download_graph_file_callback(prefix,file_prefix):
         else:
             return None,None
     return download_graph_file
-
-# #### da controllare perchè non funziona
-# def download_graph_callback(prefix,file_prefix):
-#     @app.callback(
-#         Output(prefix+"_download_graph_div","children"),
-#         [Input(prefix+"_save_graph","value")]
-#     )
-#     def download_graph(value):
-#         if value:
-#             print("ok")
-#             if value in ["svg", "png", "jpg"]:
-#                 print("img")
-#                 div=dbc.Button("Download", id=prefix+"_download_graph_button", className="ml-auto")
-#                 get_img_callback(prefix)
-#             else:
-#                 print("file")
-#                 div=html.A(dbc.Button("Download", id=prefix+"_download_graph_button_placeholder", className="ml-auto"), download=file_prefix+"."+value, href="https://drive.google.com/uc?export=view&id=1RMYDzIHpfsqYWMTd4qA2zWEWT0eYCAfd", id=prefix+"_download_graph_button_href")
-#                 # download_graph_file_callback(prefix,file_prefix)
-#         else:
-#             div=dbc.Button("Download", id=prefix+"_download_graph_button", className="ml-auto", active=False)
-#         return div
-#     return download_graph
 
 def get_range_clusters_callback(prefix,G,maj,girvan_newman,girvan_newman_maj):
     @app.callback(

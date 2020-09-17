@@ -32,18 +32,21 @@ layout=dbc.Col([
             headbar(prefix),
             dbc.Col([
                 html.Br(),
-                html.Br(),
-                html.Center([
-                    html.Img(src="https://drive.google.com/uc?export=view&id=1Wz-BWDC-hbsm1GMoGlHcE2UpvW6xnEwy", style={"width":"100%"})
-                ]),
-                html.Br(),
-                html.Br(),
-                dbc.Row([
-                    dbc.Col([
-                        html.Center(html.H5([html.Font("If there still is something unclear feel free to "),html.A("reach us out", href="/contacts")], style={"margin":"0px"}))
-                    ], className="card border-primary", width=5, align="center", style={"padding":"2%"})
-                ], no_gutters=True, justify="center", align="center"),
-                html.Br()
+                dbc.Col([
+                    html.H3("Help"),
+                    html.Br(),
+                    html.Center([
+                        html.Img(src=app.get_asset_url("imgs/help.svg"), style={"width":"100%"})
+                    ]),
+                    html.Br(),
+                    html.Br(),
+                    dbc.Row([
+                        dbc.Col([
+                            html.Center(html.H5([html.Font("If there still is something unclear feel free to "),html.A("reach us out", href="/contacts")], style={"margin":"0px"}))
+                        ], className="card border-primary", width=5, align="center", style={"padding":"2%"})
+                    ], no_gutters=True, justify="center", align="center"),
+                    html.Br()
+                    ], style={"padding":"2%", "width":"100%"}),
             ]),
         footer()
         ], style={"padding":"0px"})

@@ -22,13 +22,15 @@ import matplotlib.pyplot as plt
 from matplotlib.colors import rgb2hex
 from sklearn.cluster import KMeans
 
+from app import app
+
 #html.I(className="fa fa-project-diagram"),
 def headbar(prefix):
     return dbc.Navbar(
                 dbc.Container([
                     html.A(
                         dbc.Row([
-                            html.Img(src="https://drive.google.com/uc?export=view&id=1itcOUu62U0YHlNMQITA-17rR-iYIqXz3", style={"height":"4vh", "margin-right":"1rem"}),
+                            html.Img(src=app.get_asset_url("imgs/logo_white.svg"), style={"height":"4vh", "margin-right":"1rem"}),#"https://drive.google.com/uc?export=view&id=1itcOUu62U0YHlNMQITA-17rR-iYIqXz3"
                             dbc.NavbarBrand("COVID-19 Drugs Networker")
                         ], no_gutters=True, justify="start", align="center"),
                     href="/covid19drugsnetworker", className="card-link"),

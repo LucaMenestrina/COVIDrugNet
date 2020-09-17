@@ -27,7 +27,7 @@ font_awesome = {
         "crossorigin": "anonymous"
     }
 
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.LUMEN, font_awesome], suppress_callback_exceptions=True, meta_tags=meta)
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.LUMEN, font_awesome], suppress_callback_exceptions=True, meta_tags=meta, assets_folder="data")
 
 # server = app.server
 app.title="COVID-19 Drugs Networker"

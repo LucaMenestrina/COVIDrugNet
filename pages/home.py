@@ -32,7 +32,7 @@ layout=dbc.Col([
             headbar(prefix),
                 dbc.Col([
                     # html.Center(html.H1(html.Strong("COVID-19 Drugs Networker"))),
-                    html.Center(html.Img(src="https://drive.google.com/uc?export=view&id=1yDefAeLULelX6loC3g68Tk_CNyFGi4kg", alt="COVID-19 Drugs Networker", style={"width":"75%"})),
+                    html.Center(html.Img(src=app.get_asset_url("imgs/logo_wide.svg"), alt="COVID-19 Drugs Networker", style={"width":"75%"})),#"https://drive.google.com/uc?export=view&id=1yDefAeLULelX6loC3g68Tk_CNyFGi4kg"
                     # html.Center(html.H4("Visualize and Analyze Networks about Drugs and Targets Related to COVID-19")),
                     # html.P([
                     #     "Welcome to ... bla bla bla...",
@@ -46,7 +46,7 @@ layout=dbc.Col([
                         dbc.Col([
                             html.A([
                                 html.Center([
-                                    html.Img(src="https://drive.google.com/uc?export=view&id=1Dsog5C3jKZXHssGqVCd9BOiP15KULK8W", style={"width":"95%"}, alt="Drug Target Graph"),
+                                    html.Img(src=app.get_asset_url("imgs/drug_target.jpg"), style={"width":"95%"}, alt="Drug Target Graph"),#"https://drive.google.com/uc?export=view&id=1Dsog5C3jKZXHssGqVCd9BOiP15KULK8W"
                                     html.H5(html.Strong("Drug Target"), className="card-header")
                                 ], style={"box-shadow":"0rem 0rem 0.25rem darkgrey"})
                             ], href="/drug_target", className="card"), #border-primary mb-3
@@ -54,7 +54,7 @@ layout=dbc.Col([
                         dbc.Col([
                             html.A([
                                 html.Center([
-                                    html.Img(src="https://drive.google.com/uc?export=view&id=1RMYDzIHpfsqYWMTd4qA2zWEWT0eYCAfd", style={"width":"95%"}, alt="Drug Drug Graph"),
+                                    html.Img(src=app.get_asset_url("imgs/drug_drug.jpg"), style={"width":"95%"}, alt="Drug Drug Graph"),#"https://drive.google.com/uc?export=view&id=1RMYDzIHpfsqYWMTd4qA2zWEWT0eYCAfd"
                                     html.H5(html.Strong("Drug Drug"), className="card-header")
                                 ], style={"box-shadow":"0rem 0rem 0.25rem darkgrey"})
                             ], href="/drug_drug", className="card"), #border-primary mb-3
@@ -62,7 +62,7 @@ layout=dbc.Col([
                         dbc.Col([
                             html.A([
                                 html.Center([
-                                    html.Img(src="https://drive.google.com/uc?export=view&id=1iDDwsBgJanpOjUAYEE6yuwMmS9D43ap4", style={"width":"95%"}, alt="Target Target Graph"),
+                                    html.Img(src=app.get_asset_url("imgs/target_target.jpg"), style={"width":"95%"}, alt="Target Target Graph"),#"https://drive.google.com/uc?export=view&id=1iDDwsBgJanpOjUAYEE6yuwMmS9D43ap4"
                                     html.H5(html.Strong("Target Target"), className="card-header")
                                 ], style={"box-shadow":"0rem 0rem 0.25rem darkgrey"})
                             ], href="/target_target", className="card"),#border-primary mb-3
