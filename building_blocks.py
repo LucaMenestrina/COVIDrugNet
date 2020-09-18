@@ -143,7 +143,7 @@ def save_graph(prefix):
                     html.P("Format"),
                     dcc.Dropdown(id=prefix+"_save_graph", options=[
                         {"label":"Download as Adjacency List", "value":"adjlist"},
-                        {"label":"Download as Pickle", "value":"pickle"},
+                        {"label":"Download as Pickle", "value":"gpickle"},
                         {"label":"Download as Cytoscape JSON", "value":"cyjs"},
                         {"label":"Download as GRAPHML", "value":"graphml"},
                         {"label":"Download as GEXF", "value":"gexf"},

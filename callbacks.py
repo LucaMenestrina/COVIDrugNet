@@ -602,7 +602,7 @@ def download_graph_file_callback(prefix,file_prefix):
             if value:
                 download=file_prefix+"."+value
                 # href="https://raw.githubusercontent.com/LucaMenestrina/programming_luca_menestrina/master/execises/align_score.py"
-                href="https://raw.githubusercontent.com/LucaMenestrina/SARS-CoV-2_Networker/master/data/graphs/"+download
+                href=app.get_asset_url("graphs/"+download)#"https://raw.githubusercontent.com/LucaMenestrina/SARS-CoV-2_Networker/master/data/graphs/"+download
                 return download, href
             else:
                 return None,None
