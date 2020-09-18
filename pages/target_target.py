@@ -30,7 +30,7 @@ graph_title="Target Target"
 file_prefix="target_target"
 
 G=nx.read_gpickle("data/graphs/target_target.gpickle")
-nx.set_node_attributes(G,nx.get_node_attributes(G,"name"),"id")
+nx.set_node_attributes(G,nx.get_node_attributes(G,"Name"),"id")
 
 nodes=[{"data":{key:value for key,value in attributes.items()}} for node,attributes in dict(G.nodes(data=True)).items()]
 edges=[{"data":{"source":source,"target":target}} for source,target in G.edges]

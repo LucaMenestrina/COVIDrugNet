@@ -84,7 +84,7 @@ def displayHoverNodeData_callback(prefix,G):
                 if not warning:
                     warning = not warning
             if data["kind"]=="Drug":
-                attributes=["ID","SMILES","ATC Code1","ATC Code5","Targets","Enzymes","Carriers","Transporters","Drug Interactions"]
+                attributes=["ID","SMILES","ATC Code Level 1","ATC Identifier","Targets","Enzymes","Carriers","Transporters","Drug Interactions"]
                 link_drugbank="https://www.drugbank.ca/drugs/"+data["ID"]
                 if data["ID"] != "Not Available":
                     img=html.A(html.Img(src=data["structure"], height="auto", width="100%", alt="Structure Image not Available"), href="https://www.drugbank.ca/structures/small_molecule_drugs/"+data["ID"] ,target="_blank")
@@ -96,8 +96,8 @@ def displayHoverNodeData_callback(prefix,G):
         attributes_list=[]
         for attribute in attributes:
             if data[attribute] != "" and data[attribute] != []:
-                if attribute in ["ATC Code1","ATC Code5","Targets","Enzymes","Carriers","Transporters","Drug Interactions","String Interaction Partners","Drugs", "Diseases"]:
-                    attributes_list.append(dbc.Container(html.Li([html.Strong({"ATC Code1":"ATC Code Level 1","ATC Code5":"ATC Identifier"}.get(attribute,attribute)+": "),", ".join(data[attribute])], className="list-group-item"), style={"max-height":"20vh","overflow-y":"auto", "padding":"0"}, fluid=True))
+                if attribute in ["ATC Code Level 1","ATC Identifier","Targets","Enzymes","Carriers","Transporters","Drug Interactions","String Interaction Partners","Drugs", "Diseases"]:
+                    attributes_list.append(dbc.Container(html.Li([html.Strong(attribute+": "),", ".join(data[attribute])], className="list-group-item"), style={"max-height":"20vh","overflow-y":"auto", "padding":"0"}, fluid=True))
                 elif attribute == "ID":
                     attributes_list.append(html.Li([html.Strong(attribute+": "),html.A(data[attribute], href=link_drugbank, target="_blank")], className="list-group-item"))
                 elif attribute == "PDBID" and data[attribute] != "Not Available":
@@ -125,15 +125,15 @@ def selectedTable_callback(prefix):
                 results=[html.H3("Selected Data")]
                 drugs_data=[d for d in data if d["kind"]=="Drug"]
                 if len(drugs_data)>0:
-                    attributes=["name","ID","ATC Code1","ATC Code5","SMILES","Targets","Enzymes","Carriers","Transporters","Drug Interactions"]
+                    attributes=["Name","ID","ATC Code Level 1","ATC Identifier","SMILES","Targets","Enzymes","Carriers","Transporters","Drug Interactions"]
                     table_header=[html.Thead(html.Tr([html.Th(attribute, style={"white-space": "nowrap"}) for attribute in ["Name","ID","ATC Level 1", "ATC Identifier", "SMILES","Targets","Enzymes","Carriers","Transporters","Drug Interactions"]]))]
                     # table_body=[html.Tbody([html.Tr([html.Td(d[attribute]) if attribute in ["name","ID"] else html.Td(d[attribute], style={"width":"25vw","word-break": "break-word"}) if attribute in ["SMILES"] else html.Td(", ".join(d[attribute])) for attribute in attributes]) for d in drugs_data])]
                     table_body=[]
                     for drug in drugs_data:
                         row=[]
                         for attribute in attributes:
-                            if attribute == "name":
-                                row.append(html.Td(drug["name"]))
+                            if attribute == "Name":
+                                row.append(html.Td(drug["Name"]))
                             elif attribute == "ID":
                                 row.append(html.Td(html.A(drug["ID"],href="https://www.drugbank.ca/drugs/"+drug["ID"], target="_blank")))
                             elif attribute == "SMILES":
@@ -158,15 +158,15 @@ def selectedTable_callback(prefix):
                 if len(targets_data)>0:
                     if len(drugs_data)>0:
                         results+=[html.Br()]
-                    attributes=["name","ID","Gene","PDBID","Organism","Cellular Location","String Interaction Partners","Drugs","Diseases"]
+                    attributes=["Name","ID","Gene","PDBID","Organism","Cellular Location","String Interaction Partners","Drugs","Diseases"]
                     table_header=[html.Thead(html.Tr([html.Th(attribute, style={"white-space": "nowrap"}) for attribute in ["Name","ID","Gene","PDBID","Organism","Cellular Location","String Interaction Partners","Drugs","Diseases"]]))]
                     # table_body=[html.Tbody([html.Tr([html.Td(d[attribute]) if attribute not in ["String Interaction Partners","Drugs","Diseases"] else html.Td(", ".join(d[attribute])) for attribute in attributes]) for d in targets_data])]
                     table_body=[]
                     for target in targets_data:
                         row=[]
                         for attribute in attributes:
-                            if attribute == "name":
-                                row.append(html.Td(target["name"], style={"min-width":"8vw","max-width":"15vw"}))
+                            if attribute == "Name":
+                                row.append(html.Td(target["Name"], style={"min-width":"8vw","max-width":"15vw"}))
                             elif attribute == "ID":
                                 row.append(html.Td(html.A(target["ID"],href=target["drugbank_url"], target="_blank")))
                             elif attribute == "Gene":
@@ -218,25 +218,26 @@ def propertiesTable_callback(prefix,graph_properties_df,nodes):
     def propertiesTable(search,sorting,rows,only_selected,selected_data):
         df=graph_properties_df.copy()
         if only_selected and selected_data != None:
-            df=df.loc[[node["name"] for node in selected_data]]
-            options=[{"label":name,"value":name} for name in [node["name"] for node in selected_data]]
+            df=df.loc[[node["Name"] for node in selected_data]]
+            options=[{"label":name,"value":name} for name in [node["Name"] for node in selected_data]]
         else:
-            options=[{"label":data["name"],"value":data["name"]} for data in [node["data"] for node in nodes]]
+            options=[{"label":data["Name"],"value":data["Name"]} for data in [node["data"] for node in nodes]]
         if search:
             df=df.loc[search]
         sorting=sorting.split(",")
         sorting={"by":[sorting[0]],"ascending":bool(int(sorting[1]))}
         df=df.sort_values(**sorting)
         href="data:text/csv;charset=utf-8,"+quote(df.to_csv(sep="\t", index=False, encoding="utf-8"))
-        if rows == "all":
-            return dbc.Table.from_dataframe(df.rename(columns={"name":"Name", "degree":"Degree", "Closeness_Centrality":"Closeness Centrality", "Betweenness_Centrality":"Betweenness Centrality", "Harmonic_Centrality":"Harmonic Centrality", "Eigenvector_Centrality":"Eigenvector Centrality", "Vote_Rank_Score":"Vote Rank Score"}), bordered=True, className="table table-hover", id=prefix+"_graph_properties_table"), href, options
-        else:
+        # if rows == "all":
+            # return dbc.Table.from_dataframe(df, bordered=True, className="table table-hover", id=prefix+"_graph_properties_table"), href, options#.rename(columns={"name":"Name", "degree":"Degree", "Closeness_Centrality":"Closeness Centrality", "Betweenness_Centrality":"Betweenness Centrality", "Harmonic_Centrality":"Harmonic Centrality", "Eigenvector_Centrality":"Eigenvector Centrality", "Vote_Rank_Score":"Vote Rank Score"})
+        if rows != "all":
             df=df.head(rows)
-            attributes=df.columns
-            table_header=[html.Thead(html.Tr([html.Th(attribute) for attribute in ["Name", "Degree", "Closeness Centrality", "Betweenness Centrality", "Harmonic Centrality", "Eigenvector Centrality", "Vote Rank Score"]]))]
-            table_body=[html.Tbody([html.Tr([html.Td(d[attribute]) for attribute in attributes]) for d in df.to_dict("records")])]
-            table=dbc.Table(table_header+table_body, className="table table-hover", bordered=True, id=prefix+"_graph_properties_table")
-            return table,href,options
+            # # attributes=df.columns
+            # # table_header=[html.Thead(html.Tr([html.Th(attribute) for attribute in ["Name", "Degree", "Closeness Centrality", "Betweenness Centrality", "Harmonic Centrality", "Eigenvector Centrality", "Vote Rank Score"]]))]
+            # # table_body=[html.Tbody([html.Tr([html.Td(d[attribute]) for attribute in attributes]) for d in df.to_dict("records")])]
+            # # table=dbc.Table(table_header+table_body, className="table table-hover", bordered=True, id=prefix+"_graph_properties_table")
+            # return table,href,options
+        return dbc.Table.from_dataframe(df, bordered=True, className="table table-hover", id=prefix+"_graph_properties_table"), href, options
     return propertiesTable
 
 def highlighter_callback(prefix,G,nodes, girvan_newman,maj,girvan_newman_maj):
@@ -378,6 +379,7 @@ def highlighter_callback(prefix,G,nodes, girvan_newman,maj,girvan_newman_maj):
                 pie_data=pd.DataFrame({"Kind":["Drugs","Targets"],"Nodes":[len([node for node,kind in G.nodes("kind") if kind == "Drug"]),len([node for node,kind in G.nodes("kind") if kind == "Target"])], "Color":["#12EAEA","#FC5F67"]})
                 pie=px.pie(pie_data,values="Nodes",names="Kind", title="Drug-Target's Node Distribution",color_discrete_sequence=pie_data["Color"])
                 legend_body=dbc.Table(html.Tbody([html.Tr([html.Td("",style={"background-color":"#FC5F67"}),html.Td("Drugs")]),html.Tr([html.Td("",style={"background-color":"#12EAEA"}),html.Td("Targets")])]), borderless=True, size="sm")
+
             if coloring == "atc":
                 all_atc=["A","B","C","D","G","H","J","L","M","N","P","R","S","V"]
                 long_atc={"A":"A: Alimentary tract and metabolism","B":"B: Blood and blood forming organs","C":"C: Cardiovascular system","D":"D: Dermatologicals","G":"G: Genito-urinary system and sex hormones","H":"H: Systemic hormonal preparations, excluding sex hormones and insulins","J":"J: Antiinfectives for systemic use","L":"L: Antineoplastic and immunomodulating agents","M":"M: Musculo-skeletal system","N":"N: Nervous system","P":"P: Antiparasitic products, insecticides and repellents","R":"R: Respiratory system","S":"S: Sensory organs","V":"V: Various","Not Available": "Not Available"}
@@ -388,11 +390,11 @@ def highlighter_callback(prefix,G,nodes, girvan_newman,maj,girvan_newman_maj):
                 for node in nodes:
                     stylesheet={"selector":"[ID = '"+node["data"]["ID"]+"']"}
                     style={"pie-size":"100%", "border-color":"#303633","border-width":2}
-                    for atc in node["data"]["ATC Code1"]:
-                        style.update({"pie-"+atc2num[atc]+"-background-color":cmap[atc],"pie-"+atc2num[atc]+"-background-size":100/len(node["data"]["ATC Code1"])})
+                    for atc in node["data"]["ATC Code Level 1"]:
+                        style.update({"pie-"+atc2num[atc]+"-background-color":cmap[atc],"pie-"+atc2num[atc]+"-background-size":100/len(node["data"]["ATC Code Level 1"])})
                     stylesheet.update({"style":style})
                     stylesheets.append(stylesheet)
-                ATC_dict=dict(nx.get_node_attributes(G,"ATC Code1"))
+                ATC_dict=dict(nx.get_node_attributes(G,"ATC Code Level 1"))
                 ATC_count={}
                 tot_codes=0
                 for drug,atcs in ATC_dict.items():
@@ -608,6 +610,28 @@ def download_graph_file_callback(prefix,file_prefix):
             return None,None
     return download_graph_file
 
+def get_selected_clustering_callback(prefix):
+    @app.callback(
+        [
+            Output(prefix+"_custom_clustering_component","value"),
+            Output(prefix+"_custom_clustering_method","value")
+        ],
+        [Input(prefix+"_coloring_dropdown", "value")]
+    )
+    def get_selected_clustering(value):
+        splitted=value.split("_")
+        if splitted[-1] == "maj":
+            component = "maj"
+            method=value[:-4]
+        elif "_" in value:
+            component = "entire"
+            method = value
+        else:
+            component = "entire"
+            method = "spectral"
+        return component, method
+    return get_selected_clustering
+
 def get_range_clusters_callback(prefix,G,maj,girvan_newman,girvan_newman_maj):
     @app.callback(
         [
@@ -634,16 +658,16 @@ def get_range_clusters_callback(prefix,G,maj,girvan_newman,girvan_newman_maj):
             n=[n for n,dif in enumerate(np.diff(evals)) if dif > 1.5*np.average([d for d in np.diff([v for v in evals if v<1]) if d>0.00001])][0]+1
             options=[{"label":str(n),"value":n} for n in range(2,len(evals)-1)]
             disabled=False
-        if method == "greedy_modularity":
-            n=len(nx.algorithms.community.greedy_modularity_communities(graph))
-            options=[{"label":str(n),"value":n}]
-            disabled=True
         if method == "girvan_newman":
             L=nx.normalized_laplacian_matrix(graph).toarray()
             evals,evects=np.linalg.eigh(L)
             n=[n for n,dif in enumerate(np.diff(evals)) if dif > 1.5*np.average([d for d in np.diff([v for v in evals if v<1]) if d>0.00001])][0]+1
             options=[{"label":str(n),"value":n} for n in girvan_newman_keys]
             disabled=False
+        if method == "greedy_modularity":
+            n=len(nx.algorithms.community.greedy_modularity_communities(graph))
+            options=[{"label":str(n),"value":n}]
+            disabled=True
         return options,n,disabled
     return get_range_clusters
 
@@ -680,9 +704,9 @@ def custom_clustering_section_callback(prefix,G,girvan_newman,maj,girvan_newman_
             clusters_data={}
             for n,cl in enumerate(clusters):
                 try:
-                    clusters_data[cl].append(list(dict(graph.nodes("name")).values())[n])
+                    clusters_data[cl].append(list(dict(graph.nodes("Name")).values())[n])
                 except:
-                    clusters_data[cl]=[list(dict(graph.nodes("name")).values())[n]]
+                    clusters_data[cl]=[list(dict(graph.nodes("Name")).values())[n]]
             clusters_data={n:", ".join(clusters_data[n]) for n in range(len(clusters_data))}
             table_header=[html.Thead(html.Tr([html.Th("Cluster"),html.Th("Nodes")]))]
             table_body=[]
@@ -725,6 +749,7 @@ def build_callbacks(prefix,G,nodes,graph_properties_df,girvan_newman,maj,girvan_
     collapse_headbar_callback(prefix)
     displayHoverNodeData_callback(prefix,G)
     highlighter_callback(prefix,G,nodes, girvan_newman,maj,girvan_newman_maj)
+    get_selected_clustering_callback(prefix)
     custom_clustering_section_callback(prefix,G,girvan_newman,maj,girvan_newman_maj)
     get_img_callback(prefix)
     download_graph_file_callback(prefix,file_prefix)

@@ -78,7 +78,7 @@ class drug():
         self.atc2=atc_codes[2]
         self.atc3=atc_codes[3]
         self.atc4=atc_codes[4]
-        self.atc5=atc_codes[5]
+        self.atc_identifier=atc_codes[5]
         self.__proteins={}
         added_proteins={}
         for kind in ["targets","enzymes","carriers","transporters"]:
@@ -136,7 +136,7 @@ class drug():
         return "%s (%s)"%(self.name, self.id)
     #aggiungere tutte le funzioni per avere in automatico alcune proprietà delle liste
     def summary(self):
-        return pd.DataFrame({"ID":self.id,"SMILES":self.smiles,"ATC Code1":[self.atc1],"ATC Code5":[self.atc5],"Targets":[[t.name for t in self.targets.values()]],"Enzymes":[[e.name for e in self.enzymes.values()]],"Carriers":[[c.name for c in self.carriers.values()]],"Transporters":[[t.name for t in self.transporters.values()]],"Drug Interactions":[[d.name for d in self.drug_interactions]]},index=[self.name])
+        return pd.DataFrame({"ID":self.id,"SMILES":self.smiles,"ATC Code Level 1":[self.atc1],"ATC Identifier":[self.atc_identifier],"Targets":[[t.name for t in self.targets.values()]],"Enzymes":[[e.name for e in self.enzymes.values()]],"Carriers":[[c.name for c in self.carriers.values()]],"Transporters":[[t.name for t in self.transporters.values()]],"Drug Interactions":[[d.name for d in self.drug_interactions]]},index=[self.name])
 
 
 class protein():
@@ -299,13 +299,13 @@ class collector():
                 VRS[node]=len(VR)-VR.index(node)
             except:
                 VRS[node]=0
-        nx.set_node_attributes(graph,K,"degree")
-        nx.set_node_attributes(graph,CC,"Closeness_Centrality")
-        nx.set_node_attributes(graph,BC,"Betweenness_Centrality")
-        nx.set_node_attributes(graph,EBC,"Edge_Betweenness_Centrality")
-        nx.set_node_attributes(graph,HC,"Harmonic_Centrality")
-        nx.set_node_attributes(graph,EC,"Eigenvector_Centrality")
-        nx.set_node_attributes(graph,VRS,"Vote_Rank_Score")
+        nx.set_node_attributes(graph,K,"Degree")
+        nx.set_node_attributes(graph,CC,"Closeness Centrality")
+        nx.set_node_attributes(graph,BC,"Betweenness Centrality")
+        nx.set_node_attributes(graph,EBC,"Edge Betweenness Centrality")
+        nx.set_node_attributes(graph,HC,"Harmonic Centrality")
+        nx.set_node_attributes(graph,EC,"Eigenvector Centrality")
+        nx.set_node_attributes(graph,VRS,"Vote Rank Score")
         return graph
     def save_graph(self,is_needed,df,graph,name):
         if is_needed:
@@ -339,7 +339,7 @@ class collector():
 
         G=nx.from_pandas_edgelist(df,source="Source",target="Target",edge_attr="Weight")
         nx.set_node_attributes(G,drug_attributes)
-        nx.set_node_attributes(G,{node:node for node in G.nodes},"name")
+        nx.set_node_attributes(G,{node:node for node in G.nodes},"Name")
         nx.set_node_attributes(G,structures,"structure")
         nx.set_node_attributes(G,{node:"#FC5F67" for node in G.nodes()},"fill_color")
         nx.set_node_attributes(G,{node:"#CC6540" for node in G.nodes()},"line_color") #idem
@@ -354,7 +354,7 @@ class collector():
         protein_attributes={target.name:(target.summary().T.to_dict()[target.name]) for target in self.__proteins.values() if target.name in set(df["Target"])}
         structures={mol.name:"https://www.drugbank.ca/structures/%s/image.svg"%mol.id for mol in self.drugs} # direttamente da drugbank
         for prot in self.__proteins.values():
-            if prot.name in set(df["Target"]:
+            if prot.name in set(df["Target"]):
                 url="https://cdn.rcsb.org/images/structures/%s/%s/%s_%s-1.jpeg"%(prot.pdbid[1:3].lower(),prot.pdbid.lower(),prot.pdbid.lower(),"assembly")
                 if requests.head(url).status_code == 200:
                     structures.update({prot.name:url})
@@ -364,7 +364,7 @@ class collector():
         G=nx.from_pandas_edgelist(df,source="Drug",target="Target")
         nx.set_node_attributes(G,drug_attributes)
         nx.set_node_attributes(G,protein_attributes)
-        nx.set_node_attributes(G,{node:node for node in G.nodes},"name")
+        nx.set_node_attributes(G,{node:node for node in G.nodes},"Name")
         nx.set_node_attributes(G,structures,"structure")
         nx.set_node_attributes(G,{node:("Drug" if node in set(df["Drug"]) else "Target") for node in G.nodes()},"kind")
         self.graph_properties(G)

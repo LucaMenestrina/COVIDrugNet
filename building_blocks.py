@@ -190,7 +190,7 @@ def coloring_dropdown(prefix):
 
 def highlighting(prefix, nodes):
     return html.Div([
-            dcc.Dropdown(id=prefix+"_highlighter_dropdown",options=[{"label":data["name"],"value":data["ID"]} for data in [node["data"] for node in nodes]], placeholder="Highlight a node", multi=True, className="DropdownMenu"),
+            dcc.Dropdown(id=prefix+"_highlighter_dropdown",options=[{"label":data["Name"],"value":data["ID"]} for data in [node["data"] for node in nodes]], placeholder="Highlight a node", multi=True, className="DropdownMenu"),
             dbc.Tooltip("Highlight Specific Nodes for Easier Spotting", target=prefix+"_highlighter_dropdown_div", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
         ],id=prefix+"_highlighter_dropdown_div")
 
@@ -253,19 +253,19 @@ def graph_properties(prefix):
                         dbc.Col(html.Font("Sort by: ", style={"white-space":"nowrap"}),align="center", style={"text-align":"right"}, xs=2, lg=1),
                         dbc.Col([
                             dcc.Dropdown(id=prefix+"_properties_table_sorting",  options=[
-                                {"label":"Degree: Low to High","value":"degree,1"},
-                                {"label":"Degree: High to Low","value":"degree,0"},
-                                {"label":"Closeness Centrality: Low to High","value":"Closeness_Centrality,1"},
-                                {"label":"Closeness Centrality: High to Low","value":"Closeness_Centrality,0"},
-                                {"label":"Betweenness Centrality: Low to High","value":"Betweenness_Centrality,1"},
-                                {"label":"Betweenness Centrality: High to Low","value":"Betweenness_Centrality,0"},
-                                {"label":"Harmonic Centrality: Low to High","value":"Harmonic_Centrality,1"},
-                                {"label":"Harmonic Centrality: High to Low","value":"Harmonic_Centrality,0"},
-                                {"label":"Eigenvector Centrality: Low to High","value":"Eigenvector_Centrality,1"},
-                                {"label":"Eigenvector Centrality: High to Low","value":"Eigenvector_Centrality,0"},
-                                {"label":"Vote Rank Score: Low to High","value":"Vote_Rank_Score,1"},
-                                {"label":"Vote Rank Score: High to Low","value":"Vote_Rank_Score,0"},
-                            ], value="degree,0", clearable=False, searchable=False, optionHeight=25,className="DropdownMenu")
+                                {"label":"Degree: Low to High","value":"Degree,1"},
+                                {"label":"Degree: High to Low","value":"Degree,0"},
+                                {"label":"Closeness Centrality: Low to High","value":"Closeness Centrality,1"},
+                                {"label":"Closeness Centrality: High to Low","value":"Closeness Centrality,0"},
+                                {"label":"Betweenness Centrality: Low to High","value":"Betweenness Centrality,1"},
+                                {"label":"Betweenness Centrality: High to Low","value":"Betweenness Centrality,0"},
+                                {"label":"Harmonic Centrality: Low to High","value":"Harmonic Centrality,1"},
+                                {"label":"Harmonic Centrality: High to Low","value":"Harmonic Centrality,0"},
+                                {"label":"Eigenvector Centrality: Low to High","value":"Eigenvector Centrality,1"},
+                                {"label":"Eigenvector Centrality: High to Low","value":"Eigenvector Centrality,0"},
+                                {"label":"Vote Rank Score: Low to High","value":"Vote Rank Score,1"},
+                                {"label":"Vote Rank Score: High to Low","value":"Vote Rank Score,0"},
+                            ], value="Degree,0", clearable=False, searchable=False, optionHeight=25,className="DropdownMenu")
                         ], align="center", xs=10, lg=3),
                         dbc.Col(html.Font("Rows to show: ", style={"white-space":"nowrap"}),align="center", style={"text-align":"right"}, xs=2, lg=1),
                         dbc.Col([
@@ -332,7 +332,7 @@ def custom_clustering(prefix):
 
 def common_data_generator(prefix,graph):
     print(prefix)
-    graph_properties_df=pd.DataFrame({node:{prop:values[prop] for prop in ["name","degree", "Closeness_Centrality", "Betweenness_Centrality", "Harmonic_Centrality", "Eigenvector_Centrality", "Vote_Rank_Score"]} for node,values in dict(graph.nodes(data=True)).items()}).T
+    graph_properties_df=pd.DataFrame({node:{prop:values[prop] for prop in ["Name","Degree", "Closeness Centrality", "Betweenness Centrality", "Harmonic Centrality", "Eigenvector Centrality", "Vote Rank Score"]} for node,values in dict(graph.nodes(data=True)).items()}).T
     maj=graph.subgraph(max(list(nx.connected_components(graph)), key=len))
     if os.path.isfile("data/gn_communities/"+prefix+"_communities.pickle"):
         with open("data/gn_communities/"+prefix+"_communities.pickle","rb") as bkp:
@@ -359,7 +359,7 @@ def get_frequency(l):
     return d
 
 def degree_distribution(graph, title):
-    K=dict(nx.get_node_attributes(graph,"degree"))
+    K=dict(nx.get_node_attributes(graph,"Degree"))
     n=len(graph.nodes())
     p=len(graph.edges())/(n*(n-1)/2)
     ER=nx.fast_gnp_random_graph(n,p)

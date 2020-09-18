@@ -1,191 +1,104 @@
 #collector.py
-# GMT Tue Sep 15 06:27:36 2020
+# GMT Fri Sep 18 06:16:41 2020
 # 
-Danoprevir	Genome polyprotein
-Genome polyprotein	Ribavirin
-Ibuprofen	Prostaglandin G/H synthase 2	Prostaglandin G/H synthase 1	Apoptosis regulator Bcl-2	Thrombomodulin	Fatty acid-binding protein, intestinal	Peroxisome proliferator-activated receptor gamma	Cystic fibrosis transmembrane conductance regulator	Peroxisome proliferator-activated receptor alpha	Platelet glycoprotein Ib alpha chain	Protein S100-A7
-Prostaglandin G/H synthase 2	Naproxen	Ginseng	Acetaminophen	Lenalidomide	Celecoxib	Indomethacin	Resveratrol	Icosapent
-Prostaglandin G/H synthase 1	Naproxen	Acetaminophen	Indomethacin	Resveratrol	Icosapent
-Apoptosis regulator Bcl-2
-Thrombomodulin
-Fatty acid-binding protein, intestinal
-Peroxisome proliferator-activated receptor gamma	Pioglitazone	Clofazimine	Oleic Acid	Telmisartan	alpha-Linolenic acid	Curcumin	Indomethacin	Resveratrol	Omega-3 fatty acids	Icosapent
-Cystic fibrosis transmembrane conductance regulator
-Peroxisome proliferator-activated receptor alpha	Oleic Acid	alpha-Linolenic acid	Indomethacin	Resveratrol	Omega-3 fatty acids	Icosapent
-Platelet glycoprotein Ib alpha chain
-Protein S100-A7
-Iloprost	Prostacyclin receptor	Prostaglandin E2 receptor EP1 subtype	cAMP-specific 3',5'-cyclic phosphodiesterase 4A	cAMP-specific 3',5'-cyclic phosphodiesterase 4B	cAMP-specific 3',5'-cyclic phosphodiesterase 4C	cAMP-specific 3',5'-cyclic phosphodiesterase 4D	Tissue-type plasminogen activator	Prostaglandin D2 receptor 2
-Prostacyclin receptor	Epoprostenol
-Prostaglandin E2 receptor EP1 subtype
-cAMP-specific 3',5'-cyclic phosphodiesterase 4A	Dipyridamole	Ibudilast
-cAMP-specific 3',5'-cyclic phosphodiesterase 4B	Ibudilast
-cAMP-specific 3',5'-cyclic phosphodiesterase 4C	Ibudilast
-cAMP-specific 3',5'-cyclic phosphodiesterase 4D	Ibudilast
-Tissue-type plasminogen activator
-Prostaglandin D2 receptor 2	Indomethacin
-Epoprostenol	P2Y purinoceptor 12	Prostacyclin synthase
-P2Y purinoceptor 12	Prasugrel	Clopidogrel
-Prostacyclin synthase
-Dexamethasone	Glucocorticoid receptor	Nuclear receptor subfamily 0 group B member 1	Annexin A1	Nitric oxide synthase, inducible	Nuclear receptor subfamily 1 group I member 2
-Glucocorticoid receptor	Ciclesonide	Prednisone	Budesonide	Prednisolone	Prednisolone acetate	Methylprednisolone	Progesterone	Mometasone furoate	Hydrocortisone
-Nuclear receptor subfamily 0 group B member 1
-Annexin A1	Budesonide	Methylprednisolone	Hydrocortisone
-Nitric oxide synthase, inducible	Citrulline
-Nuclear receptor subfamily 1 group I member 2	Piperine	Quercetin	Estradiol	Ritonavir	Genistein	Vitamin E	Resveratrol
-Nitazoxanide	Pyruvate-flavodoxin oxidoreductase
-Pyruvate-flavodoxin oxidoreductase
-Enzalutamide	Androgen receptor
-Androgen receptor	Bicalutamide	Progesterone
-Verapamil	Voltage-dependent L-type calcium channel subunit alpha-1C	Voltage-dependent N-type calcium channel subunit alpha-1B	Voltage-dependent P/Q-type calcium channel subunit alpha-1A	ATP-sensitive inward rectifier potassium channel 11	Voltage-dependent T-type calcium channel subunit alpha-1G	Voltage-dependent T-type calcium channel subunit alpha-1H	Potassium voltage-gated channel subfamily H member 2	Sodium-dependent serotonin transporter	Alpha-1A adrenergic receptor	Alpha-1B adrenergic receptor	Alpha-1D adrenergic receptor
-Voltage-dependent L-type calcium channel subunit alpha-1C	Diltiazem
-Voltage-dependent N-type calcium channel subunit alpha-1B
-Voltage-dependent P/Q-type calcium channel subunit alpha-1A
-ATP-sensitive inward rectifier potassium channel 11
-Voltage-dependent T-type calcium channel subunit alpha-1G
-Voltage-dependent T-type calcium channel subunit alpha-1H
-Potassium voltage-gated channel subfamily H member 2	Fluoxetine	Fluvoxamine	Clarithromycin
-Sodium-dependent serotonin transporter	Fluoxetine	Fluvoxamine
-Alpha-1A adrenergic receptor	Trifluoperazine
-Alpha-1B adrenergic receptor
-Alpha-1D adrenergic receptor
-Pioglitazone	Amine oxidase [flavin-containing] B
-Amine oxidase [flavin-containing] B
-Bemiparin	Coagulation factor X	Antithrombin-III	Heparin cofactor 2
-Coagulation factor X	Heparin	Nafamostat	Fondaparinux	Enoxaparin	Rivaroxaban
-Antithrombin-III	Sulodexide	Heparin	Tinzaparin	Fondaparinux	Enoxaparin	Nadroparin
-Heparin cofactor 2	Sulodexide
-Mecobalamin	Methionine synthase
-Methionine synthase	Cyanocobalamin
-Imatinib	Breakpoint cluster region protein	Mast/stem cell growth factor receptor Kit	RET proto-oncogene	High affinity nerve growth factor receptor	Macrophage colony-stimulating factor 1 receptor	Platelet-derived growth factor receptor alpha	Epithelial discoidin domain-containing receptor 1	Tyrosine-protein kinase ABL1	Platelet-derived growth factor receptor beta
-Breakpoint cluster region protein
-Mast/stem cell growth factor receptor Kit
-RET proto-oncogene
-High affinity nerve growth factor receptor
-Macrophage colony-stimulating factor 1 receptor
-Platelet-derived growth factor receptor alpha	Nintedanib
-Epithelial discoidin domain-containing receptor 1
-Tyrosine-protein kinase ABL1
-Platelet-derived growth factor receptor beta	Nintedanib
-Cholecalciferol	Vitamin D3 receptor
-Vitamin D3 receptor	Cholesterol	Curcumin	Calcifediol	Vitamin D
-Ozanimod	Sphingosine 1-phosphate receptor 1	Sphingosine 1-phosphate receptor 5
-Sphingosine 1-phosphate receptor 1	Fingolimod
-Sphingosine 1-phosphate receptor 5	Fingolimod
-Leflunomide	Dihydroorotate dehydrogenase (quinone), mitochondrial	Aryl hydrocarbon receptor	Protein-tyrosine kinase 2-beta
-Dihydroorotate dehydrogenase (quinone), mitochondrial	Atovaquone	Brequinar
-Aryl hydrocarbon receptor	Quercetin	Diosmin	Omeprazole	Ginseng	Atorvastatin	Resveratrol
-Protein-tyrosine kinase 2-beta	Genistein	Baricitinib
-Clofazimine	Potassium voltage-gated channel subfamily A member 3
-Potassium voltage-gated channel subfamily A member 3
-Ebselen	Bifunctional epoxide hydrolase 2
-Bifunctional epoxide hydrolase 2
-Melatonin	Melatonin receptor type 1A	Melatonin receptor type 1B	Estrogen receptor alpha	Nuclear receptor ROR-beta	Calmodulin	Myeloperoxidase	Eosinophil peroxidase	Calreticulin	Acetylserotonin O-methyltransferase	Ribosyldihydronicotinamide dehydrogenase [quinone]
-Melatonin receptor type 1A	Ramelteon	Resveratrol
-Melatonin receptor type 1B	Ramelteon	Resveratrol
-Estrogen receptor alpha	Quercetin	Estradiol	Genistein	Progesterone	Resveratrol
-Nuclear receptor ROR-beta
-Calmodulin	Trifluoperazine
-Myeloperoxidase
-Eosinophil peroxidase
-Calreticulin
-Acetylserotonin O-methyltransferase
-Ribosyldihydronicotinamide dehydrogenase [quinone]	Quercetin	Menadione	Resveratrol
-Tacrolimus	Peptidyl-prolyl cis-trans isomerase FKBP1A
-Peptidyl-prolyl cis-trans isomerase FKBP1A	Sirolimus
-Interferon alfa-2b	Interferon alpha/beta receptor 2	Interferon alpha/beta receptor 1
-Interferon alpha/beta receptor 2
-Interferon alpha/beta receptor 1
-Niacin	Hydroxycarboxylic acid receptor 3	Hydroxycarboxylic acid receptor 2	Nicotinate-nucleotide pyrophosphorylase [carboxylating]	Nicotinamide N-methyltransferase
-Hydroxycarboxylic acid receptor 3
-Hydroxycarboxylic acid receptor 2
-Nicotinate-nucleotide pyrophosphorylase [carboxylating]
-Nicotinamide N-methyltransferase
-Piperine
-Clindamycin	50S ribosomal protein L1
-50S ribosomal protein L1
-Prasugrel
-Atovaquone	Cytochrome b
-Cytochrome b
-Quercetin	Tyrosine-protein kinase HCK	Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit gamma isoform	UDP-glucuronosyltransferase 3A1	ATP synthase subunit alpha, mitochondrial	ATP synthase subunit beta, mitochondrial	ATP synthase subunit gamma, mitochondrial	Serine/threonine-protein kinase pim-1	HTH-type transcriptional regulator TtgR	3-hydroxyisobutyryl-CoA hydrolase, mitochondrial	3-hydroxyacyl-[acyl-carrier-protein] dehydratase FabZ	Serine/threonine-protein kinase 17B	Estrogen receptor beta	Cytochrome P450 1B1	Actin, cytoplasmic 1	Casein kinase II subunit alpha	Casein kinase II subunit beta	Eukaryotic translation initiation factor 3 subunit F	Heat shock protein HSP 90-alpha	Heat shock-related 70 kDa protein 2	RuvB-like 2	Splicing factor 3B subunit 3	Ubiquitin-like modifier-activating enzyme 1	Sex hormone-binding globulin	Carbonyl reductase [NADPH] 1	CCAAT/enhancer-binding protein beta
-Tyrosine-protein kinase HCK
-Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit gamma isoform	Duvelisib
-UDP-glucuronosyltransferase 3A1
-ATP synthase subunit alpha, mitochondrial	Artenimol
-ATP synthase subunit beta, mitochondrial
-ATP synthase subunit gamma, mitochondrial
-Serine/threonine-protein kinase pim-1
-HTH-type transcriptional regulator TtgR
-3-hydroxyisobutyryl-CoA hydrolase, mitochondrial
-3-hydroxyacyl-[acyl-carrier-protein] dehydratase FabZ
-Serine/threonine-protein kinase 17B
-Estrogen receptor beta	Estradiol	Genistein	Progesterone
-Cytochrome P450 1B1	Genistein
-Actin, cytoplasmic 1
-Casein kinase II subunit alpha	Resveratrol
-Casein kinase II subunit beta
-Eukaryotic translation initiation factor 3 subunit F
-Heat shock protein HSP 90-alpha
-Heat shock-related 70 kDa protein 2
-RuvB-like 2
-Splicing factor 3B subunit 3
-Ubiquitin-like modifier-activating enzyme 1
-Sex hormone-binding globulin	Genistein	Progesterone
-Carbonyl reductase [NADPH] 1	Curcumin	Resveratrol
-CCAAT/enhancer-binding protein beta
-Ciclesonide
-Amoxicillin	Penicillin binding protein
-Penicillin binding protein
-Oleic Acid	Myelin P2 protein	Peroxisome proliferator-activated receptor delta	Retinoic acid receptor RXR-alpha
-Myelin P2 protein
-Peroxisome proliferator-activated receptor delta	alpha-Linolenic acid	Icosapent
-Retinoic acid receptor RXR-alpha	alpha-Linolenic acid
-Folic acid	Folate receptor gamma	Folate receptor beta	Folate receptor alpha
-Folate receptor gamma
-Folate receptor beta
-Folate receptor alpha
-Levofloxacin	DNA topoisomerase 4 subunit A	DNA gyrase subunit A
-DNA topoisomerase 4 subunit A	Moxifloxacin
-DNA gyrase subunit A	Moxifloxacin
-Losartan	Type-1 angiotensin II receptor
-Type-1 angiotensin II receptor	Valsartan	Eprosartan	Telmisartan	Candesartan	Irbesartan	Olmesartan	Candesartan cilexetil	Angiotensin II
-Ifenprodil	Glutamate receptor ionotropic, NMDA 1	Glutamate receptor ionotropic, NMDA 2B
-Glutamate receptor ionotropic, NMDA 1
-Glutamate receptor ionotropic, NMDA 2B
-Ribavirin	Inosine-5'-monophosphate dehydrogenase 1	Inosine-5'-monophosphate dehydrogenase 2	RNA-directed RNA polymerase L	RNA-directed RNA polymerase catalytic subunit
-Inosine-5'-monophosphate dehydrogenase 1
-Inosine-5'-monophosphate dehydrogenase 2
-RNA-directed RNA polymerase L	Galidesivir	Remdesivir	GS-441524
-RNA-directed RNA polymerase catalytic subunit	Favipiravir
-Nelfinavir	HIV-1 protease
-HIV-1 protease	TMC-310911
-Ramipril	Angiotensin-converting enzyme	B1 bradykinin receptor
-Angiotensin-converting enzyme	Captopril	Enalapril
-B1 bradykinin receptor	Captopril
-Sofosbuvir	RNA-dependent RNA-polymerase
-RNA-dependent RNA-polymerase
-Sulodexide
-Colchicine	Tubulin beta chain
-Tubulin beta chain	Artenimol
+Menadione	Vitamin K-dependent gamma-carboxylase	Vitamin K epoxide reductase complex subunit 1	Vitamin K epoxide reductase complex subunit 1-like protein 1	Prothrombin	Coagulation factor IX	Vitamin K-dependent protein C	Vitamin K-dependent protein S	Ribosyldihydronicotinamide dehydrogenase [quinone]	NAD(P)H dehydrogenase [quinone] 1	Osteocalcin
+Vitamin K-dependent gamma-carboxylase
+Vitamin K epoxide reductase complex subunit 1
+Vitamin K epoxide reductase complex subunit 1-like protein 1
+Prothrombin	Argatroban	Suramin	Nafamostat
+Coagulation factor IX
+Vitamin K-dependent protein C
+Vitamin K-dependent protein S
+Ribosyldihydronicotinamide dehydrogenase [quinone]	Resveratrol	Quercetin	Melatonin
+NAD(P)H dehydrogenase [quinone] 1
+Osteocalcin
+Bismuth subcitrate potassium	ATP-dependent Clp protease ATP-binding subunit ClpX
+ATP-dependent Clp protease ATP-binding subunit ClpX
+Fluvoxamine	Sodium-dependent serotonin transporter	Potassium voltage-gated channel subfamily H member 2
+Sodium-dependent serotonin transporter	Verapamil	Fluoxetine
+Potassium voltage-gated channel subfamily H member 2	Verapamil	Fluoxetine	Clarithromycin
 Pirfenidone	Furin
 Furin
-Prednisone
-Ruxolitinib	Tyrosine-protein kinase JAK1	Tyrosine-protein kinase JAK2
-Tyrosine-protein kinase JAK1	Baricitinib	Tofacitinib
-Tyrosine-protein kinase JAK2	Baricitinib	Zanubrutinib	Tofacitinib
-Bardoxolone methyl	NF-kappa-B inhibitor alpha
-NF-kappa-B inhibitor alpha
-Anakinra	Interleukin-1 receptor type 1
-Interleukin-1 receptor type 1
-Oseltamivir	Neuraminidase	Sialidase-1	Sialidase-2
-Neuraminidase
-Sialidase-1
-Sialidase-2
-Maraviroc	C-C chemokine receptor type 5
-C-C chemokine receptor type 5
 Metoprolol	Beta-1 adrenergic receptor	Beta-2 adrenergic receptor
 Beta-1 adrenergic receptor	Formoterol
 Beta-2 adrenergic receptor	Formoterol
-Budesonide
+Ruxolitinib	Tyrosine-protein kinase JAK1	Tyrosine-protein kinase JAK2
+Tyrosine-protein kinase JAK1	Tofacitinib	Baricitinib
+Tyrosine-protein kinase JAK2	Tofacitinib	Baricitinib	Zanubrutinib
+Ozanimod	Sphingosine 1-phosphate receptor 1	Sphingosine 1-phosphate receptor 5
+Sphingosine 1-phosphate receptor 1	Fingolimod
+Sphingosine 1-phosphate receptor 5	Fingolimod
+Moxifloxacin	DNA topoisomerase 4 subunit A	DNA gyrase subunit A	DNA topoisomerase 2-alpha
+DNA topoisomerase 4 subunit A	Levofloxacin
+DNA gyrase subunit A	Levofloxacin
+DNA topoisomerase 2-alpha	Etoposide	Genistein
+Enzalutamide	Androgen receptor
+Androgen receptor	Bicalutamide	Progesterone
+Aprepitant	Neurokinin 1 receptor
+Neurokinin 1 receptor
+Emtricitabine	Reverse transcriptase/RNaseH
+Reverse transcriptase/RNaseH	Tenofovir disoproxil	Tenofovir alafenamide
+GC-376 free acid	Replicase polyprotein 1ab	Replicase polyprotein 1a
+Replicase polyprotein 1ab	GS-441524	Remdesivir
+Replicase polyprotein 1a
+Febuxostat	Xanthine dehydrogenase/oxidase
+Xanthine dehydrogenase/oxidase
+Ivermectin	Glycine receptor subunit alpha-3	Gamma-aminobutyric acid receptor subunit beta-3
+Glycine receptor subunit alpha-3
+Gamma-aminobutyric acid receptor subunit beta-3
+Rabeprazole	Potassium-transporting ATPase alpha chain 1
+Potassium-transporting ATPase alpha chain 1	Omeprazole	Pantoprazole
+Prednisolone	Glucocorticoid receptor
+Glucocorticoid receptor	Hydrocortisone	Prednisone	Mometasone furoate	Budesonide	Methylprednisolone	Dexamethasone	Ciclesonide	Prednisolone acetate	Progesterone
+GS-441524	RNA-directed RNA polymerase L
+RNA-directed RNA polymerase L	Ribavirin	Galidesivir	Remdesivir
+Lopinavir	Human immunodeficiency virus type 1 protease
+Human immunodeficiency virus type 1 protease	Darunavir	Atazanavir	Ritonavir
+Icosapent	Prostaglandin G/H synthase 2	Prostaglandin G/H synthase 1	Peroxisome proliferator-activated receptor gamma	Peroxisome proliferator-activated receptor delta	Fatty acid desaturase 1	Long-chain-fatty-acid--CoA ligase 4	Free fatty acid receptor 1	Sodium/calcium exchanger 1	Transient receptor potential cation channel subfamily V member 1	Peroxisome proliferator-activated receptor alpha
+Prostaglandin G/H synthase 2	Acetaminophen	Ginseng	Resveratrol	Lenalidomide	Naproxen	Ibuprofen	Celecoxib	Indomethacin
+Prostaglandin G/H synthase 1	Acetaminophen	Resveratrol	Naproxen	Ibuprofen	Indomethacin
+Peroxisome proliferator-activated receptor gamma	Curcumin	Telmisartan	Omega-3 fatty acids	Clofazimine	Resveratrol	Ibuprofen	Oleic Acid	Pioglitazone	Indomethacin
+Peroxisome proliferator-activated receptor delta	Oleic Acid
+Fatty acid desaturase 1
+Long-chain-fatty-acid--CoA ligase 4
+Free fatty acid receptor 1
+Sodium/calcium exchanger 1
+Transient receptor potential cation channel subfamily V member 1	Acetaminophen	Camphor	Resiniferatoxin
+Peroxisome proliferator-activated receptor alpha	Omega-3 fatty acids	Resveratrol	Ibuprofen	Oleic Acid	Indomethacin
+Tenofovir disoproxil	DNA polymerase/reverse transcriptase
+DNA polymerase/reverse transcriptase
+Tofacitinib	Tyrosine-protein kinase JAK3	Non-receptor tyrosine-protein kinase TYK2
+Tyrosine-protein kinase JAK3	Baricitinib	Zanubrutinib
+Non-receptor tyrosine-protein kinase TYK2
+Heparin	Antithrombin-III	Coagulation factor X	P-selectin	Fibroblast growth factor receptor 4	Fibroblast growth factor 4	Fibroblast growth factor 19	Fibroblast growth factor receptor 1	Fibroblast growth factor 1	Fibroblast growth factor receptor 2	Fibroblast growth factor 2	Platelet factor 4	Hepatocyte growth factor
+Antithrombin-III	Tinzaparin	Nadroparin	Sulodexide	Fondaparinux	Enoxaparin	Bemiparin
+Coagulation factor X	Rivaroxaban	Fondaparinux	Nafamostat	Enoxaparin	Bemiparin
+P-selectin	Nadroparin
+Fibroblast growth factor receptor 4
+Fibroblast growth factor 4
+Fibroblast growth factor 19
+Fibroblast growth factor receptor 1	Nintedanib
+Fibroblast growth factor 1
+Fibroblast growth factor receptor 2	Nintedanib
+Fibroblast growth factor 2	Sirolimus
+Platelet factor 4
+Hepatocyte growth factor
+Camostat	Trypsin-1	Transmembrane protease serine 2	Suppressor of tumorigenicity 14 protein	Cholecystokinin
+Trypsin-1	Aprotinin	Nafamostat
+Transmembrane protease serine 2
+Suppressor of tumorigenicity 14 protein
+Cholecystokinin
+Anakinra	Interleukin-1 receptor type 1
+Interleukin-1 receptor type 1
+Irbesartan	Type-1 angiotensin II receptor	Transcription factor AP-1
+Type-1 angiotensin II receptor	Telmisartan	Candesartan	Angiotensin II	Candesartan cilexetil	Valsartan	Losartan	Olmesartan	Eprosartan
+Transcription factor AP-1
+Brequinar	Dihydroorotate dehydrogenase (quinone), mitochondrial
+Dihydroorotate dehydrogenase (quinone), mitochondrial	Leflunomide	Atovaquone
+Velpatasvir	Nonstructural protein 5A
+Nonstructural protein 5A	Elbasvir	Daclatasvir
+Merimepodib	Inosine-5'-monophosphate dehydrogenase
+Inosine-5'-monophosphate dehydrogenase
 Creatine	Creatine kinase M-type	Creatine kinase U-type, mitochondrial	Creatine kinase B-type	Creatine kinase S-type, mitochondrial	Sodium- and chloride-dependent creatine transporter 1	Guanidinoacetate N-methyltransferase
 Creatine kinase M-type
 Creatine kinase U-type, mitochondrial
@@ -193,112 +106,301 @@ Creatine kinase B-type
 Creatine kinase S-type, mitochondrial
 Sodium- and chloride-dependent creatine transporter 1
 Guanidinoacetate N-methyltransferase
-Naltrexone	Delta-type opioid receptor	Mu-type opioid receptor	Kappa-type opioid receptor	HCG20471, isoform CRA_c
-Delta-type opioid receptor	Metenkefalin	Oxycodone
-Mu-type opioid receptor	Metenkefalin	Oxycodone
-Kappa-type opioid receptor	Progesterone	Oxycodone
-HCG20471, isoform CRA_c
+Hesperidin	Aurora kinase B
+Aurora kinase B
+Calcifediol	Vitamin D3 receptor
+Vitamin D3 receptor	Curcumin	Cholecalciferol	Vitamin D	Cholesterol
+Danoprevir	Genome polyprotein
+Genome polyprotein	Ribavirin
+Fingolimod	Histone deacetylase 1	Sphingosine 1-phosphate receptor 4	Sphingosine 1-phosphate receptor 3
+Histone deacetylase 1
+Sphingosine 1-phosphate receptor 4
+Sphingosine 1-phosphate receptor 3
+Hydrocortisone	Annexin A1
+Annexin A1	Budesonide	Methylprednisolone	Dexamethasone
+Darunavir
+Clindamycin	50S ribosomal protein L1
+50S ribosomal protein L1
+Aprotinin	Chymotrypsinogen B	Plasminogen	Kallikrein-1
+Chymotrypsinogen B
+Plasminogen	Tranexamic acid
+Kallikrein-1	Nafamostat
+Curcumin	Multidrug resistance-associated protein 5	Carbonyl reductase [NADPH] 1	Glutathione S-transferase P
+Multidrug resistance-associated protein 5
+Carbonyl reductase [NADPH] 1	Resveratrol	Quercetin
+Glutathione S-transferase P
+Simvastatin	3-hydroxy-3-methylglutaryl-coenzyme A reductase	Integrin alpha-L	Histone deacetylase 2
+3-hydroxy-3-methylglutaryl-coenzyme A reductase	Rosuvastatin	Atorvastatin
+Integrin alpha-L	Rosuvastatin
+Histone deacetylase 2	Atorvastatin
+Ribavirin	Inosine-5'-monophosphate dehydrogenase 1	Inosine-5'-monophosphate dehydrogenase 2	RNA-directed RNA polymerase catalytic subunit
+Inosine-5'-monophosphate dehydrogenase 1
+Inosine-5'-monophosphate dehydrogenase 2
+RNA-directed RNA polymerase catalytic subunit	Favipiravir
+Rosuvastatin
+Telmisartan
+Dapagliflozin	Sodium/glucose cotransporter 2
+Sodium/glucose cotransporter 2
+Chloroquine	Glutathione S-transferase A2	Tumor necrosis factor	Toll-like receptor 9	Glutathione S-transferase	High mobility group protein B1	Glutathione S-transferase Mu 1	Angiotensin-converting enzyme 2
+Glutathione S-transferase A2
+Tumor necrosis factor
+Toll-like receptor 9
+Glutathione S-transferase
+High mobility group protein B1
+Glutathione S-transferase Mu 1
+Angiotensin-converting enzyme 2
+Roxithromycin	50S ribosomal protein L10	P-glycoprotein 1
+50S ribosomal protein L10	Clarithromycin
+P-glycoprotein 1	Tetrandrine
+Etoposide	DNA topoisomerase 2-beta
+DNA topoisomerase 2-beta
+Methotrexate	Dihydrofolate reductase	Thymidylate synthase	Bifunctional purine biosynthesis protein PURH
+Dihydrofolate reductase	Trimethoprim
+Thymidylate synthase
+Bifunctional purine biosynthesis protein PURH
+Interferon alfa-2b	Interferon alpha/beta receptor 2	Interferon alpha/beta receptor 1
+Interferon alpha/beta receptor 2
+Interferon alpha/beta receptor 1
+Thiamine	Thiamin pyrophosphokinase 1
+Thiamin pyrophosphokinase 1
 Aliskiren	Renin
 Renin
-Valsartan
-Famotidine	Histamine H2 receptor
-Histamine H2 receptor
-Favipiravir
-Febuxostat	Xanthine dehydrogenase/oxidase
-Xanthine dehydrogenase/oxidase
-Suramin	P2Y purinoceptor 2	NAD-dependent protein deacylase sirtuin-5, mitochondrial	Follicle-stimulating hormone receptor	Ryanodine receptor 1	Prothrombin	Phospholipase A2, membrane associated	Complement control protein C3
-P2Y purinoceptor 2
-NAD-dependent protein deacylase sirtuin-5, mitochondrial	Nicotinamide
-Follicle-stimulating hormone receptor
-Ryanodine receptor 1
-Prothrombin	Menadione	Nafamostat	Argatroban
-Phospholipase A2, membrane associated	Indomethacin
-Complement control protein C3
-Biotin	Propionyl-CoA carboxylase beta chain, mitochondrial	Biotin--protein ligase	Methylcrotonoyl-CoA carboxylase beta chain, mitochondrial	Acetyl-CoA carboxylase 2	Methylcrotonoyl-CoA carboxylase subunit alpha, mitochondrial	Pyruvate carboxylase, mitochondrial	Propionyl-CoA carboxylase alpha chain, mitochondrial	Acetyl-CoA carboxylase 1
-Propionyl-CoA carboxylase beta chain, mitochondrial
-Biotin--protein ligase
-Methylcrotonoyl-CoA carboxylase beta chain, mitochondrial
-Acetyl-CoA carboxylase 2
-Methylcrotonoyl-CoA carboxylase subunit alpha, mitochondrial
-Pyruvate carboxylase, mitochondrial
-Propionyl-CoA carboxylase alpha chain, mitochondrial
-Acetyl-CoA carboxylase 1
-Protoporphyrin	Ferritin light chain
-Ferritin light chain
-Diosmin
-Menadione	Vitamin K-dependent gamma-carboxylase	Vitamin K epoxide reductase complex subunit 1	Vitamin K epoxide reductase complex subunit 1-like protein 1	Coagulation factor IX	Vitamin K-dependent protein C	Vitamin K-dependent protein S	NAD(P)H dehydrogenase [quinone] 1	Osteocalcin
-Vitamin K-dependent gamma-carboxylase
-Vitamin K epoxide reductase complex subunit 1
-Vitamin K epoxide reductase complex subunit 1-like protein 1
-Coagulation factor IX
-Vitamin K-dependent protein C
-Vitamin K-dependent protein S
-NAD(P)H dehydrogenase [quinone] 1
-Osteocalcin
-Estradiol	Neuronal acetylcholine receptor subunit alpha-4	G-protein coupled estrogen receptor 1	ATP synthase subunit a	Beclin-1
-Neuronal acetylcholine receptor subunit alpha-4
-G-protein coupled estrogen receptor 1	Genistein
-ATP synthase subunit a
-Beclin-1
+Candesartan
+Niacin	Hydroxycarboxylic acid receptor 3	Hydroxycarboxylic acid receptor 2	Nicotinate-nucleotide pyrophosphorylase [carboxylating]	Nicotinamide N-methyltransferase
+Hydroxycarboxylic acid receptor 3
+Hydroxycarboxylic acid receptor 2
+Nicotinate-nucleotide pyrophosphorylase [carboxylating]
+Nicotinamide N-methyltransferase
+Tazobactam	Beta-lactamase TEM	Beta-lactamase Ohio-1	Beta-lactamase SHV-1
+Beta-lactamase TEM
+Beta-lactamase Ohio-1
+Beta-lactamase SHV-1
+Acetaminophen	Prostaglandin E synthase 3
+Prostaglandin E synthase 3
+Vitamin E	Nuclear receptor subfamily 1 group I member 2	Protein kinase C beta type	Arachidonate 5-lipoxygenase	Protein kinase C alpha type	Diacylglycerol kinase alpha	Serine/threonine-protein phosphatase 2A catalytic subunit beta isoform	Serine/threonine-protein phosphatase 2A catalytic subunit alpha isoform	SEC14-like protein 4	SEC14-like protein 3	SEC14-like protein 2
+Nuclear receptor subfamily 1 group I member 2	Genistein	Resveratrol	Estradiol	Quercetin	Dexamethasone	Ritonavir	Piperine
+Protein kinase C beta type
+Arachidonate 5-lipoxygenase	Resveratrol	Montelukast
+Protein kinase C alpha type
+Diacylglycerol kinase alpha
+Serine/threonine-protein phosphatase 2A catalytic subunit beta isoform
+Serine/threonine-protein phosphatase 2A catalytic subunit alpha isoform
+SEC14-like protein 4
+SEC14-like protein 3
+SEC14-like protein 2
+Omeprazole	Aryl hydrocarbon receptor
+Aryl hydrocarbon receptor	Leflunomide	Ginseng	Resveratrol	Diosmin	Quercetin	Atorvastatin
+Piperacillin	Penicillin-binding protein 3	Penicillin-binding protein 2B	Penicillin-binding protein 2a	Penicillin-binding protein 1b
+Penicillin-binding protein 3
+Penicillin-binding protein 2B	Ceftriaxone
+Penicillin-binding protein 2a
+Penicillin-binding protein 1b
+Tranexamic acid
+Tinzaparin	Integrin alpha-4	Stromal cell-derived factor 1
+Integrin alpha-4
+Stromal cell-derived factor 1
+Trimethoprim
+Dutasteride	3-oxo-5-alpha-steroid 4-dehydrogenase 2	3-oxo-5-alpha-steroid 4-dehydrogenase 1
+3-oxo-5-alpha-steroid 4-dehydrogenase 2
+3-oxo-5-alpha-steroid 4-dehydrogenase 1
 Sildenafil	cGMP-specific 3',5'-cyclic phosphodiesterase	Retinal rod rhodopsin-sensitive cGMP 3',5'-cyclic phosphodiesterase subunit gamma	Retinal cone rhodopsin-sensitive cGMP 3',5'-cyclic phosphodiesterase subunit gamma
 cGMP-specific 3',5'-cyclic phosphodiesterase	Dipyridamole
 Retinal rod rhodopsin-sensitive cGMP 3',5'-cyclic phosphodiesterase subunit gamma
 Retinal cone rhodopsin-sensitive cGMP 3',5'-cyclic phosphodiesterase subunit gamma
-Naproxen	Peptostreptococcal albumin-binding protein
-Peptostreptococcal albumin-binding protein
-Ritonavir	Human immunodeficiency virus type 1 protease
-Human immunodeficiency virus type 1 protease	Lopinavir	Darunavir	Atazanavir
-Tenofovir	Reverse transcriptase/RNaseH	Reverse transcriptase	DNA polymerase
-Reverse transcriptase/RNaseH	Tenofovir disoproxil	Emtricitabine	Tenofovir alafenamide
-Reverse transcriptase	Tenofovir alafenamide
-DNA polymerase	Tenofovir alafenamide
-Captopril	72 kDa type IV collagenase	Matrix metalloproteinase-9	Leukotriene A-4 hydrolase
-72 kDa type IV collagenase
-Matrix metalloproteinase-9
-Leukotriene A-4 hydrolase
-Tirofiban	Integrin alpha-IIb	Integrin beta-3
-Integrin alpha-IIb
-Integrin beta-3	Resveratrol
-Cyanocobalamin	Methylmalonyl-CoA mutase, mitochondrial	Methionine synthase reductase	Methylmalonic aciduria type A protein, mitochondrial	Methylmalonic aciduria and homocystinuria type C protein	Methylenetetrahydrofolate reductase
+Pyridostigmine	Acetylcholinesterase	Cholinesterase	Serum albumin
+Acetylcholinesterase
+Cholinesterase
+Serum albumin	Artenimol
+Sofosbuvir	RNA-dependent RNA-polymerase
+RNA-dependent RNA-polymerase
+Genistein	Estrogen receptor beta	Protein-tyrosine kinase 2-beta	Nuclear receptor coactivator 1	Estrogen receptor alpha	Nuclear receptor coactivator 2	Steroid hormone receptor ERR2	Steroid hormone receptor ERR1	RAC-alpha serine/threonine-protein kinase	G-protein coupled estrogen receptor 1	Cytochrome P450 1B1	Sex hormone-binding globulin
+Estrogen receptor beta	Estradiol	Quercetin	Progesterone
+Protein-tyrosine kinase 2-beta	Leflunomide	Baricitinib
+Nuclear receptor coactivator 1
+Estrogen receptor alpha	Resveratrol	Estradiol	Quercetin	Melatonin	Progesterone
+Nuclear receptor coactivator 2
+Steroid hormone receptor ERR2
+Steroid hormone receptor ERR1
+RAC-alpha serine/threonine-protein kinase	Resveratrol
+G-protein coupled estrogen receptor 1	Estradiol
+Cytochrome P450 1B1	Quercetin
+Sex hormone-binding globulin	Quercetin	Progesterone
+Prasugrel	P2Y purinoceptor 12
+P2Y purinoceptor 12	Clopidogrel	Epoprostenol
+Methylene blue	Guanylate cyclase soluble subunit alpha-2	Nitric oxide synthase, brain
+Guanylate cyclase soluble subunit alpha-2
+Nitric oxide synthase, brain	Citrulline
+Defibrotide	Adenosine receptor A1	Adenosine receptor A2a	Adenosine receptor A2b
+Adenosine receptor A1	Pentoxifylline
+Adenosine receptor A2a	Pentoxifylline
+Adenosine receptor A2b
+Cholecalciferol
+Levofloxacin
+Oxycodone	Mu-type opioid receptor	Kappa-type opioid receptor	Delta-type opioid receptor
+Mu-type opioid receptor	Naltrexone	Metenkefalin
+Kappa-type opioid receptor	Naltrexone	Progesterone
+Delta-type opioid receptor	Naltrexone	Metenkefalin
+Lipoic acid	Lipoyltransferase 1, mitochondrial	Lipoyl synthase, mitochondrial	Sodium-dependent multivitamin transporter
+Lipoyltransferase 1, mitochondrial
+Lipoyl synthase, mitochondrial
+Sodium-dependent multivitamin transporter
+Rivaroxaban
+Vitamin D	Vitamin D-binding protein
+Vitamin D-binding protein
+Sirolimus	Serine/threonine-protein kinase mTOR	Peptidyl-prolyl cis-trans isomerase FKBP1A
+Serine/threonine-protein kinase mTOR
+Peptidyl-prolyl cis-trans isomerase FKBP1A	Tacrolimus
+Cyanocobalamin	Methionine synthase	Methylmalonyl-CoA mutase, mitochondrial	Methionine synthase reductase	Methylmalonic aciduria type A protein, mitochondrial	Methylmalonic aciduria and homocystinuria type C protein	Methylenetetrahydrofolate reductase
+Methionine synthase	Mecobalamin
 Methylmalonyl-CoA mutase, mitochondrial
 Methionine synthase reductase
 Methylmalonic aciduria type A protein, mitochondrial
 Methylmalonic aciduria and homocystinuria type C protein
 Methylenetetrahydrofolate reductase
+Selinexor	Exportin-1
+Exportin-1
+Metronidazole	Oxygen-insensitive NADPH nitroreductase
+Oxygen-insensitive NADPH nitroreductase
+Icatibant	B2 bradykinin receptor	Aminopeptidase N
+B2 bradykinin receptor
+Aminopeptidase N
+Camphor	Camphor 5-monooxygenase	Transient receptor potential cation channel subfamily V member 3	Transient receptor potential cation channel subfamily A member 1	Transient receptor potential cation channel subfamily M member 8
+Camphor 5-monooxygenase
+Transient receptor potential cation channel subfamily V member 3
+Transient receptor potential cation channel subfamily A member 1
+Transient receptor potential cation channel subfamily M member 8
+Leflunomide
+Favipiravir
+Ifenprodil	Glutamate receptor ionotropic, NMDA 1	Glutamate receptor ionotropic, NMDA 2B
+Glutamate receptor ionotropic, NMDA 1
+Glutamate receptor ionotropic, NMDA 2B
+Tetrandrine
+Prednisone
+Oxytocin	Oxytocin receptor	Oxytocin-neurophysin 1
+Oxytocin receptor
+Oxytocin-neurophysin 1
+Omega-3 fatty acids	Sterol regulatory element-binding protein 1
+Sterol regulatory element-binding protein 1
+Cysteine	Glutamate--cysteine ligase regulatory subunit	Glutamate--cysteine ligase catalytic subunit	Aspartate aminotransferase, cytoplasmic	Aspartate aminotransferase, mitochondrial	Cystathionine gamma-lyase	Cystathionine beta-synthase	Cysteine--tRNA ligase, cytoplasmic	Methylated-DNA--protein-cysteine methyltransferase	Glutathione synthetase	Probable cysteine--tRNA ligase, mitochondrial	Cysteine sulfinic acid decarboxylase	Cysteine desulfurase, mitochondrial	Cysteine dioxygenase type 1
+Glutamate--cysteine ligase regulatory subunit
+Glutamate--cysteine ligase catalytic subunit
+Aspartate aminotransferase, cytoplasmic
+Aspartate aminotransferase, mitochondrial
+Cystathionine gamma-lyase
+Cystathionine beta-synthase
+Cysteine--tRNA ligase, cytoplasmic
+Methylated-DNA--protein-cysteine methyltransferase
+Glutathione synthetase
+Probable cysteine--tRNA ligase, mitochondrial
+Cysteine sulfinic acid decarboxylase
+Cysteine desulfurase, mitochondrial
+Cysteine dioxygenase type 1
+Citrulline	Argininosuccinate synthase	N(G),N(G)-dimethylarginine dimethylaminohydrolase 2	Argininosuccinate synthetase, isoform CRA_a	N(G),N(G)-dimethylarginine dimethylaminohydrolase 1	Ornithine carbamoyltransferase, mitochondrial	Nitric oxide synthase, inducible	Nitric oxide synthase, endothelial	Protein-arginine deiminase type-6	Protein-arginine deiminase type-1	Protein-arginine deiminase type-3	Protein-arginine deiminase type-2	Protein-arginine deiminase type-4
+Argininosuccinate synthase
+N(G),N(G)-dimethylarginine dimethylaminohydrolase 2
+Argininosuccinate synthetase, isoform CRA_a
+N(G),N(G)-dimethylarginine dimethylaminohydrolase 1	Pantoprazole
+Ornithine carbamoyltransferase, mitochondrial
+Nitric oxide synthase, inducible	Dexamethasone
+Nitric oxide synthase, endothelial
+Protein-arginine deiminase type-6
+Protein-arginine deiminase type-1
+Protein-arginine deiminase type-3
+Protein-arginine deiminase type-2
+Protein-arginine deiminase type-4
+Bardoxolone methyl	NF-kappa-B inhibitor alpha
+NF-kappa-B inhibitor alpha
+Mometasone furoate	Progesterone receptor
+Progesterone receptor	Progesterone
+Dipyridamole	cAMP and cAMP-inhibited cGMP 3',5'-cyclic phosphodiesterase 10A	Adenosine deaminase	cAMP-specific 3',5'-cyclic phosphodiesterase 4A	Calcipressin-1	Alpha-1-acid glycoprotein 1
+cAMP and cAMP-inhibited cGMP 3',5'-cyclic phosphodiesterase 10A
+Adenosine deaminase	Artenimol
+cAMP-specific 3',5'-cyclic phosphodiesterase 4A	Ibudilast	Iloprost
+Calcipressin-1
+Alpha-1-acid glycoprotein 1	Lidocaine	Progesterone
 Pantothenic acid	Pantothenate kinase
 Pantothenate kinase
-Montelukast	Cysteinyl leukotriene receptor 1	Arachidonate 5-lipoxygenase
-Cysteinyl leukotriene receptor 1
-Arachidonate 5-lipoxygenase	Vitamin E	Resveratrol
-Prednisolone
-Baloxavir marboxil	Polymerase acidic protein
-Polymerase acidic protein
-Metenkefalin
-Cholesterol	Nuclear receptor ROR-alpha	Nuclear receptor subfamily 1 group I member 3	C-type lectin domain family 4 member E
+Nadroparin	Proto-oncogene c-Fos	Myc proto-oncogene protein
+Proto-oncogene c-Fos
+Myc proto-oncogene protein
+Ebselen	Bifunctional epoxide hydrolase 2
+Bifunctional epoxide hydrolase 2
+Enalapril	Angiotensin-converting enzyme
+Angiotensin-converting enzyme	Captopril	Ramipril
+Sitagliptin	Dipeptidyl peptidase 4
+Dipeptidyl peptidase 4	Linagliptin	Atorvastatin
+Levamisole	Neuronal acetylcholine receptor subunit alpha-3	Alkaline phosphatase, placental-like	Acetylcholine receptor subunit alpha-type unc-38	Acetylcholine receptor subunit alpha-type unc-63	Acetylcholine receptor subunit beta-type lev-1	Acetylcholine receptor subunit beta-type unc-29
+Neuronal acetylcholine receptor subunit alpha-3	Fluoxetine
+Alkaline phosphatase, placental-like
+Acetylcholine receptor subunit alpha-type unc-38
+Acetylcholine receptor subunit alpha-type unc-63
+Acetylcholine receptor subunit beta-type lev-1
+Acetylcholine receptor subunit beta-type unc-29
+TMC-310911	HIV-1 protease
+HIV-1 protease	Nelfinavir
+Clofazimine	Potassium voltage-gated channel subfamily A member 3
+Potassium voltage-gated channel subfamily A member 3
+Amoxicillin	Penicillin binding protein
+Penicillin binding protein
+Angiotensin II
+Pyridoxine	Pyridoxal kinase
+Pyridoxal kinase
+Galidesivir
+Baricitinib
+Sulodexide	Heparin cofactor 2
+Heparin cofactor 2	Bemiparin
+Budesonide
+Methylprednisolone
+Fisetin	Cyclin homolog	Cyclin-dependent kinase 6
+Cyclin homolog
+Cyclin-dependent kinase 6
+Ginseng	Interleukin-6
+Interleukin-6
+Resveratrol	Casein kinase II subunit alpha	Arachidonate 15-lipoxygenase	Phosphatidylinositol 4-kinase type 2-beta	Integrin alpha-5	Integrin beta-3	Amyloid beta A4 protein	Alpha-synuclein	NAD-dependent protein deacetylase sirtuin-1	Melatonin receptor type 1A	Melatonin receptor type 1B	C-type lectin domain family 14 member A	Nuclear receptor subfamily 1 group I member 3	Solute carrier family 2, facilitated glucose transporter member 1	Far upstream element-binding protein 2	Tyrosine--tRNA ligase, cytoplasmic
+Casein kinase II subunit alpha	Quercetin
+Arachidonate 15-lipoxygenase
+Phosphatidylinositol 4-kinase type 2-beta
+Integrin alpha-5
+Integrin beta-3	Tirofiban
+Amyloid beta A4 protein
+Alpha-synuclein
+NAD-dependent protein deacetylase sirtuin-1
+Melatonin receptor type 1A	Ramelteon	Melatonin
+Melatonin receptor type 1B	Ramelteon	Melatonin
+C-type lectin domain family 14 member A
+Nuclear receptor subfamily 1 group I member 3	Cholesterol	Atorvastatin
+Solute carrier family 2, facilitated glucose transporter member 1
+Far upstream element-binding protein 2	Artenimol
+Tyrosine--tRNA ligase, cytoplasmic
+Maraviroc	C-C chemokine receptor type 5
+C-C chemokine receptor type 5
+Isotretinoin	Retinoic acid receptor alpha	Retinoic acid receptor gamma
+Retinoic acid receptor alpha
+Retinoic acid receptor gamma
+Nicotinamide	Exotoxin A	L-lactate dehydrogenase A chain	Poly [ADP-ribose] polymerase 1	NAD-dependent protein deacylase sirtuin-5, mitochondrial	ADP-ribosyl cyclase 2
+Exotoxin A
+L-lactate dehydrogenase A chain	Artenimol
+Poly [ADP-ribose] polymerase 1
+NAD-dependent protein deacylase sirtuin-5, mitochondrial	Suramin
+ADP-ribosyl cyclase 2
+Formoterol	Beta-3 adrenergic receptor
+Beta-3 adrenergic receptor
+Cholesterol	Nuclear receptor ROR-alpha	C-type lectin domain family 4 member E
 Nuclear receptor ROR-alpha
-Nuclear receptor subfamily 1 group I member 3	Atorvastatin	Resveratrol
 C-type lectin domain family 4 member E
-Sulfamethoxazole	Dihydropteroate synthase
-Dihydropteroate synthase
-Genistein	DNA topoisomerase 2-alpha	Nuclear receptor coactivator 1	Nuclear receptor coactivator 2	Steroid hormone receptor ERR2	Steroid hormone receptor ERR1	RAC-alpha serine/threonine-protein kinase
-DNA topoisomerase 2-alpha	Etoposide	Moxifloxacin
-Nuclear receptor coactivator 1
-Nuclear receptor coactivator 2
-Steroid hormone receptor ERR2
-Steroid hormone receptor ERR1
-RAC-alpha serine/threonine-protein kinase	Resveratrol
-Etoposide	DNA topoisomerase 2-beta
-DNA topoisomerase 2-beta
-Bicalutamide
-Rosuvastatin	3-hydroxy-3-methylglutaryl-coenzyme A reductase	Integrin alpha-L
-3-hydroxy-3-methylglutaryl-coenzyme A reductase	Atorvastatin	Simvastatin
-Integrin alpha-L	Simvastatin
-Tenofovir disoproxil	DNA polymerase/reverse transcriptase
-DNA polymerase/reverse transcriptase
-Aprepitant	Neurokinin 1 receptor
-Neurokinin 1 receptor
-Omeprazole	Potassium-transporting ATPase alpha chain 1
-Potassium-transporting ATPase alpha chain 1	Rabeprazole	Pantoprazole
+Clopidogrel
+Fondaparinux
+Verapamil	Voltage-dependent L-type calcium channel subunit alpha-1C	Voltage-dependent N-type calcium channel subunit alpha-1B	Voltage-dependent P/Q-type calcium channel subunit alpha-1A	ATP-sensitive inward rectifier potassium channel 11	Voltage-dependent T-type calcium channel subunit alpha-1G	Voltage-dependent T-type calcium channel subunit alpha-1H	Alpha-1A adrenergic receptor	Alpha-1B adrenergic receptor	Alpha-1D adrenergic receptor
+Voltage-dependent L-type calcium channel subunit alpha-1C	Diltiazem
+Voltage-dependent N-type calcium channel subunit alpha-1B
+Voltage-dependent P/Q-type calcium channel subunit alpha-1A
+ATP-sensitive inward rectifier potassium channel 11
+Voltage-dependent T-type calcium channel subunit alpha-1G
+Voltage-dependent T-type calcium channel subunit alpha-1H
+Alpha-1A adrenergic receptor	Trifluoperazine
+Alpha-1B adrenergic receptor
+Alpha-1D adrenergic receptor
+Diosmin
 Thrombin	Proteinase-activated receptor 1	Proteinase-activated receptor 4	Coagulation factor XI	Coagulation factor XIII A chain	Coagulation factor XIII B chain	Fibrinogen alpha chain	Fibrinogen beta chain	Fibrinogen gamma chain	Coagulation factor V	Coagulation factor VIII
 Proteinase-activated receptor 1
 Proteinase-activated receptor 4
@@ -310,261 +412,175 @@ Fibrinogen beta chain
 Fibrinogen gamma chain
 Coagulation factor V
 Coagulation factor VIII
-Duvelisib	Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit delta isoform
-Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit delta isoform
-Heparin	P-selectin	Fibroblast growth factor receptor 4	Fibroblast growth factor 4	Fibroblast growth factor 19	Fibroblast growth factor receptor 1	Fibroblast growth factor 1	Fibroblast growth factor receptor 2	Fibroblast growth factor 2	Platelet factor 4	Hepatocyte growth factor
-P-selectin	Nadroparin
-Fibroblast growth factor receptor 4
-Fibroblast growth factor 4
-Fibroblast growth factor 19
-Fibroblast growth factor receptor 1	Nintedanib
-Fibroblast growth factor 1
-Fibroblast growth factor receptor 2	Nintedanib
-Fibroblast growth factor 2	Sirolimus
-Platelet factor 4
-Hepatocyte growth factor
-Vitamin E	Protein kinase C beta type	Protein kinase C alpha type	Diacylglycerol kinase alpha	Serine/threonine-protein phosphatase 2A catalytic subunit beta isoform	Serine/threonine-protein phosphatase 2A catalytic subunit alpha isoform	SEC14-like protein 4	SEC14-like protein 3	SEC14-like protein 2
-Protein kinase C beta type
-Protein kinase C alpha type
-Diacylglycerol kinase alpha
-Serine/threonine-protein phosphatase 2A catalytic subunit beta isoform
-Serine/threonine-protein phosphatase 2A catalytic subunit alpha isoform
-SEC14-like protein 4
-SEC14-like protein 3
-SEC14-like protein 2
-Levamisole	Neuronal acetylcholine receptor subunit alpha-3	Alkaline phosphatase, placental-like	Acetylcholine receptor subunit alpha-type unc-38	Acetylcholine receptor subunit alpha-type unc-63	Acetylcholine receptor subunit beta-type lev-1	Acetylcholine receptor subunit beta-type unc-29
-Neuronal acetylcholine receptor subunit alpha-3	Fluoxetine
-Alkaline phosphatase, placental-like
-Acetylcholine receptor subunit alpha-type unc-38
-Acetylcholine receptor subunit alpha-type unc-63
-Acetylcholine receptor subunit beta-type lev-1
-Acetylcholine receptor subunit beta-type unc-29
+Famotidine	Histamine H2 receptor
+Histamine H2 receptor
+Pantoprazole
+Candesartan cilexetil
+Dexmedetomidine	Alpha-2A adrenergic receptor
+Alpha-2A adrenergic receptor
+Ibudilast	cAMP-specific 3',5'-cyclic phosphodiesterase 4B	cAMP-specific 3',5'-cyclic phosphodiesterase 4C	cAMP-specific 3',5'-cyclic phosphodiesterase 4D	cGMP-inhibited 3',5'-cyclic phosphodiesterase A
+cAMP-specific 3',5'-cyclic phosphodiesterase 4B	Iloprost
+cAMP-specific 3',5'-cyclic phosphodiesterase 4C	Iloprost
+cAMP-specific 3',5'-cyclic phosphodiesterase 4D	Iloprost
+cGMP-inhibited 3',5'-cyclic phosphodiesterase A
+Nitazoxanide	Pyruvate-flavodoxin oxidoreductase
+Pyruvate-flavodoxin oxidoreductase
+Epoprostenol	Prostacyclin receptor	Prostacyclin synthase
+Prostacyclin receptor	Iloprost
+Prostacyclin synthase
+Atazanavir
+Argatroban
+Diltiazem	Voltage-dependent calcium channel gamma-1 subunit
+Voltage-dependent calcium channel gamma-1 subunit
+Suramin	P2Y purinoceptor 2	Follicle-stimulating hormone receptor	Ryanodine receptor 1	Phospholipase A2, membrane associated	Complement control protein C3
+P2Y purinoceptor 2
+Follicle-stimulating hormone receptor
+Ryanodine receptor 1
+Phospholipase A2, membrane associated	Indomethacin
+Complement control protein C3
+Nafamostat	Coagulation factor XII	Intercellular adhesion molecule 1
+Coagulation factor XII
+Intercellular adhesion molecule 1
+Elbasvir
+Daclatasvir
+Metformin	5'-AMP-activated protein kinase subunit beta-1	Electron transfer flavoprotein-ubiquinone oxidoreductase, mitochondrial	Glycerol-3-phosphate dehydrogenase [NAD(+)], cytoplasmic
+5'-AMP-activated protein kinase subunit beta-1
+Electron transfer flavoprotein-ubiquinone oxidoreductase, mitochondrial
+Glycerol-3-phosphate dehydrogenase [NAD(+)], cytoplasmic
+Sulfamethoxazole	Dihydropteroate synthase
+Dihydropteroate synthase
+Tacrolimus
+Imatinib	Breakpoint cluster region protein	Mast/stem cell growth factor receptor Kit	RET proto-oncogene	High affinity nerve growth factor receptor	Macrophage colony-stimulating factor 1 receptor	Platelet-derived growth factor receptor alpha	Epithelial discoidin domain-containing receptor 1	Tyrosine-protein kinase ABL1	Platelet-derived growth factor receptor beta
+Breakpoint cluster region protein
+Mast/stem cell growth factor receptor Kit
+RET proto-oncogene
+High affinity nerve growth factor receptor
+Macrophage colony-stimulating factor 1 receptor
+Platelet-derived growth factor receptor alpha	Nintedanib
+Epithelial discoidin domain-containing receptor 1
+Tyrosine-protein kinase ABL1
+Platelet-derived growth factor receptor beta	Nintedanib
+Enoxaparin
+Oseltamivir	Neuraminidase	Sialidase-1	Sialidase-2
+Neuraminidase
+Sialidase-1
+Sialidase-2
+Tranilast	Hematopoietic prostaglandin D synthase
+Hematopoietic prostaglandin D synthase
+Lenalidomide	Protein cereblon	Tumor necrosis factor ligand superfamily member 11	Cadherin-5
+Protein cereblon
+Tumor necrosis factor ligand superfamily member 11
+Cadherin-5
+Naproxen	Peptostreptococcal albumin-binding protein
+Peptostreptococcal albumin-binding protein
+Ambrisentan	Endothelin-1 receptor	Endothelin B receptor
+Endothelin-1 receptor
+Endothelin B receptor
+Degarelix	Gonadotropin-releasing hormone receptor
+Gonadotropin-releasing hormone receptor
+Linagliptin
+Lidocaine	Sodium channel protein type 10 subunit alpha	Sodium channel protein type 9 subunit alpha	Sodium channel protein type 5 subunit alpha	Epidermal growth factor receptor	Sodium channel protein type 4 subunit alpha	Alpha-1-acid glycoprotein 2
+Sodium channel protein type 10 subunit alpha
+Sodium channel protein type 9 subunit alpha
+Sodium channel protein type 5 subunit alpha
+Epidermal growth factor receptor	Zanubrutinib
+Sodium channel protein type 4 subunit alpha
+Alpha-1-acid glycoprotein 2
+Bicalutamide
+Valsartan
 Fluoxetine	5-hydroxytryptamine receptor 2C	Neuronal acetylcholine receptor subunit alpha-2	Neuronal acetylcholine receptor subunit beta-4	Cyclin-dependent kinases regulatory subunit 1
 5-hydroxytryptamine receptor 2C
 Neuronal acetylcholine receptor subunit alpha-2
 Neuronal acetylcholine receptor subunit beta-4
 Cyclin-dependent kinases regulatory subunit 1
-Prednisolone acetate
-Ambrisentan	Endothelin-1 receptor	Endothelin B receptor
-Endothelin-1 receptor
-Endothelin B receptor
+Ceftriaxone	Solute carrier family 22 member 11	Solute carrier family 22 member 6	Solute carrier family 22 member 8	Solute carrier family 15 member 1
+Solute carrier family 22 member 11
+Solute carrier family 22 member 6
+Solute carrier family 22 member 8
+Solute carrier family 15 member 1
+Liothyronine	Thyroid hormone receptor alpha	Thyroid hormone receptor beta	Proliferating cell nuclear antigen
+Thyroid hormone receptor alpha
+Thyroid hormone receptor beta
+Proliferating cell nuclear antigen
+Biotin	Propionyl-CoA carboxylase beta chain, mitochondrial	Biotin--protein ligase	Methylcrotonoyl-CoA carboxylase beta chain, mitochondrial	Acetyl-CoA carboxylase 2	Methylcrotonoyl-CoA carboxylase subunit alpha, mitochondrial	Pyruvate carboxylase, mitochondrial	Propionyl-CoA carboxylase alpha chain, mitochondrial	Acetyl-CoA carboxylase 1
+Propionyl-CoA carboxylase beta chain, mitochondrial
+Biotin--protein ligase
+Methylcrotonoyl-CoA carboxylase beta chain, mitochondrial
+Acetyl-CoA carboxylase 2
+Methylcrotonoyl-CoA carboxylase subunit alpha, mitochondrial
+Pyruvate carboxylase, mitochondrial
+Propionyl-CoA carboxylase alpha chain, mitochondrial
+Acetyl-CoA carboxylase 1
+Raltegravir	Integrase
+Integrase
+Captopril	72 kDa type IV collagenase	Matrix metalloproteinase-9	Leukotriene A-4 hydrolase	B1 bradykinin receptor
+72 kDa type IV collagenase
+Matrix metalloproteinase-9
+Leukotriene A-4 hydrolase
+B1 bradykinin receptor	Ramipril
+Almitrine	Sodium/potassium-transporting ATPase subunit alpha-1
+Sodium/potassium-transporting ATPase subunit alpha-1
+Bemiparin
+Remdesivir
+Ibuprofen	Apoptosis regulator Bcl-2	Thrombomodulin	Fatty acid-binding protein, intestinal	Cystic fibrosis transmembrane conductance regulator	Platelet glycoprotein Ib alpha chain	Protein S100-A7
+Apoptosis regulator Bcl-2
+Thrombomodulin
+Fatty acid-binding protein, intestinal
+Cystic fibrosis transmembrane conductance regulator
+Platelet glycoprotein Ib alpha chain
+Protein S100-A7
+Iloprost	Prostaglandin E2 receptor EP1 subtype	Tissue-type plasminogen activator	Prostaglandin D2 receptor 2
+Prostaglandin E2 receptor EP1 subtype
+Tissue-type plasminogen activator
+Prostaglandin D2 receptor 2	Indomethacin
+Estradiol	Neuronal acetylcholine receptor subunit alpha-4	ATP synthase subunit a	Beclin-1
+Neuronal acetylcholine receptor subunit alpha-4
+ATP synthase subunit a
+Beclin-1
+Trifluoperazine	Dopamine D2 receptor	Neuron-specific vesicular protein calcyon	Calmodulin	Troponin C, slow skeletal and cardiac muscles	Protein S100-A4
+Dopamine D2 receptor
+Neuron-specific vesicular protein calcyon
+Calmodulin	Melatonin
+Troponin C, slow skeletal and cardiac muscles
+Protein S100-A4
 Riboflavin	Riboflavin kinase	Riboflavin synthase	Flavin reductase (NADPH)
 Riboflavin kinase
 Riboflavin synthase
 Flavin reductase (NADPH)
-Eprosartan
-Isotretinoin	Retinoic acid receptor alpha	Retinoic acid receptor gamma
-Retinoic acid receptor alpha
-Retinoic acid receptor gamma
-Roxithromycin	50S ribosomal protein L10	P-glycoprotein 1
-50S ribosomal protein L10	Clarithromycin
-P-glycoprotein 1	Tetrandrine
-Disulfiram	Aldehyde dehydrogenase, mitochondrial	Dopamine beta-hydroxylase
-Aldehyde dehydrogenase, mitochondrial
-Dopamine beta-hydroxylase
-Icatibant	B2 bradykinin receptor	Aminopeptidase N
-B2 bradykinin receptor
-Aminopeptidase N
-Aprotinin	Trypsin-1	Chymotrypsinogen B	Plasminogen	Kallikrein-1
-Trypsin-1	Nafamostat	Camostat
-Chymotrypsinogen B
-Plasminogen	Tranexamic acid
-Kallikrein-1	Nafamostat
-Ramelteon
-TMC-310911
-Methylprednisolone
-Pyridoxine	Pyridoxal kinase
-Pyridoxal kinase
-Emtricitabine
-Dipyridamole	cAMP and cAMP-inhibited cGMP 3',5'-cyclic phosphodiesterase 10A	Adenosine deaminase	Calcipressin-1	Alpha-1-acid glycoprotein 1
-cAMP and cAMP-inhibited cGMP 3',5'-cyclic phosphodiesterase 10A
-Adenosine deaminase	Artenimol
-Calcipressin-1
-Alpha-1-acid glycoprotein 1	Progesterone	Lidocaine
+Quercetin	Tyrosine-protein kinase HCK	Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit gamma isoform	UDP-glucuronosyltransferase 3A1	ATP synthase subunit alpha, mitochondrial	ATP synthase subunit beta, mitochondrial	ATP synthase subunit gamma, mitochondrial	Serine/threonine-protein kinase pim-1	HTH-type transcriptional regulator TtgR	3-hydroxyisobutyryl-CoA hydrolase, mitochondrial	3-hydroxyacyl-[acyl-carrier-protein] dehydratase FabZ	Serine/threonine-protein kinase 17B	Actin, cytoplasmic 1	Casein kinase II subunit beta	Eukaryotic translation initiation factor 3 subunit F	Heat shock protein HSP 90-alpha	Heat shock-related 70 kDa protein 2	RuvB-like 2	Splicing factor 3B subunit 3	Ubiquitin-like modifier-activating enzyme 1	CCAAT/enhancer-binding protein beta
+Tyrosine-protein kinase HCK
+Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit gamma isoform	Duvelisib
+UDP-glucuronosyltransferase 3A1
+ATP synthase subunit alpha, mitochondrial	Artenimol
+ATP synthase subunit beta, mitochondrial
+ATP synthase subunit gamma, mitochondrial
+Serine/threonine-protein kinase pim-1
+HTH-type transcriptional regulator TtgR
+3-hydroxyisobutyryl-CoA hydrolase, mitochondrial
+3-hydroxyacyl-[acyl-carrier-protein] dehydratase FabZ
+Serine/threonine-protein kinase 17B
+Actin, cytoplasmic 1
+Casein kinase II subunit beta
+Eukaryotic translation initiation factor 3 subunit F
+Heat shock protein HSP 90-alpha
+Heat shock-related 70 kDa protein 2
+RuvB-like 2
+Splicing factor 3B subunit 3
+Ubiquitin-like modifier-activating enzyme 1
+CCAAT/enhancer-binding protein beta
 Cyclosporine	Calcium signal-modulating cyclophilin ligand	Calcineurin subunit B type 2	Peptidyl-prolyl cis-trans isomerase A	Peptidyl-prolyl cis-trans isomerase F, mitochondrial
 Calcium signal-modulating cyclophilin ligand
 Calcineurin subunit B type 2
 Peptidyl-prolyl cis-trans isomerase A	Artenimol
 Peptidyl-prolyl cis-trans isomerase F, mitochondrial
-Linagliptin	Dipeptidyl peptidase 4
-Dipeptidyl peptidase 4	Atorvastatin	Sitagliptin
-Rabeprazole
-Elbasvir	Nonstructural protein 5A
-Nonstructural protein 5A	Daclatasvir	Velpatasvir
-Ceftriaxone	Penicillin-binding protein 2B	Solute carrier family 22 member 11	Solute carrier family 22 member 6	Solute carrier family 22 member 8	Solute carrier family 15 member 1
-Penicillin-binding protein 2B	Piperacillin
-Solute carrier family 22 member 11
-Solute carrier family 22 member 6
-Solute carrier family 22 member 8
-Solute carrier family 15 member 1
-Telmisartan
-Baricitinib	Tyrosine-protein kinase JAK3
-Tyrosine-protein kinase JAK3	Zanubrutinib	Tofacitinib
-Galidesivir
-Degarelix	Gonadotropin-releasing hormone receptor
-Gonadotropin-releasing hormone receptor
-Fingolimod	Histone deacetylase 1	Sphingosine 1-phosphate receptor 4	Sphingosine 1-phosphate receptor 3
-Histone deacetylase 1
-Sphingosine 1-phosphate receptor 4
-Sphingosine 1-phosphate receptor 3
-Remdesivir	Replicase polyprotein 1ab
-Replicase polyprotein 1ab	GC-376 free acid	GS-441524
-Pantoprazole	N(G),N(G)-dimethylarginine dimethylaminohydrolase 1
-N(G),N(G)-dimethylarginine dimethylaminohydrolase 1	Citrulline
-Dutasteride	3-oxo-5-alpha-steroid 4-dehydrogenase 2	3-oxo-5-alpha-steroid 4-dehydrogenase 1
-3-oxo-5-alpha-steroid 4-dehydrogenase 2
-3-oxo-5-alpha-steroid 4-dehydrogenase 1
-Fluvoxamine
-Enalapril
-Tetrandrine
-Fisetin	Cyclin homolog	Cyclin-dependent kinase 6
-Cyclin homolog
-Cyclin-dependent kinase 6
-GC-376 free acid	Replicase polyprotein 1a
-Replicase polyprotein 1a
-Candesartan
-Daclatasvir
-Pentoxifylline	Adenosine receptor A1	Adenosine receptor A2a	5'-nucleotidase
-Adenosine receptor A1	Defibrotide
-Adenosine receptor A2a	Defibrotide
-5'-nucleotidase
-Resiniferatoxin	Transient receptor potential cation channel subfamily V member 1
-Transient receptor potential cation channel subfamily V member 1	alpha-Linolenic acid	Acetaminophen	Camphor	Icosapent
-Ibrutinib	Tyrosine-protein kinase BTK
-Tyrosine-protein kinase BTK	Zanubrutinib	Acalabrutinib
-Piperacillin	Penicillin-binding protein 3	Penicillin-binding protein 2a	Penicillin-binding protein 1b
-Penicillin-binding protein 3
-Penicillin-binding protein 2a
-Penicillin-binding protein 1b
-Diltiazem	Voltage-dependent calcium channel gamma-1 subunit
-Voltage-dependent calcium channel gamma-1 subunit
-Irbesartan	Transcription factor AP-1
-Transcription factor AP-1
-Tinzaparin	Integrin alpha-4	Stromal cell-derived factor 1
-Integrin alpha-4
-Stromal cell-derived factor 1
-Nafamostat	Coagulation factor XII	Intercellular adhesion molecule 1
-Coagulation factor XII
-Intercellular adhesion molecule 1
-Selinexor	Exportin-1
-Exportin-1
-alpha-Linolenic acid	Fatty acid desaturase 1	Fatty acid desaturase 2	Sodium/calcium exchanger 1	Bile acid receptor	Elongation of very long chain fatty acids protein 2	Elongation of very long chain fatty acids protein 5
-Fatty acid desaturase 1	Icosapent
-Fatty acid desaturase 2
-Sodium/calcium exchanger 1	Icosapent
-Bile acid receptor
-Elongation of very long chain fatty acids protein 2
-Elongation of very long chain fatty acids protein 5
-Metronidazole	Oxygen-insensitive NADPH nitroreductase
-Oxygen-insensitive NADPH nitroreductase
-Zanubrutinib	Epidermal growth factor receptor	Receptor tyrosine-protein kinase erbB-2	Receptor tyrosine-protein kinase erbB-4	Tyrosine-protein kinase ITK/TSK	Cytoplasmic tyrosine-protein kinase BMX	Tyrosine-protein kinase Tec	Tyrosine-protein kinase Blk	Protein-tyrosine kinase 6	Tyrosine-protein kinase Fgr	Tyrosine-protein kinase FRK	Tyrosine-protein kinase Lck	Tyrosine-protein kinase TXK
-Epidermal growth factor receptor	Lidocaine
-Receptor tyrosine-protein kinase erbB-2
-Receptor tyrosine-protein kinase erbB-4
-Tyrosine-protein kinase ITK/TSK
-Cytoplasmic tyrosine-protein kinase BMX
-Tyrosine-protein kinase Tec
-Tyrosine-protein kinase Blk
-Protein-tyrosine kinase 6
-Tyrosine-protein kinase Fgr
-Tyrosine-protein kinase FRK
-Tyrosine-protein kinase Lck	Nintedanib
-Tyrosine-protein kinase TXK
-Acalabrutinib
-Pyridostigmine	Acetylcholinesterase	Cholinesterase	Serum albumin
-Acetylcholinesterase
-Cholinesterase
-Serum albumin	Artenimol
-Ginseng	Interleukin-6
-Interleukin-6
-Liothyronine	Thyroid hormone receptor alpha	Thyroid hormone receptor beta	Proliferating cell nuclear antigen
-Thyroid hormone receptor alpha
-Thyroid hormone receptor beta
-Proliferating cell nuclear antigen
-Progesterone	Progesterone receptor	Mineralocorticoid receptor	Steroid 17-alpha-hydroxylase/17,20 lyase
-Progesterone receptor	Mometasone furoate
-Mineralocorticoid receptor
-Steroid 17-alpha-hydroxylase/17,20 lyase
-Argatroban
-Brequinar
-Lopinavir
-Darunavir
-Bismuth subcitrate potassium	ATP-dependent Clp protease ATP-binding subunit ClpX
-ATP-dependent Clp protease ATP-binding subunit ClpX
-Thiamine	Thiamin pyrophosphokinase 1
-Thiamin pyrophosphokinase 1
-Merimepodib	Inosine-5'-monophosphate dehydrogenase
-Inosine-5'-monophosphate dehydrogenase
-Atorvastatin	Histone deacetylase 2
-Histone deacetylase 2	Simvastatin
-Acetaminophen	Prostaglandin E synthase 3
-Prostaglandin E synthase 3
-Lenalidomide	Protein cereblon	Tumor necrosis factor ligand superfamily member 11	Cadherin-5
-Protein cereblon
-Tumor necrosis factor ligand superfamily member 11
-Cadherin-5
-Dexmedetomidine	Alpha-2A adrenergic receptor
-Alpha-2A adrenergic receptor
-Sirolimus	Serine/threonine-protein kinase mTOR
-Serine/threonine-protein kinase mTOR
-Fondaparinux
-GS-441524
-Celecoxib	3-phosphoinositide-dependent protein kinase 1	Carbonic anhydrase 2	Carbonic anhydrase 3	Cadherin-11
-3-phosphoinositide-dependent protein kinase 1
-Carbonic anhydrase 2
-Carbonic anhydrase 3
-Cadherin-11
-Nicotinamide	Exotoxin A	L-lactate dehydrogenase A chain	Poly [ADP-ribose] polymerase 1	ADP-ribosyl cyclase 2
-Exotoxin A
-L-lactate dehydrogenase A chain	Artenimol
-Poly [ADP-ribose] polymerase 1
-ADP-ribosyl cyclase 2
-Dapagliflozin	Sodium/glucose cotransporter 2
-Sodium/glucose cotransporter 2
-Olmesartan
-Candesartan cilexetil
-Lipoic acid	Lipoyltransferase 1, mitochondrial	Lipoyl synthase, mitochondrial	Sodium-dependent multivitamin transporter
-Lipoyltransferase 1, mitochondrial
-Lipoyl synthase, mitochondrial
-Sodium-dependent multivitamin transporter
-Curcumin	Multidrug resistance-associated protein 5	Glutathione S-transferase P
-Multidrug resistance-associated protein 5
-Glutathione S-transferase P
-Tenofovir alafenamide
-Velpatasvir
+Losartan
+Tirofiban	Integrin alpha-IIb
+Integrin alpha-IIb
+Colchicine	Tubulin beta chain
+Tubulin beta chain	Artenimol
 Berberine	HTH-type transcriptional regulator QacR	Baculoviral IAP repeat-containing protein 5
 HTH-type transcriptional regulator QacR
 Baculoviral IAP repeat-containing protein 5
-Trimethoprim	Dihydrofolate reductase
-Dihydrofolate reductase	Methotrexate
-Angiotensin II
-Defibrotide	Adenosine receptor A2b
-Adenosine receptor A2b
-Mometasone furoate
-Sitagliptin
-Tazobactam	Beta-lactamase TEM	Beta-lactamase Ohio-1	Beta-lactamase SHV-1
-Beta-lactamase TEM
-Beta-lactamase Ohio-1
-Beta-lactamase SHV-1
-Indomethacin	Prostaglandin reductase 2	Lactoylglutathione lyase	Aldo-keto reductase family 1 member C3
-Prostaglandin reductase 2
-Lactoylglutathione lyase
-Aldo-keto reductase family 1 member C3
-Camphor	Camphor 5-monooxygenase	Transient receptor potential cation channel subfamily V member 3	Transient receptor potential cation channel subfamily A member 1	Transient receptor potential cation channel subfamily M member 8
-Camphor 5-monooxygenase
-Transient receptor potential cation channel subfamily V member 3
-Transient receptor potential cation channel subfamily A member 1
-Transient receptor potential cation channel subfamily M member 8
-Piclidenoson	Adenosine receptor A3
-Adenosine receptor A3
-Simvastatin
-Enoxaparin
-Metformin	5'-AMP-activated protein kinase subunit beta-1	Electron transfer flavoprotein-ubiquinone oxidoreductase, mitochondrial	Glycerol-3-phosphate dehydrogenase [NAD(+)], cytoplasmic
-5'-AMP-activated protein kinase subunit beta-1
-Electron transfer flavoprotein-ubiquinone oxidoreductase, mitochondrial
-Glycerol-3-phosphate dehydrogenase [NAD(+)], cytoplasmic
-Ibudilast	cGMP-inhibited 3',5'-cyclic phosphodiesterase A
-cGMP-inhibited 3',5'-cyclic phosphodiesterase A
 Vitamin A	Retinol dehydrogenase 12	Short-chain dehydrogenase/reductase 3	Aldehyde dehydrogenase family 1 member A3	All-trans-retinol 13,14-reductase	Retinol dehydrogenase 11	Dehydrogenase/reductase SDR family member 4	Retinol dehydrogenase 14	Retinol dehydrogenase 8	Lecithin retinol acyltransferase	11-cis retinol dehydrogenase	Retinol dehydrogenase 13	Retinal dehydrogenase 2	Retinal dehydrogenase 1	Apolipoprotein D	Prostaglandin-H2 D-isomerase
 Retinol dehydrogenase 12
 Short-chain dehydrogenase/reductase 3
@@ -581,124 +597,99 @@ Retinal dehydrogenase 2
 Retinal dehydrogenase 1
 Apolipoprotein D
 Prostaglandin-H2 D-isomerase
-Ivermectin	Glycine receptor subunit alpha-3	Gamma-aminobutyric acid receptor subunit beta-3
-Glycine receptor subunit alpha-3
-Gamma-aminobutyric acid receptor subunit beta-3
-Resveratrol	Arachidonate 15-lipoxygenase	Phosphatidylinositol 4-kinase type 2-beta	Integrin alpha-5	Amyloid beta A4 protein	Alpha-synuclein	NAD-dependent protein deacetylase sirtuin-1	C-type lectin domain family 14 member A	Solute carrier family 2, facilitated glucose transporter member 1	Far upstream element-binding protein 2	Tyrosine--tRNA ligase, cytoplasmic
-Arachidonate 15-lipoxygenase
-Phosphatidylinositol 4-kinase type 2-beta
-Integrin alpha-5
-Amyloid beta A4 protein
-Alpha-synuclein
-NAD-dependent protein deacetylase sirtuin-1
-C-type lectin domain family 14 member A
-Solute carrier family 2, facilitated glucose transporter member 1
-Far upstream element-binding protein 2	Artenimol
-Tyrosine--tRNA ligase, cytoplasmic
-Lidocaine	Sodium channel protein type 10 subunit alpha	Sodium channel protein type 9 subunit alpha	Sodium channel protein type 5 subunit alpha	Sodium channel protein type 4 subunit alpha	Alpha-1-acid glycoprotein 2
-Sodium channel protein type 10 subunit alpha
-Sodium channel protein type 9 subunit alpha
-Sodium channel protein type 5 subunit alpha
-Sodium channel protein type 4 subunit alpha
-Alpha-1-acid glycoprotein 2
-Nintedanib	Vascular endothelial growth factor receptor 1	Vascular endothelial growth factor receptor 2	Vascular endothelial growth factor receptor 3	Fibroblast growth factor receptor 3	Receptor-type tyrosine-protein kinase FLT3	Tyrosine-protein kinase Lyn	Proto-oncogene tyrosine-protein kinase Src
+Nintedanib	Vascular endothelial growth factor receptor 1	Vascular endothelial growth factor receptor 2	Vascular endothelial growth factor receptor 3	Fibroblast growth factor receptor 3	Receptor-type tyrosine-protein kinase FLT3	Tyrosine-protein kinase Lck	Tyrosine-protein kinase Lyn	Proto-oncogene tyrosine-protein kinase Src
 Vascular endothelial growth factor receptor 1
 Vascular endothelial growth factor receptor 2
 Vascular endothelial growth factor receptor 3
 Fibroblast growth factor receptor 3
 Receptor-type tyrosine-protein kinase FLT3
+Tyrosine-protein kinase Lck	Zanubrutinib
 Tyrosine-protein kinase Lyn
 Proto-oncogene tyrosine-protein kinase Src
-Tofacitinib	Non-receptor tyrosine-protein kinase TYK2
-Non-receptor tyrosine-protein kinase TYK2
-Rivaroxaban
+Mecobalamin
+Artesunate	Malaria protein EXP-1
+Malaria protein EXP-1
+Zanubrutinib	Tyrosine-protein kinase BTK	Receptor tyrosine-protein kinase erbB-2	Receptor tyrosine-protein kinase erbB-4	Tyrosine-protein kinase ITK/TSK	Cytoplasmic tyrosine-protein kinase BMX	Tyrosine-protein kinase Tec	Tyrosine-protein kinase Blk	Protein-tyrosine kinase 6	Tyrosine-protein kinase Fgr	Tyrosine-protein kinase FRK	Tyrosine-protein kinase TXK
+Tyrosine-protein kinase BTK	Acalabrutinib	Ibrutinib
+Receptor tyrosine-protein kinase erbB-2
+Receptor tyrosine-protein kinase erbB-4
+Tyrosine-protein kinase ITK/TSK
+Cytoplasmic tyrosine-protein kinase BMX
+Tyrosine-protein kinase Tec
+Tyrosine-protein kinase Blk
+Protein-tyrosine kinase 6
+Tyrosine-protein kinase Fgr
+Tyrosine-protein kinase FRK
+Tyrosine-protein kinase TXK
+Ramelteon
+Piclidenoson	Adenosine receptor A3
+Adenosine receptor A3
+Resiniferatoxin
+Acalabrutinib
+Dexamethasone	Nuclear receptor subfamily 0 group B member 1
+Nuclear receptor subfamily 0 group B member 1
+Atovaquone	Cytochrome b
+Cytochrome b
+Duvelisib	Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit delta isoform
+Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit delta isoform
+Naltrexone	HCG20471, isoform CRA_c
+HCG20471, isoform CRA_c
+Protoporphyrin	Ferritin light chain
+Ferritin light chain
+Folic acid	Folate receptor gamma	Folate receptor beta	Folate receptor alpha
+Folate receptor gamma
+Folate receptor beta
+Folate receptor alpha
+Ramipril
+Ritonavir
+Oleic Acid	Myelin P2 protein	Retinoic acid receptor RXR-alpha
+Myelin P2 protein
+Retinoic acid receptor RXR-alpha
 Noscapine	Sigma non-opioid intracellular receptor 1
 Sigma non-opioid intracellular receptor 1
-Citrulline	Argininosuccinate synthase	N(G),N(G)-dimethylarginine dimethylaminohydrolase 2	Argininosuccinate synthetase, isoform CRA_a	Ornithine carbamoyltransferase, mitochondrial	Nitric oxide synthase, brain	Nitric oxide synthase, endothelial	Protein-arginine deiminase type-6	Protein-arginine deiminase type-1	Protein-arginine deiminase type-3	Protein-arginine deiminase type-2	Protein-arginine deiminase type-4
-Argininosuccinate synthase
-N(G),N(G)-dimethylarginine dimethylaminohydrolase 2
-Argininosuccinate synthetase, isoform CRA_a
-Ornithine carbamoyltransferase, mitochondrial
-Nitric oxide synthase, brain	Methylene blue
-Nitric oxide synthase, endothelial
-Protein-arginine deiminase type-6
-Protein-arginine deiminase type-1
-Protein-arginine deiminase type-3
-Protein-arginine deiminase type-2
-Protein-arginine deiminase type-4
-Cysteine	Glutamate--cysteine ligase regulatory subunit	Glutamate--cysteine ligase catalytic subunit	Aspartate aminotransferase, cytoplasmic	Aspartate aminotransferase, mitochondrial	Cystathionine gamma-lyase	Cystathionine beta-synthase	Cysteine--tRNA ligase, cytoplasmic	Methylated-DNA--protein-cysteine methyltransferase	Glutathione synthetase	Probable cysteine--tRNA ligase, mitochondrial	Cysteine sulfinic acid decarboxylase	Cysteine desulfurase, mitochondrial	Cysteine dioxygenase type 1
-Glutamate--cysteine ligase regulatory subunit
-Glutamate--cysteine ligase catalytic subunit
-Aspartate aminotransferase, cytoplasmic
-Aspartate aminotransferase, mitochondrial
-Cystathionine gamma-lyase
-Cystathionine beta-synthase
-Cysteine--tRNA ligase, cytoplasmic
-Methylated-DNA--protein-cysteine methyltransferase
-Glutathione synthetase
-Probable cysteine--tRNA ligase, mitochondrial
-Cysteine sulfinic acid decarboxylase
-Cysteine desulfurase, mitochondrial
-Cysteine dioxygenase type 1
-Tranexamic acid
-Omega-3 fatty acids	Sterol regulatory element-binding protein 1
-Sterol regulatory element-binding protein 1
+Baloxavir marboxil	Polymerase acidic protein
+Polymerase acidic protein
+Atorvastatin
+Pioglitazone	Amine oxidase [flavin-containing] B
+Amine oxidase [flavin-containing] B
+Montelukast	Cysteinyl leukotriene receptor 1
+Cysteinyl leukotriene receptor 1
+Olmesartan
+Melatonin	Nuclear receptor ROR-beta	Myeloperoxidase	Eosinophil peroxidase	Calreticulin	Acetylserotonin O-methyltransferase
+Nuclear receptor ROR-beta
+Myeloperoxidase
+Eosinophil peroxidase
+Calreticulin
+Acetylserotonin O-methyltransferase
+Metenkefalin
+Ciclesonide
+Pentoxifylline	5'-nucleotidase
+5'-nucleotidase
 Clarithromycin	Solute carrier organic anion transporter family member 1B1	Solute carrier organic anion transporter family member 1B3
 Solute carrier organic anion transporter family member 1B1
 Solute carrier organic anion transporter family member 1B3
-Moxifloxacin
-Almitrine	Sodium/potassium-transporting ATPase subunit alpha-1
-Sodium/potassium-transporting ATPase subunit alpha-1
-Icosapent	Long-chain-fatty-acid--CoA ligase 4	Free fatty acid receptor 1
-Long-chain-fatty-acid--CoA ligase 4
-Free fatty acid receptor 1
-Artesunate	Malaria protein EXP-1
-Malaria protein EXP-1
-Atazanavir
-Oxytocin	Oxytocin receptor	Oxytocin-neurophysin 1
-Oxytocin receptor
-Oxytocin-neurophysin 1
-Methotrexate	Thymidylate synthase	Bifunctional purine biosynthesis protein PURH
-Thymidylate synthase
-Bifunctional purine biosynthesis protein PURH
-Raltegravir	Integrase
-Integrase
-Hesperidin	Aurora kinase B
-Aurora kinase B
-Clopidogrel
-Oxycodone
-Calcifediol
-Tranilast	Hematopoietic prostaglandin D synthase
-Hematopoietic prostaglandin D synthase
-Nadroparin	Proto-oncogene c-Fos	Myc proto-oncogene protein
-Proto-oncogene c-Fos
-Myc proto-oncogene protein
-Formoterol	Beta-3 adrenergic receptor
-Beta-3 adrenergic receptor
-Camostat	Transmembrane protease serine 2	Suppressor of tumorigenicity 14 protein	Cholecystokinin
-Transmembrane protease serine 2
-Suppressor of tumorigenicity 14 protein
-Cholecystokinin
-Itraconazole	Lanosterol 14-alpha demethylase
-Lanosterol 14-alpha demethylase
-Vitamin D	Vitamin D-binding protein
-Vitamin D-binding protein
-Trifluoperazine	Dopamine D2 receptor	Neuron-specific vesicular protein calcyon	Troponin C, slow skeletal and cardiac muscles	Protein S100-A4
-Dopamine D2 receptor
-Neuron-specific vesicular protein calcyon
-Troponin C, slow skeletal and cardiac muscles
-Protein S100-A4
-Methylene blue	Guanylate cyclase soluble subunit alpha-2
-Guanylate cyclase soluble subunit alpha-2
-Hydrocortisone
-Chloroquine	Glutathione S-transferase A2	Tumor necrosis factor	Toll-like receptor 9	Glutathione S-transferase	High mobility group protein B1	Glutathione S-transferase Mu 1	Angiotensin-converting enzyme 2
-Glutathione S-transferase A2
-Tumor necrosis factor
-Toll-like receptor 9
-Glutathione S-transferase
-High mobility group protein B1
-Glutathione S-transferase Mu 1
-Angiotensin-converting enzyme 2
+Disulfiram	Aldehyde dehydrogenase, mitochondrial	Dopamine beta-hydroxylase
+Aldehyde dehydrogenase, mitochondrial
+Dopamine beta-hydroxylase
+Nelfinavir
+Celecoxib	3-phosphoinositide-dependent protein kinase 1	Carbonic anhydrase 2	Carbonic anhydrase 3	Cadherin-11
+3-phosphoinositide-dependent protein kinase 1
+Carbonic anhydrase 2
+Carbonic anhydrase 3
+Cadherin-11
+Tenofovir alafenamide	Reverse transcriptase	DNA polymerase
+Reverse transcriptase
+DNA polymerase
+Indomethacin	Prostaglandin reductase 2	Lactoylglutathione lyase	Aldo-keto reductase family 1 member C3
+Prostaglandin reductase 2
+Lactoylglutathione lyase
+Aldo-keto reductase family 1 member C3
+Prednisolone acetate
+Ibrutinib
+Progesterone	Mineralocorticoid receptor	Steroid 17-alpha-hydroxylase/17,20 lyase
+Mineralocorticoid receptor
+Steroid 17-alpha-hydroxylase/17,20 lyase
+Piperine
 Artenimol	Actin, cytoplasmic 2	Alpha-aminoadipic semialdehyde dehydrogenase	Annexin A2	ATP synthase subunit g, mitochondrial	ATP synthase subunit O, mitochondrial	Calpastatin	T-complex protein 1 subunit gamma	Cofilin-1	Chloride intracellular channel protein 1	Cysteine and glycine-rich protein 1	Dihydropyrimidinase-related protein 2	Desmoplakin	Elongation factor 1-alpha 1	Alpha-enolase	Filamin-A	Alpha-ketoglutarate-dependent dioxygenase FTO	Glucose-6-phosphate 1-dehydrogenase	Glyceraldehyde-3-phosphate dehydrogenase, testis-specific	Glucose-6-phosphate isomerase	Heterogeneous nuclear ribonucleoproteins A2/B1	Heterogeneous nuclear ribonucleoprotein D0	Heterogeneous nuclear ribonucleoprotein K	Heterochromatin protein 1-binding protein 3	Heat shock protein beta-1	Ras GTPase-activating-like protein IQGAP1	L-lactate dehydrogenase B chain	Galectin-1	Microtubule-associated protein 4	Malate dehydrogenase, cytoplasmic	Puromycin-sensitive aminopeptidase	Profilin-1	Phosphoglycerate kinase 1	Pyruvate kinase PKM	Peroxiredoxin-1	60S ribosomal protein L10	60S ribosomal protein L14	60S ribosomal protein L18	60S ribosomal protein L23a	60S ribosomal protein L35	60S ribosomal protein L4	40S ribosomal protein S13	40S ribosomal protein S17	40S ribosomal protein S18	40S ribosomal protein S19	40S ribosomal protein S28	40S ribosomal protein S5	40S ribosomal protein S6	40S ribosomal protein S8	40S ribosomal protein S9	Splicing factor 1	Splicing factor, proline- and glutamine-rich	Small nuclear ribonucleoprotein Sm D2	Signal recognition particle 14 kDa protein	Serine/arginine-rich splicing factor 4	Transgelin	Transgelin-2	Triosephosphate isomerase	Tropomyosin alpha-1 chain	Tubulin alpha-1A chain	Vimentin	Zyxin	Heat shock cognate 71 kDa protein	Tubulin beta-6 chain	Tubulin beta-4A chain	Fructose-bisphosphate aldolase A	Glyceraldehyde-3-phosphate dehydrogenase	Cytochrome c	Phosphoglycerate mutase 1	Myosin-9	Protein disulfide-isomerase	Probable ATP-dependent RNA helicase DDX5	Serine hydroxymethyltransferase, mitochondrial	Spliceosome RNA helicase DDX39B	Nucleophosmin	Translationally-controlled tumor protein homolog	P-type Ca2+-transporting ATPase	Ornithine aminotransferase	Elongation factor 1-alpha	Multidrug resistance protein	Elongation factor 2	Actin-1	Fructose-bisphosphate aldolase	Cell division cycle protein 48 homologue,putative	Heat shock protein 90	Eukaryotic initiation factor 4A	Pyruvate kinase	L-lactate dehydrogenase	Thioredoxin-related protein, putative	Spermidine synthase	Probable ATP-dependent 6-phosphofructokinase	Glutamate dehydrogenase	Endoplasmin homolog, putative	Hypoxanthine-guanine-xanthine phosphoribosyltransferase	Enolase	40S ribosomal protein S3	Non-SERCA-type Ca2+-transporting P-ATPase	Tubulin alpha chain	Knob-associated histidine-rich protein	S-adenosylmethionine synthase	V-type H(+)-translocating pyrophosphatase, putative	Phosphoethanolamine N-methyltransferase	40S ribosomal protein S3a	Conserved Plasmodium membrane protein	60S ribosomal protein L3	High molecular weight rhoptry protein 2	Serine repeat antigen 5	Glycophorin-binding protein	Calcium-transporting ATPase	V-type proton ATPase catalytic subunit A	60S ribosomal protein L2	Acyl-CoA synthetase	Plasmepsin IV	Plasmepsin-1	Chloroquine resistance transporter	14-3-3 protein	Isoleucine--tRNA ligase, putative	Plasmodium exported protein	60S ribosomal protein L27	Sec62, putative	Autophagy-related protein 18, putative	Mature parasite-infected erythrocyte surface antigen	Importin-7, putative	Importin subunit alpha	Peptidyl-prolyl cis-trans isomerase	DnaJ protein, putative	Merozoite surface protein 1	Glutamate--tRNA ligase	T-complex protein 1 subunit eta	Plasmepsin-2	Chaperone, putative	Rhoptry neck protein 3	40S ribosomal protein S5, putative	Skeleton-binding protein 1	Purine nucleotide phosphorylase, putative	Adenosylhomocysteinase	Methionine--tRNA ligase	Carbamoyl phosphate synthetase	Aspartate carbamoyltransferase	Signal recognition particle receptor, beta subunit	Parasite-infected erythrocyte surface protein	Coatomer alpha subunit, putative	Hexokinase	Proteasome subunit alpha type	Haloacid dehalogenase-like hydrolase	Insulinase, putative	40S ribosomal protein S21	Ubiquitin-conjugating enzyme E2	Eukaryotic translation initiation factor 3 subunit C	60S ribosomal protein L24, putative	60S ribosomal protein L23	60S ribosomal protein L17, putative	HAP protein	Heat shock protein 110, putative	60S ribosomal protein L10, putative	Lysophospholipase, putative	Polyadenylate-binding protein	Ubiquitin-60S ribosomal protein L40	Phosphoribosylpyrophosphate synthetase	Thioredoxin peroxidase 1	Protein transport protein SEC31	Dipeptidyl aminopeptidase 1	Ring-infected erythrocyte surface antigen	ATP-dependent RNA helicase UAP56	Calcium-dependent protein kinase 4	GTP-binding nuclear protein Ran	Nucleoside transporter 2	Anamorsin homolog	Glutamine synthetase, putative	60S ribosomal protein L30e, putative	Casein kinase 2, alpha subunit	Threonine--tRNA ligase	cAMP-dependent protein kinase regulatory subunit	Elongation factor 1-gamma, putative	Thioredoxin-like protein	60S ribosomal protein L21	60S ribosomal protein L14, putative	Inner membrane complex sub-compartment protein 3	HSP40, subfamily A, putative	Pyridoxal 5'-phosphate synthase subunit Pdx1
 Actin, cytoplasmic 2
 Alpha-aminoadipic semialdehyde dehydrogenase
@@ -879,3 +870,6 @@ Thioredoxin-like protein
 Inner membrane complex sub-compartment protein 3
 HSP40, subfamily A, putative
 Pyridoxal 5'-phosphate synthase subunit Pdx1
+Itraconazole	Lanosterol 14-alpha demethylase
+Lanosterol 14-alpha demethylase
+Eprosartan
