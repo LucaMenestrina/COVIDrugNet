@@ -8,7 +8,6 @@ dash_table==4.8.1
 tqdm==4.48.0
 requests==2.24.0
 pandas==1.0.5
-seaborn==0.10.1
 dash_html_components==1.0.3
 dash_cytoscape==0.2.0
 PubChemPy==1.0.4
