@@ -128,7 +128,7 @@ def legend(prefix):
                 header="Graph's Legend",
                 id=prefix+"_legend_toast",
                 dismissable=True,
-                style={"position":"absolute","top":"-4vh","left":"-12vw", "width":"200%","z-index":"1100"},
+                style={"position":"absolute","top":"-4vh","left":"-12vw", "width":"200%","z-index":"1000"},
                 is_open=False
             ),
             dbc.Tooltip(["Graph's Legend",html.Br(),"(when available)"], target=prefix+"_legend_open", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
@@ -386,4 +386,4 @@ def footer():
                     html.Small("App developed by Luca Menestrina, Department of Pharmacy and Biotechnology, University of Bologna, Italy")
                 ], style={"margin":"0px"})
                 # dbc.Row(html.Small("Copyright \u00A9 2020 Luca Menestrina All rights reserved")) # controllo le licenze di github
-            ], fluid=True, className="bg-light", style={"box-shadow":"0 0 0.4rem #CDCDCD", "z-index":"1000", "padding":"0.5%", "padding-left":"1%"})
+            ], fluid=True, className="bg-light", style={"box-shadow":"0 0 0.4rem #CDCDCD", "z-index":"1000", "padding":"0.5%", "padding-left":"1%", "position":"absolute","bottom":"0"})

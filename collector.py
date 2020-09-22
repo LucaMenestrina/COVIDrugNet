@@ -7,7 +7,6 @@ from rdkit.Chem import AllChem
 from rdkit import DataStructs
 import requests
 from bs4 import BeautifulSoup
-import seaborn as sns
 import matplotlib.pyplot as plt
 import os
 import pickle
@@ -458,16 +457,15 @@ COVID_drugs=collector()
 
 # for debugging
 # rem=drug("Remdesivir","DB14761").advanced_init([])
-
-
-# COVID_drugs.chemicalspace()
-COVID_drugs.drugtarget()
-COVID_drugs.drugdrug()
-COVID_drugs.targettarget()
-# COVID_drugs.targetinteractors()
-# COVID_drugs.targetdiseases()
+# print(COVID_drugs.excluded)
 
 if COVID_drugs.added_new_drugs == True:
+    # COVID_drugs.chemicalspace()
+    COVID_drugs.drugtarget()
+    COVID_drugs.drugdrug()
+    COVID_drugs.targettarget()
+    # COVID_drugs.targetinteractors()
+    # COVID_drugs.targetdiseases()
     for prefix in ["dt","dd","tt"]:
         name="data/gn_communities/"+prefix+"_communities.pickle"
         if os.path.isfile(name):
