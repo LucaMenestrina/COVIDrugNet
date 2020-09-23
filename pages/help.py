@@ -45,7 +45,7 @@ layout=dbc.Col([
                             html.Center(html.H5([html.Font("If there still is something unclear feel free to "),html.A("reach us out", href="/contacts")], style={"margin":"0px"}))
                         ], className="card border-primary", width=5, align="center", style={"padding":"2%"})
                     ], no_gutters=True, justify="center", align="center"),
-                    html.Br()
+                    html.Div(style={"height":"10vh"})
                     ], style={"padding":"2%", "width":"100%"}),
             ]),
         footer()

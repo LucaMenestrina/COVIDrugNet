@@ -72,7 +72,7 @@ layout=dbc.Col([
                             html.P([
                                 "I'm a medicinal chemist and technology enthusiast.",
                                 html.Br(),
-                                "Please help me improving this app: if you find any malfunction (sure there are...) or you have suggestions, reach me out."
+                                "Please help me improving this app: if you find any malfunction (sure there are...) or you have suggestions, drop me an email."
                             ])
                         ])
                     ], justify="around", align="center"),
