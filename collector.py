@@ -159,7 +159,7 @@ class protein():
         if self.organism == "Humans":
             try:
                 string_url = "https://string-db.org/api/tsv-no-header/interaction_partners"
-                params = {"identifiers" : self.gene, "species" : 9606, "required_score": 950, "caller_identity" : "COVID-19_Networker"} #il caller_identity cambierà
+                params = {"identifiers" : self.gene, "species" : 9606, "required_score": 950, "caller_identity" : "COVID-19_Drugs_Networker"}
                 response = requests.post(string_url, data=params)
                 for line in response.text.strip().split("\n"):
                     line = line.strip().split("\t")
