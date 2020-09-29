@@ -289,8 +289,8 @@ class collector():
         CC=dict(nx.closeness_centrality(graph))
         BC=dict(nx.betweenness_centrality(graph))
         EBC=dict(nx.edge_betweenness_centrality(graph))
-        HC=dict(nx.harmonic_centrality(graph))
         EC=dict(nx.eigenvector_centrality(graph))
+        C=dict(nx.clustering(graph))
         VR=nx.voterank(graph)
         VRS={} #vote rank score
         for node in graph.nodes():
@@ -302,8 +302,8 @@ class collector():
         nx.set_node_attributes(graph,CC,"Closeness Centrality")
         nx.set_node_attributes(graph,BC,"Betweenness Centrality")
         nx.set_node_attributes(graph,EBC,"Edge Betweenness Centrality")
-        nx.set_node_attributes(graph,HC,"Harmonic Centrality")
         nx.set_node_attributes(graph,EC,"Eigenvector Centrality")
+        nx.set_node_attributes(graph,C,"Clustering Coefficient")
         nx.set_node_attributes(graph,VRS,"Vote Rank Score")
         return graph
     def save_graph(self,is_needed,df,graph,name):
@@ -459,6 +459,10 @@ COVID_drugs=collector()
 # rem=drug("Remdesivir","DB14761").advanced_init([])
 # print(COVID_drugs.excluded)
 
+# COVID_drugs.drugtarget()
+# COVID_drugs.drugdrug()
+# COVID_drugs.targettarget()
+
 if COVID_drugs.added_new_drugs == True:
     # COVID_drugs.chemicalspace()
     COVID_drugs.drugtarget()
@@ -467,6 +471,7 @@ if COVID_drugs.added_new_drugs == True:
     # COVID_drugs.targetinteractors()
     # COVID_drugs.targetdiseases()
     for prefix in ["dt","dd","tt"]:
-        name="data/gn_communities/"+prefix+"_communities.pickle"
-        if os.path.isfile(name):
-            os.rename(name,name+".bkp")
+        for group in ["communities","spectral"]:
+            name="data/groups/"+prefix+"_"+group+".pickle"
+            if os.path.isfile(name):
+                os.rename(name,name+".bkp")

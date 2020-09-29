@@ -1,390 +1,406 @@
 	source	target	weight
-0	Menadione	Quercetin	1
-1	Menadione	Argatroban	1
-2	Menadione	Nafamostat	1
-3	Menadione	Resveratrol	1
-4	Menadione	Melatonin	1
-5	Menadione	Suramin	1
-6	Fluvoxamine	Verapamil	2
-7	Fluvoxamine	Clarithromycin	1
-8	Fluvoxamine	Fluoxetine	2
-9	Metoprolol	Formoterol	2
-10	Ruxolitinib	Tofacitinib	2
-11	Ruxolitinib	Zanubrutinib	1
-12	Ruxolitinib	Baricitinib	2
-13	Ozanimod	Fingolimod	2
-14	Moxifloxacin	Etoposide	1
-15	Moxifloxacin	Genistein	1
-16	Moxifloxacin	Levofloxacin	2
-17	Enzalutamide	Bicalutamide	1
-18	Enzalutamide	Progesterone	1
-19	Emtricitabine	Tenofovir disoproxil	1
-20	Emtricitabine	Tenofovir alafenamide	1
-21	GC-376 free acid	GS-441524	1
-22	GC-376 free acid	Remdesivir	1
-23	Rabeprazole	Pantoprazole	1
-24	Rabeprazole	Omeprazole	1
-25	Prednisolone	Methylprednisolone	1
-26	Prednisolone	Progesterone	1
-27	Prednisolone	Prednisolone acetate	1
-28	Prednisolone	Budesonide	1
-29	Prednisolone	Hydrocortisone	1
-30	Prednisolone	Dexamethasone	1
-31	Prednisolone	Prednisone	1
-32	Prednisolone	Ciclesonide	1
-33	Prednisolone	Mometasone furoate	1
-34	GS-441524	Galidesivir	1
-35	GS-441524	Ribavirin	1
-36	GS-441524	Remdesivir	2
-37	Lopinavir	Atazanavir	1
-38	Lopinavir	Darunavir	1
-39	Lopinavir	Ritonavir	1
-40	Icosapent	Pioglitazone	1
-41	Icosapent	Ibuprofen	4
-42	Icosapent	Clofazimine	1
-43	Icosapent	Oleic Acid	3
-44	Icosapent	Indomethacin	4
-45	Icosapent	Resveratrol	4
-46	Icosapent	Curcumin	1
-47	Icosapent	Resiniferatoxin	1
-48	Icosapent	Acetaminophen	3
-49	Icosapent	Lenalidomide	1
-50	Icosapent	Telmisartan	1
-51	Icosapent	Naproxen	2
-52	Icosapent	Celecoxib	1
-53	Icosapent	Ginseng	1
-54	Icosapent	Camphor	1
-55	Icosapent	Omega-3 fatty acids	2
-56	Tenofovir disoproxil	Tenofovir alafenamide	1
-57	Tofacitinib	Zanubrutinib	2
-58	Tofacitinib	Baricitinib	3
-59	Heparin	Enoxaparin	2
-60	Heparin	Tinzaparin	1
-61	Heparin	Nafamostat	1
-62	Heparin	Nadroparin	2
-63	Heparin	Rivaroxaban	1
-64	Heparin	Sirolimus	1
-65	Heparin	Fondaparinux	2
-66	Heparin	Nintedanib	2
-67	Heparin	Sulodexide	1
-68	Heparin	Bemiparin	2
-69	Camostat	Aprotinin	1
-70	Camostat	Nafamostat	1
-71	Irbesartan	Angiotensin II	1
-72	Irbesartan	Losartan	1
-73	Irbesartan	Candesartan	1
-74	Irbesartan	Telmisartan	1
-75	Irbesartan	Eprosartan	1
-76	Irbesartan	Candesartan cilexetil	1
-77	Irbesartan	Valsartan	1
-78	Irbesartan	Olmesartan	1
-79	Brequinar	Leflunomide	1
-80	Brequinar	Atovaquone	1
-81	Velpatasvir	Daclatasvir	1
-82	Velpatasvir	Elbasvir	1
-83	Calcifediol	Cholesterol	1
-84	Calcifediol	Cholecalciferol	1
-85	Calcifediol	Curcumin	1
-86	Calcifediol	Vitamin D	1
-87	Danoprevir	Ribavirin	1
-88	Hydrocortisone	Methylprednisolone	2
-89	Hydrocortisone	Progesterone	1
-90	Hydrocortisone	Prednisolone acetate	1
-91	Hydrocortisone	Budesonide	2
-92	Hydrocortisone	Dexamethasone	2
-93	Hydrocortisone	Prednisone	1
-94	Hydrocortisone	Ciclesonide	1
-95	Hydrocortisone	Mometasone furoate	1
-96	Darunavir	Atazanavir	1
-97	Darunavir	Ritonavir	1
-98	Aprotinin	Tranexamic acid	1
-99	Aprotinin	Nafamostat	2
-100	Curcumin	Pioglitazone	1
-101	Curcumin	Ibuprofen	1
-102	Curcumin	Vitamin D	1
-103	Curcumin	Cholesterol	1
-104	Curcumin	Clofazimine	1
-105	Curcumin	Telmisartan	1
-106	Curcumin	Oleic Acid	1
-107	Curcumin	Quercetin	1
-108	Curcumin	Indomethacin	1
-109	Curcumin	Resveratrol	2
-110	Curcumin	Cholecalciferol	1
-111	Curcumin	Omega-3 fatty acids	1
-112	Simvastatin	Rosuvastatin	2
-113	Simvastatin	Atorvastatin	2
-114	Ribavirin	Galidesivir	1
-115	Ribavirin	Favipiravir	1
-116	Ribavirin	Remdesivir	1
-117	Rosuvastatin	Atorvastatin	1
-118	Telmisartan	Pioglitazone	1
-119	Telmisartan	Ibuprofen	1
-120	Telmisartan	Losartan	1
-121	Telmisartan	Clofazimine	1
-122	Telmisartan	Candesartan	1
-123	Telmisartan	Oleic Acid	1
-124	Telmisartan	Indomethacin	1
-125	Telmisartan	Candesartan cilexetil	1
-126	Telmisartan	Resveratrol	1
-127	Telmisartan	Olmesartan	1
-128	Telmisartan	Angiotensin II	1
-129	Telmisartan	Eprosartan	1
-130	Telmisartan	Valsartan	1
-131	Telmisartan	Omega-3 fatty acids	1
-132	Roxithromycin	Tetrandrine	1
-133	Roxithromycin	Clarithromycin	1
-134	Etoposide	Genistein	1
-135	Methotrexate	Trimethoprim	1
-136	Candesartan	Angiotensin II	1
-137	Candesartan	Losartan	1
-138	Candesartan	Eprosartan	1
-139	Candesartan	Candesartan cilexetil	1
-140	Candesartan	Valsartan	1
-141	Candesartan	Olmesartan	1
-142	Acetaminophen	Ibuprofen	2
-143	Acetaminophen	Lenalidomide	1
-144	Acetaminophen	Naproxen	2
-145	Acetaminophen	Indomethacin	2
-146	Acetaminophen	Resveratrol	2
-147	Acetaminophen	Ginseng	1
-148	Acetaminophen	Celecoxib	1
-149	Acetaminophen	Camphor	1
-150	Acetaminophen	Resiniferatoxin	1
-151	Vitamin E	Genistein	1
-152	Vitamin E	Ritonavir	1
-153	Vitamin E	Piperine	1
-154	Vitamin E	Quercetin	1
-155	Vitamin E	Estradiol	1
-156	Vitamin E	Montelukast	1
-157	Vitamin E	Resveratrol	2
-158	Vitamin E	Dexamethasone	1
-159	Omeprazole	Pantoprazole	1
-160	Omeprazole	Atorvastatin	1
-161	Omeprazole	Quercetin	1
-162	Omeprazole	Leflunomide	1
-163	Omeprazole	Diosmin	1
-164	Omeprazole	Resveratrol	1
-165	Omeprazole	Ginseng	1
-166	Piperacillin	Ceftriaxone	1
-167	Tinzaparin	Enoxaparin	1
-168	Tinzaparin	Nadroparin	1
-169	Tinzaparin	Fondaparinux	1
-170	Tinzaparin	Sulodexide	1
-171	Tinzaparin	Bemiparin	1
-172	Sildenafil	Dipyridamole	1
-173	Pyridostigmine	Artenimol	1
-174	Genistein	Ritonavir	1
-175	Genistein	Piperine	1
-176	Genistein	Quercetin	5
-177	Genistein	Leflunomide	1
-178	Genistein	Estradiol	4
-179	Genistein	Baricitinib	1
-180	Genistein	Resveratrol	3
-181	Genistein	Dexamethasone	1
-182	Genistein	Melatonin	1
-183	Genistein	Progesterone	3
-184	Prasugrel	Epoprostenol	1
-185	Prasugrel	Clopidogrel	1
-186	Methylene blue	Citrulline	1
-187	Defibrotide	Pentoxifylline	2
-188	Cholecalciferol	Cholesterol	1
-189	Cholecalciferol	Vitamin D	1
-190	Oxycodone	Progesterone	1
-191	Oxycodone	Naltrexone	3
-192	Oxycodone	Metenkefalin	2
-193	Rivaroxaban	Enoxaparin	1
-194	Rivaroxaban	Nafamostat	1
-195	Rivaroxaban	Fondaparinux	1
-196	Rivaroxaban	Bemiparin	1
-197	Vitamin D	Cholesterol	1
-198	Sirolimus	Tacrolimus	1
-199	Cyanocobalamin	Mecobalamin	1
-200	Camphor	Resiniferatoxin	1
-201	Leflunomide	Atorvastatin	1
-202	Leflunomide	Quercetin	1
-203	Leflunomide	Baricitinib	1
-204	Leflunomide	Diosmin	1
-205	Leflunomide	Resveratrol	1
-206	Leflunomide	Ginseng	1
-207	Leflunomide	Atovaquone	1
-208	Prednisone	Methylprednisolone	1
-209	Prednisone	Progesterone	1
-210	Prednisone	Prednisolone acetate	1
-211	Prednisone	Budesonide	1
-212	Prednisone	Dexamethasone	1
-213	Prednisone	Ciclesonide	1
-214	Prednisone	Mometasone furoate	1
-215	Omega-3 fatty acids	Pioglitazone	1
-216	Omega-3 fatty acids	Ibuprofen	2
-217	Omega-3 fatty acids	Clofazimine	1
-218	Omega-3 fatty acids	Oleic Acid	2
-219	Omega-3 fatty acids	Indomethacin	2
-220	Omega-3 fatty acids	Resveratrol	2
-221	Citrulline	Dexamethasone	1
-222	Citrulline	Pantoprazole	1
-223	Mometasone furoate	Methylprednisolone	1
-224	Mometasone furoate	Prednisolone acetate	1
-225	Mometasone furoate	Budesonide	1
-226	Mometasone furoate	Dexamethasone	1
-227	Mometasone furoate	Progesterone	2
-228	Mometasone furoate	Ciclesonide	1
-229	Dipyridamole	Lidocaine	1
-230	Dipyridamole	Ibudilast	1
-231	Dipyridamole	Iloprost	1
-232	Dipyridamole	Artenimol	1
-233	Dipyridamole	Progesterone	1
-234	Nadroparin	Enoxaparin	1
-235	Nadroparin	Fondaparinux	1
-236	Nadroparin	Sulodexide	1
-237	Nadroparin	Bemiparin	1
-238	Enalapril	Ramipril	1
-239	Enalapril	Captopril	1
-240	Sitagliptin	Linagliptin	1
-241	Sitagliptin	Atorvastatin	1
-242	Levamisole	Fluoxetine	1
-243	TMC-310911	Nelfinavir	1
-244	Clofazimine	Pioglitazone	1
-245	Clofazimine	Ibuprofen	1
-246	Clofazimine	Oleic Acid	1
-247	Clofazimine	Indomethacin	1
-248	Clofazimine	Resveratrol	1
-249	Angiotensin II	Losartan	1
-250	Angiotensin II	Eprosartan	1
-251	Angiotensin II	Candesartan cilexetil	1
-252	Angiotensin II	Valsartan	1
-253	Angiotensin II	Olmesartan	1
-254	Galidesivir	Remdesivir	1
-255	Baricitinib	Zanubrutinib	2
-256	Sulodexide	Enoxaparin	1
-257	Sulodexide	Fondaparinux	1
-258	Sulodexide	Bemiparin	2
-259	Budesonide	Methylprednisolone	2
-260	Budesonide	Progesterone	1
-261	Budesonide	Prednisolone acetate	1
-262	Budesonide	Dexamethasone	2
-263	Budesonide	Ciclesonide	1
-264	Methylprednisolone	Progesterone	1
-265	Methylprednisolone	Prednisolone acetate	1
-266	Methylprednisolone	Dexamethasone	2
-267	Methylprednisolone	Ciclesonide	1
-268	Ginseng	Atorvastatin	1
-269	Ginseng	Ibuprofen	1
-270	Ginseng	Quercetin	1
-271	Ginseng	Lenalidomide	1
-272	Ginseng	Naproxen	1
-273	Ginseng	Indomethacin	1
-274	Ginseng	Diosmin	1
-275	Ginseng	Resveratrol	2
-276	Ginseng	Celecoxib	1
-277	Resveratrol	Ibuprofen	4
-278	Resveratrol	Cholesterol	1
-279	Resveratrol	Piperine	1
-280	Resveratrol	Oleic Acid	2
-281	Resveratrol	Diosmin	1
-282	Resveratrol	Ramelteon	2
-283	Resveratrol	Lenalidomide	1
-284	Resveratrol	Montelukast	1
-285	Resveratrol	Estradiol	2
-286	Resveratrol	Tirofiban	1
-287	Resveratrol	Pioglitazone	1
-288	Resveratrol	Atorvastatin	2
-289	Resveratrol	Indomethacin	4
-290	Resveratrol	Artenimol	1
-291	Resveratrol	Dexamethasone	1
-292	Resveratrol	Melatonin	4
-293	Resveratrol	Progesterone	1
-294	Resveratrol	Ritonavir	1
-295	Resveratrol	Quercetin	6
-296	Resveratrol	Naproxen	2
-297	Resveratrol	Celecoxib	1
-298	Nicotinamide	Suramin	1
-299	Nicotinamide	Artenimol	1
-300	Cholesterol	Atorvastatin	1
-301	Clopidogrel	Epoprostenol	1
-302	Fondaparinux	Enoxaparin	2
-303	Fondaparinux	Nafamostat	1
-304	Fondaparinux	Bemiparin	2
-305	Verapamil	Fluoxetine	2
-306	Verapamil	Trifluoperazine	1
-307	Verapamil	Diltiazem	1
-308	Verapamil	Clarithromycin	1
-309	Diosmin	Atorvastatin	1
-310	Diosmin	Quercetin	1
-311	Candesartan cilexetil	Losartan	1
-312	Candesartan cilexetil	Eprosartan	1
-313	Candesartan cilexetil	Valsartan	1
-314	Candesartan cilexetil	Olmesartan	1
-315	Ibudilast	Iloprost	4
-316	Epoprostenol	Iloprost	1
-317	Atazanavir	Ritonavir	1
-318	Argatroban	Suramin	1
-319	Argatroban	Nafamostat	1
-320	Suramin	Nafamostat	1
-321	Suramin	Indomethacin	1
-322	Nafamostat	Enoxaparin	1
-323	Nafamostat	Bemiparin	1
-324	Elbasvir	Daclatasvir	1
-325	Imatinib	Nintedanib	2
-326	Enoxaparin	Bemiparin	2
-327	Lenalidomide	Ibuprofen	1
-328	Lenalidomide	Naproxen	1
-329	Lenalidomide	Indomethacin	1
-330	Lenalidomide	Celecoxib	1
-331	Naproxen	Ibuprofen	2
-332	Naproxen	Indomethacin	2
-333	Naproxen	Celecoxib	1
-334	Linagliptin	Atorvastatin	1
-335	Lidocaine	Progesterone	1
-336	Lidocaine	Zanubrutinib	1
-337	Bicalutamide	Progesterone	1
-338	Valsartan	Losartan	1
-339	Valsartan	Eprosartan	1
-340	Valsartan	Olmesartan	1
-341	Fluoxetine	Clarithromycin	1
-342	Captopril	Ramipril	2
-343	Ibuprofen	Pioglitazone	1
-344	Ibuprofen	Oleic Acid	2
-345	Ibuprofen	Indomethacin	4
-346	Ibuprofen	Celecoxib	1
-347	Iloprost	Indomethacin	1
-348	Estradiol	Ritonavir	1
-349	Estradiol	Piperine	1
-350	Estradiol	Quercetin	3
-351	Estradiol	Dexamethasone	1
-352	Estradiol	Melatonin	1
-353	Estradiol	Progesterone	2
-354	Trifluoperazine	Melatonin	1
-355	Quercetin	Atorvastatin	1
-356	Quercetin	Piperine	1
-357	Quercetin	Duvelisib	1
-358	Quercetin	Artenimol	1
-359	Quercetin	Dexamethasone	1
-360	Quercetin	Melatonin	2
-361	Quercetin	Progesterone	3
-362	Quercetin	Ritonavir	1
-363	Cyclosporine	Artenimol	1
-364	Losartan	Eprosartan	1
-365	Losartan	Olmesartan	1
-366	Colchicine	Artenimol	1
-367	Nintedanib	Zanubrutinib	1
-368	Zanubrutinib	Acalabrutinib	1
-369	Zanubrutinib	Ibrutinib	1
-370	Ramelteon	Melatonin	2
-371	Acalabrutinib	Ibrutinib	1
-372	Dexamethasone	Piperine	1
-373	Dexamethasone	Prednisolone acetate	1
-374	Dexamethasone	Progesterone	1
-375	Dexamethasone	Ciclesonide	1
-376	Dexamethasone	Ritonavir	1
-377	Naltrexone	Progesterone	1
-378	Naltrexone	Metenkefalin	2
-379	Ritonavir	Piperine	1
-380	Oleic Acid	Pioglitazone	1
-381	Oleic Acid	Indomethacin	2
-382	Pioglitazone	Indomethacin	1
-383	Olmesartan	Eprosartan	1
-384	Melatonin	Progesterone	1
-385	Ciclesonide	Progesterone	1
-386	Ciclesonide	Prednisolone acetate	1
-387	Celecoxib	Indomethacin	1
-388	Prednisolone acetate	Progesterone	1
+0	Clarithromycin	Roxithromycin	1
+1	Clarithromycin	Fluoxetine	1
+2	Clarithromycin	Fluvoxamine	1
+3	Clarithromycin	Verapamil	1
+4	Fondaparinux	Nadroparin	1
+5	Fondaparinux	Nafamostat	1
+6	Fondaparinux	Enoxaparin	2
+7	Fondaparinux	Rivaroxaban	1
+8	Fondaparinux	Heparin	2
+9	Fondaparinux	Sulodexide	1
+10	Fondaparinux	Bemiparin	2
+11	Fondaparinux	Tinzaparin	1
+12	Quercetin	Piperine	1
+13	Quercetin	Curcumin	1
+14	Quercetin	Resveratrol	6
+15	Quercetin	Estradiol	3
+16	Quercetin	Melatonin	2
+17	Quercetin	Genistein	5
+18	Quercetin	Duvelisib	1
+19	Quercetin	Menadione	1
+20	Quercetin	Leflunomide	1
+21	Quercetin	Diosmin	1
+22	Quercetin	Ginseng	1
+23	Quercetin	Dexamethasone	1
+24	Quercetin	Vitamin E	1
+25	Quercetin	Progesterone	3
+26	Quercetin	Ritonavir	1
+27	Quercetin	Omeprazole	1
+28	Quercetin	Atorvastatin	1
+29	Quercetin	Artenimol	1
+30	Suramin	Nicotinamide	1
+31	Suramin	Nafamostat	1
+32	Suramin	Indomethacin	1
+33	Suramin	Argatroban	1
+34	Suramin	Menadione	1
+35	Enoxaparin	Nadroparin	1
+36	Enoxaparin	Nafamostat	1
+37	Enoxaparin	Rivaroxaban	1
+38	Enoxaparin	Heparin	2
+39	Enoxaparin	Sulodexide	1
+40	Enoxaparin	Bemiparin	2
+41	Enoxaparin	Tinzaparin	1
+42	Defibrotide	Pentoxifylline	2
+43	GS-441524	Galidesivir	1
+44	GS-441524	GC-376 free acid	1
+45	GS-441524	Ribavirin	1
+46	GS-441524	Remdesivir	2
+47	Methotrexate	Trimethoprim	1
+48	Prednisolone	Methylprednisolone	1
+49	Prednisolone	Dexamethasone	1
+50	Prednisolone	Hydrocortisone	1
+51	Prednisolone	Ciclesonide	1
+52	Prednisolone	Prednisolone acetate	1
+53	Prednisolone	Progesterone	1
+54	Prednisolone	Mometasone furoate	1
+55	Prednisolone	Prednisone	1
+56	Prednisolone	Budesonide	1
+57	Omeprazole	Diosmin	1
+58	Omeprazole	Resveratrol	1
+59	Omeprazole	Ginseng	1
+60	Omeprazole	Rabeprazole	1
+61	Omeprazole	Atorvastatin	1
+62	Omeprazole	Leflunomide	1
+63	Omeprazole	Pantoprazole	1
+64	Argatroban	Menadione	1
+65	Argatroban	Nafamostat	1
+66	Resiniferatoxin	Acetaminophen	1
+67	Resiniferatoxin	Icosapent	1
+68	Resiniferatoxin	alpha-Linolenic acid	1
+69	Resiniferatoxin	Camphor	1
+70	Mecobalamin	Cyanocobalamin	1
+71	Hydrocortisone	Methylprednisolone	2
+72	Hydrocortisone	Dexamethasone	2
+73	Hydrocortisone	Ciclesonide	1
+74	Hydrocortisone	Prednisolone acetate	1
+75	Hydrocortisone	Progesterone	1
+76	Hydrocortisone	Mometasone furoate	1
+77	Hydrocortisone	Prednisone	1
+78	Hydrocortisone	Budesonide	2
+79	Epoprostenol	Prasugrel	1
+80	Epoprostenol	Iloprost	1
+81	Epoprostenol	Clopidogrel	1
+82	Colchicine	Artenimol	1
+83	Lopinavir	Atazanavir	1
+84	Lopinavir	Darunavir	1
+85	Lopinavir	Ritonavir	1
+86	Sulodexide	Nadroparin	1
+87	Sulodexide	Heparin	1
+88	Sulodexide	Bemiparin	2
+89	Sulodexide	Tinzaparin	1
+90	Diosmin	Resveratrol	1
+91	Diosmin	Ginseng	1
+92	Diosmin	Atorvastatin	1
+93	Diosmin	Leflunomide	1
+94	Fingolimod	Ozanimod	2
+95	Piperine	Resveratrol	1
+96	Piperine	Dexamethasone	1
+97	Piperine	Estradiol	1
+98	Piperine	Vitamin E	1
+99	Piperine	Genistein	1
+100	Piperine	Ritonavir	1
+101	Artenimol	Nicotinamide	1
+102	Artenimol	Cyclosporine	1
+103	Artenimol	Resveratrol	1
+104	Artenimol	Dipyridamole	1
+105	Artenimol	Pyridostigmine	1
+106	alpha-Linolenic acid	Clofazimine	1
+107	alpha-Linolenic acid	Icosapent	6
+108	alpha-Linolenic acid	Curcumin	1
+109	alpha-Linolenic acid	Oleic Acid	4
+110	alpha-Linolenic acid	Resveratrol	2
+111	alpha-Linolenic acid	Omega-3 fatty acids	2
+112	alpha-Linolenic acid	Ibuprofen	2
+113	alpha-Linolenic acid	Acetaminophen	1
+114	alpha-Linolenic acid	Telmisartan	1
+115	alpha-Linolenic acid	Pioglitazone	1
+116	alpha-Linolenic acid	Indomethacin	2
+117	alpha-Linolenic acid	Camphor	1
+118	Nelfinavir	TMC-310911	1
+119	Genistein	Resveratrol	3
+120	Genistein	Baricitinib	1
+121	Genistein	Dexamethasone	1
+122	Genistein	Estradiol	4
+123	Genistein	Melatonin	1
+124	Genistein	Vitamin E	1
+125	Genistein	Moxifloxacin	1
+126	Genistein	Progesterone	3
+127	Genistein	Ritonavir	1
+128	Genistein	Leflunomide	1
+129	Genistein	Etoposide	1
+130	Linagliptin	Sitagliptin	1
+131	Linagliptin	Atorvastatin	1
+132	GC-376 free acid	Remdesivir	1
+133	Levamisole	Fluoxetine	1
+134	Tirofiban	Resveratrol	1
+135	Indomethacin	Clofazimine	1
+136	Indomethacin	Curcumin	1
+137	Indomethacin	Icosapent	4
+138	Indomethacin	Resveratrol	4
+139	Indomethacin	Oleic Acid	2
+140	Indomethacin	Telmisartan	1
+141	Indomethacin	Ibuprofen	4
+142	Indomethacin	Acetaminophen	2
+143	Indomethacin	Celecoxib	1
+144	Indomethacin	Lenalidomide	1
+145	Indomethacin	Naproxen	2
+146	Indomethacin	Iloprost	1
+147	Indomethacin	Omega-3 fatty acids	2
+148	Indomethacin	Ginseng	1
+149	Indomethacin	Pioglitazone	1
+150	Brequinar	Atovaquone	1
+151	Brequinar	Leflunomide	1
+152	Ibudilast	Iloprost	4
+153	Ibudilast	Dipyridamole	1
+154	Tenofovir	Emtricitabine	1
+155	Tenofovir	Tenofovir disoproxil	1
+156	Tenofovir	Tenofovir alafenamide	3
+157	Tenofovir alafenamide	Emtricitabine	1
+158	Tenofovir alafenamide	Tenofovir disoproxil	1
+159	Velpatasvir	Elbasvir	1
+160	Velpatasvir	Daclatasvir	1
+161	Ribavirin	Danoprevir	1
+162	Ribavirin	Favipiravir	1
+163	Ribavirin	Remdesivir	1
+164	Ribavirin	Galidesivir	1
+165	Ibuprofen	Clofazimine	1
+166	Ibuprofen	Curcumin	1
+167	Ibuprofen	Icosapent	4
+168	Ibuprofen	Resveratrol	4
+169	Ibuprofen	Oleic Acid	2
+170	Ibuprofen	Telmisartan	1
+171	Ibuprofen	Acetaminophen	2
+172	Ibuprofen	Celecoxib	1
+173	Ibuprofen	Lenalidomide	1
+174	Ibuprofen	Naproxen	2
+175	Ibuprofen	Omega-3 fatty acids	2
+176	Ibuprofen	Ginseng	1
+177	Ibuprofen	Pioglitazone	1
+178	Fluoxetine	Fluvoxamine	2
+179	Fluoxetine	Verapamil	2
+180	Ginseng	Icosapent	1
+181	Ginseng	Resveratrol	2
+182	Ginseng	Naproxen	1
+183	Ginseng	Acetaminophen	1
+184	Ginseng	Celecoxib	1
+185	Ginseng	Atorvastatin	1
+186	Ginseng	Leflunomide	1
+187	Ginseng	Lenalidomide	1
+188	Candesartan	Angiotensin II	1
+189	Candesartan	Eprosartan	1
+190	Candesartan	Telmisartan	1
+191	Candesartan	Irbesartan	1
+192	Candesartan	Losartan	1
+193	Candesartan	Valsartan	1
+194	Candesartan	Candesartan cilexetil	1
+195	Candesartan	Olmesartan	1
+196	Zanubrutinib	Lidocaine	1
+197	Zanubrutinib	Acalabrutinib	1
+198	Zanubrutinib	Tofacitinib	2
+199	Zanubrutinib	Ibrutinib	1
+200	Zanubrutinib	Baricitinib	2
+201	Zanubrutinib	Ruxolitinib	1
+202	Zanubrutinib	Nintedanib	1
+203	Levofloxacin	Moxifloxacin	2
+204	Dexamethasone	Methylprednisolone	2
+205	Dexamethasone	Resveratrol	1
+206	Dexamethasone	Estradiol	1
+207	Dexamethasone	Prednisolone acetate	1
+208	Dexamethasone	Mometasone furoate	1
+209	Dexamethasone	Citrulline	1
+210	Dexamethasone	Vitamin E	1
+211	Dexamethasone	Ciclesonide	1
+212	Dexamethasone	Progesterone	1
+213	Dexamethasone	Ritonavir	1
+214	Dexamethasone	Prednisone	1
+215	Dexamethasone	Budesonide	2
+216	Estradiol	Resveratrol	2
+217	Estradiol	Melatonin	1
+218	Estradiol	Vitamin E	1
+219	Estradiol	Progesterone	2
+220	Estradiol	Ritonavir	1
+221	Heparin	Nadroparin	2
+222	Heparin	Nafamostat	1
+223	Heparin	Rivaroxaban	1
+224	Heparin	Bemiparin	2
+225	Heparin	Tinzaparin	1
+226	Heparin	Sirolimus	1
+227	Heparin	Nintedanib	2
+228	Oxycodone	Naltrexone	3
+229	Oxycodone	Metenkefalin	2
+230	Oxycodone	Progesterone	1
+231	Ritonavir	Resveratrol	1
+232	Ritonavir	Vitamin E	1
+233	Ritonavir	Atazanavir	1
+234	Ritonavir	Darunavir	1
+235	Irbesartan	Angiotensin II	1
+236	Irbesartan	Eprosartan	1
+237	Irbesartan	Telmisartan	1
+238	Irbesartan	Losartan	1
+239	Irbesartan	Valsartan	1
+240	Irbesartan	Candesartan cilexetil	1
+241	Irbesartan	Olmesartan	1
+242	Leflunomide	Atovaquone	1
+243	Leflunomide	Resveratrol	1
+244	Leflunomide	Baricitinib	1
+245	Leflunomide	Atorvastatin	1
+246	Enzalutamide	Bicalutamide	1
+247	Enzalutamide	Progesterone	1
+248	Vitamin D	Curcumin	1
+249	Vitamin D	Calcifediol	1
+250	Vitamin D	Cholesterol	1
+251	Vitamin D	Cholecalciferol	1
+252	Olmesartan	Angiotensin II	1
+253	Olmesartan	Eprosartan	1
+254	Olmesartan	Telmisartan	1
+255	Olmesartan	Losartan	1
+256	Olmesartan	Valsartan	1
+257	Olmesartan	Candesartan cilexetil	1
+258	Losartan	Angiotensin II	1
+259	Losartan	Eprosartan	1
+260	Losartan	Telmisartan	1
+261	Losartan	Valsartan	1
+262	Losartan	Candesartan cilexetil	1
+263	Tofacitinib	Ruxolitinib	2
+264	Tofacitinib	Baricitinib	3
+265	Celecoxib	Icosapent	1
+266	Celecoxib	Resveratrol	1
+267	Celecoxib	Naproxen	1
+268	Celecoxib	Acetaminophen	1
+269	Celecoxib	Lenalidomide	1
+270	Pantoprazole	Citrulline	1
+271	Pantoprazole	Rabeprazole	1
+272	Piperacillin	Ceftriaxone	1
+273	Nafamostat	Camostat	1
+274	Nafamostat	Aprotinin	2
+275	Nafamostat	Rivaroxaban	1
+276	Nafamostat	Bemiparin	1
+277	Nafamostat	Menadione	1
+278	Pioglitazone	Clofazimine	1
+279	Pioglitazone	Curcumin	1
+280	Pioglitazone	Icosapent	1
+281	Pioglitazone	Oleic Acid	1
+282	Pioglitazone	Telmisartan	1
+283	Pioglitazone	Omega-3 fatty acids	1
+284	Pioglitazone	Resveratrol	1
+285	Citrulline	Methylene blue	1
+286	Methylprednisolone	Ciclesonide	1
+287	Methylprednisolone	Prednisolone acetate	1
+288	Methylprednisolone	Progesterone	1
+289	Methylprednisolone	Mometasone furoate	1
+290	Methylprednisolone	Prednisone	1
+291	Methylprednisolone	Budesonide	2
+292	Budesonide	Ciclesonide	1
+293	Budesonide	Prednisolone acetate	1
+294	Budesonide	Progesterone	1
+295	Budesonide	Mometasone furoate	1
+296	Budesonide	Prednisone	1
+297	Oleic Acid	Clofazimine	1
+298	Oleic Acid	Curcumin	1
+299	Oleic Acid	Icosapent	3
+300	Oleic Acid	Resveratrol	2
+301	Oleic Acid	Omega-3 fatty acids	2
+302	Oleic Acid	Telmisartan	1
+303	Sitagliptin	Atorvastatin	1
+304	Moxifloxacin	Etoposide	1
+305	Iloprost	Dipyridamole	1
+306	Ruxolitinib	Baricitinib	2
+307	Vitamin E	Resveratrol	2
+308	Vitamin E	Montelukast	1
+309	Clofazimine	Curcumin	1
+310	Clofazimine	Icosapent	1
+311	Clofazimine	Telmisartan	1
+312	Clofazimine	Omega-3 fatty acids	1
+313	Clofazimine	Resveratrol	1
+314	Telmisartan	Angiotensin II	1
+315	Telmisartan	Icosapent	1
+316	Telmisartan	Curcumin	1
+317	Telmisartan	Resveratrol	1
+318	Telmisartan	Candesartan cilexetil	1
+319	Telmisartan	Eprosartan	1
+320	Telmisartan	Omega-3 fatty acids	1
+321	Telmisartan	Valsartan	1
+322	Sirolimus	Tacrolimus	1
+323	Omega-3 fatty acids	Curcumin	1
+324	Omega-3 fatty acids	Icosapent	2
+325	Omega-3 fatty acids	Resveratrol	2
+326	Menadione	Resveratrol	1
+327	Menadione	Melatonin	1
+328	Camostat	Aprotinin	1
+329	Melatonin	Resveratrol	4
+330	Melatonin	Ramelteon	2
+331	Melatonin	Trifluoperazine	1
+332	Melatonin	Progesterone	1
+333	Nadroparin	Bemiparin	1
+334	Nadroparin	Tinzaparin	1
+335	Valsartan	Angiotensin II	1
+336	Valsartan	Eprosartan	1
+337	Valsartan	Candesartan cilexetil	1
+338	Sildenafil	Dipyridamole	1
+339	Mometasone furoate	Ciclesonide	1
+340	Mometasone furoate	Prednisolone acetate	1
+341	Mometasone furoate	Progesterone	2
+342	Mometasone furoate	Prednisone	1
+343	Daclatasvir	Elbasvir	1
+344	Ramelteon	Resveratrol	2
+345	Galidesivir	Remdesivir	1
+346	Naproxen	Icosapent	2
+347	Naproxen	Resveratrol	2
+348	Naproxen	Acetaminophen	2
+349	Naproxen	Lenalidomide	1
+350	Fluvoxamine	Verapamil	2
+351	Eprosartan	Angiotensin II	1
+352	Eprosartan	Candesartan cilexetil	1
+353	Atazanavir	Darunavir	1
+354	Prednisolone acetate	Ciclesonide	1
+355	Prednisolone acetate	Progesterone	1
+356	Prednisolone acetate	Prednisone	1
+357	Resveratrol	Curcumin	2
+358	Resveratrol	Lenalidomide	1
+359	Resveratrol	Atorvastatin	2
+360	Resveratrol	Icosapent	4
+361	Resveratrol	Acetaminophen	2
+362	Resveratrol	Montelukast	1
+363	Resveratrol	Cholesterol	1
+364	Resveratrol	Progesterone	1
+365	Emtricitabine	Tenofovir disoproxil	1
+366	Ramipril	Enalapril	1
+367	Ramipril	Captopril	2
+368	Formoterol	Metoprolol	2
+369	Bicalutamide	Progesterone	1
+370	Tetrandrine	Roxithromycin	1
+371	Candesartan cilexetil	Angiotensin II	1
+372	Imatinib	Nintedanib	2
+373	Clopidogrel	Prasugrel	1
+374	Trifluoperazine	Verapamil	1
+375	Naltrexone	Progesterone	1
+376	Naltrexone	Metenkefalin	2
+377	Atorvastatin	Cholesterol	1
+378	Atorvastatin	Simvastatin	2
+379	Atorvastatin	Rosuvastatin	1
+380	Icosapent	Curcumin	1
+381	Icosapent	Acetaminophen	3
+382	Icosapent	Lenalidomide	1
+383	Icosapent	Camphor	1
+384	Rosuvastatin	Simvastatin	2
+385	Lidocaine	Progesterone	1
+386	Lidocaine	Dipyridamole	1
+387	Tranexamic acid	Aprotinin	1
+388	Captopril	Enalapril	1
+389	Verapamil	Diltiazem	1
+390	Ciclesonide	Progesterone	1
+391	Ciclesonide	Prednisone	1
+392	Dipyridamole	Progesterone	1
+393	Lenalidomide	Acetaminophen	1
+394	Bemiparin	Rivaroxaban	1
+395	Bemiparin	Tinzaparin	1
+396	Ibrutinib	Acalabrutinib	1
+397	Progesterone	Prednisone	1
+398	Cholecalciferol	Curcumin	1
+399	Cholecalciferol	Calcifediol	1
+400	Cholecalciferol	Cholesterol	1
+401	Acetaminophen	Camphor	1
+402	Cholesterol	Curcumin	1
+403	Cholesterol	Calcifediol	1
+404	Calcifediol	Curcumin	1

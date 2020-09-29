@@ -53,9 +53,10 @@ layout=dbc.Col([
                     custom_clustering(prefix),
                     html.Br(),
                     plots(prefix,graph=G, title=graph_title),
-                ]),
-                footer()
-            ], no_gutters=True)
+                ])
+            ], no_gutters=True),
+            html.Div(style={"height":"5vh"}),
+            footer()
         ], style={"padding":"0px"})
 
 
@@ -63,7 +64,7 @@ layout=dbc.Col([
 
 ##  ----------  CALLBACKS   ------------
 
-build_callbacks(prefix,G,nodes,*common_data_generator(prefix,G),file_prefix)
+build_callbacks(prefix,G,nodes,*common_data_generator(prefix,G,graph_title),file_prefix)
 
 
 # if __name__=="__main__":

@@ -240,17 +240,21 @@ def propertiesTable_callback(prefix,graph_properties_df,nodes):
         return dbc.Table.from_dataframe(df, bordered=True, className="table table-hover", id=prefix+"_graph_properties_table"), href, options
     return propertiesTable
 
-def highlighter_callback(prefix,G,nodes, girvan_newman,maj,girvan_newman_maj):
+def highlighter_callback(prefix,G,nodes,L,evals,evects,L_maj,evals_maj,evects_maj,n_clusters,n_clusters_maj,girvan_newman,maj,girvan_newman_maj,n_comm,n_comm_maj):
     ##coloring precomputing
-    L=nx.normalized_laplacian_matrix(G).toarray()
-    evals,evects=np.linalg.eigh(L)
-    # n_comp=[n for n,dif in enumerate(np.diff(evals)) if dif > 1.5*np.average(np.diff(evals))][0]+1
-    n_comp=[n for n,dif in enumerate(np.diff(evals)) if dif > 1.5*np.average([d for d in np.diff([v for v in evals if v<1]) if d>0.00001])][0]+1
+    # L=nx.normalized_laplacian_matrix(G).toarray()
+    # evals,evects=np.linalg.eigh(L)
+    # # n_comp=[n for n,dif in enumerate(np.diff(evals)) if dif > 1.5*np.average(np.diff(evals))][0]+1
+    # n_clusters=[n for n,dif in enumerate(np.diff(evals)) if dif > 2*np.average([d for d in np.diff(evals) if d>0.00001])][0]+1
+    # communities_modularity={modularity(G,community):n for n,community in girvan_newman.items()}
+    # n_comm=communities_modularity[max(communities_modularity)]
     # maj=G.subgraph(max(list(nx.connected_components(G)), key=len))
-    L_maj=nx.normalized_laplacian_matrix(maj).toarray()
-    evals_maj,evects_maj=np.linalg.eigh(L_maj)
-    # n_maj=[n for n,dif in enumerate(np.diff(evals_maj)) if dif > 1.5*np.average(np.diff(evals_maj))][0]+1
-    n_maj=[n for n,dif in enumerate(np.diff(evals_maj)) if dif > 1.5*np.average([d for d in np.diff([v for v in evals_maj if v<1]) if d>0.00001])][0]+1
+    # L_maj=nx.normalized_laplacian_matrix(maj).toarray()
+    # evals_maj,evects_maj=np.linalg.eigh(L_maj)
+    # # n_maj=[n for n,dif in enumerate(np.diff(evals_maj)) if dif > 1.5*np.average(np.diff(evals_maj))][0]+1
+    # n_maj_clusters=[n for n,dif in enumerate(np.diff(evals_maj)) if dif > 2*np.average([d for d in np.diff(evals_maj) if d>0.00001])][0]+1
+    # communities_modularity_maj={modularity(maj,community):n for n,community in girvan_newman_maj.items()}
+    # n_maj_comm=communities_modularity_maj[max(communities_modularity_maj)]
     #components
     components=list(nx.connected_components(G))
     d_comp={}
@@ -269,9 +273,9 @@ def highlighter_callback(prefix,G,nodes, girvan_newman,maj,girvan_newman_maj):
     pie_components.update_traces(textposition="inside", textinfo="label+percent", hovertemplate=" Component: %{label} <br> Nodes: %{value} </br> %{percent} <extra></extra>")
     legend_body_components=html.P("Nodes are colored on the corresponding component")
     #spectral
-    km=KMeans(n_clusters=n_comp, n_init=100)
-    clusters=km.fit_predict(evects[:,:n_comp])
-    cmap=dict(zip(set(clusters),[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/n_comp)]))
+    km=KMeans(n_clusters=n_clusters, n_init=100)
+    clusters=km.fit_predict(evects[:,:n_clusters])
+    cmap=dict(zip(set(clusters),[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/n_clusters)]))
     id_cluster=dict(zip(dict(nx.get_node_attributes(G,"ID")).values(),clusters))
     stylesheet_spectral=[]
     for ID in id_cluster:
@@ -283,9 +287,9 @@ def highlighter_callback(prefix,G,nodes, girvan_newman,maj,girvan_newman_maj):
     pie_spectral.update_traces(textposition="inside", textinfo="label+percent", hovertemplate=" Cluster: %{label} <br> Nodes: %{value} </br> %{percent} <extra></extra>")
     legend_body_spectral=html.P(["Nodes are colored on the corresponding cluster, check the ",html.A("clustering", href="#"+prefix+"_clustering")," or ",html.A("plots sections", href="#"+prefix+"_plots")," for more info"])
     #spectral_maj
-    km=KMeans(n_clusters=n_maj, n_init=100)
-    clusters=km.fit_predict(evects_maj[:,:n_maj])
-    cmap=dict(zip(set(clusters),[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/n_maj)]))
+    km=KMeans(n_clusters=n_clusters_maj, n_init=100)
+    clusters=km.fit_predict(evects_maj[:,:n_clusters_maj])
+    cmap=dict(zip(set(clusters),[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/n_clusters_maj)]))
     id_cluster=dict(zip(dict(nx.get_node_attributes(maj,"ID")).values(),clusters))
     stylesheet_spectral_maj=[]
     for ID in id_cluster:
@@ -301,7 +305,7 @@ def highlighter_callback(prefix,G,nodes, girvan_newman,maj,girvan_newman_maj):
     # communities = []
     # while len(communities) != n_comp:
     #     communities=next(girvan_newman)
-    communities=girvan_newman[n_comp]
+    communities=girvan_newman[n_comm]
     d_comm={}
     for n,comm in enumerate(communities):
         d_comm.update({d:n for d in comm})
@@ -322,7 +326,7 @@ def highlighter_callback(prefix,G,nodes, girvan_newman,maj,girvan_newman_maj):
     # communities = []
     # while len(communities) != n_maj:
     #     communities=next(girvan_newman_maj)
-    communities=girvan_newman_maj[n_maj]
+    communities=girvan_newman_maj[n_comm_maj]
     d_comm={}
     for i,comm in enumerate(communities):
         d_comm.update({d:i for d in comm})
@@ -498,14 +502,16 @@ def highlighter_callback(prefix,G,nodes, girvan_newman,maj,girvan_newman_maj):
                     girvan_newman_custom=girvan_newman_maj
                     greedy_modularity_custom_stylesheet=stylesheet_greedy_modularity_maj.copy()
                     greedy_modularity_custom_pie=pie_greedy_modularity_maj
+                    evals_custom,evects_custom=evals_maj,evects_maj
                 else:
                     graph=G.copy()
                     girvan_newman_custom=girvan_newman
                     greedy_modularity_custom_stylesheet=stylesheet_greedy_modularity.copy()
                     greedy_modularity_custom_pie=pie_greedy_modularity
+                    evals_custom,evects_custom=evals,evects
                 if custom_method == "spectral":
-                    L_custom=nx.normalized_laplacian_matrix(graph).toarray()
-                    evals_custom,evects_custom=np.linalg.eigh(L_custom)
+                    # L_custom=nx.normalized_laplacian_matrix(graph).toarray()
+                    # evals_custom,evects_custom=np.linalg.eigh(L_custom)
                     km_custom=KMeans(n_clusters=custom_n, n_init=100)
                     clusters_custom=km_custom.fit_predict(evects_custom[:,:custom_n])
                     cmap_custom=dict(zip(set(clusters_custom),[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/custom_n)]))
@@ -669,7 +675,7 @@ def get_selected_clustering_callback(prefix):
         return component, method
     return get_selected_clustering
 
-def get_range_clusters_callback(prefix,G,maj,girvan_newman,girvan_newman_maj):
+def get_range_clusters_callback(prefix,G,maj,Evals,Evals_maj,N_clusters,N_clusters_maj,Girvan_newman,Girvan_newman_maj,N_comm,N_comm_maj):
     @app.callback(
         [
             Output(prefix+"_custom_clustering_number_clusters","options"),
@@ -685,21 +691,31 @@ def get_range_clusters_callback(prefix,G,maj,girvan_newman,girvan_newman_maj):
         if component=="maj":
             # graph=G.subgraph(max(list(nx.connected_components(G)), key=len))
             graph=maj.copy()
-            girvan_newman_keys=list(girvan_newman_maj.keys())
+            evals=Evals_maj
+            n_clusters=N_clusters_maj
+            communities=Girvan_newman_maj
+            n_comm=N_comm_maj
         else:
             graph=G.copy()
-            girvan_newman_keys=list(girvan_newman.keys())
+            evals=Evals
+            n_clusters=N_clusters
+            communities=Girvan_newman
+            n_comm=N_comm
         if method == "spectral":
-            L=nx.normalized_laplacian_matrix(graph).toarray()
-            evals,evects=np.linalg.eigh(L)
-            n=[n for n,dif in enumerate(np.diff(evals)) if dif > 1.5*np.average([d for d in np.diff([v for v in evals if v<1]) if d>0.00001])][0]+1
+            # L=nx.normalized_laplacian_matrix(graph).toarray()
+            # evals,evects=np.linalg.eigh(L)
+            # n=[n for n,dif in enumerate(np.diff(evals)) if dif > 2*np.average([d for d in np.diff(evals) if d>0.00001])][0]+1
+            n=n_clusters
             options=[{"label":str(n),"value":n} for n in range(2,len(evals)-1)]
             disabled=False
         if method == "girvan_newman":
-            L=nx.normalized_laplacian_matrix(graph).toarray()
-            evals,evects=np.linalg.eigh(L)
-            n=[n for n,dif in enumerate(np.diff(evals)) if dif > 1.5*np.average([d for d in np.diff([v for v in evals if v<1]) if d>0.00001])][0]+1
-            options=[{"label":str(n),"value":n} for n in girvan_newman_keys]
+            # L=nx.normalized_laplacian_matrix(graph).toarray()
+            # evals,evects=np.linalg.eigh(L)
+            # n=[n for n,dif in enumerate(np.diff(evals)) if dif > 2*np.average([d for d in np.diff(evals) if d>0.00001])][0]+1
+            # communities_modularity={modularity(graph,community):n for n,community in communities.items()}
+            # n=communities_modularity[max(communities_modularity)]
+            n=n_comm
+            options=[{"label":str(n),"value":n} for n in communities.keys()]
             disabled=False
         if method == "greedy_modularity":
             n=len(nx.algorithms.community.greedy_modularity_communities(graph))
@@ -708,12 +724,13 @@ def get_range_clusters_callback(prefix,G,maj,girvan_newman,girvan_newman_maj):
         return options,n,disabled
     return get_range_clusters
 
-def custom_clustering_section_callback(prefix,G,girvan_newman,maj,girvan_newman_maj):
+def custom_clustering_section_callback(prefix,G,Evals,Evects,Evals_maj,Evects_maj,Girvan_newman,maj,Girvan_newman_maj,Communities_modularity,Communities_modularity_maj):
     @app.callback(
         [
             Output(prefix+"_custom_clustering_graph","figure"),
             Output(prefix+"_custom_clusters_table_container","children"),
-            Output(prefix+"_download_custom_clusters_modal","href")
+            Output(prefix+"_download_custom_clusters_modal","href"),
+            Output(prefix+"_custom_clustering_graph_col","style")
         ],
         [
             Input(prefix+"_custom_clustering_component","value"),
@@ -722,19 +739,24 @@ def custom_clustering_section_callback(prefix,G,girvan_newman,maj,girvan_newman_
         ]
     )
     def custom_clustering_section(component, method, n_clusters):
+        style={}
         if component=="maj":
             # graph=G.subgraph(max(list(nx.connected_components(G)), key=len))
             graph=maj.copy()
-            girvan_newman_custom=girvan_newman_maj
+            evals,evects=Evals_maj,Evects_maj
+            girvan_newman=Girvan_newman_maj
+            communities_modularity=Communities_modularity_maj
         else:
             graph=G.copy()
-            girvan_newman_custom=girvan_newman
-        L=nx.normalized_laplacian_matrix(graph).toarray()
-        evals,evects=np.linalg.eigh(L)
+            evals,evects=Evals,Evects
+            girvan_newman=Girvan_newman
+            communities_modularity=Communities_modularity
+        # L=nx.normalized_laplacian_matrix(graph).toarray()
+        # evals,evects=np.linalg.eigh(L)
         # n=[n for n,dif in enumerate(np.diff(evals)) if dif > 1.5*np.average(np.diff(evals))][0]+1
-        clustering_data=pd.DataFrame({"Eigenvalue Number":range(len(evals)),"Eigenvalue":evals})
-        figure=px.scatter(data_frame=clustering_data,x="Eigenvalue Number",y="Eigenvalue", title="Eigenvalues Distribution", template="ggplot2")
-        figure.update_layout({"paper_bgcolor": "rgba(0, 0, 0, 0)", "modebar":{"bgcolor":"rgba(0, 0, 0, 0)","color":"silver","activecolor":"grey"}})
+        # clustering_data=pd.DataFrame({"Eigenvalue Number":range(len(evals)),"Eigenvalue":evals})
+        # figure=px.scatter(data_frame=clustering_data,x="Eigenvalue Number",y="Eigenvalue", title="Eigenvalues Distribution", template="ggplot2")
+        # figure.update_layout({"paper_bgcolor": "rgba(0, 0, 0, 0)", "modebar":{"bgcolor":"rgba(0, 0, 0, 0)","color":"silver","activecolor":"grey"}})
         if method == "spectral":
             km=KMeans(n_clusters=n_clusters, n_init=100)
             clusters=km.fit_predict(evects[:,:n_clusters])
@@ -751,14 +773,18 @@ def custom_clustering_section_callback(prefix,G,girvan_newman,maj,girvan_newman_
                 table_body+=[html.Tr([html.Td(cluster), html.Td(clusters_data[cluster])])]
             table=dbc.Table(table_header+[html.Tbody(table_body)], className="table table-hover", bordered=True, id=prefix+"_custom_clusters_table")
             href="data:text/csv;charset=utf-8,"+quote(pd.DataFrame({"Cluster":list(clusters_data.keys()),"Nodes":list(clusters_data.values())}).to_csv(sep="\t", index=False, encoding="utf-8"))
+            clustering_data=pd.DataFrame({"Eigenvalue Number":range(len(evals)),"Eigenvalue":evals})
+            figure=px.scatter(data_frame=clustering_data,x="Eigenvalue Number",y="Eigenvalue", title="Eigenvalues Distribution", template="ggplot2")
         elif method == "girvan_newman":
-            communities=girvan_newman_custom[n_clusters]
+            communities=girvan_newman[n_clusters]
             table_header=[html.Thead(html.Tr([html.Th("Community"),html.Th("Nodes")]))]
             table_body=[]
             for n, community in enumerate(communities):
                 table_body+=[html.Tr([html.Td(n), html.Td(", ".join(community))])]
             table=dbc.Table(table_header+[html.Tbody(table_body)], className="table table-hover", bordered=True, id=prefix+"_custom_clusters_table")
             href="data:text/csv;charset=utf-8,"+quote(pd.DataFrame({"Cluster":range(len(communities)),"Nodes":[", ".join(comm) for comm in communities]}).to_csv(sep="\t", index=False, encoding="utf-8"))
+            communities_data=pd.DataFrame({"Number of Communities":list(communities_modularity.values()),"Modularity":list(communities_modularity.keys())})
+            figure=px.scatter(data_frame=communities_data,x="Number of Communities",y="Modularity", title="Modularity Trend in Different Communities Partitioning", template="ggplot2")
         elif method == "greedy_modularity":
             communities=nx.algorithms.community.greedy_modularity_communities(graph)
             table_header=[html.Thead(html.Tr([html.Th("Community"),html.Th("Nodes")]))]
@@ -767,7 +793,12 @@ def custom_clustering_section_callback(prefix,G,girvan_newman,maj,girvan_newman_
                 table_body+=[html.Tr([html.Td(n), html.Td(", ".join(community))])]
             table=dbc.Table(table_header+[html.Tbody(table_body)], className="table table-hover", bordered=True, id=prefix+"_custom_clusters_table")
             href="data:text/csv;charset=utf-8,"+quote(pd.DataFrame({"Cluster":range(len(communities)),"Nodes":[", ".join(comm) for comm in communities]}).to_csv(sep="\t", index=False, encoding="utf-8"))
-        return figure, table, href
+            clustering_data=pd.DataFrame({"Eigenvalue Number":range(len(evals)),"Eigenvalue":evals})
+            # figure=px.scatter(data_frame=clustering_data,x="Eigenvalue Number",y="Eigenvalue", title="Eigenvalues Distribution", template="ggplot2")
+            figure = go.Figure()
+            style={"display":"none"}
+        figure.update_layout({"paper_bgcolor": "rgba(0, 0, 0, 0)", "modebar":{"bgcolor":"rgba(0, 0, 0, 0)","color":"silver","activecolor":"grey"}})
+        return figure, table, href, style
     return custom_clustering_section
 
 def toggle_view_clusters_callback(prefix):
@@ -782,18 +813,18 @@ def toggle_view_clusters_callback(prefix):
         return is_open
     return toggle_view_clusters
 
-def build_callbacks(prefix,G,nodes,graph_properties_df,girvan_newman,maj,girvan_newman_maj,file_prefix):
+def build_callbacks(prefix,G,nodes,graph_properties_df,L,evals,evects,L_maj,evals_maj,evects_maj,n_clusters,n_clusters_maj,girvan_newman,maj,girvan_newman_maj,communities_modularity,communities_modularity_maj,n_comm,n_comm_maj,file_prefix):
     collapse_headbar_callback(prefix)
     displayHoverNodeData_callback(prefix,G)
-    highlighter_callback(prefix,G,nodes, girvan_newman,maj,girvan_newman_maj)
+    highlighter_callback(prefix,G,nodes,L,evals,evects,L_maj,evals_maj,evects_maj,n_clusters,n_clusters_maj,girvan_newman,maj,girvan_newman_maj,n_comm,n_comm_maj)
     get_selected_clustering_callback(prefix)
-    custom_clustering_section_callback(prefix,G,girvan_newman,maj,girvan_newman_maj)
+    custom_clustering_section_callback(prefix,G,evals,evects,evals_maj,evects_maj,girvan_newman,maj,girvan_newman_maj,communities_modularity,communities_modularity_maj)
     get_img_callback(prefix)
     download_graph_file_callback(prefix,file_prefix)
     toggle_download_graph_callback(prefix)
     toggle_help_callback(prefix)
     toggle_legend_callback(prefix)
-    get_range_clusters_callback(prefix,G,maj,girvan_newman,girvan_newman_maj)
+    get_range_clusters_callback(prefix,G,maj,evals,evals_maj,n_clusters,n_clusters_maj,girvan_newman,girvan_newman_maj,n_comm,n_comm_maj)
     toggle_view_clusters_callback(prefix)
     selectedTable_callback(prefix)
     propertiesTable_callback(prefix,graph_properties_df,nodes)

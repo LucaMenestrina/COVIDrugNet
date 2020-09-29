@@ -17,6 +17,7 @@ import pickle
 from tqdm import tqdm
 
 import networkx as nx
+from networkx.algorithms.community import modularity
 
 import matplotlib.pyplot as plt
 from matplotlib.colors import rgb2hex
@@ -230,7 +231,7 @@ def graph(prefix,title,nodes,edges):#es. title="Drug Target"
                     style={"width":"100%","height":"80vh"},
                     elements=nodes+edges,
                     boxSelectionEnabled=True,
-                    minZoom=0.05,
+                    minZoom=1E-2,
                     maxZoom=10,
                     responsive=True,
                     className="card border-secondary mb-3"), type="circle", color="grey"),
@@ -259,8 +260,8 @@ def graph_properties(prefix):
                                 {"label":"Closeness Centrality: High to Low","value":"Closeness Centrality,0"},
                                 {"label":"Betweenness Centrality: Low to High","value":"Betweenness Centrality,1"},
                                 {"label":"Betweenness Centrality: High to Low","value":"Betweenness Centrality,0"},
-                                {"label":"Harmonic Centrality: Low to High","value":"Harmonic Centrality,1"},
-                                {"label":"Harmonic Centrality: High to Low","value":"Harmonic Centrality,0"},
+                                {"label":"Clustering Coefficient: Low to High","value":"Clustering Coefficient,1"},
+                                {"label":"Clustering Coefficient: High to Low","value":"Clustering Coefficient,0"},
                                 {"label":"Eigenvector Centrality: Low to High","value":"Eigenvector Centrality,1"},
                                 {"label":"Eigenvector Centrality: High to Low","value":"Eigenvector Centrality,0"},
                                 {"label":"Vote Rank Score: Low to High","value":"Vote Rank Score,1"},
@@ -285,26 +286,26 @@ def graph_properties(prefix):
             ], fluid=True, style={"padding":"3%"})
 
 def view_custom_clusters(prefix):
-    return dbc.Container([
+    return html.Center([
                 html.Br(),
                 dbc.Button("View Table", id=prefix+"_view_clusters_open", className="btn btn-outline-primary"),
                 dbc.Modal([
-                    dbc.ModalHeader("Custom Clusters Table"),
+                    dbc.ModalHeader("Custom Groups"),
                     dbc.ModalBody([
                         dbc.Container(id=prefix+"_custom_clusters_table_container", fluid=True)
                     ]),
                     dbc.ModalFooter([
-                        html.A(dbc.Button("Download", className="btn btn-outline-primary"), target="_blank", download="custom_clusters.tsv", id=prefix+"_download_custom_clusters_modal"),
+                        html.A(dbc.Button("Download", className="btn btn-outline-primary"), target="_blank", download="custom_groups.tsv", id=prefix+"_download_custom_clusters_modal"),
                         dbc.Button("Close", id=prefix+"_view_clusters_close", className="btn btn-outline-primary")
                     ]),
                 ],id=prefix+"_custom_clusters_modal", size="xl"),
-            ], fluid=True)
+            ])
 
 def custom_clustering(prefix):
     return dbc.Container([
                 html.H3("Clustering"),
                 dbc.Row([
-                    dbc.Col([dbc.Spinner(dcc.Graph(id=prefix+"_custom_clustering_graph", responsive=True))], style={"padding":"0px"}, xs=12, md=7), # I don't know why the dcc.Loading component moves the graph outside the column (covering the lower one)
+                    dbc.Col([dbc.Spinner(dcc.Graph(id=prefix+"_custom_clustering_graph", responsive=True))], style={"padding":"0px"}, xs=12, md=6, id=prefix+"_custom_clustering_graph_col"), # I don't know why the dcc.Loading component moves the graph outside the column (covering the lower one)
                     dbc.Col([
                         dbc.Row([
                             dbc.Col(width=4),
@@ -326,26 +327,47 @@ def custom_clustering(prefix):
                             dbc.Col(dcc.Dropdown(id=prefix+"_custom_clustering_number_clusters", clearable=False, optionHeight=25,className="DropdownMenu"), width=8),
                         ], justify="around", align="center"),
                         view_custom_clusters(prefix)
-                    ], align="center", style={"padding":"1%"}, xs=12, md=5)
+                    ], align="center", style={"padding":"1%"}, xs=12, md=4)
                 ], justify="around", align="center", no_gutters=True)
             ], id=prefix+"_clustering", fluid=True, style={"padding":"3%"})
 
-def common_data_generator(prefix,graph):
-    print(prefix)
-    graph_properties_df=pd.DataFrame({node:{prop:values[prop] for prop in ["Name","Degree", "Closeness Centrality", "Betweenness Centrality", "Harmonic Centrality", "Eigenvector Centrality", "Vote Rank Score"]} for node,values in dict(graph.nodes(data=True)).items()}).T
+def common_data_generator(prefix,graph,graph_title):
+    print(graph_title)
+    graph_properties_df=pd.DataFrame({node:{prop:values[prop] for prop in ["Name","Degree", "Closeness Centrality", "Betweenness Centrality", "Eigenvector Centrality", "Clustering Coefficient", "Vote Rank Score"]} for node,values in dict(graph.nodes(data=True)).items()}).T
     maj=graph.subgraph(max(list(nx.connected_components(graph)), key=len))
-    if os.path.isfile("data/gn_communities/"+prefix+"_communities.pickle"):
-        with open("data/gn_communities/"+prefix+"_communities.pickle","rb") as bkp:
-            girvan_newman,girvan_newman_maj=pickle.load(bkp)
+    print("\tCommunities Detection Data")
+    if os.path.isfile("data/groups/"+prefix+"_communities.pickle"):
+        with open("data/groups/"+prefix+"_communities.pickle","rb") as bkp:
+            girvan_newman,girvan_newman_maj,communities_modularity,communities_modularity_maj,n_comm,n_comm_maj=pickle.load(bkp)
     else:
         girvan_newman={len(comm):comm for comm in tqdm(nx.algorithms.community.girvan_newman(graph))}
         girvan_newman_maj={len(comm):comm for comm in tqdm(nx.algorithms.community.girvan_newman(maj))}
-        name="data/gn_communities/"+prefix+"_communities.pickle"
+        communities_modularity={modularity(graph,community):n for n,community in girvan_newman.items()}
+        n_comm=communities_modularity[max(communities_modularity)]
+        communities_modularity_maj={modularity(maj,community):n for n,community in girvan_newman_maj.items()}
+        n_comm_maj=communities_modularity_maj[max(communities_modularity_maj)]
+        name="data/groups/"+prefix+"_communities.pickle"
         with open(name,"wb") as bkp:
-            pickle.dump([girvan_newman,girvan_newman_maj],bkp)
+            pickle.dump([girvan_newman,girvan_newman_maj,communities_modularity,communities_modularity_maj,n_comm,n_comm_maj],bkp)
         if os.path.isfile(name+".bkp"):
-                os.remove(name+".bkp")
-    return graph_properties_df,girvan_newman,maj,girvan_newman_maj
+            os.remove(name+".bkp")
+    print("\tSpectral Clustering Data")
+    if os.path.isfile("data/groups/"+prefix+"_spectral.pickle"):
+        with open("data/groups/"+prefix+"_spectral.pickle","rb") as bkp:
+            L,evals,evects,n_clusters,L_maj,evals_maj,evects_maj,n_clusters_maj=pickle.load(bkp)
+    else:
+        L=nx.normalized_laplacian_matrix(graph).toarray()
+        evals,evects=np.linalg.eigh(L)
+        n_clusters=[n for n,dif in enumerate(np.diff(evals)) if dif > 2*np.average([d for d in np.diff(evals) if d>0.00001])][0]+1
+        L_maj=nx.normalized_laplacian_matrix(maj).toarray()
+        evals_maj,evects_maj=np.linalg.eigh(L_maj)
+        n_clusters_maj=[n for n,dif in enumerate(np.diff(evals_maj)) if dif > 2*np.average([d for d in np.diff(evals_maj) if d>0.00001])][0]+1
+        name="data/groups/"+prefix+"_spectral.pickle"
+        with open(name,"wb") as bkp:
+            pickle.dump([L,evals,evects,n_clusters,L_maj,evals_maj,evects_maj,n_clusters_maj],bkp)
+        if os.path.isfile(name+".bkp"):
+            os.remove(name+".bkp")
+    return graph_properties_df,L,evals,evects,L_maj,evals_maj,evects_maj,n_clusters,n_clusters_maj,girvan_newman,maj,girvan_newman_maj,communities_modularity,communities_modularity_maj,n_comm,n_comm_maj
 
 def get_frequency(l):
     l=list(l)

@@ -1,214 +1,219 @@
 #collector.py
-# GMT Fri Sep 18 06:16:43 2020
+# GMT Mon Sep 28 08:27:40 2020
 # 
-Menadione	Quercetin	Argatroban	Nafamostat	Resveratrol	Melatonin	Suramin
-Bismuth subcitrate potassium
-Fluvoxamine	Verapamil	Clarithromycin	Fluoxetine
-Pirfenidone
-Metoprolol	Formoterol
-Ruxolitinib	Tofacitinib	Zanubrutinib	Baricitinib
-Ozanimod	Fingolimod
-Moxifloxacin	Etoposide	Genistein	Levofloxacin
-Enzalutamide	Bicalutamide	Progesterone
-Aprepitant
-Emtricitabine	Tenofovir disoproxil	Tenofovir alafenamide
-GC-376 free acid	GS-441524	Remdesivir
-Febuxostat
-Ivermectin
-Rabeprazole	Pantoprazole	Omeprazole
-Prednisolone	Methylprednisolone	Progesterone	Prednisolone acetate	Budesonide	Hydrocortisone	Dexamethasone	Prednisone	Ciclesonide	Mometasone furoate
-GS-441524	Galidesivir	Ribavirin	Remdesivir
-Lopinavir	Atazanavir	Darunavir	Ritonavir
-Icosapent	Pioglitazone	Ibuprofen	Clofazimine	Oleic Acid	Indomethacin	Resveratrol	Curcumin	Resiniferatoxin	Acetaminophen	Lenalidomide	Telmisartan	Naproxen	Celecoxib	Ginseng	Camphor	Omega-3 fatty acids
-Tenofovir disoproxil	Tenofovir alafenamide
-Tofacitinib	Zanubrutinib	Baricitinib
-Heparin	Enoxaparin	Tinzaparin	Nafamostat	Nadroparin	Rivaroxaban	Sirolimus	Fondaparinux	Nintedanib	Sulodexide	Bemiparin
-Camostat	Aprotinin	Nafamostat
-Anakinra
-Irbesartan	Angiotensin II	Losartan	Candesartan	Telmisartan	Eprosartan	Candesartan cilexetil	Valsartan	Olmesartan
-Brequinar	Leflunomide	Atovaquone
-Velpatasvir	Daclatasvir	Elbasvir
-Merimepodib
-Creatine
-Hesperidin
-Calcifediol	Cholesterol	Cholecalciferol	Curcumin	Vitamin D
-Danoprevir	Ribavirin
-Fingolimod
-Hydrocortisone	Methylprednisolone	Progesterone	Prednisolone acetate	Budesonide	Dexamethasone	Prednisone	Ciclesonide	Mometasone furoate
-Darunavir	Atazanavir	Ritonavir
-Clindamycin
-Aprotinin	Tranexamic acid	Nafamostat
-Curcumin	Pioglitazone	Ibuprofen	Vitamin D	Cholesterol	Clofazimine	Telmisartan	Oleic Acid	Quercetin	Indomethacin	Resveratrol	Cholecalciferol	Omega-3 fatty acids
-Simvastatin	Rosuvastatin	Atorvastatin
-Ribavirin	Galidesivir	Favipiravir	Remdesivir
-Rosuvastatin	Atorvastatin
-Telmisartan	Pioglitazone	Ibuprofen	Losartan	Clofazimine	Candesartan	Oleic Acid	Indomethacin	Candesartan cilexetil	Resveratrol	Olmesartan	Angiotensin II	Eprosartan	Valsartan	Omega-3 fatty acids
-Dapagliflozin
-Chloroquine
-Roxithromycin	Tetrandrine	Clarithromycin
-Etoposide	Genistein
+Clarithromycin	Roxithromycin	Fluoxetine	Fluvoxamine	Verapamil
+Fondaparinux	Nadroparin	Nafamostat	Enoxaparin	Rivaroxaban	Heparin	Sulodexide	Bemiparin	Tinzaparin
+Quercetin	Piperine	Curcumin	Resveratrol	Estradiol	Melatonin	Genistein	Duvelisib	Menadione	Leflunomide	Diosmin	Ginseng	Dexamethasone	Vitamin E	Progesterone	Ritonavir	Omeprazole	Atorvastatin	Artenimol
+Suramin	Nicotinamide	Nafamostat	Indomethacin	Argatroban	Menadione
+Enoxaparin	Nadroparin	Nafamostat	Rivaroxaban	Heparin	Sulodexide	Bemiparin	Tinzaparin
+Defibrotide	Pentoxifylline
+Metformin
+Amoxicillin
+GS-441524	Galidesivir	GC-376 free acid	Ribavirin	Remdesivir
+Raltegravir
 Methotrexate	Trimethoprim
+Prednisolone	Methylprednisolone	Dexamethasone	Hydrocortisone	Ciclesonide	Prednisolone acetate	Progesterone	Mometasone furoate	Prednisone	Budesonide
+Omeprazole	Diosmin	Resveratrol	Ginseng	Rabeprazole	Atorvastatin	Leflunomide	Pantoprazole
+Argatroban	Menadione	Nafamostat
+Resiniferatoxin	Acetaminophen	Icosapent	alpha-Linolenic acid	Camphor
+Mecobalamin	Cyanocobalamin
+Hydrocortisone	Methylprednisolone	Dexamethasone	Ciclesonide	Prednisolone acetate	Progesterone	Mometasone furoate	Prednisone	Budesonide
+Epoprostenol	Prasugrel	Iloprost	Clopidogrel
+Dapagliflozin
+Colchicine	Artenimol
+Lopinavir	Atazanavir	Darunavir	Ritonavir
+Selinexor
 Interferon alfa-2b
-Thiamine
-Aliskiren
-Candesartan	Angiotensin II	Losartan	Eprosartan	Candesartan cilexetil	Valsartan	Olmesartan
+Sulodexide	Nadroparin	Heparin	Bemiparin	Tinzaparin
+Diosmin	Resveratrol	Ginseng	Atorvastatin	Leflunomide
+Fingolimod	Ozanimod
+Piperine	Resveratrol	Dexamethasone	Estradiol	Vitamin E	Genistein	Ritonavir
+Artenimol	Nicotinamide	Cyclosporine	Resveratrol	Dipyridamole	Pyridostigmine
+alpha-Linolenic acid	Clofazimine	Icosapent	Curcumin	Oleic Acid	Resveratrol	Omega-3 fatty acids	Ibuprofen	Acetaminophen	Telmisartan	Pioglitazone	Indomethacin	Camphor
+Nelfinavir	TMC-310911
+Pyridostigmine
+Genistein	Resveratrol	Baricitinib	Dexamethasone	Estradiol	Melatonin	Vitamin E	Moxifloxacin	Progesterone	Ritonavir	Leflunomide	Etoposide
+Maraviroc
+Linagliptin	Sitagliptin	Atorvastatin
+GC-376 free acid	Remdesivir
+Sulfamethoxazole
+Levamisole	Fluoxetine
+Tirofiban	Resveratrol
+Disulfiram
+Indomethacin	Clofazimine	Curcumin	Icosapent	Resveratrol	Oleic Acid	Telmisartan	Ibuprofen	Acetaminophen	Celecoxib	Lenalidomide	Naproxen	Iloprost	Omega-3 fatty acids	Ginseng	Pioglitazone
+Lipoic acid
+Brequinar	Atovaquone	Leflunomide
 Niacin
+Ibudilast	Iloprost	Dipyridamole
+Tenofovir	Emtricitabine	Tenofovir disoproxil	Tenofovir alafenamide
+Tenofovir alafenamide	Emtricitabine	Tenofovir disoproxil
+Velpatasvir	Elbasvir	Daclatasvir
+Ribavirin	Danoprevir	Favipiravir	Remdesivir	Galidesivir
+Ibuprofen	Clofazimine	Curcumin	Icosapent	Resveratrol	Oleic Acid	Telmisartan	Acetaminophen	Celecoxib	Lenalidomide	Naproxen	Omega-3 fatty acids	Ginseng	Pioglitazone
+Sofosbuvir
+Fluoxetine	Fluvoxamine	Verapamil
+Metronidazole
+Anakinra
+Ginseng	Icosapent	Resveratrol	Naproxen	Acetaminophen	Celecoxib	Atorvastatin	Leflunomide	Lenalidomide
+Candesartan	Angiotensin II	Eprosartan	Telmisartan	Irbesartan	Losartan	Valsartan	Candesartan cilexetil	Olmesartan
+Pyridoxine
 Tazobactam
-Acetaminophen	Ibuprofen	Lenalidomide	Naproxen	Indomethacin	Resveratrol	Ginseng	Celecoxib	Camphor	Resiniferatoxin
-Vitamin E	Genistein	Ritonavir	Piperine	Quercetin	Estradiol	Montelukast	Resveratrol	Dexamethasone
-Omeprazole	Pantoprazole	Atorvastatin	Quercetin	Leflunomide	Diosmin	Resveratrol	Ginseng
+Zanubrutinib	Lidocaine	Acalabrutinib	Tofacitinib	Ibrutinib	Baricitinib	Ruxolitinib	Nintedanib
+Levofloxacin	Moxifloxacin
+Dexamethasone	Methylprednisolone	Resveratrol	Estradiol	Prednisolone acetate	Mometasone furoate	Citrulline	Vitamin E	Ciclesonide	Progesterone	Ritonavir	Prednisone	Budesonide
+Estradiol	Resveratrol	Melatonin	Vitamin E	Progesterone	Ritonavir
+Heparin	Nadroparin	Nafamostat	Rivaroxaban	Bemiparin	Tinzaparin	Sirolimus	Nintedanib
+Oxycodone	Naltrexone	Metenkefalin	Progesterone
+Cyclosporine
+Diphenhydramine
+Ritonavir	Resveratrol	Vitamin E	Atazanavir	Darunavir
+Irbesartan	Angiotensin II	Eprosartan	Telmisartan	Losartan	Valsartan	Candesartan cilexetil	Olmesartan
+Cysteine
+Leflunomide	Atovaquone	Resveratrol	Baricitinib	Atorvastatin
+Enzalutamide	Bicalutamide	Progesterone
+Biotin
+Vitamin D	Curcumin	Calcifediol	Cholesterol	Cholecalciferol
+Fisetin
+Olmesartan	Angiotensin II	Eprosartan	Telmisartan	Losartan	Valsartan	Candesartan cilexetil
+Losartan	Angiotensin II	Eprosartan	Telmisartan	Valsartan	Candesartan cilexetil
+Ifenprodil
+Tofacitinib	Ruxolitinib	Baricitinib
+Celecoxib	Icosapent	Resveratrol	Naproxen	Acetaminophen	Lenalidomide
+Pantoprazole	Citrulline	Rabeprazole
+Pantothenic acid
 Piperacillin	Ceftriaxone
-Tranexamic acid
-Tinzaparin	Enoxaparin	Nadroparin	Fondaparinux	Sulodexide	Bemiparin
+Nafamostat	Camostat	Aprotinin	Rivaroxaban	Bemiparin	Menadione
+Thiamine
+Folic acid
+Pioglitazone	Clofazimine	Curcumin	Icosapent	Oleic Acid	Telmisartan	Omega-3 fatty acids	Resveratrol
+Berberine
+Degarelix
+Citrulline	Methylene blue
+Methylprednisolone	Ciclesonide	Prednisolone acetate	Progesterone	Mometasone furoate	Prednisone	Budesonide
+Budesonide	Ciclesonide	Prednisolone acetate	Progesterone	Mometasone furoate	Prednisone
+Atovaquone
+Oleic Acid	Clofazimine	Curcumin	Icosapent	Resveratrol	Omega-3 fatty acids	Telmisartan
+Sitagliptin	Atorvastatin
+Creatine
+Nicotinamide
+Thrombin
+Moxifloxacin	Etoposide
+Etoposide
+Clindamycin
+Rabeprazole
+Iloprost	Dipyridamole
+Dotatate gallium Ga-68
+Ruxolitinib	Baricitinib
+Vitamin E	Resveratrol	Montelukast
+Ebselen
+Clofazimine	Curcumin	Icosapent	Telmisartan	Omega-3 fatty acids	Resveratrol
+Telmisartan	Angiotensin II	Icosapent	Curcumin	Resveratrol	Candesartan cilexetil	Eprosartan	Omega-3 fatty acids	Valsartan
+Sirolimus	Tacrolimus
+Omega-3 fatty acids	Curcumin	Icosapent	Resveratrol
+Liothyronine
+Menadione	Resveratrol	Melatonin
+Ambrisentan
+Noscapine
+Cyanocobalamin
+Camostat	Aprotinin
+Melatonin	Resveratrol	Ramelteon	Trifluoperazine	Progesterone
+Nadroparin	Bemiparin	Tinzaparin
+Valsartan	Angiotensin II	Eprosartan	Candesartan cilexetil
+Sildenafil	Dipyridamole
+Mometasone furoate	Ciclesonide	Prednisolone acetate	Progesterone	Prednisone
+Daclatasvir	Elbasvir
+Riboflavin
+Ramelteon	Resveratrol
+Galidesivir	Remdesivir
+Naproxen	Icosapent	Resveratrol	Acetaminophen	Lenalidomide
+Bardoxolone methyl
+Fluvoxamine	Verapamil
+Merimepodib
+Icatibant
+Febuxostat
+Aprepitant
+Eprosartan	Angiotensin II	Candesartan cilexetil
+Atazanavir	Darunavir
+Prednisolone acetate	Ciclesonide	Progesterone	Prednisone
+Hesperidin
+Baloxavir marboxil
+Protoporphyrin
+Resveratrol	Curcumin	Lenalidomide	Atorvastatin	Icosapent	Acetaminophen	Montelukast	Cholesterol	Progesterone
+Emtricitabine	Tenofovir disoproxil
+Ramipril	Enalapril	Captopril
+Apremilast
+Formoterol	Metoprolol
+Tranilast
+Bicalutamide	Progesterone
+Montelukast
+Tetrandrine	Roxithromycin
+Aliskiren
+Chloroquine
+Isotretinoin
+Candesartan cilexetil	Angiotensin II
+Imatinib	Nintedanib
+Remdesivir
+Roxithromycin
+Famotidine
+Dexmedetomidine
+Clopidogrel	Prasugrel
+Trifluoperazine	Verapamil
+Naltrexone	Progesterone	Metenkefalin
+Nintedanib
+Atorvastatin	Cholesterol	Simvastatin	Rosuvastatin
+Icosapent	Curcumin	Acetaminophen	Lenalidomide	Camphor
+Rosuvastatin	Simvastatin
+Prasugrel
+Lidocaine	Progesterone	Dipyridamole
+Oseltamivir
+Angiotensin II
+Tranexamic acid	Aprotinin
+Captopril	Enalapril
+Simvastatin
+Baricitinib
+Verapamil	Diltiazem
+Pentoxifylline
+Metoprolol
+Vitamin A
+Bismuth subcitrate potassium
+Ciclesonide	Progesterone	Prednisone
+Dipyridamole	Progesterone
+Nitazoxanide
+Enalapril
+Pirfenidone
+Aprotinin
+Lenalidomide	Acetaminophen
+Elbasvir
+Duvelisib
+Bemiparin	Rivaroxaban	Tinzaparin
+Ibrutinib	Acalabrutinib
+Favipiravir
+Progesterone	Prednisone
+Methylene blue
+Metenkefalin
+Tenofovir disoproxil
+Acalabrutinib
+Ivermectin
+Cholecalciferol	Curcumin	Calcifediol	Cholesterol
+Artesunate
+Rivaroxaban
+Acetaminophen	Camphor
+Piclidenoson
+Ceftriaxone
+Darunavir
+Oxytocin
+Prednisone
+Cholesterol	Curcumin	Calcifediol
+Calcifediol	Curcumin
+Danoprevir
+Almitrine
+Tacrolimus
 Trimethoprim
 Dutasteride
-Sildenafil	Dipyridamole
-Pyridostigmine	Artenimol
-Sofosbuvir
-Genistein	Ritonavir	Piperine	Quercetin	Leflunomide	Estradiol	Baricitinib	Resveratrol	Dexamethasone	Melatonin	Progesterone
-Prasugrel	Epoprostenol	Clopidogrel
-Methylene blue	Citrulline
-Defibrotide	Pentoxifylline
-Cholecalciferol	Cholesterol	Vitamin D
-Levofloxacin
-Oxycodone	Progesterone	Naltrexone	Metenkefalin
-Lipoic acid
-Rivaroxaban	Enoxaparin	Nafamostat	Fondaparinux	Bemiparin
-Vitamin D	Cholesterol
-Sirolimus	Tacrolimus
-Cyanocobalamin	Mecobalamin
-Selinexor
-Metronidazole
-Icatibant
-Camphor	Resiniferatoxin
-Leflunomide	Atorvastatin	Quercetin	Baricitinib	Diosmin	Resveratrol	Ginseng	Atovaquone
-Favipiravir
-Ifenprodil
-Tetrandrine
-Prednisone	Methylprednisolone	Progesterone	Prednisolone acetate	Budesonide	Dexamethasone	Ciclesonide	Mometasone furoate
-Oxytocin
-Omega-3 fatty acids	Pioglitazone	Ibuprofen	Clofazimine	Oleic Acid	Indomethacin	Resveratrol
-Cysteine
-Citrulline	Dexamethasone	Pantoprazole
-Bardoxolone methyl
-Mometasone furoate	Methylprednisolone	Prednisolone acetate	Budesonide	Dexamethasone	Progesterone	Ciclesonide
-Dipyridamole	Lidocaine	Ibudilast	Iloprost	Artenimol	Progesterone
-Pantothenic acid
-Nadroparin	Enoxaparin	Fondaparinux	Sulodexide	Bemiparin
-Ebselen
-Enalapril	Ramipril	Captopril
-Sitagliptin	Linagliptin	Atorvastatin
-Levamisole	Fluoxetine
-TMC-310911	Nelfinavir
-Clofazimine	Pioglitazone	Ibuprofen	Oleic Acid	Indomethacin	Resveratrol
-Amoxicillin
-Angiotensin II	Losartan	Eprosartan	Candesartan cilexetil	Valsartan	Olmesartan
-Pyridoxine
-Galidesivir	Remdesivir
-Baricitinib	Zanubrutinib
-Sulodexide	Enoxaparin	Fondaparinux	Bemiparin
-Budesonide	Methylprednisolone	Progesterone	Prednisolone acetate	Dexamethasone	Ciclesonide
-Methylprednisolone	Progesterone	Prednisolone acetate	Dexamethasone	Ciclesonide
-Fisetin
-Ginseng	Atorvastatin	Ibuprofen	Quercetin	Lenalidomide	Naproxen	Indomethacin	Diosmin	Resveratrol	Celecoxib
-Resveratrol	Ibuprofen	Cholesterol	Piperine	Oleic Acid	Diosmin	Ramelteon	Lenalidomide	Montelukast	Estradiol	Tirofiban	Pioglitazone	Atorvastatin	Indomethacin	Artenimol	Dexamethasone	Melatonin	Progesterone	Ritonavir	Quercetin	Naproxen	Celecoxib
-Maraviroc
-Isotretinoin
-Nicotinamide	Suramin	Artenimol
-Formoterol
-Cholesterol	Atorvastatin
-Clopidogrel	Epoprostenol
-Fondaparinux	Enoxaparin	Nafamostat	Bemiparin
-Verapamil	Fluoxetine	Trifluoperazine	Diltiazem	Clarithromycin
-Diosmin	Atorvastatin	Quercetin
-Thrombin
-Famotidine
-Pantoprazole
-Candesartan cilexetil	Losartan	Eprosartan	Valsartan	Olmesartan
-Dexmedetomidine
-Ibudilast	Iloprost
-Nitazoxanide
-Epoprostenol	Iloprost
-Atazanavir	Ritonavir
-Argatroban	Suramin	Nafamostat
-Diltiazem
-Suramin	Nafamostat	Indomethacin
-Nafamostat	Enoxaparin	Bemiparin
-Elbasvir	Daclatasvir
-Daclatasvir
-Metformin
-Sulfamethoxazole
-Tacrolimus
-Imatinib	Nintedanib
-Enoxaparin	Bemiparin
-Oseltamivir
-Tranilast
-Lenalidomide	Ibuprofen	Naproxen	Indomethacin	Celecoxib
-Naproxen	Ibuprofen	Indomethacin	Celecoxib
-Ambrisentan
-Degarelix
-Linagliptin	Atorvastatin
-Lidocaine	Progesterone	Zanubrutinib
-Bicalutamide	Progesterone
-Valsartan	Losartan	Eprosartan	Olmesartan
-Fluoxetine	Clarithromycin
-Ceftriaxone
-Liothyronine
-Biotin
-Raltegravir
-Captopril	Ramipril
-Almitrine
-Bemiparin
-Remdesivir
-Ibuprofen	Pioglitazone	Oleic Acid	Indomethacin	Celecoxib
-Iloprost	Indomethacin
-Estradiol	Ritonavir	Piperine	Quercetin	Dexamethasone	Melatonin	Progesterone
-Trifluoperazine	Melatonin
-Riboflavin
-Quercetin	Atorvastatin	Piperine	Duvelisib	Artenimol	Dexamethasone	Melatonin	Progesterone	Ritonavir
-Cyclosporine	Artenimol
-Losartan	Eprosartan	Olmesartan
-Tirofiban
-Colchicine	Artenimol
-Berberine
-Vitamin A
-Nintedanib	Zanubrutinib
-Mecobalamin
-Artesunate
-Zanubrutinib	Acalabrutinib	Ibrutinib
-Ramelteon	Melatonin
-Piclidenoson
-Resiniferatoxin
-Acalabrutinib	Ibrutinib
-Dexamethasone	Piperine	Prednisolone acetate	Progesterone	Ciclesonide	Ritonavir
-Atovaquone
-Duvelisib
-Naltrexone	Progesterone	Metenkefalin
-Protoporphyrin
-Folic acid
-Ramipril
-Ritonavir	Piperine
-Oleic Acid	Pioglitazone	Indomethacin
-Noscapine
-Baloxavir marboxil
-Atorvastatin
-Pioglitazone	Indomethacin
-Montelukast
-Olmesartan	Eprosartan
-Melatonin	Progesterone
-Metenkefalin
-Ciclesonide	Progesterone	Prednisolone acetate
-Pentoxifylline
-Clarithromycin
-Disulfiram
-Nelfinavir
-Celecoxib	Indomethacin
-Tenofovir alafenamide
-Indomethacin
-Prednisolone acetate	Progesterone
-Ibrutinib
-Progesterone
-Piperine
-Artenimol
 Itraconazole
-Eprosartan
+Ozanimod
+TMC-310911
+Diltiazem
+Camphor
+Tinzaparin
+Curcumin

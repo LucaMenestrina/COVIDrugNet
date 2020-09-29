@@ -1,603 +1,624 @@
 #collector.py
-# GMT Fri Sep 18 06:16:43 2020
+# GMT Mon Sep 28 08:27:40 2020
 # 
-Menadione	6
-Quercetin	{'weight': 1}
-Argatroban	{'weight': 1}
+Clarithromycin	4
+Roxithromycin	{'weight': 1}
+Fluoxetine	{'weight': 1}
+Fluvoxamine	{'weight': 1}
+Verapamil	{'weight': 1}
+Fondaparinux	8
+Nadroparin	{'weight': 1}
 Nafamostat	{'weight': 1}
-Resveratrol	{'weight': 1}
-Melatonin	{'weight': 1}
-Suramin	{'weight': 1}
-Bismuth subcitrate potassium	0
-Fluvoxamine	3
-Verapamil	{'weight': 2}
-Clarithromycin	{'weight': 1}
-Fluoxetine	{'weight': 2}
-Pirfenidone	0
-Metoprolol	1
-Formoterol	{'weight': 2}
-Ruxolitinib	3
-Tofacitinib	{'weight': 2}
-Zanubrutinib	{'weight': 1}
-Baricitinib	{'weight': 2}
-Ozanimod	1
-Fingolimod	{'weight': 2}
-Moxifloxacin	3
-Etoposide	{'weight': 1}
-Genistein	{'weight': 1}
-Levofloxacin	{'weight': 2}
-Enzalutamide	2
-Bicalutamide	{'weight': 1}
-Progesterone	{'weight': 1}
-Aprepitant	0
-Emtricitabine	2
-Tenofovir disoproxil	{'weight': 1}
-Tenofovir alafenamide	{'weight': 1}
-GC-376 free acid	2
-GS-441524	{'weight': 1}
-Remdesivir	{'weight': 1}
-Febuxostat	0
-Ivermectin	0
-Rabeprazole	2
-Pantoprazole	{'weight': 1}
-Omeprazole	{'weight': 1}
-Prednisolone	9
-Methylprednisolone	{'weight': 1}
-Progesterone	{'weight': 1}
-Prednisolone acetate	{'weight': 1}
-Budesonide	{'weight': 1}
-Hydrocortisone	{'weight': 1}
+Enoxaparin	{'weight': 2}
+Rivaroxaban	{'weight': 1}
+Heparin	{'weight': 2}
+Sulodexide	{'weight': 1}
+Bemiparin	{'weight': 2}
+Tinzaparin	{'weight': 1}
+Quercetin	18
+Piperine	{'weight': 1}
+Curcumin	{'weight': 1}
+Resveratrol	{'weight': 6}
+Estradiol	{'weight': 3}
+Melatonin	{'weight': 2}
+Genistein	{'weight': 5}
+Duvelisib	{'weight': 1}
+Menadione	{'weight': 1}
+Leflunomide	{'weight': 1}
+Diosmin	{'weight': 1}
+Ginseng	{'weight': 1}
 Dexamethasone	{'weight': 1}
-Prednisone	{'weight': 1}
-Ciclesonide	{'weight': 1}
-Mometasone furoate	{'weight': 1}
-GS-441524	3
+Vitamin E	{'weight': 1}
+Progesterone	{'weight': 3}
+Ritonavir	{'weight': 1}
+Omeprazole	{'weight': 1}
+Atorvastatin	{'weight': 1}
+Artenimol	{'weight': 1}
+Suramin	5
+Nicotinamide	{'weight': 1}
+Nafamostat	{'weight': 1}
+Indomethacin	{'weight': 1}
+Argatroban	{'weight': 1}
+Menadione	{'weight': 1}
+Enoxaparin	7
+Nadroparin	{'weight': 1}
+Nafamostat	{'weight': 1}
+Rivaroxaban	{'weight': 1}
+Heparin	{'weight': 2}
+Sulodexide	{'weight': 1}
+Bemiparin	{'weight': 2}
+Tinzaparin	{'weight': 1}
+Defibrotide	1
+Pentoxifylline	{'weight': 2}
+Metformin	0
+Amoxicillin	0
+GS-441524	4
 Galidesivir	{'weight': 1}
+GC-376 free acid	{'weight': 1}
 Ribavirin	{'weight': 1}
 Remdesivir	{'weight': 2}
+Raltegravir	0
+Methotrexate	1
+Trimethoprim	{'weight': 1}
+Prednisolone	9
+Methylprednisolone	{'weight': 1}
+Dexamethasone	{'weight': 1}
+Hydrocortisone	{'weight': 1}
+Ciclesonide	{'weight': 1}
+Prednisolone acetate	{'weight': 1}
+Progesterone	{'weight': 1}
+Mometasone furoate	{'weight': 1}
+Prednisone	{'weight': 1}
+Budesonide	{'weight': 1}
+Omeprazole	7
+Diosmin	{'weight': 1}
+Resveratrol	{'weight': 1}
+Ginseng	{'weight': 1}
+Rabeprazole	{'weight': 1}
+Atorvastatin	{'weight': 1}
+Leflunomide	{'weight': 1}
+Pantoprazole	{'weight': 1}
+Argatroban	2
+Menadione	{'weight': 1}
+Nafamostat	{'weight': 1}
+Resiniferatoxin	4
+Acetaminophen	{'weight': 1}
+Icosapent	{'weight': 1}
+alpha-Linolenic acid	{'weight': 1}
+Camphor	{'weight': 1}
+Mecobalamin	1
+Cyanocobalamin	{'weight': 1}
+Hydrocortisone	8
+Methylprednisolone	{'weight': 2}
+Dexamethasone	{'weight': 2}
+Ciclesonide	{'weight': 1}
+Prednisolone acetate	{'weight': 1}
+Progesterone	{'weight': 1}
+Mometasone furoate	{'weight': 1}
+Prednisone	{'weight': 1}
+Budesonide	{'weight': 2}
+Epoprostenol	3
+Prasugrel	{'weight': 1}
+Iloprost	{'weight': 1}
+Clopidogrel	{'weight': 1}
+Dapagliflozin	0
+Colchicine	1
+Artenimol	{'weight': 1}
 Lopinavir	3
 Atazanavir	{'weight': 1}
 Darunavir	{'weight': 1}
 Ritonavir	{'weight': 1}
-Icosapent	16
-Pioglitazone	{'weight': 1}
-Ibuprofen	{'weight': 4}
-Clofazimine	{'weight': 1}
-Oleic Acid	{'weight': 3}
-Indomethacin	{'weight': 4}
-Resveratrol	{'weight': 4}
-Curcumin	{'weight': 1}
-Resiniferatoxin	{'weight': 1}
-Acetaminophen	{'weight': 3}
-Lenalidomide	{'weight': 1}
-Telmisartan	{'weight': 1}
-Naproxen	{'weight': 2}
-Celecoxib	{'weight': 1}
-Ginseng	{'weight': 1}
-Camphor	{'weight': 1}
-Omega-3 fatty acids	{'weight': 2}
-Tenofovir disoproxil	1
-Tenofovir alafenamide	{'weight': 1}
-Tofacitinib	2
-Zanubrutinib	{'weight': 2}
-Baricitinib	{'weight': 3}
-Heparin	10
-Enoxaparin	{'weight': 2}
-Tinzaparin	{'weight': 1}
-Nafamostat	{'weight': 1}
-Nadroparin	{'weight': 2}
-Rivaroxaban	{'weight': 1}
-Sirolimus	{'weight': 1}
-Fondaparinux	{'weight': 2}
-Nintedanib	{'weight': 2}
-Sulodexide	{'weight': 1}
-Bemiparin	{'weight': 2}
-Camostat	2
-Aprotinin	{'weight': 1}
-Nafamostat	{'weight': 1}
-Anakinra	0
-Irbesartan	8
-Angiotensin II	{'weight': 1}
-Losartan	{'weight': 1}
-Candesartan	{'weight': 1}
-Telmisartan	{'weight': 1}
-Eprosartan	{'weight': 1}
-Candesartan cilexetil	{'weight': 1}
-Valsartan	{'weight': 1}
-Olmesartan	{'weight': 1}
-Brequinar	2
-Leflunomide	{'weight': 1}
-Atovaquone	{'weight': 1}
-Velpatasvir	2
-Daclatasvir	{'weight': 1}
-Elbasvir	{'weight': 1}
-Merimepodib	0
-Creatine	0
-Hesperidin	0
-Calcifediol	4
-Cholesterol	{'weight': 1}
-Cholecalciferol	{'weight': 1}
-Curcumin	{'weight': 1}
-Vitamin D	{'weight': 1}
-Danoprevir	1
-Ribavirin	{'weight': 1}
-Fingolimod	0
-Hydrocortisone	8
-Methylprednisolone	{'weight': 2}
-Progesterone	{'weight': 1}
-Prednisolone acetate	{'weight': 1}
-Budesonide	{'weight': 2}
-Dexamethasone	{'weight': 2}
-Prednisone	{'weight': 1}
-Ciclesonide	{'weight': 1}
-Mometasone furoate	{'weight': 1}
-Darunavir	2
-Atazanavir	{'weight': 1}
-Ritonavir	{'weight': 1}
-Clindamycin	0
-Aprotinin	2
-Tranexamic acid	{'weight': 1}
-Nafamostat	{'weight': 2}
-Curcumin	12
-Pioglitazone	{'weight': 1}
-Ibuprofen	{'weight': 1}
-Vitamin D	{'weight': 1}
-Cholesterol	{'weight': 1}
-Clofazimine	{'weight': 1}
-Telmisartan	{'weight': 1}
-Oleic Acid	{'weight': 1}
-Quercetin	{'weight': 1}
-Indomethacin	{'weight': 1}
-Resveratrol	{'weight': 2}
-Cholecalciferol	{'weight': 1}
-Omega-3 fatty acids	{'weight': 1}
-Simvastatin	2
-Rosuvastatin	{'weight': 2}
-Atorvastatin	{'weight': 2}
-Ribavirin	3
-Galidesivir	{'weight': 1}
-Favipiravir	{'weight': 1}
-Remdesivir	{'weight': 1}
-Rosuvastatin	1
-Atorvastatin	{'weight': 1}
-Telmisartan	14
-Pioglitazone	{'weight': 1}
-Ibuprofen	{'weight': 1}
-Losartan	{'weight': 1}
-Clofazimine	{'weight': 1}
-Candesartan	{'weight': 1}
-Oleic Acid	{'weight': 1}
-Indomethacin	{'weight': 1}
-Candesartan cilexetil	{'weight': 1}
-Resveratrol	{'weight': 1}
-Olmesartan	{'weight': 1}
-Angiotensin II	{'weight': 1}
-Eprosartan	{'weight': 1}
-Valsartan	{'weight': 1}
-Omega-3 fatty acids	{'weight': 1}
-Dapagliflozin	0
-Chloroquine	0
-Roxithromycin	2
-Tetrandrine	{'weight': 1}
-Clarithromycin	{'weight': 1}
-Etoposide	1
-Genistein	{'weight': 1}
-Methotrexate	1
-Trimethoprim	{'weight': 1}
-Interferon alfa-2b	0
-Thiamine	0
-Aliskiren	0
-Candesartan	6
-Angiotensin II	{'weight': 1}
-Losartan	{'weight': 1}
-Eprosartan	{'weight': 1}
-Candesartan cilexetil	{'weight': 1}
-Valsartan	{'weight': 1}
-Olmesartan	{'weight': 1}
-Niacin	0
-Tazobactam	0
-Acetaminophen	9
-Ibuprofen	{'weight': 2}
-Lenalidomide	{'weight': 1}
-Naproxen	{'weight': 2}
-Indomethacin	{'weight': 2}
-Resveratrol	{'weight': 2}
-Ginseng	{'weight': 1}
-Celecoxib	{'weight': 1}
-Camphor	{'weight': 1}
-Resiniferatoxin	{'weight': 1}
-Vitamin E	8
-Genistein	{'weight': 1}
-Ritonavir	{'weight': 1}
-Piperine	{'weight': 1}
-Quercetin	{'weight': 1}
-Estradiol	{'weight': 1}
-Montelukast	{'weight': 1}
-Resveratrol	{'weight': 2}
-Dexamethasone	{'weight': 1}
-Omeprazole	7
-Pantoprazole	{'weight': 1}
-Atorvastatin	{'weight': 1}
-Quercetin	{'weight': 1}
-Leflunomide	{'weight': 1}
-Diosmin	{'weight': 1}
-Resveratrol	{'weight': 1}
-Ginseng	{'weight': 1}
-Piperacillin	1
-Ceftriaxone	{'weight': 1}
-Tranexamic acid	0
-Tinzaparin	5
-Enoxaparin	{'weight': 1}
-Nadroparin	{'weight': 1}
-Fondaparinux	{'weight': 1}
-Sulodexide	{'weight': 1}
-Bemiparin	{'weight': 1}
-Trimethoprim	0
-Dutasteride	0
-Sildenafil	1
-Dipyridamole	{'weight': 1}
-Pyridostigmine	1
-Artenimol	{'weight': 1}
-Sofosbuvir	0
-Genistein	10
-Ritonavir	{'weight': 1}
-Piperine	{'weight': 1}
-Quercetin	{'weight': 5}
-Leflunomide	{'weight': 1}
-Estradiol	{'weight': 4}
-Baricitinib	{'weight': 1}
-Resveratrol	{'weight': 3}
-Dexamethasone	{'weight': 1}
-Melatonin	{'weight': 1}
-Progesterone	{'weight': 3}
-Prasugrel	2
-Epoprostenol	{'weight': 1}
-Clopidogrel	{'weight': 1}
-Methylene blue	1
-Citrulline	{'weight': 1}
-Defibrotide	1
-Pentoxifylline	{'weight': 2}
-Cholecalciferol	2
-Cholesterol	{'weight': 1}
-Vitamin D	{'weight': 1}
-Levofloxacin	0
-Oxycodone	3
-Progesterone	{'weight': 1}
-Naltrexone	{'weight': 3}
-Metenkefalin	{'weight': 2}
-Lipoic acid	0
-Rivaroxaban	4
-Enoxaparin	{'weight': 1}
-Nafamostat	{'weight': 1}
-Fondaparinux	{'weight': 1}
-Bemiparin	{'weight': 1}
-Vitamin D	1
-Cholesterol	{'weight': 1}
-Sirolimus	1
-Tacrolimus	{'weight': 1}
-Cyanocobalamin	1
-Mecobalamin	{'weight': 1}
 Selinexor	0
-Metronidazole	0
-Icatibant	0
-Camphor	1
-Resiniferatoxin	{'weight': 1}
-Leflunomide	7
-Atorvastatin	{'weight': 1}
-Quercetin	{'weight': 1}
-Baricitinib	{'weight': 1}
-Diosmin	{'weight': 1}
+Interferon alfa-2b	0
+Sulodexide	4
+Nadroparin	{'weight': 1}
+Heparin	{'weight': 1}
+Bemiparin	{'weight': 2}
+Tinzaparin	{'weight': 1}
+Diosmin	4
 Resveratrol	{'weight': 1}
 Ginseng	{'weight': 1}
-Atovaquone	{'weight': 1}
-Favipiravir	0
-Ifenprodil	0
-Tetrandrine	0
-Prednisone	7
-Methylprednisolone	{'weight': 1}
-Progesterone	{'weight': 1}
-Prednisolone acetate	{'weight': 1}
-Budesonide	{'weight': 1}
-Dexamethasone	{'weight': 1}
-Ciclesonide	{'weight': 1}
-Mometasone furoate	{'weight': 1}
-Oxytocin	0
-Omega-3 fatty acids	6
-Pioglitazone	{'weight': 1}
-Ibuprofen	{'weight': 2}
-Clofazimine	{'weight': 1}
-Oleic Acid	{'weight': 2}
-Indomethacin	{'weight': 2}
-Resveratrol	{'weight': 2}
-Cysteine	0
-Citrulline	2
-Dexamethasone	{'weight': 1}
-Pantoprazole	{'weight': 1}
-Bardoxolone methyl	0
-Mometasone furoate	6
-Methylprednisolone	{'weight': 1}
-Prednisolone acetate	{'weight': 1}
-Budesonide	{'weight': 1}
-Dexamethasone	{'weight': 1}
-Progesterone	{'weight': 2}
-Ciclesonide	{'weight': 1}
-Dipyridamole	5
-Lidocaine	{'weight': 1}
-Ibudilast	{'weight': 1}
-Iloprost	{'weight': 1}
-Artenimol	{'weight': 1}
-Progesterone	{'weight': 1}
-Pantothenic acid	0
-Nadroparin	4
-Enoxaparin	{'weight': 1}
-Fondaparinux	{'weight': 1}
-Sulodexide	{'weight': 1}
-Bemiparin	{'weight': 1}
-Ebselen	0
-Enalapril	2
-Ramipril	{'weight': 1}
-Captopril	{'weight': 1}
-Sitagliptin	2
-Linagliptin	{'weight': 1}
 Atorvastatin	{'weight': 1}
+Leflunomide	{'weight': 1}
+Fingolimod	1
+Ozanimod	{'weight': 2}
+Piperine	6
+Resveratrol	{'weight': 1}
+Dexamethasone	{'weight': 1}
+Estradiol	{'weight': 1}
+Vitamin E	{'weight': 1}
+Genistein	{'weight': 1}
+Ritonavir	{'weight': 1}
+Artenimol	5
+Nicotinamide	{'weight': 1}
+Cyclosporine	{'weight': 1}
+Resveratrol	{'weight': 1}
+Dipyridamole	{'weight': 1}
+Pyridostigmine	{'weight': 1}
+alpha-Linolenic acid	12
+Clofazimine	{'weight': 1}
+Icosapent	{'weight': 6}
+Curcumin	{'weight': 1}
+Oleic Acid	{'weight': 4}
+Resveratrol	{'weight': 2}
+Omega-3 fatty acids	{'weight': 2}
+Ibuprofen	{'weight': 2}
+Acetaminophen	{'weight': 1}
+Telmisartan	{'weight': 1}
+Pioglitazone	{'weight': 1}
+Indomethacin	{'weight': 2}
+Camphor	{'weight': 1}
+Nelfinavir	1
+TMC-310911	{'weight': 1}
+Pyridostigmine	0
+Genistein	11
+Resveratrol	{'weight': 3}
+Baricitinib	{'weight': 1}
+Dexamethasone	{'weight': 1}
+Estradiol	{'weight': 4}
+Melatonin	{'weight': 1}
+Vitamin E	{'weight': 1}
+Moxifloxacin	{'weight': 1}
+Progesterone	{'weight': 3}
+Ritonavir	{'weight': 1}
+Leflunomide	{'weight': 1}
+Etoposide	{'weight': 1}
+Maraviroc	0
+Linagliptin	2
+Sitagliptin	{'weight': 1}
+Atorvastatin	{'weight': 1}
+GC-376 free acid	1
+Remdesivir	{'weight': 1}
+Sulfamethoxazole	0
 Levamisole	1
 Fluoxetine	{'weight': 1}
-TMC-310911	1
-Nelfinavir	{'weight': 1}
-Clofazimine	5
-Pioglitazone	{'weight': 1}
-Ibuprofen	{'weight': 1}
-Oleic Acid	{'weight': 1}
-Indomethacin	{'weight': 1}
+Tirofiban	1
 Resveratrol	{'weight': 1}
-Amoxicillin	0
-Angiotensin II	5
-Losartan	{'weight': 1}
+Disulfiram	0
+Indomethacin	15
+Clofazimine	{'weight': 1}
+Curcumin	{'weight': 1}
+Icosapent	{'weight': 4}
+Resveratrol	{'weight': 4}
+Oleic Acid	{'weight': 2}
+Telmisartan	{'weight': 1}
+Ibuprofen	{'weight': 4}
+Acetaminophen	{'weight': 2}
+Celecoxib	{'weight': 1}
+Lenalidomide	{'weight': 1}
+Naproxen	{'weight': 2}
+Iloprost	{'weight': 1}
+Omega-3 fatty acids	{'weight': 2}
+Ginseng	{'weight': 1}
+Pioglitazone	{'weight': 1}
+Lipoic acid	0
+Brequinar	2
+Atovaquone	{'weight': 1}
+Leflunomide	{'weight': 1}
+Niacin	0
+Ibudilast	2
+Iloprost	{'weight': 4}
+Dipyridamole	{'weight': 1}
+Tenofovir	3
+Emtricitabine	{'weight': 1}
+Tenofovir disoproxil	{'weight': 1}
+Tenofovir alafenamide	{'weight': 3}
+Tenofovir alafenamide	2
+Emtricitabine	{'weight': 1}
+Tenofovir disoproxil	{'weight': 1}
+Velpatasvir	2
+Elbasvir	{'weight': 1}
+Daclatasvir	{'weight': 1}
+Ribavirin	4
+Danoprevir	{'weight': 1}
+Favipiravir	{'weight': 1}
+Remdesivir	{'weight': 1}
+Galidesivir	{'weight': 1}
+Ibuprofen	13
+Clofazimine	{'weight': 1}
+Curcumin	{'weight': 1}
+Icosapent	{'weight': 4}
+Resveratrol	{'weight': 4}
+Oleic Acid	{'weight': 2}
+Telmisartan	{'weight': 1}
+Acetaminophen	{'weight': 2}
+Celecoxib	{'weight': 1}
+Lenalidomide	{'weight': 1}
+Naproxen	{'weight': 2}
+Omega-3 fatty acids	{'weight': 2}
+Ginseng	{'weight': 1}
+Pioglitazone	{'weight': 1}
+Sofosbuvir	0
+Fluoxetine	2
+Fluvoxamine	{'weight': 2}
+Verapamil	{'weight': 2}
+Metronidazole	0
+Anakinra	0
+Ginseng	8
+Icosapent	{'weight': 1}
+Resveratrol	{'weight': 2}
+Naproxen	{'weight': 1}
+Acetaminophen	{'weight': 1}
+Celecoxib	{'weight': 1}
+Atorvastatin	{'weight': 1}
+Leflunomide	{'weight': 1}
+Lenalidomide	{'weight': 1}
+Candesartan	8
+Angiotensin II	{'weight': 1}
 Eprosartan	{'weight': 1}
-Candesartan cilexetil	{'weight': 1}
+Telmisartan	{'weight': 1}
+Irbesartan	{'weight': 1}
+Losartan	{'weight': 1}
 Valsartan	{'weight': 1}
+Candesartan cilexetil	{'weight': 1}
 Olmesartan	{'weight': 1}
 Pyridoxine	0
+Tazobactam	0
+Zanubrutinib	7
+Lidocaine	{'weight': 1}
+Acalabrutinib	{'weight': 1}
+Tofacitinib	{'weight': 2}
+Ibrutinib	{'weight': 1}
+Baricitinib	{'weight': 2}
+Ruxolitinib	{'weight': 1}
+Nintedanib	{'weight': 1}
+Levofloxacin	1
+Moxifloxacin	{'weight': 2}
+Dexamethasone	12
+Methylprednisolone	{'weight': 2}
+Resveratrol	{'weight': 1}
+Estradiol	{'weight': 1}
+Prednisolone acetate	{'weight': 1}
+Mometasone furoate	{'weight': 1}
+Citrulline	{'weight': 1}
+Vitamin E	{'weight': 1}
+Ciclesonide	{'weight': 1}
+Progesterone	{'weight': 1}
+Ritonavir	{'weight': 1}
+Prednisone	{'weight': 1}
+Budesonide	{'weight': 2}
+Estradiol	5
+Resveratrol	{'weight': 2}
+Melatonin	{'weight': 1}
+Vitamin E	{'weight': 1}
+Progesterone	{'weight': 2}
+Ritonavir	{'weight': 1}
+Heparin	7
+Nadroparin	{'weight': 2}
+Nafamostat	{'weight': 1}
+Rivaroxaban	{'weight': 1}
+Bemiparin	{'weight': 2}
+Tinzaparin	{'weight': 1}
+Sirolimus	{'weight': 1}
+Nintedanib	{'weight': 2}
+Oxycodone	3
+Naltrexone	{'weight': 3}
+Metenkefalin	{'weight': 2}
+Progesterone	{'weight': 1}
+Cyclosporine	0
+Diphenhydramine	0
+Ritonavir	4
+Resveratrol	{'weight': 1}
+Vitamin E	{'weight': 1}
+Atazanavir	{'weight': 1}
+Darunavir	{'weight': 1}
+Irbesartan	7
+Angiotensin II	{'weight': 1}
+Eprosartan	{'weight': 1}
+Telmisartan	{'weight': 1}
+Losartan	{'weight': 1}
+Valsartan	{'weight': 1}
+Candesartan cilexetil	{'weight': 1}
+Olmesartan	{'weight': 1}
+Cysteine	0
+Leflunomide	4
+Atovaquone	{'weight': 1}
+Resveratrol	{'weight': 1}
+Baricitinib	{'weight': 1}
+Atorvastatin	{'weight': 1}
+Enzalutamide	2
+Bicalutamide	{'weight': 1}
+Progesterone	{'weight': 1}
+Biotin	0
+Vitamin D	4
+Curcumin	{'weight': 1}
+Calcifediol	{'weight': 1}
+Cholesterol	{'weight': 1}
+Cholecalciferol	{'weight': 1}
+Fisetin	0
+Olmesartan	6
+Angiotensin II	{'weight': 1}
+Eprosartan	{'weight': 1}
+Telmisartan	{'weight': 1}
+Losartan	{'weight': 1}
+Valsartan	{'weight': 1}
+Candesartan cilexetil	{'weight': 1}
+Losartan	5
+Angiotensin II	{'weight': 1}
+Eprosartan	{'weight': 1}
+Telmisartan	{'weight': 1}
+Valsartan	{'weight': 1}
+Candesartan cilexetil	{'weight': 1}
+Ifenprodil	0
+Tofacitinib	2
+Ruxolitinib	{'weight': 2}
+Baricitinib	{'weight': 3}
+Celecoxib	5
+Icosapent	{'weight': 1}
+Resveratrol	{'weight': 1}
+Naproxen	{'weight': 1}
+Acetaminophen	{'weight': 1}
+Lenalidomide	{'weight': 1}
+Pantoprazole	2
+Citrulline	{'weight': 1}
+Rabeprazole	{'weight': 1}
+Pantothenic acid	0
+Piperacillin	1
+Ceftriaxone	{'weight': 1}
+Nafamostat	5
+Camostat	{'weight': 1}
+Aprotinin	{'weight': 2}
+Rivaroxaban	{'weight': 1}
+Bemiparin	{'weight': 1}
+Menadione	{'weight': 1}
+Thiamine	0
+Folic acid	0
+Pioglitazone	7
+Clofazimine	{'weight': 1}
+Curcumin	{'weight': 1}
+Icosapent	{'weight': 1}
+Oleic Acid	{'weight': 1}
+Telmisartan	{'weight': 1}
+Omega-3 fatty acids	{'weight': 1}
+Resveratrol	{'weight': 1}
+Berberine	0
+Degarelix	0
+Citrulline	1
+Methylene blue	{'weight': 1}
+Methylprednisolone	6
+Ciclesonide	{'weight': 1}
+Prednisolone acetate	{'weight': 1}
+Progesterone	{'weight': 1}
+Mometasone furoate	{'weight': 1}
+Prednisone	{'weight': 1}
+Budesonide	{'weight': 2}
+Budesonide	5
+Ciclesonide	{'weight': 1}
+Prednisolone acetate	{'weight': 1}
+Progesterone	{'weight': 1}
+Mometasone furoate	{'weight': 1}
+Prednisone	{'weight': 1}
+Atovaquone	0
+Oleic Acid	6
+Clofazimine	{'weight': 1}
+Curcumin	{'weight': 1}
+Icosapent	{'weight': 3}
+Resveratrol	{'weight': 2}
+Omega-3 fatty acids	{'weight': 2}
+Telmisartan	{'weight': 1}
+Sitagliptin	1
+Atorvastatin	{'weight': 1}
+Creatine	0
+Nicotinamide	0
+Thrombin	0
+Moxifloxacin	1
+Etoposide	{'weight': 1}
+Etoposide	0
+Clindamycin	0
+Rabeprazole	0
+Iloprost	1
+Dipyridamole	{'weight': 1}
+Dotatate gallium Ga-68	0
+Ruxolitinib	1
+Baricitinib	{'weight': 2}
+Vitamin E	2
+Resveratrol	{'weight': 2}
+Montelukast	{'weight': 1}
+Ebselen	0
+Clofazimine	5
+Curcumin	{'weight': 1}
+Icosapent	{'weight': 1}
+Telmisartan	{'weight': 1}
+Omega-3 fatty acids	{'weight': 1}
+Resveratrol	{'weight': 1}
+Telmisartan	8
+Angiotensin II	{'weight': 1}
+Icosapent	{'weight': 1}
+Curcumin	{'weight': 1}
+Resveratrol	{'weight': 1}
+Candesartan cilexetil	{'weight': 1}
+Eprosartan	{'weight': 1}
+Omega-3 fatty acids	{'weight': 1}
+Valsartan	{'weight': 1}
+Sirolimus	1
+Tacrolimus	{'weight': 1}
+Omega-3 fatty acids	3
+Curcumin	{'weight': 1}
+Icosapent	{'weight': 2}
+Resveratrol	{'weight': 2}
+Liothyronine	0
+Menadione	2
+Resveratrol	{'weight': 1}
+Melatonin	{'weight': 1}
+Ambrisentan	0
+Noscapine	0
+Cyanocobalamin	0
+Camostat	1
+Aprotinin	{'weight': 1}
+Melatonin	4
+Resveratrol	{'weight': 4}
+Ramelteon	{'weight': 2}
+Trifluoperazine	{'weight': 1}
+Progesterone	{'weight': 1}
+Nadroparin	2
+Bemiparin	{'weight': 1}
+Tinzaparin	{'weight': 1}
+Valsartan	3
+Angiotensin II	{'weight': 1}
+Eprosartan	{'weight': 1}
+Candesartan cilexetil	{'weight': 1}
+Sildenafil	1
+Dipyridamole	{'weight': 1}
+Mometasone furoate	4
+Ciclesonide	{'weight': 1}
+Prednisolone acetate	{'weight': 1}
+Progesterone	{'weight': 2}
+Prednisone	{'weight': 1}
+Daclatasvir	1
+Elbasvir	{'weight': 1}
+Riboflavin	0
+Ramelteon	1
+Resveratrol	{'weight': 2}
 Galidesivir	1
 Remdesivir	{'weight': 1}
-Baricitinib	1
-Zanubrutinib	{'weight': 2}
-Sulodexide	3
-Enoxaparin	{'weight': 1}
-Fondaparinux	{'weight': 1}
-Bemiparin	{'weight': 2}
-Budesonide	5
-Methylprednisolone	{'weight': 2}
-Progesterone	{'weight': 1}
-Prednisolone acetate	{'weight': 1}
-Dexamethasone	{'weight': 2}
-Ciclesonide	{'weight': 1}
-Methylprednisolone	4
-Progesterone	{'weight': 1}
-Prednisolone acetate	{'weight': 1}
-Dexamethasone	{'weight': 2}
-Ciclesonide	{'weight': 1}
-Fisetin	0
-Ginseng	9
-Atorvastatin	{'weight': 1}
-Ibuprofen	{'weight': 1}
-Quercetin	{'weight': 1}
-Lenalidomide	{'weight': 1}
-Naproxen	{'weight': 1}
-Indomethacin	{'weight': 1}
-Diosmin	{'weight': 1}
+Naproxen	4
+Icosapent	{'weight': 2}
 Resveratrol	{'weight': 2}
-Celecoxib	{'weight': 1}
-Resveratrol	21
-Ibuprofen	{'weight': 4}
-Cholesterol	{'weight': 1}
-Piperine	{'weight': 1}
-Oleic Acid	{'weight': 2}
-Diosmin	{'weight': 1}
-Ramelteon	{'weight': 2}
+Acetaminophen	{'weight': 2}
 Lenalidomide	{'weight': 1}
-Montelukast	{'weight': 1}
-Estradiol	{'weight': 2}
-Tirofiban	{'weight': 1}
-Pioglitazone	{'weight': 1}
-Atorvastatin	{'weight': 2}
-Indomethacin	{'weight': 4}
-Artenimol	{'weight': 1}
-Dexamethasone	{'weight': 1}
-Melatonin	{'weight': 4}
-Progesterone	{'weight': 1}
-Ritonavir	{'weight': 1}
-Quercetin	{'weight': 6}
-Naproxen	{'weight': 2}
-Celecoxib	{'weight': 1}
-Maraviroc	0
-Isotretinoin	0
-Nicotinamide	2
-Suramin	{'weight': 1}
-Artenimol	{'weight': 1}
-Formoterol	0
-Cholesterol	1
-Atorvastatin	{'weight': 1}
-Clopidogrel	1
-Epoprostenol	{'weight': 1}
-Fondaparinux	3
-Enoxaparin	{'weight': 2}
-Nafamostat	{'weight': 1}
-Bemiparin	{'weight': 2}
-Verapamil	4
-Fluoxetine	{'weight': 2}
-Trifluoperazine	{'weight': 1}
-Diltiazem	{'weight': 1}
-Clarithromycin	{'weight': 1}
-Diosmin	2
-Atorvastatin	{'weight': 1}
-Quercetin	{'weight': 1}
-Thrombin	0
-Famotidine	0
-Pantoprazole	0
-Candesartan cilexetil	4
-Losartan	{'weight': 1}
-Eprosartan	{'weight': 1}
-Valsartan	{'weight': 1}
-Olmesartan	{'weight': 1}
-Dexmedetomidine	0
-Ibudilast	1
-Iloprost	{'weight': 4}
-Nitazoxanide	0
-Epoprostenol	1
-Iloprost	{'weight': 1}
+Bardoxolone methyl	0
+Fluvoxamine	1
+Verapamil	{'weight': 2}
+Merimepodib	0
+Icatibant	0
+Febuxostat	0
+Aprepitant	0
+Eprosartan	2
+Angiotensin II	{'weight': 1}
+Candesartan cilexetil	{'weight': 1}
 Atazanavir	1
-Ritonavir	{'weight': 1}
-Argatroban	2
-Suramin	{'weight': 1}
-Nafamostat	{'weight': 1}
-Diltiazem	0
-Suramin	2
-Nafamostat	{'weight': 1}
-Indomethacin	{'weight': 1}
-Nafamostat	2
-Enoxaparin	{'weight': 1}
-Bemiparin	{'weight': 1}
-Elbasvir	1
-Daclatasvir	{'weight': 1}
-Daclatasvir	0
-Metformin	0
-Sulfamethoxazole	0
-Tacrolimus	0
-Imatinib	1
-Nintedanib	{'weight': 2}
-Enoxaparin	1
-Bemiparin	{'weight': 2}
-Oseltamivir	0
-Tranilast	0
-Lenalidomide	4
-Ibuprofen	{'weight': 1}
-Naproxen	{'weight': 1}
-Indomethacin	{'weight': 1}
-Celecoxib	{'weight': 1}
-Naproxen	3
-Ibuprofen	{'weight': 2}
-Indomethacin	{'weight': 2}
-Celecoxib	{'weight': 1}
-Ambrisentan	0
-Degarelix	0
-Linagliptin	1
-Atorvastatin	{'weight': 1}
-Lidocaine	2
+Darunavir	{'weight': 1}
+Prednisolone acetate	3
+Ciclesonide	{'weight': 1}
 Progesterone	{'weight': 1}
-Zanubrutinib	{'weight': 1}
+Prednisone	{'weight': 1}
+Hesperidin	0
+Baloxavir marboxil	0
+Protoporphyrin	0
+Resveratrol	8
+Curcumin	{'weight': 2}
+Lenalidomide	{'weight': 1}
+Atorvastatin	{'weight': 2}
+Icosapent	{'weight': 4}
+Acetaminophen	{'weight': 2}
+Montelukast	{'weight': 1}
+Cholesterol	{'weight': 1}
+Progesterone	{'weight': 1}
+Emtricitabine	1
+Tenofovir disoproxil	{'weight': 1}
+Ramipril	2
+Enalapril	{'weight': 1}
+Captopril	{'weight': 2}
+Apremilast	0
+Formoterol	1
+Metoprolol	{'weight': 2}
+Tranilast	0
 Bicalutamide	1
 Progesterone	{'weight': 1}
-Valsartan	3
-Losartan	{'weight': 1}
-Eprosartan	{'weight': 1}
-Olmesartan	{'weight': 1}
-Fluoxetine	1
-Clarithromycin	{'weight': 1}
-Ceftriaxone	0
-Liothyronine	0
-Biotin	0
-Raltegravir	0
-Captopril	1
-Ramipril	{'weight': 2}
-Almitrine	0
-Bemiparin	0
+Montelukast	0
+Tetrandrine	1
+Roxithromycin	{'weight': 1}
+Aliskiren	0
+Chloroquine	0
+Isotretinoin	0
+Candesartan cilexetil	1
+Angiotensin II	{'weight': 1}
+Imatinib	1
+Nintedanib	{'weight': 2}
 Remdesivir	0
-Ibuprofen	4
-Pioglitazone	{'weight': 1}
-Oleic Acid	{'weight': 2}
-Indomethacin	{'weight': 4}
-Celecoxib	{'weight': 1}
-Iloprost	1
-Indomethacin	{'weight': 1}
-Estradiol	6
-Ritonavir	{'weight': 1}
-Piperine	{'weight': 1}
-Quercetin	{'weight': 3}
-Dexamethasone	{'weight': 1}
-Melatonin	{'weight': 1}
-Progesterone	{'weight': 2}
+Roxithromycin	0
+Famotidine	0
+Dexmedetomidine	0
+Clopidogrel	1
+Prasugrel	{'weight': 1}
 Trifluoperazine	1
-Melatonin	{'weight': 1}
-Riboflavin	0
-Quercetin	8
-Atorvastatin	{'weight': 1}
-Piperine	{'weight': 1}
-Duvelisib	{'weight': 1}
-Artenimol	{'weight': 1}
-Dexamethasone	{'weight': 1}
-Melatonin	{'weight': 2}
-Progesterone	{'weight': 3}
-Ritonavir	{'weight': 1}
-Cyclosporine	1
-Artenimol	{'weight': 1}
-Losartan	2
-Eprosartan	{'weight': 1}
-Olmesartan	{'weight': 1}
-Tirofiban	0
-Colchicine	1
-Artenimol	{'weight': 1}
-Berberine	0
-Vitamin A	0
-Nintedanib	1
-Zanubrutinib	{'weight': 1}
-Mecobalamin	0
-Artesunate	0
-Zanubrutinib	2
-Acalabrutinib	{'weight': 1}
-Ibrutinib	{'weight': 1}
-Ramelteon	1
-Melatonin	{'weight': 2}
-Piclidenoson	0
-Resiniferatoxin	0
-Acalabrutinib	1
-Ibrutinib	{'weight': 1}
-Dexamethasone	5
-Piperine	{'weight': 1}
-Prednisolone acetate	{'weight': 1}
-Progesterone	{'weight': 1}
-Ciclesonide	{'weight': 1}
-Ritonavir	{'weight': 1}
-Atovaquone	0
-Duvelisib	0
+Verapamil	{'weight': 1}
 Naltrexone	2
 Progesterone	{'weight': 1}
 Metenkefalin	{'weight': 2}
-Protoporphyrin	0
-Folic acid	0
-Ramipril	0
-Ritonavir	1
-Piperine	{'weight': 1}
-Oleic Acid	2
-Pioglitazone	{'weight': 1}
-Indomethacin	{'weight': 2}
-Noscapine	0
-Baloxavir marboxil	0
-Atorvastatin	0
-Pioglitazone	1
-Indomethacin	{'weight': 1}
-Montelukast	0
-Olmesartan	1
-Eprosartan	{'weight': 1}
-Melatonin	1
+Nintedanib	0
+Atorvastatin	3
+Cholesterol	{'weight': 1}
+Simvastatin	{'weight': 2}
+Rosuvastatin	{'weight': 1}
+Icosapent	4
+Curcumin	{'weight': 1}
+Acetaminophen	{'weight': 3}
+Lenalidomide	{'weight': 1}
+Camphor	{'weight': 1}
+Rosuvastatin	1
+Simvastatin	{'weight': 2}
+Prasugrel	0
+Lidocaine	2
 Progesterone	{'weight': 1}
-Metenkefalin	0
+Dipyridamole	{'weight': 1}
+Oseltamivir	0
+Angiotensin II	0
+Tranexamic acid	1
+Aprotinin	{'weight': 1}
+Captopril	1
+Enalapril	{'weight': 1}
+Simvastatin	0
+Baricitinib	0
+Verapamil	1
+Diltiazem	{'weight': 1}
+Pentoxifylline	0
+Metoprolol	0
+Vitamin A	0
+Bismuth subcitrate potassium	0
 Ciclesonide	2
 Progesterone	{'weight': 1}
-Prednisolone acetate	{'weight': 1}
-Pentoxifylline	0
-Clarithromycin	0
-Disulfiram	0
-Nelfinavir	0
-Celecoxib	1
-Indomethacin	{'weight': 1}
-Tenofovir alafenamide	0
-Indomethacin	0
-Prednisolone acetate	1
+Prednisone	{'weight': 1}
+Dipyridamole	1
 Progesterone	{'weight': 1}
-Ibrutinib	0
-Progesterone	0
-Piperine	0
-Artenimol	0
+Nitazoxanide	0
+Enalapril	0
+Pirfenidone	0
+Aprotinin	0
+Lenalidomide	1
+Acetaminophen	{'weight': 1}
+Elbasvir	0
+Duvelisib	0
+Bemiparin	2
+Rivaroxaban	{'weight': 1}
+Tinzaparin	{'weight': 1}
+Ibrutinib	1
+Acalabrutinib	{'weight': 1}
+Favipiravir	0
+Progesterone	1
+Prednisone	{'weight': 1}
+Methylene blue	0
+Metenkefalin	0
+Tenofovir disoproxil	0
+Acalabrutinib	0
+Ivermectin	0
+Cholecalciferol	3
+Curcumin	{'weight': 1}
+Calcifediol	{'weight': 1}
+Cholesterol	{'weight': 1}
+Artesunate	0
+Rivaroxaban	0
+Acetaminophen	1
+Camphor	{'weight': 1}
+Piclidenoson	0
+Ceftriaxone	0
+Darunavir	0
+Oxytocin	0
+Prednisone	0
+Cholesterol	2
+Curcumin	{'weight': 1}
+Calcifediol	{'weight': 1}
+Calcifediol	1
+Curcumin	{'weight': 1}
+Danoprevir	0
+Almitrine	0
+Tacrolimus	0
+Trimethoprim	0
+Dutasteride	0
 Itraconazole	0
-Eprosartan	0
+Ozanimod	0
+TMC-310911	0
+Diltiazem	0
+Camphor	0
+Tinzaparin	0
+Curcumin	0
