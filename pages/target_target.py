@@ -56,7 +56,8 @@ layout=dbc.Col([
                     ])
                 ], no_gutters=True),
                 html.Div(style={"height":"5vh"}),
-                footer()
+                footer(),
+                html.Div(id=prefix+"_clusters_cache", style={"display":"none"}) #for temporary store computed clusters
             ], style={"padding":"0px"})
 
 

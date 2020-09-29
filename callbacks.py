@@ -7,6 +7,8 @@ import plotly.express as px
 
 from urllib.request import quote
 
+import json
+
 import pandas as pd
 import numpy as np
 
@@ -288,15 +290,15 @@ def highlighter_callback(prefix,G,nodes,L,evals,evects,L_maj,evals_maj,evects_ma
     legend_body_spectral=html.P(["Nodes are colored on the corresponding cluster, check the ",html.A("clustering", href="#"+prefix+"_clustering")," or ",html.A("plots sections", href="#"+prefix+"_plots")," for more info"])
     #spectral_maj
     km=KMeans(n_clusters=n_clusters_maj, n_init=100)
-    clusters=km.fit_predict(evects_maj[:,:n_clusters_maj])
-    cmap=dict(zip(set(clusters),[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/n_clusters_maj)]))
-    id_cluster=dict(zip(dict(nx.get_node_attributes(maj,"ID")).values(),clusters))
+    clusters_maj=km.fit_predict(evects_maj[:,:n_clusters_maj])
+    cmap=dict(zip(set(clusters_maj),[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/n_clusters_maj)]))
+    id_cluster=dict(zip(dict(nx.get_node_attributes(maj,"ID")).values(),clusters_maj))
     stylesheet_spectral_maj=[]
     for ID in id_cluster:
         stylesheet_spectral_maj.append({"selector":"[ID = '"+ID+"']", "style":{"border-color":"#303633","border-width":2,"background-color":cmap[id_cluster.get(ID,"#708090")]}})
     # pie_data=pd.DataFrame({"Cluster":range(1,len(set(clusters))+1),"Nodes":[list(clusters).count(cluster) for cluster in range(len(set(clusters)))]})
     # pie_spectral_maj=px.pie(pie_data,values="Nodes",names="Cluster", title="Clusters' Node Distribution",color_discrete_sequence=[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/len(set(clusters)))])
-    pie_data=go.Pie(labels=list(range(1,len(clusters)+1)), values=[list(clusters).count(cluster) for cluster in range(len(set(clusters)))], marker_colors=[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/len(set(clusters)))])
+    pie_data=go.Pie(labels=list(range(1,len(clusters_maj)+1)), values=[list(clusters_maj).count(cluster) for cluster in range(len(set(clusters_maj)))], marker_colors=[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/len(set(clusters_maj)))])
     pie_spectral_maj=go.Figure(data=pie_data, layout={"title":{"text":"Clusters' Node Distribution","x":0.5, "xanchor": "center"}})
     pie_spectral_maj.update_traces(textposition="inside", textinfo="label+percent", hovertemplate=" Cluster: %{label} <br> Nodes: %{value} </br> %{percent} <extra></extra>")
     legend_body_spectral_maj=html.P(["Nodes are colored on the corresponding cluster, check the ",html.A("clustering", href="#"+prefix+"_clustering")," or ",html.A("plots sections", href="#"+prefix+"_plots")," for more info"])
@@ -381,7 +383,8 @@ def highlighter_callback(prefix,G,nodes,L,evals,evects,L_maj,evals_maj,evects_ma
         [
             Output(prefix+"_graph","stylesheet"),
             Output(prefix+"_piechart","figure"),
-            Output(prefix+"_legend_toast","children")
+            Output(prefix+"_legend_toast","children"),
+            Output(prefix+"_clusters_cache","children")
         ],
         [
             Input(prefix+"_highlighter_dropdown", "value"),
@@ -397,6 +400,7 @@ def highlighter_callback(prefix,G,nodes,L,evals,evects,L_maj,evals_maj,evects_ma
         ]
     )
     def highlighter(highlighted,coloring,custom_method,custom_component,custom_n, current_stylesheet, current_pie, current_legend_body):
+        clusters_cache=clusters
         changed_id = [p['prop_id'] for p in dash.callback_context.triggered][0]
         if changed_id != prefix+"_highlighter_dropdown.value":
             if coloring == "categorical":
@@ -479,6 +483,7 @@ def highlighter_callback(prefix,G,nodes,L,evals,evects,L_maj,evals_maj,evects_ma
                 stylesheet=stylesheet_spectral_maj.copy()
                 pie=pie_spectral_maj
                 legend_body=legend_body_spectral_maj
+                clusters_cache=clusters_maj
             elif coloring == "girvan_newman":
                 stylesheet=stylesheet_girvan_newman.copy()
                 pie=pie_girvan_newman
@@ -524,6 +529,7 @@ def highlighter_callback(prefix,G,nodes,L,evals,evects,L_maj,evals_maj,evects_ma
                     pie_data=go.Pie(labels=list(range(1,len(clusters_custom)+1)), values=[list(clusters_custom).count(cluster) for cluster in range(len(set(clusters_custom)))], marker_colors=[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/len(set(clusters_custom)))])
                     pie=go.Figure(data=pie_data, layout={"title":{"text":"Clusters' Node Distribution","x":0.5, "xanchor": "center"}})
                     pie.update_traces(textposition="inside", textinfo="label+percent", hovertemplate=" Cluster: %{label} <br> Nodes: %{value} </br> %{percent} <extra></extra>")
+                    clusters_cache=clusters_custom
                 elif custom_method == "girvan_newman":
                     # girvan_newman_custom=nx.algorithms.community.girvan_newman(graph)
                     # communities = []
@@ -580,8 +586,7 @@ def highlighter_callback(prefix,G,nodes,L,evals,evects,L_maj,evals_maj,evects_ma
                         }
                     }
                 ]
-
-        return stylesheet, pie, legend_body
+        return stylesheet, pie, legend_body, json.dumps(clusters_cache.tolist())
     return highlighter
 
 def toggle_download_graph_callback(prefix):
@@ -735,10 +740,11 @@ def custom_clustering_section_callback(prefix,G,Evals,Evects,Evals_maj,Evects_ma
         [
             Input(prefix+"_custom_clustering_component","value"),
             Input(prefix+"_custom_clustering_method","value"),
-            Input(prefix+"_custom_clustering_number_clusters","value")
+            Input(prefix+"_custom_clustering_number_clusters","value"),
+            Input(prefix+"_clusters_cache","children")
         ]
     )
-    def custom_clustering_section(component, method, n_clusters):
+    def custom_clustering_section(component, method, n_clusters, clusters):
         style={}
         if component=="maj":
             # graph=G.subgraph(max(list(nx.connected_components(G)), key=len))
@@ -758,10 +764,10 @@ def custom_clustering_section_callback(prefix,G,Evals,Evects,Evals_maj,Evects_ma
         # figure=px.scatter(data_frame=clustering_data,x="Eigenvalue Number",y="Eigenvalue", title="Eigenvalues Distribution", template="ggplot2")
         # figure.update_layout({"paper_bgcolor": "rgba(0, 0, 0, 0)", "modebar":{"bgcolor":"rgba(0, 0, 0, 0)","color":"silver","activecolor":"grey"}})
         if method == "spectral":
-            km=KMeans(n_clusters=n_clusters, n_init=100)
-            clusters=km.fit_predict(evects[:,:n_clusters])
+            # km=KMeans(n_clusters=n_clusters, n_init=100)
+            # clusters=km.fit_predict(evects[:,:n_clusters])
             clusters_data={}
-            for n,cl in enumerate(clusters):
+            for n,cl in enumerate(json.loads(clusters)):
                 try:
                     clusters_data[cl].append(list(dict(graph.nodes("Name")).values())[n])
                 except:
@@ -770,7 +776,7 @@ def custom_clustering_section_callback(prefix,G,Evals,Evects,Evals_maj,Evects_ma
             table_header=[html.Thead(html.Tr([html.Th("Cluster"),html.Th("Nodes")]))]
             table_body=[]
             for cluster in clusters_data:
-                table_body+=[html.Tr([html.Td(cluster), html.Td(clusters_data[cluster])])]
+                table_body+=[html.Tr([html.Td(cluster+1), html.Td(clusters_data[cluster])])]
             table=dbc.Table(table_header+[html.Tbody(table_body)], className="table table-hover", bordered=True, id=prefix+"_custom_clusters_table")
             href="data:text/csv;charset=utf-8,"+quote(pd.DataFrame({"Cluster":list(clusters_data.keys()),"Nodes":list(clusters_data.values())}).to_csv(sep="\t", index=False, encoding="utf-8"))
             clustering_data=pd.DataFrame({"Eigenvalue Number":range(len(evals)),"Eigenvalue":evals})
@@ -780,7 +786,7 @@ def custom_clustering_section_callback(prefix,G,Evals,Evects,Evals_maj,Evects_ma
             table_header=[html.Thead(html.Tr([html.Th("Community"),html.Th("Nodes")]))]
             table_body=[]
             for n, community in enumerate(communities):
-                table_body+=[html.Tr([html.Td(n), html.Td(", ".join(community))])]
+                table_body+=[html.Tr([html.Td(n+1), html.Td(", ".join(community))])]
             table=dbc.Table(table_header+[html.Tbody(table_body)], className="table table-hover", bordered=True, id=prefix+"_custom_clusters_table")
             href="data:text/csv;charset=utf-8,"+quote(pd.DataFrame({"Cluster":range(len(communities)),"Nodes":[", ".join(comm) for comm in communities]}).to_csv(sep="\t", index=False, encoding="utf-8"))
             communities_data=pd.DataFrame({"Number of Communities":list(communities_modularity.values()),"Modularity":list(communities_modularity.keys())})
@@ -790,7 +796,7 @@ def custom_clustering_section_callback(prefix,G,Evals,Evects,Evals_maj,Evects_ma
             table_header=[html.Thead(html.Tr([html.Th("Community"),html.Th("Nodes")]))]
             table_body=[]
             for n, community in enumerate(communities):
-                table_body+=[html.Tr([html.Td(n), html.Td(", ".join(community))])]
+                table_body+=[html.Tr([html.Td(n+1), html.Td(", ".join(community))])]
             table=dbc.Table(table_header+[html.Tbody(table_body)], className="table table-hover", bordered=True, id=prefix+"_custom_clusters_table")
             href="data:text/csv;charset=utf-8,"+quote(pd.DataFrame({"Cluster":range(len(communities)),"Nodes":[", ".join(comm) for comm in communities]}).to_csv(sep="\t", index=False, encoding="utf-8"))
             clustering_data=pd.DataFrame({"Eigenvalue Number":range(len(evals)),"Eigenvalue":evals})
