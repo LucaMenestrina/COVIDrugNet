@@ -231,7 +231,7 @@ def graph(prefix,title,nodes,edges):#es. title="Drug Target"
                     style={"width":"100%","height":"80vh"},
                     elements=nodes+edges,
                     boxSelectionEnabled=True,
-                    minZoom=1E-2,
+                    minZoom=5E-2,
                     maxZoom=10,
                     responsive=True,
                     className="card border-secondary mb-3"), type="circle", color="grey"),
@@ -260,10 +260,10 @@ def graph_properties(prefix):
                                 {"label":"Closeness Centrality: High to Low","value":"Closeness Centrality,0"},
                                 {"label":"Betweenness Centrality: Low to High","value":"Betweenness Centrality,1"},
                                 {"label":"Betweenness Centrality: High to Low","value":"Betweenness Centrality,0"},
-                                {"label":"Clustering Coefficient: Low to High","value":"Clustering Coefficient,1"},
-                                {"label":"Clustering Coefficient: High to Low","value":"Clustering Coefficient,0"},
                                 {"label":"Eigenvector Centrality: Low to High","value":"Eigenvector Centrality,1"},
                                 {"label":"Eigenvector Centrality: High to Low","value":"Eigenvector Centrality,0"},
+                                {"label":"Clustering Coefficient: Low to High","value":"Clustering Coefficient,1"},
+                                {"label":"Clustering Coefficient: High to Low","value":"Clustering Coefficient,0"},
                                 {"label":"Vote Rank Score: Low to High","value":"Vote Rank Score,1"},
                                 {"label":"Vote Rank Score: High to Low","value":"Vote Rank Score,0"},
                             ], value="Degree,0", clearable=False, searchable=False, optionHeight=25,className="DropdownMenu")
@@ -335,7 +335,7 @@ def common_data_generator(prefix,graph,graph_title):
     print(graph_title)
     graph_properties_df=pd.DataFrame({node:{prop:values[prop] for prop in ["Name","Degree", "Closeness Centrality", "Betweenness Centrality", "Eigenvector Centrality", "Clustering Coefficient", "Vote Rank Score"]} for node,values in dict(graph.nodes(data=True)).items()}).T
     maj=graph.subgraph(max(list(nx.connected_components(graph)), key=len))
-    print("\tCommunities Detection Data")
+    print("\tCommunities Detection Data Precomputing ...")
     if os.path.isfile("data/groups/"+prefix+"_communities.pickle"):
         with open("data/groups/"+prefix+"_communities.pickle","rb") as bkp:
             girvan_newman,girvan_newman_maj,communities_modularity,communities_modularity_maj,n_comm,n_comm_maj=pickle.load(bkp)
@@ -351,7 +351,7 @@ def common_data_generator(prefix,graph,graph_title):
             pickle.dump([girvan_newman,girvan_newman_maj,communities_modularity,communities_modularity_maj,n_comm,n_comm_maj],bkp)
         if os.path.isfile(name+".bkp"):
             os.remove(name+".bkp")
-    print("\tSpectral Clustering Data")
+    print("\tSpectral Clustering Data Precomputing ...")
     if os.path.isfile("data/groups/"+prefix+"_spectral.pickle"):
         with open("data/groups/"+prefix+"_spectral.pickle","rb") as bkp:
             L,evals,evects,n_clusters,L_maj,evals_maj,evects_maj,n_clusters_maj=pickle.load(bkp)

@@ -521,7 +521,7 @@ def highlighter_callback(prefix,G,nodes,L,evals,evects,L_maj,evals_maj,evects_ma
                         stylesheet.append({"selector":"[ID = '"+ID+"']", "style":{"border-color":"#303633","border-width":2,"background-color":cmap_custom[id_cluster_custom[ID]]}})
                     # pie_data=pd.DataFrame({"Cluster":range(1,len(set(clusters_custom))+1),"Nodes":[list(clusters_custom).count(cluster_custom) for cluster_custom in range(len(set(clusters_custom)))]})
                     # pie=px.pie(pie_data,values="Nodes",names="Cluster", title="Clusters' Node Distribution",color_discrete_sequence=[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/custom_n)])
-                    pie_data=go.Pie(labels=list(range(1,len(clusters)+1)), values=[list(clusters).count(cluster) for cluster in range(len(set(clusters)))], marker_colors=[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/len(set(clusters)))])
+                    pie_data=go.Pie(labels=list(range(1,len(clusters_custom)+1)), values=[list(clusters_custom).count(cluster) for cluster in range(len(set(clusters_custom)))], marker_colors=[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/len(set(clusters_custom)))])
                     pie=go.Figure(data=pie_data, layout={"title":{"text":"Clusters' Node Distribution","x":0.5, "xanchor": "center"}})
                     pie.update_traces(textposition="inside", textinfo="label+percent", hovertemplate=" Cluster: %{label} <br> Nodes: %{value} </br> %{percent} <extra></extra>")
                 elif custom_method == "girvan_newman":
