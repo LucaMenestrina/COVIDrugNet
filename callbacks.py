@@ -91,14 +91,14 @@ def displayHoverNodeData_callback(prefix,G):
                 if data["ID"] != "Not Available":
                     img=html.A(html.Img(src=data["structure"], height="auto", width="100%", alt="Structure Image not Available"), href="https://www.drugbank.ca/structures/small_molecule_drugs/"+data["ID"] ,target="_blank")
             else:
-                attributes=["ID","Gene","PDBID","Organism","Cellular Location","String Interaction Partners","Drugs", "Diseases"]
+                attributes=["ID","Gene","PDBID","Organism","Protein Class","Protein Family","Cellular Location","STRING Interaction Partners","Drugs","Diseases"]
                 link_drugbank=data["drugbank_url"]
                 if data["PDBID"] != "Not Available":
                     img=[html.A(html.Img(src=data["structure"], height="auto", width="100%", alt="Structure Image not Available"), href="https://www.rcsb.org/3d-view/"+data["PDBID"], target="_blank"), html.A(html.Small("Structure Reference", style={"position":"absolute","bottom":"1em","right":"1em", "color":"grey"}), href="http://doi.org/10.2210/pdb%s/pdb"%data["PDBID"], target="_blank")]
         attributes_list=[]
         for attribute in attributes:
             if data[attribute] != "" and data[attribute] != []:
-                if attribute in ["ATC Code Level 1","ATC Identifier","Targets","Enzymes","Carriers","Transporters","Drug Interactions","String Interaction Partners","Drugs", "Diseases"]:
+                if attribute in ["ATC Code Level 1","ATC Identifier","Targets","Enzymes","Carriers","Transporters","Drug Interactions","STRING Interaction Partners","Drugs", "Diseases"]:
                     attributes_list.append(dbc.Container(html.Li([html.Strong(attribute+": "),", ".join(data[attribute])], className="list-group-item"), style={"max-height":"20vh","overflow-y":"auto", "padding":"0"}, fluid=True))
                 elif attribute == "ID":
                     attributes_list.append(html.Li([html.Strong(attribute+": "),html.A(data[attribute], href=link_drugbank, target="_blank")], className="list-group-item"))
@@ -160,8 +160,8 @@ def selectedTable_callback(prefix):
                 if len(targets_data)>0:
                     if len(drugs_data)>0:
                         results+=[html.Br()]
-                    attributes=["Name","ID","Gene","PDBID","Organism","Cellular Location","String Interaction Partners","Drugs","Diseases"]
-                    table_header=[html.Thead(html.Tr([html.Th(attribute, style={"white-space": "nowrap"}) for attribute in ["Name","ID","Gene","PDBID","Organism","Cellular Location","String Interaction Partners","Drugs","Diseases"]]))]
+                    attributes=["Name","ID","Gene","PDBID","Organism","Protein Class","Protein Family","Cellular Location","STRING Interaction Partners","Drugs","Diseases"]
+                    table_header=[html.Thead(html.Tr([html.Th(attribute, style={"white-space": "nowrap"}) for attribute in attributes]))]
                     # table_body=[html.Tbody([html.Tr([html.Td(d[attribute]) if attribute not in ["String Interaction Partners","Drugs","Diseases"] else html.Td(", ".join(d[attribute])) for attribute in attributes]) for d in targets_data])]
                     table_body=[]
                     for target in targets_data:
@@ -178,7 +178,7 @@ def selectedTable_callback(prefix):
                                     row.append(html.Td(html.A(target["PDBID"], href="https://www.rcsb.org/structure/"+target["PDBID"], target="_blank")))
                                 else:
                                     row.append(html.Td(target["PDBID"]))
-                            elif attribute in ["Organism","Cellular Location"]:
+                            elif attribute in ["Organism","Protein Class","Protein Family","Cellular Location"]:
                                 row.append(html.Td(target[attribute]))
                             else:
                                 row.append(html.Td(dbc.Container(", ".join(target[attribute]), style={"max-height":"20vh","overflow-y":"auto","word-break": "break-word", "padding":"0px"}, fluid=True), style={"min-width":"10vw","max-width":"20vw","padding-right":"0px"}))
@@ -400,165 +400,237 @@ def highlighter_callback(prefix,G,nodes,L,evals,evects,L_maj,evals_maj,evects_ma
         ]
     )
     def highlighter(highlighted,coloring,custom_method,custom_component,custom_n, current_stylesheet, current_pie, current_legend_body):
-        clusters_cache=clusters
+        if custom_component == "entire":
+            clusters_cache = clusters
+        else:
+            clusters_cache = clusters_maj
         changed_id = [p['prop_id'] for p in dash.callback_context.triggered][0]
         if changed_id != prefix+"_highlighter_dropdown.value":
-            if coloring == "categorical":
-                stylesheet=stylesheet_base.copy()
-                # pie_data=pd.DataFrame({"Kind":["Drugs","Targets"],"Nodes":[len([node for node,kind in G.nodes("kind") if kind == "Drug"]),len([node for node,kind in G.nodes("kind") if kind == "Target"])], "Color":["#12EAEA","#FC5F67"]})
-                # pie=px.pie(pie_data,values="Nodes",names="Kind", title="Drug-Target's Node Distribution",color_discrete_sequence=pie_data["Color"])
-                pie_data=go.Pie(labels=["Drugs","Targets"],values=[len([node for node,kind in G.nodes("kind") if kind == "Drug"]),len([node for node,kind in G.nodes("kind") if kind == "Target"])], marker_colors=["#12EAEA","#FC5F67"])
-                pie=go.Figure(data=pie_data, layout={"title":{"text":"Categories' Node Distribution","x":0.5, "xanchor": "center"}})
-                pie.update_traces(textposition="inside", textinfo="label+percent", hovertemplate=" %{label} <br> Nodes: %{value} </br> %{percent} <extra></extra>")
-                legend_body=dbc.Table(html.Tbody([html.Tr([html.Td("",style={"background-color":"#FC5F67"}),html.Td("Drugs")]),html.Tr([html.Td("",style={"background-color":"#12EAEA"}),html.Td("Targets")])]), borderless=True, size="sm")
+            if changed_id == prefix+"_coloring_dropdown.value" or coloring == "custom" or prefix+"_coloring_dropdown.value" not in [p['prop_id'] for p in dash.callback_context.triggered]:
+                if coloring == "categorical":
+                    stylesheet=stylesheet_base.copy()
+                    # pie_data=pd.DataFrame({"Kind":["Drugs","Targets"],"Nodes":[len([node for node,kind in G.nodes("kind") if kind == "Drug"]),len([node for node,kind in G.nodes("kind") if kind == "Target"])], "Color":["#12EAEA","#FC5F67"]})
+                    # pie=px.pie(pie_data,values="Nodes",names="Kind", title="Drug-Target's Node Distribution",color_discrete_sequence=pie_data["Color"])
+                    pie_data=go.Pie(labels=["Drugs","Targets"],values=[len([node for node,kind in G.nodes("kind") if kind == "Drug"]),len([node for node,kind in G.nodes("kind") if kind == "Target"])], marker_colors=["#12EAEA","#FC5F67"])
+                    pie=go.Figure(data=pie_data, layout={"title":{"text":"Categories' Node Distribution","x":0.5, "xanchor": "center"}})
+                    pie.update_traces(textposition="inside", textinfo="label+percent", hovertemplate=" %{label} <br> Nodes: %{value} </br> %{percent} <extra></extra>")
+                    legend_body=dbc.Table(html.Tbody([html.Tr([html.Td("",style={"background-color":"#FC5F67"}),html.Td("Drugs")]),html.Tr([html.Td("",style={"background-color":"#12EAEA"}),html.Td("Targets")])]), borderless=True, size="sm")
 
-            elif coloring == "atc":
-                all_atc=["A","B","C","D","G","H","J","L","M","N","P","R","S","V"]
-                long_atc={"A":"A: Alimentary tract and metabolism","B":"B: Blood and blood forming organs","C":"C: Cardiovascular system","D":"D: Dermatologicals","G":"G: Genito-urinary system and sex hormones","H":"H: Systemic hormonal preparations, excluding sex hormones and insulins","J":"J: Antiinfectives for systemic use","L":"L: Antineoplastic and immunomodulating agents","M":"M: Musculo-skeletal system","N":"N: Nervous system","P":"P: Antiparasitic products, insecticides and repellents","R":"R: Respiratory system","S":"S: Sensory organs","V":"V: Various","Not Available": "Not Available"}
-                cmap=dict(zip(all_atc,[rgb2hex(plt.cm.Spectral(n)) for n in np.arange(0,1.1,1/14)]))
-                cmap.update({"Not Available":"#708090"})
-                atc2num={list(cmap.keys())[num]:str(num+1) for num in range(15)}
-                stylesheets=[]
-                for node in nodes:
-                    stylesheet={"selector":"[ID = '"+node["data"]["ID"]+"']"}
-                    style={"pie-size":"100%", "border-color":"#303633","border-width":2}
-                    for atc in node["data"]["ATC Code Level 1"]:
-                        style.update({"pie-"+atc2num[atc]+"-background-color":cmap[atc],"pie-"+atc2num[atc]+"-background-size":100/len(node["data"]["ATC Code Level 1"])})
-                    stylesheet.update({"style":style})
-                    stylesheets.append(stylesheet)
-                ATC_dict=dict(nx.get_node_attributes(G,"ATC Code Level 1"))
-                ATC_count={}
-                tot_codes=0
-                for drug,atcs in ATC_dict.items():
-                    for atc in atcs:
-                        try:
-                            ATC_count[atc]+=1/len(atcs)
-                        except:
-                            ATC_count[atc]=11/len(atcs)
-                        tot_codes+=1
-                stylesheet=stylesheets
+                elif coloring == "atc":
+                    all_atc=["A","B","C","D","G","H","J","L","M","N","P","R","S","V"]
+                    long_atc={"A":"A: Alimentary tract and metabolism","B":"B: Blood and blood forming organs","C":"C: Cardiovascular system","D":"D: Dermatologicals","G":"G: Genito-urinary system and sex hormones","H":"H: Systemic hormonal preparations, excluding sex hormones and insulins","J":"J: Antiinfectives for systemic use","L":"L: Antineoplastic and immunomodulating agents","M":"M: Musculo-skeletal system","N":"N: Nervous system","P":"P: Antiparasitic products, insecticides and repellents","R":"R: Respiratory system","S":"S: Sensory organs","V":"V: Various","Not Available": "Not Available"}
+                    cmap=dict(zip(all_atc,[rgb2hex(plt.cm.Spectral(n)) for n in np.arange(0,1.1,1/14)]))
+                    cmap.update({"Not Available":"#708090"})
+                    atc2num={list(cmap.keys())[num]:str(num+1) for num in range(15)}
+                    stylesheets=[]
+                    for node in nodes:
+                        stylesheet={"selector":"[ID = '"+node["data"]["ID"]+"']"}
+                        style={"pie-size":"100%", "border-color":"#303633","border-width":2}
+                        for atc in node["data"]["ATC Code Level 1"]:
+                            style.update({"pie-"+atc2num[atc]+"-background-color":cmap[atc],"pie-"+atc2num[atc]+"-background-size":100/len(node["data"]["ATC Code Level 1"])})
+                        stylesheet.update({"style":style})
+                        stylesheets.append(stylesheet)
+                    ATC_dict=dict(nx.get_node_attributes(G,"ATC Code Level 1"))
+                    ATC_count={}
+                    tot_codes=0
+                    for drug,atcs in ATC_dict.items():
+                        for atc in atcs:
+                            try:
+                                ATC_count[atc]+=1/len(atcs)
+                            except:
+                                ATC_count[atc]=11/len(atcs)
+                            tot_codes+=1
+                    stylesheet=stylesheets
 
-                # pie_data=pd.DataFrame({"ATC Code":list(ATC_count.keys()),"Value":list(ATC_count.values()), "Color":[cmap[code] for code in ATC_count.keys()], "Label":[long_atc[code] for code in ATC_count.keys()]}).sort_values(by="Value", ascending=False)
-                # pie=px.pie(pie_data,values="Value",names="Label", title="Drug-Target's Node Distribution", color_discrete_sequence=pie_data["Color"])
-                pie_data=go.Pie(labels=list(ATC_count.keys()), values=[int(value) for value in ATC_count.values()], marker_colors=[cmap[code] for code in ATC_count.keys()], text=[long_atc[code] for code in ATC_count.keys()])
-                pie=go.Figure(data=pie_data, layout={"title":{"text":"Categories' Node Distribution","x":0.5, "xanchor": "center"}})
-                # pie.update_layout(legend={"x":3})
-                pie.update_traces(textposition="inside", textinfo="label+percent", hovertemplate=" %{text} <br> Nodes: %{value} </br> %{percent} <extra></extra>")
-                table_body=[]
-                for code in cmap:
-                    table_body.append(html.Tr([html.Td("",style={"background-color":cmap[code]}),html.Td(long_atc[code])]))
-                legend_body=dbc.Table(html.Tbody(table_body), borderless=True, size="sm")
-            elif coloring == "location":
-                all_locations=list(set([node["data"]["Cellular Location"] for node in nodes]))
-                cmap=dict(zip(all_locations,[rgb2hex(plt.cm.Spectral(n)) for n in np.arange(0,1.1,1/len(all_locations))]))
-                cmap.update({"Not Available":"#708090"})
-                stylesheets=[]
-                for node in nodes:
-                    stylesheet={"selector":"[ID = '"+node["data"]["ID"]+"']"}
-                    style={"background-color":cmap[node["data"]["Cellular Location"]], "border-color":"#303633","border-width":2}
-                    stylesheet.update({"style":style})
-                    stylesheets.append(stylesheet)
-                Location_dict=dict(nx.get_node_attributes(G,"Cellular Location"))
-                Location_count={location:list(Location_dict.values()).count(location) for location in all_locations}
-                stylesheet=stylesheets
+                    # pie_data=pd.DataFrame({"ATC Code":list(ATC_count.keys()),"Value":list(ATC_count.values()), "Color":[cmap[code] for code in ATC_count.keys()], "Label":[long_atc[code] for code in ATC_count.keys()]}).sort_values(by="Value", ascending=False)
+                    # pie=px.pie(pie_data,values="Value",names="Label", title="Drug-Target's Node Distribution", color_discrete_sequence=pie_data["Color"])
+                    pie_data=go.Pie(labels=list(ATC_count.keys()), values=[int(value) for value in ATC_count.values()], marker_colors=[cmap[code] for code in ATC_count.keys()], text=[long_atc[code] for code in ATC_count.keys()])
+                    pie=go.Figure(data=pie_data, layout={"title":{"text":"Categories' Node Distribution","x":0.5, "xanchor": "center"}})
+                    # pie.update_layout(legend={"x":3})
+                    pie.update_traces(textposition="inside", textinfo="label+percent", hovertemplate=" %{text} <br> Nodes: %{value} </br> %{percent} <extra></extra>")
+                    table_body=[]
+                    for code in cmap:
+                        table_body.append(html.Tr([html.Td("",style={"background-color":cmap[code]}),html.Td(long_atc[code])]))
+                    legend_body=dbc.Table(html.Tbody(table_body), borderless=True, size="sm")
+                elif coloring in ["class","family","location"]:
+                    property_name={"class":"Protein Class","family":"Protein Family","location":"Cellular Location"}[coloring]
+                    all_properties=list(set([node["data"][property_name] for node in nodes]))
+                    cmap=dict(zip(all_properties,[rgb2hex(plt.cm.Spectral(n)) for n in np.arange(0,1.1,1/len(all_properties))]))
+                    cmap.update({"Not Available":"#708090"})
+                    stylesheets=[]
+                    for node in nodes:
+                        stylesheet={"selector":"[ID = '"+node["data"]["ID"]+"']"}
+                        style={"background-color":cmap[node["data"][property_name]], "border-color":"#303633","border-width":2}
+                        stylesheet.update({"style":style})
+                        stylesheets.append(stylesheet)
+                    properties_dict=dict(nx.get_node_attributes(G,property_name))
+                    properties_count={property:list(properties_dict.values()).count(property) for property in all_properties}
+                    stylesheet=stylesheets
 
-                # pie_data=pd.DataFrame({"Location":all_locations,"Value":list(Location_count.values()), "Color":[cmap[location] for location in all_locations]}).sort_values(by="Value", ascending=False)
-                # pie=px.pie(pie_data,values="Value",names="Location", title="Target-Target's Node Distribution",color_discrete_sequence=pie_data["Color"])
-                pie_data=go.Pie(labels=all_locations, values=list(Location_count.values()), marker_colors=[cmap[location] for location in all_locations])
-                pie=go.Figure(data=pie_data, layout={"title":{"text":"Categories' Node Distribution","x":0.5, "xanchor": "center"}})
-                pie.update_traces(textposition="inside", textinfo="label+percent", hovertemplate=" %{label} <br> Nodes: %{value} </br> %{percent} <extra></extra>")
-                table_body=[]
-                for location in all_locations:
-                    table_body.append(html.Tr([html.Td("",style={"background-color":cmap[location]}),html.Td(location)]))
-                legend_body=dbc.Table(html.Tbody(table_body), borderless=True, size="sm")
-            elif coloring == "components":
-                stylesheet=stylesheet_components.copy()
-                pie=pie_components
-                legend_body=legend_body_components
-            elif coloring == "spectral":
-                stylesheet=stylesheet_spectral.copy()
-                pie=pie_spectral
-                legend_body=legend_body_spectral
-            elif coloring == "spectral_maj":
-                stylesheet=stylesheet_spectral_maj.copy()
-                pie=pie_spectral_maj
-                legend_body=legend_body_spectral_maj
-                clusters_cache=clusters_maj
-            elif coloring == "girvan_newman":
-                stylesheet=stylesheet_girvan_newman.copy()
-                pie=pie_girvan_newman
-                legend_body=legend_body_girvan_newman
-            elif coloring == "girvan_newman_maj":
-                stylesheet=stylesheet_girvan_newman_maj.copy()
-                pie=pie_girvan_newman_maj
-                legend_body=legend_body_girvan_newman_maj
-            elif coloring == "greedy_modularity":
-                stylesheet=stylesheet_greedy_modularity.copy()
-                pie=pie_greedy_modularity
-                legend_body=legend_body_greedy_modularity
-            elif coloring == "greedy_modularity_maj":
-                stylesheet=stylesheet_greedy_modularity_maj.copy()
-                pie=pie_greedy_modularity_maj
-                legend_body=legend_body_greedy_modularity_maj
-            elif coloring == "custom":
-                if custom_component=="maj":
-                    # graph=G.subgraph(max(list(nx.connected_components(G)),key=len))
-                    graph=maj.copy()
-                    girvan_newman_custom=girvan_newman_maj
-                    greedy_modularity_custom_stylesheet=stylesheet_greedy_modularity_maj.copy()
-                    greedy_modularity_custom_pie=pie_greedy_modularity_maj
-                    evals_custom,evects_custom=evals_maj,evects_maj
-                else:
-                    graph=G.copy()
-                    girvan_newman_custom=girvan_newman
-                    greedy_modularity_custom_stylesheet=stylesheet_greedy_modularity.copy()
-                    greedy_modularity_custom_pie=pie_greedy_modularity
-                    evals_custom,evects_custom=evals,evects
-                if custom_method == "spectral":
-                    # L_custom=nx.normalized_laplacian_matrix(graph).toarray()
-                    # evals_custom,evects_custom=np.linalg.eigh(L_custom)
-                    km_custom=KMeans(n_clusters=custom_n, n_init=100)
-                    clusters_custom=km_custom.fit_predict(evects_custom[:,:custom_n])
-                    cmap_custom=dict(zip(set(clusters_custom),[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/custom_n)]))
-                    id_cluster_custom=dict(zip(dict(nx.get_node_attributes(graph,"ID")).values(),clusters_custom))
-                    stylesheet=[]
-                    for ID in id_cluster_custom:
-                        stylesheet.append({"selector":"[ID = '"+ID+"']", "style":{"border-color":"#303633","border-width":2,"background-color":cmap_custom[id_cluster_custom[ID]]}})
-                    # pie_data=pd.DataFrame({"Cluster":range(1,len(set(clusters_custom))+1),"Nodes":[list(clusters_custom).count(cluster_custom) for cluster_custom in range(len(set(clusters_custom)))]})
-                    # pie=px.pie(pie_data,values="Nodes",names="Cluster", title="Clusters' Node Distribution",color_discrete_sequence=[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/custom_n)])
-                    pie_data=go.Pie(labels=list(range(1,len(clusters_custom)+1)), values=[list(clusters_custom).count(cluster) for cluster in range(len(set(clusters_custom)))], marker_colors=[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/len(set(clusters_custom)))])
-                    pie=go.Figure(data=pie_data, layout={"title":{"text":"Clusters' Node Distribution","x":0.5, "xanchor": "center"}})
-                    pie.update_traces(textposition="inside", textinfo="label+percent", hovertemplate=" Cluster: %{label} <br> Nodes: %{value} </br> %{percent} <extra></extra>")
-                    clusters_cache=clusters_custom
-                elif custom_method == "girvan_newman":
-                    # girvan_newman_custom=nx.algorithms.community.girvan_newman(graph)
-                    # communities = []
-                    # m=0
-                    # while len(communities) != custom_n:
-                    #     communities=girvan_newman_custom[m]
-                    #     print(len(communities))
-                    #     m+=1
-                    communities=girvan_newman_custom[custom_n]
-                    d_comm={}
-                    for n,comm in enumerate(communities):
-                        d_comm.update({d:n for d in comm})
-                    name2id=dict(dict(nx.get_node_attributes(graph,"ID")))
-                    cmap=dict(zip(set(d_comm.values()),[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/custom_n)]))
-                    id2community={name2id[node]:cmap.get(d_comm[node],"#708090") for node in graph.nodes()}
-                    stylesheet=[]
-                    for ID in id2community:
-                        stylesheet.append({"selector":"[ID = '"+ID+"']", "style":{"border-color":"#303633","border-width":2,"background-color":id2community.get(ID,"#708090")}})
-                    # pie_data=pd.DataFrame({"Community":range(1,len(communities)+1),"Nodes":[len(community) for community in communities]})
-                    # pie=px.pie(pie_data,values="Nodes",names="Community", title="Communities' Node Distribution",color_discrete_sequence=[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/len(communities))])
-                    pie_data=go.Pie(labels=list(range(1,len(communities)+1)), values=[len(community) for community in communities], marker_colors=[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/len(communities))])
-                    pie=go.Figure(data=pie_data, layout={"title":{"text":"Communities' Node Distribution","x":0.5, "xanchor": "center"}})
-                    pie.update_traces(textposition="inside", textinfo="label+percent", hovertemplate=" Community: %{label} <br> Nodes: %{value} </br> %{percent} <extra></extra>")
-                elif custom_method == "greedy_modularity":
-                    stylesheet=greedy_modularity_custom_stylesheet
-                    pie=greedy_modularity_custom_pie
+                    pie_data=go.Pie(labels=all_properties, values=list(properties_count.values()), marker_colors=[cmap[property] for property in all_properties])
+                    pie=go.Figure(data=pie_data, layout={"title":{"text":"Categories' Node Distribution","x":0.5, "xanchor": "center"}})
+                    pie.update_traces(textposition="inside", textinfo="label+percent", hovertemplate=" %{label} <br> Nodes: %{value} </br> %{percent} <extra></extra>")
+                    table_body=[]
+                    for property in all_properties:
+                        table_body.append(html.Tr([html.Td("",style={"background-color":cmap[property]}),html.Td(property)]))
+                    legend_body=dbc.Table(html.Tbody(table_body), borderless=True, size="sm")
+                # elif coloring == "class":
+                #     all_protein_classes=list(set([node["data"]["Protein Class"] for node in nodes]))
+                #     cmap=dict(zip(all_protein_classes,[rgb2hex(plt.cm.Spectral(n)) for n in np.arange(0,1.1,1/len(all_protein_classes))]))
+                #     cmap.update({"Not Available":"#708090"})
+                #     stylesheets=[]
+                #     for node in nodes:
+                #         stylesheet={"selector":"[ID = '"+node["data"]["ID"]+"']"}
+                #         style={"background-color":cmap[node["data"]["Protein Class"]], "border-color":"#303633","border-width":2}
+                #         stylesheet.update({"style":style})
+                #         stylesheets.append(stylesheet)
+                #     protein_class_dict=dict(nx.get_node_attributes(G,"Protein Class"))
+                #     protein_class_count={protein_class:list(protein_class_dict.values()).count(protein_class) for protein_class in all_protein_classes}
+                #     stylesheet=stylesheets
+                #
+                #     pie_data=go.Pie(labels=all_protein_classes, values=list(protein_class_count.values()), marker_colors=[cmap[protein_class] for protein_class in all_protein_classes])
+                #     pie=go.Figure(data=pie_data, layout={"title":{"text":"Categories' Node Distribution","x":0.5, "xanchor": "center"}})
+                #     pie.update_traces(textposition="inside", textinfo="label+percent", hovertemplate=" %{label} <br> Nodes: %{value} </br> %{percent} <extra></extra>")
+                #     table_body=[]
+                #     for protein_class in all_protein_classes:
+                #         table_body.append(html.Tr([html.Td("",style={"background-color":cmap[protein_class]}),html.Td(protein_class)]))
+                #     legend_body=dbc.Table(html.Tbody(table_body), borderless=True, size="sm")
+                # elif coloring == "family":
+                #     all_families=list(set([node["data"]["Protein Family"] for node in nodes]))
+                #     cmap=dict(zip(all_families,[rgb2hex(plt.cm.Spectral(n)) for n in np.arange(0,1.1,1/len(all_families))]))
+                #     cmap.update({"Not Available":"#708090"})
+                #     stylesheets=[]
+                #     for node in nodes:
+                #         stylesheet={"selector":"[ID = '"+node["data"]["ID"]+"']"}
+                #         style={"background-color":cmap[node["data"]["Protein Family"]], "border-color":"#303633","border-width":2}
+                #         stylesheet.update({"style":style})
+                #         stylesheets.append(stylesheet)
+                #     family_dict=dict(nx.get_node_attributes(G,"Protein Family"))
+                #     family_count={family:list(family_dict.values()).count(family) for family in all_families}
+                #     stylesheet=stylesheets
+                #
+                #     pie_data=go.Pie(labels=all_families, values=list(family_count.values()), marker_colors=[cmap[family] for family in all_families])
+                #     pie=go.Figure(data=pie_data, layout={"title":{"text":"Categories' Node Distribution","x":0.5, "xanchor": "center"}})
+                #     pie.update_traces(textposition="inside", textinfo="label+percent", hovertemplate=" %{label} <br> Nodes: %{value} </br> %{percent} <extra></extra>")
+                #     table_body=[]
+                #     for family in all_families:
+                #         table_body.append(html.Tr([html.Td("",style={"background-color":cmap[family]}),html.Td(family)]))
+                #     legend_body=dbc.Table(html.Tbody(table_body), borderless=True, size="sm")
+                # elif coloring == "location":
+                #     all_locations=list(set([node["data"]["Cellular Location"] for node in nodes]))
+                #     cmap=dict(zip(all_locations,[rgb2hex(plt.cm.Spectral(n)) for n in np.arange(0,1.1,1/len(all_locations))]))
+                #     cmap.update({"Not Available":"#708090"})
+                #     stylesheets=[]
+                #     for node in nodes:
+                #         stylesheet={"selector":"[ID = '"+node["data"]["ID"]+"']"}
+                #         style={"background-color":cmap[node["data"]["Cellular Location"]], "border-color":"#303633","border-width":2}
+                #         stylesheet.update({"style":style})
+                #         stylesheets.append(stylesheet)
+                #     location_dict=dict(nx.get_node_attributes(G,"Cellular Location"))
+                #     location_count={location:list(location_dict.values()).count(location) for location in all_locations}
+                #     stylesheet=stylesheets
+                #
+                #     # pie_data=pd.DataFrame({"Location":all_locations,"Value":list(Location_count.values()), "Color":[cmap[location] for location in all_locations]}).sort_values(by="Value", ascending=False)
+                #     # pie=px.pie(pie_data,values="Value",names="Location", title="Target-Target's Node Distribution",color_discrete_sequence=pie_data["Color"])
+                #     pie_data=go.Pie(labels=all_locations, values=list(location_count.values()), marker_colors=[cmap[location] for location in all_locations])
+                #     pie=go.Figure(data=pie_data, layout={"title":{"text":"Categories' Node Distribution","x":0.5, "xanchor": "center"}})
+                #     pie.update_traces(textposition="inside", textinfo="label+percent", hovertemplate=" %{label} <br> Nodes: %{value} </br> %{percent} <extra></extra>")
+                #     table_body=[]
+                #     for location in all_locations:
+                #         table_body.append(html.Tr([html.Td("",style={"background-color":cmap[location]}),html.Td(location)]))
+                #     legend_body=dbc.Table(html.Tbody(table_body), borderless=True, size="sm")
+                elif coloring == "components":
+                    stylesheet=stylesheet_components.copy()
+                    pie=pie_components
+                    legend_body=legend_body_components
+                elif coloring == "spectral":
+                    stylesheet=stylesheet_spectral.copy()
+                    pie=pie_spectral
+                    legend_body=legend_body_spectral
+                elif coloring == "spectral_maj":
+                    stylesheet=stylesheet_spectral_maj.copy()
+                    pie=pie_spectral_maj
+                    legend_body=legend_body_spectral_maj
+                    clusters_cache=clusters_maj
+                elif coloring == "girvan_newman":
+                    stylesheet=stylesheet_girvan_newman.copy()
+                    pie=pie_girvan_newman
+                    legend_body=legend_body_girvan_newman
+                elif coloring == "girvan_newman_maj":
+                    stylesheet=stylesheet_girvan_newman_maj.copy()
+                    pie=pie_girvan_newman_maj
+                    legend_body=legend_body_girvan_newman_maj
+                elif coloring == "greedy_modularity":
+                    stylesheet=stylesheet_greedy_modularity.copy()
+                    pie=pie_greedy_modularity
+                    legend_body=legend_body_greedy_modularity
+                elif coloring == "greedy_modularity_maj":
+                    stylesheet=stylesheet_greedy_modularity_maj.copy()
+                    pie=pie_greedy_modularity_maj
+                    legend_body=legend_body_greedy_modularity_maj
+                elif coloring == "custom":
+                    if custom_component=="maj":
+                        # graph=G.subgraph(max(list(nx.connected_components(G)),key=len))
+                        graph=maj.copy()
+                        girvan_newman_custom=girvan_newman_maj
+                        greedy_modularity_custom_stylesheet=stylesheet_greedy_modularity_maj.copy()
+                        greedy_modularity_custom_pie=pie_greedy_modularity_maj
+                        evals_custom,evects_custom=evals_maj,evects_maj
+                    else:
+                        graph=G.copy()
+                        girvan_newman_custom=girvan_newman
+                        greedy_modularity_custom_stylesheet=stylesheet_greedy_modularity.copy()
+                        greedy_modularity_custom_pie=pie_greedy_modularity
+                        evals_custom,evects_custom=evals,evects
+                    if custom_method == "spectral":
+                        # L_custom=nx.normalized_laplacian_matrix(graph).toarray()
+                        # evals_custom,evects_custom=np.linalg.eigh(L_custom)
+                        km_custom=KMeans(n_clusters=custom_n, n_init=100)
+                        clusters_custom=km_custom.fit_predict(evects_custom[:,:custom_n])
+                        cmap_custom=dict(zip(set(clusters_custom),[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/custom_n)]))
+                        id_cluster_custom=dict(zip(dict(nx.get_node_attributes(graph,"ID")).values(),clusters_custom))
+                        stylesheet=[]
+                        for ID in id_cluster_custom:
+                            stylesheet.append({"selector":"[ID = '"+ID+"']", "style":{"border-color":"#303633","border-width":2,"background-color":cmap_custom[id_cluster_custom[ID]]}})
+                        # pie_data=pd.DataFrame({"Cluster":range(1,len(set(clusters_custom))+1),"Nodes":[list(clusters_custom).count(cluster_custom) for cluster_custom in range(len(set(clusters_custom)))]})
+                        # pie=px.pie(pie_data,values="Nodes",names="Cluster", title="Clusters' Node Distribution",color_discrete_sequence=[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/custom_n)])
+                        pie_data=go.Pie(labels=list(range(1,len(clusters_custom)+1)), values=[list(clusters_custom).count(cluster) for cluster in range(len(set(clusters_custom)))], marker_colors=[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/len(set(clusters_custom)))])
+                        pie=go.Figure(data=pie_data, layout={"title":{"text":"Clusters' Node Distribution","x":0.5, "xanchor": "center"}})
+                        pie.update_traces(textposition="inside", textinfo="label+percent", hovertemplate=" Cluster: %{label} <br> Nodes: %{value} </br> %{percent} <extra></extra>")
+                        clusters_cache=clusters_custom
+                    elif custom_method == "girvan_newman":
+                        # girvan_newman_custom=nx.algorithms.community.girvan_newman(graph)
+                        # communities = []
+                        # m=0
+                        # while len(communities) != custom_n:
+                        #     communities=girvan_newman_custom[m]
+                        #     print(len(communities))
+                        #     m+=1
+                        communities=girvan_newman_custom[custom_n]
+                        d_comm={}
+                        for n,comm in enumerate(communities):
+                            d_comm.update({d:n for d in comm})
+                        name2id=dict(dict(nx.get_node_attributes(graph,"ID")))
+                        cmap=dict(zip(set(d_comm.values()),[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/custom_n)]))
+                        id2community={name2id[node]:cmap.get(d_comm[node],"#708090") for node in graph.nodes()}
+                        stylesheet=[]
+                        for ID in id2community:
+                            stylesheet.append({"selector":"[ID = '"+ID+"']", "style":{"border-color":"#303633","border-width":2,"background-color":id2community.get(ID,"#708090")}})
+                        # pie_data=pd.DataFrame({"Community":range(1,len(communities)+1),"Nodes":[len(community) for community in communities]})
+                        # pie=px.pie(pie_data,values="Nodes",names="Community", title="Communities' Node Distribution",color_discrete_sequence=[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/len(communities))])
+                        pie_data=go.Pie(labels=list(range(1,len(communities)+1)), values=[len(community) for community in communities], marker_colors=[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/len(communities))])
+                        pie=go.Figure(data=pie_data, layout={"title":{"text":"Communities' Node Distribution","x":0.5, "xanchor": "center"}})
+                        pie.update_traces(textposition="inside", textinfo="label+percent", hovertemplate=" Community: %{label} <br> Nodes: %{value} </br> %{percent} <extra></extra>")
+                    elif custom_method == "greedy_modularity":
+                        stylesheet=greedy_modularity_custom_stylesheet
+                        pie=greedy_modularity_custom_pie
 
-                legend_body=html.P(["Nodes are colored on the corresponding cluster/community, check the ",html.A("clustering", href="#"+prefix+"_clustering")," or ",html.A("plots sections", href="#"+prefix+"_plots")," for more info"])
-            pie.update_layout(plot_bgcolor="rgba(0, 0, 0, 0)", paper_bgcolor="rgba(0, 0, 0, 0)", modebar={"bgcolor":"rgba(0, 0, 0, 0)","color":"silver","activecolor":"grey"}, uniformtext_minsize=8, uniformtext_mode="hide", showlegend=False)#title={"text":"Groups' Node Distribution","x":0.5, "xanchor": "center"}
+                    legend_body=html.P(["Nodes are colored on the corresponding cluster/community, check the ",html.A("clustering", href="#"+prefix+"_clustering")," or ",html.A("plots sections", href="#"+prefix+"_plots")," for more info"])
+                pie.update_layout(plot_bgcolor="rgba(0, 0, 0, 0)", paper_bgcolor="rgba(0, 0, 0, 0)", modebar={"bgcolor":"rgba(0, 0, 0, 0)","color":"silver","activecolor":"grey"}, uniformtext_minsize=8, uniformtext_mode="hide", showlegend=False)#title={"text":"Groups' Node Distribution","x":0.5, "xanchor": "center"}
+            else:
+                stylesheet=current_stylesheet
+                pie=current_pie
+                legend_body=current_legend_body
         else:
             stylesheet=[style for style in current_stylesheet if style["style"].get("border-style") != "double"]
             pie=current_pie
@@ -711,7 +783,7 @@ def get_range_clusters_callback(prefix,G,maj,Evals,Evals_maj,N_clusters,N_cluste
             # evals,evects=np.linalg.eigh(L)
             # n=[n for n,dif in enumerate(np.diff(evals)) if dif > 2*np.average([d for d in np.diff(evals) if d>0.00001])][0]+1
             n=n_clusters
-            options=[{"label":str(n),"value":n} for n in range(2,len(evals)-1)]
+            options=[{"label":str(n),"value":n} for n in range(1,len(evals)-1)]
             disabled=False
         if method == "girvan_newman":
             # L=nx.normalized_laplacian_matrix(graph).toarray()

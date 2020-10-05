@@ -22,6 +22,7 @@ from networkx.algorithms.community import modularity
 import matplotlib.pyplot as plt
 from matplotlib.colors import rgb2hex
 from sklearn.cluster import KMeans
+from scipy.stats import halfnorm
 
 from app import app
 
@@ -172,8 +173,8 @@ def coloring_dropdown(prefix):
         options=[{"label":"ATC Code", "value":"atc"}]
         value="atc"
     if prefix == "tt":
-        options=[{"label":"Cellular Location", "value":"location"}]
-        value="location"
+        options=[{"label":"Protein Class", "value":"class"},{"label":"Protein Family", "value":"family"},{"label":"Cellular Location", "value":"location"}]
+        value="class"
     options+=[
         {"label":"Components", "value":"components"},
         {"label":"Spectral Clustering", "value":"spectral"},
@@ -264,8 +265,8 @@ def graph_properties(prefix):
                                 {"label":"Eigenvector Centrality: High to Low","value":"Eigenvector Centrality,0"},
                                 {"label":"Clustering Coefficient: Low to High","value":"Clustering Coefficient,1"},
                                 {"label":"Clustering Coefficient: High to Low","value":"Clustering Coefficient,0"},
-                                {"label":"Vote Rank Score: Low to High","value":"Vote Rank Score,1"},
-                                {"label":"Vote Rank Score: High to Low","value":"Vote Rank Score,0"},
+                                {"label":"VoteRank Score: Low to High","value":"VoteRank Score,1"},
+                                {"label":"VoteRank Score: High to Low","value":"VoteRank Score,0"},
                             ], value="Degree,0", clearable=False, searchable=False, optionHeight=25,className="DropdownMenu")
                         ], align="center", xs=10, lg=3),
                         dbc.Col(html.Font("Rows to show: ", style={"white-space":"nowrap"}),align="center", style={"text-align":"right"}, xs=2, lg=1),
@@ -333,7 +334,7 @@ def custom_clustering(prefix):
 
 def common_data_generator(prefix,graph,graph_title):
     print(graph_title)
-    graph_properties_df=pd.DataFrame({node:{prop:values[prop] for prop in ["Name","Degree", "Closeness Centrality", "Betweenness Centrality", "Eigenvector Centrality", "Clustering Coefficient", "Vote Rank Score"]} for node,values in dict(graph.nodes(data=True)).items()}).T
+    graph_properties_df=pd.DataFrame({node:{prop:values[prop] for prop in ["Name","Degree", "Closeness Centrality", "Betweenness Centrality", "Eigenvector Centrality", "Clustering Coefficient", "VoteRank Score"]} for node,values in dict(graph.nodes(data=True)).items()}).T
     maj=graph.subgraph(max(list(nx.connected_components(graph)), key=len))
     print("\tCommunities Detection Data Precomputing ...")
     if os.path.isfile("data/groups/"+prefix+"_communities.pickle"):
@@ -358,10 +359,19 @@ def common_data_generator(prefix,graph,graph_title):
     else:
         L=nx.normalized_laplacian_matrix(graph).toarray()
         evals,evects=np.linalg.eigh(L)
-        n_clusters=[n for n,dif in enumerate(np.diff(evals)) if dif > 2*np.average([d for d in np.diff(evals) if d>0.00001])][0]+1
+        # n_clusters=[n for n,dif in enumerate(np.diff(evals)) if dif > 2*np.average([d for d in np.diff(evals) if d>0.00001])][0]+1
+        # clusters_list=[n for n,dif in enumerate(np.diff(evals)) if dif in sorted(np.diff(evals),reverse=True)[:len(evals)//20]]
+        # n_clusters=clusters_list[0]+1 if clusters_list[0] != 0 else clusters_list[1]+1
+        relevant=[n for n,dif in enumerate(np.diff(evals)) if dif > halfnorm.ppf(0.9,*halfnorm.fit(np.diff(evals)))]
+        n_clusters=relevant[0]+1 if (relevant[0] != 0 and relevant[0]+1 != nx.number_connected_components(graph)) else relevant[1]+1
         L_maj=nx.normalized_laplacian_matrix(maj).toarray()
         evals_maj,evects_maj=np.linalg.eigh(L_maj)
-        n_clusters_maj=[n for n,dif in enumerate(np.diff(evals_maj)) if dif > 2*np.average([d for d in np.diff(evals_maj) if d>0.00001])][0]+1
+        # n_clusters_maj=[n for n,dif in enumerate(np.diff(evals_maj)) if dif > 2*np.average([d for d in np.diff(evals_maj) if d>0.00001])][0]+1
+        # n_clusters_maj=[n for n,dif in enumerate(np.diff(evals_maj)) if dif in sorted(np.diff(evals_maj),reverse=True)[:len(evals_maj)//20]][0]+1
+        # clusters_list_maj=[n for n,dif in enumerate(np.diff(evals_maj)) if dif in sorted(np.diff(evals_maj),reverse=True)[:len(evals_maj)//20]]
+        # n_clusters_maj=clusters_list_maj[0]+1 if clusters_list_maj[0] != 0 else clusters_list_maj[1]+1
+        relevant_maj=[n for n,dif in enumerate(np.diff(evals_maj)) if dif > halfnorm.ppf(0.9,*halfnorm.fit(np.diff(evals_maj)))]
+        n_clusters_maj=relevant_maj[0]+1 if (relevant_maj[0] != 0 and relevant_maj[0]+1 != nx.number_connected_components(maj)) else relevant_maj[1]+1
         name="data/groups/"+prefix+"_spectral.pickle"
         with open(name,"wb") as bkp:
             pickle.dump([L,evals,evects,n_clusters,L_maj,evals_maj,evects_maj,n_clusters_maj],bkp)
@@ -387,7 +397,7 @@ def degree_distribution(graph, title):
     ER=nx.fast_gnp_random_graph(n,p)
     ERK=dict(nx.degree(ER))
     power_data=pd.DataFrame({"Node degree, k":list(get_frequency(K.values()).keys())+list(get_frequency(ERK.values()).keys()),"Frequency of Nodes with degree k, n(k)":list(get_frequency(K.values()).values())+list(get_frequency(ERK.values()).values()), "Graph":[title]*len(set(K.values()))+["Erdősh Rényi Equivalent Graph"]*len(set(ERK.values()))})
-    plot=px.scatter(data_frame=power_data,x="Node degree, k",y="Frequency of Nodes with degree k, n(k)", title="Node Degree Distribution", log_x=True, log_y=True, template="ggplot2", color="Graph")
+    plot=px.scatter(data_frame=power_data,x="Node degree, k",y="Frequency of Nodes with degree k, n(k)", title="Node Degree Distribution", log_x=True, log_y=True, template="ggplot2", color="Graph", trendline="lowess")
     plot.update_layout({"paper_bgcolor": "rgba(0, 0, 0, 0)", "modebar":{"bgcolor":"rgba(0, 0, 0, 0)","color":"silver","activecolor":"grey"}}) # for a transparent background but keeping modebar acceptable colors
     return plot
 

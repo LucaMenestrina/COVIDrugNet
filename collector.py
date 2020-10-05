@@ -1,7 +1,8 @@
 import pandas as pd
 import numpy as np
 from tqdm import tqdm
-import pubchempy as pcp
+import pubchempy as pubchem
+from chembl_webresource_client.new_client import new_client as chembl
 from rdkit import Chem
 from rdkit.Chem import AllChem
 from rdkit import DataStructs
@@ -33,7 +34,7 @@ class drug():
     def advanced_init(self,done_proteins):
         """adds useful intel for drugs related with covid"""
         #set compound object
-        self.__compound = pcp.get_compounds(self.name,"name")[0]
+        self.__compound = pubchem.get_compounds(self.name,"name")[0] # if it throws an exception the drug is escluded because it isn't in PubChem compounds database
         self.complexity = self.__compound.complexity
         self.heavy_atoms = self.__compound.heavy_atom_count
         if self.heavy_atoms <=6:
@@ -82,18 +83,19 @@ class drug():
         added_proteins={}
         for kind in ["targets","enzymes","carriers","transporters"]:
             self.__proteins[kind]={}
-            try:
-                tables = soup.find("div", attrs = {"class":"bond-list-container %s"%kind})
+            tables = soup.find("div", attrs = {"class":"bond-list-container %s"%kind})
+            if tables:
                 for tab in tables.findAll("a"):
                     if ("class" not in tab.attrs and "target" not in tab.attrs):
                         if tab.get_text() not in done_proteins:
-                            prot=protein(tab.get_text(),"https://www.drugbank.ca"+tab["href"])
-                            self.__proteins[kind][tab.get_text()]=prot
-                            added_proteins[tab.get_text()]=prot
+                            try:
+                                prot=protein(tab.get_text(),"https://www.drugbank.ca"+tab["href"])
+                                self.__proteins[kind][tab.get_text()]=prot
+                                added_proteins[tab.get_text()]=prot
+                            except:
+                                pass
                         else:
                             self.__proteins[kind][tab.get_text()]=done_proteins[tab.get_text()]
-            except:
-                self.__proteins[kind]={}
         self.targets=self.__proteins["targets"]
         self.enzymes=self.__proteins["enzymes"]
         self.carriers=self.__proteins["carriers"]
@@ -193,8 +195,14 @@ class protein():
             self.pdbid=pdbid.upper()
         except:
             self.pdbid="Not Available"
+        try:
+            self.__protein_classification=chembl.protein_class.get(chembl.target_component.get(accession=self.id)[0]["protein_classifications"][0]["protein_classification_id"])
+        except:
+            self.__protein_classification={'l1': None, 'l2': None, 'l3': None, 'l4': None, 'l5': None, 'l6': None, 'l7': None, 'l8': None, 'protein_class_id': 1}
+        self.protein_class=self.__protein_classification["l1"] if (self.__protein_classification["l1"] and self.__protein_classification["l1"] != "Unclassified protein") else "Not Available"
+        self.family=self.__protein_classification["l2"] if self.__protein_classification["l2"] else "Not Available"
     def summary(self):
-        return pd.DataFrame({"Gene":self.gene,"ID":self.id,"PDBID":self.pdbid,"Organism":self.organism,"Cellular Location":self.location,"String Interaction Partners":[list(self.string_interaction_partners.keys())],"Diseases":[self.diseases],"Drugs":[[d.name for d in self.drugs]],"drugbank_url":self.drugbank_url},index=[self.name])
+        return pd.DataFrame({"Gene":self.gene,"ID":self.id,"PDBID":self.pdbid,"Organism":self.organism,"Protein Class":self.protein_class,"Protein Family":self.family,"Cellular Location":self.location,"STRING Interaction Partners":[list(self.string_interaction_partners.keys())],"Diseases":[self.diseases],"Drugs":[[d.name for d in self.drugs]],"drugbank_url":self.drugbank_url},index=[self.name])
 
 # def jaccard_index(list1,list2):
 #     union=set(list1+list2)
@@ -289,10 +297,10 @@ class collector():
         CC=dict(nx.closeness_centrality(graph))
         BC=dict(nx.betweenness_centrality(graph))
         EBC=dict(nx.edge_betweenness_centrality(graph))
-        EC=dict(nx.eigenvector_centrality(graph))
+        EC=dict(nx.eigenvector_centrality(graph,max_iter=1000))
         C=dict(nx.clustering(graph))
         VR=nx.voterank(graph)
-        VRS={} #vote rank score
+        VRS={} #voterank score
         for node in graph.nodes():
             try:
                 VRS[node]=len(VR)-VR.index(node)
@@ -304,7 +312,7 @@ class collector():
         nx.set_node_attributes(graph,EBC,"Edge Betweenness Centrality")
         nx.set_node_attributes(graph,EC,"Eigenvector Centrality")
         nx.set_node_attributes(graph,C,"Clustering Coefficient")
-        nx.set_node_attributes(graph,VRS,"Vote Rank Score")
+        nx.set_node_attributes(graph,VRS,"VoteRank Score")
         return graph
     def save_graph(self,is_needed,df,graph,name):
         if is_needed:
