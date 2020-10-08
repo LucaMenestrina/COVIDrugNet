@@ -29,7 +29,7 @@ from callbacks import *
 prefix="help"
 
 layout=dbc.Col([
-            headbar(prefix),
+            # headbar(prefix),
             dbc.Col([
                 html.Br(),
                 dbc.Col([

@@ -55,7 +55,7 @@ prefix="error404"
 #         ], style={"padding":"0px"})
 
 layout=dbc.Col([
-            headbar(prefix),
+            # headbar(prefix),
             dbc.Col([
                 html.Br(),
                 dbc.Col([

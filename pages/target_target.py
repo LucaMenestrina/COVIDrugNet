@@ -36,7 +36,7 @@ nodes=[{"data":{key:value for key,value in attributes.items()}} for node,attribu
 edges=[{"data":{"source":source,"target":target}} for source,target in G.edges]
 
 layout=dbc.Col([
-            headbar(prefix),
+            # headbar(prefix),
             dbc.Row([
                 dbc.Col(sidebar(prefix), width=1, className="bg-light"),
                 dbc.Col([

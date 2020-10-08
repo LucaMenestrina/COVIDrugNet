@@ -29,7 +29,7 @@ from callbacks import *
 prefix="home"
 
 layout=dbc.Col([
-            headbar(prefix),
+            # headbar(prefix),
             dbc.Col([
                 # html.Center(html.H1(html.Strong("COVID-19 Drugs Networker"))),
                 html.Center(html.Img(src=app.get_asset_url("imgs/logo_wide.svg"), alt="COVID-19 Drugs Networker", style={"width":"75%"})),#"https://drive.google.com/uc?export=view&id=1yDefAeLULelX6loC3g68Tk_CNyFGi4kg"

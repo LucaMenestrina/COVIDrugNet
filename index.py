@@ -1,14 +1,16 @@
-import dash_core_components as dcc
 import dash_html_components as html
+import dash_core_components as dcc
+import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output
 
 from app import app
 from pages import home,help,about,contacts,drug_target,drug_drug,target_target,error404#, target_disease, target_interactors
-
+from building_blocks import headbar, loading_banner
 
 app.layout = html.Div([
     dcc.Location(id="url", refresh=False),
-    html.Div(id="page-content")
+    headbar(),
+    html.Div(id="loading_message")
 ])
             # @media (min-device-width: 1200px) { body {initial-scale:1;} }
             # @media (min-device-width: 768px) { body {initial-scale:0.8;} }
@@ -48,9 +50,31 @@ app.index_string='''
 '''
 
 
+@app.callback(Output("loading_message", "children"),
+            [Input("url", "pathname")])
+def temp_loading(pathname):
+    if pathname:
+        return loading_banner
+        # return html.Div(
+        #     html.Center([
+        #         html.Div(style={"height":"20vh"}),
+        #         dbc.Fade(
+        #             dbc.Jumbotron([
+        #                 html.H2("Sorry, it's taking some time to load ..."),
+        #                 html.Hr(),
+        #                 html.H5("Networks are becoming more and more complex,"),
+        #                 html.H5("and the browser could take a while to render the page"),
+        #                 html.P("If it takes too long (or it doesn't load at all) please let us know"),
+        #                 html.Br(),
+        #                 html.Img(src=app.get_asset_url("imgs/logo.svg"), style={"height":"10vh"}),
+        #                 html.Br(),
+        #                 html.Small("Also a small banner could appear on top of your window saing that a calculation is slowing down your browser")
+        #             ], style={"width":"40vw"}
+        #         ), is_in=True, timeout=250)]
+        #     ),id="page_content")
 
-@app.callback(Output("page-content", "children"),
-              [Input("url", "pathname")])
+@app.callback(Output("page_content", "children"),
+            [Input("url", "pathname")])
 def display_page(pathname):
     if pathname == "/covid19drugsnetworker" or pathname == "/covid19drugsnetworker/home":
         return home.layout
@@ -71,8 +95,7 @@ def display_page(pathname):
     # if pathname == "/target_interactors":
     #     return target_interactors.layout
     else:
-        return error404.layout #devo fare una pagina apposita
-#{'pos': array([ 0.20631291, -0.02379196]), 'ID': 'DB14761', 'SMILES': 'CCC(CC)COC(=O)[C@H](C)N[P@](=O)(OC[C@@H]1[C@H]([C@H]([C@](O1)(C#N)C2=CC=C3N2N=CN=C3N)O)O)OC4=CC=CC=C4', 'ATC_Code1': ['Not Available'], 'ATC_Code5': ['Not Available'], 'Targets': 'Replicase polyprotein 1ab, RNA-directed RNA polymerase L', 'Enzymes': 'Cytochrome P450 2C8, Cytochrome P450 2D6, Cytochrome P450 3A4', 'Carriers': '', 'Transporters': 'Solute carrier organic anion transporter family member 1B1, P-glycoprotein 1, Solute carrier organic anion transporter family member 1B3, Bile salt export pump, Multidrug resistance-associated protein 4, Sodium/bile acid cotransporter', 'Drug_Interactions': '', 'name': 'Remdesivir', 'structure': 'https://www.drugbank.ca/structures/DB14761/image.svg', 'kind': 'Drug', 'fill_color': '#FC5F67', 'line_color': '#FB3640', 'degree': 2, 'Closeness_Centrality': 0.0066777303619408885, 'Betweenness_Centrality': 2.3545931691111623e-05, 'id': 'Remdesivir'}
+        return error404.layout
 
 if __name__ == "__main__":
     app.run_server(debug=False)

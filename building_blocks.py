@@ -26,8 +26,24 @@ from scipy.stats import halfnorm
 
 from app import app
 
-#html.I(className="fa fa-project-diagram"),
-def headbar(prefix):
+loading_banner = html.Div(
+        html.Center([
+            html.Div(style={"height":"20vh"}),
+            dbc.Fade(
+                dbc.Jumbotron([
+                    html.H2("Sorry, it's taking some time to load ..."),
+                    html.Hr(),
+                    html.H5("Networks are becoming more and more complex,"),
+                    html.H5("and the browser could take a while to render the page"),
+                    html.P(["If it takes too long (or it doesn't load at all) please let us know"]),#, html.A("let us know", href="mailto:luca.menestrina2@unibo.it")
+                    # html.Img(src=app.get_asset_url("imgs/icon.png"), style={"height":"10vh"}),
+                    html.Br(),
+                    html.Small("A small banner could also appear on top of your window saing that a calculation is slowing down your browser")
+                ], style={"width":"40vw"}
+            ), is_in=True, timeout=250)]
+        ),id="page_content")
+
+def headbar():
     return dbc.Navbar(
                 dbc.Container([
                     html.A(
@@ -36,17 +52,17 @@ def headbar(prefix):
                             dbc.NavbarBrand("COVID-19 Drugs Networker")
                         ], no_gutters=True, justify="start", align="center"),
                     href="/covid19drugsnetworker", className="card-link"),
-                    dbc.NavbarToggler(id=prefix+"_headbar_toggler"),
+                    dbc.NavbarToggler(id="headbar_toggler"),
                     dbc.Collapse([
                         dbc.Nav([
-                            dbc.NavItem(dbc.NavLink([html.I(className="fa fa-home", style={"margin-right":"0.4rem"}),"Home"],href="/covid19drugsnetworker", active=True, className="nav-link active", external_link=True), className="nav-item", id=prefix+"_home_nav"),
-                            dbc.Tooltip("COVID-19 Drugs Networker Homepage", target=prefix+"_home_nav", placement="bottom", hide_arrow=True, delay={"show":500, "hide":250}),
-                            dbc.NavItem(dbc.NavLink([html.I(className="fa fa-question", style={"margin-right":"0.4rem"}),"Help"],href="/help", active=True, className="nav-link active", external_link=True), className="nav-item", id=prefix+"_help_nav"),
-                            dbc.Tooltip("Page Structure and Main Possible Interactions", target=prefix+"_help_nav", placement="bottom", hide_arrow=True, delay={"show":500, "hide":250}),
-                            dbc.NavItem(dbc.NavLink([html.I(className="fa fa-info", style={"margin-right":"0.4rem"}),"About"],href="/about", active=True, className="nav-link active", external_link=True), className="nav-item", id=prefix+"_about_nav"),
-                            dbc.Tooltip("Info About the Project", target=prefix+"_about_nav", placement="bottom", hide_arrow=True, delay={"show":500, "hide":250}),
-                            dbc.NavItem(dbc.NavLink([html.I(className="fa fa-address-book", style={"margin-right":"0.4rem"}),"Contacts"],href="/contacts", active=True, className="nav-link active", external_link=True), className="nav-item", id=prefix+"_contacts_nav"),
-                            dbc.Tooltip("Project Participant's Contacts", target=prefix+"_contacts_nav", placement="bottom", hide_arrow=True, delay={"show":500, "hide":250}),
+                            dbc.NavItem(dbc.NavLink([html.I(className="fa fa-home", style={"margin-right":"0.4rem"}),"Home"],href="/covid19drugsnetworker", active=True, className="nav-link active", external_link=True), className="nav-item", id="home_nav"),
+                            dbc.Tooltip("COVID-19 Drugs Networker Homepage", target="home_nav", placement="bottom", hide_arrow=True, delay={"show":500, "hide":250}),
+                            dbc.NavItem(dbc.NavLink([html.I(className="fa fa-question", style={"margin-right":"0.4rem"}),"Help"],href="/help", active=True, className="nav-link active", external_link=True), className="nav-item", id="help_nav"),
+                            dbc.Tooltip("Page Structure and Main Possible Interactions", target="help_nav", placement="bottom", hide_arrow=True, delay={"show":500, "hide":250}),
+                            dbc.NavItem(dbc.NavLink([html.I(className="fa fa-info", style={"margin-right":"0.4rem"}),"About"],href="/about", active=True, className="nav-link active", external_link=True), className="nav-item", id="about_nav"),
+                            dbc.Tooltip("Info About the Project", target="about_nav", placement="bottom", hide_arrow=True, delay={"show":500, "hide":250}),
+                            dbc.NavItem(dbc.NavLink([html.I(className="fa fa-address-book", style={"margin-right":"0.4rem"}),"Contacts"],href="/contacts", active=True, className="nav-link active", external_link=True), className="nav-item", id="contacts_nav"),
+                            dbc.Tooltip("Project Participant's Contacts", target="contacts_nav", placement="bottom", hide_arrow=True, delay={"show":500, "hide":250}),
                             dbc.Nav([
                                 dbc.NavLink(html.I(className="fa fa-project-diagram"), active=True, className="nav-link active", style={"margin-right":"-0.6rem"}), # patch for graphs label icon
                                 dbc.DropdownMenu([
@@ -56,10 +72,10 @@ def headbar(prefix):
                                     # dbc.DropdownMenuItem("Target Disease", href="/target_disease", className="dropdown-item"), # not yet available
                                     # dbc.DropdownMenuItem("Target Interactors", href="/target_interactors", className="dropdown-item") # not yet available
                                 ], nav=True, in_navbar=True, label="Graphs ...", className="nav-item dropdown active"),
-                            ], className="nav-item", id=prefix+"_other_graphs_nav"),#patch for dropdownmeno label icon , style={"margin-right":"-0.5rem"}
-                            dbc.Tooltip("Browse Other Available Graphs", target=prefix+"_other_graphs_nav", placement="left", hide_arrow=True, delay={"show":500, "hide":250})
+                            ], className="nav-item", id="other_graphs_nav"),#patch for dropdownmeno label icon , style={"margin-right":"-0.5rem"}
+                            dbc.Tooltip("Browse Other Available Graphs", target="other_graphs_nav", placement="left", hide_arrow=True, delay={"show":500, "hide":250})
                         ], className="ml-auto", navbar=True)
-                    ], id=prefix+"_headbar_collapse", navbar=True)
+                    ], id="headbar_collapse", navbar=True)
                 ], fluid=True),
             color="primary",
             dark=True,
@@ -196,8 +212,7 @@ def highlighting(prefix, nodes):
             dbc.Tooltip("Highlight Specific Nodes for Easier Spotting", target=prefix+"_highlighter_dropdown_div", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
         ],id=prefix+"_highlighter_dropdown_div")
 
-def graph(prefix,title,nodes,edges):#es. title="Drug Target"
-    # cyto.load_extra_layouts()
+def graph(prefix,title,nodes,edges):
     return dbc.Container([
                 html.H4(title,id=prefix+"_name_graph", className="card-header"),
                 dbc.Row([
@@ -362,16 +377,16 @@ def common_data_generator(prefix,graph,graph_title):
         # n_clusters=[n for n,dif in enumerate(np.diff(evals)) if dif > 2*np.average([d for d in np.diff(evals) if d>0.00001])][0]+1
         # clusters_list=[n for n,dif in enumerate(np.diff(evals)) if dif in sorted(np.diff(evals),reverse=True)[:len(evals)//20]]
         # n_clusters=clusters_list[0]+1 if clusters_list[0] != 0 else clusters_list[1]+1
-        relevant=[n for n,dif in enumerate(np.diff(evals)) if dif > halfnorm.ppf(0.9,*halfnorm.fit(np.diff(evals)))]
-        n_clusters=relevant[0]+1 if (relevant[0] != 0 and relevant[0]+1 != nx.number_connected_components(graph)) else relevant[1]+1
+        relevant=[n for n,dif in enumerate(np.diff(evals)) if dif > halfnorm.ppf(0.95,*halfnorm.fit(np.diff(evals)))]
+        n_clusters=relevant[0]+1 if (relevant[0] >1 and relevant[0]+1 != nx.number_connected_components(graph)) else relevant[1]+1
         L_maj=nx.normalized_laplacian_matrix(maj).toarray()
         evals_maj,evects_maj=np.linalg.eigh(L_maj)
         # n_clusters_maj=[n for n,dif in enumerate(np.diff(evals_maj)) if dif > 2*np.average([d for d in np.diff(evals_maj) if d>0.00001])][0]+1
         # n_clusters_maj=[n for n,dif in enumerate(np.diff(evals_maj)) if dif in sorted(np.diff(evals_maj),reverse=True)[:len(evals_maj)//20]][0]+1
         # clusters_list_maj=[n for n,dif in enumerate(np.diff(evals_maj)) if dif in sorted(np.diff(evals_maj),reverse=True)[:len(evals_maj)//20]]
         # n_clusters_maj=clusters_list_maj[0]+1 if clusters_list_maj[0] != 0 else clusters_list_maj[1]+1
-        relevant_maj=[n for n,dif in enumerate(np.diff(evals_maj)) if dif > halfnorm.ppf(0.9,*halfnorm.fit(np.diff(evals_maj)))]
-        n_clusters_maj=relevant_maj[0]+1 if (relevant_maj[0] != 0 and relevant_maj[0]+1 != nx.number_connected_components(maj)) else relevant_maj[1]+1
+        relevant_maj=[n for n,dif in enumerate(np.diff(evals_maj)) if dif > halfnorm.ppf(0.95,*halfnorm.fit(np.diff(evals_maj)))]
+        n_clusters_maj=relevant_maj[0]+1 if (relevant_maj[0] > 1 and relevant_maj[0]+1 != nx.number_connected_components(maj)) else relevant_maj[1]+1
         name="data/groups/"+prefix+"_spectral.pickle"
         with open(name,"wb") as bkp:
             pickle.dump([L,evals,evects,n_clusters,L_maj,evals_maj,evects_maj,n_clusters_maj],bkp)
