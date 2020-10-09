@@ -690,7 +690,7 @@ def toggle_legend_callback(prefix):
             return True
     return open_legend
 
-def get_img_callback(prefix):
+def get_img_callback(prefix, file_prefix):
     @app.callback(
         Output(prefix+"_graph","generateImage"),
         [Input(prefix+"_download_graph_button","n_clicks")],
@@ -699,7 +699,7 @@ def get_img_callback(prefix):
     def get_img(n_clicks,value):
         if value in ["svg", "png", "jpg"]:
             if n_clicks:
-                return {"type":value,"action":"download"}
+                return {"type":value,"action":"download", "filename":file_prefix}
         else:
             return {"action":"store"}
     return get_img
@@ -731,9 +731,13 @@ def get_selected_clustering_callback(prefix):
             Output(prefix+"_custom_clustering_component","value"),
             Output(prefix+"_custom_clustering_method","value")
         ],
-        [Input(prefix+"_coloring_dropdown", "value")]
+        [Input(prefix+"_coloring_dropdown", "value")],
+        [
+            State(prefix+"_custom_clustering_component","value"),
+            State(prefix+"_custom_clustering_method","value")
+        ]
     )
-    def get_selected_clustering(value):
+    def get_selected_clustering(value,current_component,current_method):
         splitted=value.split("_")
         if splitted[-1] == "maj":
             component = "maj"
@@ -742,8 +746,8 @@ def get_selected_clustering_callback(prefix):
             component = "entire"
             method = value
         else:
-            component = "entire"
-            method = "spectral"
+            component = current_component
+            method = current_method
         return component, method
     return get_selected_clustering
 
@@ -757,9 +761,13 @@ def get_range_clusters_callback(prefix,G,maj,Evals,Evals_maj,N_clusters,N_cluste
         [
             Input(prefix+"_custom_clustering_component","value"),
             Input(prefix+"_custom_clustering_method","value")
+        ],
+        [
+            State(prefix+"_coloring_dropdown", "value"),
+            State(prefix+"_custom_clustering_number_clusters","value")
         ]
     )
-    def get_range_clusters(component,method):
+    def get_range_clusters(component,method,coloring,n_custom):
         if component=="maj":
             # graph=G.subgraph(max(list(nx.connected_components(G)), key=len))
             graph=maj.copy()
@@ -793,6 +801,8 @@ def get_range_clusters_callback(prefix,G,maj,Evals,Evals_maj,N_clusters,N_cluste
             n=len(nx.algorithms.community.greedy_modularity_communities(graph))
             options=[{"label":str(n),"value":n}]
             disabled=True
+        if coloring == "custom" and n != n_custom:
+            n=n_custom
         return options,n,disabled
     return get_range_clusters
 
@@ -892,7 +902,7 @@ def build_callbacks(prefix,G,nodes,graph_properties_df,L,evals,evects,L_maj,eval
     highlighter_callback(prefix,G,nodes,L,evals,evects,L_maj,evals_maj,evects_maj,n_clusters,n_clusters_maj,girvan_newman,maj,girvan_newman_maj,n_comm,n_comm_maj)
     get_selected_clustering_callback(prefix)
     custom_clustering_section_callback(prefix,G,evals,evects,evals_maj,evects_maj,girvan_newman,maj,girvan_newman_maj,communities_modularity,communities_modularity_maj)
-    get_img_callback(prefix)
+    get_img_callback(prefix,file_prefix)
     download_graph_file_callback(prefix,file_prefix)
     toggle_download_graph_callback(prefix)
     toggle_help_callback(prefix)
