@@ -33,7 +33,7 @@ loading_banner = html.Div(
                 dbc.Jumbotron([
                     html.H2("Sorry, it's taking some time to load ..."),
                     html.Hr(),
-                    html.H5("Networks are becoming more and more complex,"),
+                    html.H5("Networks are becoming more and more complex"),
                     html.H5("and the browser could take a while to render the page"),
                     html.P(["If it takes too long (or it doesn't load at all) please let us know"]),#, html.A("let us know", href="mailto:luca.menestrina2@unibo.it")
                     # html.Img(src=app.get_asset_url("imgs/icon.png"), style={"height":"10vh"}),
@@ -186,7 +186,7 @@ def coloring_dropdown(prefix):
         options=[{"label":"Categorical", "value":"categorical"}]
         value="categorical"
     if prefix == "dd":
-        options=[{"label":"ATC Code", "value":"atc"}]
+        options=[{"label":"ATC Code", "value":"atc"},{"label":"Target Class", "value":"targetclass"}]
         value="atc"
     if prefix == "tt":
         options=[{"label":"Protein Class", "value":"class"},{"label":"Protein Family", "value":"family"},{"label":"Cellular Location", "value":"location"}]

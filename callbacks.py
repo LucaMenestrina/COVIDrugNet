@@ -415,6 +415,41 @@ def highlighter_callback(prefix,G,nodes,L,evals,evects,L_maj,evals_maj,evects_ma
                 pie.update_traces(textposition="inside", textinfo="label+percent", hovertemplate=" %{label} <br> Nodes: %{value} </br> %{percent} <extra></extra>")
                 legend_body=dbc.Table(html.Tbody([html.Tr([html.Td("",style={"background-color":"#FC5F67"}),html.Td("Drugs")]),html.Tr([html.Td("",style={"background-color":"#12EAEA"}),html.Td("Targets")])]), borderless=True, size="sm")
 
+            elif coloring == "targetclass": ##### temporaneooooooooooooo######
+                # import pickle
+                # with open("target_classes.pickle","rb") as bkp:
+                #     target_classes = pickle.load(bkp)
+                target_classes={node["data"]["Name"]:node["data"]["Target Class"] for node in nodes}
+                all_classes=set([l for ll in target_classes.values() for l in ll])
+                cmap=dict(zip(all_classes,[rgb2hex(plt.cm.Spectral(n)) for n in np.arange(0,1.1,1/len(all_classes))]))
+                cmap.update({"Not Available":"#708090"})
+                class2num={list(cmap.keys())[num]:str(num+1) for num in range(len(all_classes))}
+                stylesheets=[]
+                classes_count={}
+                tot_classes=0
+                for node,classes in target_classes.items():
+                    stylesheet={"selector":"[ID = '"+[element["data"]["ID"] for element in nodes if element["data"]["Name"]==node][0]+"']"}
+                    style={"pie-size":"100%", "border-color":"#303633","border-width":2}
+                    for target_class in classes:
+                        style.update({"pie-"+class2num[target_class]+"-background-color":cmap[target_class],"pie-"+class2num[target_class]+"-background-size":100/len(classes)})
+                        try:
+                            classes_count[target_class]+=1/len(classes)
+                        except:
+                            classes_count[target_class]=1/len(classes)
+                        tot_classes+=1
+                    stylesheet.update({"style":style})
+                    stylesheets.append(stylesheet)
+                stylesheet=stylesheets
+
+                pie_data=go.Pie(labels=list(classes_count.keys()), values=[int(value) for value in classes_count.values()], marker_colors=[cmap[target_class] for target_class in classes_count.keys()])#, text=[long_atc[code] for code in ATC_count.keys()]
+                pie=go.Figure(data=pie_data, layout={"title":{"text":"Categories' Node Distribution","x":0.5, "xanchor": "center"}})
+                # pie.update_layout(legend={"x":3})
+                pie.update_traces(textposition="inside", textinfo="label+percent", hovertemplate=" %{text} <br> Nodes: %{value} </br> %{percent} <extra></extra>")
+                table_body=[]
+                for target_class in cmap:
+                    table_body.append(html.Tr([html.Td("",style={"background-color":cmap[target_class]}),html.Td(target_class)]))
+                legend_body=dbc.Table(html.Tbody(table_body), borderless=True, size="sm")
+
             elif coloring == "atc":
                 all_atc=["A","B","C","D","G","H","J","L","M","N","P","R","S","V"]
                 long_atc={"A":"A: Alimentary tract and metabolism","B":"B: Blood and blood forming organs","C":"C: Cardiovascular system","D":"D: Dermatologicals","G":"G: Genito-urinary system and sex hormones","H":"H: Systemic hormonal preparations, excluding sex hormones and insulins","J":"J: Antiinfectives for systemic use","L":"L: Antineoplastic and immunomodulating agents","M":"M: Musculo-skeletal system","N":"N: Nervous system","P":"P: Antiparasitic products, insecticides and repellents","R":"R: Respiratory system","S":"S: Sensory organs","V":"V: Various","Not Available": "Not Available"}
@@ -437,7 +472,7 @@ def highlighter_callback(prefix,G,nodes,L,evals,evects,L_maj,evals_maj,evects_ma
                         try:
                             ATC_count[atc]+=1/len(atcs)
                         except:
-                            ATC_count[atc]=11/len(atcs)
+                            ATC_count[atc]=1/len(atcs)
                         tot_codes+=1
                 stylesheet=stylesheets
 
@@ -788,7 +823,7 @@ def get_range_clusters_callback(prefix,G,maj,Evals,Evals_maj,N_clusters,N_cluste
             n=n_clusters
             options=[{"label":str(n),"value":n} for n in range(2,len(evals)-1)]
             disabled=False
-        if method == "girvan_newman":
+        elif method == "girvan_newman":
             # L=nx.normalized_laplacian_matrix(graph).toarray()
             # evals,evects=np.linalg.eigh(L)
             # n=[n for n,dif in enumerate(np.diff(evals)) if dif > 2*np.average([d for d in np.diff(evals) if d>0.00001])][0]+1
@@ -797,7 +832,7 @@ def get_range_clusters_callback(prefix,G,maj,Evals,Evals_maj,N_clusters,N_cluste
             n=n_comm
             options=[{"label":str(n),"value":n} for n in communities.keys()]
             disabled=False
-        if method == "greedy_modularity":
+        elif method == "greedy_modularity":
             n=len(nx.algorithms.community.greedy_modularity_communities(graph))
             options=[{"label":str(n),"value":n}]
             disabled=True

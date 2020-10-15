@@ -109,6 +109,7 @@ class drug():
         #     self.drug_interactions={drug(temp_int_names[i],temp_int_ids[i]):temp_int_description[i] for i in range(len(temp_int_names))}
         # else:
         #     self.drug_interactions={}
+        self.target_class=[prot.protein_class for prot in self.targets.values()]
         self.drug_interactions={}
         url="https://www.drugbank.ca/drugs/%s/drug_interactions.json?&start=0&length=100"%self.id
         response = requests.get(url)
@@ -137,7 +138,7 @@ class drug():
         return "%s (%s)"%(self.name, self.id)
     #aggiungere tutte le funzioni per avere in automatico alcune proprietà delle liste
     def summary(self):
-        return pd.DataFrame({"ID":self.id,"SMILES":self.smiles,"ATC Code Level 1":[self.atc1],"ATC Identifier":[self.atc_identifier],"Targets":[[t.name for t in self.targets.values()]],"Enzymes":[[e.name for e in self.enzymes.values()]],"Carriers":[[c.name for c in self.carriers.values()]],"Transporters":[[t.name for t in self.transporters.values()]],"Drug Interactions":[[d.name for d in self.drug_interactions]]},index=[self.name])
+        return pd.DataFrame({"ID":self.id,"SMILES":self.smiles,"ATC Code Level 1":[self.atc1],"ATC Identifier":[self.atc_identifier],"Targets":[[t.name for t in self.targets.values()]],"Enzymes":[[e.name for e in self.enzymes.values()]],"Carriers":[[c.name for c in self.carriers.values()]],"Transporters":[[t.name for t in self.transporters.values()]],"Target Class":[self.target_class],"Drug Interactions":[[d.name for d in self.drug_interactions]]},index=[self.name])
 
 
 class protein():

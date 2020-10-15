@@ -43,7 +43,11 @@ layout=dbc.Col([
                             html.A("maurizio.recanatini@unibo.it", href="mailto:maurizio.recanatini@unibo.it", style={"color":"black"}),
                             html.Br(),
                             html.Br(),
-                            html.P("Brief introduction/description "*10)
+                            html.P([
+                                "I'm a Professor of Medicinal Chemistry since year 2000",
+                                html.Br(),
+                                "My research fields are the design/ identification of biologically active molecules and the study of target biological systems through the application of computational tools ranging from QSAR (today, we’d rather say statistical learning) to molecular modeling and simulations."
+                                ])
                         ])
                     ], justify="around", align="center"),
                     html.Br(),
@@ -71,6 +75,8 @@ layout=dbc.Col([
                             html.Br(),
                             html.P([
                                 "I'm a medicinal chemist and technology enthusiast.",
+                                html.Br(),
+                                "My research interests are.......",
                                 html.Br(),
                                 "Please help me improving this app: if you find any malfunction (sure there are...) or you have suggestions, drop me an email."
                             ])
