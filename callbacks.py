@@ -444,7 +444,7 @@ def highlighter_callback(prefix,G,nodes,L,evals,evects,L_maj,evals_maj,evects_ma
                 pie_data=go.Pie(labels=list(classes_count.keys()), values=[int(value) for value in classes_count.values()], marker_colors=[cmap[target_class] for target_class in classes_count.keys()])#, text=[long_atc[code] for code in ATC_count.keys()]
                 pie=go.Figure(data=pie_data, layout={"title":{"text":"Categories' Node Distribution","x":0.5, "xanchor": "center"}})
                 # pie.update_layout(legend={"x":3})
-                pie.update_traces(textposition="inside", textinfo="label+percent", hovertemplate=" %{text} <br> Nodes: %{value} </br> %{percent} <extra></extra>")
+                pie.update_traces(textposition="inside", textinfo="label+percent", hovertemplate=" %{label} <br> Nodes: %{value} </br> %{percent} <extra></extra>")
                 table_body=[]
                 for target_class in cmap:
                     table_body.append(html.Tr([html.Td("",style={"background-color":cmap[target_class]}),html.Td(target_class)]))
