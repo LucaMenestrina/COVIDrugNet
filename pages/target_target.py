@@ -48,16 +48,16 @@ layout=dbc.Col([
                     html.Br(),
                     dbc.Row(dbc.Col(id=prefix+"_selected_table", align="center"), no_gutters=True, justify="center", align="center"),
                     html.Br(),
+                    plots(prefix,graph=G, title=graph_title),
+                    html.Br(),
                     graph_properties(prefix),
                     html.Br(),
                     custom_clustering(prefix),
-                    html.Br(),
-                    plots(prefix,graph=G, title=graph_title),
                     ])
                 ], no_gutters=True),
                 html.Div(style={"height":"5vh"}),
                 footer(),
-                html.Div(id=prefix+"_clusters_cache", style={"display":"none"}) #for temporary store computed clusters
+                # html.Div(id=prefix+"_clusters_cache", style={"display":"none"}) #for temporary store computed clusters
             ], style={"padding":"0px"})
 
 

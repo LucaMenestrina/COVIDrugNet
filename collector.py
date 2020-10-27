@@ -16,14 +16,6 @@ import itertools
 import networkx as nx
 from networkx.algorithms import bipartite
 
-# from bokeh.io import output_file
-# from bokeh.plotting import figure, from_networkx, save
-# from bokeh.models import Circle, MultiLine, PanTool, BoxZoomTool, WheelZoomTool, LassoSelectTool, UndoTool, RedoTool, ResetTool, SaveTool, HoverTool, TapTool, Panel, Tabs, Wedge, Legend, Row, Column, ColumnDataSource, Slider#(BoxSelectTool, Circle, EdgesAndLinkedNodes, HoverTool, MultiLine, NodesAndLinkedEdges, Plot, Range1d, TapTool,LassoSelectTool,WheelZoomTool)
-# from bokeh.models.widgets import DataTable, TableColumn
-# from math import sqrt,pi
-# from matplotlib.colors import rgb2hex
-# from bokeh.transform import cumsum
-
 class drug():
     def __init__(self,name,accession_number):
         #set name
@@ -100,15 +92,6 @@ class drug():
         self.enzymes=self.__proteins["enzymes"]
         self.carriers=self.__proteins["carriers"]
         self.transporters=self.__proteins["transporters"]
-        #drug interactions
-        # interactions = soup.find('table', attrs = {'id':'drug-interactions-table'})
-        # if interactions != None:
-        #     temp_int_names=[tag.get_text() for tag in interactions.findAll("a")]
-        #     temp_int_ids=[tag["href"].split("/")[-1] for tag in interactions.findAll("a")]
-        #     temp_int_description=[tag.get_text() for tag in interactions.findAll("td") if tag.get_text() not in temp_int_names]
-        #     self.drug_interactions={drug(temp_int_names[i],temp_int_ids[i]):temp_int_description[i] for i in range(len(temp_int_names))}
-        # else:
-        #     self.drug_interactions={}
         self.target_class=[prot.protein_class for prot in self.targets.values()]
         self.drug_interactions={}
         url="https://www.drugbank.ca/drugs/%s/drug_interactions.json?&start=0&length=100"%self.id
@@ -136,7 +119,7 @@ class drug():
         return self,added_proteins
     def __str__(self):
         return "%s (%s)"%(self.name, self.id)
-    #aggiungere tutte le funzioni per avere in automatico alcune proprietà delle liste
+    #more functions shoud be added
     def summary(self):
         return pd.DataFrame({"ID":self.id,"SMILES":self.smiles,"ATC Code Level 1":[self.atc1],"ATC Identifier":[self.atc_identifier],"Targets":[[t.name for t in self.targets.values()]],"Enzymes":[[e.name for e in self.enzymes.values()]],"Carriers":[[c.name for c in self.carriers.values()]],"Transporters":[[t.name for t in self.transporters.values()]],"Target Class":[self.target_class],"Drug Interactions":[[d.name for d in self.drug_interactions]]},index=[self.name])
 
@@ -205,13 +188,6 @@ class protein():
     def summary(self):
         return pd.DataFrame({"Gene":self.gene,"ID":self.id,"PDBID":self.pdbid,"Organism":self.organism,"Protein Class":self.protein_class,"Protein Family":self.family,"Cellular Location":self.location,"STRING Interaction Partners":[list(self.string_interaction_partners.keys())],"Diseases":[self.diseases],"Drugs":[[d.name for d in self.drugs]],"drugbank_url":self.drugbank_url},index=[self.name])
 
-# def jaccard_index(list1,list2):
-#     union=set(list1+list2)
-#     if len(union)==0:
-#         return 0
-#     intersection=[el for el in list1 if el in list2]
-#     return len(intersection)/len(union)
-
 def get_frequency(list):
   d={}
   for el in list:
@@ -230,19 +206,6 @@ def stringify_list_attributes(graph):
                 val=", ".join(str(val))
                 graph.nodes[node][attribute]=val
     return graph
-
-# def save_graph(is_needed,df,graph,name):
-#     if is_needed:
-#         df.to_csv("data/graphs/"+name+".tsv",sep="\t")
-#         nx.write_gpickle(graph,"data/graphs/"+name+".gpickle")
-#         nx.write_adjlist(graph,"data/graphs/"+name+".adjlist",delimiter="\t")
-#         nx.write_multiline_adjlist(graph,"data/graphs/"+name+".multiline_adjlist",delimiter="\t")
-#         nx.write_edgelist(graph,"data/graphs/"+name+".edgelist",delimiter="\t")
-#         with open("data/graphs/"+name+".cyjs","w") as outfile:
-#             outfile.write(json.dumps(nx.cytoscape_data(graph), indent=2))
-#         graph=stringify_list_attributes(graph)
-#         nx.write_gexf(graph,"data/graphs/"+name+".gexf")
-#         nx.write_graphml(graph,"data/graphs/"+name+".graphml")
 
 class collector():
     def __init__(self):
@@ -381,14 +344,6 @@ class collector():
         nx.set_node_attributes(G,{node:("#FB3640" if G.nodes[node]["kind"] == "Drug" else "#0EBEBE") for node in G.nodes()},"line_color")
         self.__drugtarget=G
         self.save_graph(self.added_new_drugs,df,G,"drug_target")
-        # df.to_csv("data/graphs/drug_target.tsv",sep="\t")
-        # nx.write_gpickle(G,"data/graphs/drug_target.gpickle")
-        # nx.write_adjlist(G,"data/graphs/drug_target.adjlist",delimiter="\t")
-        # nx.write_multiline_adjlist(G,"data/graphs/drug_target.multiline_adjlist",delimiter="\t")
-        # nx.write_edgelist(G,"data/graphs/drug_target.edgelist",delimiter="\t")
-        # G=stringify_list_attributes(G)
-        # nx.write_gexf(G,"data/graphs/drug_target.gexf")
-        # nx.write_graphml(G,"data/graphs/drug_target.graphml")
     def drugdrug(self,tab=False):
         drug_attributes={drug.name:(drug.summary().T.to_dict()[drug.name]) for drug in self.drugs}
         structures={mol.name:"https://www.drugbank.ca/structures/%s/image.svg"%mol.id for mol in self.drugs} # direttamente da drugbank
@@ -398,14 +353,6 @@ class collector():
         self.__drugdrug=G
         df=nx.to_pandas_edgelist(G)
         self.save_graph(self.added_new_drugs,df,G,"drug_drug")
-        # df.to_csv("data/graphs/drug_drug.tsv",sep="\t")
-        # nx.write_gpickle(G,"data/graphs/drug_drug.gpickle")
-        # nx.write_adjlist(G,"data/graphs/drug_drug.adjlist",delimiter="\t")
-        # nx.write_multiline_adjlist(G,"data/graphs/drug_drug.multiline_adjlist",delimiter="\t")
-        # nx.write_edgelist(G,"data/graphs/drug_drug.edgelist",delimiter="\t")
-        # G=stringify_list_attributes(G)
-        # nx.write_gexf(G,"data/graphs/drug_drug.gexf")
-        # nx.write_graphml(G,"data/graphs/drug_drug.graphml")
     def targettarget(self,tab=False):
         nodes=[t for d in self.drugs for t in d.targets]
         G=bipartite.weighted_projected_graph(self.__drugtarget,nodes)
@@ -413,14 +360,6 @@ class collector():
         self.__targettarget=G
         df=nx.to_pandas_edgelist(G)
         self.save_graph(self.added_new_drugs,df,G,"target_target")
-        # df.to_csv("data/graphs/target_target.tsv",sep="\t")
-        # nx.write_gpickle(G,"data/graphs/target_target.gpickle")
-        # nx.write_adjlist(G,"data/graphs/target_target.adjlist",delimiter="\t")
-        # nx.write_multiline_adjlist(G,"data/graphs/target_target.multiline_adjlist",delimiter="\t")
-        # nx.write_edgelist(G,"data/graphs/target_target.edgelist",delimiter="\t")
-        # G=stringify_list_attributes(G)
-        # nx.write_gexf(G,"data/graphs/target_target.gexf")
-        # nx.write_graphml(G,"data/graphs/target_target.graphml")
     def targetinteractors(self,tab=False):
         targets_list=set([target for drug in self.drugs for target in drug.targets.values()])
         targetinteractors=[{"Source":source.gene,"Target":target,"Score":source.string_interaction_partners[target]["score"]} for source in targets_list for target in source.string_interaction_partners]
@@ -432,14 +371,6 @@ class collector():
         self.graph_properties(G)
         self.targetinteractors=G
         self.save_graph(self.added_new_drugs,df,G,"target_interactors")
-        # df.to_csv("data/graphs/target_interactors.tsv",sep="\t")
-        # nx.write_gpickle(G,"data/graphs/target_interactors.gpickle")
-        # nx.write_adjlist(G,"data/graphs/target_interactors.adjlist",delimiter="\t")
-        # nx.write_multiline_adjlist(G,"data/graphs/target_interactors.multiline_adjlist",delimiter="\t")
-        # nx.write_edgelist(G,"data/graphs/target_interactors.edgelist",delimiter="\t")
-        # G=stringify_list_attributes(G)
-        # nx.write_gexf(G,"data/graphs/target_interactors.gexf")
-        # nx.write_graphml(G,"data/graphs/target_interactors.graphml")
     def targetdiseases(self,tab=False):
         proteins_list=set([target for drug in self.drugs for target in drug.targets.values()])
         targetdiseases=[{"Source":protein.name,"Target":disease} for protein in proteins_list for disease in protein.diseases]
@@ -452,14 +383,6 @@ class collector():
         self.graph_properties(G)
         self.__targetdiseases=G
         self.save_graph(self.added_new_drugs,df,G,"target_diseases")
-        # df.to_csv("data/graphs/target_diseases.tsv",sep="\t")
-        # nx.write_gpickle(G,"data/graphs/target_diseases.gpickle")
-        # nx.write_adjlist(G,"data/graphs/target_diseases.adjlist",delimiter="\t")
-        # nx.write_multiline_adjlist(G,"data/graphs/target_diseases.multiline_adjlist",delimiter="\t")
-        # nx.write_edgelist(G,"data/graphs/target_diseases.edgelist",delimiter="\t")
-        # G=stringify_list_attributes(G)
-        # nx.write_gexf(G,"data/graphs/target_diseases.gexf")
-        # nx.write_graphml(G,"data/graphs/target_diseases.graphml")
 
 
 COVID_drugs=collector()

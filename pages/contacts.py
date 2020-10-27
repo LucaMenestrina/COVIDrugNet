@@ -36,55 +36,40 @@ layout=dbc.Col([
                     html.H3("Contacts"),
                     html.Br(),
                     dbc.Row([
-                        dbc.Col([html.Img(src="https://icon-library.com/images/user-icon-image/user-icon-image-13.jpg", style={"width":"100%"})], xs=3, md=2, xl=1, align="center"),
+                        dbc.Col([html.Img(src="https://i1.rgstatic.net/ii/profile.image/753323955191811-1556617835990_Q512/Maurizio_Recanatini.jpg", style={"width":"100%"})], xs=3, md=2, xl=1, align="center"),#"https://icon-library.com/images/user-icon-image/user-icon-image-13.jpg"
                         dbc.Col([
                             html.H5(html.Strong("Maurizio Recanatini")),
                             html.P("Principal Investigator"),
-                            html.A("maurizio.recanatini@unibo.it", href="mailto:maurizio.recanatini@unibo.it", style={"color":"black"}),
-                            html.Br(),
-                            html.Br(),
-                            html.P([
-                                "I'm a Professor of Medicinal Chemistry since year 2000",
-                                html.Br(),
-                                "My research fields are the design/ identification of biologically active molecules and the study of target biological systems through the application of computational tools ranging from QSAR (today, we’d rather say statistical learning) to molecular modeling and simulations."
-                                ])
-                        ])
+                            html.A("maurizio.recanatini@unibo.it", href="mailto:maurizio.recanatini@unibo.it", style={"color":"black"})
+                        ], align="center")
                     ], justify="around", align="center"),
                     html.Br(),
                     html.Br(),
                     dbc.Row([
-                        dbc.Col([html.Img(src="https://f0.pngfuel.com/png/363/793/person-with-brown-hair-illustration-png-clip-art.png", style={"width":"100%"})], xs=3, md=2, xl=1, align="center"),
+                        dbc.Col([html.Img(src="https://phd.unibo.it/biotechnology-biocomputational-pharmaceutics-pharmacology/en/students/chiara-cabrelle/@@images/4705db84-e736-44e9-aff3-03d183348033.jpeg", style={"width":"100%"})], xs=3, md=2, xl=1, align="center"), #"https://f0.pngfuel.com/png/363/793/person-with-brown-hair-illustration-png-clip-art.png"
                         dbc.Col([
                             html.H5(html.Strong("Chiara Cabrelle")),
                             html.P("PhD Student in Biotechnological, Biocomputational, Pharmaceutical and Pharmacological Science"),
-                            html.A("chiara.cabrelle2@unibo.it", href="mailto:chiara.cabrelle2@unibo.it", style={"color":"black"}),
-                            html.Br(),
-                            html.Br(),
-                            html.P("Brief introduction/description "*10)
-                        ])
+                            html.A("chiara.cabrelle2@unibo.it", href="mailto:chiara.cabrelle2@unibo.it", style={"color":"black"})
+                        ], align="center")
                     ], justify="around", align="center"),
                     html.Br(),
                     html.Br(),
                     dbc.Row([
-                        dbc.Col([html.Img(src="https://icon-library.com/images/user-icon-image/user-icon-image-13.jpg", style={"width":"100%"})], xs=3, md=2, xl=1, align="center"),
+                        dbc.Col([html.Img(src="https://drive.google.com/uc?export=view&id=1toLB_a0N2PP3thAq13gCr5yHR79WFAFs", style={"width":"100%"})], xs=3, md=2, xl=1, align="center"),#https://icon-library.com/images/user-icon-image/user-icon-image-13.jpg
                         dbc.Col([
                             html.H5(html.Strong("Luca Menestrina")),
                             html.P("PhD Student in Data Science and Computation"),
                             html.A("luca.menestrina2@unibo.it", href="mailto:luca.menestrina2@unibo.it", style={"color":"black"}),
                             html.Br(),
                             html.Br(),
-                            html.P([
-                                "I'm a medicinal chemist and technology enthusiast.",
-                                html.Br(),
-                                "My research interests are.......",
-                                html.Br(),
-                                "Please help me improving this app: if you find any malfunction (sure there are...) or you have suggestions, drop me an email."
-                            ])
-                        ])
+                            html.P("Please help me improving this app: if you find any malfunction (sure there are...) or you have suggestions, drop me an email.")
+                        ], align="center")
                     ], justify="around", align="center"),
                     html.Br()
                 ], style={"padding":"2%", "width":"100%"})
-            ], style={"height":"100vh"}),
+            ]),
+            html.Div(style={"height":"5vh"}),
             footer()
         ], style={"padding":"0px"})
 

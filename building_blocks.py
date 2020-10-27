@@ -92,12 +92,12 @@ def sidebar(prefix):
                         dbc.Tooltip("Jump to Graph' Section", target=prefix+"_graph_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}),
                         dbc.NavItem(dbc.NavLink("Selected Data", href="#"+prefix+"_selected_table", external_link=True, id=prefix+"_side_selected_table", active=False, disabled=True, className="nav-link"), className="nav-item", id=prefix+"_selected_data_side"),
                         dbc.Tooltip("Jump to Selected Data' Section", target=prefix+"_selected_data_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}, id=prefix+"_selected_data_side_tooltip"),
+                        dbc.NavItem(dbc.NavLink("Plots", href="#"+prefix+"_plots",external_link=True, active=True, className="nav-link"), className="nav-item", id=prefix+"_plots_side"),
+                        dbc.Tooltip("Jump to Plots' Section", target=prefix+"_plots_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}),
                         dbc.NavItem(dbc.NavLink("Graph Properties", href="#"+prefix+"_graph_properties_table", external_link=True, active=True, className="nav-link"), className="nav-item", id=prefix+"_graph_properties_side"),
                         dbc.Tooltip("Jump to Graph Properties' Section", target=prefix+"_graph_properties_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}),
                         dbc.NavItem(dbc.NavLink("Clustering", href="#"+prefix+"_clustering",external_link=True, active=True, className="nav-link"), className="nav-item", id=prefix+"_clustering_side"),
                         dbc.Tooltip("Jump to Clustering' Section", target=prefix+"_clustering_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}),
-                        dbc.NavItem(dbc.NavLink("Plots", href="#"+prefix+"_plots",external_link=True, active=True, className="nav-link"), className="nav-item", id=prefix+"_plots_side"),
-                        dbc.Tooltip("Jump to Plots' Section", target=prefix+"_plots_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}),
                     ], align="center", style={"padding":"0px"}),
                 ],expand="xl", color="light", className="navbar navbar-light bg-light position-sticky nav", style={"position":"sticky", "top":"10vh"}),
     else:
@@ -125,7 +125,7 @@ def nodes_info(prefix):
 
 def graph_help(prefix):
     return html.Div([
-            dbc.Button("Help", id=prefix+"_help_open", block=True, className="btn btn-outline-primary"),
+            dbc.Button(html.I(className="fa fa-question-circle", style={"font-size":"0.9rem"}), id=prefix+"_help_open", block=True, className="btn btn-outline-primary"),#"Help"
             dbc.Popover([
                 dbc.PopoverHeader("Graph's Interactions"),
                 dbc.PopoverBody([
@@ -154,7 +154,7 @@ def legend(prefix):
 
 def save_graph(prefix):
     return html.Div([
-            dbc.Button("Save", id=prefix+"_save_graph_open", block=True, className="btn btn-outline-primary"),
+            dbc.Button(html.I(className="fa fa-file-download", style={"font-size":"0.9rem"}), id=prefix+"_save_graph_open", block=True, className="btn btn-outline-primary"),#"Save"
             dbc.Modal([
                 dbc.ModalHeader("Save Graph"),
                 dbc.ModalBody([
@@ -208,19 +208,121 @@ def coloring_dropdown(prefix):
 
 def highlighting(prefix, nodes):
     return html.Div([
-            dcc.Dropdown(id=prefix+"_highlighter_dropdown",options=[{"label":data["Name"],"value":data["ID"]} for data in [node["data"] for node in nodes]], placeholder="Highlight a node", multi=True, className="DropdownMenu"),
+            dcc.Dropdown(id=prefix+"_highlighter_dropdown",options=[{"label":data["Name"],"value":data["ID"]} for data in [node["data"] for node in nodes]], placeholder="Highlight a node", multi=True, className="DropdownMenu", style={"max-height":"15vh","overflow-y":"auto"}),
             dbc.Tooltip("Highlight Specific Nodes for Easier Spotting", target=prefix+"_highlighter_dropdown_div", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
         ],id=prefix+"_highlighter_dropdown_div")
+
+# def group_highlighting(prefix, nodes):
+#     if prefix=="dt":
+#         return html.Div([
+#                 dcc.Dropdown(id=prefix+"_group_highlighter_dropdown", options=[], placeholder="Highlight a group of nodes", multi=True, className="DropdownMenu", disabled=True),
+#                 dbc.Tooltip("Highlight Group of Nodes", target=prefix+"_group_highlighter_dropdown_div", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
+#             ],id=prefix+"_group_highlighter_dropdown_div")
+#     else:
+#         cumulative_options=[]
+#         if prefix=="dd":
+#             properties=["ATC Code Level 1", "Target Class"]
+#             for property in properties:
+#                 if property == "ATC Code Level 1":
+#                     all_atc=["A","B","C","D","G","H","J","L","M","N","P","R","S","V"]
+#                     cumulative_options+=[{"label":"ATC Code: "+code,"value":",".join([node["data"]["ID"] for node in nodes if code in node["data"][property]])} for code in all_atc]
+#                 elif property == "Target Class":
+#                     target_classes=sorted(set([target_class for node in nodes for target_class in node["data"]["Target Class"]]))
+#                     print(target_classes)
+#                     cumulative_options+=[{"label":property+": "+target_class,"value":",".join([node["data"]["ID"] for node in nodes if target_class in node["data"][property]])} for target_class in target_classes]
+#         if prefix=="tt":
+#             pass
+#         return html.Div([
+#                 dcc.Dropdown(id=prefix+"_group_highlighter_dropdown", options=cumulative_options, placeholder="Highlight a group of nodes", multi=True, className="DropdownMenu"),
+#                 dbc.Tooltip("Highlight Group of Nodes", target=prefix+"_group_highlighter_dropdown_div", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
+#             ],id=prefix+"_group_highlighter_dropdown_div")
+
+def group_highlighting(prefix, nodes):
+    def conjunction(id):
+        return dcc.Dropdown(id=id,options=[{"label":"AND","value":"AND"},{"label":"OR","value":"OR"}], value="OR", multi=False, searchable=False,clearable=False, className="DropdownMenu")
+    modal_body=[
+        dbc.Row([
+            dbc.Col([
+                html.Strong(html.P("Property", style={"text-align":"center"}, id=prefix+"_group_property")),
+                dbc.Tooltip("Available Nodes' Properties for Highlighting", target=prefix+"_group_property", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
+            ], width=2, align="center"),
+            dbc.Col([
+                html.Strong(html.P("Filter", style={"text-align":"center"}, id=prefix+"_group_filter")),
+                dbc.Tooltip("Chosen Filter for the Properties", target=prefix+"_group_filter", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
+            ], width=7, align="center"),
+            dbc.Col([
+                html.Strong(html.P("Logical Conjunction", style={"text-align":"center"}, id=prefix+"_group_conjunction")),
+                dbc.Tooltip("Logical Operation for Joining Filters", target=prefix+"_group_conjunction", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
+            ], width=2, align="center")
+        ], justify="around", align="center")
+    ]
+    if prefix == "dt":
+        return html.Div([
+                dbc.Button("Highlight by Property", id=prefix+"_group_highlighter_open", block=True, className="btn btn-outline-primary", disabled=True),
+                ])
+    elif prefix == "dd":
+        properties=["ATC Code Level 1", "Targets", "Enzymes", "Carriers", "Transporters", "Drug Interactions"]
+
+    elif prefix == "tt":
+        properties=["STRING Interaction Partners", "Drugs", "Diseases"]
+        for property in ["Organism", "Protein Class", "Protein Family", "Cellular Location"]:
+            all_prop=sorted(set([node["data"][property] for node in nodes]))
+            options=[{"label":prop,"value":",".join([node["data"]["ID"] for node in nodes if prop == node["data"][property]])} for prop in all_prop]
+            modal_body.append(
+                dbc.Row([
+                    dbc.Col([html.Font(property, style={"text-align":"center"})], width=2, align="center"),
+                    dbc.Col([dcc.Dropdown(options=options, multi=True, className="DropdownMenu", id=prefix+"_highlight_dropdown_"+property)], width=7, align="center"),
+                    dbc.Col([conjunction(prefix+"_conjunction_"+property)], width=2, align="center")
+                ], justify="around", align="center")
+            )
+    for property in properties:
+        all_prop=sorted(set([prop for node in nodes for prop in node["data"][property]]))
+        options=[{"label":prop,"value":",".join([node["data"]["ID"] for node in nodes if prop in node["data"][property]])} for prop in all_prop]
+        modal_body.append(
+            dbc.Row([
+                dbc.Col([html.Font(property, style={"text-align":"center"})], width=2, align="center"),
+                dbc.Col([dcc.Dropdown(options=options, multi=True, className="DropdownMenu", id=prefix+"_highlight_dropdown_"+property)], width=7, align="center"),
+                dbc.Col([conjunction(prefix+"_conjunction_"+property)], width=2, align="center")
+            ], justify="around", align="center")
+        )
+    modal_body+=[
+        html.Br(),
+        dbc.Row([
+            dbc.Col([html.Font("General Logical Conjunction", style={"text-align":"center"})], width=4, align="center"),
+            dbc.Col([conjunction(prefix+"_conjunction_general")], width=2, align="center")
+        ], justify="center", align="center"),
+        html.Br(),
+        dbc.Row([
+            dbc.Col(html.P("Highlighted nodes: ", style={"text-align":"right"}), align="center"),
+            dbc.Col(html.P(id=prefix+"_n_highlighted",style={"text-align":"left"}), align="center")
+        ], justify="center", align="center")
+    ]
+    return html.Div([
+            dbc.Button("Highlight by Property", id=prefix+"_group_highlighter_open", block=True, className="btn btn-outline-primary"),
+            dbc.Modal([
+                dbc.ModalHeader("Custom Highlighting by Property"),
+                dbc.ModalBody(modal_body),
+                dbc.ModalFooter([
+                    html.A(dbc.Button("Download", id=prefix+"_download_group_highlighting_button", className="btn btn-outline-primary"),download="highlited_nodes.tsv",id=prefix+"_download_group_highlighting_button_href", target="_blank"),
+                    dbc.Button("Clear", id=prefix+"_group_highlighter_clear", className="btn btn-outline-primary"),
+                    dbc.Button("OK", id=prefix+"_group_highlighter_close", className="btn btn-outline-primary")
+                ]),
+            ],size="lg", id=prefix+"_group_highlighting_modal"),
+            dbc.Tooltip("Highlight Nodes with Specific Properties", target=prefix+"_group_highlighter_open", placement="top", hide_arrow=True, delay={"show":500, "hide":250}),
+            html.Div(id=prefix+"_highlited_cache", style={"display":"none"}) #for temporary store highlited nodes
+        ])
+
 
 def graph(prefix,title,nodes,edges):
     return dbc.Container([
                 html.H4(title,id=prefix+"_name_graph", className="card-header"),
                 dbc.Row([
-                    dbc.Col(graph_help(prefix), width=1),
+                    dbc.Col(graph_help(prefix)),#, width=1
                     dbc.Col(legend(prefix), width=1),
-                    dbc.Col(save_graph(prefix), width=1),
+                    dbc.Col(save_graph(prefix)),#, width=1
                     dbc.Col(coloring_dropdown(prefix), width=4),
-                    dbc.Col(highlighting(prefix, nodes), width=5),
+                    dbc.Col(highlighting(prefix, nodes), width=4),
+                    dbc.Col(group_highlighting(prefix, nodes), width=2)
                 ], no_gutters=True, className="card-title", justify="around", align="center"),
                 dcc.Loading(cyto.Cytoscape(
                     id=prefix+"_graph",
@@ -344,7 +446,8 @@ def custom_clustering(prefix):
                         ], justify="around", align="center"),
                         view_custom_clusters(prefix)
                     ], align="center", style={"padding":"1%"}, xs=12, md=4)
-                ], justify="around", align="center", no_gutters=True)
+                ], justify="around", align="center", no_gutters=True),
+                html.Div(id=prefix+"_clusters_cache", style={"display":"none"}) #for temporary store computed clusters
             ], id=prefix+"_clustering", fluid=True, style={"padding":"3%"})
 
 def common_data_generator(prefix,graph,graph_title):
@@ -407,14 +510,63 @@ def get_frequency(l):
     #   d[el]=1
     return d
 
+# def degree_distribution(graph, title):
+#     K=dict(nx.get_node_attributes(graph,"Degree"))
+#     n=len(graph.nodes())
+#     p=len(graph.edges())/(n*(n-1)/2)
+#     ER=nx.fast_gnp_random_graph(n,p)
+#     ERK=dict(nx.degree(ER))
+#     power_data=pd.DataFrame({"Node degree, k":list(get_frequency(K.values()).keys())+list(get_frequency(ERK.values()).keys()),"Frequency of Nodes with degree k, n(k)":list(get_frequency(K.values()).values())+list(get_frequency(ERK.values()).values()), "Graph":[title]*len(set(K.values()))+["Erdősh Rényi Equivalent Graph"]*len(set(ERK.values()))})
+#     plot=px.scatter(data_frame=power_data,x="Node degree, k",y="Frequency of Nodes with degree k, n(k)", title="Node Degree Distribution", log_x=True, log_y=True, template="ggplot2", color="Graph", trendline="lowess")
+#     plot.update_layout({"paper_bgcolor": "rgba(0, 0, 0, 0)", "modebar":{"bgcolor":"rgba(0, 0, 0, 0)","color":"silver","activecolor":"grey"}}) # for a transparent background but keeping modebar acceptable colors
+#     return plot
+
+# def degree_distribution(graph, title):
+#     K=dict(nx.get_node_attributes(graph,"Degree"))
+#     n=len(graph.nodes())
+#     p=len(graph.edges())/(n*(n-1)/2)
+#     ER=nx.fast_gnp_random_graph(n,p)
+#     ERK=dict(nx.degree(ER))
+#     x=list(get_frequency(K.values()).keys())
+#     ERx=list(get_frequency(ERK.values()).keys())
+#     y=list(get_frequency(K.values()).values())
+#     ERy=list(get_frequency(ERK.values()).values())
+#     if x[0]==0: # to avoid problems with log10, they wouldn't be display anyway because of the loglog
+#         x=x[1:]
+#         y=y[1:]
+#     plot=go.Figure(layout={"title":{"text":"Node Degree Distribution","x":0.5, "xanchor": "center"},"xaxis":{"title_text":"Node degree, k", "type":"log"}, "yaxis":{"title_text":"Frequency of Nodes with degree k, n(k)", "type":"log"}, "template":"ggplot2"})
+#     plot.add_trace(go.Scatter(x=x,y=y, mode="markers", name="Graph"))
+#     plot.add_trace(go.Scatter(x=ERx,y=ERy, mode="lines+markers", name="Erdősh Rényi Equivalent Graph"))
+#     #trendline
+#     coeff = np.polyfit(np.log10(x), np.log10(y),1)
+#     poly = np.poly1d(coeff)
+#     yfit = lambda x: 10**(poly(np.log10(x)))
+#     plot.add_trace(go.Scatter(x=x,y=yfit(x), mode="lines", name="Graph's Linear Trendline"))
+#
+#     # power_data=pd.DataFrame({"Node degree, k":list(get_frequency(K.values()).keys())+list(get_frequency(ERK.values()).keys()),"Frequency of Nodes with degree k, n(k)":list(get_frequency(K.values()).values())+list(get_frequency(ERK.values()).values()), "Graph":[title]*len(set(K.values()))+["Erdősh Rényi Equivalent Graph"]*len(set(ERK.values()))})
+#     # plot=px.scatter(data_frame=power_data,x="Node degree, k",y="Frequency of Nodes with degree k, n(k)", title="Node Degree Distribution", log_x=True, log_y=True, template="ggplot2", color="Graph", trendline="lowess")
+#     plot.update_layout({"paper_bgcolor": "rgba(0, 0, 0, 0)", "modebar":{"bgcolor":"rgba(0, 0, 0, 0)","color":"silver","activecolor":"grey"}}) # for a transparent background but keeping modebar acceptable colors
+#     return plot
+
 def degree_distribution(graph, title):
     K=dict(nx.get_node_attributes(graph,"Degree"))
     n=len(graph.nodes())
     p=len(graph.edges())/(n*(n-1)/2)
     ER=nx.fast_gnp_random_graph(n,p)
     ERK=dict(nx.degree(ER))
-    power_data=pd.DataFrame({"Node degree, k":list(get_frequency(K.values()).keys())+list(get_frequency(ERK.values()).keys()),"Frequency of Nodes with degree k, n(k)":list(get_frequency(K.values()).values())+list(get_frequency(ERK.values()).values()), "Graph":[title]*len(set(K.values()))+["Erdősh Rényi Equivalent Graph"]*len(set(ERK.values()))})
-    plot=px.scatter(data_frame=power_data,x="Node degree, k",y="Frequency of Nodes with degree k, n(k)", title="Node Degree Distribution", log_x=True, log_y=True, template="ggplot2", color="Graph", trendline="lowess")
+    plot=go.Figure(layout={"title":{"text":"Node Degree Distribution","x":0.5, "xanchor": "center"},"xaxis":{"title_text":"Node degree, k", "type":"log"}, "yaxis":{"title_text":"Frequency of Nodes with degree k, n(k)", "type":"log"}, "template":"ggplot2"})
+    for deg,name,order,color,trendline_order in [(K,title,1,"Tomato","Linear"),(ERK,"Erdősh Rényi Equivalent Graph",2,"DeepSkyBlue","Quadratic")]:
+        x=list(get_frequency(deg.values()).keys())
+        y=list(get_frequency(deg.values()).values())
+        if x[0]==0: # to avoid problems with log10, they wouldn't be display anyway because of the loglog
+            x=x[1:]
+            y=y[1:]
+        plot.add_trace(go.Scatter(x=x,y=y, mode="markers", name=name, marker_color=color))
+        #trendline
+        coeff = np.polyfit(np.log10(x), np.log10(y),order)
+        poly = np.poly1d(coeff)
+        yfit = lambda x: 10**(poly(np.log10(x)))
+        plot.add_trace(go.Scatter(x=x,y=yfit(x), mode="lines", name=name+"'s "+trendline_order+" Trendline", line_color=color))
     plot.update_layout({"paper_bgcolor": "rgba(0, 0, 0, 0)", "modebar":{"bgcolor":"rgba(0, 0, 0, 0)","color":"silver","activecolor":"grey"}}) # for a transparent background but keeping modebar acceptable colors
     return plot
 
