@@ -212,31 +212,6 @@ def highlighting(prefix, nodes):
             dbc.Tooltip("Highlight Specific Nodes for Easier Spotting", target=prefix+"_highlighter_dropdown_div", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
         ],id=prefix+"_highlighter_dropdown_div")
 
-# def group_highlighting(prefix, nodes):
-#     if prefix=="dt":
-#         return html.Div([
-#                 dcc.Dropdown(id=prefix+"_group_highlighter_dropdown", options=[], placeholder="Highlight a group of nodes", multi=True, className="DropdownMenu", disabled=True),
-#                 dbc.Tooltip("Highlight Group of Nodes", target=prefix+"_group_highlighter_dropdown_div", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
-#             ],id=prefix+"_group_highlighter_dropdown_div")
-#     else:
-#         cumulative_options=[]
-#         if prefix=="dd":
-#             properties=["ATC Code Level 1", "Target Class"]
-#             for property in properties:
-#                 if property == "ATC Code Level 1":
-#                     all_atc=["A","B","C","D","G","H","J","L","M","N","P","R","S","V"]
-#                     cumulative_options+=[{"label":"ATC Code: "+code,"value":",".join([node["data"]["ID"] for node in nodes if code in node["data"][property]])} for code in all_atc]
-#                 elif property == "Target Class":
-#                     target_classes=sorted(set([target_class for node in nodes for target_class in node["data"]["Target Class"]]))
-#                     print(target_classes)
-#                     cumulative_options+=[{"label":property+": "+target_class,"value":",".join([node["data"]["ID"] for node in nodes if target_class in node["data"][property]])} for target_class in target_classes]
-#         if prefix=="tt":
-#             pass
-#         return html.Div([
-#                 dcc.Dropdown(id=prefix+"_group_highlighter_dropdown", options=cumulative_options, placeholder="Highlight a group of nodes", multi=True, className="DropdownMenu"),
-#                 dbc.Tooltip("Highlight Group of Nodes", target=prefix+"_group_highlighter_dropdown_div", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
-#             ],id=prefix+"_group_highlighter_dropdown_div")
-
 def group_highlighting(prefix, nodes):
     def conjunction(id):
         return dcc.Dropdown(id=id,options=[{"label":"AND","value":"AND"},{"label":"OR","value":"OR"}], value="OR", multi=False, searchable=False,clearable=False, className="DropdownMenu")
@@ -355,6 +330,47 @@ def graph(prefix,title,nodes,edges):
                     className="card border-secondary mb-3"), type="circle", color="grey"),
             ], fluid=True, id=prefix+"_graph_container")
 
+def get_frequency(l):
+    l=list(l)
+    d={}
+    for el in set(l):
+        d[el]=l.count(el)/len(l)
+    # try:
+    #   d[el]+=1
+    # except:
+    #   d[el]=1
+    return d
+
+def degree_distribution(graph, title):
+    K=dict(nx.get_node_attributes(graph,"Degree"))
+    n=len(graph.nodes())
+    p=len(graph.edges())/(n*(n-1)/2)
+    ER=nx.fast_gnp_random_graph(n,p)
+    ERK=dict(nx.degree(ER))
+    plot=go.Figure(layout={"title":{"text":"Node Degree Distribution","x":0.5, "xanchor": "center"},"xaxis":{"title_text":"Node degree, k", "type":"log"}, "yaxis":{"title_text":"Frequency of Nodes with degree k, n(k)", "type":"log"}, "template":"ggplot2"})
+    for deg,name,order,color,trendline_order in [(K,title,1,"Tomato","Linear"),(ERK,"Erdősh Rényi Equivalent Graph",2,"DeepSkyBlue","Quadratic")]:
+        x=list(get_frequency(deg.values()).keys())
+        y=list(get_frequency(deg.values()).values())
+        if x[0]==0: # to avoid problems with log10, they wouldn't be display anyway because of the loglog
+            x=x[1:]
+            y=y[1:]
+        plot.add_trace(go.Scatter(x=x,y=y, mode="markers", name=name, marker_color=color))
+        #trendline
+        coeff = np.polyfit(np.log10(x), np.log10(y),order)
+        poly = np.poly1d(coeff)
+        yfit = lambda x: 10**(poly(np.log10(x)))
+        plot.add_trace(go.Scatter(x=x,y=yfit(x), mode="lines", name=name+"'s "+trendline_order+" Trendline", line_color=color))
+    plot.update_layout({"paper_bgcolor": "rgba(0, 0, 0, 0)", "modebar":{"bgcolor":"rgba(0, 0, 0, 0)","color":"silver","activecolor":"grey"}, "legend":{"x":1}}) # for a transparent background but keeping modebar acceptable colors
+    return plot
+
+def plots(prefix, graph,title):
+    return dbc.Container([
+                html.H3("Plots"),
+                dbc.Row([
+                    dbc.Col([dbc.Spinner(dcc.Graph(figure=degree_distribution(graph,title), id=prefix+"_degree_distribution", responsive=True))], style={"padding":"0px"}, xs=12, lg=5),
+                    dbc.Col([dbc.Spinner(dbc.Container(dcc.Graph(id=prefix+"_piechart", responsive=True)))], style={"padding":"0px"}, xs=12, lg=7)
+                ], justify="around", align="center", no_gutters=True)
+            ], id=prefix+"_plots", fluid=True, style={"padding":"3%"})
 
 def graph_properties(prefix):
     return dbc.Container([
@@ -498,86 +514,6 @@ def common_data_generator(prefix,graph,graph_title):
         if os.path.isfile(name+".bkp"):
             os.remove(name+".bkp")
     return graph_properties_df,L,evals,evects,L_maj,evals_maj,evects_maj,n_clusters,n_clusters_maj,girvan_newman,maj,girvan_newman_maj,communities_modularity,communities_modularity_maj,n_comm,n_comm_maj
-
-def get_frequency(l):
-    l=list(l)
-    d={}
-    for el in set(l):
-        d[el]=l.count(el)/len(l)
-    # try:
-    #   d[el]+=1
-    # except:
-    #   d[el]=1
-    return d
-
-# def degree_distribution(graph, title):
-#     K=dict(nx.get_node_attributes(graph,"Degree"))
-#     n=len(graph.nodes())
-#     p=len(graph.edges())/(n*(n-1)/2)
-#     ER=nx.fast_gnp_random_graph(n,p)
-#     ERK=dict(nx.degree(ER))
-#     power_data=pd.DataFrame({"Node degree, k":list(get_frequency(K.values()).keys())+list(get_frequency(ERK.values()).keys()),"Frequency of Nodes with degree k, n(k)":list(get_frequency(K.values()).values())+list(get_frequency(ERK.values()).values()), "Graph":[title]*len(set(K.values()))+["Erdősh Rényi Equivalent Graph"]*len(set(ERK.values()))})
-#     plot=px.scatter(data_frame=power_data,x="Node degree, k",y="Frequency of Nodes with degree k, n(k)", title="Node Degree Distribution", log_x=True, log_y=True, template="ggplot2", color="Graph", trendline="lowess")
-#     plot.update_layout({"paper_bgcolor": "rgba(0, 0, 0, 0)", "modebar":{"bgcolor":"rgba(0, 0, 0, 0)","color":"silver","activecolor":"grey"}}) # for a transparent background but keeping modebar acceptable colors
-#     return plot
-
-# def degree_distribution(graph, title):
-#     K=dict(nx.get_node_attributes(graph,"Degree"))
-#     n=len(graph.nodes())
-#     p=len(graph.edges())/(n*(n-1)/2)
-#     ER=nx.fast_gnp_random_graph(n,p)
-#     ERK=dict(nx.degree(ER))
-#     x=list(get_frequency(K.values()).keys())
-#     ERx=list(get_frequency(ERK.values()).keys())
-#     y=list(get_frequency(K.values()).values())
-#     ERy=list(get_frequency(ERK.values()).values())
-#     if x[0]==0: # to avoid problems with log10, they wouldn't be display anyway because of the loglog
-#         x=x[1:]
-#         y=y[1:]
-#     plot=go.Figure(layout={"title":{"text":"Node Degree Distribution","x":0.5, "xanchor": "center"},"xaxis":{"title_text":"Node degree, k", "type":"log"}, "yaxis":{"title_text":"Frequency of Nodes with degree k, n(k)", "type":"log"}, "template":"ggplot2"})
-#     plot.add_trace(go.Scatter(x=x,y=y, mode="markers", name="Graph"))
-#     plot.add_trace(go.Scatter(x=ERx,y=ERy, mode="lines+markers", name="Erdősh Rényi Equivalent Graph"))
-#     #trendline
-#     coeff = np.polyfit(np.log10(x), np.log10(y),1)
-#     poly = np.poly1d(coeff)
-#     yfit = lambda x: 10**(poly(np.log10(x)))
-#     plot.add_trace(go.Scatter(x=x,y=yfit(x), mode="lines", name="Graph's Linear Trendline"))
-#
-#     # power_data=pd.DataFrame({"Node degree, k":list(get_frequency(K.values()).keys())+list(get_frequency(ERK.values()).keys()),"Frequency of Nodes with degree k, n(k)":list(get_frequency(K.values()).values())+list(get_frequency(ERK.values()).values()), "Graph":[title]*len(set(K.values()))+["Erdősh Rényi Equivalent Graph"]*len(set(ERK.values()))})
-#     # plot=px.scatter(data_frame=power_data,x="Node degree, k",y="Frequency of Nodes with degree k, n(k)", title="Node Degree Distribution", log_x=True, log_y=True, template="ggplot2", color="Graph", trendline="lowess")
-#     plot.update_layout({"paper_bgcolor": "rgba(0, 0, 0, 0)", "modebar":{"bgcolor":"rgba(0, 0, 0, 0)","color":"silver","activecolor":"grey"}}) # for a transparent background but keeping modebar acceptable colors
-#     return plot
-
-def degree_distribution(graph, title):
-    K=dict(nx.get_node_attributes(graph,"Degree"))
-    n=len(graph.nodes())
-    p=len(graph.edges())/(n*(n-1)/2)
-    ER=nx.fast_gnp_random_graph(n,p)
-    ERK=dict(nx.degree(ER))
-    plot=go.Figure(layout={"title":{"text":"Node Degree Distribution","x":0.5, "xanchor": "center"},"xaxis":{"title_text":"Node degree, k", "type":"log"}, "yaxis":{"title_text":"Frequency of Nodes with degree k, n(k)", "type":"log"}, "template":"ggplot2"})
-    for deg,name,order,color,trendline_order in [(K,title,1,"Tomato","Linear"),(ERK,"Erdősh Rényi Equivalent Graph",2,"DeepSkyBlue","Quadratic")]:
-        x=list(get_frequency(deg.values()).keys())
-        y=list(get_frequency(deg.values()).values())
-        if x[0]==0: # to avoid problems with log10, they wouldn't be display anyway because of the loglog
-            x=x[1:]
-            y=y[1:]
-        plot.add_trace(go.Scatter(x=x,y=y, mode="markers", name=name, marker_color=color))
-        #trendline
-        coeff = np.polyfit(np.log10(x), np.log10(y),order)
-        poly = np.poly1d(coeff)
-        yfit = lambda x: 10**(poly(np.log10(x)))
-        plot.add_trace(go.Scatter(x=x,y=yfit(x), mode="lines", name=name+"'s "+trendline_order+" Trendline", line_color=color))
-    plot.update_layout({"paper_bgcolor": "rgba(0, 0, 0, 0)", "modebar":{"bgcolor":"rgba(0, 0, 0, 0)","color":"silver","activecolor":"grey"}}) # for a transparent background but keeping modebar acceptable colors
-    return plot
-
-def plots(prefix, graph,title):
-    return dbc.Container([
-                html.H3("Plots"),
-                dbc.Row([
-                    dbc.Col([dbc.Spinner(dcc.Graph(figure=degree_distribution(graph,title), id=prefix+"_degree_distribution", responsive=True))], style={"padding":"0px"}, xs=12, lg=5),
-                    dbc.Col([dbc.Spinner(dbc.Container(dcc.Graph(id=prefix+"_piechart", responsive=True)))], style={"padding":"0px"}, xs=12, lg=7)
-                ], justify="around", align="center", no_gutters=True)
-            ], id=prefix+"_plots", fluid=True, style={"padding":"3%"})
 
 def footer():
     return dbc.Container([
