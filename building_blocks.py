@@ -348,19 +348,25 @@ def degree_distribution(graph, title):
     ER=nx.fast_gnp_random_graph(n,p)
     ERK=dict(nx.degree(ER))
     plot=go.Figure(layout={"title":{"text":"Node Degree Distribution","x":0.5, "xanchor": "center"},"xaxis":{"title_text":"Node degree, k", "type":"log"}, "yaxis":{"title_text":"Frequency of Nodes with degree k, n(k)", "type":"log"}, "template":"ggplot2"})
-    for deg,name,order,color,trendline_order in [(K,title,1,"Tomato","Linear"),(ERK,"Erdősh Rényi Equivalent Graph",2,"DeepSkyBlue","Quadratic")]:
+    yrange=[np.inf,-np.inf]
+    for deg,name,order,color,trendline_order in [(K,title,1,"Tomato","Linear"),(ERK,"Erdősh Rényi",2,"DeepSkyBlue","Quadratic")]:# Equivalent Graph
         x=list(get_frequency(deg.values()).keys())
         y=list(get_frequency(deg.values()).values())
         if x[0]==0: # to avoid problems with log10, they wouldn't be display anyway because of the loglog
             x=x[1:]
             y=y[1:]
+        #in order to avoid that the trendline stretches too much yaxis
+        if np.log10(min(y))<yrange[0]:
+            yrange[0]=np.log10(min(y)*0.75)
+        if np.log10(max(y))>yrange[1]:
+            yrange[1]=np.log10(max(y)*2)
         plot.add_trace(go.Scatter(x=x,y=y, mode="markers", name=name, marker_color=color))
         #trendline
         coeff = np.polyfit(np.log10(x), np.log10(y),order)
         poly = np.poly1d(coeff)
         yfit = lambda x: 10**(poly(np.log10(x)))
         plot.add_trace(go.Scatter(x=x,y=yfit(x), mode="lines", name=name+"'s "+trendline_order+" Trendline", line_color=color))
-    plot.update_layout({"paper_bgcolor": "rgba(0, 0, 0, 0)", "modebar":{"bgcolor":"rgba(0, 0, 0, 0)","color":"silver","activecolor":"grey"}, "legend":{"x":1}}) # for a transparent background but keeping modebar acceptable colors
+    plot.update_layout({"paper_bgcolor": "rgba(0, 0, 0, 0)", "modebar":{"bgcolor":"rgba(0, 0, 0, 0)","color":"silver","activecolor":"grey"}, "legend":{"x":1.25}, "yaxis":{"range":yrange}}) # for a transparent background but keeping modebar acceptable colors
     return plot
 
 def plots(prefix, graph,title):
