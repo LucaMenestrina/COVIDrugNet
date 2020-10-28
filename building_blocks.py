@@ -366,7 +366,7 @@ def degree_distribution(graph, title):
         poly = np.poly1d(coeff)
         yfit = lambda x: 10**(poly(np.log10(x)))
         plot.add_trace(go.Scatter(x=x,y=yfit(x), mode="lines", name=name+"'s "+trendline_order+" Trendline", line_color=color))
-    plot.update_layout({"paper_bgcolor": "rgba(0, 0, 0, 0)", "modebar":{"bgcolor":"rgba(0, 0, 0, 0)","color":"silver","activecolor":"grey"}, "legend":{"x":1.25}, "yaxis":{"range":yrange}}) # for a transparent background but keeping modebar acceptable colors
+    plot.update_layout({"paper_bgcolor": "rgba(0, 0, 0, 0)", "modebar":{"bgcolor":"rgba(0, 0, 0, 0)","color":"silver","activecolor":"grey"}, "legend":{"orientation":"h","yanchor":"top","y":-0.25, "xanchor":"center","x":0.5}, "yaxis":{"range":yrange}}) # for a transparent background but keeping modebar acceptable colors, "x":1.25
     return plot
 
 def plots(prefix, graph,title):

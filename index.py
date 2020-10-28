@@ -33,8 +33,9 @@ app.index_string='''
             @media (max-width: 600px) { html {font-size:60%;} }
             @media (min-width: 600px) { html {font-size:65%;} }
             @media (min-width: 768px) { html {font-size:70%;} }
-            @media (min-width: 1024px) { html {font-size:80%;} }
-            @media (min-width: 1280px) { html {font-size:90%;} }
+            @media (min-width: 1024px) { html {font-size:72.5%;} }
+            @media (min-width: 1280px) { html {font-size:75%;} }
+            @media (min-width: 1366px) { html {font-size:80%;} }
             @media (min-width: 1536px) { html {font-size:100%;} }
         </style>
     </head>
