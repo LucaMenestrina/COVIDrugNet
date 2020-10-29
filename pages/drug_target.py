@@ -32,7 +32,11 @@ file_prefix="drug_target"
 G=nx.read_gpickle("data/graphs/drug_target.gpickle")
 nx.set_node_attributes(G,nx.get_node_attributes(G,"Name"),"id")
 
-nodes=[{"data":{key:value for key,value in attributes.items()}} for node,attributes in dict(G.nodes(data=True)).items()]
+# pos=nx.kamada_kawai_layout(G, scale=1000)
+# pos=nx.spring_layout(G,k=1/(np.sqrt(len(G.nodes())/15)), scale=1000, seed=1)
+from networkx.drawing.nx_agraph import graphviz_layout
+pos=nx.rescale_layout_dict(graphviz_layout(G),len(G.nodes())*2)#3500
+nodes=[{"data":{key:value for key,value in attributes.items()}, "position":{"x":pos[node][0],"y":pos[node][1]}} for node,attributes in dict(G.nodes(data=True)).items()]
 edges=[{"data":{"source":source,"target":target}} for source,target in G.edges]
 
 layout=dbc.Col([

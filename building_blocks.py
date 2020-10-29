@@ -302,29 +302,20 @@ def graph(prefix,title,nodes,edges):
                 dcc.Loading(cyto.Cytoscape(
                     id=prefix+"_graph",
                     layout={
-                        "name":"cose",
-                        "initialTemp":2000,
-                        "coolingFactor":0.8,
-                        "minTemp":1,
-                        "refresh":30,
-                        "nodeRepulsion":2e5,
-                        "nodeOverlap":50,
-                        "numIter":2500
-                        # "nodeRepulsion":1e4,
-                        # "numIter":2500,
-                        # "tile":False,
-                        # "quality":"draft",
-                        # "gravity":100,
-                        # "animate":False,
-
-                        # "idealEdgeLength":100,
-                        # "gravity":0.2,
-                        # "gravityRange":0.05
+                        "name":"preset"
+                        # "name":"cose",
+                        # "initialTemp":2000,
+                        # "coolingFactor":0.8,
+                        # "minTemp":1,
+                        # "refresh":30,
+                        # "nodeRepulsion":2e5,
+                        # "nodeOverlap":50,
+                        # "numIter":2500
                     },
                     style={"width":"100%","height":"80vh"},
                     elements=nodes+edges,
                     boxSelectionEnabled=True,
-                    minZoom=5E-2,
+                    minZoom=7.5E-2,
                     maxZoom=10,
                     responsive=True,
                     className="card border-secondary mb-3"), type="circle", color="grey"),

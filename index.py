@@ -1,3 +1,10 @@
+#adjust cwd if not launched with "python index.py"
+import os
+path="/".join(__file__.split("/")[:-1])
+if path != "":
+    os.chdir(path)
+
+#import modules
 import dash_html_components as html
 import dash_core_components as dcc
 import dash_bootstrap_components as dbc
@@ -6,6 +13,7 @@ from dash.dependencies import Input, Output
 from app import app
 from pages import home,help,about,contacts,drug_target,drug_drug,target_target,error404#, target_disease, target_interactors
 from building_blocks import headbar, loading_banner
+
 
 app.layout = html.Div([
     dcc.Location(id="url", refresh=False),
@@ -56,23 +64,6 @@ app.index_string='''
 def temp_loading(pathname):
     if pathname:
         return loading_banner
-        # return html.Div(
-        #     html.Center([
-        #         html.Div(style={"height":"20vh"}),
-        #         dbc.Fade(
-        #             dbc.Jumbotron([
-        #                 html.H2("Sorry, it's taking some time to load ..."),
-        #                 html.Hr(),
-        #                 html.H5("Networks are becoming more and more complex,"),
-        #                 html.H5("and the browser could take a while to render the page"),
-        #                 html.P("If it takes too long (or it doesn't load at all) please let us know"),
-        #                 html.Br(),
-        #                 html.Img(src=app.get_asset_url("imgs/logo.svg"), style={"height":"10vh"}),
-        #                 html.Br(),
-        #                 html.Small("Also a small banner could appear on top of your window saing that a calculation is slowing down your browser")
-        #             ], style={"width":"40vw"}
-        #         ), is_in=True, timeout=250)]
-        #     ),id="page_content")
 
 @app.callback(Output("page_content", "children"),
             [Input("url", "pathname")])
