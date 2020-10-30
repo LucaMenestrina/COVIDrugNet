@@ -16,3 +16,4 @@ plotly==4.9.0
 beautifulsoup4==4.9.1
 rdkit==2009.Q1-1
 scikit_learn==0.23.2
+chembl_webresource_client==0.10.2

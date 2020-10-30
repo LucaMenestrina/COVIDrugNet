@@ -55,20 +55,20 @@ def headbar():
                     dbc.NavbarToggler(id="headbar_toggler"),
                     dbc.Collapse([
                         dbc.Nav([
-                            dbc.NavItem(dbc.NavLink([html.I(className="fa fa-home", style={"margin-right":"0.4rem"}),"Home"],href="/covid19drugsnetworker", active=True, className="nav-link active", external_link=True), className="nav-item", id="home_nav"),
+                            dbc.NavItem(dbc.NavLink([html.I(className="fa fa-home", style={"margin-right":"0.4rem"}),"Home"],href="/covid19drugsnetworker/home", active=True, className="nav-link active", external_link=True), className="nav-item", id="home_nav"),
                             dbc.Tooltip("COVID-19 Drugs Networker Homepage", target="home_nav", placement="bottom", hide_arrow=True, delay={"show":500, "hide":250}),
-                            dbc.NavItem(dbc.NavLink([html.I(className="fa fa-question", style={"margin-right":"0.4rem"}),"Help"],href="/help", active=True, className="nav-link active", external_link=True), className="nav-item", id="help_nav"),
+                            dbc.NavItem(dbc.NavLink([html.I(className="fa fa-question", style={"margin-right":"0.4rem"}),"Help"],href="/covid19drugsnetworker/help", active=True, className="nav-link active", external_link=True), className="nav-item", id="help_nav"),
                             dbc.Tooltip("Page Structure and Main Possible Interactions", target="help_nav", placement="bottom", hide_arrow=True, delay={"show":500, "hide":250}),
-                            dbc.NavItem(dbc.NavLink([html.I(className="fa fa-info", style={"margin-right":"0.4rem"}),"About"],href="/about", active=True, className="nav-link active", external_link=True), className="nav-item", id="about_nav"),
+                            dbc.NavItem(dbc.NavLink([html.I(className="fa fa-info", style={"margin-right":"0.4rem"}),"About"],href="/covid19drugsnetworker/about", active=True, className="nav-link active", external_link=True), className="nav-item", id="about_nav"),
                             dbc.Tooltip("Info About the Project", target="about_nav", placement="bottom", hide_arrow=True, delay={"show":500, "hide":250}),
-                            dbc.NavItem(dbc.NavLink([html.I(className="fa fa-address-book", style={"margin-right":"0.4rem"}),"Contacts"],href="/contacts", active=True, className="nav-link active", external_link=True), className="nav-item", id="contacts_nav"),
+                            dbc.NavItem(dbc.NavLink([html.I(className="fa fa-address-book", style={"margin-right":"0.4rem"}),"Contacts"],href="/covid19drugsnetworker/contacts", active=True, className="nav-link active", external_link=True), className="nav-item", id="contacts_nav"),
                             dbc.Tooltip("Project Participant's Contacts", target="contacts_nav", placement="bottom", hide_arrow=True, delay={"show":500, "hide":250}),
                             dbc.Nav([
                                 dbc.NavLink(html.I(className="fa fa-project-diagram"), active=True, className="nav-link active", style={"margin-right":"-0.6rem"}), # patch for graphs label icon
                                 dbc.DropdownMenu([
-                                    dbc.DropdownMenuItem("Drug Target", href="/drug_target", className="dropdown-item", external_link=True),
-                                    dbc.DropdownMenuItem("Drug Drug", href="/drug_drug", className="dropdown-item", external_link=True),
-                                    dbc.DropdownMenuItem("Target Target", href="/target_target", className="dropdown-item", external_link=True),
+                                    dbc.DropdownMenuItem("Drug Target", href="/covid19drugsnetworker/drug_target", className="dropdown-item", external_link=True),
+                                    dbc.DropdownMenuItem("Drug Drug", href="/covid19drugsnetworker/drug_drug", className="dropdown-item", external_link=True),
+                                    dbc.DropdownMenuItem("Target Target", href="/covid19drugsnetworker/target_target", className="dropdown-item", external_link=True),
                                     # dbc.DropdownMenuItem("Target Disease", href="/target_disease", className="dropdown-item"), # not yet available
                                     # dbc.DropdownMenuItem("Target Interactors", href="/target_interactors", className="dropdown-item") # not yet available
                                 ], nav=True, in_navbar=True, label="Graphs ...", className="nav-item dropdown active"),
@@ -146,7 +146,7 @@ def legend(prefix):
                 header="Graph's Legend",
                 id=prefix+"_legend_toast",
                 dismissable=True,
-                style={"position":"absolute","top":"-4vh","left":"-12vw", "width":"200%","z-index":"1000"},
+                style={"position":"absolute","top":"-4vh","left":"-5vw", "width":"200%","z-index":"1000"},
                 is_open=False
             ),
             dbc.Tooltip(["Graph's Legend",html.Br(),"(when available)"], target=prefix+"_legend_open", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
@@ -208,7 +208,7 @@ def coloring_dropdown(prefix):
 
 def highlighting(prefix, nodes):
     return html.Div([
-            dcc.Dropdown(id=prefix+"_highlighter_dropdown",options=[{"label":data["Name"],"value":data["ID"]} for data in [node["data"] for node in nodes]], placeholder="Highlight a node", multi=True, className="DropdownMenu", style={"max-height":"15vh","overflow-y":"auto"}),
+            dcc.Dropdown(id=prefix+"_highlighter_dropdown",options=[{"label":data["Name"],"value":data["ID"]} for data in [node["data"] for node in nodes]], placeholder="Highlight a node", multi=True, className="DropdownMenu"),#, style={"max-height":"15vh","overflow-y":"auto"} right now it is not possible to limit the overflow, otherwise it hides the selectable options
             dbc.Tooltip("Highlight Specific Nodes for Easier Spotting", target=prefix+"_highlighter_dropdown_div", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
         ],id=prefix+"_highlighter_dropdown_div")
 
@@ -486,31 +486,28 @@ def common_data_generator(prefix,graph,graph_title):
     print("\tSpectral Clustering Data Precomputing ...")
     if os.path.isfile("data/groups/"+prefix+"_spectral.pickle"):
         with open("data/groups/"+prefix+"_spectral.pickle","rb") as bkp:
-            L,evals,evects,n_clusters,L_maj,evals_maj,evects_maj,n_clusters_maj=pickle.load(bkp)
+            L,evals,evects,n_clusters,clusters,L_maj,evals_maj,evects_maj,n_clusters_maj,clusters_maj=pickle.load(bkp)
     else:
         L=nx.normalized_laplacian_matrix(graph).toarray()
         evals,evects=np.linalg.eigh(L)
-        # n_clusters=[n for n,dif in enumerate(np.diff(evals)) if dif > 2*np.average([d for d in np.diff(evals) if d>0.00001])][0]+1
-        # clusters_list=[n for n,dif in enumerate(np.diff(evals)) if dif in sorted(np.diff(evals),reverse=True)[:len(evals)//20]]
-        # n_clusters=clusters_list[0]+1 if clusters_list[0] != 0 else clusters_list[1]+1
         relevant=[n for n,dif in enumerate(np.diff(evals)) if dif > halfnorm.ppf(0.99,*halfnorm.fit(np.diff(evals)))]
         relevant=[relevant[n] for n in range(len(relevant)-1) if relevant[n]+1 != relevant[n+1]]+[relevant[-1]] #keeps only the highest value if there are consecutive ones
         n_clusters=relevant[0]+1 if (relevant[0] > 1 and relevant[0]+1 != nx.number_connected_components(graph)) else relevant[1]+1
+        km=KMeans(n_clusters=n_clusters, n_init=100)
+        clusters=km.fit_predict(evects[:,:n_clusters])
         L_maj=nx.normalized_laplacian_matrix(maj).toarray()
         evals_maj,evects_maj=np.linalg.eigh(L_maj)
-        # n_clusters_maj=[n for n,dif in enumerate(np.diff(evals_maj)) if dif > 2*np.average([d for d in np.diff(evals_maj) if d>0.00001])][0]+1
-        # n_clusters_maj=[n for n,dif in enumerate(np.diff(evals_maj)) if dif in sorted(np.diff(evals_maj),reverse=True)[:len(evals_maj)//20]][0]+1
-        # clusters_list_maj=[n for n,dif in enumerate(np.diff(evals_maj)) if dif in sorted(np.diff(evals_maj),reverse=True)[:len(evals_maj)//20]]
-        # n_clusters_maj=clusters_list_maj[0]+1 if clusters_list_maj[0] != 0 else clusters_list_maj[1]+1
         relevant_maj=[n for n,dif in enumerate(np.diff(evals_maj)) if dif > halfnorm.ppf(0.99,*halfnorm.fit(np.diff(evals_maj)))]
         relevant_maj=[relevant_maj[n] for n in range(len(relevant_maj)-1) if relevant_maj[n]+1 != relevant_maj[n+1]]+[relevant_maj[-1]] #keeps only the highest value if there are consecutive ones
         n_clusters_maj=relevant_maj[0]+1 if (relevant_maj[0] > 1 and relevant_maj[0]+1 != nx.number_connected_components(maj)) else relevant_maj[1]+1
+        km_maj=KMeans(n_clusters=n_clusters_maj, n_init=100)
+        clusters_maj=km_maj.fit_predict(evects_maj[:,:n_clusters_maj])
         name="data/groups/"+prefix+"_spectral.pickle"
         with open(name,"wb") as bkp:
-            pickle.dump([L,evals,evects,n_clusters,L_maj,evals_maj,evects_maj,n_clusters_maj],bkp)
+            pickle.dump([L,evals,evects,n_clusters,clusters,L_maj,evals_maj,evects_maj,n_clusters_maj,clusters_maj],bkp)
         if os.path.isfile(name+".bkp"):
             os.remove(name+".bkp")
-    return graph_properties_df,L,evals,evects,L_maj,evals_maj,evects_maj,n_clusters,n_clusters_maj,girvan_newman,maj,girvan_newman_maj,communities_modularity,communities_modularity_maj,n_comm,n_comm_maj
+    return graph_properties_df,L,evals,evects,n_clusters,clusters,L_maj,evals_maj,evects_maj,n_clusters_maj,clusters_maj,girvan_newman,maj,girvan_newman_maj,communities_modularity,communities_modularity_maj,n_comm,n_comm_maj
 
 def footer():
     return dbc.Container([

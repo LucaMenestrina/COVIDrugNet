@@ -303,7 +303,8 @@ def group_highlighter_callback(prefix,nodes):
     return group_highlighter, clear_group_highlighter,confirm_group_highlighter
 
 
-def highlighter_callback(prefix,G,nodes,L,evals,evects,L_maj,evals_maj,evects_maj,n_clusters,n_clusters_maj,girvan_newman,maj,girvan_newman_maj,n_comm,n_comm_maj):
+def highlighter_callback(prefix,G,nodes,L,evals,evects,n_clusters,clusters,L_maj,evals_maj,evects_maj,n_clusters_maj,clusters_maj,girvan_newman,maj,girvan_newman_maj,n_comm,n_comm_maj):
+    print("\tColoring Precomputing ...")
     ##coloring precomputing
     #components
     components=list(nx.connected_components(G))
@@ -323,8 +324,8 @@ def highlighter_callback(prefix,G,nodes,L,evals,evects,L_maj,evals_maj,evects_ma
     pie_components.update_traces(textposition="inside", textinfo="label+percent", hovertemplate=" Component: %{label} <br> Nodes: %{value} </br> %{percent} <extra></extra>")
     legend_body_components=html.P("Nodes are colored on the corresponding component")
     #spectral
-    km=KMeans(n_clusters=n_clusters, n_init=100)
-    clusters=km.fit_predict(evects[:,:n_clusters])
+    # km=KMeans(n_clusters=n_clusters, n_init=100)
+    # clusters=km.fit_predict(evects[:,:n_clusters])
     cmap=dict(zip(sorted(set(clusters)),[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/n_clusters)]))
     id_cluster=dict(zip(dict(nx.get_node_attributes(G,"ID")).values(),clusters))
     stylesheet_spectral=[]
@@ -337,8 +338,8 @@ def highlighter_callback(prefix,G,nodes,L,evals,evects,L_maj,evals_maj,evects_ma
     pie_spectral.update_traces(textposition="inside", textinfo="label+percent", hovertemplate=" Cluster: %{label} <br> Nodes: %{value} </br> %{percent} <extra></extra>")
     legend_body_spectral=html.P(["Nodes are colored on the corresponding cluster, check the ",html.A("clustering", href="#"+prefix+"_clustering")," or ",html.A("plots sections", href="#"+prefix+"_plots")," for more info"])
     #spectral_maj
-    km=KMeans(n_clusters=n_clusters_maj, n_init=100)
-    clusters_maj=km.fit_predict(evects_maj[:,:n_clusters_maj])
+    # km=KMeans(n_clusters=n_clusters_maj, n_init=100)
+    # clusters_maj=km.fit_predict(evects_maj[:,:n_clusters_maj])
     cmap=dict(zip(sorted(set(clusters_maj)),[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/n_clusters_maj)]))
     id_cluster=dict(zip(dict(nx.get_node_attributes(maj,"ID")).values(),clusters_maj))
     stylesheet_spectral_maj=[]
@@ -927,11 +928,11 @@ def toggle_view_clusters_callback(prefix):
     return toggle_view_clusters
 
 
-def build_callbacks(prefix,G,nodes,graph_properties_df,L,evals,evects,L_maj,evals_maj,evects_maj,n_clusters,n_clusters_maj,girvan_newman,maj,girvan_newman_maj,communities_modularity,communities_modularity_maj,n_comm,n_comm_maj,file_prefix):
+def build_callbacks(prefix,G,nodes,graph_properties_df,L,evals,evects,n_clusters,clusters,L_maj,evals_maj,evects_maj,n_clusters_maj,clusters_maj,girvan_newman,maj,girvan_newman_maj,communities_modularity,communities_modularity_maj,n_comm,n_comm_maj,file_prefix):
     collapse_headbar_callback(prefix)
     displayHoverNodeData_callback(prefix,G)
     group_highlighter_callback(prefix,nodes)
-    highlighter_callback(prefix,G,nodes,L,evals,evects,L_maj,evals_maj,evects_maj,n_clusters,n_clusters_maj,girvan_newman,maj,girvan_newman_maj,n_comm,n_comm_maj)
+    highlighter_callback(prefix,G,nodes,L,evals,evects,n_clusters,clusters,L_maj,evals_maj,evects_maj,n_clusters_maj,clusters_maj,girvan_newman,maj,girvan_newman_maj,n_comm,n_comm_maj)
     get_selected_clustering_callback(prefix)
     custom_clustering_section_callback(prefix,G,evals,evects,evals_maj,evects_maj,girvan_newman,maj,girvan_newman_maj,communities_modularity,communities_modularity_maj)
     get_img_callback(prefix,file_prefix)

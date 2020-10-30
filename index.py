@@ -1,6 +1,7 @@
 #adjust cwd if not launched with "python index.py"
 import os
-path="/".join(__file__.split("/")[:-1])
+# path="/".join(__file__.split("/")[:-1])
+path=__file__.split("index.py")[0]
 if path != "":
     os.chdir(path)
 
@@ -14,20 +15,14 @@ from app import app
 from pages import home,help,about,contacts,drug_target,drug_drug,target_target,error404#, target_disease, target_interactors
 from building_blocks import headbar, loading_banner
 
+server = app.server
 
 app.layout = html.Div([
     dcc.Location(id="url", refresh=False),
     headbar(),
     html.Div(id="loading_message")
 ])
-            # @media (min-device-width: 1200px) { body {initial-scale:1;} }
-            # @media (min-device-width: 768px) { body {initial-scale:0.8;} }
-            # @media (min-device-width: 600px) { body {initial-scale:0.6;} }
-            # @media (max-device-width: 600px) { body {initial-scale:0.5;} }
-            # @media (min-device-width: 1366px) { body {font-size:1rem;} }
-            # @media (min-device-width: 1024px) { body {font-size:0.8rem;} }
-            # @media (min-device-width: 720px) { body {font-size:0.6rem;} }
-            # @media (max-device-width: 720px) { body {font-size:0.5rem;} }
+
 
 app.index_string='''
 <!DOCTYPE html>
@@ -70,17 +65,17 @@ def temp_loading(pathname):
 def display_page(pathname):
     if pathname == "/covid19drugsnetworker" or pathname == "/covid19drugsnetworker/home":
         return home.layout
-    if pathname == "/help":
+    elif pathname == "/covid19drugsnetworker/help":
         return help.layout
-    if pathname == "/contacts":
+    elif pathname == "/covid19drugsnetworker/contacts":
         return contacts.layout
-    if pathname == "/about":
+    elif pathname == "/covid19drugsnetworker/about":
         return about.layout
-    if pathname == "/drug_target":
+    elif pathname == "/covid19drugsnetworker/drug_target":
         return drug_target.layout
-    elif pathname == "/drug_drug":
+    elif pathname == "/covid19drugsnetworker/drug_drug":
         return drug_drug.layout
-    if pathname == "/target_target":
+    elif pathname == "/covid19drugsnetworker/target_target":
         return target_target.layout
     # if pathname == "/target_disease":
     #     return target_disease.layout

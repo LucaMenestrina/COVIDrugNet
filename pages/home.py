@@ -1,25 +1,25 @@
-import dash
+# import dash
 import dash_core_components as dcc
 import dash_bootstrap_components as dbc
 import dash_html_components as html
-import dash_cytoscape as cyto
-from dash.dependencies import Output,Input, State
-import plotly.graph_objs as go
-import plotly.express as px
-import dash_table
+# import dash_cytoscape as cyto
+# from dash.dependencies import Output,Input, State
+# import plotly.graph_objs as go
+# import plotly.express as px
+# import dash_table
+#
+# from urllib.request import quote
+#
+# import pandas as pd
+# import numpy as np
+#
+# import networkx as nx
 
-from urllib.request import quote
+# import matplotlib.pyplot as plt
+# from matplotlib.colors import rgb2hex
+# from sklearn.cluster import KMeans
 
-import pandas as pd
-import numpy as np
-
-import networkx as nx
-
-import matplotlib.pyplot as plt
-from matplotlib.colors import rgb2hex
-from sklearn.cluster import KMeans
-
-from app import app
+# from app import app
 from building_blocks import *
 from callbacks import *
 
@@ -49,7 +49,7 @@ layout=dbc.Col([
                                 html.Img(src=app.get_asset_url("imgs/drug_target.jpg"), style={"width":"95%"}, alt="Drug Target Graph"),#"https://drive.google.com/uc?export=view&id=1Dsog5C3jKZXHssGqVCd9BOiP15KULK8W"
                                 html.H5(html.Strong("Drug Target"), className="card-header")
                             ], style={"box-shadow":"0rem 0rem 0.25rem darkgrey"})
-                        ], href="/drug_target", className="card"), #border-primary mb-3
+                        ], href="/covid19drugsnetworker/drug_target", className="card"), #border-primary mb-3
                     ], xs=12, md=3),
                     dbc.Col([
                         html.A([
@@ -57,7 +57,7 @@ layout=dbc.Col([
                                 html.Img(src=app.get_asset_url("imgs/drug_drug.jpg"), style={"width":"95%"}, alt="Drug Drug Graph"),#"https://drive.google.com/uc?export=view&id=1RMYDzIHpfsqYWMTd4qA2zWEWT0eYCAfd"
                                 html.H5(html.Strong("Drug Drug"), className="card-header")
                             ], style={"box-shadow":"0rem 0rem 0.25rem darkgrey"})
-                        ], href="/drug_drug", className="card"), #border-primary mb-3
+                        ], href="/covid19drugsnetworker/drug_drug", className="card"), #border-primary mb-3
                     ], xs=12, md=3),
                     dbc.Col([
                         html.A([
@@ -65,16 +65,16 @@ layout=dbc.Col([
                                 html.Img(src=app.get_asset_url("imgs/target_target.jpg"), style={"width":"95%"}, alt="Target Target Graph"),#"https://drive.google.com/uc?export=view&id=1iDDwsBgJanpOjUAYEE6yuwMmS9D43ap4"
                                 html.H5(html.Strong("Target Target"), className="card-header")
                             ], style={"box-shadow":"0rem 0rem 0.25rem darkgrey"})
-                        ], href="/target_target", className="card"),#border-primary mb-3
+                        ], href="/covid19drugsnetworker/target_target", className="card"),#border-primary mb-3
                     ], xs=12, md=3)
                 ], justify="center", align="center"),
                 html.Div(style={"height":"10vh"}),
                 dbc.Row([
                     dbc.Col([
                         html.Center([
-                            html.P([html.Font("For help browsing the app check the "),html.A("Help", href="/help"),html.Font(" section")]),
-                            html.P([html.Font("Otherwise feel free to "),html.A("reach us out", href="/contacts")]),
-                            html.P([html.Font("Info and credits about the project can be found in the "),html.A("About", href="/about"),html.Font(" section")])
+                            html.P([html.Font("For help browsing the app check the "),html.A("Help", href="/covid19drugsnetworker/help"),html.Font(" section")]),
+                            html.P([html.Font("Otherwise feel free to "),html.A("reach us out", href="/covid19drugsnetworker/contacts")]),
+                            html.P([html.Font("Info and credits about the project can be found in the "),html.A("About", href="/covid19drugsnetworker/about"),html.Font(" section")])
                         ])
                     ], width=10)
                 ], no_gutters=True, justify="center", align="center"),

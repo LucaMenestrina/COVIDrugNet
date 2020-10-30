@@ -1,25 +1,25 @@
-import dash
+# import dash
 import dash_core_components as dcc
 import dash_bootstrap_components as dbc
 import dash_html_components as html
-import dash_cytoscape as cyto
-from dash.dependencies import Output,Input, State
-import plotly.graph_objs as go
-import plotly.express as px
-import dash_table
-
-from urllib.request import quote
-
-import pandas as pd
-import numpy as np
-
-import networkx as nx
-
-import matplotlib.pyplot as plt
-from matplotlib.colors import rgb2hex
-from sklearn.cluster import KMeans
-
-from app import app
+# import dash_cytoscape as cyto
+# from dash.dependencies import Output,Input, State
+# import plotly.graph_objs as go
+# import plotly.express as px
+# import dash_table
+#
+# from urllib.request import quote
+#
+# import pandas as pd
+# import numpy as np
+#
+# import networkx as nx
+#
+# import matplotlib.pyplot as plt
+# from matplotlib.colors import rgb2hex
+# from sklearn.cluster import KMeans
+#
+# from app import app
 from building_blocks import *
 from callbacks import *
 
@@ -27,32 +27,6 @@ from callbacks import *
 # app.title="COVID-19 Drugs Networker"
 
 prefix="error404"
-
-# layout=dbc.Col([
-#             headbar(prefix),
-#             dbc.Col([
-#                 html.Br(),
-#                 dbc.Col([
-#                     html.Center([
-#                         html.Div(style={"height":"10vh"}),
-#                         html.H2("404 Page Not Found"),
-#                         html.Br(),
-#                         html.H3("Sorry, we can't find that page ..."),
-#                         html.Br(),
-#                         html.H5("Please check the URL and try again ..."),
-#                         html.Div(style={"height":"25vh"})
-#                     ]),
-#                     dbc.Row([
-#                         dbc.Col(width=1),
-#                         dbc.Col([
-#                             html.P([html.Font("Try to go back to our "),html.A("homepage", href="/covid19drugsnetworker")]),
-#                             html.P([html.Font("If the problem persists, please "),html.A("let us know", href="mailto:luca.menestrina2@unibo.it")])
-#                         ])
-#                     ])
-#                 ], style={"padding":"2%", "width":"100%"})
-#             ], style={"height":"100vh"}),
-#             footer()
-#         ], style={"padding":"0px"})
 
 layout=dbc.Col([
             # headbar(prefix),
@@ -67,7 +41,7 @@ layout=dbc.Col([
                             html.Br(),
                             html.Hr(),
                             html.Br(),
-                            html.P([html.Font("Try to go back to our "),html.A("homepage", href="/covid19drugsnetworker")]),
+                            html.P([html.Font("Try to go back to our "),html.A("homepage", href="/covid19drugsnetworker/home")]),
                             html.P([html.Font("If the problem persists, please "),html.A("let us know", href="mailto:luca.menestrina2@unibo.it")])
                         ], style={"width":"50vw"})
                     ])
