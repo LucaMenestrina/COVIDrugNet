@@ -1,6 +1,5 @@
 #adjust cwd if not launched with "python index.py"
 import os
-# path="/".join(__file__.split("/")[:-1])
 path=__file__.split("index.py")[0]
 if path != "":
     os.chdir(path)
@@ -24,36 +23,6 @@ app.layout = html.Div([
 ])
 
 
-app.index_string='''
-<!DOCTYPE html>
-<html>
-    <head>
-        {%metas%}
-        <title>{%title%}</title>
-        {%favicon%}
-        {%css%}
-        <style>
-            @media (max-width: 600px) { html {font-size:60%;} }
-            @media (min-width: 600px) { html {font-size:65%;} }
-            @media (min-width: 768px) { html {font-size:70%;} }
-            @media (min-width: 1024px) { html {font-size:72.5%;} }
-            @media (min-width: 1280px) { html {font-size:75%;} }
-            @media (min-width: 1366px) { html {font-size:80%;} }
-            @media (min-width: 1536px) { html {font-size:100%;} }
-        </style>
-    </head>
-    <body>
-        {%app_entry%}
-        <footer>
-            {%config%}
-            {%scripts%}
-            {%renderer%}
-        </footer>
-    </body>
-</html>
-'''
-
-
 @app.callback(Output("loading_message", "children"),
             [Input("url", "pathname")])
 def temp_loading(pathname):
@@ -63,7 +32,7 @@ def temp_loading(pathname):
 @app.callback(Output("page_content", "children"),
             [Input("url", "pathname")])
 def display_page(pathname):
-    if pathname == "/covid19drugsnetworker" or pathname == "/covid19drugsnetworker/home":
+    if pathname in ["/covid19drugsnetworker", "/covid19drugsnetworker/", "/covid19drugsnetworker/home"]:
         return home.layout
     elif pathname == "/covid19drugsnetworker/help":
         return help.layout
@@ -84,5 +53,9 @@ def display_page(pathname):
     else:
         return error404.layout
 
+
 if __name__ == "__main__":
     app.run_server(debug=False)
+elif __name__ == "index":
+    # custom setting for deploying it with wsgi using from index import server as application (if setting a WSGIScriptAlias to /covid19drugsnetworker/)
+    app.config.update({"requests_pathname_prefix":"/covid19drugsnetworker/"})

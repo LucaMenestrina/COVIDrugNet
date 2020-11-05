@@ -7,12 +7,16 @@ meta=[
         "content": "Luca Menestrina"
     },
     {
+        "name": "affilitaion",
+        "content": "University of Bologna"
+    },
+    {
         "name": "title",
         "content": "COVID-19 Drugs Networker"
     },
     {
         "name": "description",
-        "content": "Collects and visualizes network info about drugs and targets related to COVID-19 "
+        "content": "Visualize and Analyze Networks about Drugs and Targets Related to COVID-19"
     },
     {
         "name": "viewport",
@@ -27,7 +31,57 @@ font_awesome = {
         "crossorigin": "anonymous"
     }
 
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.LUMEN, font_awesome], suppress_callback_exceptions=True, meta_tags=meta, assets_folder="data")
+app_entry='''
+<div id="react-entry-point">
+    <div class="_dash-loading">
+        <center>
+            <div style="height:15vh;"></div>
+            <img src="/assets/imgs/logo.svg" alt="COVID-19 Drugs Networker" style="height:60vh">
+            <div style="height:2vh;"></div>
+            <h3>
+                Loading ...
+            </h3>
+        </center>
+    </div>
+</div>
+'''
 
-# server = app.server
-app.title="COVID-19 Drugs Networker"
+class CustomDash(dash.Dash):
+    def interpolate_index(self, **kwargs):
+        return '''
+        <!DOCTYPE html>
+        <html>
+            <head>
+                {metas}
+                <title>COVID-19 Drugs Networker</title>
+                {favicon}
+                {css}
+                <style>
+                    @media (max-width: 600px) {{ html {{font-size:60%;}} }}
+                    @media (min-width: 600px) {{ html {{font-size:65%;}} }}
+                    @media (min-width: 768px) {{ html {{font-size:70%;}} }}
+                    @media (min-width: 1024px) {{ html {{font-size:72.5%;}} }}
+                    @media (min-width: 1280px) {{ html {{font-size:75%;}} }}
+                    @media (min-width: 1366px) {{ html {{font-size:80%;}} }}
+                    @media (min-width: 1536px) {{ html {{font-size:100%;}} }}
+                </style>
+            </head>
+            <body>
+                {app_entry}
+                <footer>
+                    {config}
+                    {scripts}
+                    {renderer}
+                </footer>
+            </body>
+        </html>
+        '''.format(
+            metas=kwargs["metas"],
+            favicon=kwargs["favicon"],
+            css=kwargs["css"],
+            app_entry=app_entry,#kwargs["app_entry"],
+            config=kwargs["config"],
+            scripts=kwargs["scripts"],
+            renderer=kwargs["renderer"])
+
+app = CustomDash(__name__, external_stylesheets=[dbc.themes.LUMEN, font_awesome], suppress_callback_exceptions=True, meta_tags=meta, assets_folder="data")

@@ -35,10 +35,9 @@ loading_banner = html.Div(
                     html.Hr(),
                     html.H5("Networks are becoming more and more complex"),
                     html.H5("and the browser could take a while to render the page"),
-                    html.P(["If it takes too long (or it doesn't load at all) please let us know"]),#, html.A("let us know", href="mailto:luca.menestrina2@unibo.it")
-                    # html.Img(src=app.get_asset_url("imgs/icon.png"), style={"height":"10vh"}),
-                    html.Br(),
-                    html.Small("A small banner could also appear on top of your window saing that a calculation is slowing down your browser")
+                    html.P(["If it takes too long (or it doesn't load at all) please let us know"]),
+                    # html.Br(),
+                    # html.Small("A small banner could also appear on top of your window saying that a calculation is slowing down your browser")
                 ], style={"width":"40vw"}
             ), is_in=True, timeout=250)]
         ),id="page_content")
@@ -48,7 +47,7 @@ def headbar():
                 dbc.Container([
                     html.A(
                         dbc.Row([
-                            html.Img(src=app.get_asset_url("imgs/logo_white.svg"), style={"height":"4vh", "margin-right":"1rem"}),#"https://drive.google.com/uc?export=view&id=1itcOUu62U0YHlNMQITA-17rR-iYIqXz3"
+                            html.Img(src=app.get_asset_url("imgs/logo_white.svg"), style={"height":"4vh", "margin-right":"1rem"}),
                             dbc.NavbarBrand("COVID-19 Drugs Networker")
                         ], no_gutters=True, justify="start", align="center"),
                     href="/covid19drugsnetworker", className="card-link"),
@@ -72,7 +71,7 @@ def headbar():
                                     # dbc.DropdownMenuItem("Target Disease", href="/target_disease", className="dropdown-item"), # not yet available
                                     # dbc.DropdownMenuItem("Target Interactors", href="/target_interactors", className="dropdown-item") # not yet available
                                 ], nav=True, in_navbar=True, label="Graphs ...", className="nav-item dropdown active"),
-                            ], className="nav-item", id="other_graphs_nav"),#patch for dropdownmeno label icon , style={"margin-right":"-0.5rem"}
+                            ], className="nav-item", id="other_graphs_nav"),
                             dbc.Tooltip("Browse Other Available Graphs", target="other_graphs_nav", placement="left", hide_arrow=True, delay={"show":500, "hide":250})
                         ], className="ml-auto", navbar=True)
                     ], id="headbar_collapse", navbar=True)
@@ -326,10 +325,6 @@ def get_frequency(l):
     d={}
     for el in set(l):
         d[el]=l.count(el)/len(l)
-    # try:
-    #   d[el]+=1
-    # except:
-    #   d[el]=1
     return d
 
 def degree_distribution(graph, title):
@@ -340,7 +335,7 @@ def degree_distribution(graph, title):
     ERK=dict(nx.degree(ER))
     plot=go.Figure(layout={"title":{"text":"Node Degree Distribution","x":0.5, "xanchor": "center"},"xaxis":{"title_text":"Node degree, k", "type":"log"}, "yaxis":{"title_text":"Frequency of Nodes with degree k, n(k)", "type":"log"}, "template":"ggplot2"})
     yrange=[np.inf,-np.inf]
-    for deg,name,order,color,trendline_order in [(K,title,1,"Tomato","Linear"),(ERK,"Erdősh Rényi",2,"DeepSkyBlue","Quadratic")]:# Equivalent Graph
+    for deg,name,order,color,trendline_order in [(K,title,1,"Tomato","Linear"),(ERK,"Erdős Rényi",2,"DeepSkyBlue","Quadratic")]:# Equivalent Graph
         x=list(get_frequency(deg.values()).keys())
         y=list(get_frequency(deg.values()).values())
         if x[0]==0: # to avoid problems with log10, they wouldn't be display anyway because of the loglog
@@ -364,8 +359,8 @@ def plots(prefix, graph,title):
     return dbc.Container([
                 html.H3("Plots"),
                 dbc.Row([
-                    dbc.Col([dbc.Spinner(dcc.Graph(figure=degree_distribution(graph,title), id=prefix+"_degree_distribution", responsive=True))], style={"padding":"0px"}, xs=12, lg=5),
-                    dbc.Col([dbc.Spinner(dbc.Container(dcc.Graph(id=prefix+"_piechart", responsive=True)))], style={"padding":"0px"}, xs=12, lg=7)
+                    dbc.Col([dbc.Spinner(dbc.Container(dcc.Graph(id=prefix+"_piechart", responsive=True)))], style={"padding":"0px"}, xs=12, lg=6),
+                    dbc.Col([dbc.Spinner(dcc.Graph(figure=degree_distribution(graph,title), id=prefix+"_degree_distribution", responsive=True))], style={"padding":"0px"}, xs=12, lg=6)
                 ], justify="around", align="center", no_gutters=True)
             ], id=prefix+"_plots", fluid=True, style={"padding":"3%"})
 
@@ -374,7 +369,6 @@ def graph_properties(prefix):
                 dbc.Col([
                     html.H3("Graph Properties"),
                     dbc.Row([
-                        # dbc.Col(width=1), # just to move everything to the right (justify doesn't work)
                         dbc.Col([
                             dbc.Checklist(options=[{"label":"Selected","value":True}],id=prefix+"_only_selected_properties", labelStyle={"white-space":"nowrap"}, switch=True),
                             dbc.Tooltip(["Show only those nodes that are manually selected in the Graph",html.Br(),"(If there are...)"], target=prefix+"_only_selected_properties", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
@@ -516,5 +510,4 @@ def footer():
                     html.Br(),
                     html.Small("App developed by Luca Menestrina, Department of Pharmacy and Biotechnology, University of Bologna, Italy")
                 ], style={"margin":"0px"})
-                # dbc.Row(html.Small("Copyright \u00A9 2020 Luca Menestrina All rights reserved")) # controllo le licenze di github
             ], fluid=True, className="bg-light", style={"box-shadow":"0 0 0.4rem #CDCDCD", "z-index":"1000", "padding":"0.5%", "padding-left":"1%", "position":"absolute","bottom":"0"})

@@ -1,25 +1,7 @@
-# import dash
 import dash_core_components as dcc
 import dash_bootstrap_components as dbc
 import dash_html_components as html
-# import dash_cytoscape as cyto
-# from dash.dependencies import Output,Input, State
-# import plotly.graph_objs as go
-# import plotly.express as px
-# import dash_table
-#
-# from urllib.request import quote
-#
-# import pandas as pd
-# import numpy as np
-#
-# import networkx as nx
-#
-# import matplotlib.pyplot as plt
-# from matplotlib.colors import rgb2hex
-# from sklearn.cluster import KMeans
-#
-# from app import app
+
 from building_blocks import *
 from callbacks import *
 
@@ -29,7 +11,6 @@ from callbacks import *
 prefix="error404"
 
 layout=dbc.Col([
-            # headbar(prefix),
             dbc.Col([
                 html.Br(),
                 dbc.Col([
