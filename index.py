@@ -55,7 +55,9 @@ def display_page(pathname):
 
 
 if __name__ == "__main__":
+    print("Ready!\n")
     app.run_server(debug=False)
 elif __name__ == "index":
     # custom setting for deploying it with wsgi using from index import server as application (if setting a WSGIScriptAlias to /covid19drugsnetworker/)
     app.config.update({"requests_pathname_prefix":"/covid19drugsnetworker/"})
+    print("Ready!\n")

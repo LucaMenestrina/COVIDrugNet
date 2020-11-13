@@ -9,6 +9,7 @@ from callbacks import *
 # app.title="COVID-19 Drugs Networker"
 
 prefix="home"
+print("Loading "+prefix.capitalize()+" ...")
 
 layout=dbc.Col([
             dbc.Col([
@@ -53,6 +54,7 @@ layout=dbc.Col([
                 ], no_gutters=True, justify="center", align="center"),
                 html.Div(style={"height":"10vh"})
             ]),
+            html.Div(style={"height":"10vh"}),
             footer()
         ], style={"padding":"0px", "min-height":"100vh"})
 

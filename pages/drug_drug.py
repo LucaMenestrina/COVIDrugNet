@@ -13,6 +13,7 @@ from callbacks import *
 prefix="dd"
 graph_title="Drug Drug"
 file_prefix="drug_drug"
+print("Loading "+graph_title+" ...")
 
 G=nx.read_gpickle("data/graphs/drug_drug.gpickle")
 nx.set_node_attributes(G,nx.get_node_attributes(G,"Name"),"id")
@@ -51,7 +52,7 @@ layout=dbc.Col([
 
 ##  ----------  CALLBACKS   ------------
 
-build_callbacks(prefix,G,nodes,*common_data_generator(prefix,G,graph_title),file_prefix)
+build_callbacks(prefix,G,nodes,*common_data_generator(prefix,G),file_prefix)
 
 
 # if __name__=="__main__":

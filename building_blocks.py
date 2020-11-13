@@ -42,6 +42,51 @@ loading_banner = html.Div(
             ), is_in=True, timeout=250)]
         ),id="page_content")
 
+def common_data_generator(prefix,graph):
+    graph_properties_df=pd.DataFrame({node:{prop:values[prop] for prop in ["Name","Degree", "Closeness Centrality", "Betweenness Centrality", "Eigenvector Centrality", "Clustering Coefficient", "VoteRank Score"]} for node,values in dict(graph.nodes(data=True)).items()}).T
+    maj=graph.subgraph(max(list(nx.connected_components(graph)), key=len))
+    print("\tCommunities Detection Data Precomputing ...")
+    if os.path.isfile("data/groups/"+prefix+"_communities.pickle"):
+        with open("data/groups/"+prefix+"_communities.pickle","rb") as bkp:
+            girvan_newman,girvan_newman_maj,communities_modularity,communities_modularity_maj,n_comm,n_comm_maj=pickle.load(bkp)
+    else:
+        girvan_newman={len(comm):comm for comm in tqdm(nx.algorithms.community.girvan_newman(graph))}
+        girvan_newman_maj={len(comm):comm for comm in tqdm(nx.algorithms.community.girvan_newman(maj))}
+        communities_modularity={modularity(graph,community):n for n,community in girvan_newman.items()}
+        n_comm=communities_modularity[max(communities_modularity)]
+        communities_modularity_maj={modularity(maj,community):n for n,community in girvan_newman_maj.items()}
+        n_comm_maj=communities_modularity_maj[max(communities_modularity_maj)]
+        name="data/groups/"+prefix+"_communities.pickle"
+        with open(name,"wb") as bkp:
+            pickle.dump([girvan_newman,girvan_newman_maj,communities_modularity,communities_modularity_maj,n_comm,n_comm_maj],bkp)
+        if os.path.isfile(name+".bkp"):
+            os.remove(name+".bkp")
+    print("\tSpectral Clustering Data Precomputing ...")
+    if os.path.isfile("data/groups/"+prefix+"_spectral.pickle"):
+        with open("data/groups/"+prefix+"_spectral.pickle","rb") as bkp:
+            L,evals,evects,n_clusters,clusters,L_maj,evals_maj,evects_maj,n_clusters_maj,clusters_maj=pickle.load(bkp)
+    else:
+        L=nx.normalized_laplacian_matrix(graph).toarray()
+        evals,evects=np.linalg.eigh(L)
+        relevant=[n for n,dif in enumerate(np.diff(evals)) if dif > halfnorm.ppf(0.99,*halfnorm.fit(np.diff(evals)))]
+        relevant=[relevant[n] for n in range(len(relevant)-1) if relevant[n]+1 != relevant[n+1]]+[relevant[-1]] #keeps only the highest value if there are consecutive ones
+        n_clusters=relevant[0]+1 if (relevant[0] > 1 and relevant[0]+1 != nx.number_connected_components(graph)) else relevant[1]+1
+        km=KMeans(n_clusters=n_clusters, n_init=100)
+        clusters=km.fit_predict(evects[:,:n_clusters])
+        L_maj=nx.normalized_laplacian_matrix(maj).toarray()
+        evals_maj,evects_maj=np.linalg.eigh(L_maj)
+        relevant_maj=[n for n,dif in enumerate(np.diff(evals_maj)) if dif > halfnorm.ppf(0.99,*halfnorm.fit(np.diff(evals_maj)))]
+        relevant_maj=[relevant_maj[n] for n in range(len(relevant_maj)-1) if relevant_maj[n]+1 != relevant_maj[n+1]]+[relevant_maj[-1]] #keeps only the highest value if there are consecutive ones
+        n_clusters_maj=relevant_maj[0]+1 if (relevant_maj[0] > 1 and relevant_maj[0]+1 != nx.number_connected_components(maj)) else relevant_maj[1]+1
+        km_maj=KMeans(n_clusters=n_clusters_maj, n_init=100)
+        clusters_maj=km_maj.fit_predict(evects_maj[:,:n_clusters_maj])
+        name="data/groups/"+prefix+"_spectral.pickle"
+        with open(name,"wb") as bkp:
+            pickle.dump([L,evals,evects,n_clusters,clusters,L_maj,evals_maj,evects_maj,n_clusters_maj,clusters_maj],bkp)
+        if os.path.isfile(name+".bkp"):
+            os.remove(name+".bkp")
+    return graph_properties_df,L,evals,evects,n_clusters,clusters,L_maj,evals_maj,evects_maj,n_clusters_maj,clusters_maj,girvan_newman,maj,girvan_newman_maj,communities_modularity,communities_modularity_maj,n_comm,n_comm_maj
+
 def headbar():
     return dbc.Navbar(
                 dbc.Container([
@@ -456,52 +501,6 @@ def custom_clustering(prefix):
                 ], justify="around", align="center", no_gutters=True),
                 html.Div(id=prefix+"_clusters_cache", style={"display":"none"}) #for temporary store computed clusters
             ], id=prefix+"_clustering", fluid=True, style={"padding":"3%"})
-
-def common_data_generator(prefix,graph,graph_title):
-    print(graph_title)
-    graph_properties_df=pd.DataFrame({node:{prop:values[prop] for prop in ["Name","Degree", "Closeness Centrality", "Betweenness Centrality", "Eigenvector Centrality", "Clustering Coefficient", "VoteRank Score"]} for node,values in dict(graph.nodes(data=True)).items()}).T
-    maj=graph.subgraph(max(list(nx.connected_components(graph)), key=len))
-    print("\tCommunities Detection Data Precomputing ...")
-    if os.path.isfile("data/groups/"+prefix+"_communities.pickle"):
-        with open("data/groups/"+prefix+"_communities.pickle","rb") as bkp:
-            girvan_newman,girvan_newman_maj,communities_modularity,communities_modularity_maj,n_comm,n_comm_maj=pickle.load(bkp)
-    else:
-        girvan_newman={len(comm):comm for comm in tqdm(nx.algorithms.community.girvan_newman(graph))}
-        girvan_newman_maj={len(comm):comm for comm in tqdm(nx.algorithms.community.girvan_newman(maj))}
-        communities_modularity={modularity(graph,community):n for n,community in girvan_newman.items()}
-        n_comm=communities_modularity[max(communities_modularity)]
-        communities_modularity_maj={modularity(maj,community):n for n,community in girvan_newman_maj.items()}
-        n_comm_maj=communities_modularity_maj[max(communities_modularity_maj)]
-        name="data/groups/"+prefix+"_communities.pickle"
-        with open(name,"wb") as bkp:
-            pickle.dump([girvan_newman,girvan_newman_maj,communities_modularity,communities_modularity_maj,n_comm,n_comm_maj],bkp)
-        if os.path.isfile(name+".bkp"):
-            os.remove(name+".bkp")
-    print("\tSpectral Clustering Data Precomputing ...")
-    if os.path.isfile("data/groups/"+prefix+"_spectral.pickle"):
-        with open("data/groups/"+prefix+"_spectral.pickle","rb") as bkp:
-            L,evals,evects,n_clusters,clusters,L_maj,evals_maj,evects_maj,n_clusters_maj,clusters_maj=pickle.load(bkp)
-    else:
-        L=nx.normalized_laplacian_matrix(graph).toarray()
-        evals,evects=np.linalg.eigh(L)
-        relevant=[n for n,dif in enumerate(np.diff(evals)) if dif > halfnorm.ppf(0.99,*halfnorm.fit(np.diff(evals)))]
-        relevant=[relevant[n] for n in range(len(relevant)-1) if relevant[n]+1 != relevant[n+1]]+[relevant[-1]] #keeps only the highest value if there are consecutive ones
-        n_clusters=relevant[0]+1 if (relevant[0] > 1 and relevant[0]+1 != nx.number_connected_components(graph)) else relevant[1]+1
-        km=KMeans(n_clusters=n_clusters, n_init=100)
-        clusters=km.fit_predict(evects[:,:n_clusters])
-        L_maj=nx.normalized_laplacian_matrix(maj).toarray()
-        evals_maj,evects_maj=np.linalg.eigh(L_maj)
-        relevant_maj=[n for n,dif in enumerate(np.diff(evals_maj)) if dif > halfnorm.ppf(0.99,*halfnorm.fit(np.diff(evals_maj)))]
-        relevant_maj=[relevant_maj[n] for n in range(len(relevant_maj)-1) if relevant_maj[n]+1 != relevant_maj[n+1]]+[relevant_maj[-1]] #keeps only the highest value if there are consecutive ones
-        n_clusters_maj=relevant_maj[0]+1 if (relevant_maj[0] > 1 and relevant_maj[0]+1 != nx.number_connected_components(maj)) else relevant_maj[1]+1
-        km_maj=KMeans(n_clusters=n_clusters_maj, n_init=100)
-        clusters_maj=km_maj.fit_predict(evects_maj[:,:n_clusters_maj])
-        name="data/groups/"+prefix+"_spectral.pickle"
-        with open(name,"wb") as bkp:
-            pickle.dump([L,evals,evects,n_clusters,clusters,L_maj,evals_maj,evects_maj,n_clusters_maj,clusters_maj],bkp)
-        if os.path.isfile(name+".bkp"):
-            os.remove(name+".bkp")
-    return graph_properties_df,L,evals,evects,n_clusters,clusters,L_maj,evals_maj,evects_maj,n_clusters_maj,clusters_maj,girvan_newman,maj,girvan_newman_maj,communities_modularity,communities_modularity_maj,n_comm,n_comm_maj
 
 def footer():
     return dbc.Container([

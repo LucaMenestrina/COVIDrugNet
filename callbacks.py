@@ -146,7 +146,7 @@ def selectedTable_callback(prefix):
                         html.Br(),
                         dbc.Row([
                             html.H3("Selected Drugs"),
-                            dbc.Button("Download", href=drugs_href, target="_blank", className="btn btn-outline-primary")
+                            html.A(dbc.Button("Download", className="btn btn-outline-primary"),href=drugs_href, download="selected_drugs.tsv", target="_blank"),
                         ], justify="around", align="center"),
                         html.Br(),
                         drugs_table]
@@ -183,7 +183,7 @@ def selectedTable_callback(prefix):
                         html.Br(),
                         dbc.Row([
                             html.H3("Selected Targets"),
-                            dbc.Button("Download", href=targets_href, target="_blank", className="btn btn-outline-primary")
+                            html.A(dbc.Button("Download", className="btn btn-outline-primary"),href=targets_href, download="selected_targets.tsv", target="_blank"),
                         ], justify="around", align="center"),
                         html.Br(),
                         targets_table]

@@ -384,26 +384,26 @@ class collector():
         self.__targetdiseases=G
         self.save_graph(self.added_new_drugs,df,G,"target_diseases")
 
+if __name__ == "__main__":
+    COVID_drugs=collector()
 
-COVID_drugs=collector()
+    # for debugging
+    # rem=drug("Remdesivir","DB14761").advanced_init([])
+    # print(COVID_drugs.excluded)
 
-# for debugging
-# rem=drug("Remdesivir","DB14761").advanced_init([])
-# print(COVID_drugs.excluded)
+    # COVID_drugs.drugtarget()
+    # COVID_drugs.drugdrug()
+    # COVID_drugs.targettarget()
 
-# COVID_drugs.drugtarget()
-# COVID_drugs.drugdrug()
-# COVID_drugs.targettarget()
-
-if COVID_drugs.added_new_drugs == True:
-    # COVID_drugs.chemicalspace()
-    COVID_drugs.drugtarget()
-    COVID_drugs.drugdrug()
-    COVID_drugs.targettarget()
-    # COVID_drugs.targetinteractors()
-    # COVID_drugs.targetdiseases()
-    for prefix in ["dt","dd","tt"]:
-        for group in ["communities","spectral"]:
-            name="data/groups/"+prefix+"_"+group+".pickle"
-            if os.path.isfile(name):
-                os.rename(name,name+".bkp")
+    if COVID_drugs.added_new_drugs == True:
+        # COVID_drugs.chemicalspace()
+        COVID_drugs.drugtarget()
+        COVID_drugs.drugdrug()
+        COVID_drugs.targettarget()
+        # COVID_drugs.targetinteractors()
+        # COVID_drugs.targetdiseases()
+        for prefix in ["dt","dd","tt"]:
+            for group in ["communities","spectral"]:
+                name="data/groups/"+prefix+"_"+group+".pickle"
+                if os.path.isfile(name):
+                    os.rename(name,name+".bkp")

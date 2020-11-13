@@ -9,6 +9,7 @@ from callbacks import *
 # app.title="COVID-19 Networker"
 
 prefix="contacts"
+print("Loading "+prefix.capitalize()+" ...")
 
 layout=dbc.Col([
             dbc.Col([
