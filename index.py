@@ -1,3 +1,8 @@
+#Just a log print
+import datetime
+StartTimePrint=datetime.datetime.now()
+print("Starting COVID-19 Drugs Networker")
+
 #adjust cwd if not launched with "python index.py"
 import os
 path=__file__.split("index.py")[0]
@@ -55,9 +60,9 @@ def display_page(pathname):
 
 
 if __name__ == "__main__":
-    print("Ready!\n")
+    print("Ready!\t(startup time: %s)\n"%(datetime.datetime.now()-StartTimePrint))
     app.run_server(debug=False)
 elif __name__ == "index":
     # custom setting for deploying it with wsgi using from index import server as application (if setting a WSGIScriptAlias to /covid19drugsnetworker/)
     app.config.update({"requests_pathname_prefix":"/covid19drugsnetworker/"})
-    print("Ready!\n")
+    print("Ready!\t(startup time: %s)\n"%(datetime.datetime.now()-StartTimePrint))
