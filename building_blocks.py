@@ -334,7 +334,14 @@ def group_highlighting(prefix, nodes):
 
 def graph(prefix,title,nodes,edges):
     return dbc.Container([
-                html.H4(title,id=prefix+"_name_graph", className="card-header"),
+                dbc.Row([
+                    dbc.Col([
+                        html.H4(title,id=prefix+"_name_graph", style={"margin-bottom":"0"})
+                    ]),
+                    dbc.Col([
+                        html.H5("%d nodes"%len(nodes), style={"margin-bottom":"0", "text-align":"right"})
+                    ])
+                ],no_gutters=True, justify="between", align="center", className="card-header"),
                 dbc.Row([
                     dbc.Col(graph_help(prefix)),#, width=1
                     dbc.Col(legend(prefix), width=1),
@@ -401,6 +408,7 @@ def degree_distribution(graph, title):
     return plot
 
 def plots(prefix, graph,title):
+    title=title.split(" ")[0]
     return dbc.Container([
                 html.H3("Plots"),
                 dbc.Row([

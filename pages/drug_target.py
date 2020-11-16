@@ -11,7 +11,7 @@ from callbacks import *
 # app=dash.Dash(__name__, external_stylesheets=[dbc.themes.FLATLY])
 # app.title="COVID-19 Networker"
 prefix="dt"
-graph_title="Drug Target"
+graph_title="Drug-Target Network"
 file_prefix="drug_target"
 print("Loading "+graph_title+" ...")
 
