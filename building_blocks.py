@@ -313,6 +313,13 @@ def group_highlighting(prefix, nodes):
         ], justify="center", align="center"),
         html.Br(),
         dbc.Row([
+            dbc.Col([
+                dbc.Checklist(options=[{"label":"Only Major Component","value":True}],id=prefix+"_only_major_highlighted_groups", labelStyle={"white-space":"nowrap"}, switch=True)
+            ], width=4, align="center")
+        ], justify="center", align="center"),
+        html.Br(),
+        html.Br(),
+        dbc.Row([
             dbc.Col(html.P("Highlighted nodes: ", style={"text-align":"right"}), align="center"),
             dbc.Col(html.P(id=prefix+"_n_highlighted",style={"text-align":"left"}), align="center")
         ], justify="center", align="center")

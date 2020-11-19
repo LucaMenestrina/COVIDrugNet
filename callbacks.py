@@ -253,7 +253,7 @@ def properties_table_callback(prefix,graph_properties_df,nodes):
         return dbc.Table.from_dataframe(df, bordered=True, className="table table-hover", id=prefix+"_graph_properties_table"), href, options
     return properties_table
 
-def group_highlighter_callback(prefix,nodes):
+def group_highlighter_callback(prefix,nodes,maj):
     def unite(conjunction,ll):
         if not ll:
             return []
@@ -281,17 +281,20 @@ def group_highlighter_callback(prefix,nodes):
             Output(prefix+"_download_group_highlighting_button_href","href"),
             Output(prefix+"_download_group_highlighting_button","disabled"),
         ],
-        [Input(prefix+"_highlight_dropdown_"+property,"value") for property in properties]+[Input(prefix+"_conjunction_"+property,"value") for property in properties]+[Input(prefix+"_conjunction_general","value")]
+        [Input(prefix+"_only_major_highlighted_groups","value")]+[Input(prefix+"_highlight_dropdown_"+property,"value") for property in properties]+[Input(prefix+"_conjunction_"+property,"value") for property in properties]+[Input(prefix+"_conjunction_general","value")]
     )
-    def group_highlighter(*values):
+    def group_highlighter(only_maj,*values):
         highlighted_values=dict(zip(["highlighted_"+property for property in properties]+["conjunction_"+property for property in properties]+["conjunction_general"],values))
         highlighted=unite(highlighted_values["conjunction_general"],[unite(highlighted_values["conjunction_"+property],highlighted_values["highlighted_"+property]) for property in properties])
         if highlighted:
+            if only_maj:
+                maj_id=list(nx.get_node_attributes(maj,"ID").values())
+                highlighted=[id for id in highlighted if id in maj_id]
             attributes=["Name"]+properties
             href="data:text/csv;charset=utf-8,"+quote(pd.DataFrame([{attribute:(", ".join(node["data"][attribute]) if isinstance(node["data"][attribute],list) else node["data"][attribute]) for attribute in attributes} for node in nodes if node["data"]["ID"] in highlighted], columns=attributes).to_csv(sep="\t", index=False, encoding="utf-8"))
             return list(highlighted),len(highlighted),href,False
         else:
-            return None,0,"#",True
+            return None,0,"",True
 
     @app.callback(
         [Output(prefix+"_highlight_dropdown_"+property,"value") for property in properties]+[Output(prefix+"_conjunction_"+property,"value") for property in properties]+[Output(prefix+"_conjunction_general","value")],
@@ -876,7 +879,7 @@ def toggle_view_clusters_callback(prefix):
 def build_callbacks(prefix,G,nodes,graph_properties_df,L,evals,evects,n_clusters,clusters,L_maj,evals_maj,evects_maj,n_clusters_maj,clusters_maj,girvan_newman,maj,girvan_newman_maj,communities_modularity,communities_modularity_maj,n_comm,n_comm_maj,file_prefix):
     collapse_headbar_callback(prefix)
     displayHoverNodeData_callback(prefix,G)
-    group_highlighter_callback(prefix,nodes)
+    group_highlighter_callback(prefix,nodes,maj)
     highlighter_callback(prefix,G,nodes,L,evals,evects,n_clusters,clusters,L_maj,evals_maj,evects_maj,n_clusters_maj,clusters_maj,girvan_newman,maj,girvan_newman_maj,n_comm,n_comm_maj)
     get_selected_clustering_callback(prefix)
     custom_clustering_section_callback(prefix,G,evals,evects,evals_maj,evects_maj,girvan_newman,maj,girvan_newman_maj,communities_modularity,communities_modularity_maj)
