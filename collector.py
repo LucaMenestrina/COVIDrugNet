@@ -121,7 +121,7 @@ class drug():
         return "%s (%s)"%(self.name, self.id)
     #more functions shoud be added
     def summary(self):
-        return pd.DataFrame({"ID":self.id,"SMILES":self.smiles,"ATC Code Level 1":[self.atc1],"ATC Identifier":[self.atc_identifier],"Targets":[[t.name for t in self.targets.values()]],"Enzymes":[[e.name for e in self.enzymes.values()]],"Carriers":[[c.name for c in self.carriers.values()]],"Transporters":[[t.name for t in self.transporters.values()]],"Target Class":[self.target_class],"Drug Interactions":[[d.name for d in self.drug_interactions]]},index=[self.name])
+        return pd.DataFrame({"ID":self.id,"SMILES":self.smiles,"ATC Code Level 1":[self.atc1],"ATC Code Level 2":[self.atc2],"ATC Code Level 3":[self.atc3],"ATC Code Level 4":[self.atc4],"ATC Identifier":[self.atc_identifier],"Targets":[[t.name for t in self.targets.values()]],"Enzymes":[[e.name for e in self.enzymes.values()]],"Carriers":[[c.name for c in self.carriers.values()]],"Transporters":[[t.name for t in self.transporters.values()]],"Target Class":[self.target_class],"Drug Interactions":[[d.name for d in self.drug_interactions]]},index=[self.name])
 
 
 class protein():

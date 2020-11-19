@@ -21,7 +21,7 @@ layout=dbc.Col([
                         html.A([
                             html.Center([
                                 html.Img(src=app.get_asset_url("imgs/drug_target.jpg"), style={"width":"95%"}, alt="Drug Target Graph"),
-                                html.H5(html.Strong("Drug Target"), className="card-header")
+                                html.H5(html.Strong("Drug-Target Network"), className="card-header")
                             ], style={"box-shadow":"0rem 0rem 0.25rem darkgrey"})
                         ], href="/covid19drugsnetworker/drug_target", className="card"),
                     ], xs=12, md=3),
@@ -29,7 +29,7 @@ layout=dbc.Col([
                         html.A([
                             html.Center([
                                 html.Img(src=app.get_asset_url("imgs/drug_drug.jpg"), style={"width":"95%"}, alt="Drug Drug Graph"),
-                                html.H5(html.Strong("Drug Drug"), className="card-header")
+                                html.H5(html.Strong("Drug-Drug Projection"), className="card-header")
                             ], style={"box-shadow":"0rem 0rem 0.25rem darkgrey"})
                         ], href="/covid19drugsnetworker/drug_drug", className="card"),
                     ], xs=12, md=3),
@@ -37,7 +37,7 @@ layout=dbc.Col([
                         html.A([
                             html.Center([
                                 html.Img(src=app.get_asset_url("imgs/target_target.jpg"), style={"width":"95%"}, alt="Target Target Graph"),
-                                html.H5(html.Strong("Target Target"), className="card-header")
+                                html.H5(html.Strong("Target-Target Projection"), className="card-header")
                             ], style={"box-shadow":"0rem 0rem 0.25rem darkgrey"})
                         ], href="/covid19drugsnetworker/target_target", className="card"),
                     ], xs=12, md=3)

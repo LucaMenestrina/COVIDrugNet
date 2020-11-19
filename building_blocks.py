@@ -110,12 +110,12 @@ def headbar():
                             dbc.Nav([
                                 dbc.NavLink(html.I(className="fa fa-project-diagram"), active=True, className="nav-link active", style={"margin-right":"-0.6rem"}), # patch for graphs label icon
                                 dbc.DropdownMenu([
-                                    dbc.DropdownMenuItem("Drug Target", href="/covid19drugsnetworker/drug_target", className="dropdown-item", external_link=True),
-                                    dbc.DropdownMenuItem("Drug Drug", href="/covid19drugsnetworker/drug_drug", className="dropdown-item", external_link=True),
-                                    dbc.DropdownMenuItem("Target Target", href="/covid19drugsnetworker/target_target", className="dropdown-item", external_link=True),
+                                    dbc.DropdownMenuItem("Drug-Target Network", href="/covid19drugsnetworker/drug_target", className="dropdown-item", external_link=True),
+                                    dbc.DropdownMenuItem("Drug-Drug Projection", href="/covid19drugsnetworker/drug_drug", className="dropdown-item", external_link=True),
+                                    dbc.DropdownMenuItem("Target-Target Projection", href="/covid19drugsnetworker/target_target", className="dropdown-item", external_link=True),
                                     # dbc.DropdownMenuItem("Target Disease", href="/target_disease", className="dropdown-item"), # not yet available
                                     # dbc.DropdownMenuItem("Target Interactors", href="/target_interactors", className="dropdown-item") # not yet available
-                                ], nav=True, in_navbar=True, label="Graphs ...", className="nav-item dropdown active"),
+                                ], nav=True, in_navbar=True, right=True, label="Graphs ...", className="nav-item dropdown active"),
                             ], className="nav-item", id="other_graphs_nav"),
                             dbc.Tooltip("Browse Other Available Graphs", target="other_graphs_nav", placement="left", hide_arrow=True, delay={"show":500, "hide":250})
                         ], className="ml-auto", navbar=True)
@@ -134,8 +134,8 @@ def sidebar(prefix):
                     dbc.Col([
                         dbc.NavItem(dbc.NavLink("Graph", href="#"+prefix+"_graph_container", external_link=True, active=True, className="nav-link"), className="nav-item", id=prefix+"_graph_side"),
                         dbc.Tooltip("Jump to Graph' Section", target=prefix+"_graph_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}),
-                        dbc.NavItem(dbc.NavLink("Selected Data", href="#"+prefix+"_selected_table", external_link=True, id=prefix+"_side_selected_table", active=False, disabled=True, className="nav-link"), className="nav-item", id=prefix+"_selected_data_side"),
-                        dbc.Tooltip("Jump to Selected Data' Section", target=prefix+"_selected_data_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}, id=prefix+"_selected_data_side_tooltip"),
+                        dbc.NavItem(dbc.NavLink("Inspected Data", href="#"+prefix+"_inspected_table", external_link=True, id=prefix+"_side_inspected_table", active=False, disabled=True, className="nav-link"), className="nav-item", id=prefix+"_inspected_data_side"),
+                        dbc.Tooltip("Jump to Inspected Data' Section", target=prefix+"_inspected_data_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}, id=prefix+"_inspected_data_side_tooltip"),
                         dbc.NavItem(dbc.NavLink("Plots", href="#"+prefix+"_plots",external_link=True, active=True, className="nav-link"), className="nav-item", id=prefix+"_plots_side"),
                         dbc.Tooltip("Jump to Plots' Section", target=prefix+"_plots_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}),
                         dbc.NavItem(dbc.NavLink("Graph Properties", href="#"+prefix+"_graph_properties_table", external_link=True, active=True, className="nav-link"), className="nav-item", id=prefix+"_graph_properties_side"),
@@ -253,7 +253,8 @@ def coloring_dropdown(prefix):
 def highlighting(prefix, nodes):
     return html.Div([
             dcc.Dropdown(id=prefix+"_highlighter_dropdown",options=[{"label":data["Name"],"value":data["ID"]} for data in [node["data"] for node in nodes]], placeholder="Highlight a node", multi=True, className="DropdownMenu"),#, style={"max-height":"15vh","overflow-y":"auto"} right now it is not possible to limit the overflow, otherwise it hides the selectable options
-            dbc.Tooltip("Highlight Specific Nodes for Easier Spotting", target=prefix+"_highlighter_dropdown_div", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
+            dbc.Tooltip("Highlight Specific Nodes for Easier Spotting", target=prefix+"_highlighter_dropdown_div", placement="top", hide_arrow=True, delay={"show":500, "hide":250}),
+            html.Div(id=prefix+"_highlighted_data_cache", style={"display":"none"}) #for temporary store highlighted nodes data
         ],id=prefix+"_highlighter_dropdown_div")
 
 def group_highlighting(prefix, nodes):
@@ -280,7 +281,7 @@ def group_highlighting(prefix, nodes):
                 dbc.Button("Highlight by Property", id=prefix+"_group_highlighter_open", block=True, className="btn btn-outline-primary", disabled=True),
                 ])
     elif prefix == "dd":
-        properties=["ATC Code Level 1", "Targets", "Enzymes", "Carriers", "Transporters", "Drug Interactions"]
+        properties=["ATC Code Level 1", "ATC Code Level 2", "ATC Code Level 3", "ATC Code Level 4", "Targets", "Enzymes", "Carriers", "Transporters", "Drug Interactions"]
 
     elif prefix == "tt":
         properties=["STRING Interaction Partners", "Drugs", "Diseases"]
@@ -322,13 +323,13 @@ def group_highlighting(prefix, nodes):
                 dbc.ModalHeader("Custom Highlighting by Property"),
                 dbc.ModalBody(modal_body),
                 dbc.ModalFooter([
-                    html.A(dbc.Button("Download", id=prefix+"_download_group_highlighting_button", className="btn btn-outline-primary"),download="highlited_nodes.tsv",id=prefix+"_download_group_highlighting_button_href", target="_blank"),
+                    html.A(dbc.Button("Download", id=prefix+"_download_group_highlighting_button", className="btn btn-outline-primary"),download="highlighted_nodes.tsv",id=prefix+"_download_group_highlighting_button_href", target="_blank"),
                     dbc.Button("Clear", id=prefix+"_group_highlighter_clear", className="btn btn-outline-primary"),
                     dbc.Button("OK", id=prefix+"_group_highlighter_close", className="btn btn-outline-primary")
                 ]),
             ],size="lg", id=prefix+"_group_highlighting_modal"),
             dbc.Tooltip("Highlight Nodes with Specific Properties", target=prefix+"_group_highlighter_open", placement="top", hide_arrow=True, delay={"show":500, "hide":250}),
-            html.Div(id=prefix+"_highlited_cache", style={"display":"none"}) #for temporary store highlited nodes
+            html.Div(id=prefix+"_highlighted_cache", style={"display":"none"}) #for temporary store highlighted nodes
         ])
 
 
@@ -371,6 +372,25 @@ def graph(prefix,title,nodes,edges):
                     responsive=True,
                     className="card border-secondary mb-3"), type="circle", color="grey"),
             ], fluid=True, id=prefix+"_graph_container")
+
+def inspected_data(prefix):
+    return dbc.Collapse([
+        dbc.Container([
+            dbc.Row([
+                dbc.Col(html.H3("Inspected Data"), xs=12, md=3),
+                dbc.Col(dcc.Dropdown(options=[
+                    {"label":"Only Selected", "value":"selected"},
+                    {"label":"Only Highlighted", "value":"highlighted"},
+                    {"label":"Selected OR Highlighted ", "value":"selected_or_highlighted"},
+                    {"label":"Selected AND Highlighted ", "value":"selected_and_highlighted"}
+                ], id=prefix+"_inspected_dropdown", value="selected_or_highlighted", multi=False, searchable=False, clearable=False, className="DropdownMenu"), xs=12, md=3),
+                dbc.Col(html.H5("XYZ Nodes", style={"text-align":"right"}, id=prefix+"_n_inspected_nodes"), xs=12, md=2)
+            ], justify="start", align="center"),
+            html.Br(),
+            dbc.Row(dbc.Col(id=prefix+"_inspected_table", align="center"), no_gutters=True, justify="center", align="center"),
+        ] , fluid=True, style={"padding":"3%"}),
+        html.Div(id=prefix+"_inspected_cache", style={"display":"none"}) #for temporary store inspected data
+    ],id=prefix+"_inspected_data")
 
 def get_frequency(l):
     l=list(l)
@@ -423,8 +443,8 @@ def graph_properties(prefix):
                     html.H3("Graph Properties"),
                     dbc.Row([
                         dbc.Col([
-                            dbc.Checklist(options=[{"label":"Selected","value":True}],id=prefix+"_only_selected_properties", labelStyle={"white-space":"nowrap"}, switch=True),
-                            dbc.Tooltip(["Show only those nodes that are manually selected in the Graph",html.Br(),"(If there are...)"], target=prefix+"_only_selected_properties", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
+                            dbc.Checklist(options=[{"label":"Inspected","value":True}],id=prefix+"_only_inspected_properties", labelStyle={"white-space":"nowrap"}, switch=True),
+                            dbc.Tooltip(["Show only those nodes that are manually selected or highlighted in the Graph",html.Br(),"(If there are...)"], target=prefix+"_only_inspected_properties", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
                         ], align="center", xs=2, lg=1),
                         dbc.Col([
                             dcc.Dropdown(id=prefix+"_search_properties", placeholder="Search Specific Nodes ...", multi=True, className="DropdownMenu")

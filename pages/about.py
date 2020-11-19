@@ -97,7 +97,7 @@ layout=dbc.Col([
                     html.Br(),
                     html.Ul([
                         html.Li([
-                            html.A("Python3 base", href="https://www.python.org/", target="_blank", style={"color":"black"}),
+                            html.A("Python 3", href="https://www.python.org/", target="_blank", style={"color":"black"}),
                             html.Ul([
                                 html.Li(html.A("Pandas", href="https://pandas.pydata.org/", target="_blank", style={"color":"black"})),
                                 html.Li(html.A("Numpy", href="https://numpy.org/", target="_blank", style={"color":"black"})),
@@ -106,11 +106,20 @@ layout=dbc.Col([
                                 html.Li(html.A("Json", href="https://docs.python.org/3/library/json.html", target="_blank", style={"color":"black"})),
                                 html.Li(html.A("Itertools", href="https://docs.python.org/3/library/itertools.html", target="_blank", style={"color":"black"})),
                                 html.Li(html.A("Requests", href="https://requests.readthedocs.io/en/master/", target="_blank", style={"color":"black"})),
-                                html.Li(html.A("Matplotlib Pyplot", href="https://matplotlib.org/", target="_blank", style={"color":"black"})),
+                                html.Li([
+                                    html.A("Matplotlib Pyplot", href="https://matplotlib.org/", target="_blank", style={"color":"black"}),
+                                    #https://ieeexplore.ieee.org/document/4160265
+                                ]),
                             ])
                         ]),
-                        html.Li(html.A("NetworkX", href="https://networkx.org/", target="_blank", style={"color":"black"})),
-                        html.Li(html.A("Plotly", href="https://plotly.com/", target="_blank", style={"color":"black"})),
+                        html.Li([
+                            html.A("NetworkX", href="https://networkx.org/", target="_blank", style={"color":"black"}),
+                            #http://conference.scipy.org/proceedings/SciPy2008/paper_2/
+                        ]),
+                        html.Li([
+                            html.A("Plotly", href="https://plotly.com/", target="_blank", style={"color":"black"}),
+                            #https://plotly.com/chart-studio-help/citations/
+                        ]),
                         html.Li([
                             html.A("Dash", href="https://plotly.com/dash/", target="_blank", style={"color":"black"}),
                             html.Ul([
@@ -121,10 +130,19 @@ layout=dbc.Col([
                             ])
                         ]),
                         html.Li(html.A("PubChemPy", href="https://pubchempy.readthedocs.io/", target="_blank", style={"color":"black"})),
-                        html.Li(html.A("ChEMBL Webresource Client", href="https://github.com/chembl/chembl_webresource_client", target="_blank", style={"color":"black"})),
+                        html.Li([
+                            html.A("ChEMBL Webresource Client", href="https://github.com/chembl/chembl_webresource_client", target="_blank", style={"color":"black"}),
+                            #https://github.com/chembl/chembl_webresource_client
+                        ]),
                         html.Li(html.A("Beautiful Soup", href="https://www.crummy.com/software/BeautifulSoup/", target="_blank", style={"color":"black"})),
-                        html.Li(html.A("Rdkit", href="https://www.rdkit.org/", target="_blank", style={"color":"black"})),
-                        html.Li(html.A("Scikit-learn", href="https://www.rdkit.org/", target="_blank", style={"color":"black"})),
+                        html.Li([
+                            html.A("Rdkit", href="https://www.rdkit.org/", target="_blank", style={"color":"black"}),
+                            #https://rdkit-discuss.narkive.com/9QGX4Vxh/is-there-a-way-to-cite-rdkit-in-a-paper
+                        ]),
+                        html.Li([
+                            html.A("Scikit-learn", href="https://scikit-learn.org/", target="_blank", style={"color":"black"}),
+                            #https://scikit-learn.org/stable/about.html#citing-scikit-learn
+                        ]),
                         html.Li(html.A("Tqdm", href="https://github.com/tqdm/tqdm", target="_blank", style={"color":"black"})),
                     ]),
                     html.Br(),

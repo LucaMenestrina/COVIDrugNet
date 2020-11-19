@@ -7,8 +7,6 @@ import plotly.express as px
 
 from urllib.request import quote
 
-import json
-
 import pandas as pd
 import numpy as np
 
@@ -106,20 +104,47 @@ def displayHoverNodeData_callback(prefix,G):
         return data["id"],img,attributes_list,warning
     return displayHoverNodeData
 
-def selectedTable_callback(prefix):
+def inspected_table_callback(prefix):
     @app.callback(
         [
-            Output(prefix+"_selected_table","children"),
-            Output(prefix+"_side_selected_table","active"),
-            Output(prefix+"_side_selected_table","disabled"),
-            Output(prefix+"_selected_data_side_tooltip","style")
+            Output(prefix+"_inspected_table","children"),
+            Output(prefix+"_side_inspected_table","active"),
+            Output(prefix+"_side_inspected_table","disabled"),
+            Output(prefix+"_inspected_data_side_tooltip","style"),
+            Output(prefix+"_inspected_data","is_open"),
+            Output(prefix+"_n_inspected_nodes","children"),
+            Output(prefix+"_inspected_cache","value")
         ],
-        [Input(prefix+"_graph", "selectedNodeData")]
+        [
+            Input(prefix+"_graph", "selectedNodeData"),
+            Input(prefix+"_highlighted_data_cache","value"),
+            Input(prefix+"_inspected_dropdown","value")
+        ]
     )
-    def selectedTable(data):
+    def inspected_table(selected_data,highlighted_data,to_inspect):
+        results=[html.H5("No Data to Show"),html.P("(Try changing the value of the dropdown menu)")]
+        open=False
+        visibility={"visibility":"hidden"}
+        if not selected_data:
+            selected_data=[]
+        selected={data["ID"]:data for data in selected_data}
+        highlighted={data["ID"]:data for data in highlighted_data}
+        merged=selected.copy()
+        merged.update(highlighted)
+        if len(merged)>1:
+            open=True
+            visibility=None
+        if to_inspect == "selected":
+            data=selected_data
+        elif to_inspect == "highlighted":
+            data=highlighted_data
+        elif to_inspect == "selected_or_highlighted":
+            data=list(merged.values())
+        else:
+            data=[merged[id] for id in set(selected.keys()).intersection(set(highlighted.keys()))]
         if data:
-            if len(data)>1:
-                results=[html.H3("Selected Data")]
+            if len(data)>=1 and open:
+                results=[]
                 drugs_data=[d for d in data if d["kind"]=="Drug"]
                 if len(drugs_data)>0:
                     attributes=["Name","ID","ATC Code Level 1","ATC Identifier","SMILES","Targets","Enzymes","Carriers","Transporters","Drug Interactions"]
@@ -145,7 +170,7 @@ def selectedTable_callback(prefix):
                     results+=[
                         html.Br(),
                         dbc.Row([
-                            html.H3("Selected Drugs"),
+                            html.H4("Inspected Drugs"),
                             html.A(dbc.Button("Download", className="btn btn-outline-primary"),href=drugs_href, download="selected_drugs.tsv", target="_blank"),
                         ], justify="around", align="center"),
                         html.Br(),
@@ -182,20 +207,20 @@ def selectedTable_callback(prefix):
                     results+=[
                         html.Br(),
                         dbc.Row([
-                            html.H3("Selected Targets"),
+                            html.H4("Inspected Targets"),
                             html.A(dbc.Button("Download", className="btn btn-outline-primary"),href=targets_href, download="selected_targets.tsv", target="_blank"),
                         ], justify="around", align="center"),
                         html.Br(),
                         targets_table]
 
-                return dbc.Container(results, fluid=True, style={"padding":"3%"}), True, False, None
+                return dbc.Container(results, fluid=True), True, False, visibility, open, "%d Nodes"%len(data), data
             else:
-                return None, False, True, {"visibility":"hidden"}
+                return dbc.Container(results, fluid=True, style={"padding":"3%"}), False, True, visibility, open, None, []
         else:
-            return None, False, True, {"visibility":"hidden"}
-    return selectedTable
+            return dbc.Container(results, fluid=True, style={"padding":"3%"}), False, True, visibility, open, None, []
+    return inspected_table
 
-def propertiesTable_callback(prefix,graph_properties_df,nodes):
+def properties_table_callback(prefix,graph_properties_df,nodes):
     @app.callback(
         [
             Output(prefix+"_graph_properties_table_container","children"),
@@ -206,15 +231,15 @@ def propertiesTable_callback(prefix,graph_properties_df,nodes):
             Input(prefix+"_search_properties","value"),
             Input(prefix+"_properties_table_sorting","value"),
             Input(prefix+"_properties_table_rows","value"),
-            Input(prefix+"_only_selected_properties","value"),
-            Input(prefix+"_graph", "selectedNodeData")
+            Input(prefix+"_only_inspected_properties","value"),
+            Input(prefix+"_inspected_cache", "value")
         ]
     )
-    def propertiesTable(search,sorting,rows,only_selected,selected_data):
+    def properties_table(search,sorting,rows,only_inspected,inspected_data):
         df=graph_properties_df.copy()
-        if only_selected and selected_data:#!= None
-            df=df.loc[[node["Name"] for node in selected_data]]
-            options=[{"label":name,"value":name} for name in [node["Name"] for node in selected_data]]
+        if only_inspected and inspected_data:
+            df=df.loc[[node["Name"] for node in inspected_data]]
+            options=[{"label":name,"value":name} for name in [node["Name"] for node in inspected_data]]
         else:
             options=[{"label":data["Name"],"value":data["Name"]} for data in [node["data"] for node in nodes]]
         if search:
@@ -226,7 +251,7 @@ def propertiesTable_callback(prefix,graph_properties_df,nodes):
         if rows != "all":
             df=df.head(rows)
         return dbc.Table.from_dataframe(df, bordered=True, className="table table-hover", id=prefix+"_graph_properties_table"), href, options
-    return propertiesTable
+    return properties_table
 
 def group_highlighter_callback(prefix,nodes):
     def unite(conjunction,ll):
@@ -245,13 +270,13 @@ def group_highlighter_callback(prefix,nodes):
     if prefix == "dt":
         properties=[]
     elif prefix == "dd":
-        properties=["ATC Code Level 1", "Targets", "Enzymes", "Carriers", "Transporters", "Drug Interactions"]
+        properties=["ATC Code Level 1", "ATC Code Level 2", "ATC Code Level 3", "ATC Code Level 4", "Targets", "Enzymes", "Carriers", "Transporters", "Drug Interactions"]
     elif prefix == "tt":
         properties=["STRING Interaction Partners", "Drugs", "Diseases", "Organism", "Protein Class", "Protein Family", "Cellular Location"]
 
     @app.callback(
         [
-            Output(prefix+"_highlited_cache","value"),
+            Output(prefix+"_highlighted_cache","value"),
             Output(prefix+"_n_highlighted","children"),
             Output(prefix+"_download_group_highlighting_button_href","href"),
             Output(prefix+"_download_group_highlighting_button","disabled"),
@@ -260,11 +285,11 @@ def group_highlighter_callback(prefix,nodes):
     )
     def group_highlighter(*values):
         highlighted_values=dict(zip(["highlighted_"+property for property in properties]+["conjunction_"+property for property in properties]+["conjunction_general"],values))
-        highlited=unite(highlighted_values["conjunction_general"],[unite(highlighted_values["conjunction_"+property],highlighted_values["highlighted_"+property]) for property in properties])
-        if highlited:
+        highlighted=unite(highlighted_values["conjunction_general"],[unite(highlighted_values["conjunction_"+property],highlighted_values["highlighted_"+property]) for property in properties])
+        if highlighted:
             attributes=["Name"]+properties
-            href="data:text/csv;charset=utf-8,"+quote(pd.DataFrame([{attribute:(", ".join(node["data"][attribute]) if isinstance(node["data"][attribute],list) else node["data"][attribute]) for attribute in attributes} for node in nodes if node["data"]["ID"] in highlited], columns=attributes).to_csv(sep="\t", index=False, encoding="utf-8"))
-            return list(highlited),len(highlited),href,False
+            href="data:text/csv;charset=utf-8,"+quote(pd.DataFrame([{attribute:(", ".join(node["data"][attribute]) if isinstance(node["data"][attribute],list) else node["data"][attribute]) for attribute in attributes} for node in nodes if node["data"]["ID"] in highlighted], columns=attributes).to_csv(sep="\t", index=False, encoding="utf-8"))
+            return list(highlighted),len(highlighted),href,False
         else:
             return None,0,"#",True
 
@@ -278,11 +303,11 @@ def group_highlighter_callback(prefix,nodes):
     @app.callback(
         Output(prefix+"_highlighter_dropdown", "value"),
         [Input(prefix+"_group_highlighter_close", "n_clicks")],
-        [State(prefix+"_highlited_cache","value")]
+        [State(prefix+"_highlighted_cache","value")]
     )
-    def confirm_group_highlighter(n, highlited):
+    def confirm_group_highlighter(n, highlighted):
         if n:
-            return highlited
+            return highlighted
     return group_highlighter, clear_group_highlighter,confirm_group_highlighter
 
 
@@ -390,7 +415,8 @@ def highlighter_callback(prefix,G,nodes,L,evals,evects,n_clusters,clusters,L_maj
             Output(prefix+"_graph","stylesheet"),
             Output(prefix+"_piechart","figure"),
             Output(prefix+"_legend_toast","children"),
-            Output(prefix+"_clusters_cache","children")
+            Output(prefix+"_clusters_cache","value"),
+            Output(prefix+"_highlighted_data_cache","value"),
         ],
         [
             Input(prefix+"_highlighter_dropdown", "value"),
@@ -465,20 +491,23 @@ def highlighter_callback(prefix,G,nodes,L,evals,evects,n_clusters,clusters,L_maj
                     stylesheet.update({"style":style})
                     stylesheets.append(stylesheet)
                 ATC_dict=dict(nx.get_node_attributes(G,"ATC Code Level 1"))
-                ATC_count={}
-                tot_codes=0
-                for drug,atcs in ATC_dict.items():
-                    for atc in atcs:
-                        try:
-                            ATC_count[atc]+=1/len(atcs)
-                        except:
-                            ATC_count[atc]=1/len(atcs)
-                        tot_codes+=1
+                tmp_atc_values=[l for ll in ATC_dict.values() for l in ll]
+                ATC_count={atc:tmp_atc_values.count(atc) for atc in cmap.keys()}
+                ATC_count={k: v for k, v in sorted(ATC_count.items(), key=lambda item: item[1], reverse=True)}#sort by value
+                # ATC_count={}
+                # for drug,atcs in ATC_dict.items():
+                #     for atc in atcs:
+                #         try:
+                #             ATC_count[atc]+=1
+                #         except:
+                #             ATC_count[atc]=1
                 stylesheet=stylesheets
 
-                pie_data=go.Pie(labels=list(ATC_count.keys()), values=[int(value) for value in ATC_count.values()], marker_colors=[cmap[code] for code in ATC_count.keys()], text=[long_atc[code] for code in ATC_count.keys()])
+                # pie_data=go.Pie(labels=list(ATC_count.keys()), values=[int(value) for value in ATC_count.values()], marker_colors=[cmap[code] for code in ATC_count.keys()], text=[long_atc[code] for code in ATC_count.keys()])
+                # pie=go.Figure(data=pie_data, layout={"title":{"text":"Nodes' Categories Distribution","x":0.5, "xanchor": "center"}})
+                pie_data=go.Bar(x=list(ATC_count.keys()),y=list(ATC_count.values()), marker={"color":[cmap[code] for code in ATC_count.keys()]}, text=[long_atc[code] for code in ATC_count.keys()])
                 pie=go.Figure(data=pie_data, layout={"title":{"text":"Nodes' Categories Distribution","x":0.5, "xanchor": "center"}})
-                pie.update_traces(textposition="inside", textinfo="label+percent", hovertemplate=" %{text} <br> Nodes: %{value} </br> %{percent} <extra></extra>")
+                pie.update_traces(hovertemplate=" %{text} <br> Nodes: %{value} <extra></extra>")
                 table_body=[]
                 for code in cmap:
                     table_body.append(html.Tr([html.Td("",style={"background-color":cmap[code]}),html.Td(long_atc[code])]))
@@ -592,6 +621,8 @@ def highlighter_callback(prefix,G,nodes,L,evals,evects,n_clusters,clusters,L_maj
             }
         }]
         if highlighted:
+            data={node["data"]["ID"]:node["data"] for node in nodes}
+            highlighted_data=[data[id] for id in highlighted]
             for val in highlighted:
                 stylesheet+=[
                     {
@@ -604,7 +635,9 @@ def highlighter_callback(prefix,G,nodes,L,evals,evects,n_clusters,clusters,L_maj
                         }
                     }
                 ]
-        return stylesheet, pie, legend_body, json.dumps(clusters_cache.tolist())
+        else:
+            highlighted_data=[]
+        return stylesheet, pie, legend_body, clusters_cache.tolist(), highlighted_data
     return highlighter
 
 def toggle_download_graph_callback(prefix):
@@ -771,7 +804,7 @@ def custom_clustering_section_callback(prefix,G,Evals,Evects,Evals_maj,Evects_ma
             Input(prefix+"_custom_clustering_component","value"),
             Input(prefix+"_custom_clustering_method","value"),
             Input(prefix+"_custom_clustering_number_clusters","value"),
-            Input(prefix+"_clusters_cache","children")
+            Input(prefix+"_clusters_cache","value")
         ]
     )
     def custom_clustering_section(component, method, n_clusters, clusters):
@@ -788,7 +821,7 @@ def custom_clustering_section_callback(prefix,G,Evals,Evects,Evals_maj,Evects_ma
             communities_modularity=Communities_modularity
         if method == "spectral":
             clusters_data={}
-            for n,cl in enumerate(json.loads(clusters)):
+            for n,cl in enumerate(clusters):
                 try:
                     clusters_data[cl].append(list(dict(graph.nodes("Name")).values())[n])
                 except:
@@ -855,5 +888,5 @@ def build_callbacks(prefix,G,nodes,graph_properties_df,L,evals,evects,n_clusters
     toggle_group_highlighter_callback(prefix)
     get_range_clusters_callback(prefix,G,maj,evals,evals_maj,n_clusters,n_clusters_maj,girvan_newman,girvan_newman_maj,n_comm,n_comm_maj)
     toggle_view_clusters_callback(prefix)
-    selectedTable_callback(prefix)
-    propertiesTable_callback(prefix,graph_properties_df,nodes)
+    inspected_table_callback(prefix)
+    properties_table_callback(prefix,graph_properties_df,nodes)

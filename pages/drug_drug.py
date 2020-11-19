@@ -34,7 +34,7 @@ layout=dbc.Col([
                         dbc.Col(nodes_info(prefix), md=3)
                     ], no_gutters=True, justify="center"),
                     html.Br(),
-                    dbc.Row(dbc.Col(id=prefix+"_selected_table", align="center"), no_gutters=True, justify="center", align="center"),
+                    inspected_data(prefix),
                     html.Br(),
                     plots(prefix,graph=G, title=graph_title),
                     html.Br(),
