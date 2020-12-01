@@ -47,9 +47,9 @@ layout=dbc.Col([
                     ], justify="around", align="center"),
                     html.Br(),
                     html.Br(),
-                    html.H4("Citing COVID-19 Drugs Netoworker:"),
+                    html.H4("Citing COVID-19 Drugs Networker:"),
                     html.Br(),
-                    html.H5(["If you are using data from the ", html.I("COVID-19 Drugs Netoworker"), " please cite the corresponding article:"]),
+                    html.H5(["If you are using data from the ", html.I("COVID-19 Drugs Networker"), " please cite the corresponding article:"]),
                     html.P("bib string for easy citing, come per gli altri sotto"),
                     html.Br(),
                     html.Hr(),
@@ -93,7 +93,7 @@ layout=dbc.Col([
                     html.Br(),
                     html.Hr(),
                     html.Br(),
-                    html.H3("COVID-19 Drugs Netoworker would not be possible without the following packages:"),
+                    html.H3("COVID-19 Drugs Networker would not be possible without the following packages:"),
                     html.Br(),
                     html.Ul([
                         html.Li([

@@ -237,6 +237,8 @@ def properties_table_callback(prefix,graph_properties_df,nodes):
     )
     def properties_table(search,sorting,rows,only_inspected,inspected_data):
         df=graph_properties_df.copy()
+        if prefix == "dt":
+            df.drop("Clustering Coefficient", inplace=True, axis=1) # removes the clustering coefficient column from the dataframe of the Drug-Target Networks, since it is bipartited and the clustering coefficient has no meaning in this case
         if only_inspected and inspected_data:
             df=df.loc[[node["Name"] for node in inspected_data]]
             options=[{"label":name,"value":name} for name in [node["Name"] for node in inspected_data]]
@@ -314,7 +316,7 @@ def group_highlighter_callback(prefix,nodes,maj):
     return group_highlighter, clear_group_highlighter,confirm_group_highlighter
 
 
-def highlighter_callback(prefix,G,nodes,L,evals,evects,n_clusters,clusters,L_maj,evals_maj,evects_maj,n_clusters_maj,clusters_maj,girvan_newman,maj,girvan_newman_maj,n_comm,n_comm_maj):
+def highlighter_callback(prefix,G,nodes,L,evals,evects,n_clusters,clusters,L_maj,evals_maj,evects_maj,n_clusters_maj,clusters_maj,girvan_newman,maj,girvan_newman_maj,n_comm,n_comm_maj, atc_description):
     print("\tColoring Precomputing ...")
     ##coloring precomputing
     #components
@@ -481,7 +483,9 @@ def highlighter_callback(prefix,G,nodes,L,evals,evects,n_clusters,clusters,L_maj
 
             elif coloring == "atc":
                 all_atc=["A","B","C","D","G","H","J","L","M","N","P","R","S","V"]
-                long_atc={"A":"A: Alimentary tract and metabolism","B":"B: Blood and blood forming organs","C":"C: Cardiovascular system","D":"D: Dermatologicals","G":"G: Genito-urinary system and sex hormones","H":"H: Systemic hormonal preparations, excluding sex hormones and insulins","J":"J: Antiinfectives for systemic use","L":"L: Antineoplastic and immunomodulating agents","M":"M: Musculo-skeletal system","N":"N: Nervous system","P":"P: Antiparasitic products, insecticides and repellents","R":"R: Respiratory system","S":"S: Sensory organs","V":"V: Various","Not Available": "Not Available"}
+                # long_atc={"A":"A: Alimentary tract and metabolism","B":"B: Blood and blood forming organs","C":"C: Cardiovascular system","D":"D: Dermatologicals","G":"G: Genito-urinary system and sex hormones","H":"H: Systemic hormonal preparations, excluding sex hormones and insulins","J":"J: Antiinfectives for systemic use","L":"L: Antineoplastic and immunomodulating agents","M":"M: Musculo-skeletal system","N":"N: Nervous system","P":"P: Antiparasitic products, insecticides and repellents","R":"R: Respiratory system","S":"S: Sensory organs","V":"V: Various","Not Available": "Not Available"}
+                long_atc,long_atc3=atc_description
+
                 cmap=dict(zip(all_atc,[rgb2hex(plt.cm.Spectral(n)) for n in np.arange(0,1.1,1/14)]))
                 cmap.update({"Not Available":"#708090"})
                 atc2num={list(cmap.keys())[num]:str(num+1) for num in range(15)}
@@ -497,20 +501,36 @@ def highlighter_callback(prefix,G,nodes,L,evals,evects,n_clusters,clusters,L_maj
                 tmp_atc_values=[l for ll in ATC_dict.values() for l in ll]
                 ATC_count={atc:tmp_atc_values.count(atc) for atc in cmap.keys()}
                 ATC_count={k: v for k, v in sorted(ATC_count.items(), key=lambda item: item[1], reverse=True)}#sort by value
-                # ATC_count={}
-                # for drug,atcs in ATC_dict.items():
-                #     for atc in atcs:
-                #         try:
-                #             ATC_count[atc]+=1
-                #         except:
-                #             ATC_count[atc]=1
+
                 stylesheet=stylesheets
 
-                # pie_data=go.Pie(labels=list(ATC_count.keys()), values=[int(value) for value in ATC_count.values()], marker_colors=[cmap[code] for code in ATC_count.keys()], text=[long_atc[code] for code in ATC_count.keys()])
-                # pie=go.Figure(data=pie_data, layout={"title":{"text":"Nodes' Categories Distribution","x":0.5, "xanchor": "center"}})
-                pie_data=go.Bar(x=list(ATC_count.keys()),y=list(ATC_count.values()), marker={"color":[cmap[code] for code in ATC_count.keys()]}, text=[long_atc[code] for code in ATC_count.keys()])
+                ATC3_dict=dict(nx.get_node_attributes(G,"ATC Code Level 3"))
+                tmp_atc3_values=[l for ll in ATC3_dict.values() for l in ll]
+                ATC3_count={atc:tmp_atc3_values.count(atc) for atc in set(tmp_atc3_values)}
+                ATC3_count={k: v for k, v in sorted(ATC3_count.items(), key=lambda item: item[1], reverse=True)}#sort by value
+                ATC1_getter={atc3:atc3[0] if atc3 != "Not Available" else "Not Available" for atc3 in ATC3_count.keys()}
+                rule=list(ATC_count.keys())
+
+                ATC1_apparent_count={}
+                for code,value in ATC3_count.items():
+                    if ATC1_getter[code] in ATC1_apparent_count:
+                        ATC1_apparent_count[ATC1_getter[code]]+=value
+                    else:
+                        ATC1_apparent_count[ATC1_getter[code]]=value
+                ATC3_count_normalized={k:v*ATC_count[ATC1_getter[k]]/ATC1_apparent_count[ATC1_getter[k]] for k,v in ATC3_count.items()}
+
+                # pie_data=go.Bar(x=list(ATC_count.keys()),y=list(ATC_count.values()), marker={"color":[cmap[code] for code in ATC_count.keys()]}, text=[long_atc[code] for code in ATC_count.keys()])
+                pie_data=[]
+                for atc3 in ATC3_count:
+                    y=[0]*len(rule)
+                    y[rule.index(ATC1_getter[atc3])]=ATC3_count_normalized[atc3]
+                    text=[""]*len(rule)
+                    text[rule.index(ATC1_getter[atc3])]=long_atc3[atc3]
+                    pie_data.append(go.Bar(x=rule, y=y, marker={"color":cmap[ATC1_getter[atc3]], "line":{"color":"lightgrey","width":1}}, text=text, meta=[ATC3_count[atc3],long_atc[ATC1_getter[atc3]], ATC_count[ATC1_getter[atc3]]]))
                 pie=go.Figure(data=pie_data, layout={"title":{"text":"Nodes' Categories Distribution","x":0.5, "xanchor": "center"}})
-                pie.update_traces(hovertemplate=" %{text} <br> Nodes: %{value} <extra></extra>")
+                # pie.update_traces(hovertemplate=" %{text} <br> Nodes: %{value} <extra></extra>")
+                pie.update_traces(hovertemplate="<b> ATC Level 3 </b> <br> %{text} <br> Nodes: %{meta[0]} <br><br><b> ATC Level 1 </b> <br> %{meta[1]}  <br> Nodes: %{meta[2]} <extra></extra>")
+                pie.update_layout(barmode="stack")
                 table_body=[]
                 for code in cmap:
                     table_body.append(html.Tr([html.Td("",style={"background-color":cmap[code]}),html.Td(long_atc[code])]))
@@ -876,11 +896,11 @@ def toggle_view_clusters_callback(prefix):
     return toggle_view_clusters
 
 
-def build_callbacks(prefix,G,nodes,graph_properties_df,L,evals,evects,n_clusters,clusters,L_maj,evals_maj,evects_maj,n_clusters_maj,clusters_maj,girvan_newman,maj,girvan_newman_maj,communities_modularity,communities_modularity_maj,n_comm,n_comm_maj,file_prefix):
+def build_callbacks(prefix,G,nodes,graph_properties_df,L,evals,evects,n_clusters,clusters,L_maj,evals_maj,evects_maj,n_clusters_maj,clusters_maj,girvan_newman,maj,girvan_newman_maj,communities_modularity,communities_modularity_maj,n_comm,n_comm_maj,atc_description,file_prefix):
     collapse_headbar_callback(prefix)
     displayHoverNodeData_callback(prefix,G)
     group_highlighter_callback(prefix,nodes,maj)
-    highlighter_callback(prefix,G,nodes,L,evals,evects,n_clusters,clusters,L_maj,evals_maj,evects_maj,n_clusters_maj,clusters_maj,girvan_newman,maj,girvan_newman_maj,n_comm,n_comm_maj)
+    highlighter_callback(prefix,G,nodes,L,evals,evects,n_clusters,clusters,L_maj,evals_maj,evects_maj,n_clusters_maj,clusters_maj,girvan_newman,maj,girvan_newman_maj,n_comm,n_comm_maj,atc_description)
     get_selected_clustering_callback(prefix)
     custom_clustering_section_callback(prefix,G,evals,evects,evals_maj,evects_maj,girvan_newman,maj,girvan_newman_maj,communities_modularity,communities_modularity_maj)
     get_img_callback(prefix,file_prefix)

@@ -43,6 +43,11 @@ loading_banner = html.Div(
         ),id="page_content")
 
 def common_data_generator(prefix,graph):
+    if prefix == "dd":
+        with open("data/atc_description.pickle", "rb") as bkp:
+            atc_description=pickle.load(bkp)
+    else:
+        atc_description=[]
     graph_properties_df=pd.DataFrame({node:{prop:values[prop] for prop in ["Name","Degree", "Closeness Centrality", "Betweenness Centrality", "Eigenvector Centrality", "Clustering Coefficient", "VoteRank Score"]} for node,values in dict(graph.nodes(data=True)).items()}).T
     maj=graph.subgraph(max(list(nx.connected_components(graph)), key=len))
     print("\tCommunities Detection Data Precomputing ...")
@@ -85,7 +90,7 @@ def common_data_generator(prefix,graph):
             pickle.dump([L,evals,evects,n_clusters,clusters,L_maj,evals_maj,evects_maj,n_clusters_maj,clusters_maj],bkp)
         if os.path.isfile(name+".bkp"):
             os.remove(name+".bkp")
-    return graph_properties_df,L,evals,evects,n_clusters,clusters,L_maj,evals_maj,evects_maj,n_clusters_maj,clusters_maj,girvan_newman,maj,girvan_newman_maj,communities_modularity,communities_modularity_maj,n_comm,n_comm_maj
+    return graph_properties_df,L,evals,evects,n_clusters,clusters,L_maj,evals_maj,evects_maj,n_clusters_maj,clusters_maj,girvan_newman,maj,girvan_newman_maj,communities_modularity,communities_modularity_maj,n_comm,n_comm_maj, atc_description
 
 def headbar():
     return dbc.Navbar(
@@ -111,8 +116,8 @@ def headbar():
                                 dbc.NavLink(html.I(className="fa fa-project-diagram"), active=True, className="nav-link active", style={"margin-right":"-0.6rem"}), # patch for graphs label icon
                                 dbc.DropdownMenu([
                                     dbc.DropdownMenuItem("Drug-Target Network", href="/covid19drugsnetworker/drug_target", className="dropdown-item", external_link=True),
-                                    dbc.DropdownMenuItem("Drug-Drug Projection", href="/covid19drugsnetworker/drug_drug", className="dropdown-item", external_link=True),
-                                    dbc.DropdownMenuItem("Target-Target Projection", href="/covid19drugsnetworker/target_target", className="dropdown-item", external_link=True),
+                                    dbc.DropdownMenuItem("Drug Projection", href="/covid19drugsnetworker/drug_drug", className="dropdown-item", external_link=True),
+                                    dbc.DropdownMenuItem("Target Projection", href="/covid19drugsnetworker/target_target", className="dropdown-item", external_link=True),
                                     # dbc.DropdownMenuItem("Target Disease", href="/target_disease", className="dropdown-item"), # not yet available
                                     # dbc.DropdownMenuItem("Target Interactors", href="/target_interactors", className="dropdown-item") # not yet available
                                 ], nav=True, in_navbar=True, right=True, label="Graphs ...", className="nav-item dropdown active"),
@@ -434,17 +439,51 @@ def degree_distribution(graph, title):
     plot.update_layout({"paper_bgcolor": "rgba(0, 0, 0, 0)", "modebar":{"bgcolor":"rgba(0, 0, 0, 0)","color":"silver","activecolor":"grey"}, "legend":{"orientation":"h","yanchor":"top","y":-0.25, "xanchor":"center","x":0.5}, "yaxis":{"range":yrange}}) # for a transparent background but keeping modebar acceptable colors, "x":1.25
     return plot
 
-def plots(prefix, graph,title):
-    title=title.split(" ")[0]
+def plots(prefix, graph, title):
+    # title=title.split(" ")[0]
+    children=[dbc.Col([dbc.Spinner(dbc.Container(dcc.Graph(id=prefix+"_piechart", responsive=True)))], style={"padding":"0px"}, xs=12, lg=6)]
+    if prefix != "dt":
+        children+=[dbc.Col([dbc.Spinner(dcc.Graph(figure=degree_distribution(graph,title), id=prefix+"_degree_distribution", responsive=True))], style={"padding":"0px"}, xs=12, lg=6)]
     return dbc.Container([
                 html.H3("Plots"),
-                dbc.Row([
-                    dbc.Col([dbc.Spinner(dbc.Container(dcc.Graph(id=prefix+"_piechart", responsive=True)))], style={"padding":"0px"}, xs=12, lg=6),
-                    dbc.Col([dbc.Spinner(dcc.Graph(figure=degree_distribution(graph,title), id=prefix+"_degree_distribution", responsive=True))], style={"padding":"0px"}, xs=12, lg=6)
-                ], justify="around", align="center", no_gutters=True)
+                dbc.Row(
+                children=children
+                # [
+                #     # dbc.Col([dbc.Spinner(dbc.Container(dcc.Graph(id=prefix+"_piechart", responsive=True)))], style={"padding":"0px"}, xs=12, lg=6),
+                #     # dbc.Col([dbc.Spinner(dcc.Graph(figure=degree_distribution(graph,title), id=prefix+"_degree_distribution", responsive=True))], style={"padding":"0px"}, xs=12, lg=6)
+                # ]
+                , justify="around", align="center", no_gutters=True)
             ], id=prefix+"_plots", fluid=True, style={"padding":"3%"})
 
 def graph_properties(prefix):
+    if prefix == "dt":
+        options=[
+            {"label":"Degree: Low to High","value":"Degree,1"},
+            {"label":"Degree: High to Low","value":"Degree,0"},
+            {"label":"Closeness Centrality: Low to High","value":"Closeness Centrality,1"},
+            {"label":"Closeness Centrality: High to Low","value":"Closeness Centrality,0"},
+            {"label":"Betweenness Centrality: Low to High","value":"Betweenness Centrality,1"},
+            {"label":"Betweenness Centrality: High to Low","value":"Betweenness Centrality,0"},
+            {"label":"Eigenvector Centrality: Low to High","value":"Eigenvector Centrality,1"},
+            {"label":"Eigenvector Centrality: High to Low","value":"Eigenvector Centrality,0"},
+            {"label":"VoteRank Score: Low to High","value":"VoteRank Score,1"},
+            {"label":"VoteRank Score: High to Low","value":"VoteRank Score,0"},
+        ]
+    else:
+        options=[
+            {"label":"Degree: Low to High","value":"Degree,1"},
+            {"label":"Degree: High to Low","value":"Degree,0"},
+            {"label":"Closeness Centrality: Low to High","value":"Closeness Centrality,1"},
+            {"label":"Closeness Centrality: High to Low","value":"Closeness Centrality,0"},
+            {"label":"Betweenness Centrality: Low to High","value":"Betweenness Centrality,1"},
+            {"label":"Betweenness Centrality: High to Low","value":"Betweenness Centrality,0"},
+            {"label":"Eigenvector Centrality: Low to High","value":"Eigenvector Centrality,1"},
+            {"label":"Eigenvector Centrality: High to Low","value":"Eigenvector Centrality,0"},
+            {"label":"Clustering Coefficient: Low to High","value":"Clustering Coefficient,1"},
+            {"label":"Clustering Coefficient: High to Low","value":"Clustering Coefficient,0"},
+            {"label":"VoteRank Score: Low to High","value":"VoteRank Score,1"},
+            {"label":"VoteRank Score: High to Low","value":"VoteRank Score,0"},
+        ]
     return dbc.Container([
                 dbc.Col([
                     html.H3("Graph Properties"),
@@ -458,20 +497,7 @@ def graph_properties(prefix):
                         ], align="center", xs=10, lg=4),
                         dbc.Col(html.Font("Sort by: ", style={"white-space":"nowrap"}),align="center", style={"text-align":"right"}, xs=2, lg=1),
                         dbc.Col([
-                            dcc.Dropdown(id=prefix+"_properties_table_sorting",  options=[
-                                {"label":"Degree: Low to High","value":"Degree,1"},
-                                {"label":"Degree: High to Low","value":"Degree,0"},
-                                {"label":"Closeness Centrality: Low to High","value":"Closeness Centrality,1"},
-                                {"label":"Closeness Centrality: High to Low","value":"Closeness Centrality,0"},
-                                {"label":"Betweenness Centrality: Low to High","value":"Betweenness Centrality,1"},
-                                {"label":"Betweenness Centrality: High to Low","value":"Betweenness Centrality,0"},
-                                {"label":"Eigenvector Centrality: Low to High","value":"Eigenvector Centrality,1"},
-                                {"label":"Eigenvector Centrality: High to Low","value":"Eigenvector Centrality,0"},
-                                {"label":"Clustering Coefficient: Low to High","value":"Clustering Coefficient,1"},
-                                {"label":"Clustering Coefficient: High to Low","value":"Clustering Coefficient,0"},
-                                {"label":"VoteRank Score: Low to High","value":"VoteRank Score,1"},
-                                {"label":"VoteRank Score: High to Low","value":"VoteRank Score,0"},
-                            ], value="Degree,0", clearable=False, searchable=False, optionHeight=25,className="DropdownMenu")
+                            dcc.Dropdown(id=prefix+"_properties_table_sorting",  options=options, value="Degree,0", clearable=False, searchable=False, optionHeight=25,className="DropdownMenu")
                         ], align="center", xs=10, lg=3),
                         dbc.Col(html.Font("Rows to show: ", style={"white-space":"nowrap"}),align="center", style={"text-align":"right"}, xs=2, lg=1),
                         dbc.Col([
