@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 #Just a log print
 import datetime
 start_time=datetime.datetime.now()
@@ -5,7 +7,7 @@ print("Starting COVID-19 Drugs Networker")
 
 #adjust cwd if not launched with "python index.py"
 import os
-path=__file__.split("index.py")[0]
+path=os.path.split(__file__)[0]#__file__.split("index.py")[0]
 if path != "":
     os.chdir(path)
 

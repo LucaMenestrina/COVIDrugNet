@@ -566,7 +566,7 @@ def custom_clustering(prefix):
 def footer():
     return dbc.Container([
                 html.P([
-                    html.A(html.Small("Write us"), href="mailto:luca.menestrina2@unibo.it"),html.Small(" if you have questions and suggestions"),
+                    html.A(html.Small("Write us"), href="mailto:luca.menestrina2@unibo.it"),html.Small(" if you have any questions or suggestions"),
                     html.Br(),
                     html.Small("App developed by Luca Menestrina, Department of Pharmacy and Biotechnology, University of Bologna, Italy")
                 ], style={"margin":"0px"})

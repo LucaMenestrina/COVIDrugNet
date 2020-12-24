@@ -20,7 +20,7 @@ layout=dbc.Col([
                     dbc.Col([
                         html.A([
                             html.Center([
-                                html.Img(src=app.get_asset_url("imgs/drug_target.jpg"), style={"width":"95%"}, alt="Drug-Target Graph"),
+                                html.Img(src=app.get_asset_url("imgs/drug_target.jpg"), style={"width":"95%"}, alt="Drug-Target Network"),
                                 html.H5(html.Strong("Drug-Target Network"), className="card-header")
                             ], style={"box-shadow":"0rem 0rem 0.25rem darkgrey"})
                         ], href="/covid19drugsnetworker/drug_target", className="card"),
@@ -28,7 +28,7 @@ layout=dbc.Col([
                     dbc.Col([
                         html.A([
                             html.Center([
-                                html.Img(src=app.get_asset_url("imgs/drug_drug.jpg"), style={"width":"95%"}, alt="Drug-Drug Graph"),
+                                html.Img(src=app.get_asset_url("imgs/drug_drug.jpg"), style={"width":"95%"}, alt="Drug Projection"),
                                 html.H5(html.Strong("Drug Projection"), className="card-header")
                             ], style={"box-shadow":"0rem 0rem 0.25rem darkgrey"})
                         ], href="/covid19drugsnetworker/drug_drug", className="card"),
@@ -36,7 +36,7 @@ layout=dbc.Col([
                     dbc.Col([
                         html.A([
                             html.Center([
-                                html.Img(src=app.get_asset_url("imgs/target_target.jpg"), style={"width":"95%"}, alt="Target-Target Graph"),
+                                html.Img(src=app.get_asset_url("imgs/target_target.jpg"), style={"width":"95%"}, alt="Target Projection"),
                                 html.H5(html.Strong("Target Projection"), className="card-header")
                             ], style={"box-shadow":"0rem 0rem 0.25rem darkgrey"})
                         ], href="/covid19drugsnetworker/target_target", className="card"),
