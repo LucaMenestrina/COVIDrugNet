@@ -28,7 +28,7 @@ layout=dbc.Col([
                     html.Br(),
                     html.Br(),
                     dbc.Row([
-                        dbc.Col([html.Img(src="https://phd.unibo.it/biotechnology-biocomputational-pharmaceutics-pharmacology/en/students/chiara-cabrelle/@@images/4705db84-e736-44e9-aff3-03d183348033.jpeg", style={"width":"100%"})], xs=3, md=2, xl=1, align="center"),
+                        dbc.Col([html.Img(src="https://phd.unibo.it/biotechnology-biocomputational-pharmaceutics-pharmacology/en/students/chiara-cabrelle/@@images/4d9aadfc-4c16-42ac-b53a-22c3c064769e.jpeg", style={"width":"100%"})], xs=3, md=2, xl=1, align="center"),
                         dbc.Col([
                             html.H5(html.Strong("Chiara Cabrelle")),
                             html.P("PhD Student in Biotechnological, Biocomputational, Pharmaceutical and Pharmacological Science"),

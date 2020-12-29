@@ -49,47 +49,47 @@ layout=dbc.Col([
                     html.Br(),
                     html.H4("Citing COVID-19 Drugs Networker:"),
                     html.Br(),
-                    html.H5(["If you are using data from the ", html.I("COVID-19 Drugs Networker"), " please cite the corresponding article:"]),
+                    html.H5(["If you are using data from the ", html.Em("COVID-19 Drugs Networker"), " please cite the corresponding article:"]),
                     html.P("bib string for easy citing, come per gli altri sotto"),
                     html.Br(),
                     html.Hr(),
                     html.Br(),
                     # html.H3("Credits:"),
-                    html.H4("Data Sources:"),
+                    html.H3("Data Sources:"),
                     html.Br(),
                     html.Ul([
                         html.Li([
                             html.A(html.Strong("DrugBank"), href="https://go.drugbank.com/", target="_blank", style={"color":"black"}),
-                            html.A(html.P(["Wishart, David S et al. “DrugBank 5.0: a major update to the DrugBank database for 2018.” ",html.I("Nucleic acids research")," vol. 46,D1 (2018): D1074-D1082"]), href="https://doi.org/10.1093/nar/gkx1037", target="_blank", style={"color":"black"})
-                        ]),
+                            html.A(html.P(["Wishart, David S et al. “DrugBank 5.0: a major update to the DrugBank database for 2018.” ",html.Em("Nucleic acids research")," vol. 46,D1 (2018): D1074-D1082"]), href="https://doi.org/10.1093/nar/gkx1037", target="_blank", style={"color":"black"})
+                        ], style={"background":"url(https://go.drugbank.com/favicons/favicon-96x96.png)", "background-size":"2rem", "background-repeat":"no-repeat","background-position":"left", "padding-left":"3rem"}),
                         html.Li([
                             html.A(html.Strong("STRING"), href="https://string-db.org/", target="_blank", style={"color":"black"}),
-                            html.A(html.P(["Szklarczyk, Damian et al. “STRING v11: protein-protein association networks with increased coverage, supporting functional discovery in genome-wide experimental datasets.” ",html.I("Nucleic acids research")," vol. 47,D1 (2019): D607-D613"]), href="https://doi.org/10.1093/nar/gky1131", target="_blank", style={"color":"black"})
-                        ]),
+                            html.A(html.P(["Szklarczyk, Damian et al. “STRING v11: protein-protein association networks with increased coverage, supporting functional discovery in genome-wide experimental datasets.” ",html.Em("Nucleic acids research")," vol. 47,D1 (2019): D607-D613"]), href="https://doi.org/10.1093/nar/gky1131", target="_blank", style={"color":"black"})
+                        ], style={"background":"url(https://string-db.org/images/favicon.png", "background-size":"2rem", "background-repeat":"no-repeat","background-position":"left", "padding-left":"3rem"}),
                         html.Li([
                             html.A(html.Strong("DisGeNet"), href="https://www.disgenet.org/", target="_blank", style={"color":"black"}),
-                            html.A(html.P(["Piñero, Janet et al. “The DisGeNET knowledge platform for disease genomics: 2019 update.” ",html.I("Nucleic acids research")," vol. 48,D1 (2020): D845-D855"]), href="https://doi.org/10.1093/nar/gkz1021", target="_blank", style={"color":"black"})
-                        ]),
+                            html.A(html.P(["Piñero, Janet et al. “The DisGeNET knowledge platform for disease genomics: 2019 update.” ",html.Em("Nucleic acids research")," vol. 48,D1 (2020): D845-D855"]), href="https://doi.org/10.1093/nar/gkz1021", target="_blank", style={"color":"black"})
+                        ], style={"background":"url(https://www.disgenet.org/static/disgenet_ap1/images/logo_disgenet.png)", "background-size":"3rem", "background-repeat":"no-repeat","background-position":"left", "padding-left":"3rem"}),
                         html.Li([
                             html.A(html.Strong("SWISS-MODEL"), href="https://swissmodel.expasy.org/", target="_blank", style={"color":"black"}),
-                            html.A(html.P(["Waterhouse, Andrew et al. “SWISS-MODEL: homology modelling of protein structures and complexes.” ",html.I("Nucleic acids research")," vol. 46,W1 (2018): W296-W303"]), href="https://doi.org/10.1093/nar/gky427", target="_blank", style={"color":"black"}),
-                            html.A(html.P(["Guex, Nicolas et al. “Automated comparative protein structure modeling with SWISS-MODEL and Swiss-PdbViewer: a historical perspective.” ",html.I("Electrophoresis")," vol. 30 Suppl 1 (2009): S162-73"]), href="https://doi.org/10.1002/elps.200900140", target="_blank", style={"color":"black"}),
-                            html.A(html.P(["Bienert, Stefan et al. “The SWISS-MODEL Repository-new features and functionality.” ",html.I("Nucleic acids research")," vol. 45,D1 (2017): D313-D319"]), href="https://doi.org/10.1093/nar/gkw1132", target="_blank", style={"color":"black"})
-                        ]),
+                            html.A(html.P(["Waterhouse, Andrew et al. “SWISS-MODEL: homology modelling of protein structures and complexes.” ",html.Em("Nucleic acids research")," vol. 46,W1 (2018): W296-W303"], style={"margin-bottom":"0.25em"}), href="https://doi.org/10.1093/nar/gky427", target="_blank", style={"color":"black"}),
+                            html.A(html.P(["Guex, Nicolas et al. “Automated comparative protein structure modeling with SWISS-MODEL and Swiss-PdbViewer: a historical perspective.” ",html.Em("Electrophoresis")," vol. 30 Suppl 1 (2009): S162-73"], style={"margin-bottom":"0.25em"}), href="https://doi.org/10.1002/elps.200900140", target="_blank", style={"color":"black"}),
+                            html.A(html.P(["Bienert, Stefan et al. “The SWISS-MODEL Repository-new features and functionality.” ",html.Em("Nucleic acids research")," vol. 45,D1 (2017): D313-D319"]), href="https://doi.org/10.1093/nar/gkw1132", target="_blank", style={"color":"black"})
+                        ], style={"background":"url(https://swissmodel.expasy.org/static/images/favicon.png)", "background-size":"2rem", "background-repeat":"no-repeat","background-position":"left", "padding-left":"3rem"}),
                         html.Li([
                             html.A(html.Strong("RCSB PDB"), href="https://www.rcsb.org/", target="_blank", style={"color":"black"}),
-                            html.A(html.P(["Berman, H M et al. “The Protein Data Bank.” ",html.I("Nucleic acids research")," vol. 28,1 (2000): 235-42"]), href="https://doi.org/10.1093/nar/28.1.235", target="_blank", style={"color":"black"})
-                        ]),
+                            html.A(html.P(["Berman, H M et al. “The Protein Data Bank.” ",html.Em("Nucleic acids research")," vol. 28,1 (2000): 235-42"]), href="https://doi.org/10.1093/nar/28.1.235", target="_blank", style={"color":"black"})
+                        ], style={"background":"url(https://cdn.rcsb.org/rcsb-pdb/v2/common/images/rcsb_logo.png)", "background-size":"2rem", "background-repeat":"no-repeat","background-position":"left", "padding-left":"3rem"}),
                         html.Li([
                             html.A(html.Strong("UniProt"), href="https://www.uniprot.org/", target="_blank", style={"color":"black"}),
-                            html.A(html.P(["UniProt Consortium. “UniProt: a worldwide hub of protein knowledge.” ",html.I("Nucleic acids research")," vol. 47,D1 (2019): D506-D515"]), href="https://doi.org/10.1093/nar/gky1049", target="_blank", style={"color":"black"})
-                        ]),
+                            html.A(html.P(["UniProt Consortium. “UniProt: a worldwide hub of protein knowledge.” ",html.Em("Nucleic acids research")," vol. 47,D1 (2019): D506-D515"]), href="https://doi.org/10.1093/nar/gky1049", target="_blank", style={"color":"black"})
+                        ], style={"background":"url(https://www.uniprot.org/favicon.ico)", "background-size":"2rem", "background-repeat":"no-repeat","background-position":"left", "padding-left":"3rem"}),
                         html.Li([
                             html.A(html.Strong("ChEMBL"), href="https://www.ebi.ac.uk/chembl/", target="_blank", style={"color":"black"}),
-                            html.A(html.P(["Gaulton, Anna et al. “The ChEMBL database in 2017.” ",html.I("Nucleic acids research")," vol. 45,D1 (2017): D945-D954"]), href="https://doi.org/10.1093/nar/gkw1074", target="_blank", style={"color":"black"}),
-                            html.A(html.P(["Davies, Mark et al. “ChEMBL web services: streamlining access to drug discovery data and utilities.” ",html.I("Nucleic acids research")," vol. 43,W1 (2015): W612-20"]), href="https://doi.org/10.1093/nar/gkv352", target="_blank", style={"color":"black"})
-                        ]),
-                    ]),
+                            html.A(html.P(["Gaulton, Anna et al. “The ChEMBL database in 2017.” ",html.Em("Nucleic acids research")," vol. 45,D1 (2017): D945-D954"], style={"margin-bottom":"0.25em"}), href="https://doi.org/10.1093/nar/gkw1074", target="_blank", style={"color":"black"}),
+                            html.A(html.P(["Davies, Mark et al. “ChEMBL web services: streamlining access to drug discovery data and utilities.” ",html.Em("Nucleic acids research")," vol. 43,W1 (2015): W612-20"]), href="https://doi.org/10.1093/nar/gkv352", target="_blank", style={"color":"black"})
+                        ], style={"background":"url(https://www.ebi.ac.uk/chembl/k8s/static/chembl/favicon.png)", "background-size":"2rem", "background-repeat":"no-repeat","background-position":"left", "padding-left":"3rem"}),
+                    ], style={"list-style-type":"none"}),#, style={"list-style-image":"url(https://string-db.org/images/favicon.png)"}
                     html.Br(),
                     html.Hr(),
                     html.Br(),
@@ -145,6 +145,18 @@ layout=dbc.Col([
                         ]),
                         html.Li(html.A("Tqdm", href="https://github.com/tqdm/tqdm", target="_blank", style={"color":"black"})),
                     ]),
+
+                    html.Br(),
+                    html.Hr(),
+                    html.Br(),
+                    html.H3("Other Credits:"),
+                    html.Br(),
+                    html.Ul([
+                        html.Li([
+                            html.I(className="fa fa-flag", style={"margin-right":"0.5rem"}),#fa-font-awesome-flag
+                            html.A("Font Awesome", href="https://fontawesome.com/", target="_blank", style={"color":"black"})
+                        ])
+                    ], style={"list-style-type":"none"}),
                     html.Br(),
                     html.Hr(),
                     html.Br(),

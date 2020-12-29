@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 
 #Just a log print
-import datetime
-start_time=datetime.datetime.now()
+from time import time
+from datetime import timedelta
+# import datetime
+start_time=time()#datetime.datetime.now()
 print("Starting COVID-19 Drugs Networker")
 
 #adjust cwd if not launched with "python index.py"
@@ -62,9 +64,15 @@ def display_page(pathname):
 
 
 if __name__ == "__main__":
-    print("Ready!\t(startup time: %s)\n"%(datetime.datetime.now()-start_time))
+    print("Ready!\t(startup time: %sh %sm %ss)"%tuple(str(timedelta(seconds=(time()-start_time))).split(":")))#print("\nReady!\t(startup time: %s)"%(datetime.datetime.now()-start_time))
+    print("Launcing on http://127.0.0.1:8050/covid19drugsnetworker\n\n")
+    import webbrowser
+    from threading import Timer
+    def openbrowser():
+        webbrowser.open("http://127.0.0.1:8050/covid19drugsnetworker")
+    Timer(1,openbrowser).start()
     app.run_server(debug=False)
 elif __name__ == "index":
     # custom setting for deploying it with wsgi using from index import server as application (if setting a WSGIScriptAlias to /covid19drugsnetworker/)
     app.config.update({"requests_pathname_prefix":"/covid19drugsnetworker/"})
-    print("Ready!\t(startup time: %s)\n"%(datetime.datetime.now()-start_time))
+    print("Ready!\t(startup time: %sh %sm %ss)"%tuple(str(timedelta(seconds=(time()-start_time))).split(":")))#print("Ready!\t(startup time: %s)\n"%(datetime.datetime.now()-start_time))

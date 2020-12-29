@@ -1,19 +1,20 @@
-dash==1.13.4
-networkx==2.4
-matplotlib==3.3.0
-numpy==1.19.1
-dash_core_components==1.10.1
-bokeh==2.1.1
-dash_table==4.8.1
-tqdm==4.48.0
-requests==2.24.0
-pandas==1.0.5
-dash_html_components==1.0.3
+numpy==1.19.4
 dash_cytoscape==0.2.0
 PubChemPy==1.0.4
-dash_bootstrap_components==0.10.3
+scipy==1.5.3
+matplotlib==3.3.3
+networkx==2.5
 plotly==4.9.0
-beautifulsoup4==4.9.1
-rdkit==2009.Q1-1
-scikit_learn==0.23.2
+dash_bootstrap_components==0.10.3
+requests==2.25.1
 chembl_webresource_client==0.10.2
+dash_html_components==1.0.3
+tqdm==4.54.1
+dash_table==4.8.1
+pandas==1.1.5
+dash==1.13.4
+dash_core_components==1.10.1
+beautifulsoup4==4.9.3
+#rdkit==2009.Q1-1 #commented because can give problems with "pip install -r requirements.txt"... it is better to install it manually
+scikit_learn==0.24.0
+#pygraphviz==1.6 # also pygraphviz has problems with pip on windows, it requires Microsoft Visual C++ 14.0

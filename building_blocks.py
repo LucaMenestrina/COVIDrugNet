@@ -141,8 +141,8 @@ def sidebar(prefix):
                         dbc.Tooltip("Jump to Graph' Section", target=prefix+"_graph_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}),
                         dbc.NavItem(dbc.NavLink("Inspected Data", href="#"+prefix+"_inspected_table", external_link=True, id=prefix+"_side_inspected_table", active=False, disabled=True, className="nav-link"), className="nav-item", id=prefix+"_inspected_data_side"),
                         dbc.Tooltip("Jump to Inspected Data' Section", target=prefix+"_inspected_data_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}, id=prefix+"_inspected_data_side_tooltip"),
-                        dbc.NavItem(dbc.NavLink("Plots", href="#"+prefix+"_plots",external_link=True, active=True, className="nav-link"), className="nav-item", id=prefix+"_plots_side"),
-                        dbc.Tooltip("Jump to Plots' Section", target=prefix+"_plots_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}),
+                        dbc.NavItem(dbc.NavLink("Convenient Plots", href="#"+prefix+"_plots",external_link=True, active=True, className="nav-link"), className="nav-item", id=prefix+"_plots_side"),
+                        dbc.Tooltip("Jump to Convenient Plots' Section", target=prefix+"_plots_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}),
                         dbc.NavItem(dbc.NavLink("Graph Properties", href="#"+prefix+"_graph_properties_table", external_link=True, active=True, className="nav-link"), className="nav-item", id=prefix+"_graph_properties_side"),
                         dbc.Tooltip("Jump to Graph Properties' Section", target=prefix+"_graph_properties_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}),
                         dbc.NavItem(dbc.NavLink("Clustering", href="#"+prefix+"_clustering",external_link=True, active=True, className="nav-link"), className="nav-item", id=prefix+"_clustering_side"),
@@ -445,7 +445,7 @@ def plots(prefix, graph, title):
     if prefix != "dt":
         children+=[dbc.Col([dbc.Spinner(dcc.Graph(figure=degree_distribution(graph,title), id=prefix+"_degree_distribution", responsive=True))], style={"padding":"0px"}, xs=12, lg=6)]
     return dbc.Container([
-                html.H3("Plots"),
+                html.H3("Convenient Plots"),
                 dbc.Row(
                 children=children
                 # [
