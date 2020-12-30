@@ -352,14 +352,14 @@ class collector():
         self.graph_properties(G)
         self.__drugdrug=G
         df=nx.to_pandas_edgelist(G)
-        self.save_graph(self.added_new_drugs,df,G,"drug_drug")
+        self.save_graph(self.added_new_drugs,df,G,"drug_projection")
     def targettarget(self,tab=False):
         nodes=[t for d in self.drugs for t in d.targets]
         G=bipartite.weighted_projected_graph(self.__drugtarget,nodes)
         self.graph_properties(G)
         self.__targettarget=G
         df=nx.to_pandas_edgelist(G)
-        self.save_graph(self.added_new_drugs,df,G,"target_target")
+        self.save_graph(self.added_new_drugs,df,G,"target_projection")
     def targetinteractors(self,tab=False):
         targets_list=set([target for drug in self.drugs for target in drug.targets.values()])
         targetinteractors=[{"Source":source.gene,"Target":target,"Score":source.string_interaction_partners[target]["score"]} for source in targets_list for target in source.string_interaction_partners]

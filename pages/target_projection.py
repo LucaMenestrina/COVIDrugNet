@@ -11,18 +11,18 @@ from callbacks import *
 
 # app=dash.Dash(__name__, external_stylesheets=[dbc.themes.FLATLY])
 # app.title="COVID-19 Networker"
-prefix="dd"
-graph_title="Drug Projection"
-file_prefix="drug_drug"
+prefix="tt"
+graph_title="Target Projection"
+file_prefix="target_projection"
 print("Loading "+graph_title+" ...")
 
-G=nx.read_gpickle("data/graphs/drug_drug.gpickle")
+G=nx.read_gpickle("data/graphs/target_projection.gpickle")
 nx.set_node_attributes(G,nx.get_node_attributes(G,"Name"),"id")
 
 # pos=nx.kamada_kawai_layout(G, scale=1000)
 if platform == "linux":
     from networkx.drawing.nx_agraph import graphviz_layout
-    pos=nx.rescale_layout_dict(graphviz_layout(G),1000)
+    pos=nx.rescale_layout_dict(graphviz_layout(G),len(G.nodes())*2.5)
 else:
     pos=nx.spring_layout(G,k=1/(np.sqrt(len(G.nodes())/15)), scale=1000, seed=1)
 
@@ -46,11 +46,11 @@ layout=dbc.Col([
                     graph_properties(prefix),
                     html.Br(),
                     custom_clustering(prefix),
-                ])
-            ], no_gutters=True),
-            html.Div(style={"height":"10vh"}),
-            footer(),
-        ], style={"padding":"0px"})
+                    ])
+                ], no_gutters=True),
+                html.Div(style={"height":"10vh"}),
+                footer(),
+            ], style={"padding":"0px"})
 
 
 

@@ -28,18 +28,18 @@ layout=dbc.Col([
                     dbc.Col([
                         html.A([
                             html.Center([
-                                html.Img(src=app.get_asset_url("imgs/drug_drug.jpg"), style={"width":"95%"}, alt="Drug Projection"),
+                                html.Img(src=app.get_asset_url("imgs/drug_projection.jpg"), style={"width":"95%"}, alt="Drug Projection"),
                                 html.H5(html.Strong("Drug Projection"), className="card-header")
                             ], style={"box-shadow":"0rem 0rem 0.25rem darkgrey"})
-                        ], href="/covid19drugsnetworker/drug_drug", className="card"),
+                        ], href="/covid19drugsnetworker/drug_projection", className="card"),
                     ], xs=12, md=3),
                     dbc.Col([
                         html.A([
                             html.Center([
-                                html.Img(src=app.get_asset_url("imgs/target_target.jpg"), style={"width":"95%"}, alt="Target Projection"),
+                                html.Img(src=app.get_asset_url("imgs/target_projection.jpg"), style={"width":"95%"}, alt="Target Projection"),
                                 html.H5(html.Strong("Target Projection"), className="card-header")
                             ], style={"box-shadow":"0rem 0rem 0.25rem darkgrey"})
-                        ], href="/covid19drugsnetworker/target_target", className="card"),
+                        ], href="/covid19drugsnetworker/target_projection", className="card"),
                     ], xs=12, md=3)
                 ], justify="center", align="center"),
                 html.Div(style={"height":"10vh"}),

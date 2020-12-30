@@ -116,8 +116,8 @@ def headbar():
                                 dbc.NavLink(html.I(className="fa fa-project-diagram"), active=True, className="nav-link active", style={"margin-right":"-0.6rem"}), # patch for graphs label icon
                                 dbc.DropdownMenu([
                                     dbc.DropdownMenuItem("Drug-Target Network", href="/covid19drugsnetworker/drug_target", className="dropdown-item", external_link=True),
-                                    dbc.DropdownMenuItem("Drug Projection", href="/covid19drugsnetworker/drug_drug", className="dropdown-item", external_link=True),
-                                    dbc.DropdownMenuItem("Target Projection", href="/covid19drugsnetworker/target_target", className="dropdown-item", external_link=True),
+                                    dbc.DropdownMenuItem("Drug Projection", href="/covid19drugsnetworker/drug_projection", className="dropdown-item", external_link=True),
+                                    dbc.DropdownMenuItem("Target Projection", href="/covid19drugsnetworker/target_projection", className="dropdown-item", external_link=True),
                                     # dbc.DropdownMenuItem("Target Disease", href="/target_disease", className="dropdown-item"), # not yet available
                                     # dbc.DropdownMenuItem("Target Interactors", href="/target_interactors", className="dropdown-item") # not yet available
                                 ], nav=True, in_navbar=True, right=True, label="Graphs ...", className="nav-item dropdown active"),

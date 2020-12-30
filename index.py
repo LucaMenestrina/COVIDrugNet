@@ -20,7 +20,7 @@ import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output
 
 from app import app
-from pages import home,help,about,contacts,drug_target,drug_drug,target_target,error404#, target_disease, target_interactors
+from pages import home,help,about,contacts,drug_target,drug_projection,target_projection,error404#, target_disease, target_interactors
 from building_blocks import headbar, loading_banner
 
 server = app.server
@@ -51,10 +51,10 @@ def display_page(pathname):
         return about.layout
     elif pathname == "/covid19drugsnetworker/drug_target":
         return drug_target.layout
-    elif pathname == "/covid19drugsnetworker/drug_drug":
-        return drug_drug.layout
-    elif pathname == "/covid19drugsnetworker/target_target":
-        return target_target.layout
+    elif pathname == "/covid19drugsnetworker/drug_projection":
+        return drug_projection.layout
+    elif pathname == "/covid19drugsnetworker/target_projection":
+        return target_projection.layout
     # if pathname == "/target_disease":
     #     return target_disease.layout
     # if pathname == "/target_interactors":
