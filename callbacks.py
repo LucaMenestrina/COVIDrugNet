@@ -292,7 +292,7 @@ def group_highlighter_callback(prefix,nodes,maj):
             if only_maj:
                 maj_id=list(nx.get_node_attributes(maj,"ID").values())
                 highlighted=[id for id in highlighted if id in maj_id]
-            attributes=["Name"]+properties
+            attributes=["Name","ID","Gene"]+properties
             href="data:text/csv;charset=utf-8,"+quote(pd.DataFrame([{attribute:(", ".join(node["data"][attribute]) if isinstance(node["data"][attribute],list) else node["data"][attribute]) for attribute in attributes} for node in nodes if node["data"]["ID"] in highlighted], columns=attributes).to_csv(sep="\t", index=False, encoding="utf-8"))
             return list(highlighted),len(highlighted),href,False
         else:
