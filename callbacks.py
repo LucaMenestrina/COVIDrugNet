@@ -272,12 +272,27 @@ def group_highlighter_callback(prefix,nodes,maj):
             return ll[0]
         else:
             return ll
+    def centrality_filter(centrality,equality,value):
+        if value:
+            if equality == ">=":
+                return {node["data"]["ID"] for node in nodes if node["data"][centrality] >= value}
+            elif equality == ">":
+                return {node["data"]["ID"] for node in nodes if node["data"][centrality] > value}
+            elif equality == "=":
+                return {node["data"]["ID"] for node in nodes if node["data"][centrality] == value}
+            elif equality == "<=":
+                return {node["data"]["ID"] for node in nodes if node["data"][centrality] <= value}
+            elif equality == "<":
+                return {node["data"]["ID"] for node in nodes if node["data"][centrality] < value}
+        else:
+            return {}
     if prefix == "dt":
         properties=[]
     elif prefix == "dd":
         properties=["ATC Code Level 1", "ATC Code Level 2", "ATC Code Level 3", "ATC Code Level 4", "Targets", "Enzymes", "Carriers", "Transporters", "Drug Interactions"]
     elif prefix == "tt":
         properties=["STRING Interaction Partners", "Drugs", "Diseases", "Organism", "Protein Class", "Protein Family", "Cellular Location"]
+    centralities=["Degree","Closeness Centrality","Betweenness Centrality", "Eigenvector Centrality","Clustering Coefficient","VoteRank Score"]
 
     @app.callback(
         [
@@ -286,27 +301,33 @@ def group_highlighter_callback(prefix,nodes,maj):
             Output(prefix+"_download_group_highlighting_button_href","href"),
             Output(prefix+"_download_group_highlighting_button","disabled"),
         ],
-        [Input(prefix+"_only_major_highlighted_groups","value")]+[Input(prefix+"_highlight_dropdown_"+property,"value") for property in properties]+[Input(prefix+"_conjunction_"+property,"value") for property in properties]+[Input(prefix+"_conjunction_general","value")]
+        [Input(prefix+"_only_major_highlighted_groups","value")]+[Input(prefix+"_highlight_dropdown_"+property,"value") for property in properties]+[Input(prefix+"_conjunction_"+property,"value") for property in properties]+[Input(prefix+"_equality_"+centrality,"value") for centrality in centralities]+[Input(prefix+"_highlight_value_"+centrality,"value") for centrality in centralities]+[Input(prefix+"_conjunction_general","value")]
     )
     def group_highlighter(only_maj,*values):
-        highlighted_values=dict(zip(["highlighted_"+property for property in properties]+["conjunction_"+property for property in properties]+["conjunction_general"],values))
-        highlighted=unite(highlighted_values["conjunction_general"],[unite(highlighted_values["conjunction_"+property],highlighted_values["highlighted_"+property]) for property in properties])
+        highlighted_values=dict(zip(["highlighted_"+property for property in properties]+["conjunction_"+property for property in properties]+["equality_"+centrality for centrality in centralities]+["value_"+centrality for centrality in centralities]+["conjunction_general"],values))
+        for centrality in centralities:
+            highlighted_values["highlighted_"+centrality]=centrality_filter(centrality,highlighted_values["equality_"+centrality],highlighted_values["value_"+centrality])
+        highlighted=unite(highlighted_values["conjunction_general"],[unite(highlighted_values["conjunction_"+property],highlighted_values["highlighted_"+property]) for property in properties]+[highlighted_values["highlighted_"+centrality] for centrality in centralities])
         if highlighted:
             if only_maj:
                 maj_id=list(nx.get_node_attributes(maj,"ID").values())
                 highlighted=[id for id in highlighted if id in maj_id]
-            attributes=["Name","ID","Gene"]+properties
+            attributes=["Name","ID"]
+            if prefix == "tt":
+                attributes+=["Gene"]
+            attributes+=properties+centralities
             href="data:text/csv;charset=utf-8,"+quote(pd.DataFrame([{attribute:(", ".join(node["data"][attribute]) if isinstance(node["data"][attribute],list) else node["data"][attribute]) for attribute in attributes} for node in nodes if node["data"]["ID"] in highlighted], columns=attributes).to_csv(sep="\t", index=False, encoding="utf-8"))
             return list(highlighted),len(highlighted),href,False
         else:
             return None,0,"",True
 
     @app.callback(
-        [Output(prefix+"_highlight_dropdown_"+property,"value") for property in properties]+[Output(prefix+"_conjunction_"+property,"value") for property in properties]+[Output(prefix+"_conjunction_general","value")],
+        [Output(prefix+"_only_major_highlighted_groups","value")]+[Output(prefix+"_highlight_dropdown_"+property,"value") for property in properties]+[Output(prefix+"_conjunction_"+property,"value") for property in properties]+[Output(prefix+"_equality_"+centrality,"value") for centrality in centralities]+[Output(prefix+"_highlight_value_"+centrality,"value") for centrality in centralities]+[Output(prefix+"_conjunction_general","value")],
+        # [Output(prefix+"_highlight_dropdown_"+property,"value") for property in properties]+[Output(prefix+"_conjunction_"+property,"value") for property in properties]+[Output(prefix+"_conjunction_general","value")],
         [Input(prefix+"_group_highlighter_clear", "n_clicks")]
     )
     def clear_group_highlighter(n):
-        return [None for property in properties]+["OR" for property in properties]+["OR"]
+        return [True]+[None for property in properties]+["OR" for property in properties]+[">=" for centrality in centralities]+[None for centrality in centralities]+["OR"]
 
     @app.callback(
         Output(prefix+"_highlighter_dropdown", "value"),
@@ -465,7 +486,10 @@ def highlighter_callback(prefix,G,nodes,L,evals,evects,n_clusters,clusters,L_maj
                 bins=binner.fit_transform(np.array(values).reshape(-1,1)).reshape(1,-1)[0].tolist()
                 counts=[bins.count(n) for n in set(bins)]
                 bin_edges=[(round(binner.bin_edges_[0][i],3),round(binner.bin_edges_[0][i+1],3)) for i in range(nbins)]
-                labels=np.array(["%f <= %s <= %f"%(edge[0],coloring,edge[1]) for edge in bin_edges])[[int(n) for n in set(bins)]]
+                if "Degree" not in coloring:
+                    labels=np.array(["%.3f \u2264 %s \u2264 %.3f"%(edge[0],coloring,edge[1]) for edge in bin_edges])[[int(n) for n in set(bins)]]
+                else:
+                    labels=np.array(["%d \u2264 %s \u2264 %d"%(int(edge[0]),coloring,int(edge[1])) for edge in bin_edges])[[int(n) for n in set(bins)]]
                 mid_points=np.array([(edge[0]+edge[1])/2 for edge in bin_edges]).reshape(-1, 1)
                 marker_colors=np.array([rgb2hex(plt.cm.coolwarm(i)) for i in sorted(MinMaxScaler().fit_transform(mid_points).reshape(1,-1)[0].tolist())])[[int(n) for n in set(bins)]]
                 pie_data=go.Pie(labels=labels,values=counts, marker_colors=marker_colors)
@@ -475,7 +499,7 @@ def highlighter_callback(prefix,G,nodes,L,evals,evects,n_clusters,clusters,L_maj
                 legend_palette=px.imshow(np.linspace(0,1,1000).reshape(-1,1),color_continuous_scale=colors,y=np.linspace(min(values),max(values)+1,1000), labels={"y":coloring})
                 legend_palette.update(layout_coloraxis_showscale=False)
                 legend_palette.update_xaxes(showticklabels=False)
-                legend_palette.update_traces(hovertemplate=" "+coloring+": %{y} <extra></extra>")#:.3f
+                legend_palette.update_traces(hovertemplate=" "+coloring+": %{y:.3f} <extra></extra>")
                 legend_palette.update_layout(margin={"pad":0, "t":5, "b":5})
                 legend_body=dcc.Graph(figure=legend_palette, responsive=True, config={"displayModeBar": False})
 
