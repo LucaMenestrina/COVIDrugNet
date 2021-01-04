@@ -24,7 +24,7 @@ class drug():
         self.id = accession_number
         self.ID = self.id
     def advanced_init(self,done_proteins):
-        """adds useful intel for drugs related with covid"""
+        """adds useful intel"""
         #set compound object
         self.__compound = pubchem.get_compounds(self.name,"name")[0] # if it throws an exception the drug is escluded because it isn't in PubChem compounds database
         self.complexity = self.__compound.complexity

@@ -106,6 +106,10 @@ layout=dbc.Col([
                                 html.Li(html.A("Json", href="https://docs.python.org/3/library/json.html", target="_blank", style={"color":"black"})),
                                 html.Li(html.A("Itertools", href="https://docs.python.org/3/library/itertools.html", target="_blank", style={"color":"black"})),
                                 html.Li(html.A("Requests", href="https://requests.readthedocs.io/en/master/", target="_blank", style={"color":"black"})),
+                                html.Li(html.A("Time", href="https://docs.python.org/3/library/time.html", target="_blank", style={"color":"black"})),
+                                html.Li(html.A("Datetime", href="https://docs.python.org/3/library/datetime.html", target="_blank", style={"color":"black"})),
+                                html.Li(html.A("Webbrowser", href="https://docs.python.org/3/library/webbrowser.html", target="_blank", style={"color":"black"})),
+                                html.Li(html.A("Threading", href="https://docs.python.org/3/library/threading.html", target="_blank", style={"color":"black"})),
                                 html.Li([
                                     html.A("Matplotlib Pyplot", href="https://matplotlib.org/", target="_blank", style={"color":"black"}),
                                     #https://ieeexplore.ieee.org/document/4160265

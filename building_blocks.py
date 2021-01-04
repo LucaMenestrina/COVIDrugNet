@@ -242,12 +242,24 @@ def coloring_dropdown(prefix):
         value="class"
     options+=[
         {"label":"Components", "value":"components"},
-        {"label":"Spectral Clustering", "value":"spectral"},
-        {"label":"Spectral Clustering (Major Component)", "value":"spectral_maj"},
-        {"label":"Girvan-Newman Communities", "value":"girvan_newman"},
-        {"label":"Girvan-Newman Communities (Major Component)", "value":"girvan_newman_maj"},
-        {"label":"Greedy Modularity Communities", "value":"greedy_modularity"},
-        {"label":"Greedy Modularity Communities (Major Component)", "value":"greedy_modularity_maj"},
+        {"label":"Degree", "value":"Degree"},
+        {"label":"Degree (Major Component)", "value":"Degree_maj"},
+        {"label":"Closeness Centrality", "value":"Closeness Centrality"},
+        {"label":"Closeness Centrality (Major Component)", "value":"Closeness Centrality_maj"},
+        {"label":"Betweenness Centrality", "value":"Betweenness Centrality"},
+        {"label":"Betweenness Centrality (Major Component)", "value":"Betweenness Centrality_maj"},
+        {"label":"Eigenvector Centrality", "value":"Eigenvector Centrality"},
+        {"label":"Eigenvector Centrality (Major Component)", "value":"Eigenvector Centrality_maj"},
+        {"label":"Clustering Coefficient", "value":"Clustering Coefficient"},
+        {"label":"Clustering Coefficient (Major Component)", "value":"Clustering Coefficient_maj"},
+        {"label":"VoteRank Score", "value":"VoteRank Score"},
+        {"label":"VoteRank Score (Major Component)", "value":"VoteRank Score_maj"},
+        {"label":"Spectral Clustering", "value":"spectral_group"},
+        {"label":"Spectral Clustering (Major Component)", "value":"spectral_group_maj"},
+        {"label":"Girvan-Newman Communities", "value":"girvan_newman_group"},
+        {"label":"Girvan-Newman Communities (Major Component)", "value":"girvan_newman_group_maj"},
+        {"label":"Greedy Modularity Communities", "value":"greedy_modularity_group"},
+        {"label":"Greedy Modularity Communities (Major Component)", "value":"greedy_modularity_group_maj"},
         {"label":"Custom (It might take a few seconds to update...)", "value":"custom"},
     ]
     return html.Div([
@@ -548,10 +560,10 @@ def custom_clustering(prefix):
                         dbc.Row([
                             dbc.Col(html.Font("Method:"), width=4),
                             dbc.Col(dcc.Dropdown(id=prefix+"_custom_clustering_method", options=[
-                                {"label":"Spectral Clustering","value":"spectral"},
-                                {"label":"Girvan Newman","value":"girvan_newman"},
-                                {"label":"Greedy Modularity","value":"greedy_modularity"}
-                            ], value="spectral", clearable=False, searchable=False, optionHeight=25,className="DropdownMenu"), width=8),
+                                {"label":"Spectral Clustering","value":"spectral_group"},
+                                {"label":"Girvan Newman","value":"girvan_newman_group"},
+                                {"label":"Greedy Modularity","value":"greedy_modularity_group"}
+                            ], value="spectral_group", clearable=False, searchable=False, optionHeight=25,className="DropdownMenu"), width=8),
                         ], justify="around", align="center"),
                         dbc.Row([
                             dbc.Col(html.Font("Number of clusters:"), width=4),

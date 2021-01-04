@@ -1,4 +1,5 @@
 import dash
+import dash_core_components as dcc
 import dash_bootstrap_components as dbc
 import dash_html_components as html
 import dash_cytoscape as cyto
@@ -15,6 +16,8 @@ import networkx as nx
 import matplotlib.pyplot as plt
 from matplotlib.colors import rgb2hex
 from sklearn.cluster import KMeans
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.preprocessing import KBinsDiscretizer
 
 from app import app
 import plotly.graph_objects as go
@@ -443,6 +446,39 @@ def highlighter_callback(prefix,G,nodes,L,evals,evects,n_clusters,clusters,L_maj
             clusters_cache = clusters_maj
         changed_id = [p['prop_id'] for p in dash.callback_context.triggered][0]
         if changed_id != prefix+"_highlighter_dropdown.value":
+            #####tmp!!!
+            if "Centrality" in coloring or coloring in [name+comp for name in ["Degree","Clustering Coefficient","VoteRank Score"] for comp in ["","_maj"]]:
+                if "maj" in coloring:
+                    coloring=coloring.split("_")[0]
+                    centrality=dict(zip(nx.get_node_attributes(maj,"ID").values(),nx.get_node_attributes(maj,coloring).values()))
+                else:
+                    centrality={node["data"]["ID"]:node["data"][coloring] for node in nodes}
+                values_unique=sorted(set(centrality.values()))
+                scaled=sorted(MinMaxScaler().fit_transform(np.array(values_unique).reshape(-1, 1)).reshape(1,-1)[0].tolist())
+                cmap=dict(zip(values_unique,[rgb2hex(plt.cm.coolwarm(i)) for i in scaled]))
+                stylesheet=[]
+                for ID,c in centrality.items():
+                    stylesheet.append({"selector":"[ID = '"+ID+"']", "style":{"border-color":"#303633","border-width":2,"background-color":cmap.get(c,"#708090")}})
+                values=sorted(centrality.values())
+                nbins=10
+                binner=KBinsDiscretizer(nbins,strategy="uniform", encode="ordinal")
+                bins=binner.fit_transform(np.array(values).reshape(-1,1)).reshape(1,-1)[0].tolist()
+                counts=[bins.count(n) for n in set(bins)]
+                bin_edges=[(round(binner.bin_edges_[0][i],3),round(binner.bin_edges_[0][i+1],3)) for i in range(nbins)]
+                labels=np.array(["%f <= %s <= %f"%(edge[0],coloring,edge[1]) for edge in bin_edges])[[int(n) for n in set(bins)]]
+                mid_points=np.array([(edge[0]+edge[1])/2 for edge in bin_edges]).reshape(-1, 1)
+                marker_colors=np.array([rgb2hex(plt.cm.coolwarm(i)) for i in sorted(MinMaxScaler().fit_transform(mid_points).reshape(1,-1)[0].tolist())])[[int(n) for n in set(bins)]]
+                pie_data=go.Pie(labels=labels,values=counts, marker_colors=marker_colors)
+                pie=go.Figure(data=pie_data, layout={"title":{"text":"Nodes' Centrality Distribution","x":0.5, "xanchor": "center"}})
+                pie.update_traces(textposition="inside", textinfo="label+percent", hovertemplate=" %{label} <br> Nodes: %{value} </br> %{percent} <extra></extra>")
+                colors=np.array([rgb2hex(plt.cm.coolwarm(i)) for i in np.linspace(0,1,10)])
+                legend_palette=px.imshow(np.linspace(0,1,1000).reshape(-1,1),color_continuous_scale=colors,y=np.linspace(min(values),max(values)+1,1000), labels={"y":coloring})
+                legend_palette.update(layout_coloraxis_showscale=False)
+                legend_palette.update_xaxes(showticklabels=False)
+                legend_palette.update_traces(hovertemplate=" "+coloring+": %{y} <extra></extra>")#:.3f
+                legend_palette.update_layout(margin={"pad":0, "t":5, "b":5})
+                legend_body=dcc.Graph(figure=legend_palette, responsive=True, config={"displayModeBar": False})
+
             if coloring == "categorical":
                 stylesheet=stylesheet_base.copy()
                 pie_data=go.Pie(labels=["Drugs","Targets"],values=[len([node for node,kind in G.nodes("kind") if kind == "Drug"]),len([node for node,kind in G.nodes("kind") if kind == "Target"])], marker_colors=["#FC5F67","#12EAEA"])
@@ -561,28 +597,28 @@ def highlighter_callback(prefix,G,nodes,L,evals,evects,n_clusters,clusters,L_maj
                 stylesheet=stylesheet_components.copy()
                 pie=pie_components
                 legend_body=legend_body_components
-            elif coloring == "spectral":
+            elif coloring == "spectral_group":
                 stylesheet=stylesheet_spectral.copy()
                 pie=pie_spectral
                 legend_body=legend_body_spectral
-            elif coloring == "spectral_maj":
+            elif coloring == "spectral_group_maj":
                 stylesheet=stylesheet_spectral_maj.copy()
                 pie=pie_spectral_maj
                 legend_body=legend_body_spectral_maj
                 clusters_cache=clusters_maj
-            elif coloring == "girvan_newman":
+            elif coloring == "girvan_newman_group":
                 stylesheet=stylesheet_girvan_newman.copy()
                 pie=pie_girvan_newman
                 legend_body=legend_body_girvan_newman
-            elif coloring == "girvan_newman_maj":
+            elif coloring == "girvan_newman_group_maj":
                 stylesheet=stylesheet_girvan_newman_maj.copy()
                 pie=pie_girvan_newman_maj
                 legend_body=legend_body_girvan_newman_maj
-            elif coloring == "greedy_modularity":
+            elif coloring == "greedy_modularity_group":
                 stylesheet=stylesheet_greedy_modularity.copy()
                 pie=pie_greedy_modularity
                 legend_body=legend_body_greedy_modularity
-            elif coloring == "greedy_modularity_maj":
+            elif coloring == "greedy_modularity_group_maj":
                 stylesheet=stylesheet_greedy_modularity_maj.copy()
                 pie=pie_greedy_modularity_maj
                 legend_body=legend_body_greedy_modularity_maj
@@ -599,7 +635,7 @@ def highlighter_callback(prefix,G,nodes,L,evals,evects,n_clusters,clusters,L_maj
                     greedy_modularity_custom_stylesheet=stylesheet_greedy_modularity.copy()
                     greedy_modularity_custom_pie=pie_greedy_modularity
                     evals_custom,evects_custom=evals,evects
-                if custom_method == "spectral":
+                if custom_method == "spectral_group":
                     km_custom=KMeans(n_clusters=custom_n, n_init=100)
                     clusters_custom=km_custom.fit_predict(evects_custom[:,:custom_n])
                     cmap_custom=dict(zip(sorted(set(clusters_custom)),[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/custom_n)]))
@@ -611,7 +647,7 @@ def highlighter_callback(prefix,G,nodes,L,evals,evects,n_clusters,clusters,L_maj
                     pie=go.Figure(data=pie_data, layout={"title":{"text":"Clusters' Node Distribution","x":0.5, "xanchor": "center"}})
                     pie.update_traces(textposition="inside", textinfo="label+percent", hovertemplate=" Cluster: %{label} <br> Nodes: %{value} </br> %{percent} <extra></extra>")
                     clusters_cache=clusters_custom
-                elif custom_method == "girvan_newman":
+                elif custom_method == "girvan_newman_group":
                     communities=girvan_newman_custom[custom_n]
                     d_comm={}
                     for n,comm in enumerate(communities):
@@ -625,7 +661,7 @@ def highlighter_callback(prefix,G,nodes,L,evals,evects,n_clusters,clusters,L_maj
                     pie_data=go.Pie(labels=list(range(1,len(communities)+1)), values=[len(community) for community in communities], marker_colors=[rgb2hex(plt.cm.Spectral(i)) for i in np.arange(0,1.00001,1/len(communities))])
                     pie=go.Figure(data=pie_data, layout={"title":{"text":"Communities' Node Distribution","x":0.5, "xanchor": "center"}})
                     pie.update_traces(textposition="inside", textinfo="label+percent", hovertemplate=" Community: %{label} <br> Nodes: %{value} </br> %{percent} <extra></extra>")
-                elif custom_method == "greedy_modularity":
+                elif custom_method == "greedy_modularity_group":
                     stylesheet=greedy_modularity_custom_stylesheet
                     pie=greedy_modularity_custom_pie
 
@@ -697,39 +733,69 @@ def toggle_legend_callback(prefix):
             return True
     return open_legend
 
-def get_img_callback(prefix, file_prefix):
-    @app.callback(
-        Output(prefix+"_graph","generateImage"),
-        [Input(prefix+"_download_graph_button","n_clicks")],
-        [State(prefix+"_save_graph","value")]
-    )
-    def get_img(n_clicks,value):
-        if value in ["svg", "png", "jpg"]:
-            if n_clicks:
-                return {"type":value,"action":"download", "filename":file_prefix}
-        else:
-            return {"action":"store"}
-    return get_img
+# def get_img_callback(prefix, file_prefix):
+#     @app.callback(
+#         Output(prefix+"_graph","generateImage"),
+#         [Input(prefix+"_download_graph_button","n_clicks")],
+#         [State(prefix+"_save_graph","value")]
+#     )
+#     def get_img(n_clicks,value):
+#         if value in ["svg", "png", "jpg"]:
+#             if n_clicks:
+#                 print({"type":value,"action":"download", "filename":file_prefix})
+#                 return {"type":value,"action":"download", "filename":file_prefix}
+#         else:
+#             return {"action":"store"}
+#     return get_img
+#
+# def download_graph_file_callback(prefix,file_prefix):
+#     @app.callback(
+#         [
+#             Output(prefix+"_download_graph_button_href","download"),
+#             Output(prefix+"_download_graph_button_href","href")
+#         ],
+#         [Input(prefix+"_save_graph","value")]
+#     )
+#     def download_graph_file(value):
+#         if value not in ["svg", "png", "jpg"]:
+#             if value:
+#                 download=file_prefix+"."+value
+#                 href=app.get_asset_url("graphs/"+download)
+#                 return download, href
+#             else:
+#                 return None,None
+#         else:
+#             return None,None
+#     return download_graph_file
 
-def download_graph_file_callback(prefix,file_prefix):
+def download_graph_callback(prefix,file_prefix):
     @app.callback(
         [
             Output(prefix+"_download_graph_button_href","download"),
-            Output(prefix+"_download_graph_button_href","href")
+            Output(prefix+"_download_graph_button_href","href"),
+            Output(prefix+"_graph","generateImage")
         ],
-        [Input(prefix+"_save_graph","value")]
+        [
+            Input(prefix+"_save_graph","value"),
+            Input(prefix+"_download_graph_button","n_clicks")
+        ]
     )
-    def download_graph_file(value):
-        if value not in ["svg", "png", "jpg"]:
-            if value:
-                download=file_prefix+"."+value
-                href=app.get_asset_url("graphs/"+download)
-                return download, href
+    def download_graph(ftype,n_clicks):
+        download=None
+        href=None
+        action="store"
+        if ftype in ["svg", "png", "jpg"]:
+            changed_id = dash.callback_context.triggered[0]["prop_id"]
+            if changed_id==prefix+"_download_graph_button.n_clicks":
+                action="download"
             else:
-                return None,None
+                ftype="tmp"
         else:
-            return None,None
-    return download_graph_file
+            if ftype:
+                download=file_prefix+"."+ftype
+                href=app.get_asset_url("graphs/"+download)
+        return download,href,{"type":ftype,"action":action, "filename":file_prefix}
+    return download_graph
 
 def toggle_group_highlighter_callback(prefix):
     @app.callback(
@@ -756,16 +822,25 @@ def get_selected_clustering_callback(prefix):
         ]
     )
     def get_selected_clustering(value,current_component,current_method):
-        splitted=value.split("_")
-        if splitted[-1] == "maj":
-            component = "maj"
-            method=value[:-4]
-        elif "_" in value:
-            component = "entire"
-            method = value
+        if "group" in value:
+            if "maj" in value:#value.split("_")[-1] == "maj":
+                component = "maj"
+                method=value[:-4]
+            else:#if "_" in value:
+                component = "entire"
+                method = value
         else:
             component = current_component
             method = current_method
+        # component = current_component
+        # method = current_method
+        # if "group" in value:
+        #     if value.split("_")[-1] == "maj":
+        #         component = "maj"
+        #         method=value[:-4]
+        #     else:
+        #         component = "entire"
+        #         method = value
         return component, method
     return get_selected_clustering
 
@@ -798,15 +873,15 @@ def get_range_clusters_callback(prefix,G,maj,Evals,Evals_maj,N_clusters,N_cluste
             n_clusters=N_clusters
             communities=Girvan_newman
             n_comm=N_comm
-        if method == "spectral":
+        if method == "spectral_group":
             n=n_clusters
             options=[{"label":str(n),"value":n} for n in range(2,len(evals)-1)]
             disabled=False
-        elif method == "girvan_newman":
+        elif method == "girvan_newman_group":
             n=n_comm
             options=[{"label":str(n),"value":n} for n in communities.keys()]
             disabled=False
-        elif method == "greedy_modularity":
+        elif method == "greedy_modularity_group":
             n=len(nx.algorithms.community.greedy_modularity_communities(graph))
             options=[{"label":str(n),"value":n}]
             disabled=True
@@ -842,7 +917,7 @@ def custom_clustering_section_callback(prefix,G,Evals,Evects,Evals_maj,Evects_ma
             evals,evects=Evals,Evects
             girvan_newman=Girvan_newman
             communities_modularity=Communities_modularity
-        if method == "spectral":
+        if method == "spectral_group":
             clusters_data={}
             for n,cl in enumerate(clusters):
                 try:
@@ -858,7 +933,7 @@ def custom_clustering_section_callback(prefix,G,Evals,Evects,Evals_maj,Evects_ma
             href="data:text/csv;charset=utf-8,"+quote(pd.DataFrame({"Cluster":list(clusters_data.keys()),"Nodes":list(clusters_data.values())}).to_csv(sep="\t", index=False, encoding="utf-8"))
             clustering_data=pd.DataFrame({"Eigenvalue Number":range(len(evals)),"Eigenvalue":evals})
             figure=px.scatter(data_frame=clustering_data,x="Eigenvalue Number",y="Eigenvalue", title="Eigenvalues Distribution", template="ggplot2")
-        elif method == "girvan_newman":
+        elif method == "girvan_newman_group":
             communities=girvan_newman[n_clusters]
             table_header=[html.Thead(html.Tr([html.Th("Community"),html.Th("Nodes")]))]
             table_body=[]
@@ -868,7 +943,7 @@ def custom_clustering_section_callback(prefix,G,Evals,Evects,Evals_maj,Evects_ma
             href="data:text/csv;charset=utf-8,"+quote(pd.DataFrame({"Cluster":range(len(communities)),"Nodes":[", ".join(comm) for comm in communities]}).to_csv(sep="\t", index=False, encoding="utf-8"))
             communities_data=pd.DataFrame({"Number of Communities":list(communities_modularity.values()),"Modularity":list(communities_modularity.keys())})
             figure=px.scatter(data_frame=communities_data,x="Number of Communities",y="Modularity", title="Modularity Trend in Different Communities Partitioning", template="ggplot2")
-        elif method == "greedy_modularity":
+        elif method == "greedy_modularity_group":
             communities=nx.algorithms.community.greedy_modularity_communities(graph)
             table_header=[html.Thead(html.Tr([html.Th("Community"),html.Th("Nodes")]))]
             table_body=[]
@@ -903,8 +978,9 @@ def build_callbacks(prefix,G,nodes,graph_properties_df,L,evals,evects,n_clusters
     highlighter_callback(prefix,G,nodes,L,evals,evects,n_clusters,clusters,L_maj,evals_maj,evects_maj,n_clusters_maj,clusters_maj,girvan_newman,maj,girvan_newman_maj,n_comm,n_comm_maj,atc_description)
     get_selected_clustering_callback(prefix)
     custom_clustering_section_callback(prefix,G,evals,evects,evals_maj,evects_maj,girvan_newman,maj,girvan_newman_maj,communities_modularity,communities_modularity_maj)
-    get_img_callback(prefix,file_prefix)
-    download_graph_file_callback(prefix,file_prefix)
+    # get_img_callback(prefix,file_prefix)
+    # download_graph_file_callback(prefix,file_prefix)
+    download_graph_callback(prefix,file_prefix)
     toggle_download_graph_callback(prefix)
     toggle_help_callback(prefix)
     toggle_legend_callback(prefix)
