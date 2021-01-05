@@ -11,9 +11,9 @@ from callbacks import *
 
 # app=dash.Dash(__name__, external_stylesheets=[dbc.themes.FLATLY])
 # app.title="COVID-19 Networker"
-prefix="tt"
+# prefix="tt"
 graph_title="Target Projection"
-file_prefix="target_projection"
+prefix=graph_title.lower().replace(" ","_")#"target_projection"
 print("Loading "+graph_title+" ...")
 
 G=nx.read_gpickle("data/graphs/target_projection.gpickle")
@@ -45,7 +45,8 @@ layout=dbc.Col([
                     html.Br(),
                     graph_properties(prefix),
                     html.Br(),
-                    custom_clustering(prefix),
+                    advanced_section(prefix, G, graph_title)
+                    # custom_clustering(prefix),
                     ])
                 ], no_gutters=True),
                 html.Div(style={"height":"10vh"}),
@@ -57,7 +58,7 @@ layout=dbc.Col([
 
 ##  ----------  CALLBACKS   ------------
 
-build_callbacks(prefix,G,nodes,*common_data_generator(prefix,G),file_prefix)
+build_callbacks(prefix,G,nodes,*common_data_generator(prefix,G))
 
 
 # if __name__=="__main__":

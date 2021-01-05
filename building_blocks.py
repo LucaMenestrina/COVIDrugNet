@@ -43,7 +43,7 @@ loading_banner = html.Div(
         ),id="page_content")
 
 def common_data_generator(prefix,graph):
-    if prefix == "dd":
+    if prefix == "drug_projection":
         with open("data/atc_description.pickle", "rb") as bkp:
             atc_description=pickle.load(bkp)
     else:
@@ -134,20 +134,27 @@ def headbar():
 
 
 def sidebar(prefix):
-    if prefix in ["dt","dd","tt"]:
+    if prefix in ["drug_target","drug_projection","target_projection"]:
+        items=[
+            dbc.NavItem(dbc.NavLink("Graph", href="#"+prefix+"_graph_container", external_link=True, active=True, className="nav-link"), className="nav-item", id=prefix+"_graph_side"),
+            dbc.Tooltip("Jump to Graph' Section", target=prefix+"_graph_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}),
+            dbc.NavItem(dbc.NavLink("Inspected Data", href="#"+prefix+"_inspected_table", external_link=True, id=prefix+"_side_inspected_table", active=False, disabled=True, className="nav-link"), className="nav-item", id=prefix+"_inspected_data_side"),
+            dbc.Tooltip("Jump to Inspected Data' Section", target=prefix+"_inspected_data_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}, id=prefix+"_inspected_data_side_tooltip"),
+            dbc.NavItem(dbc.NavLink("Convenient Plots", href="#"+prefix+"_plots",external_link=True, active=True, className="nav-link"), className="nav-item", id=prefix+"_plots_side"),
+            dbc.Tooltip("Jump to Convenient Plots' Section", target=prefix+"_plots_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}),
+            dbc.NavItem(dbc.NavLink("Graph Properties", href="#"+prefix+"_graph_properties_table", external_link=True, active=True, className="nav-link"), className="nav-item", id=prefix+"_graph_properties_side"),
+            dbc.Tooltip("Jump to Graph Properties' Section", target=prefix+"_graph_properties_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}),
+            html.Hr(),
+            dbc.NavItem(dbc.NavLink("Clustering", href="#"+prefix+"_clustering",external_link=True, active=True, className="nav-link", id=prefix+"_side_clustering"), className="nav-item", id=prefix+"_clustering_side"),
+            dbc.Tooltip("Jump to Clustering' Section", target=prefix+"_clustering_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}, id=prefix+"_clustering_side_tooltip")
+        ]
+        if "projection" in prefix:
+            items += [
+                dbc.NavItem(dbc.NavLink("Degree Distribution Fittings", href="#"+prefix+"_adv_degree_distribution",external_link=True, active=True, className="nav-link", id=prefix+"_side_adv_degree_distribution"), className="nav-item", id=prefix+"_adv_degree_distribution_side"),
+                dbc.Tooltip("Jump to Advanced Degree Distribution Fittings' Section", target=prefix+"_adv_degree_distribution_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}, id=prefix+"_adv_degree_distribution_side_tooltip")
+            ]
         return dbc.NavbarSimple([
-                    dbc.Col([
-                        dbc.NavItem(dbc.NavLink("Graph", href="#"+prefix+"_graph_container", external_link=True, active=True, className="nav-link"), className="nav-item", id=prefix+"_graph_side"),
-                        dbc.Tooltip("Jump to Graph' Section", target=prefix+"_graph_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}),
-                        dbc.NavItem(dbc.NavLink("Inspected Data", href="#"+prefix+"_inspected_table", external_link=True, id=prefix+"_side_inspected_table", active=False, disabled=True, className="nav-link"), className="nav-item", id=prefix+"_inspected_data_side"),
-                        dbc.Tooltip("Jump to Inspected Data' Section", target=prefix+"_inspected_data_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}, id=prefix+"_inspected_data_side_tooltip"),
-                        dbc.NavItem(dbc.NavLink("Convenient Plots", href="#"+prefix+"_plots",external_link=True, active=True, className="nav-link"), className="nav-item", id=prefix+"_plots_side"),
-                        dbc.Tooltip("Jump to Convenient Plots' Section", target=prefix+"_plots_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}),
-                        dbc.NavItem(dbc.NavLink("Graph Properties", href="#"+prefix+"_graph_properties_table", external_link=True, active=True, className="nav-link"), className="nav-item", id=prefix+"_graph_properties_side"),
-                        dbc.Tooltip("Jump to Graph Properties' Section", target=prefix+"_graph_properties_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}),
-                        dbc.NavItem(dbc.NavLink("Clustering", href="#"+prefix+"_clustering",external_link=True, active=True, className="nav-link"), className="nav-item", id=prefix+"_clustering_side"),
-                        dbc.Tooltip("Jump to Clustering' Section", target=prefix+"_clustering_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}),
-                    ], align="center", style={"padding":"0px"}),
+                    dbc.Col(items, align="center", style={"padding":"0px"}),
                 ],expand="xl", color="light", className="navbar navbar-light bg-light position-sticky nav", style={"position":"sticky", "top":"10vh"}),
     else:
         return []
@@ -231,13 +238,13 @@ def save_graph(prefix):
         ])
 
 def coloring_dropdown(prefix):
-    if prefix == "dt":
+    if prefix == "drug_target":
         options=[{"label":"Categorical", "value":"categorical"}]
         value="categorical"
-    if prefix == "dd":
+    if prefix == "drug_projection":
         options=[{"label":"ATC Code", "value":"atc"},{"label":"Target Class", "value":"targetclass"}]
         value="atc"
-    if prefix == "tt":
+    if prefix == "target_projection":
         options=[{"label":"Protein Class", "value":"class"},{"label":"Protein Family", "value":"family"},{"label":"Cellular Location", "value":"location"}]
         value="class"
     options+=[
@@ -285,7 +292,7 @@ def group_highlighting(prefix, nodes):
                 {"label":"Less than or Equal to (\u2264)","value":"<="},
                 {"label":"Less than (<)","value":"<"},
             ], value=">=", multi=False, searchable=False,clearable=False, className="DropdownMenu")
-    if prefix in ["dd","tt"]:
+    if prefix in ["drug_projection","target_projection"]:
         modal_body=[
             dbc.Row([
                 dbc.Col([
@@ -302,14 +309,14 @@ def group_highlighting(prefix, nodes):
                 ], width=2, align="center")
             ], justify="around", align="center")
         ]
-        # if prefix == "dt":
+        # if prefix == "drug_target":
         #     return html.Div([
         #             dbc.Button("Highlight by Property", id=prefix+"_group_highlighter_open", block=True, className="btn btn-outline-primary", disabled=True),
         #             ])
-        if prefix == "dd":
+        if prefix == "drug_projection":
             properties=["ATC Code Level 1", "ATC Code Level 2", "ATC Code Level 3", "ATC Code Level 4", "Targets", "Enzymes", "Carriers", "Transporters", "Drug Interactions"]
 
-        else:# prefix == "tt":
+        else:# prefix == "target_projection":
             properties=["STRING Interaction Partners", "Drugs", "Diseases"]
             for property in ["Organism", "Protein Class", "Protein Family", "Cellular Location"]:
                 all_prop=sorted(set([node["data"][property] for node in nodes]))
@@ -493,7 +500,7 @@ def degree_distribution(graph, title):
 def plots(prefix, graph, title):
     # title=title.split(" ")[0]
     children=[dbc.Col([dbc.Spinner(dbc.Container(dcc.Graph(id=prefix+"_piechart", responsive=True)))], style={"padding":"0px"}, xs=12, lg=6)]
-    if prefix != "dt":
+    if prefix != "drug_target":
         children+=[dbc.Col([dbc.Spinner(dcc.Graph(figure=degree_distribution(graph,title), id=prefix+"_degree_distribution", responsive=True))], style={"padding":"0px"}, xs=12, lg=6)]
     return dbc.Container([
                 html.H3("Convenient Plots"),
@@ -507,7 +514,7 @@ def plots(prefix, graph, title):
             ], id=prefix+"_plots", fluid=True, style={"padding":"3%"})
 
 def graph_properties(prefix):
-    if prefix == "dt":
+    if prefix == "drug_target":
         options=[
             {"label":"Degree: Low to High","value":"Degree,1"},
             {"label":"Degree: High to Low","value":"Degree,0"},
@@ -583,6 +590,36 @@ def view_custom_clusters(prefix):
                 ],id=prefix+"_custom_clusters_modal", size="xl"),
             ])
 
+def advanced_section(prefix,graph,graph_title):
+    if "projection" in prefix:
+        collapse=[
+            custom_clustering(prefix),
+            adv_degree_distribution(prefix,graph,graph_title)
+        ]
+    else:
+        collapse=[
+            custom_clustering(prefix)
+        ]
+    section=dbc.Container([
+                html.Br(),
+                dbc.Row([
+                    dbc.Col([html.Hr()],width=5, align="center"),
+                    dbc.Col([
+                        dbc.Button([
+                            dbc.Row([
+                                html.H3("Advanced Tools"),
+                                html.I(className="fa fa-chevron-down fa-lg", style={"text-align":"center","margin-left":"1rem"})
+                            ], justify="center", align="center")
+                        ], id=prefix+"_advanced_section_open", color="link", block=True, style={"color":"black","text-decoration":"none"}, className="text-capitalize"),
+                        dbc.Tooltip("Open Section with Advanced Tools", target=prefix+"_advanced_section_open", placement="top", hide_arrow=True, delay={"show":500, "hide":250}),
+                    ],width=2,align="center"),
+                    dbc.Col([html.Hr()],width=5, align="center"),
+                ], justify="center", align="center"),
+                html.Br(),
+                dbc.Collapse(collapse, id=prefix+"_advanced_section_collapse")
+            ],id=prefix+"_advanced_section", fluid=True, style={"padding":"3%"})
+    return section
+
 def custom_clustering(prefix):
     return dbc.Container([
                 html.H3("Clustering"),
@@ -611,8 +648,57 @@ def custom_clustering(prefix):
                         view_custom_clusters(prefix)
                     ], align="center", style={"padding":"1%"}, xs=12, md=4)
                 ], justify="around", align="center", no_gutters=True),
+                html.Br(),
                 html.Div(id=prefix+"_clusters_cache", style={"display":"none"}) #for temporary store computed clusters
-            ], id=prefix+"_clustering", fluid=True, style={"padding":"3%"})
+            ], id=prefix+"_clustering", fluid=True, style={"padding":"1%"})
+
+def adv_degree_distribution(prefix,graph,graph_title):
+    import powerlaw
+    import warnings
+    warnings.filterwarnings("ignore")
+    K=dict(nx.get_node_attributes(graph,"Degree"))
+    data=np.array([v for v in K.values() if v > 0])
+    n=len(graph.nodes())
+    p=len(graph.edges())/(n*(n-1)/2)
+    ER=nx.fast_gnp_random_graph(n,p)
+    ERK=dict(nx.degree(ER))
+    ERdata=np.array([v for v in ERK.values() if v > 0])
+    best=powerlaw.Fit(data, discrete=True, verbose=False).xmin
+    ERbest=powerlaw.Fit(ERdata, discrete=True, verbose=False).xmin
+    options=[
+        {"label":"Best","value":best},
+        {"label":"Fit All","value":min(data)}
+    ]
+    for k in sorted(set(data)):
+        options.append({"label":k,"value":k})
+    ERoptions=[
+        {"label":"Best","value":ERbest},
+        {"label":"Fit All","value":min(ERdata)}
+    ]
+    for k in sorted(set(ERdata)):
+        ERoptions.append({"label":k,"value":k})
+
+    return dbc.Container([
+        html.Br(),
+        html.H3("Advanced Degree Distribution Fittings"),
+        dbc.Row([
+            dbc.Col(html.Font(graph_title+" xmin: ", style={"white-space":"nowrap"}),align="center", style={"text-align":"right"}, xs=3, lg=1),
+            dbc.Col([
+                dcc.Dropdown(id=prefix+"_projection_xmin",  options=options, value=best, clearable=False, searchable=True, optionHeight=25,className="DropdownMenu")
+            ], align="center", xs=3, lg=1),
+            dbc.Col(html.Font("Erdős Rényi xmin: ", style={"white-space":"nowrap"}),align="center", style={"text-align":"right"}, xs=3, lg=1),
+            dbc.Col([
+                dcc.Dropdown(id=prefix+"_ER_xmin",  options=ERoptions, value=min(ERdata), clearable=False, searchable=True, optionHeight=25,className="DropdownMenu")
+            ], align="center", xs=3, lg=1),
+        ], justify="center", align="center"),
+        html.Br(),
+        dbc.Row([
+            dbc.Col([
+                    dbc.Spinner(dcc.Graph(id=prefix+"_adv_degree_distribution_plot", responsive=True, style={"height":"80vh"}))
+            ], align="center", xs=10, md=8, style={"padding":"0px"})
+        ], justify="center", align="center"),
+        html.Br()
+    ], id=prefix+"_adv_degree_distribution", fluid=True, style={"padding":"1%"})
 
 def footer():
     return dbc.Container([

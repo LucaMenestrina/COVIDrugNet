@@ -42,11 +42,11 @@ stylesheet_base=[
     }
 ]
 
-def collapse_headbar_callback(prefix):
+def collapse_headbar_callback():
     @app.callback(
-        Output(prefix+"_headbar_collapse", "is_open"),
-        [Input(prefix+"_headbar_toggler", "n_clicks")],
-        [State(prefix+"_headbar_collapse", "is_open")],
+        Output("headbar_collapse", "is_open"),
+        [Input("headbar_toggler", "n_clicks")],
+        [State("headbar_collapse", "is_open")],
     )
     def collapse_headbar(n, is_open):
         if n:
@@ -240,7 +240,7 @@ def properties_table_callback(prefix,graph_properties_df,nodes):
     )
     def properties_table(search,sorting,rows,only_inspected,inspected_data):
         df=graph_properties_df.copy()
-        if prefix == "dt":
+        if prefix == "drug_target":
             df.drop("Clustering Coefficient", inplace=True, axis=1) # removes the clustering coefficient column from the dataframe of the Drug-Target Networks, since it is bipartited and the clustering coefficient has no meaning in this case
         if only_inspected and inspected_data:
             df=df.loc[[node["Name"] for node in inspected_data]]
@@ -286,11 +286,11 @@ def group_highlighter_callback(prefix,nodes,maj):
                 return {node["data"]["ID"] for node in nodes if node["data"][centrality] < value}
         else:
             return {}
-    if prefix == "dt":
+    if prefix == "drug_target":
         properties=[]
-    elif prefix == "dd":
+    elif prefix == "drug_projection":
         properties=["ATC Code Level 1", "ATC Code Level 2", "ATC Code Level 3", "ATC Code Level 4", "Targets", "Enzymes", "Carriers", "Transporters", "Drug Interactions"]
-    elif prefix == "tt":
+    elif prefix == "target_projection":
         properties=["STRING Interaction Partners", "Drugs", "Diseases", "Organism", "Protein Class", "Protein Family", "Cellular Location"]
     centralities=["Degree","Closeness Centrality","Betweenness Centrality", "Eigenvector Centrality","Clustering Coefficient","VoteRank Score"]
 
@@ -313,7 +313,7 @@ def group_highlighter_callback(prefix,nodes,maj):
                 maj_id=list(nx.get_node_attributes(maj,"ID").values())
                 highlighted=[id for id in highlighted if id in maj_id]
             attributes=["Name","ID"]
-            if prefix == "tt":
+            if prefix == "target_projection":
                 attributes+=["Gene"]
             attributes+=properties+centralities
             href="data:text/csv;charset=utf-8,"+quote(pd.DataFrame([{attribute:(", ".join(node["data"][attribute]) if isinstance(node["data"][attribute],list) else node["data"][attribute]) for attribute in attributes} for node in nodes if node["data"]["ID"] in highlighted], columns=attributes).to_csv(sep="\t", index=False, encoding="utf-8"))
@@ -496,7 +496,7 @@ def highlighter_callback(prefix,G,nodes,L,evals,evects,n_clusters,clusters,L_maj
                 pie=go.Figure(data=pie_data, layout={"title":{"text":"Nodes' Centrality Distribution","x":0.5, "xanchor": "center"}})
                 pie.update_traces(textposition="inside", textinfo="label+percent", hovertemplate=" %{label} <br> Nodes: %{value} </br> %{percent} <extra></extra>")
                 colors=np.array([rgb2hex(plt.cm.coolwarm(i)) for i in np.linspace(0,1,10)])
-                legend_palette=px.imshow(np.linspace(0,1,1000).reshape(-1,1),color_continuous_scale=colors,y=np.linspace(min(values),max(values)+1,1000), labels={"y":coloring})
+                legend_palette=px.imshow(np.linspace(min(values),max(values),1000).reshape(-1,1),color_continuous_scale=colors,y=np.linspace(min(values),max(values),1000), labels={"y":coloring}, aspect="auto")
                 legend_palette.update(layout_coloraxis_showscale=False)
                 legend_palette.update_xaxes(showticklabels=False)
                 legend_palette.update_traces(hovertemplate=" "+coloring+": %{y:.3f} <extra></extra>")
@@ -757,7 +757,7 @@ def toggle_legend_callback(prefix):
             return True
     return open_legend
 
-# def get_img_callback(prefix, file_prefix):
+# def get_img_callback(prefix, prefix):
 #     @app.callback(
 #         Output(prefix+"_graph","generateImage"),
 #         [Input(prefix+"_download_graph_button","n_clicks")],
@@ -766,13 +766,13 @@ def toggle_legend_callback(prefix):
 #     def get_img(n_clicks,value):
 #         if value in ["svg", "png", "jpg"]:
 #             if n_clicks:
-#                 print({"type":value,"action":"download", "filename":file_prefix})
-#                 return {"type":value,"action":"download", "filename":file_prefix}
+#                 print({"type":value,"action":"download", "filename":prefix})
+#                 return {"type":value,"action":"download", "filename":prefix}
 #         else:
 #             return {"action":"store"}
 #     return get_img
 #
-# def download_graph_file_callback(prefix,file_prefix):
+# def download_graph_file_callback(prefix,prefix):
 #     @app.callback(
 #         [
 #             Output(prefix+"_download_graph_button_href","download"),
@@ -783,7 +783,7 @@ def toggle_legend_callback(prefix):
 #     def download_graph_file(value):
 #         if value not in ["svg", "png", "jpg"]:
 #             if value:
-#                 download=file_prefix+"."+value
+#                 download=prefix+"."+value
 #                 href=app.get_asset_url("graphs/"+download)
 #                 return download, href
 #             else:
@@ -792,7 +792,7 @@ def toggle_legend_callback(prefix):
 #             return None,None
 #     return download_graph_file
 
-def download_graph_callback(prefix,file_prefix):
+def download_graph_callback(prefix):
     @app.callback(
         [
             Output(prefix+"_download_graph_button_href","download"),
@@ -816,10 +816,54 @@ def download_graph_callback(prefix,file_prefix):
                 ftype="tmp"
         else:
             if ftype:
-                download=file_prefix+"."+ftype
+                download=prefix+"."+ftype
                 href=app.get_asset_url("graphs/"+download)
-        return download,href,{"type":ftype,"action":action, "filename":file_prefix}
+        return download,href,{"type":ftype,"action":action, "filename":prefix}
     return download_graph
+
+def open_advanced_section(prefix):
+    if "projection" in prefix:
+        @app.callback(
+            [
+                Output(prefix+"_advanced_section_collapse", "is_open"),
+                Output(prefix+"_side_clustering","active"),
+                Output(prefix+"_side_clustering","disabled"),
+                Output(prefix+"_clustering_side_tooltip","style"),
+                Output(prefix+"_side_adv_degree_distribution","active"),
+                Output(prefix+"_side_adv_degree_distribution","disabled"),
+                Output(prefix+"_adv_degree_distribution_side_tooltip","style"),
+            ],
+            [Input(prefix+"_advanced_section_open", "n_clicks")],
+            [State(prefix+"_advanced_section_collapse", "is_open")]
+        )
+        def open_advanced_section(n, is_open):
+            if n:
+                is_open = not is_open
+            if is_open:
+                sides = True, False, None
+            else:
+                sides = False, True, {"visibility":"hidden"}
+            return [is_open, *sides, *sides]
+    else:
+        @app.callback(
+            [
+                Output(prefix+"_advanced_section_collapse", "is_open"),
+                Output(prefix+"_side_clustering","active"),
+                Output(prefix+"_side_clustering","disabled"),
+                Output(prefix+"_clustering_side_tooltip","style"),
+            ],
+            [Input(prefix+"_advanced_section_open", "n_clicks")],
+            [State(prefix+"_advanced_section_collapse", "is_open")]
+        )
+        def open_advanced_section(n, is_open):
+            if n:
+                is_open = not is_open
+            if is_open:
+                sides = True, False, None
+            else:
+                sides = False, True, {"visibility":"hidden"}
+            return [is_open, *sides]
+    return open_advanced_section
 
 def toggle_group_highlighter_callback(prefix):
     @app.callback(
@@ -994,22 +1038,89 @@ def toggle_view_clusters_callback(prefix):
         return is_open
     return toggle_view_clusters
 
+def fittings_callback(prefix, graph):
+    @app.callback(
+        Output(prefix+"_adv_degree_distribution_plot", "figure"),
+        [
+            Input(prefix+"_projection_xmin", "value"),
+            Input(prefix+"_ER_xmin", "value")
+        ]
+    )
+    def fittings(value,ERvalue):
+        import powerlaw
+        import warnings
+        warnings.filterwarnings("ignore")
+        K=dict(nx.get_node_attributes(graph,"Degree"))
+        data=np.array([v for v in K.values() if v > 0])
+        n=len(graph.nodes())
+        p=len(graph.edges())/(n*(n-1)/2)
+        ER=nx.fast_gnp_random_graph(n,p)
+        ERK=dict(nx.degree(ER))
+        ERdata=np.array([v for v in ERK.values() if v > 0])
+        plot=go.Figure(layout={"title":{"text":"Node Degree Distribution","x":0.5, "xanchor": "center"},"xaxis":{"title_text":"Node degree, k", "type":"log"}, "yaxis":{"title_text":"Frequency of Nodes with degree k, n(k)", "type":"log"}, "template":"ggplot2"})
+        yvalues=np.array([])
+        for d,val,title,to_show in [[data,value,prefix.replace("_"," ").title(),"power_law"],[ERdata,ERvalue,"Erdős Rényi","stretched_exponential"]]:
+            fitted=powerlaw.Fit(d, discrete=True, verbose=False, xmin=val)
+            x,y=np.unique(d,return_counts=True)
+            y=y/len(d)
+            yvalues=np.concatenate([yvalues,y])
+            plot.add_trace(go.Scatter(x=x,y=y, mode="markers", name=title))
+            reduced=sorted([v for v in d if v>=val])
+            scalefactor=len(d[d>=val])/len(d)
+            for dist in ["power_law","lognormal","exponential","truncated_power_law","stretched_exponential","lognormal_positive"]:
+                if dist != to_show:
+                    visible="legendonly"
+                else:
+                    visible=True
+                plot.add_trace(go.Scatter(x=reduced,y=getattr(fitted,dist).pdf(reduced)*scalefactor, mode="lines", name=title+" "+dist.replace("_"," ").title(), visible=visible))
+        # fitted=powerlaw.Fit(data, discrete=True, verbose=False, xmin=value)
+        # x,y=np.unique(data,return_counts=True)
+        # y=y/len(data)
+        # plot.add_trace(go.Scatter(x=x,y=y, mode="markers", name=graph_title))
+        # reduced=sorted([v for v in data if v>=value])
+        # scalefactor=len(data[data>=value])/len(data)
+        # for dist in ["power_law","lognormal","exponential","truncated_power_law","stretched_exponential","lognormal_positive"]:
+        #     if dist != "power_law":
+        #         visible="legendonly"
+        #     else:
+        #         visible=True
+        #     plot.add_trace(go.Scatter(x=reduced,y=getattr(fitted,dist).pdf(reduced)*scalefactor, mode="lines", name=dist.replace("_"," ").title(), visible=visible))
+        # fittedER=powerlaw.Fit(ERdata, discrete=True, verbose=False, xmin=ERvalue)
+        # ERx,ERy=np.unique(ERdata,return_counts=True)
+        # ERy=ERy/len(ERdata)
+        yrange=[np.log10(min(yvalues)*0.75),np.log10(max(yvalues)*1.25)]
+        # ERreduced=sorted([v for v in dataER if v>=ERvalue])
+        # ERscalefactor=len(ERdata[ERdata>=ERvalue])/len(ERdata)
+        # plot.add_trace(go.Scatter(x=xER,y=yER, mode="markers", name="Erdős Rényi"))
+        # for dist in ["power_law","lognormal","exponential","truncated_power_law","stretched_exponential","lognormal_positive"]:
+        #     if dist != "stretched_exponential":
+        #         visible="legendonly"
+        #     else:
+        #         visible=True
+        #     plot.add_trace(go.Scatter(x=reduced,y=getattr(fitted,dist).pdf(reduced)*scalefactor, mode="lines", name=dist.replace("_"," ").title(), visible=visible))
+        #     plot.add_trace(go.Scatter(x=ERreduced,y=getattr(ERfitted,dist).pdf(ERreduced)*ERscalefactor, mode="lines", name="Erdős Rényi "+dist.replace("_"," ").title(), visible=visible))
+        plot.update_layout({"paper_bgcolor": "rgba(0, 0, 0, 0)", "modebar":{"bgcolor":"rgba(0, 0, 0, 0)","color":"silver","activecolor":"grey"}, "legend":{"orientation":"h","yanchor":"top","y":-0.25, "xanchor":"center","x":0.5}, "yaxis":{"range":yrange}}) # for a transparent background but keeping modebar acceptable colors, "x":1.25
+        return plot
+    return fittings
 
-def build_callbacks(prefix,G,nodes,graph_properties_df,L,evals,evects,n_clusters,clusters,L_maj,evals_maj,evects_maj,n_clusters_maj,clusters_maj,girvan_newman,maj,girvan_newman_maj,communities_modularity,communities_modularity_maj,n_comm,n_comm_maj,atc_description,file_prefix):
-    collapse_headbar_callback(prefix)
+
+def build_callbacks(prefix,G,nodes,graph_properties_df,L,evals,evects,n_clusters,clusters,L_maj,evals_maj,evects_maj,n_clusters_maj,clusters_maj,girvan_newman,maj,girvan_newman_maj,communities_modularity,communities_modularity_maj,n_comm,n_comm_maj,atc_description):
+    # collapse_headbar_callback()
     displayHoverNodeData_callback(prefix,G)
     group_highlighter_callback(prefix,nodes,maj)
     highlighter_callback(prefix,G,nodes,L,evals,evects,n_clusters,clusters,L_maj,evals_maj,evects_maj,n_clusters_maj,clusters_maj,girvan_newman,maj,girvan_newman_maj,n_comm,n_comm_maj,atc_description)
     get_selected_clustering_callback(prefix)
     custom_clustering_section_callback(prefix,G,evals,evects,evals_maj,evects_maj,girvan_newman,maj,girvan_newman_maj,communities_modularity,communities_modularity_maj)
-    # get_img_callback(prefix,file_prefix)
-    # download_graph_file_callback(prefix,file_prefix)
-    download_graph_callback(prefix,file_prefix)
+    # get_img_callback(prefix,prefix)
+    # download_graph_file_callback(prefix,prefix)
+    download_graph_callback(prefix)
     toggle_download_graph_callback(prefix)
     toggle_help_callback(prefix)
     toggle_legend_callback(prefix)
     toggle_group_highlighter_callback(prefix)
+    open_advanced_section(prefix)
     get_range_clusters_callback(prefix,G,maj,evals,evals_maj,n_clusters,n_clusters_maj,girvan_newman,girvan_newman_maj,n_comm,n_comm_maj)
     toggle_view_clusters_callback(prefix)
     inspected_table_callback(prefix)
     properties_table_callback(prefix,graph_properties_df,nodes)
+    fittings_callback(prefix,G)

@@ -22,6 +22,7 @@ from dash.dependencies import Input, Output
 from app import app
 from pages import home,help,about,contacts,drug_target,drug_projection,target_projection,error404#, target_disease, target_interactors
 from building_blocks import headbar, loading_banner
+from callbacks import collapse_headbar_callback
 
 server = app.server
 
@@ -31,6 +32,10 @@ app.layout = html.Div([
     html.Div(id="loading_message")
 ])
 
+
+##  ----------  CALLBACKS   ------------
+
+collapse_headbar_callback()
 
 @app.callback(Output("loading_message", "children"),
             [Input("url", "pathname")])
@@ -62,6 +67,9 @@ def display_page(pathname):
     else:
         return error404.layout
 
+
+
+##  ----------  START   ------------
 
 if __name__ == "__main__":
     print("Ready!\t(startup time: %sh %sm %ss)"%tuple(str(timedelta(seconds=(time()-start_time))).split(":")))#print("\nReady!\t(startup time: %s)"%(datetime.datetime.now()-start_time))

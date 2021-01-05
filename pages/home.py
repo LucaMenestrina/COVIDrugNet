@@ -59,9 +59,6 @@ layout=dbc.Col([
         ], style={"padding":"0px", "min-height":"100vh"})
 
 
-##  ----------  CALLBACKS   ------------
-
-collapse_headbar_callback(prefix)
 
 # if __name__=="__main__":
 #     app.run_server(debug=False)

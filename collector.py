@@ -402,7 +402,7 @@ if __name__ == "__main__":
         COVID_drugs.targettarget()
         # COVID_drugs.targetinteractors()
         # COVID_drugs.targetdiseases()
-        for prefix in ["dt","dd","tt"]:
+        for prefix in ["drug_target","drug_projection","target_projection"]:
             for group in ["communities","spectral"]:
                 name="data/groups/"+prefix+"_"+group+".pickle"
                 if os.path.isfile(name):
