@@ -4,8 +4,6 @@ import dash_html_components as html
 
 import networkx as nx
 
-from sys import platform
-
 from building_blocks import *
 from callbacks import *
 
@@ -19,11 +17,11 @@ print("Loading "+graph_title+" ...")
 G=nx.read_gpickle("data/graphs/drug_projection.gpickle")
 nx.set_node_attributes(G,nx.get_node_attributes(G,"Name"),"id")
 
-# pos=nx.kamada_kawai_layout(G, scale=1000)
-if platform == "linux":
+
+try:
     from networkx.drawing.nx_agraph import graphviz_layout
     pos=nx.rescale_layout_dict(graphviz_layout(G),1000)
-else:
+except:
     pos=nx.spring_layout(G,k=1/(np.sqrt(len(G.nodes())/15)), scale=1000, seed=1)
 
 nodes=[{"data":{key:value for key,value in attributes.items()}, "position":{"x":pos[node][0],"y":pos[node][1]}} for node,attributes in dict(G.nodes(data=True)).items()]
