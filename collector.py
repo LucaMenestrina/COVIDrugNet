@@ -81,9 +81,9 @@ class drug():
                     if ("class" not in tab.attrs and "target" not in tab.attrs):
                         if tab.get_text() not in done_proteins:
                             try:
-                                prot=protein(tab.get_text(),"https://www.drugbank.ca"+tab["href"])
-                                self.__proteins[kind][tab.get_text()]=prot
-                                added_proteins[tab.get_text()]=prot
+                                prot=protein("https://www.drugbank.ca"+tab["href"])
+                                self.__proteins[kind][prot.name]=prot
+                                added_proteins[prot.name]=prot
                             except:
                                 pass
                         else:
@@ -125,13 +125,13 @@ class drug():
 
 
 class protein():
-    def __init__(self,name,url):
-        self.name = name
+    def __init__(self,url):
         self.drugbank_url=url
         self.id = url.split("/")[-1]
         response = requests.get(url)
         page = response.content
         soup = BeautifulSoup(page, 'html5lib')
+        self.name = soup.find("h1").get_text()
         relations = soup.find('table', attrs = {'id':'target-relations'})
         self.gene=soup.findAll("dd",attrs={"class":"col-xl-10 col-md-9 col-sm-8"})[2].get_text()
         self.organism=soup.findAll("dd",attrs={"class":"col-xl-10 col-md-9 col-sm-8"})[3].get_text()
@@ -202,9 +202,20 @@ def stringify_list_attributes(graph):
     graph=graph.copy()
     for node in graph.nodes():
         for attribute, val in graph.nodes[node].items():
-            if isinstance(val,list):
-                val=", ".join(str(val))
+            if isinstance(val,list) or isinstance(val,tuple):
+                try:
+                    val=", ".join(val)
+                except:
+                    val=", ".join([str(v) for v in val])
                 graph.nodes[node][attribute]=val
+    for edge in graph.edges():
+        for attribute, val in graph.edges[edge].items():
+            if isinstance(val,list) or isinstance(val,tuple):
+                try:
+                    val=", ".join(val)
+                except:
+                    val=", ".join([str(v) for v in val])
+                graph.edges[edge][attribute]=val
     return graph
 
 class collector():
@@ -280,25 +291,27 @@ class collector():
         return graph
     def save_graph(self,is_needed,df,graph,name):
         if is_needed:
-            df.to_csv("data/graphs/"+name+".tsv",sep="\t")
-            nx.write_gpickle(graph,"data/graphs/"+name+".gpickle")
-            nx.write_adjlist(graph,"data/graphs/"+name+".adjlist",delimiter="\t")
-            nx.write_multiline_adjlist(graph,"data/graphs/"+name+".multiline_adjlist",delimiter="\t")
-            nx.write_edgelist(graph,"data/graphs/"+name+".edgelist",delimiter="\t")
-            with open("data/graphs/"+name+".cyjs","w") as outfile:
+            if not os.path.isdir("data/graphs/"+name):
+                os.mkdir("data/graphs/"+name)
+            df.to_csv("data/graphs/%s/%s.tsv"%(name,name),sep="\t")
+            nx.write_gpickle(graph,"data/graphs/%s/%s.gpickle"%(name,name))
+            nx.write_adjlist(graph,"data/graphs/%s/%s.adjlist"%(name,name),delimiter="\t")
+            nx.write_multiline_adjlist(graph,"data/graphs/%s/%s.multiline_adjlist"%(name,name),delimiter="\t")
+            nx.write_edgelist(graph,"data/graphs/%s/%s.edgelist"%(name,name),delimiter="\t")
+            with open("data/graphs/%s/%s.cyjs"%(name,name),"w") as outfile:
                 outfile.write(json.dumps(nx.cytoscape_data(graph), indent=2))
             graph=stringify_list_attributes(graph)
-            nx.write_gexf(graph,"data/graphs/"+name+".gexf")
-            nx.write_graphml(graph,"data/graphs/"+name+".graphml")
+            nx.write_gexf(graph,"data/graphs/%s/%s.gexf"%(name,name))
+            nx.write_graphml(graph,"data/graphs/%s/%s.graphml"%(name,name))
     def similarity(self,sparse=True,save=True):
         self.similarities={drug1.name:{drug2.name:DataStructs.FingerprintSimilarity(drug1.fingerprint,drug2.fingerprint) for drug2 in self.drugs if drug2.fingerprint} for drug1 in self.drugs if drug1.fingerprint}
         df=pd.DataFrame(self.similarities)
         if sparse:
             df=pd.DataFrame([(drug1,drug2,df[drug1][drug2]) for drug1,drug2 in itertools.combinations(list(df),2) if df[drug1][drug2] != 0], columns=["Source","Target","Weight"])
             if filename:
-                df.to_csv("data/graphs/similarity.tsv",sep="\t")
+                df.to_csv("data/graphs/similarity/similarity.tsv",sep="\t")
         elif save:
-            df.to_csv("data/graphs/similarity.tsv",sep="\t")
+            df.to_csv("data/graphs/similarity/similarity.tsv",sep="\t")
         return df
     def chemicalspace(self,tab=False):
         self.similarities={drug1.name:{drug2.name:DataStructs.FingerprintSimilarity(drug1.fingerprint,drug2.fingerprint) for drug2 in self.drugs if drug2.fingerprint} for drug1 in self.drugs if drug1.fingerprint}
@@ -315,10 +328,11 @@ class collector():
         nx.set_node_attributes(G,{node:"#FC5F67" for node in G.nodes()},"fill_color")
         nx.set_node_attributes(G,{node:"#CC6540" for node in G.nodes()},"line_color") #idem
         self.graph_properties(G)
-        self.chemicalspace=G
-        df.to_csv("data/graphs/chemicalspace.tsv",sep="\t")
-        nx.write_gpickle(G,"data/graphs/chemicalspace.pickle")
+        self.__chemicalspace=G
+        df.to_csv("data/graphs/chemicalspace/.tsv",sep="\t")
+        nx.write_gpickle(G,"data/graphs/chemicalspace/chemicalspace.pickle")
     def drugtarget(self,tab=False):
+        print("Building Drug-Target Network ...")
         drugtarget=[{"Drug":drug.name,"Target":target.name} for drug in self.drugs for target in drug.targets.values()]
         df=pd.DataFrame(drugtarget)
         drug_attributes={drug.name:(drug.summary().T.to_dict()[drug.name]) for drug in self.drugs}
@@ -345,6 +359,7 @@ class collector():
         self.__drugtarget=G
         self.save_graph(self.added_new_drugs,df,G,"drug_target")
     def drugdrug(self,tab=False):
+        print("Building Drug Projection ...")
         drug_attributes={drug.name:(drug.summary().T.to_dict()[drug.name]) for drug in self.drugs}
         structures={mol.name:"https://www.drugbank.ca/structures/%s/image.svg"%mol.id for mol in self.drugs} # direttamente da drugbank
         nodes=[d.name for d in self.drugs if d.targets != {}]
@@ -354,6 +369,7 @@ class collector():
         df=nx.to_pandas_edgelist(G)
         self.save_graph(self.added_new_drugs,df,G,"drug_projection")
     def targettarget(self,tab=False):
+        print("Building Target Projection ...")
         nodes=[t for d in self.drugs for t in d.targets]
         G=bipartite.weighted_projected_graph(self.__drugtarget,nodes)
         self.graph_properties(G)
@@ -369,7 +385,7 @@ class collector():
         nx.set_node_attributes(G,protein_attributes)
         nx.set_node_attributes(G,{node:node for node in G.nodes},"gene")
         self.graph_properties(G)
-        self.targetinteractors=G
+        self.__targetinteractors=G
         self.save_graph(self.added_new_drugs,df,G,"target_interactors")
     def targetdiseases(self,tab=False):
         proteins_list=set([target for drug in self.drugs for target in drug.targets.values()])
@@ -383,6 +399,86 @@ class collector():
         self.graph_properties(G)
         self.__targetdiseases=G
         self.save_graph(self.added_new_drugs,df,G,"target_diseases")
+    def virus_host_interactome(self):
+        print("Building Virus Host Interactome ...")
+        from networkx.drawing.nx_agraph import graphviz_layout
+        def replace_minor_components(graph, pos, scalefactor=1.33):
+            components=list(nx.connected_components(graph))
+            maj=max(components,key=len)
+            #get viral proteins not in major component
+            vnodes=[n for n in viral if n not in maj]
+            vedges=[]
+            # if more than one viral protein, create an edge between them
+            for comp in components:
+                if len([n for n in comp if n in vnodes])>1:
+                    from itertools import product
+                    tmp_edge=list(product([n for n in comp if n in vnodes]))
+                    vedges.append((tmp_edge[0][0],tmp_edge[1][0]))
+            V=nx.Graph()
+            V.add_edges_from(vedges)
+            V.add_nodes_from(vnodes)
+            # spread viral proteins in a circle
+            pvir=nx.circular_layout(V)
+            # nx.draw(V, pos=nx.rescale_layout_dict(pvir,1.25), with_labels=True,alpha=0.5)
+            for comp in components:
+                if comp != maj:
+                    centers=[v for v in V.nodes() if v in comp]
+                    if len(centers)>1:
+                        pcenter=(np.average([pvir[n][0] for n in centers]),np.average([pvir[n][1] for n in centers]))
+                    else:
+                        center=centers[0]
+                        pcenter=pvir[center]
+                    # compute layout for every single component
+                    pcomp=nx.rescale_layout_dict(nx.kamada_kawai_layout(graph.subgraph(comp)),len(centers)**2/len(components))
+                    for node in comp:
+                        # reset position for every node in minor compoents on the basis of the circle created above
+                        pos[node]=((pcomp[node][0]+pcenter[0])*scalefactor,(pcomp[node][1]+pcenter[1])*scalefactor)
+                else:
+                    #rescale positions also for major component
+                    pcenter=(np.average([pos[n][0] for n in viral]),np.average([pos[n][1] for n in viral]))
+                    # pcomp=nx.kamada_kawai_layout(graph.subgraph(comp))
+                    pcomp=nx.rescale_layout_dict(graphviz_layout(graph.subgraph(comp), prog="neato", args="-Goverlap=scalexy"),1)
+                    for node in comp:
+                        pos[node]=(pcomp[node][0]+pcenter[0],pcomp[node][1]+pcenter[1])
+            return pos
+        chen_SFB_TAP=pd.read_excel("data/others/Chen_Interactions.xlsx",sheet_name=0, usecols=["Bait","Prey"])
+        chen_BioID2=pd.read_excel("data/others/Chen_Interactions.xlsx",sheet_name=1, usecols=["Bait","Prey"])
+        chen_SFB_TAP={(row[0],row[1]) for _,row in chen_SFB_TAP.iterrows()}
+        chen_BioID2={(row[0],row[1]) for _,row in chen_BioID2.iterrows()}
+        chen=chen_SFB_TAP.union(chen_BioID2)
+        gordon=pd.read_excel("data/others/Gordon_Interactions.xlsx", header=1, usecols=["Bait","Preys","PreyGene"])
+        gordon={(row[0].replace("SARS-CoV2 ","").replace("orf","ORF").replace("nsp","NSP").replace("Spike","S").replace("NSP5_C145A","NSP5"),row[2]) for _,row in gordon.iterrows()}
+        edges=chen.union(gordon)
+        viral={e[0] for e in edges}
+        human={e[1] for e in edges}
+        targeted_genes=human.intersection(set(dict(nx.get_node_attributes(self.__targettarget,"Gene")).values()))
+        drugs={}
+        for name,node in self.__drugtarget.nodes(data=True):
+            if node["kind"] == "Target":
+                if node["Gene"] in human:
+                    drugs[node["Gene"]]=list(self.__drugtarget.neighbors(name))
+        networker_edges={(source,target) for source,targets in drugs.items() for target in targets}
+        edges=edges.union(networker_edges)
+        drugs=[t for ts in drugs.values() for t in ts]
+        G=nx.from_edgelist(edges)
+        pos=nx.rescale_layout_dict(graphviz_layout(G, prog="neato", args="-Goverlap=scalexy"),1.1)
+        pos=replace_minor_components(G,pos)
+        nx.set_node_attributes(G,{node:node for node in G.nodes()},"Gene")
+        nx.set_node_attributes(G,{node:True if node in viral else False for node in G.nodes()},"Viral")
+        nx.set_node_attributes(G,{node:True if node in human else False for node in G.nodes()},"Human")
+        nx.set_node_attributes(G,{node:True if node in targeted_genes else False for node in G.nodes()},"Targeted")
+        nx.set_node_attributes(G,{node:True if node in drugs else False for node in G.nodes()},"Drug")
+        nx.set_node_attributes(G,{node:pos[node] for node in G.nodes()},"pos")
+        edge_source={}
+        for edge in edges:
+            source=[]
+            for name,s in {"Chen_SFB_TAP":chen_SFB_TAP,"Chen_BioID2":chen_BioID2, "Gordon":gordon, "COVID-19 Drugs Networker":networker_edges}.items():
+                if edge in s:
+                    source.append(name)
+            edge_source[edge]=source
+        nx.set_edge_attributes(G,edge_source,"Source")
+        self.__virusHostInteractome=G
+        self.save_graph(self.added_new_drugs,pd.DataFrame({"Source":e[0],"Target":e[1]} for e in edges),G,"virus_host_interactome")
 
 if __name__ == "__main__":
     COVID_drugs=collector()
@@ -395,13 +491,14 @@ if __name__ == "__main__":
     # COVID_drugs.drugdrug()
     # COVID_drugs.targettarget()
 
-    if COVID_drugs.added_new_drugs == True:
+    if COVID_drugs.added_new_drugs:
         # COVID_drugs.chemicalspace()
         COVID_drugs.drugtarget()
         COVID_drugs.drugdrug()
         COVID_drugs.targettarget()
         # COVID_drugs.targetinteractors()
         # COVID_drugs.targetdiseases()
+        COVID_drugs.virus_host_interactome()
         for prefix in ["drug_target","drug_projection","target_projection"]:
             for group in ["communities","spectral"]:
                 name="data/groups/"+prefix+"_"+group+".pickle"

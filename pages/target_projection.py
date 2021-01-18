@@ -7,14 +7,12 @@ import networkx as nx
 from building_blocks import *
 from callbacks import *
 
-# app=dash.Dash(__name__, external_stylesheets=[dbc.themes.FLATLY])
-# app.title="COVID-19 Networker"
-# prefix="tt"
+
 graph_title="Target Projection"
 prefix=graph_title.lower().replace(" ","_")#"target_projection"
 print("Loading "+graph_title+" ...")
 
-G=nx.read_gpickle("data/graphs/target_projection.gpickle")
+G=nx.read_gpickle("data/graphs/target_projection/target_projection.gpickle")
 nx.set_node_attributes(G,nx.get_node_attributes(G,"Name"),"id")
 
 
@@ -57,7 +55,3 @@ layout=dbc.Col([
 ##  ----------  CALLBACKS   ------------
 
 build_callbacks(prefix,G,nodes,*common_data_generator(prefix,G))
-
-
-# if __name__=="__main__":
-#     app.run_server(debug=False)

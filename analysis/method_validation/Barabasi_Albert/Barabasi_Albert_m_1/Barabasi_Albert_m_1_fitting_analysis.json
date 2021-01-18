@@ -1,0 +1,52 @@
+{
+    "observed": {
+        "alpha": 2.5757877270590543,
+        "xmin": 3.0,
+        "D": 0.028681806263010867,
+        "percentage": 16.4
+    },
+    "comparisons": {
+        "truncated_power_law": {
+            "likelihood-ratio": -0.237661088456655,
+            "pvalue": 0.4905488536762319
+        },
+        "exponential": {
+            "likelihood-ratio": 34.13799950924091,
+            "pvalue": 0.04048688895451934
+        },
+        "stretched_exponential": {
+            "likelihood-ratio": 0.021654898648003407,
+            "pvalue": 0.9849040965844574
+        },
+        "lognormal": {
+            "likelihood-ratio": -0.21661532326741684,
+            "pvalue": 0.7084551211510528
+        }
+    },
+    "bootstrap": {
+        "alpha": {
+            "estimated": 2.525428007251171,
+            "CI": [
+                2.2320923560170995,
+                2.98552132692842
+            ],
+            "pvalue": 0.41441
+        },
+        "xmin": {
+            "estimated": 3.28924,
+            "CI": [
+                2.0,
+                6.0
+            ],
+            "pvalue": 0.52644
+        },
+        "D": {
+            "estimated": 0.03889157852925228,
+            "CI": [
+                0.024211135003145482,
+                0.05511877150969809
+            ],
+            "pvalue": 0.86077
+        }
+    }
+}

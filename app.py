@@ -12,7 +12,7 @@ meta=[
     },
     {
         "name": "title",
-        "content": "COVID-19 Drugs Networker"
+        "content": "COVIDrugNet"
     },
     {
         "name": "description",
@@ -53,7 +53,7 @@ class CustomDash(dash.Dash):
         <html>
             <head>
                 {metas}
-                <title>COVID-19 Drugs Networker</title>
+                <title>COVIDrugNet</title>
                 {favicon}
                 {css}
                 <style>

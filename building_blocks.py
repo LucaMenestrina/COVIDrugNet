@@ -44,7 +44,7 @@ loading_banner = html.Div(
 
 def common_data_generator(prefix,graph):
     if prefix == "drug_projection":
-        with open("data/atc_description.pickle", "rb") as bkp:
+        with open("data/others/atc_description.pickle", "rb") as bkp:
             atc_description=pickle.load(bkp)
     else:
         atc_description=[]
@@ -98,26 +98,26 @@ def headbar():
                     html.A(
                         dbc.Row([
                             html.Img(src=app.get_asset_url("imgs/logo_white.svg"), style={"height":"4vh", "margin-right":"1rem"}),
-                            dbc.NavbarBrand("COVID-19 Drugs Networker")
+                            dbc.NavbarBrand("COVIDrugNet")
                         ], no_gutters=True, justify="start", align="center"),
-                    href="/covid19drugsnetworker", className="card-link"),
+                    href="/covidrugnet", className="card-link"),
                     dbc.NavbarToggler(id="headbar_toggler"),
                     dbc.Collapse([
                         dbc.Nav([
-                            dbc.NavItem(dbc.NavLink([html.I(className="fa fa-home", style={"margin-right":"0.4rem"}),"Home"],href="/covid19drugsnetworker/home", active=True, className="nav-link active", external_link=True), className="nav-item", id="home_nav"),
-                            dbc.Tooltip("COVID-19 Drugs Networker Homepage", target="home_nav", placement="bottom", hide_arrow=True, delay={"show":500, "hide":250}),
-                            dbc.NavItem(dbc.NavLink([html.I(className="fa fa-question", style={"margin-right":"0.4rem"}),"Help"],href="/covid19drugsnetworker/help", active=True, className="nav-link active", external_link=True), className="nav-item", id="help_nav"),
+                            dbc.NavItem(dbc.NavLink([html.I(className="fa fa-home", style={"margin-right":"0.4rem"}),"Home"],href="/covidrugnet/home", active=True, className="nav-link active", external_link=True), className="nav-item", id="home_nav"),
+                            dbc.Tooltip("COVIDrugNet Homepage", target="home_nav", placement="bottom", hide_arrow=True, delay={"show":500, "hide":250}),
+                            dbc.NavItem(dbc.NavLink([html.I(className="fa fa-question", style={"margin-right":"0.4rem"}),"Help"],href="/covidrugnet/help", active=True, className="nav-link active", external_link=True), className="nav-item", id="help_nav"),
                             dbc.Tooltip("Page Structure and Main Possible Interactions", target="help_nav", placement="bottom", hide_arrow=True, delay={"show":500, "hide":250}),
-                            dbc.NavItem(dbc.NavLink([html.I(className="fa fa-info", style={"margin-right":"0.4rem"}),"About"],href="/covid19drugsnetworker/about", active=True, className="nav-link active", external_link=True), className="nav-item", id="about_nav"),
+                            dbc.NavItem(dbc.NavLink([html.I(className="fa fa-info", style={"margin-right":"0.4rem"}),"About"],href="/covidrugnet/about", active=True, className="nav-link active", external_link=True), className="nav-item", id="about_nav"),
                             dbc.Tooltip("Info About the Project", target="about_nav", placement="bottom", hide_arrow=True, delay={"show":500, "hide":250}),
-                            dbc.NavItem(dbc.NavLink([html.I(className="fa fa-address-book", style={"margin-right":"0.4rem"}),"Contacts"],href="/covid19drugsnetworker/contacts", active=True, className="nav-link active", external_link=True), className="nav-item", id="contacts_nav"),
+                            dbc.NavItem(dbc.NavLink([html.I(className="fa fa-address-book", style={"margin-right":"0.4rem"}),"Contacts"],href="/covidrugnet/contacts", active=True, className="nav-link active", external_link=True), className="nav-item", id="contacts_nav"),
                             dbc.Tooltip("Project Participant's Contacts", target="contacts_nav", placement="bottom", hide_arrow=True, delay={"show":500, "hide":250}),
                             dbc.Nav([
                                 dbc.NavLink(html.I(className="fa fa-project-diagram"), active=True, className="nav-link active", style={"margin-right":"-0.6rem"}), # patch for graphs label icon
                                 dbc.DropdownMenu([
-                                    dbc.DropdownMenuItem("Drug-Target Network", href="/covid19drugsnetworker/drug_target", className="dropdown-item", external_link=True),
-                                    dbc.DropdownMenuItem("Drug Projection", href="/covid19drugsnetworker/drug_projection", className="dropdown-item", external_link=True),
-                                    dbc.DropdownMenuItem("Target Projection", href="/covid19drugsnetworker/target_projection", className="dropdown-item", external_link=True),
+                                    dbc.DropdownMenuItem("Drug-Target Network", href="/covidrugnet/drug_target", className="dropdown-item", external_link=True),
+                                    dbc.DropdownMenuItem("Drug Projection", href="/covidrugnet/drug_projection", className="dropdown-item", external_link=True),
+                                    dbc.DropdownMenuItem("Target Projection", href="/covidrugnet/target_projection", className="dropdown-item", external_link=True),
                                     # dbc.DropdownMenuItem("Target Disease", href="/target_disease", className="dropdown-item"), # not yet available
                                     # dbc.DropdownMenuItem("Target Interactors", href="/target_interactors", className="dropdown-item") # not yet available
                                 ], nav=True, in_navbar=True, right=True, label="Graphs ...", className="nav-item dropdown active"),
@@ -137,22 +137,26 @@ def sidebar(prefix):
     if prefix in ["drug_target","drug_projection","target_projection"]:
         items=[
             dbc.NavItem(dbc.NavLink("Graph", href="#"+prefix+"_graph_container", external_link=True, active=True, className="nav-link"), className="nav-item", id=prefix+"_graph_side"),
-            dbc.Tooltip("Jump to Graph' Section", target=prefix+"_graph_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}),
+            dbc.Tooltip("Jump to Graph's Section", target=prefix+"_graph_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}),
             dbc.NavItem(dbc.NavLink("Inspected Data", href="#"+prefix+"_inspected_table", external_link=True, id=prefix+"_side_inspected_table", active=False, disabled=True, className="nav-link"), className="nav-item", id=prefix+"_inspected_data_side"),
-            dbc.Tooltip("Jump to Inspected Data' Section", target=prefix+"_inspected_data_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}, id=prefix+"_inspected_data_side_tooltip"),
-            dbc.NavItem(dbc.NavLink("Convenient Plots", href="#"+prefix+"_plots",external_link=True, active=True, className="nav-link"), className="nav-item", id=prefix+"_plots_side"),
-            dbc.Tooltip("Jump to Convenient Plots' Section", target=prefix+"_plots_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}),
+            dbc.Tooltip("Jump to Inspected Data's Section", target=prefix+"_inspected_data_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}, id=prefix+"_inspected_data_side_tooltip"),
+            dbc.NavItem(dbc.NavLink("Charts and Plots", href="#"+prefix+"_plots",external_link=True, active=True, className="nav-link"), className="nav-item", id=prefix+"_plots_side"),
+            dbc.Tooltip("Jump to Charts and Plots' Section", target=prefix+"_plots_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}),
             dbc.NavItem(dbc.NavLink("Graph Properties", href="#"+prefix+"_graph_properties_table", external_link=True, active=True, className="nav-link"), className="nav-item", id=prefix+"_graph_properties_side"),
             dbc.Tooltip("Jump to Graph Properties' Section", target=prefix+"_graph_properties_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}),
             html.Hr(),
             dbc.NavItem(dbc.NavLink("Clustering", href="#"+prefix+"_clustering",external_link=True, active=True, className="nav-link", id=prefix+"_side_clustering"), className="nav-item", id=prefix+"_clustering_side"),
-            dbc.Tooltip("Jump to Clustering' Section", target=prefix+"_clustering_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}, id=prefix+"_clustering_side_tooltip")
+            dbc.Tooltip("Jump to Clustering's Section", target=prefix+"_clustering_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}, id=prefix+"_clustering_side_tooltip")
         ]
         if "projection" in prefix:
             items += [
                 dbc.NavItem(dbc.NavLink("Degree Distribution Fittings", href="#"+prefix+"_adv_degree_distribution",external_link=True, active=True, className="nav-link", id=prefix+"_side_adv_degree_distribution"), className="nav-item", id=prefix+"_adv_degree_distribution_side"),
                 dbc.Tooltip("Jump to Advanced Degree Distribution Fittings' Section", target=prefix+"_adv_degree_distribution_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}, id=prefix+"_adv_degree_distribution_side_tooltip")
             ]
+        items += [
+            dbc.NavItem(dbc.NavLink("Virus-Host Interactome", href="#"+prefix+"_virus_host_interactome",external_link=True, active=True, className="nav-link", id=prefix+"_side_virus_host_interactome"), className="nav-item", id=prefix+"_virus_host_interactome_side"),
+            dbc.Tooltip("Jump to Virus-Host Interactome's Section Advanced Degree Distribution Fittings' Section", target=prefix+"_virus_host_interactome_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}, id=prefix+"_virus_host_interactome_side_tooltip")
+        ]
         return dbc.NavbarSimple([
                     dbc.Col(items, align="center", style={"padding":"0px"}),
                 ],expand="xl", color="light", className="navbar navbar-light bg-light position-sticky nav", style={"position":"sticky", "top":"10vh"}),
@@ -471,13 +475,13 @@ def get_frequency(l):
 
 def degree_distribution(graph, title):
     K=dict(nx.get_node_attributes(graph,"Degree"))
-    n=len(graph.nodes())
-    p=len(graph.edges())/(n*(n-1)/2)
-    ER=nx.fast_gnp_random_graph(n,p)
-    ERK=dict(nx.degree(ER))
-    plot=go.Figure(layout={"title":{"text":"Node Degree Distribution","x":0.5, "xanchor": "center"},"xaxis":{"title_text":"Node degree, k", "type":"log"}, "yaxis":{"title_text":"Frequency of Nodes with degree k, n(k)", "type":"log"}, "template":"ggplot2"})
+    # n=len(graph.nodes())
+    # p=len(graph.edges())/(n*(n-1)/2)
+    # ER=nx.fast_gnp_random_graph(n,p)
+    # ERK=dict(nx.degree(ER))
+    plot=go.Figure(layout={"title":{"text":"Degree Distribution","x":0.5, "xanchor": "center"},"xaxis":{"title_text":"Degree, k", "type":"log"}, "yaxis":{"title_text":"Frequency of Nodes with degree k, n(k)", "type":"log"}, "template":"ggplot2"})
     yrange=[np.inf,-np.inf]
-    for deg,name,order,color,trendline_order in [(K,title,1,"Tomato","Linear"),(ERK,"Erdős Rényi",2,"DeepSkyBlue","Quadratic")]:# Equivalent Graph
+    for deg,name,order,color,trendline_order in [(K,title,1,"Tomato","Linear")]:#,(ERK,"Erdős Rényi",2,"DeepSkyBlue","Quadratic")]:# Uncomment to show Equivalent Erdős Rényi Graph
         x=list(get_frequency(deg.values()).keys())
         y=list(get_frequency(deg.values()).values())
         if x[0]==0: # to avoid problems with log10, they wouldn't be display anyway because of the loglog
@@ -493,7 +497,7 @@ def degree_distribution(graph, title):
         coeff = np.polyfit(np.log10(x), np.log10(y),order)
         poly = np.poly1d(coeff)
         yfit = lambda x: 10**(poly(np.log10(x)))
-        plot.add_trace(go.Scatter(x=x,y=yfit(x), mode="lines", name=name+"'s "+trendline_order+" Trendline", line_color=color))
+        plot.add_trace(go.Scatter(x=x,y=yfit(x), mode="lines", name=name+"'s "+trendline_order+" Trendline", line_color=color, visible="legendonly"))
     plot.update_layout({"paper_bgcolor": "rgba(0, 0, 0, 0)", "modebar":{"bgcolor":"rgba(0, 0, 0, 0)","color":"silver","activecolor":"grey"}, "legend":{"orientation":"h","yanchor":"top","y":-0.25, "xanchor":"center","x":0.5}, "yaxis":{"range":yrange}}) # for a transparent background but keeping modebar acceptable colors, "x":1.25
     return plot
 
@@ -503,7 +507,7 @@ def plots(prefix, graph, title):
     if prefix != "drug_target":
         children+=[dbc.Col([dbc.Spinner(dcc.Graph(figure=degree_distribution(graph,title), id=prefix+"_degree_distribution", responsive=True))], style={"padding":"0px"}, xs=12, lg=6)]
     return dbc.Container([
-                html.H3("Convenient Plots"),
+                html.H3("Charts and Plots"),
                 dbc.Row(
                 children=children
                 # [
@@ -594,11 +598,13 @@ def advanced_section(prefix,graph,graph_title):
     if "projection" in prefix:
         collapse=[
             custom_clustering(prefix),
-            adv_degree_distribution(prefix,graph,graph_title)
+            adv_degree_distribution(prefix,graph,graph_title),
+            interactome(prefix)
         ]
     else:
         collapse=[
-            custom_clustering(prefix)
+            custom_clustering(prefix),
+            interactome(prefix)
         ]
     section=dbc.Container([
                 html.Br(),
@@ -699,6 +705,111 @@ def adv_degree_distribution(prefix,graph,graph_title):
         ], justify="center", align="center"),
         html.Br()
     ], id=prefix+"_adv_degree_distribution", fluid=True, style={"padding":"1%"})
+
+def interactome(prefix):
+    G=nx.read_gpickle("data/graphs/virus_host_interactome/virus_host_interactome.gpickle")
+    nx.set_node_attributes(G,{node:node for node in G.nodes()},"Gene")# temporary
+    edges_x=[]
+    edges_y=[]
+    for edge in G.edges():
+        x0,y0=G.nodes[edge[0]]["pos"]
+        x1,y1=G.nodes[edge[1]]["pos"]
+        edges_x+=[x0,x1,None]
+        edges_y+=[y0,y1,None]
+    edges_trace=go.Scatter(x=edges_x,y=edges_y, hoverinfo="none", mode="lines", line={"width":0.25, "color":"black"}, name="Interactions", showlegend=False)
+
+    figure=go.Figure(data=edges_trace)
+    data={
+        "Viral Genes":{
+            "x":[],
+            "y":[],
+            "labels":[],
+            "color":"#e74c3c",
+            "symbol":"diamond",
+            "size":8
+        },
+        "Human Genes":{
+            "x":[],
+            "y":[],
+            "labels":[],
+            "color":"#3498db",
+            "symbol":"circle",
+            "size":6
+        },
+        "Targeted Genes":{
+            "x":[],
+            "y":[],
+            "labels":[],
+            "color":"#f5b041",
+            "symbol":"circle",
+            "size":6
+        },
+        "Drugs":{
+            "x":[],
+            "y":[],
+            "labels":[],
+            "color":"#28b463",
+            "symbol":"square",
+            "size":6
+        },
+    }
+    for node,node_data in G.nodes(data=True):
+        if node_data["Viral"]:
+            data["Viral Genes"]["x"].append(node_data["pos"][0])
+            data["Viral Genes"]["y"].append(node_data["pos"][1])
+            data["Viral Genes"]["labels"].append(node_data["Gene"])
+        elif node_data["Drug"]:
+            data["Drugs"]["x"].append(node_data["pos"][0])
+            data["Drugs"]["y"].append(node_data["pos"][1])
+            data["Drugs"]["labels"].append(node_data["Gene"])
+        elif node_data["Targeted"]:
+            data["Targeted Genes"]["x"].append(node_data["pos"][0])
+            data["Targeted Genes"]["y"].append(node_data["pos"][1])
+            data["Targeted Genes"]["labels"].append(node_data["Gene"])
+        else:
+            data["Human Genes"]["x"].append(node_data["pos"][0])
+            data["Human Genes"]["y"].append(node_data["pos"][1])
+            data["Human Genes"]["labels"].append(node_data["Gene"])
+    for name, d in data.items():
+        figure.add_trace(go.Scatter(x=d["x"], y=d["y"], hoverinfo="text", mode="markers", marker={"color":d["color"], "symbol":d["symbol"], "size":d["size"], "opacity":0.9}, text=d["labels"], name=name))
+    figure.update_layout({"margin":{"t":10,"b":2,"l":10,"r":10}, "dragmode":"pan", "xaxis":{"showgrid":False, "zeroline":False, "showticklabels":False},"yaxis":{"showgrid":False, "zeroline":False, "showticklabels":False},"paper_bgcolor": "rgba(0, 0, 0, 0)","plot_bgcolor": "rgba(0, 0, 0, 0)", "modebar":{"bgcolor":"rgba(0, 0, 0, 0)","color":"silver","activecolor":"grey"}}) # for a transparent background but keeping modebar acceptable colors
+
+    return dbc.Container([
+        html.Br(),
+        html.H3("Virus-Host Interactome"),
+        dbc.Row([
+            dbc.Button("Download", id=prefix+"_save_interactome_open", className="btn btn-outline-primary"),
+            dbc.Modal([
+                dbc.ModalHeader("Save Virus-Host Interactome"),
+                dbc.ModalBody([
+                    html.P("Format"),
+                    dcc.Dropdown(id=prefix+"_save_interactome", options=[
+                        {"label":"Download as Adjacency List", "value":"adjlist"},
+                        {"label":"Download as Pickle", "value":"gpickle"},
+                        {"label":"Download as Cytoscape JSON", "value":"cyjs"},
+                        {"label":"Download as GRAPHML", "value":"graphml"},
+                        {"label":"Download as GEXF", "value":"gexf"},
+                        {"label":"Download as Edges List", "value":"edgelist"},
+                        {"label":"Download as Multiline Adjacency List", "value":"multiline_adjlist"},
+                        {"label":"Download as TSV", "value":"tsv"},
+                    ], placeholder="Download as ...", clearable=False, searchable=False, className="DropdownMenu")
+                ]),
+                dbc.ModalFooter([
+                    html.A(dbc.Button("Download", id=prefix+"_download_interactome_button", className="btn btn-outline-primary"),id=prefix+"_download_interactome_button_href", target="_blank"),
+                    dbc.Button("Close", id=prefix+"_save_interactome_close", className="btn btn-outline-primary")
+                ]),
+            ], id=prefix+"_save_interactome_modal"),
+            dbc.Tooltip("Download Virus-Host Interactome File", target=prefix+"_save_interactome_open", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
+        ], justify="end", align="center"),
+        html.Br(),
+        dbc.Row([
+            dbc.Col([
+                    dbc.Spinner(dcc.Graph(figure=figure, id=prefix+"_virus_host_interactome_graph", responsive=True, style={"height":"80vh"}, config={"scrollZoom":True}))
+            ], align="center", xs=10, md=8, style={"padding":"0px"})
+        ], justify="center", align="center"),
+        html.Br()
+    ], id=prefix+"_virus_host_interactome", fluid=True, style={"padding":"1%"})
+
 
 def footer():
     return dbc.Container([

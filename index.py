@@ -5,7 +5,7 @@ from time import time
 from datetime import timedelta
 # import datetime
 start_time=time()#datetime.datetime.now()
-print("Starting COVID-19 Drugs Networker")
+print("Starting COVIDrugNet")
 
 #adjust cwd if not launched with "python index.py"
 import os
@@ -46,19 +46,19 @@ def temp_loading(pathname):
 @app.callback(Output("page_content", "children"),
             [Input("url", "pathname")])
 def display_page(pathname):
-    if pathname in ["/covid19drugsnetworker", "/covid19drugsnetworker/", "/covid19drugsnetworker/home"]:
+    if pathname in ["/covidrugnet", "/covidrugnet/", "/covidrugnet/home"]:
         return home.layout
-    elif pathname == "/covid19drugsnetworker/help":
+    elif pathname == "/covidrugnet/help":
         return help.layout
-    elif pathname == "/covid19drugsnetworker/contacts":
+    elif pathname == "/covidrugnet/contacts":
         return contacts.layout
-    elif pathname == "/covid19drugsnetworker/about":
+    elif pathname == "/covidrugnet/about":
         return about.layout
-    elif pathname == "/covid19drugsnetworker/drug_target":
+    elif pathname == "/covidrugnet/drug_target":
         return drug_target.layout
-    elif pathname == "/covid19drugsnetworker/drug_projection":
+    elif pathname == "/covidrugnet/drug_projection":
         return drug_projection.layout
-    elif pathname == "/covid19drugsnetworker/target_projection":
+    elif pathname == "/covidrugnet/target_projection":
         return target_projection.layout
     # if pathname == "/target_disease":
     #     return target_disease.layout
@@ -73,14 +73,14 @@ def display_page(pathname):
 
 if __name__ == "__main__":
     print("Ready!\t(startup time: %sh %sm %ss)"%tuple(str(timedelta(seconds=(time()-start_time))).split(":")))#print("\nReady!\t(startup time: %s)"%(datetime.datetime.now()-start_time))
-    print("Launcing on http://127.0.0.1:8050/covid19drugsnetworker\n\n")
+    print("Launcing on http://127.0.0.1:8050/covidrugnet\n\n")
     import webbrowser
     from threading import Timer
     def openbrowser():
-        webbrowser.open("http://127.0.0.1:8050/covid19drugsnetworker")
+        webbrowser.open("http://127.0.0.1:8050/covidrugnet")
     Timer(1,openbrowser).start()
     app.run_server(debug=False)
 elif __name__ == "index":
-    # custom setting for deploying it with wsgi using from index import server as application (if setting a WSGIScriptAlias to /covid19drugsnetworker/)
-    app.config.update({"requests_pathname_prefix":"/covid19drugsnetworker/"})
+    # custom setting for deploying it with wsgi using from index import server as application (if setting a WSGIScriptAlias to /covidrugnet/)
+    app.config.update({"requests_pathname_prefix":"/covidrugnet/"})
     print("Ready!\t(startup time: %sh %sm %ss)"%tuple(str(timedelta(seconds=(time()-start_time))).split(":")))#print("Ready!\t(startup time: %s)\n"%(datetime.datetime.now()-start_time))

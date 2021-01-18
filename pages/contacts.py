@@ -5,8 +5,6 @@ import dash_html_components as html
 from building_blocks import *
 from callbacks import *
 
-# app=dash.Dash(__name__, external_stylesheets=[dbc.themes.FLATLY])
-# app.title="COVID-19 Networker"
 
 prefix="contacts"
 print("Loading "+prefix.capitalize()+" ...")
@@ -53,8 +51,3 @@ layout=dbc.Col([
             ], style={"height":"100vh"}),
             footer()
         ], style={"padding":"0px"})
-
-
-
-# if __name__=="__main__":
-#     app.run_server(debug=False)

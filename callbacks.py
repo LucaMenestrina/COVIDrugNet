@@ -174,7 +174,7 @@ def inspected_table_callback(prefix):
                         html.Br(),
                         dbc.Row([
                             html.H4("Inspected Drugs"),
-                            html.A(dbc.Button("Download", className="btn btn-outline-primary"),href=drugs_href, download="selected_drugs.tsv", target="_blank"),
+                            html.A(dbc.Button("Download", className="btn btn-outline-primary"),href=drugs_href, download="inspected_drugs.tsv", target="_blank"),
                         ], justify="around", align="center"),
                         html.Br(),
                         drugs_table]
@@ -211,7 +211,7 @@ def inspected_table_callback(prefix):
                         html.Br(),
                         dbc.Row([
                             html.H4("Inspected Targets"),
-                            html.A(dbc.Button("Download", className="btn btn-outline-primary"),href=targets_href, download="selected_targets.tsv", target="_blank"),
+                            html.A(dbc.Button("Download", className="btn btn-outline-primary"),href=targets_href, download="inspected_targets.tsv", target="_blank"),
                         ], justify="around", align="center"),
                         html.Br(),
                         targets_table]
@@ -304,6 +304,10 @@ def group_highlighter_callback(prefix,nodes,maj):
         [Input(prefix+"_only_major_highlighted_groups","value")]+[Input(prefix+"_highlight_dropdown_"+property,"value") for property in properties]+[Input(prefix+"_conjunction_"+property,"value") for property in properties]+[Input(prefix+"_equality_"+centrality,"value") for centrality in centralities]+[Input(prefix+"_highlight_value_"+centrality,"value") for centrality in centralities]+[Input(prefix+"_conjunction_general","value")]
     )
     def group_highlighter(only_maj,*values):
+        if isinstance(only_maj,list) and len(only_maj)>0 and only_maj[0]==True: # I don't know why it is needed, maybe because of the complex input
+            only_maj=True
+        else:
+            only_maj=False
         highlighted_values=dict(zip(["highlighted_"+property for property in properties]+["conjunction_"+property for property in properties]+["equality_"+centrality for centrality in centralities]+["value_"+centrality for centrality in centralities]+["conjunction_general"],values))
         for centrality in centralities:
             highlighted_values["highlighted_"+centrality]=centrality_filter(centrality,highlighted_values["equality_"+centrality],highlighted_values["value_"+centrality])
@@ -467,7 +471,6 @@ def highlighter_callback(prefix,G,nodes,L,evals,evects,n_clusters,clusters,L_maj
             clusters_cache = clusters_maj
         changed_id = [p['prop_id'] for p in dash.callback_context.triggered][0]
         if changed_id != prefix+"_highlighter_dropdown.value":
-            #####tmp!!!
             if "Centrality" in coloring or coloring in [name+comp for name in ["Degree","Clustering Coefficient","VoteRank Score"] for comp in ["","_maj"]]:
                 if "maj" in coloring:
                     coloring=coloring.split("_")[0]
@@ -481,14 +484,15 @@ def highlighter_callback(prefix,G,nodes,L,evals,evects,n_clusters,clusters,L_maj
                 for ID,c in centrality.items():
                     stylesheet.append({"selector":"[ID = '"+ID+"']", "style":{"border-color":"#303633","border-width":2,"background-color":cmap.get(c,"#708090")}})
                 values=sorted(centrality.values())
-                nbins=10
+                nbins=20
                 binner=KBinsDiscretizer(nbins,strategy="uniform", encode="ordinal")
                 bins=binner.fit_transform(np.array(values).reshape(-1,1)).reshape(1,-1)[0].tolist()
                 counts=[bins.count(n) for n in set(bins)]
-                bin_edges=[(round(binner.bin_edges_[0][i],3),round(binner.bin_edges_[0][i+1],3)) for i in range(nbins)]
                 if "Degree" not in coloring:
+                    bin_edges=[(round(binner.bin_edges_[0][i],3),round(binner.bin_edges_[0][i+1],3)) for i in range(nbins)]
                     labels=np.array(["%.3f \u2264 %s \u2264 %.3f"%(edge[0],coloring,edge[1]) for edge in bin_edges])[[int(n) for n in set(bins)]]
                 else:
+                    bin_edges=[(int(binner.bin_edges_[0][i]),int(binner.bin_edges_[0][i+1])) for i in range(nbins)]
                     labels=np.array(["%d \u2264 %s \u2264 %d"%(int(edge[0]),coloring,int(edge[1])) for edge in bin_edges])[[int(n) for n in set(bins)]]
                 mid_points=np.array([(edge[0]+edge[1])/2 for edge in bin_edges]).reshape(-1, 1)
                 marker_colors=np.array([rgb2hex(plt.cm.coolwarm(i)) for i in sorted(MinMaxScaler().fit_transform(mid_points).reshape(1,-1)[0].tolist())])[[int(n) for n in set(bins)]]
@@ -579,7 +583,6 @@ def highlighter_callback(prefix,G,nodes,L,evals,evects,n_clusters,clusters,L_maj
                         ATC1_apparent_count[ATC1_getter[code]]=value
                 ATC3_count_normalized={k:v*ATC_count[ATC1_getter[k]]/ATC1_apparent_count[ATC1_getter[k]] for k,v in ATC3_count.items()}
 
-                # pie_data=go.Bar(x=list(ATC_count.keys()),y=list(ATC_count.values()), marker={"color":[cmap[code] for code in ATC_count.keys()]}, text=[long_atc[code] for code in ATC_count.keys()])
                 pie_data=[]
                 for atc3 in ATC3_count:
                     y=[0]*len(rule)
@@ -588,7 +591,6 @@ def highlighter_callback(prefix,G,nodes,L,evals,evects,n_clusters,clusters,L_maj
                     text[rule.index(ATC1_getter[atc3])]=long_atc3[atc3]
                     pie_data.append(go.Bar(x=rule, y=y, marker={"color":cmap[ATC1_getter[atc3]], "line":{"color":"lightgrey","width":1}}, text=text, meta=[ATC3_count[atc3],long_atc[ATC1_getter[atc3]], ATC_count[ATC1_getter[atc3]]]))
                 pie=go.Figure(data=pie_data, layout={"title":{"text":"Nodes' Categories Distribution","x":0.5, "xanchor": "center"}})
-                # pie.update_traces(hovertemplate=" %{text} <br> Nodes: %{value} <extra></extra>")
                 pie.update_traces(hovertemplate="<b> ATC Level 3 </b> <br> %{text} <br> Nodes: %{meta[0]} <br><br><b> ATC Level 1 </b> <br> %{meta[1]}  <br> Nodes: %{meta[2]} <extra></extra>")
                 pie.update_layout(barmode="stack")
                 table_body=[]
@@ -817,7 +819,7 @@ def download_graph_callback(prefix):
         else:
             if ftype:
                 download=prefix+"."+ftype
-                href=app.get_asset_url("graphs/"+download)
+                href=app.get_asset_url("graphs/"+prefix+"/"+download)
         return download,href,{"type":ftype,"action":action, "filename":prefix}
     return download_graph
 
@@ -832,6 +834,9 @@ def open_advanced_section(prefix):
                 Output(prefix+"_side_adv_degree_distribution","active"),
                 Output(prefix+"_side_adv_degree_distribution","disabled"),
                 Output(prefix+"_adv_degree_distribution_side_tooltip","style"),
+                Output(prefix+"_side_virus_host_interactome","active"),
+                Output(prefix+"_side_virus_host_interactome","disabled"),
+                Output(prefix+"_virus_host_interactome_side_tooltip","style"),
             ],
             [Input(prefix+"_advanced_section_open", "n_clicks")],
             [State(prefix+"_advanced_section_collapse", "is_open")]
@@ -843,7 +848,7 @@ def open_advanced_section(prefix):
                 sides = True, False, None
             else:
                 sides = False, True, {"visibility":"hidden"}
-            return [is_open, *sides, *sides]
+            return [is_open, *sides, *sides, *sides]
     else:
         @app.callback(
             [
@@ -1103,6 +1108,36 @@ def fittings_callback(prefix, graph):
         return plot
     return fittings
 
+def toggle_download_interactome_callback(prefix):
+    @app.callback(
+        Output(prefix+"_save_interactome_modal", "is_open"),
+        [Input(prefix+"_save_interactome_open", "n_clicks"), Input(prefix+"_save_interactome_close", "n_clicks")],
+        [State(prefix+"_save_interactome_modal", "is_open")],
+    )
+    def toggle_download_interactome(n1, n2, is_open):
+        if n1 or n2:
+            return not is_open
+        return is_open
+    return toggle_download_interactome
+
+def download_interactome_callback(prefix):
+    @app.callback(
+        [
+            Output(prefix+"_download_interactome_button_href","download"),
+            Output(prefix+"_download_interactome_button_href","href")
+        ],
+        [
+            Input(prefix+"_save_interactome","value")
+        ]
+    )
+    def download_interactome(ftype):
+        if ftype:
+            download="virus_host_interactome."+ftype
+            href=app.get_asset_url("graphs/virus_host_interactome/"+download)
+            return download,href
+        else:
+            return None, None
+    return download_interactome
 
 def build_callbacks(prefix,G,nodes,graph_properties_df,L,evals,evects,n_clusters,clusters,L_maj,evals_maj,evects_maj,n_clusters_maj,clusters_maj,girvan_newman,maj,girvan_newman_maj,communities_modularity,communities_modularity_maj,n_comm,n_comm_maj,atc_description):
     # collapse_headbar_callback()
@@ -1124,3 +1159,5 @@ def build_callbacks(prefix,G,nodes,graph_properties_df,L,evals,evects,n_clusters
     inspected_table_callback(prefix)
     properties_table_callback(prefix,graph_properties_df,nodes)
     fittings_callback(prefix,G)
+    toggle_download_interactome_callback(prefix)
+    download_interactome_callback(prefix)

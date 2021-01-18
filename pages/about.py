@@ -5,8 +5,6 @@ import dash_html_components as html
 from building_blocks import *
 from callbacks import *
 
-# app=dash.Dash(__name__, external_stylesheets=[dbc.themes.FLATLY])
-# app.title="COVID-19 Networker"
 
 prefix="about"
 print("Loading "+prefix.capitalize()+" ...")
@@ -17,12 +15,6 @@ layout=dbc.Col([
                 dbc.Col([
                     html.H3("About the Project"),
                     html.Br(),
-                    # html.H4("Info about the project..."),
-                    # html.P("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
-                    # html.Br(),
-                    # html.Hr(),
-                    # html.Br(),
-                    # html.P("Articolo"),
                     dbc.Row([
                         dbc.Col(
                             html.A(
@@ -41,8 +33,7 @@ layout=dbc.Col([
                             href="", target="_blank", style={"color":"black"}),
                         align="center", sm=12, md=6),
                         dbc.Col([
-                            # html.H4("Info about the project..."),
-                            html.P([html.Font("TEMPORANEO",style={"color":"red"})," The outbreak of the COVID-19 pandemic caused by SARS-CoV-2 at the beginning of 2020 has shocked the population worldwide. The scientific community has promptly put in place a great effort to help countering the spread of the virus. Here, we present a web application, the COVID-19 Drugs Networker (http://compmedchem.unibo.it/covid19drugsnetworkerr), that allows a network-based analysis of the DrugBank dataset of potential repurposed drugs currently in clinical trial. The freely accessible application automatically collects the data, builds the drug-target bipartite network as well as the two monopartite projections. The web interface allows a holistic view of the current drug repurposing status for COVID-19 to practitioners who are less familiar with the network mathematical framework, still offering the opportunity to explore the data, by taking advantage of some more specialized graph analysis tools, to more experienced users.By using this tool, we aim to recapitulate the initial system pharmacology of this plague, and by allowing free access to it to, eventually, maximize the open science philosophy. RESULTS"])
+                            html.P([html.Font("TEMPORANEO",style={"color":"red"})," The outbreak of the COVID-19 pandemic caused by SARS-CoV-2 at the beginning of 2020 has shocked the population worldwide. The scientific community has promptly put in place a great effort to help countering the spread of the virus. Here, we present a web application, the COVID-19 Drugs Networker (http://compmedchem.unibo.it/covidrugnet), that allows a network-based analysis of the DrugBank dataset of potential repurposed drugs currently in clinical trial. The freely accessible application automatically collects the data, builds the drug-target bipartite network as well as the two monopartite projections. The web interface allows a holistic view of the current drug repurposing status for COVID-19 to practitioners who are less familiar with the network mathematical framework, still offering the opportunity to explore the data, by taking advantage of some more specialized graph analysis tools, to more experienced users.By using this tool, we aim to recapitulate the initial system pharmacology of this plague, and by allowing free access to it to, eventually, maximize the open science philosophy. RESULTS"])
                         ], align="center", sm=12, md=6)
                     ], justify="around", align="center"),
                     html.Br(),
@@ -54,7 +45,6 @@ layout=dbc.Col([
                     html.Br(),
                     html.Hr(),
                     html.Br(),
-                    # html.H3("Credits:"),
                     html.H3("Data Sources:"),
                     html.Br(),
                     html.Ul([
@@ -172,8 +162,3 @@ layout=dbc.Col([
             html.Div(style={"height":"10vh"}),
             footer()
         ], style={"padding":"0px"})
-
-
-
-# if __name__=="__main__":
-#     app.run_server(debug=False)

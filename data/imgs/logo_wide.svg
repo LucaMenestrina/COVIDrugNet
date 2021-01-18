@@ -12,7 +12,7 @@
    viewBox="0 0 238.125 79.375002"
    version="1.1"
    id="svg8"
-   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
+   inkscape:version="1.0.1 (0767f8302a, 2020-10-17)"
    sodipodi:docname="logo_wide.svg">
   <defs
      id="defs2">
@@ -224,11 +224,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.3651837"
+     inkscape:zoom="1.349383"
      inkscape:cx="426.30167"
      inkscape:cy="163.25001"
      inkscape:document-units="mm"
-     inkscape:current-layer="g895"
+     inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="false"
      inkscape:snap-object-midpoints="true"
@@ -237,7 +237,8 @@
      inkscape:window-x="0"
      inkscape:window-y="25"
      inkscape:window-maximized="1"
-     units="px" />
+     units="px"
+     inkscape:snap-intersection-paths="false" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -246,7 +247,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -386,31 +387,38 @@
          inkscape:export-xdpi="400"
          inkscape:export-ydpi="400" />
     </g>
-    <g
-       id="g895"
-       transform="translate(7.8380881,2.9902269)">
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;line-height:125%;font-family:LATO;-inkscape-font-specification:LATO;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         x="151.69479"
-         y="29.340322"
-         id="text1609"><tspan
-           sodipodi:role="line"
-           x="151.69479"
-           y="29.340322"
-           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:5.64444px;font-family:LATO;-inkscape-font-specification:'LATO Semi-Bold';text-align:center;text-anchor:middle;fill:#4d4d4d;fill-opacity:1;stroke-width:0.264583px"
-           id="tspan1607">COVID-19 Drugs Networker</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:3.52778px;line-height:125%;font-family:LATO;-inkscape-font-specification:'LATO Medium';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         x="151.88353"
-         y="46.805889"
-         id="text889"><tspan
-           sodipodi:role="line"
-           x="151.88353"
-           y="46.805889"
-           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:3.52778px;font-family:LATO;-inkscape-font-specification:'LATO Medium';text-align:center;text-anchor:middle;fill:#4d4d4d;fill-opacity:1;stroke-width:0.264583px"
-           id="tspan887">Visualize and Analyze Networks about Drugs and Targets Related to COVID-19</tspan></text>
-    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.1111px;line-height:125%;font-family:LATO;-inkscape-font-specification:LATO;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="159.36859"
+       y="29.566858"
+       id="text1609"><tspan
+         sodipodi:role="line"
+         x="159.36859"
+         y="29.566858"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:14.1111px;font-family:LATO;-inkscape-font-specification:'LATO Semi-Bold';text-align:center;text-anchor:middle;fill:#4d4d4d;fill-opacity:1;stroke-width:0.264583px"
+         id="tspan1607">COVIDrugNet</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:3.52778px;line-height:125%;font-family:LATO;-inkscape-font-specification:'LATO Medium';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="159.72162"
+       y="54.643845"
+       id="text889"><tspan
+         sodipodi:role="line"
+         x="159.72162"
+         y="54.643845"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:3.52778px;font-family:LATO;-inkscape-font-specification:'LATO Medium';text-align:center;text-anchor:middle;fill:#4d4d4d;fill-opacity:1;stroke-width:0.264583px"
+         id="tspan887">Visualize and Analyze Networks about Drugs and Targets Related to COVID-19</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:125%;font-family:LATO;-inkscape-font-specification:LATO;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="159.53288"
+       y="40.96817"
+       id="text893"><tspan
+         sodipodi:role="line"
+         x="159.53288"
+         y="40.96817"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:4.23333px;font-family:LATO;-inkscape-font-specification:'LATO Semi-Bold';text-align:center;text-anchor:middle;fill:#4d4d4d;fill-opacity:1;stroke-width:0.264583px"
+         id="tspan891">COVID-19 Drugs Networker</tspan></text>
   </g>
 </svg>
