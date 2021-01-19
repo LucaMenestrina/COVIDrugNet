@@ -776,7 +776,7 @@ def interactome(prefix):
 
     return dbc.Container([
         html.Br(),
-        html.H3("Virus-Host Interactome"),
+        html.H3("Curent Virus-Host Interactome"),
         dbc.Row([
             dbc.Button("Download", id=prefix+"_save_interactome_open", className="btn btn-outline-primary"),
             dbc.Modal([

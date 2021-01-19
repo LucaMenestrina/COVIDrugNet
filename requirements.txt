@@ -17,4 +17,4 @@ dash_core_components==1.10.1
 beautifulsoup4==4.9.3
 #rdkit==2009.Q1-1 #commented because can give problems with "pip install -r requirements.txt"... it is better to install it manually
 scikit_learn==0.24.0
-#pygraphviz==1.6 # also pygraphviz has problems with pip on windows, it requires Microsoft Visual C++ 14.0
+pygraphviz==1.6 # pygraphviz has problems with pip on windows, it requires Microsoft Visual C++ 14.0

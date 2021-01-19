@@ -79,7 +79,12 @@ layout=dbc.Col([
                             html.A(html.P(["Gaulton, Anna et al. “The ChEMBL database in 2017.” ",html.Em("Nucleic acids research")," vol. 45,D1 (2017): D945-D954"], style={"margin-bottom":"0.25em"}), href="https://doi.org/10.1093/nar/gkw1074", target="_blank", style={"color":"black"}),
                             html.A(html.P(["Davies, Mark et al. “ChEMBL web services: streamlining access to drug discovery data and utilities.” ",html.Em("Nucleic acids research")," vol. 43,W1 (2015): W612-20"]), href="https://doi.org/10.1093/nar/gkv352", target="_blank", style={"color":"black"})
                         ], style={"background":"url(https://www.ebi.ac.uk/chembl/k8s/static/chembl/favicon.png)", "background-size":"2rem", "background-repeat":"no-repeat","background-position":"left", "padding-left":"4rem"}),
-                    ], style={"list-style-type":"none"}),#, style={"list-style-image":"url(https://string-db.org/images/favicon.png)"}
+                        html.Li([
+                            html.Strong("Virus-Host Interactomes"),
+                            html.A(html.P(["Gordon, David S et al. “A SARS-CoV-2 protein interaction map reveals targets for drug repurposing.” ",html.Em("Nature")," vol. 583,7816 (2020): 459-468"], style={"margin-bottom":"0.25em"}), href="https://doi.org/10.1038/s41586-020-2286-9", target="_blank", style={"color":"black"}),
+                            html.A(html.P(["Chen, Zhen et al. “Comprehensive analysis of the host-virus interactome of SARS-CoV-2.” ",html.Em("bioRxiv")," (2021)"]), href="10.1101/2020.12.31.424961", target="_blank", style={"color":"black"})
+                        ], style={"background-image":"url("+app.get_asset_url("others/lungs-virus-solid.svg")+")", "background-size":"2rem", "background-repeat":"no-repeat","background-position":"left", "padding-left":"4rem"}),
+                    ], style={"list-style-type":"none"}),
                     html.Br(),
                     html.Hr(),
                     html.Br(),
