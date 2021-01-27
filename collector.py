@@ -402,7 +402,7 @@ class collector():
     def virus_host_interactome(self):
         print("Building Virus Host Interactome ...")
         from networkx.drawing.nx_agraph import graphviz_layout
-        def replace_minor_components(graph, pos, scalefactor=1.33):
+        def replace_minor_components(graph, pos, scalefactor=1.25):
             components=list(nx.connected_components(graph))
             maj=max(components,key=len)
             #get viral proteins not in major component
@@ -441,12 +441,12 @@ class collector():
                     for node in comp:
                         pos[node]=(pcomp[node][0]+pcenter[0],pcomp[node][1]+pcenter[1])
             return pos
-        chen_SFB_TAP=pd.read_excel("data/others/Chen_Interactions.xlsx",sheet_name=0, usecols=["Bait","Prey"])
-        chen_BioID2=pd.read_excel("data/others/Chen_Interactions.xlsx",sheet_name=1, usecols=["Bait","Prey"])
+        chen_SFB_TAP=pd.read_excel("data/others/Chen_Interactions.xlsx",sheet_name=0, usecols=["Bait","Prey"], engine="openpyxl")
+        chen_BioID2=pd.read_excel("data/others/Chen_Interactions.xlsx",sheet_name=1, usecols=["Bait","Prey"], engine="openpyxl")
         chen_SFB_TAP={(row[0],row[1]) for _,row in chen_SFB_TAP.iterrows()}
         chen_BioID2={(row[0],row[1]) for _,row in chen_BioID2.iterrows()}
         chen=chen_SFB_TAP.union(chen_BioID2)
-        gordon=pd.read_excel("data/others/Gordon_Interactions.xlsx", header=1, usecols=["Bait","Preys","PreyGene"])
+        gordon=pd.read_excel("data/others/Gordon_Interactions.xlsx", header=1, usecols=["Bait","Preys","PreyGene"], engine="openpyxl")
         gordon={(row[0].replace("SARS-CoV2 ","").replace("orf","ORF").replace("nsp","NSP").replace("Spike","S").replace("NSP5_C145A","NSP5"),row[2]) for _,row in gordon.iterrows()}
         edges=chen.union(gordon)
         viral={e[0] for e in edges}
@@ -455,7 +455,7 @@ class collector():
         drugs={}
         for name,node in self.__drugtarget.nodes(data=True):
             if node["kind"] == "Target":
-                if node["Gene"] in human:
+                if node["Gene"] in human and name not in ["HCG20471, isoform CRA_c", "Glutathione peroxidase"]: #because they share the same gene name (SIGMAR1 and GPX1) with Sigma non-opioid intracellular receptor 1 and Glutathione Peroxidase 1 ## manually curation needed
                     drugs[node["Gene"]]=list(self.__drugtarget.neighbors(name))
         networker_edges={(source,target) for source,targets in drugs.items() for target in targets}
         edges=edges.union(networker_edges)

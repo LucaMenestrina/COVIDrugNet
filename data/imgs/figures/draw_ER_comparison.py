@@ -4,7 +4,7 @@ import numpy as np
 import powerlaw
 
 def draw_ER_comparison(file):
-    graph=nx.read_gpickle("../graphs/"+file+"/"+file+".gpickle")
+    graph=nx.read_gpickle("../../graphs/"+file+"/"+file+".gpickle")
     title=file.replace("_"," ").title()
     K=dict(nx.get_node_attributes(graph,"Degree"))
     # for projection data

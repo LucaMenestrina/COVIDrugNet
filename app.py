@@ -36,7 +36,7 @@ app_entry='''
     <div class="_dash-loading">
         <center>
             <div style="height:15vh;"></div>
-            <img src="/assets/imgs/logo.svg" alt="COVID-19 Drugs Networker" style="height:60vh">
+            <img src="/assets/imgs/logo.svg" alt="COVIDrugNet" style="height:60vh">
             <div style="height:2vh;"></div>
             <h3>
                 Loading ...

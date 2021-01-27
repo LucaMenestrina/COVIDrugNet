@@ -1062,12 +1062,12 @@ def fittings_callback(prefix, graph):
         ER=nx.fast_gnp_random_graph(n,p)
         ERK=dict(nx.degree(ER))
         ERdata=np.array([v for v in ERK.values() if v > 0])
-        plot=go.Figure(layout={"title":{"text":"Node Degree Distribution","x":0.5, "xanchor": "center"},"xaxis":{"title_text":"Node degree, k", "type":"log"}, "yaxis":{"title_text":"Frequency of Nodes with degree k, n(k)", "type":"log"}, "template":"ggplot2"})
+        plot=go.Figure(layout={"title":{"text":"Node Degree Distribution","x":0.5, "xanchor": "center"},"xaxis":{"title_text":"Node degree, k", "type":"log"}, "yaxis":{"title_text":"Normalized Frequency of Nodes with degree k, n(k)", "type":"log"}, "template":"ggplot2"})
         yvalues=np.array([])
         for d,val,title,to_show in [[data,value,prefix.replace("_"," ").title(),"power_law"],[ERdata,ERvalue,"Erdős Rényi","stretched_exponential"]]:
             fitted=powerlaw.Fit(d, discrete=True, verbose=False, xmin=val)
             x,y=np.unique(d,return_counts=True)
-            y=y/len(d)
+            y=y/len(d)  # normalization on data higher than 0
             yvalues=np.concatenate([yvalues,y])
             plot.add_trace(go.Scatter(x=x,y=y, mode="markers", name=title))
             reduced=sorted([v for v in d if v>=val])

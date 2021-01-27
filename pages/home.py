@@ -18,26 +18,54 @@ layout=dbc.Col([
                     dbc.Col([
                         html.A([
                             html.Center([
-                                html.Img(src=app.get_asset_url("imgs/drug_target.png"), style={"width":"75%"}, alt="Drug-Target Network"),
-                                html.H5(html.Strong("Drug-Target Network"), className="card-header")
-                            ], style={"box-shadow":"0rem 0rem 0.25rem darkgrey"})
-                        ], href="/covidrugnet/drug_target", className="card"),
+                                dbc.Card([
+                                    dbc.CardImg(src=app.get_asset_url("imgs/drug_target.png"), top=True, style={"width":"75%", "margin":"auto"}, alt="Drug-Target Network"),
+                                    dbc.CardBody(html.H4(html.Strong("Drug-Target Network"), className="card-title")),
+                                    dbc.Container([
+                                        html.H1(["Drug-Target",html.Br(),"Bipartite Network"], className="fancy-hover-title"),
+                                        html.H3("It is the main network and it is built connecting drugs from the COVID-19 Dashboard of DrugBank and their reported targets.", className="fancy-hover-text")
+                                    ], className="fancy-hover-bg")
+                                ], color="light", style={"box-shadow":"0rem 0rem 0.25rem darkgrey"})
+                            ])
+                        ], href="/covidrugnet/drug_target", style={"text-decoration":"none"}, className="home-card"),
                     ], xs=12, md=3),
                     dbc.Col([
                         html.A([
                             html.Center([
-                                html.Img(src=app.get_asset_url("imgs/drug_projection.png"), style={"width":"75%"}, alt="Drug Projection"),
-                                html.H5(html.Strong("Drug Projection"), className="card-header")
-                            ], style={"box-shadow":"0rem 0rem 0.25rem darkgrey"})
-                        ], href="/covidrugnet/drug_projection", className="card"),
+                                dbc.Card([
+                                    dbc.CardImg(src=app.get_asset_url("imgs/drug_projection.png"), top=True, style={"width":"75%", "margin":"auto"}, alt="Drug Projection"),
+                                    dbc.CardBody(html.H4(html.Strong("Drug Projection"), className="card-title")),
+                                    dbc.Container([
+                                        html.H1("Drug Projection", className="fancy-hover-title"),
+                                        html.H3([
+                                            "This network is built from the Drug-Target one and contains only drugs.",
+                                            html.Br(),
+                                            html.Br(),
+                                            "They are connected if they share at least a target in the Drug-Target Network"
+                                        ], className="fancy-hover-text")
+                                    ], className="fancy-hover-bg")
+                                ], color="light", style={"box-shadow":"0rem 0rem 0.25rem darkgrey"})
+                            ])
+                        ], href="/covidrugnet/drug_projection", style={"text-decoration":"none"}, className="home-card"),
                     ], xs=12, md=3),
                     dbc.Col([
                         html.A([
                             html.Center([
-                                html.Img(src=app.get_asset_url("imgs/target_projection.png"), style={"width":"75%"}, alt="Target Projection"),
-                                html.H5(html.Strong("Target Projection"), className="card-header")
-                            ], style={"box-shadow":"0rem 0rem 0.25rem darkgrey"})
-                        ], href="/covidrugnet/target_projection", className="card"),
+                                dbc.Card([
+                                    dbc.CardImg(src=app.get_asset_url("imgs/target_projection.png"), top=True, style={"width":"75%", "margin":"auto"}, alt="Target Projection"),
+                                    dbc.CardBody(html.H4(html.Strong("Target Projection"), className="card-title")),
+                                    dbc.Container([
+                                        html.H1("Target Projection", className="fancy-hover-title"),
+                                        html.H3([
+                                            "This network is built from the Drug-Target one and contains only targets.",
+                                            html.Br(),
+                                            html.Br(),
+                                            "They are connected if they share at least a drug in the Drug-Target Network"
+                                        ], className="fancy-hover-text")
+                                    ], className="fancy-hover-bg")
+                                ], color="light", style={"box-shadow":"0rem 0rem 0.25rem darkgrey"})
+                            ])
+                        ], href="/covidrugnet/target_projection", style={"text-decoration":"none"}, className="home-card"),
                     ], xs=12, md=3)
                 ], justify="center", align="center"),
                 html.Div(style={"height":"10vh"}),
