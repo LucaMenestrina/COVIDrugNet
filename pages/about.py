@@ -45,6 +45,10 @@ layout=dbc.Col([
                     html.Br(),
                     html.Hr(),
                     html.Br(),
+                    html.H4(["Last Database Update: 14",html.Sup("th")," January 2021"]),
+                    html.Br(),
+                    html.Hr(),
+                    html.Br(),
                     html.H3("Data Sources:"),
                     html.Br(),
                     html.Ul([

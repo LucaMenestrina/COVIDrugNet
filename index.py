@@ -29,7 +29,7 @@ server = app.server
 app.layout = html.Div([
     dcc.Location(id="url", refresh=False),
     headbar(),
-    html.Div(id="loading_message")
+    html.Div(id="loading_message"),
 ])
 
 

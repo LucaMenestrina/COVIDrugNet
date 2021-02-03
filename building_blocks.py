@@ -98,7 +98,7 @@ def headbar():
                     html.A(
                         dbc.Row([
                             html.Img(src=app.get_asset_url("imgs/logo_white.svg"), style={"height":"4vh", "margin-right":"1rem"}),
-                            dbc.NavbarBrand("COVIDrugNet")
+                            # dbc.NavbarBrand("COVIDrugNet")
                         ], no_gutters=True, justify="start", align="center"),
                     href="/covidrugnet", className="card-link"),
                     dbc.NavbarToggler(id="headbar_toggler"),
@@ -725,7 +725,7 @@ def interactome(prefix):
             "y":[],
             "labels":[],
             "color":"#e74c3c",
-            "symbol":"diamond",
+            "symbol":"circle",
             "size":8
         },
         "Human Genes":{

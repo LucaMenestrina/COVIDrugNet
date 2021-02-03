@@ -11,9 +11,12 @@ print("Loading "+prefix.capitalize()+" ...")
 
 layout=dbc.Col([
             dbc.Col([
-                # html.Center(html.H1(html.Strong("COVID-19 Drugs Networker"))),
-                html.Center(html.Img(src=app.get_asset_url("imgs/logo_wide.svg"), alt="COVID-19 Drugs Networker", style={"width":"75%"})),
+                # html.Center(html.H1(html.Strong("COVIDrugNet"))),
+                html.Canvas(id="fancy-network-background",style={"position":"absolute","height":"60vh", "padding":0, "z-index":"-2",}),# "background": "linear-gradient(to top, rgba(230,245,249,0), rgba(230,245,249,0.5))"
+                html.Div(style={"height":"5vh"}),
+                html.Center(html.Img(src=app.get_asset_url("imgs/logo_wide.svg"), alt="COVID-19 Drugs Networker", style={"width":"66%"})),
                 # html.Center(html.H4("Visualize and Analyze Networks about Drugs and Targets Related to COVID-19")),
+                html.Div(style={"height":"5vh"}),
                 dbc.Row([
                     dbc.Col([
                         html.A([
@@ -38,7 +41,7 @@ layout=dbc.Col([
                                     dbc.Container([
                                         html.H1("Drug Projection", className="fancy-hover-title"),
                                         html.H3([
-                                            "This network is built from the Drug-Target one and contains only drugs.",
+                                            "It is built from the Drug-Target one and contains only drugs.",
                                             html.Br(),
                                             html.Br(),
                                             "They are connected if they share at least a target in the Drug-Target Network"
@@ -57,7 +60,7 @@ layout=dbc.Col([
                                     dbc.Container([
                                         html.H1("Target Projection", className="fancy-hover-title"),
                                         html.H3([
-                                            "This network is built from the Drug-Target one and contains only targets.",
+                                            "It is built from the Drug-Target one and contains only targets.",
                                             html.Br(),
                                             html.Br(),
                                             "They are connected if they share at least a drug in the Drug-Target Network"
@@ -79,7 +82,7 @@ layout=dbc.Col([
                     ], width=10)
                 ], no_gutters=True, justify="center", align="center"),
                 html.Div(style={"height":"10vh"})
-            ]),
+            ], style={"padding-left":"0px"}),
             html.Div(style={"height":"10vh"}),
             footer()
         ], style={"padding":"0px", "min-height":"100vh"})

@@ -759,40 +759,6 @@ def toggle_legend_callback(prefix):
             return True
     return open_legend
 
-# def get_img_callback(prefix, prefix):
-#     @app.callback(
-#         Output(prefix+"_graph","generateImage"),
-#         [Input(prefix+"_download_graph_button","n_clicks")],
-#         [State(prefix+"_save_graph","value")]
-#     )
-#     def get_img(n_clicks,value):
-#         if value in ["svg", "png", "jpg"]:
-#             if n_clicks:
-#                 print({"type":value,"action":"download", "filename":prefix})
-#                 return {"type":value,"action":"download", "filename":prefix}
-#         else:
-#             return {"action":"store"}
-#     return get_img
-#
-# def download_graph_file_callback(prefix,prefix):
-#     @app.callback(
-#         [
-#             Output(prefix+"_download_graph_button_href","download"),
-#             Output(prefix+"_download_graph_button_href","href")
-#         ],
-#         [Input(prefix+"_save_graph","value")]
-#     )
-#     def download_graph_file(value):
-#         if value not in ["svg", "png", "jpg"]:
-#             if value:
-#                 download=prefix+"."+value
-#                 href=app.get_asset_url("graphs/"+download)
-#                 return download, href
-#             else:
-#                 return None,None
-#         else:
-#             return None,None
-#     return download_graph_file
 
 def download_graph_callback(prefix):
     @app.callback(
@@ -856,6 +822,9 @@ def open_advanced_section(prefix):
                 Output(prefix+"_side_clustering","active"),
                 Output(prefix+"_side_clustering","disabled"),
                 Output(prefix+"_clustering_side_tooltip","style"),
+                Output(prefix+"_side_virus_host_interactome","active"),
+                Output(prefix+"_side_virus_host_interactome","disabled"),
+                Output(prefix+"_virus_host_interactome_side_tooltip","style"),
             ],
             [Input(prefix+"_advanced_section_open", "n_clicks")],
             [State(prefix+"_advanced_section_collapse", "is_open")]
@@ -867,7 +836,7 @@ def open_advanced_section(prefix):
                 sides = True, False, None
             else:
                 sides = False, True, {"visibility":"hidden"}
-            return [is_open, *sides]
+            return [is_open, *sides, *sides]
     return open_advanced_section
 
 def toggle_group_highlighter_callback(prefix):
@@ -896,24 +865,15 @@ def get_selected_clustering_callback(prefix):
     )
     def get_selected_clustering(value,current_component,current_method):
         if "group" in value:
-            if "maj" in value:#value.split("_")[-1] == "maj":
+            if "maj" in value:
                 component = "maj"
                 method=value[:-4]
-            else:#if "_" in value:
+            else:
                 component = "entire"
                 method = value
         else:
             component = current_component
             method = current_method
-        # component = current_component
-        # method = current_method
-        # if "group" in value:
-        #     if value.split("_")[-1] == "maj":
-        #         component = "maj"
-        #         method=value[:-4]
-        #     else:
-        #         component = "entire"
-        #         method = value
         return component, method
     return get_selected_clustering
 
@@ -1078,32 +1038,7 @@ def fittings_callback(prefix, graph):
                 else:
                     visible=True
                 plot.add_trace(go.Scatter(x=reduced,y=getattr(fitted,dist).pdf(reduced)*scalefactor, mode="lines", name=title+" "+dist.replace("_"," ").title(), visible=visible))
-        # fitted=powerlaw.Fit(data, discrete=True, verbose=False, xmin=value)
-        # x,y=np.unique(data,return_counts=True)
-        # y=y/len(data)
-        # plot.add_trace(go.Scatter(x=x,y=y, mode="markers", name=graph_title))
-        # reduced=sorted([v for v in data if v>=value])
-        # scalefactor=len(data[data>=value])/len(data)
-        # for dist in ["power_law","lognormal","exponential","truncated_power_law","stretched_exponential","lognormal_positive"]:
-        #     if dist != "power_law":
-        #         visible="legendonly"
-        #     else:
-        #         visible=True
-        #     plot.add_trace(go.Scatter(x=reduced,y=getattr(fitted,dist).pdf(reduced)*scalefactor, mode="lines", name=dist.replace("_"," ").title(), visible=visible))
-        # fittedER=powerlaw.Fit(ERdata, discrete=True, verbose=False, xmin=ERvalue)
-        # ERx,ERy=np.unique(ERdata,return_counts=True)
-        # ERy=ERy/len(ERdata)
         yrange=[np.log10(min(yvalues)*0.75),np.log10(max(yvalues)*1.25)]
-        # ERreduced=sorted([v for v in dataER if v>=ERvalue])
-        # ERscalefactor=len(ERdata[ERdata>=ERvalue])/len(ERdata)
-        # plot.add_trace(go.Scatter(x=xER,y=yER, mode="markers", name="Erdős Rényi"))
-        # for dist in ["power_law","lognormal","exponential","truncated_power_law","stretched_exponential","lognormal_positive"]:
-        #     if dist != "stretched_exponential":
-        #         visible="legendonly"
-        #     else:
-        #         visible=True
-        #     plot.add_trace(go.Scatter(x=reduced,y=getattr(fitted,dist).pdf(reduced)*scalefactor, mode="lines", name=dist.replace("_"," ").title(), visible=visible))
-        #     plot.add_trace(go.Scatter(x=ERreduced,y=getattr(ERfitted,dist).pdf(ERreduced)*ERscalefactor, mode="lines", name="Erdős Rényi "+dist.replace("_"," ").title(), visible=visible))
         plot.update_layout({"paper_bgcolor": "rgba(0, 0, 0, 0)", "modebar":{"bgcolor":"rgba(0, 0, 0, 0)","color":"silver","activecolor":"grey"}, "legend":{"orientation":"h","yanchor":"top","y":-0.25, "xanchor":"center","x":0.5}, "yaxis":{"range":yrange}}) # for a transparent background but keeping modebar acceptable colors, "x":1.25
         return plot
     return fittings

@@ -9,7 +9,7 @@ def draw_interactome_drugs():
         "Viral Genes":{
             "labels":[],
             "color":"#e74c3c",
-            "shape":"D",
+            "shape":"o",
             "size":10
         },
         "Human Genes":{
@@ -41,7 +41,7 @@ def draw_interactome_drugs():
         else:
             data["Human Genes"]["labels"].append(node_data["Gene"])
     nx.draw_networkx_edges(graph, pos=pos, width=0.05)
-    nx.draw_networkx_nodes(graph, pos=pos, nodelist=[node for node in graph.nodes() if len([neigh for neigh in graph.neighbors(node) if neigh in data["Viral Genes"]["labels"]])>1], node_shape=data["Human Genes"]["shape"], node_size=int(data["Targeted Genes"]["size"]*1.5), node_color="turquoise")
+    nx.draw_networkx_nodes(graph, pos=pos, nodelist=[node for node in graph.nodes() if len([neigh for neigh in graph.neighbors(node) if neigh in data["Viral Genes"]["labels"]])>1], node_shape=data["Human Genes"]["shape"], node_size=int(data["Targeted Genes"]["size"]*2), node_color="hotpink")
     for kind in data.values():
         nx.draw_networkx_nodes(graph, pos=pos, nodelist=kind["labels"], node_shape=kind["shape"], node_size=kind["size"], node_color=kind["color"])
         nx.draw_networkx_labels(graph, pos=pos, labels={n:n for n in kind["labels"]}, font_size=1)

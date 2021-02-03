@@ -172,7 +172,7 @@ class protein():
             response = requests.get(url)
             page = response.content
             soup = BeautifulSoup(page, 'html5lib')
-            table=soup.find("table",attrs={"class":"table table-condensed table-striped table-hover tablesorter allStructuresList"})
+            table=soup.find("table",attrs={"class":"table noborder tablesorter allStructuresList"})
             pdbid=table.findAll("a")[0]["href"].split("/")[-1]
             if "template" in pdbid:
                 pdbid=pdbid.split("=")[-1][:-1]
@@ -472,7 +472,7 @@ class collector():
         edge_source={}
         for edge in edges:
             source=[]
-            for name,s in {"Chen_SFB_TAP":chen_SFB_TAP,"Chen_BioID2":chen_BioID2, "Gordon":gordon, "COVID-19 Drugs Networker":networker_edges}.items():
+            for name,s in {"Chen_SFB_TAP":chen_SFB_TAP,"Chen_BioID2":chen_BioID2, "Gordon":gordon, "COVIDrugNet":networker_edges}.items():
                 if edge in s:
                     source.append(name)
             edge_source[edge]=source
