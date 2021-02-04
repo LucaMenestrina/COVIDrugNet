@@ -918,7 +918,7 @@ def get_range_clusters_callback(prefix,G,maj,Evals,Evals_maj,N_clusters,N_cluste
             n=len(nx.algorithms.community.greedy_modularity_communities(graph))
             options=[{"label":str(n),"value":n}]
             disabled=True
-        if coloring == "custom" and n != n_custom:
+        if coloring == "custom" and n != n_custom and dash.callback_context.triggered[0]["prop_id"] == prefix+"_coloring_dropdown.value":
             n=n_custom
         return options,n,disabled
     return get_range_clusters

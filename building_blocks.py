@@ -154,8 +154,8 @@ def sidebar(prefix):
                 dbc.Tooltip("Jump to Advanced Degree Distribution Fittings' Section", target=prefix+"_adv_degree_distribution_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}, id=prefix+"_adv_degree_distribution_side_tooltip")
             ]
         items += [
-            dbc.NavItem(dbc.NavLink("Virus-Host Interactome", href="#"+prefix+"_virus_host_interactome",external_link=True, active=True, className="nav-link", id=prefix+"_side_virus_host_interactome"), className="nav-item", id=prefix+"_virus_host_interactome_side"),
-            dbc.Tooltip("Jump to Virus-Host Interactome's Section Advanced Degree Distribution Fittings' Section", target=prefix+"_virus_host_interactome_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}, id=prefix+"_virus_host_interactome_side_tooltip")
+            dbc.NavItem(dbc.NavLink("Virus-Host-Drug Interactome", href="#"+prefix+"_virus_host_interactome",external_link=True, active=True, className="nav-link", id=prefix+"_side_virus_host_interactome"), className="nav-item", id=prefix+"_virus_host_interactome_side"),
+            dbc.Tooltip("Jump to Virus-Host-Drug Interactome's Section Advanced Degree Distribution Fittings' Section", target=prefix+"_virus_host_interactome_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}, id=prefix+"_virus_host_interactome_side_tooltip")
         ]
         return dbc.NavbarSimple([
                     dbc.Col(items, align="center", style={"padding":"0px"}),
@@ -776,11 +776,11 @@ def interactome(prefix):
 
     return dbc.Container([
         html.Br(),
-        html.H3("Curent Virus-Host Interactome"),
+        html.H3("Current Virus-Host-Drug Interactome"),
         dbc.Row([
             dbc.Button("Download", id=prefix+"_save_interactome_open", className="btn btn-outline-primary"),
             dbc.Modal([
-                dbc.ModalHeader("Save Virus-Host Interactome"),
+                dbc.ModalHeader("Save Virus-Host-Drug Interactome"),
                 dbc.ModalBody([
                     html.P("Format"),
                     dcc.Dropdown(id=prefix+"_save_interactome", options=[
@@ -799,7 +799,7 @@ def interactome(prefix):
                     dbc.Button("Close", id=prefix+"_save_interactome_close", className="btn btn-outline-primary")
                 ]),
             ], id=prefix+"_save_interactome_modal"),
-            dbc.Tooltip("Download Virus-Host Interactome File", target=prefix+"_save_interactome_open", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
+            dbc.Tooltip("Download Virus-Host-Drug Interactome File", target=prefix+"_save_interactome_open", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
         ], justify="end", align="center"),
         html.Br(),
         dbc.Row([

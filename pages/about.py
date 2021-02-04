@@ -20,32 +20,54 @@ layout=dbc.Col([
                             html.A(
                                 dbc.Row([
                                     #da controllare se abbiamo i diritti per farlo e soprattutto va aggiornata a quella del mese corretto
-                                    dbc.Col([html.Img(src="https://onlinelibrary.wiley.com/cms/asset/16546dbe-aa48-47b1-8aa1-217fa352966f/minf202081001-toc-0001-m.jpg", style={"width":"100%"})], align="center", sm=5, lg=4 ,xl=3),
+                                    dbc.Col([html.Img(src=app.get_asset_url("imgs/journal_cover.svg"), style={"width":"100%"})], align="center", sm=5, lg=4, xl=3),
                                     dbc.Col([
-                                        html.H4(html.Strong("Titolo")),
-                                        html.H5("Autori"),
                                         html.Br(),
-                                        html.P("Info, Jurnal, Pages, ...."),
-                                        html.P("Ovviamente è solo un concept temporaneo e poi andrà tutto adattato in base a preprint, giornale, diritti d'immagine e bla bla bla..."),
+                                        html.H4(html.Strong("COVIDrugNet: a network-based web tool to investigate the drugs currently in clinical trial to contrast COVID-19"), style={"margin-bottom":"1rem"}),
+                                        html.H5("Luca Menestrina, Chiara Cabrelle and Maurizio Recanatini"),
+                                        html.P(html.Em("Department of Pharmacy and Biotechnology, Alma Mater Studiorum - University of Bologna 40126 Bologna, Italy"), style={"margin-bottom":"1rem"}),
+                                        html.Br(),
+                                        html.H5("Jurnal, Pages, Issue, Year ..."),
+                                        html.Br(),
+                                        dbc.Row([
+                                            dbc.Col([
+                                                html.P("Received", style={"margin-bottom":"0.5rem"}),
+                                                html.P(html.Time("Not Yet",dateTime="1900-01-01")),
+                                            ], align="center"),
+                                            dbc.Col([
+                                                html.P("Hopefully Accepted", style={"margin-bottom":"0.5rem","color":"grey"}),
+                                                html.P(html.Time("Not Yet",dateTime="1900-01-01"), style={"color":"grey"}),
+                                            ], align="center"),
+                                            dbc.Col([
+                                                html.P("Hopefully Published", style={"margin-bottom":"0.5rem","color":"grey"}),
+                                                html.P(html.Time("Not Yet",dateTime="1900-01-01"), style={"color":"grey"}),
+                                            ], align="center")
+                                        ], justify="around", align="center"),
+                                        html.Br(),
+                                        html.H5("DOI"),
                                         html.A("doi", href=""),
-                                    ], align="start", sm=7, lg=8 ,xl=9)
-                                ], justify="around", align="center"),
-                            href="", target="_blank", style={"color":"black"}),
-                        align="center", sm=12, md=6),
+                                    ], align="center", sm=7, lg=8 ,xl=9)
+                                ], justify="center", align="center", id="paper"),
+                            href="", target="_blank", style={"color":"black", "text-decoration":"none"}),
+                        align="center", sm=10, md=6),
+                        html.Br(),
                         dbc.Col([
-                            html.P([html.Font("TEMPORANEO",style={"color":"red"})," The outbreak of the COVID-19 pandemic caused by SARS-CoV-2 at the beginning of 2020 has shocked the population worldwide. The scientific community has promptly put in place a great effort to help countering the spread of the virus. Here, we present a web application, the COVID-19 Drugs Networker (http://compmedchem.unibo.it/covidrugnet), that allows a network-based analysis of the DrugBank dataset of potential repurposed drugs currently in clinical trial. The freely accessible application automatically collects the data, builds the drug-target bipartite network as well as the two monopartite projections. The web interface allows a holistic view of the current drug repurposing status for COVID-19 to practitioners who are less familiar with the network mathematical framework, still offering the opportunity to explore the data, by taking advantage of some more specialized graph analysis tools, to more experienced users.By using this tool, we aim to recapitulate the initial system pharmacology of this plague, and by allowing free access to it to, eventually, maximize the open science philosophy. RESULTS"])
-                        ], align="center", sm=12, md=6)
-                    ], justify="around", align="center"),
+                            html.Br(),
+                            html.H5(html.Strong("Abstract")),
+                            html.H5("The COVID-19 pandemic poses a huge problem of public health that requires the implementation of all available approaches to contrast it, and drugs are one. In this context, we observed an unmet need of depicting the continuously evolving scenario of the ongoing drug clinical trials through an easy-to-use freely accessible online tool. Starting from this consideration, we developed COVIDrugNet, a web application that allows users to capture a holistic view and keep up to date on how the drug research is responding to the SARS-CoV-2 infection."),
+                            html.H5("Here, we describe the web app and show how one can explore the whole landscape of medicines currently in clinical trial for the treatment of COVID-19 and try to probe the consistency of the current approaches with the available biological and pharmacological evidence. We conclude that a careful analysis of the COVID-19 drug-target system as that reported in the present work and based on COVIDrugNet might help to understand the molecular implications of the proposed drug options, thus improving the search for more effective therapies"),
+                        ], align="center", sm=10, md=5, style={"text-align":"justify"})
+                    ], justify="center", align="center"),
                     html.Br(),
                     html.Br(),
-                    html.H4("Citing COVID-19 Drugs Networker:"),
+                    html.H4("Citing COVIDrugNet:"),
                     html.Br(),
-                    html.H5(["If you are using data from the ", html.Em("COVID-19 Drugs Networker"), " please cite the corresponding article:"]),
+                    html.H5(["If you are using data from ", html.Em("COVIDrugNet"), " please cite the corresponding article:"]),
                     html.P("bib string for easy citing, come per gli altri sotto"),
                     html.Br(),
                     html.Hr(),
                     html.Br(),
-                    html.H4(["Last Database Update: 14",html.Sup("th")," January 2021"]),
+                    html.H4(["Last Database Update: ",html.Time(["14",html.Sup("th")," January 2021"], dateTime="2021-01-14")]),
                     html.Br(),
                     html.Hr(),
                     html.Br(),
@@ -98,55 +120,57 @@ layout=dbc.Col([
                         html.Li([
                             html.A("Python 3", href="https://www.python.org/", target="_blank", style={"color":"black"}),
                             html.Ul([
-                                html.Li(html.A("Pandas", href="https://pandas.pydata.org/", target="_blank", style={"color":"black"})),
-                                html.Li(html.A("Numpy", href="https://numpy.org/", target="_blank", style={"color":"black"})),
+                                html.Li(html.A("pandas", href="https://pandas.pydata.org/", target="_blank", style={"color":"black"})),
+                                html.Li(html.A("numpy", href="https://numpy.org/", target="_blank", style={"color":"black"})),
                                 html.Li(html.A("os", href="https://docs.python.org/3/library/os.html", target="_blank", style={"color":"black"})),
-                                html.Li(html.A("Pickle", href="https://docs.python.org/3/library/pickle.html", target="_blank", style={"color":"black"})),
-                                html.Li(html.A("Json", href="https://docs.python.org/3/library/json.html", target="_blank", style={"color":"black"})),
-                                html.Li(html.A("Itertools", href="https://docs.python.org/3/library/itertools.html", target="_blank", style={"color":"black"})),
-                                html.Li(html.A("Requests", href="https://requests.readthedocs.io/en/master/", target="_blank", style={"color":"black"})),
-                                html.Li(html.A("Time", href="https://docs.python.org/3/library/time.html", target="_blank", style={"color":"black"})),
-                                html.Li(html.A("Datetime", href="https://docs.python.org/3/library/datetime.html", target="_blank", style={"color":"black"})),
-                                html.Li(html.A("Webbrowser", href="https://docs.python.org/3/library/webbrowser.html", target="_blank", style={"color":"black"})),
-                                html.Li(html.A("Threading", href="https://docs.python.org/3/library/threading.html", target="_blank", style={"color":"black"})),
+                                html.Li(html.A("pickle", href="https://docs.python.org/3/library/pickle.html", target="_blank", style={"color":"black"})),
+                                html.Li(html.A("json", href="https://docs.python.org/3/library/json.html", target="_blank", style={"color":"black"})),
+                                html.Li(html.A("itertools", href="https://docs.python.org/3/library/itertools.html", target="_blank", style={"color":"black"})),
+                                html.Li(html.A("requests", href="https://requests.readthedocs.io/en/master/", target="_blank", style={"color":"black"})),
+                                html.Li(html.A("time", href="https://docs.python.org/3/library/time.html", target="_blank", style={"color":"black"})),
+                                html.Li(html.A("datetime", href="https://docs.python.org/3/library/datetime.html", target="_blank", style={"color":"black"})),
+                                html.Li(html.A("webbrowser", href="https://docs.python.org/3/library/webbrowser.html", target="_blank", style={"color":"black"})),
+                                html.Li(html.A("threading", href="https://docs.python.org/3/library/threading.html", target="_blank", style={"color":"black"})),
                                 html.Li([
-                                    html.A("Matplotlib Pyplot", href="https://matplotlib.org/", target="_blank", style={"color":"black"}),
+                                    html.A("matplotlib pyplot", href="https://matplotlib.org/", target="_blank", style={"color":"black"}),
                                     #https://ieeexplore.ieee.org/document/4160265
                                 ]),
                             ])
                         ]),
                         html.Li([
-                            html.A("NetworkX", href="https://networkx.org/", target="_blank", style={"color":"black"}),
+                            html.A("networkx", href="https://networkx.org/", target="_blank", style={"color":"black"}),
                             #http://conference.scipy.org/proceedings/SciPy2008/paper_2/
                         ]),
                         html.Li([
-                            html.A("Plotly", href="https://plotly.com/", target="_blank", style={"color":"black"}),
+                            html.A("plotly", href="https://plotly.com/", target="_blank", style={"color":"black"}),
                             #https://plotly.com/chart-studio-help/citations/
                         ]),
                         html.Li([
-                            html.A("Dash", href="https://plotly.com/dash/", target="_blank", style={"color":"black"}),
+                            html.A("dash", href="https://plotly.com/dash/", target="_blank", style={"color":"black"}),
                             html.Ul([
-                                html.Li(html.A("Dash Core Components", href="https://dash.plotly.com/dash-core-components", target="_blank", style={"color":"black"})),
-                                html.Li(html.A("Dash HTML Components", href="https://dash.plotly.com/dash-html-components", target="_blank", style={"color":"black"})),
-                                html.Li(html.A("Dash Bootstrap Components", href="https://dash-bootstrap-components.opensource.faculty.ai/", target="_blank", style={"color":"black"})),
-                                html.Li(html.A("Dash Cytoscape", href="https://dash.plotly.com/cytoscape", target="_blank", style={"color":"black"})),
+                                html.Li(html.A("dash core components", href="https://dash.plotly.com/dash-core-components", target="_blank", style={"color":"black"})),
+                                html.Li(html.A("dash html components", href="https://dash.plotly.com/dash-html-components", target="_blank", style={"color":"black"})),
+                                html.Li(html.A("dash bootstrap components", href="https://dash-bootstrap-components.opensource.faculty.ai/", target="_blank", style={"color":"black"})),
+                                html.Li(html.A("dash cytoscape", href="https://dash.plotly.com/cytoscape", target="_blank", style={"color":"black"})),
                             ])
                         ]),
+                        html.Li(html.A("powerlaw", href="https://github.com/jeffalstott/powerlaw", target="_blank", style={"color":"black"})),
                         html.Li(html.A("PubChemPy", href="https://pubchempy.readthedocs.io/", target="_blank", style={"color":"black"})),
                         html.Li([
-                            html.A("ChEMBL Webresource Client", href="https://github.com/chembl/chembl_webresource_client", target="_blank", style={"color":"black"}),
+                            html.A("chembl webresource client", href="https://github.com/chembl/chembl_webresource_client", target="_blank", style={"color":"black"}),
                             #https://github.com/chembl/chembl_webresource_client
                         ]),
-                        html.Li(html.A("Beautiful Soup", href="https://www.crummy.com/software/BeautifulSoup/", target="_blank", style={"color":"black"})),
+                        html.Li(html.A("beautiful soup", href="https://www.crummy.com/software/BeautifulSoup/", target="_blank", style={"color":"black"})),
                         html.Li([
-                            html.A("Rdkit", href="https://www.rdkit.org/", target="_blank", style={"color":"black"}),
+                            html.A("rdkit", href="https://www.rdkit.org/", target="_blank", style={"color":"black"}),
                             #https://rdkit-discuss.narkive.com/9QGX4Vxh/is-there-a-way-to-cite-rdkit-in-a-paper
                         ]),
                         html.Li([
-                            html.A("Scikit-learn", href="https://scikit-learn.org/", target="_blank", style={"color":"black"}),
+                            html.A("scikit-learn", href="https://scikit-learn.org/", target="_blank", style={"color":"black"}),
                             #https://scikit-learn.org/stable/about.html#citing-scikit-learn
                         ]),
-                        html.Li(html.A("Tqdm", href="https://github.com/tqdm/tqdm", target="_blank", style={"color":"black"})),
+                        html.Li(html.A("tqdm", href="https://github.com/tqdm/tqdm", target="_blank", style={"color":"black"})),
+                        html.Li(html.A("visdcc", href="https://github.com/jimmybow/visdcc", target="_blank", style={"color":"black"})),
                     ]),
 
                     html.Br(),
@@ -159,6 +183,9 @@ layout=dbc.Col([
                             # html.I(className="fa fa-flag", style={"margin-right":"0.5rem"}),#fa-font-awesome-flag
                             html.A("Font Awesome", href="https://fontawesome.com/", target="_blank", style={"color":"black"})
                         ], style={"background":"url(https://fontawesome.com/images/favicons/favicon-96x96.png)", "background-size":"1rem", "background-repeat":"no-repeat","background-position":"left", "padding-left":"1.5rem"}),
+                        html.Li([
+                            html.A("Particles Random Animation in Canvas by Nokey", href="https://codepen.io/jkiss/pen/OVEeqK", target="_blank", style={"color":"black"})
+                        ], style={"background":"url(https://cpwebassets.codepen.io/assets/favicon/favicon-touch-de50acbf5d634ec6791894eba4ba9cf490f709b3d742597c6fc4b734e6492a5a.png)", "background-size":"1rem", "background-repeat":"no-repeat","background-position":"left", "padding-left":"1.5rem"}),
                     ], style={"list-style-type":"none"}),
                     html.Br(),
                     html.Hr(),

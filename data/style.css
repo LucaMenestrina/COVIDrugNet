@@ -12,7 +12,7 @@
   height:0;
   transition: .35s ease;
   border: 0px;
-  border-radius: 0.25rem;
+  border-radius: 2rem;
   box-shadow:0rem 0rem 0.4rem #158cba;
 }
 .home-card:hover .fancy-hover-bg{
@@ -40,4 +40,15 @@
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: center;
+}
+
+/* zoom on hover paper info */
+#paper:hover{
+  transform: scale(1.01);
+  transition: .2s ease;
+}
+/* zoom on hover contact-page */
+.contact-page:hover{
+  transform: scale(1.002);
+  transition: .2s ease;
 }
