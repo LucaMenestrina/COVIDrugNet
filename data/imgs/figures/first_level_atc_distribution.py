@@ -25,7 +25,7 @@ def draw_ATC_barchart(file):
     plt.tick_params(axis="x", length=0)
     plt.title(title)
     # plt.legend(bbox_to_anchor=(1.05,1.025))
-    plt.savefig(file+".svg")
+    plt.savefig(file+".svg", bbox_inches="tight")
     plt.show()
 
 draw_ATC_barchart("first_level_ATC_code_distribution")

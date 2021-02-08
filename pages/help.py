@@ -13,10 +13,24 @@ layout=dbc.Col([
             dbc.Col([
                 html.Br(),
                 dbc.Col([
-                    html.H3("Help"),
+                    html.H2("Help"),
                     html.Br(),
                     html.Center([
                         html.Img(src=app.get_asset_url("imgs/help.svg"), style={"width":"100%"})
+                    ]),
+                    html.Hr(),
+                    html.Br(),
+                    html.H4("In the pages relative to the projections, there are some small differences:"),
+                    html.Br(),
+                    html.H5("In the Charts and Plots Section the degree distribution is displayed"),
+                    html.Center([
+                        html.Img(src=app.get_asset_url("imgs/help_charts&plots.svg"), style={"width":"100%"})
+                    ]),
+                    html.Br(),
+                    html.Br(),
+                    html.H5("In the Advanced Tools Section the Degree Distribution can be inspected more thoroughly"),
+                    html.Center([
+                        html.Img(src=app.get_asset_url("imgs/help_advDD.svg"), style={"width":"100%"})
                     ]),
                     # html.Br(),
                     # html.Br(),

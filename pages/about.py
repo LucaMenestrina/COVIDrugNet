@@ -13,7 +13,7 @@ layout=dbc.Col([
             dbc.Col([
                 html.Br(),
                 dbc.Col([
-                    html.H3("About the Project"),
+                    html.H2("About the Project"),
                     html.Br(),
                     dbc.Row([
                         dbc.Col(
@@ -34,14 +34,14 @@ layout=dbc.Col([
                                                 html.P("Received", style={"margin-bottom":"0.5rem"}),
                                                 html.P(html.Time("Not Yet",dateTime="1900-01-01")),
                                             ], align="center"),
-                                            dbc.Col([
-                                                html.P("Hopefully Accepted", style={"margin-bottom":"0.5rem","color":"grey"}),
-                                                html.P(html.Time("Not Yet",dateTime="1900-01-01"), style={"color":"grey"}),
-                                            ], align="center"),
-                                            dbc.Col([
-                                                html.P("Hopefully Published", style={"margin-bottom":"0.5rem","color":"grey"}),
-                                                html.P(html.Time("Not Yet",dateTime="1900-01-01"), style={"color":"grey"}),
-                                            ], align="center")
+                                            # dbc.Col([
+                                            #     html.P("Hopefully Accepted", style={"margin-bottom":"0.5rem","color":"grey"}),
+                                            #     html.P(html.Time("Not Yet",dateTime="1900-01-01"), style={"color":"grey"}),
+                                            # ], align="center"),
+                                            # dbc.Col([
+                                            #     html.P("Hopefully Published", style={"margin-bottom":"0.5rem","color":"grey"}),
+                                            #     html.P(html.Time("Not Yet",dateTime="1900-01-01"), style={"color":"grey"}),
+                                            # ], align="center")
                                         ], justify="around", align="center"),
                                         html.Br(),
                                         html.H5("DOI"),

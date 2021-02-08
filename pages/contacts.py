@@ -13,7 +13,7 @@ layout=dbc.Col([
             dbc.Col([
                 html.Br(),
                 dbc.Col([
-                    html.H3("Contacts"),
+                    html.H2("Contacts"),
                     html.Br(),
                     html.A([
                         dbc.Row([

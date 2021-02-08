@@ -7,7 +7,7 @@ meta=[
         "content": "Luca Menestrina"
     },
     {
-        "name": "affilitaion",
+        "name": "affiliation",
         "content": "University of Bologna"
     },
     {
