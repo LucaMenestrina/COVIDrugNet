@@ -481,7 +481,7 @@ def degree_distribution(graph, title):
     # ERK=dict(nx.degree(ER))
     plot=go.Figure(layout={"title":{"text":"Degree Distribution","x":0.5, "xanchor": "center"},"xaxis":{"title_text":"Degree, k", "type":"log"}, "yaxis":{"title_text":"Frequency of Nodes with degree k, n(k)", "type":"log"}, "template":"ggplot2"})
     yrange=[np.inf,-np.inf]
-    for deg,name,order,color,trendline_order in [(K,title,1,"Tomato","Linear")]:#,(ERK,"Erdős Rényi",2,"DeepSkyBlue","Quadratic")]:# Uncomment to show Equivalent Erdős Rényi Graph
+    for deg,name,order,color,trendline_order in [(K,title,1,"Tomato","Linear")]:#,(ERK,"Erdős-Rényi",2,"DeepSkyBlue","Quadratic")]:# Uncomment to show Equivalent Erdős-Rényi Graph
         x=list(get_frequency(deg.values()).keys())
         y=list(get_frequency(deg.values()).values())
         if x[0]==0: # to avoid problems with log10, they wouldn't be display anyway because of the loglog
@@ -692,7 +692,7 @@ def adv_degree_distribution(prefix,graph,graph_title):
             dbc.Col([
                 dcc.Dropdown(id=prefix+"_projection_xmin",  options=options, value=best, clearable=False, searchable=True, optionHeight=25,className="DropdownMenu")
             ], align="center", xs=3, lg=1),
-            dbc.Col(html.Font("Erdős Rényi xmin: ", style={"white-space":"nowrap"}),align="center", style={"text-align":"right"}, xs=3, lg=1),
+            dbc.Col(html.Font("Erdős-Rényi xmin: ", style={"white-space":"nowrap"}),align="center", style={"text-align":"right"}, xs=3, lg=1),
             dbc.Col([
                 dcc.Dropdown(id=prefix+"_ER_xmin",  options=ERoptions, value=min(ERdata), clearable=False, searchable=True, optionHeight=25,className="DropdownMenu")
             ], align="center", xs=3, lg=1),

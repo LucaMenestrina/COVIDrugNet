@@ -20,7 +20,7 @@ layout=dbc.Col([
                             html.A(
                                 dbc.Row([
                                     #da controllare se abbiamo i diritti per farlo e soprattutto va aggiornata a quella del mese corretto
-                                    dbc.Col([html.Img(src=app.get_asset_url("imgs/journal_cover.svg"), style={"width":"100%"})], align="center", sm=5, lg=4, xl=3),
+                                    dbc.Col([html.Img(src=app.get_asset_url("imgs/wordcloud.png"), style={"width":"100%"})], align="center", sm=5, lg=4),#imgs/journal_cover.svg
                                     dbc.Col([
                                         html.Br(),
                                         html.H4(html.Strong("COVIDrugNet: a network-based web tool to investigate the drugs currently in clinical trial to contrast COVID-19"), style={"margin-bottom":"1rem"}),
@@ -46,18 +46,18 @@ layout=dbc.Col([
                                         html.Br(),
                                         html.H5("DOI"),
                                         html.A("doi", href=""),
-                                    ], align="center", sm=7, lg=8 ,xl=9)
+                                    ], align="center", sm=7, lg=8)
                                 ], justify="center", align="center", id="paper"),
                             href="", target="_blank", style={"color":"black", "text-decoration":"none"}),
-                        align="center", sm=10, md=6),
+                        align="center", sm=10, md=7, style={"padding-right":"2vw"}),
                         html.Br(),
                         dbc.Col([
                             html.Br(),
-                            html.H5(html.Strong("Abstract")),
-                            html.H5("The COVID-19 pandemic poses a huge problem of public health that requires the implementation of all available approaches to contrast it, and drugs are one. In this context, we observed an unmet need of depicting the continuously evolving scenario of the ongoing drug clinical trials through an easy-to-use freely accessible online tool. Starting from this consideration, we developed COVIDrugNet, a web application that allows users to capture a holistic view and keep up to date on how the drug research is responding to the SARS-CoV-2 infection."),
-                            html.H5("Here, we describe the web app and show how one can explore the whole landscape of medicines currently in clinical trial for the treatment of COVID-19 and try to probe the consistency of the current approaches with the available biological and pharmacological evidence. We conclude that a careful analysis of the COVID-19 drug-target system as that reported in the present work and based on COVIDrugNet might help to understand the molecular implications of the proposed drug options, thus improving the search for more effective therapies"),
-                        ], align="center", sm=10, md=5, style={"text-align":"justify"})
-                    ], justify="center", align="center"),
+                            html.H4(html.Strong("Abstract")),
+                            html.P("The COVID-19 pandemic poses a huge problem of public health that requires the implementation of all available means to contrast it, and drugs are one. In this context, we observed an unmet need of depicting the continuously evolving scenario of the ongoing drug clinical trials through an easy-to-use, freely accessible online tool. Starting from this consideration, we developed COVIDrugNet, a web application that allows users to capture a holistic view and keep up to date on how the clinical drug research is responding to the SARS-CoV-2 infection.", style={"margin-bottom":0}),
+                            html.P("Here, we describe the web app and show how one can explore the whole landscape of medicines currently in clinical trial for the treatment of COVID-19 and try to probe the consistency of the current approaches with the available biological and pharmacological evidence. We conclude that a careful analysis of the COVID-19 drug-target system as that reported in the present work and based on COVIDrugNet might help to understand the molecular implications of the proposed drug options, thus improving the search for more effective therapies."),
+                        ], align="center", sm=10, md=5, style={"text-align":"justify", "font-size":"large", "padding-left":"1vw", "padding-right":"1vw"})
+                    ], justify="around", align="center"),
                     html.Br(),
                     html.Br(),
                     html.H4("Citing COVIDrugNet:"),

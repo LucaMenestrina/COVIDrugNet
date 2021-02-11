@@ -48,7 +48,7 @@ layout=dbc.Col([
                                 html.A(html.H5("luca.menestrina2@unibo.it"), href="mailto:luca.menestrina2@unibo.it", style={"color":"black"}),
                                 html.Br(),
                                 html.Br(),
-                                html.P("Please help me improving this app: if you find any malfunction (sure there are...) or you have suggestions, drop me an email.")
+                                html.P("Please help me improving this app: if you find any malfunction (sure there are...) or you have suggestions, drop me an email")
                             ], align="center")
                         ], justify="around", align="center", className="contact-page"),
                     ], href="https://www.unibo.it/sitoweb/luca.menestrina2/en", target="_blank", style={"color":"black", "text-decoration":"none"}),

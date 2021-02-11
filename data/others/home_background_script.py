@@ -269,7 +269,7 @@ canvas.addEventListener('mousemove', function(e){
     var e = e || window.event;
     var rect = canvas.getBoundingClientRect();
     mouse_ball.x = e.clientX-rect.left;
-    mouse_ball.y = (e.clientY-rect.top)*1.66;
+    mouse_ball.y = (e.clientY-rect.top)*1.51;
     // console.log(mouse_ball);
 });
 '''
