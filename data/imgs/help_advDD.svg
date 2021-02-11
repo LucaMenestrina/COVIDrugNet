@@ -734,9 +734,9 @@
      inkscape:window-height="1031"
      id="namedview4"
      showgrid="false"
-     inkscape:zoom="0.54256113"
-     inkscape:cx="2476.0096"
-     inkscape:cy="895.61094"
+     inkscape:zoom="0.34656652"
+     inkscape:cx="1672.1792"
+     inkscape:cy="385.58036"
      inkscape:window-x="0"
      inkscape:window-y="25"
      inkscape:window-maximized="1"
@@ -800,7 +800,7 @@
              x="458.6673"
              y="1961.6658"
              id="tspan1716"
-             style="stroke-width:5.50991px">Interactive plot</tspan><tspan
+             style="stroke-width:5.50991px">Interactive scatter plot</tspan><tspan
              sodipodi:role="line"
              x="458.6673"
              y="1998.3987"
@@ -848,13 +848,18 @@
            xml:space="preserve"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.3863px;line-height:125%;font-family:Lato;-inkscape-font-specification:Lato;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:5.50991px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
            x="603.10187"
-           y="2398.0046"
+           y="2362.0046"
            id="text1336"><tspan
              sodipodi:role="line"
              x="603.10187"
-             y="2398.0046"
+             y="2362.0046"
              style="stroke-width:5.50991px"
-             id="tspan1334">Legend with selectable functions to fit on the distribution</tspan></text>
+             id="tspan1334">Plot legend</tspan><tspan
+             sodipodi:role="line"
+             x="603.10187"
+             y="2398.7375"
+             style="stroke-width:5.50991px"
+             id="tspan1112">with selectable functions to fit on the distribution</tspan></text>
       </g>
     </g>
   </g>

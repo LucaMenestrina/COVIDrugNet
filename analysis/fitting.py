@@ -17,6 +17,7 @@ from time import time
 from datetime import timedelta
 
 
+
 dt=nx.read_gpickle("../data/graphs/drug_target/drug_target.gpickle")
 dd=nx.read_gpickle("../data/graphs/drug_projection/drug_projection.gpickle")
 tt=nx.read_gpickle("../data/graphs/target_projection/target_projection.gpickle")
@@ -36,6 +37,7 @@ except:
 
 @ray.remote
 def onesample(data):
+    """sample for semi-parametric bootstrap"""
     fitted=powerlaw.Fit(data, discrete=True, verbose=False)
     xmin=getattr(fitted,"power_law").xmin
     lower=[n for n in data if n<xmin]
@@ -47,17 +49,10 @@ def onesample(data):
 
 @ray.remote
 def naivesample(data):
+    """sample for case resampling bootstrap"""
     sample=np.random.choice(data, len(data), replace=True)
     result=powerlaw.Fit(sample, discrete=True, verbose=False)#, xmin=xmin
     return {"D":getattr(result,"power_law").D, "xmin":getattr(result,"power_law").xmin, "alpha":getattr(result,"power_law").alpha}
-
-def converged(data, significant_figures=2):
-    threshold=round(np.mean(data)/10**significant_figures,int(-np.floor(np.log10(abs(np.mean(data)/10**significant_figures)))))
-    if len(data)<(threshold**-2/4):
-        return False
-    else:
-        return all(abs(np.array([n/(i+1) for i,n in enumerate(np.cumsum(data))][:-int(len(data)*0.5)])-np.mean(data))<threshold)
-        # np.mean(data)-np.mean(data[:-int(len(data)*0.5)]) < threshold
 
 def minmax(l):
     mean=np.mean(l)
@@ -65,25 +60,8 @@ def minmax(l):
     l=[n for n in l if (mean-5*std<n<mean+5*std)]
     return min(l),max(l)
 
-def fittings_plot_normalizedxmin(data, folder=""):
-    fitted=powerlaw.Fit(data, discrete=True, verbose=False)
-    x,y=np.unique(data,return_counts=True)
-    y=y/len(data[data>=fitted.xmin])
-    plt.scatter(x=x,y=y, c="darkgray", alpha=0.6)
-    fitted.plot_pdf(label="PDF", linewidth=0.75)
-    for dist in ["power_law","truncated_power_law","exponential","stretched_exponential","lognormal"]:
-        getattr(fitted,dist).plot_pdf(label=dist.replace("_"," ").title(), linewidth=0.75)
-    plt.xlim((0.75,max(x)*1.25))
-    plt.ylim((min(y)*0.75,max(y)*1.25))
-    plt.ylabel("Normalized Probability")
-    plt.xlabel("Degree")
-    plt.title("Degree Distribution Fittings")
-    plt.legend()
-    if folder:
-        plt.savefig(folder+"/"+folder+"_distribution_fittings.png", dpi=400)
-    plt.close()
-
 def fittings_plot(data, folder=""):
+    """plots the degree distribution with the possible functions fitted"""
     fitted=powerlaw.Fit(data, discrete=True, verbose=False)
     x,y=np.unique(data,return_counts=True)
     y=y/len(data)#)/len(data[data>=fitted.xmin])
@@ -109,12 +87,13 @@ def fittings_plot(data, folder=""):
     plt.close()
 
 def estimate(data, parms, percentile, samples, title):
+    """evaluate the fitting computing the p-value of D, xmin and alpha"""
     fig, axs = plt.subplots(nrows=3,ncols=4, figsize=(20,15))
     fig.suptitle(title.title())
     results_collection={}
     null_distributions={}
     for func in [onesample.remote, naivesample.remote]:
-        if func == onesample.remote:
+        if func == naivesample.remote:
             parm_to_bootstrap=["alpha", "xmin"]
         else:
             parm_to_bootstrap=["D"]
@@ -157,7 +136,6 @@ def estimate(data, parms, percentile, samples, title):
             axs[pos,3].set_xlabel(parm)
             axs[pos,3].set_ylabel("Frequency")
             axs[pos,3].set_xlim(minmax(replicates))#CI[0]-3*std, CI[1]+3*std #[min(replicates),max(replicates)]
-            # print(parm,converged(replicates))
             results_collection[parm]={"estimated":estimated,"CI":CI,"pvalue":p}
             null_distributions[parm]=replicates
         folder=title.replace(" ","_")
@@ -168,6 +146,7 @@ def estimate(data, parms, percentile, samples, title):
     return results_collection, null_distributions
 
 def test_distribution(data,title,percentile=0.90, samples=1E5):
+    """main function to fit some functions on the distribution and evaluate the fittings"""
     start=time()
     folder=title.replace(" ","_")
     if not os.path.isdir(folder):
@@ -195,6 +174,7 @@ def test_distribution(data,title,percentile=0.90, samples=1E5):
     #return fitting_analysis
 
 def ER_equivalent(graph, title, samples=1E5):
+    """builds and test an equivalent (same number of nodes and probability of edge creation) Erdős Rényi (random) graph"""
     if not os.path.isdir("ER_equivalents"):
         os.mkdir("ER_equivalents")
     os.chdir("ER_equivalents")
@@ -218,7 +198,7 @@ test_distribution(observed_tt,samples=1E5, title="Target Projection")
 
 
 
-#same analysis removing Artenimol and Resveratrol
+#same analysis removing Artenimol and Resveratrol and their exclusive direct neighbors
 
 proteins_to_remove=[node for node in dt.neighbors("Artenimol") if (list(dt.neighbors(node)) == ["Artenimol"] or list(dt.neighbors(node)) == ["Artenimol","Fostamatinib"])]+[node for node in dt.neighbors("Fostamatinib") if (list(dt.neighbors(node)) == ["Fostamatinib"] or list(dt.neighbors(node)) == ["Artenimol","Fostamatinib"])]
 dt_removed=dt.copy()
@@ -245,7 +225,8 @@ test_distribution(observed_tt_removed,samples=1E5, title="Target Projection Remo
 #for method validation
 
 def barabasi_albert(title="Barabasi Albert", samples=1E5, nedges=2):
-    BA=nx.barabasi_albert_graph(n=1000,m=nedges).to_undirected()
+    """builds and tests a set of Barabasi Albert networks (with 1000 nodes)"""
+    BA=nx.barabasi_albert_graph(n=1000,m=nedges,seed=1).to_undirected()
     BAK=dict(nx.degree(BA))
     # observed_K=np.array(list(ERK.values()))
     observed_K=np.array([n for n in BAK.values() if n > 0])
@@ -259,7 +240,7 @@ for file in ["words.txt","worm.txt","blackouts.txt"]:
     if file not in files:
         import urllib.request
         urllib.request.urlretrieve("https://raw.github.com/jeffalstott/powerlaw/master/manuscript/"+file, file)
-    test_distribution(np.genfromtxt(file), samples=1E5, title=file.split(".")[0])
+    test_distribution(np.genfromtxt(file), samples=1E5, title=file.split(".")[0]) #for method validation
 if not os.path.isdir("Barabasi_Albert"):
     os.mkdir("Barabasi_Albert")
 os.chdir("Barabasi_Albert")

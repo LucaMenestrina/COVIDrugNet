@@ -854,9 +854,9 @@
      inkscape:window-height="1031"
      id="namedview4"
      showgrid="false"
-     inkscape:zoom="0.7903678"
-     inkscape:cx="406.36717"
-     inkscape:cy="3897.9873"
+     inkscape:zoom="0.44313334"
+     inkscape:cx="1009.4702"
+     inkscape:cy="1872.5813"
      inkscape:window-x="0"
      inkscape:window-y="25"
      inkscape:window-maximized="1"
@@ -937,7 +937,7 @@
            x="284.70563"
            y="774.0473"
            id="tspan1582"
-           style="stroke-width:5.50991px">Jump to a specific page section</tspan></text>
+           style="stroke-width:5.50991px">Go to a specific page section</tspan></text>
       <path
          style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:4.13245;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker1937)"
          d="m 559.75998,622.46171 c -47.04386,-9.3664 -96.87129,-4.23641 -141.0199,14.5187 -41.83193,17.77095 -78.42563,47.67542 -104.1722,85.1298"
@@ -1044,7 +1044,7 @@
            x="280.74075"
            y="1714.772"
            style="stroke-width:5.50991px"
-           id="tspan4386">(crtl+drag/click for multiple) </tspan></text>
+           id="tspan4386">(ctrl+drag/click for multiple) </tspan></text>
       <path
          style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:4.13245;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker1886)"
          d="m 820.20245,2431.9854 c -87.4509,1.6274 -175.22027,-17.5862 -253.99304,-55.6014 -106.03356,-51.1711 -195.15473,-136.688 -250.65723,-240.5199"
@@ -1117,7 +1117,7 @@
            x="1945.9214"
            y="154.39494"
            id="tspan1656"
-           style="stroke-width:5.50991px">Highlight a/some nodes</tspan></text>
+           style="stroke-width:5.50991px">Highlight one or more nodes</tspan></text>
       <path
          style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:4.13245;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker1846)"
          d="m 1489.1103,1128.049 c 49.382,-96.643 84.2512,-200.68575 103.0794,-307.56865 38.423,-218.11769 8.4638,-447.77763 -84.6284,-648.73909"
@@ -1138,10 +1138,10 @@
            style="stroke-width:5.50991px">Highlighted node</tspan></text>
       <path
          style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:4.13245;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:8.26486, 4.13245;stroke-dashoffset:0;stroke-opacity:1"
-         d="m 1629.4902,146.98942 130.547,0.003"
+         d="m 1629.4902,146.98942 100.0172,0.003"
          id="path1668"
          inkscape:path-effect="#path-effect1670"
-         inkscape:original-d="m 1629.4902,146.98942 c 52.1139,-0.5799 78.4443,0.59383 130.547,0.003"
+         inkscape:original-d="m 1629.4902,146.98942 c 52.1139,-0.5799 47.9145,0.59383 100.0172,0.003"
          sodipodi:nodetypes="cc" />
       <path
          style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:4.13245;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker1836)"
@@ -1160,7 +1160,7 @@
            x="2782.1904"
            y="154.39494"
            id="tspan1676"
-           style="stroke-width:5.50991px">Jump to other app pages</tspan></text>
+           style="stroke-width:5.50991px">Visit to other app pages</tspan></text>
       <path
          style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:4.13245;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker1826)"
          d="m 2885.6624,775.72591 c 128.4214,0.40844 255.7222,56.33473 342.8921,150.64072 53.2453,57.60421 91.6864,128.78087 110.6595,204.89487"
@@ -1333,7 +1333,7 @@
            x="346.82111"
            y="4835.105"
            style="stroke-width:5.50991px"
-           id="tspan4120">Show only selected nodes</tspan></text>
+           id="tspan4120">Show only inspected nodes</tspan></text>
       <path
          style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:4.13245;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker4154)"
          d="m 1272.5049,4630.9418 c -136.8716,-125.4909 -334.67945,-181.1556 -516.90951,-145.4626 -73.18607,14.3348 -143.62402,42.5722 -206.44581,82.7606"
@@ -1351,7 +1351,7 @@
            x="345.96158"
            y="4602.4819"
            style="stroke-width:5.50991px"
-           id="tspan4374">Filter table searching for specific nodes</tspan></text>
+           id="tspan4374">Filter the table searching for specific nodes</tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.3863px;line-height:125%;font-family:Lato;-inkscape-font-specification:Lato;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:5.50991px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"

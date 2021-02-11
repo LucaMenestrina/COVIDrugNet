@@ -43,7 +43,7 @@ layout=dbc.Col([
                                     dbc.Container([
                                         html.H1("Drug Projection", className="fancy-hover-title"),
                                         html.H3([
-                                            "It is built from the Drug-Target network and contains only drugs.",
+                                            "It is built from the Drug-Target Network and contains only drugs.",
                                             html.Br(),
                                             html.Br(),
                                             "They are connected if they share at least a target in the Drug-Target Network"
@@ -62,7 +62,7 @@ layout=dbc.Col([
                                     dbc.Container([
                                         html.H1("Target Projection", className="fancy-hover-title"),
                                         html.H3([
-                                            "It is built from the Drug-Target network and contains only targets.",
+                                            "It is built from the Drug-Target Network and contains only targets.",
                                             html.Br(),
                                             html.Br(),
                                             "They are connected if they share at least a drug in the Drug-Target Network"

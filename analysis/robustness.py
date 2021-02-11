@@ -20,6 +20,7 @@ tt=nx.read_gpickle("../data/graphs/target_projection/target_projection.gpickle")
 
 
 def clustering_coefficient_vs_degree(graph,order,title=""):
+    """scatterplot of the clustering coefficient vs degree (with a regression line)"""
     cc=nx.clustering(graph)
     K=dict(nx.degree(graph))
     K_cleaned={node:K for node,K in K.items() if cc[node] != 0}
@@ -43,6 +44,7 @@ except:
     ray.init()
 
 def sort_dict(dictionary):
+    """utility function that from a dictionary returns a list of tuples ordered by dictionary values"""
     d=dict(dictionary)
     l=[]
     for key in d.keys():
@@ -51,6 +53,7 @@ def sort_dict(dictionary):
     return l
 
 def targeted_attack(graph):
+    """carries out a targeted attack progressively removing the nodes with highest degree"""
     G=graph.copy()
     components=list(G.subgraph(component) for component in nx.connected_components(G))
     r={}
@@ -73,11 +76,12 @@ def targeted_attack(graph):
         r[n]=(d,K_s[0][1],K_s[0][0])
         print("%d over %d, diameter: %d"%(n,len(G.nodes()),d),flush=True)
         rel[n/l]=d
-    df=pd.DataFrame({"Node removed":nodes_removed,"Fraction of nodes removed":fractions,"Diameter":diameters}) # da implementare per rendere più chiari i risultati
+    df=pd.DataFrame({"Node removed":nodes_removed,"Fraction of nodes removed":fractions,"Diameter":diameters}) # not yet implemented
     return r,rel
 
 @ray.remote
 def random_attack(graph):
+    """carries out a random attack progressively removing nodes choosen randomly"""
     G=graph.copy()
     components=list(G.subgraph(component) for component in nx.connected_components(G))
     r={}
@@ -120,6 +124,7 @@ def attack_plot(relation_targeted,relation_random,title=""):
 
 
 def test_robustness(graph,title,iterations=100):
+    """main function to test the robustness of a network comparing the results of a targeted attack and the average of many random ones"""
     folder=title.replace(" ","_")
     if not os.path.isdir(folder):
         os.mkdir(folder)
@@ -151,7 +156,7 @@ clustering_coefficient_vs_degree(tt,2,"Target Projection")
 
 
 
-#same analysis removing Artenimol and Resveratrol
+#same analysis removing Artenimol and Resveratrol and their exclusive direct neighbors
 
 proteins_to_remove=[node for node in dt.neighbors("Artenimol") if (list(dt.neighbors(node)) == ["Artenimol"] or list(dt.neighbors(node)) == ["Artenimol","Fostamatinib"])]+[node for node in dt.neighbors("Fostamatinib") if (list(dt.neighbors(node)) == ["Fostamatinib"] or list(dt.neighbors(node)) == ["Artenimol","Fostamatinib"])]
 dt_removed=dt.copy()

@@ -590,7 +590,7 @@ def highlighter_callback(prefix,G,nodes,L,evals,evects,n_clusters,clusters,L_maj
                     text=[""]*len(rule)
                     text[rule.index(ATC1_getter[atc3])]=long_atc3[atc3]
                     pie_data.append(go.Bar(x=rule, y=y, marker={"color":cmap[ATC1_getter[atc3]], "line":{"color":"lightgrey","width":1}}, text=text, meta=[ATC3_count[atc3],long_atc[ATC1_getter[atc3]], ATC_count[ATC1_getter[atc3]]]))
-                pie=go.Figure(data=pie_data, layout={"title":{"text":"Nodes' Categories Distribution","x":0.5, "xanchor": "center"}})
+                pie=go.Figure(data=pie_data, layout={"title":{"text":"Nodes' Categories Distribution","x":0.5, "xanchor": "center"},"yaxis":{"title_text":"Number of Nodes"}})
                 pie.update_traces(hovertemplate="<b> ATC Level 3 </b> <br> %{text} <br> Nodes: %{meta[0]} <br><br><b> ATC Level 1 </b> <br> %{meta[1]}  <br> Nodes: %{meta[2]} <extra></extra>")
                 pie.update_layout(barmode="stack")
                 table_body=[]
