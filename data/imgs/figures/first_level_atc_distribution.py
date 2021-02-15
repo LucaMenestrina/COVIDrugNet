@@ -18,7 +18,7 @@ def draw_ATC_barchart(file):
     for code,value in ATC_count.items():
         plt.bar(x=code,height=value, color=cmap[code], label=code, alpha=0.9, align="center")
         plt.text(x=code, y=value+0.5, s=str(value), horizontalalignment="center", fontsize="small")
-    title=file.replace("_"," ").title()
+    title="First Level ATC Code Distribution"#file.replace("_"," ").title()
     plt.ylabel("Number of Nodes")
     # plt.xlabel("First Level ATC Code")
     plt.xticks(rotation=-45)

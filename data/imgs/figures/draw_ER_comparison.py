@@ -24,7 +24,7 @@ def draw_ER_comparison(file):
     ERfitted=powerlaw.Fit(ERdata, discrete=True, verbose=False, xmin=1)
     ERx,ERy=np.unique(ERdata,return_counts=True)
     ERy=ERy/len(ERdata)
-    plt.scatter(x=ERx,y=ERy, c="DeepSkyBlue", alpha=0.6, label="Erdős Rényi Equivalent")
+    plt.scatter(x=ERx,y=ERy, c="DeepSkyBlue", alpha=0.6, label="Erdős-Rényi Equivalent")
     # ERreducedx=sorted([v for v in ERdata if v >= ERfitted.xmin])
     # plt.plot(ERreducedx,ERfitted.stretched_exponential.pdf(ERreducedx)*len(ERdata[ERdata>=ERfitted.xmin])/len(ERdata),label="Erdős Rényi Equivalent Fitted Stretched Exponential", linewidth=0.75, c="DeepSkyBlue")
     plt.xlim([0.75, max(list(x)+list(ERx))*1.25])

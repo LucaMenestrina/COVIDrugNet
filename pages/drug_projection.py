@@ -24,6 +24,7 @@ except:
 
 nodes=[{"data":{key:value for key,value in attributes.items()}, "position":{"x":pos[node][0],"y":pos[node][1]}} for node,attributes in dict(G.nodes(data=True)).items()]
 edges=[{"data":{"source":source,"target":target}} for source,target in G.edges]
+edges_to_show=edges.copy()
 
 layout=dbc.Col([
             dbc.Row([
@@ -54,4 +55,4 @@ layout=dbc.Col([
 
 ##  ----------  CALLBACKS   ------------
 
-build_callbacks(prefix,G,nodes,*common_data_generator(prefix,G))
+build_callbacks(prefix,G,nodes,edges,edges_to_show,*common_data_generator(prefix,G))

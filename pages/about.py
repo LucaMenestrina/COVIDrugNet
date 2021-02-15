@@ -27,36 +27,36 @@ layout=dbc.Col([
                                         html.H5("Luca Menestrina, Chiara Cabrelle and Maurizio Recanatini"),
                                         html.P(html.Em("Department of Pharmacy and Biotechnology, Alma Mater Studiorum - University of Bologna 40126 Bologna, Italy"), style={"margin-bottom":"1rem"}),
                                         html.Br(),
-                                        html.H5("Jurnal, Pages, Issue, Year ..."),
-                                        html.Br(),
-                                        dbc.Row([
-                                            dbc.Col([
-                                                html.P("Received", style={"margin-bottom":"0.5rem"}),
-                                                html.P(html.Time("Not Yet",dateTime="1900-01-01")),
-                                            ], align="center"),
-                                            # dbc.Col([
-                                            #     html.P("Hopefully Accepted", style={"margin-bottom":"0.5rem","color":"grey"}),
-                                            #     html.P(html.Time("Not Yet",dateTime="1900-01-01"), style={"color":"grey"}),
-                                            # ], align="center"),
-                                            # dbc.Col([
-                                            #     html.P("Hopefully Published", style={"margin-bottom":"0.5rem","color":"grey"}),
-                                            #     html.P(html.Time("Not Yet",dateTime="1900-01-01"), style={"color":"grey"}),
-                                            # ], align="center")
-                                        ], justify="around", align="center"),
-                                        html.Br(),
-                                        html.H5("DOI"),
-                                        html.A("doi", href=""),
+                                        # html.H5("Jurnal, Pages, Issue, Year ..."),
+                                        # html.Br(),
+                                        # dbc.Row([
+                                        #     dbc.Col([
+                                        #         html.P("Received", style={"margin-bottom":"0.5rem"}),
+                                        #         html.P(html.Time("Not Yet",dateTime="1900-01-01")),
+                                        #     ], align="center"),
+                                        #     # dbc.Col([
+                                        #     #     html.P("Hopefully Accepted", style={"margin-bottom":"0.5rem","color":"grey"}),
+                                        #     #     html.P(html.Time("Not Yet",dateTime="1900-01-01"), style={"color":"grey"}),
+                                        #     # ], align="center"),
+                                        #     # dbc.Col([
+                                        #     #     html.P("Hopefully Published", style={"margin-bottom":"0.5rem","color":"grey"}),
+                                        #     #     html.P(html.Time("Not Yet",dateTime="1900-01-01"), style={"color":"grey"}),
+                                        #     # ], align="center")
+                                        # ], justify="around", align="center"),
+                                        # html.Br(),
+                                        # html.H5("DOI"),
+                                        # html.A("doi", href="", target="_blank"),
                                     ], align="center", sm=7, lg=8)
                                 ], justify="center", align="center", id="paper"),
                             href="", target="_blank", style={"color":"black", "text-decoration":"none"}),
-                        align="center", sm=10, md=7, style={"padding-right":"2vw"}),
+                        align="center", sm=10, lg=7, style={"padding-right":"2vw"}),
                         html.Br(),
                         dbc.Col([
                             html.Br(),
                             html.H4(html.Strong("Abstract")),
                             html.P("The COVID-19 pandemic poses a huge problem of public health that requires the implementation of all available means to contrast it, and drugs are one. In this context, we observed an unmet need of depicting the continuously evolving scenario of the ongoing drug clinical trials through an easy-to-use, freely accessible online tool. Starting from this consideration, we developed COVIDrugNet, a web application that allows users to capture a holistic view and keep up to date on how the clinical drug research is responding to the SARS-CoV-2 infection.", style={"margin-bottom":0}),
                             html.P("Here, we describe the web app and show how one can explore the whole landscape of medicines currently in clinical trial for the treatment of COVID-19 and try to probe the consistency of the current approaches with the available biological and pharmacological evidence. We conclude that a careful analysis of the COVID-19 drug-target system as that reported in the present work and based on COVIDrugNet might help to understand the molecular implications of the proposed drug options, thus improving the search for more effective therapies."),
-                        ], align="center", sm=10, md=5, style={"text-align":"justify", "font-size":"large", "padding-left":"1vw", "padding-right":"1vw"})
+                        ], align="center", sm=10, lg=5, style={"text-align":"justify", "font-size":"large", "padding-right":"1vw"})
                     ], justify="around", align="center"),
                     html.Br(),
                     html.Br(),
@@ -68,6 +68,8 @@ layout=dbc.Col([
                     html.Hr(),
                     html.Br(),
                     html.H4(["Last Database Update: ",html.Time(["14",html.Sup("th")," January 2021"], dateTime="2021-01-14")]),
+                    html.Br(),
+                    html.H5(["Data and Code Available at: ",html.A("https://github.com/LucaMenestrina/COVIDrugNet", href="https://github.com/LucaMenestrina/COVIDrugNet", target="_blank", style={"color":"black"})]),
                     html.Br(),
                     html.Hr(),
                     html.Br(),
@@ -152,6 +154,7 @@ layout=dbc.Col([
                                 html.Li(html.A("dash html components", href="https://dash.plotly.com/dash-html-components", target="_blank", style={"color":"black"})),
                                 html.Li(html.A("dash bootstrap components", href="https://dash-bootstrap-components.opensource.faculty.ai/", target="_blank", style={"color":"black"})),
                                 html.Li(html.A("dash cytoscape", href="https://dash.plotly.com/cytoscape", target="_blank", style={"color":"black"})),
+                                html.Li(html.A("dash daq", href="https://dash.plotly.com/dash-daq", target="_blank", style={"color":"black"})),
                             ])
                         ]),
                         html.Li(html.A("powerlaw", href="https://github.com/jeffalstott/powerlaw", target="_blank", style={"color":"black"})),
@@ -187,12 +190,12 @@ layout=dbc.Col([
                             html.A("Particles Random Animation in Canvas by Nokey", href="https://codepen.io/jkiss/pen/OVEeqK", target="_blank", style={"color":"black"})
                         ], style={"background":"url(https://cpwebassets.codepen.io/assets/favicon/favicon-touch-de50acbf5d634ec6791894eba4ba9cf490f709b3d742597c6fc4b734e6492a5a.png)", "background-size":"1rem", "background-repeat":"no-repeat","background-position":"left", "padding-left":"1.5rem"}),
                     ], style={"list-style-type":"none"}),
-                    html.Br(),
-                    html.Hr(),
-                    html.Br(),
-                    html.H3("Terms of Use"),
-                    html.Br(),
-                    html.P("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+                    # html.Br(),
+                    # html.Hr(),
+                    # html.Br(),
+                    # html.H3("Terms of Use"),
+                    # html.Br(),
+                    # html.P("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
                 ], style={"padding":"2%", "width":"100%"})
             ]),
             html.Div(style={"height":"10vh"}),

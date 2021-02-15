@@ -35,7 +35,7 @@ layout=dbc.Col([
                             html.Center([
                                 dbc.Card([
                                     dbc.CardImg(src=app.get_asset_url("imgs/drug_target.png"), top=True, style={"width":"80%", "margin":"auto"}, alt="Drug-Target Network"),
-                                    dbc.CardBody(html.H4(html.Strong("Drug-Target Network"), className="card-title")),
+                                    dbc.CardBody(html.H4(html.Strong("Drug-Target Network"), className="card-title", style={"color":"#707070"})),
                                     dbc.Container([
                                         html.H1(["Drug-Target",html.Br(),"Bipartite Network"], className="fancy-hover-title"),
                                         html.H3("It is the main network and it is built connecting drugs from the COVID-19 Dashboard of DrugBank and their reported targets.", className="fancy-hover-text")
@@ -49,7 +49,7 @@ layout=dbc.Col([
                             html.Center([
                                 dbc.Card([
                                     dbc.CardImg(src=app.get_asset_url("imgs/drug_projection.png"), top=True, style={"width":"80%", "margin":"auto"}, alt="Drug Projection"),
-                                    dbc.CardBody(html.H4(html.Strong("Drug Projection"), className="card-title")),
+                                    dbc.CardBody(html.H4(html.Strong("Drug Projection"), className="card-title", style={"color":"#707070"})),
                                     dbc.Container([
                                         html.H1("Drug Projection", className="fancy-hover-title"),
                                         html.H3([
@@ -68,7 +68,7 @@ layout=dbc.Col([
                             html.Center([
                                 dbc.Card([
                                     dbc.CardImg(src=app.get_asset_url("imgs/target_projection.png"), top=True, style={"width":"80%", "margin":"auto"}, alt="Target Projection"),
-                                    dbc.CardBody(html.H4(html.Strong("Target Projection"), className="card-title")),
+                                    dbc.CardBody(html.H4(html.Strong("Target Projection"), className="card-title", style={"color":"#707070"})),
                                     dbc.Container([
                                         html.H1("Target Projection", className="fancy-hover-title"),
                                         html.H3([

@@ -53,6 +53,41 @@ def collapse_headbar_callback():
             return not is_open
         return is_open
 
+def show_edges_callback(prefix,nodes,edges,edges_to_show):
+    @app.callback(
+        Output(prefix+"_show_edges_modal","is_open"),
+        [Input(prefix+"_show_edges_close","n_clicks")]
+    )
+    def close_show_all_edges_modal(n):
+        if n:
+            return False
+        else:
+            return True
+    @app.callback(
+        Output(prefix+"_show_all_edges_help","on"),
+        [Input(prefix+"_show_all_edges_modal","on")]
+    )
+    def modal_to_help(show_all):
+        if show_all:
+            return True
+        else:
+            return False
+    @app.callback(
+        Output(prefix+"_graph", "elements"),
+        [
+            Input(prefix+"_show_all_edges_help","on"),
+        ],
+    )
+    def show_edges(show_all):
+        if prefix != "target_projection":#useless because it will never be fired outside the target projection page
+            return nodes+edges_to_show
+        else:
+            if show_all:
+                return nodes+edges
+            else:
+                return nodes+edges_to_show
+    return show_edges,close_show_all_edges_modal
+
 
 def displayHoverNodeData_callback(prefix,G):
     @app.callback(
@@ -287,7 +322,7 @@ def group_highlighter_callback(prefix,nodes,maj):
         else:
             return {}
     if prefix == "drug_target":
-        properties=[]
+        properties=["kind"]
     elif prefix == "drug_projection":
         properties=["ATC Code Level 1", "ATC Code Level 2", "ATC Code Level 3", "ATC Code Level 4", "Targets", "Enzymes", "Carriers", "Transporters", "Drug Interactions"]
     elif prefix == "target_projection":
@@ -304,7 +339,7 @@ def group_highlighter_callback(prefix,nodes,maj):
         [Input(prefix+"_only_major_highlighted_groups","value")]+[Input(prefix+"_highlight_dropdown_"+property,"value") for property in properties]+[Input(prefix+"_conjunction_"+property,"value") for property in properties]+[Input(prefix+"_equality_"+centrality,"value") for centrality in centralities]+[Input(prefix+"_highlight_value_"+centrality,"value") for centrality in centralities]+[Input(prefix+"_conjunction_general","value")]
     )
     def group_highlighter(only_maj,*values):
-        if isinstance(only_maj,list) and len(only_maj)>0 and only_maj[0]==True: # I don't know why it is needed, maybe because of the complex input
+        if isinstance(only_maj,list) and len(only_maj)>0 and only_maj[0]==True: # could be avoided using daq BooleanSwitch
             only_maj=True
         else:
             only_maj=False
@@ -1074,8 +1109,9 @@ def download_interactome_callback(prefix):
             return None, None
     return download_interactome
 
-def build_callbacks(prefix,G,nodes,graph_properties_df,L,evals,evects,n_clusters,clusters,L_maj,evals_maj,evects_maj,n_clusters_maj,clusters_maj,girvan_newman,maj,girvan_newman_maj,communities_modularity,communities_modularity_maj,n_comm,n_comm_maj,atc_description):
+def build_callbacks(prefix,G,nodes,edges,edges_to_show,graph_properties_df,L,evals,evects,n_clusters,clusters,L_maj,evals_maj,evects_maj,n_clusters_maj,clusters_maj,girvan_newman,maj,girvan_newman_maj,communities_modularity,communities_modularity_maj,n_comm,n_comm_maj,atc_description):
     # collapse_headbar_callback()
+    show_edges_callback(prefix,nodes,edges,edges_to_show)
     displayHoverNodeData_callback(prefix,G)
     group_highlighter_callback(prefix,nodes,maj)
     highlighter_callback(prefix,G,nodes,L,evals,evects,n_clusters,clusters,L_maj,evals_maj,evects_maj,n_clusters_maj,clusters_maj,girvan_newman,maj,girvan_newman_maj,n_comm,n_comm_maj,atc_description)

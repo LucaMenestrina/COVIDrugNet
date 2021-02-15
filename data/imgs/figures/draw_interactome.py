@@ -40,7 +40,7 @@ def draw_interactome_drugs():
             data["Targeted Genes"]["labels"].append(node_data["Gene"])
         else:
             data["Human Genes"]["labels"].append(node_data["Gene"])
-    nx.draw_networkx_edges(graph, pos=pos, width=0.05)
+    nx.draw_networkx_edges(graph, pos=pos, width=0.25, edge_color="dimgrey")
     nx.draw_networkx_nodes(graph, pos=pos, nodelist=[node for node in graph.nodes() if len([neigh for neigh in graph.neighbors(node) if neigh in data["Viral Genes"]["labels"]])>1], node_shape=data["Human Genes"]["shape"], node_size=int(data["Targeted Genes"]["size"]*2), node_color="hotpink")
     for kind in data.values():
         nx.draw_networkx_nodes(graph, pos=pos, nodelist=kind["labels"], node_shape=kind["shape"], node_size=kind["size"], node_color=kind["color"])

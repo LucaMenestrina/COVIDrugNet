@@ -1,6 +1,7 @@
 import dash_core_components as dcc
 import dash_bootstrap_components as dbc
 import dash_html_components as html
+import dash_daq as daq
 
 import networkx as nx
 
@@ -15,7 +16,6 @@ print("Loading "+graph_title+" ...")
 G=nx.read_gpickle("data/graphs/target_projection/target_projection.gpickle")
 nx.set_node_attributes(G,nx.get_node_attributes(G,"Name"),"id")
 
-
 try:
     from networkx.drawing.nx_agraph import graphviz_layout
     pos=nx.rescale_layout_dict(graphviz_layout(G),len(G.nodes())*2.5)
@@ -24,14 +24,41 @@ except:
 
 nodes=[{"data":{key:value for key,value in attributes.items()}, "position":{"x":pos[node][0],"y":pos[node][1]}} for node,attributes in dict(G.nodes(data=True)).items()]
 edges=[{"data":{"source":source,"target":target}} for source,target in G.edges]
+dt=nx.read_gpickle("data/graphs/drug_target/drug_target.gpickle")
+neighbors=list(dt.neighbors("Fostamatinib"))+list(dt.neighbors("Artenimol"))
+edges_to_show=[edge for edge in edges if not (edge["data"]["source"] in neighbors and edge["data"]["target"] in neighbors)]
+
 
 layout=dbc.Col([
+            dbc.Modal([
+                dbc.ModalHeader("Show Edges"),
+                dbc.ModalBody([
+                    html.Center([
+                        html.P("The Target Projection has %d edges and displaying all of them would severely slow down the page loading and responsiveness"%len(G.edges), style={"font-size":"110%"}),
+                        html.P("In order to improve the user experience, we decided to hide the ones connecting the neighbors of Fostamatinib and Artenimol (%d),"%(len(edges)-len(edges_to_show)), style={"font-size":"110%","margin-bottom":0}),
+                        html.P("most of them would be hidden behind the two jumbles induced by these two drugs anyway", style={"font-size":"110%"}),
+                        html.P("This will only affect the visualization, analyses will not be influenced", style={"font-size":"133%"}),
+                        html.Hr(),
+                        html.P("It is possible to override this choice here:", style={"font-size":"110%"}),
+                        daq.BooleanSwitch(on=False, label="Show All Edges", id=prefix+"_show_all_edges_modal"),
+                        html.Br(),
+                        html.P([
+                            "This selection can be changed at any time from the ",
+                            html.I(className="fa fa-question-circle"),
+                            " button on top of the graph"
+                        ], style={"font-size":"110%"}),
+                    ])
+                ]),
+                dbc.ModalFooter([
+                    dbc.Button("OK", id=prefix+"_show_edges_close", className="btn btn-outline-primary")
+                ]),
+            ], is_open=True, id=prefix+"_show_edges_modal",size="xl", style={"margin":"10rem auto"}),
             dbc.Row([
                 dbc.Col(sidebar(prefix), width=1, className="bg-light"),
                 dbc.Col([
                     html.Br(),
                     dbc.Row([
-                        dbc.Col(graph(prefix, title=graph_title, nodes=nodes, edges=edges), xs=12, md=9),
+                        dbc.Col(graph(prefix, title=graph_title, nodes=nodes, edges=edges_to_show), xs=12, md=9),
                         dbc.Col(nodes_info(prefix), md=3)
                     ], no_gutters=True, justify="center"),
                     html.Br(),
@@ -54,4 +81,4 @@ layout=dbc.Col([
 
 ##  ----------  CALLBACKS   ------------
 
-build_callbacks(prefix,G,nodes,*common_data_generator(prefix,G))
+build_callbacks(prefix,G,nodes,edges,edges_to_show,*common_data_generator(prefix,G))

@@ -3,6 +3,7 @@ import dash_core_components as dcc
 import dash_bootstrap_components as dbc
 import dash_html_components as html
 import dash_cytoscape as cyto
+import dash_daq as daq
 from dash.dependencies import Output,Input, State
 import plotly.graph_objs as go
 import plotly.express as px
@@ -28,9 +29,13 @@ from app import app
 
 loading_banner = html.Div(
         html.Center([
-            html.Div(style={"height":"20vh"}),
+            html.Div(style={"height":"10vh"}),
             dbc.Fade(
                 dbc.Jumbotron([
+                    html.Center(
+                        html.Img(src="/assets/imgs/logo.svg", alt="COVIDrugNet", style={"height":"33vh"})
+                    ),
+                    html.Br(),
                     html.H2("Sorry, it's taking some time to load ..."),
                     html.Hr(),
                     html.H5("Networks are becoming more and more complex"),
@@ -184,19 +189,28 @@ def nodes_info(prefix):
             ])
 
 def graph_help(prefix):
+    body=[
+        html.P("Pan to move around"),
+        html.P("Scroll to zoom"),
+        html.P("Click to select (and lock node's info)"),
+        html.P("CTRL or MAIUSC + Click for multiple selection"),
+        html.P("CTRL + Drag for square selection")
+    ]
+    if prefix == "target_projection":
+        body+=[
+            html.Center([
+                html.Hr(),
+                daq.BooleanSwitch(on=False, label="Show All Edges", id=prefix+"_show_all_edges_help"),
+                html.Br(),
+            ])
+        ]
     return html.Div([
             dbc.Button(html.I(className="fa fa-question-circle", style={"font-size":"0.9rem"}), id=prefix+"_help_open", block=True, className="btn btn-outline-primary"),#"Help"
             dbc.Popover([
-                dbc.PopoverHeader("Graph's Interactions"),
-                dbc.PopoverBody([
-                    html.P("Pan to move around"),
-                    html.P("Scroll to zoom"),
-                    html.P("Click to select (and lock node's info)"),
-                    html.P("CTRL or MAIUSC + Click for multiple selection"),
-                    html.P("CTRL + Drag for square selection")
-                ])
+                dbc.PopoverHeader("Instructions for Interacting with the Graph"),
+                dbc.PopoverBody(body)
             ], id=prefix+"_help_popover", target=prefix+"_help_open", placement="bottom"),
-            dbc.Tooltip("Tips for Graph's Interactions", target=prefix+"_help_open", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
+            dbc.Tooltip("Instructions for Interacting with the Graph", target=prefix+"_help_open", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
         ])
 
 def legend(prefix):
@@ -344,22 +358,30 @@ def group_highlighting(prefix, nodes):
             )
         modal_body.append(html.Hr())
     else:
-        modal_body=[]
-    modal_body+=[
+        modal_body=[
+            dbc.Row([
+                dbc.Col([
+                    html.Strong(html.P("Centrality", style={"text-align":"center"}, id=prefix+"_group_centrality")),
+                    dbc.Tooltip("Available Nodes' Centralities for Highlighting", target=prefix+"_group_centrality", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
+                ], width=3, align="center"),
+                dbc.Col([
+                    html.Strong(html.P("Equality Filter", style={"text-align":"center"}, id=prefix+"_group_centrality_equality")),
+                    dbc.Tooltip("Chosen Equality Filter for the Centrality", target=prefix+"_group_centrality_equality", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
+                ], width=6, align="center"),
+                dbc.Col([
+                    html.Strong(html.P("Reference Value", style={"text-align":"center"}, id=prefix+"_group_centrality_value")),
+                    dbc.Tooltip("Reference Value for Filtering", target=prefix+"_group_centrality_value", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
+                ], width=3, align="center")
+            ], justify="around", align="center"),
+        ]
+
+    modal_body+=[#it shouldn't have been hard coded
         dbc.Row([
-            dbc.Col([
-                html.Strong(html.P("Centrality", style={"text-align":"center"}, id=prefix+"_group_centrality")),
-                dbc.Tooltip("Available Nodes' Centralities for Highlighting", target=prefix+"_group_centrality", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
-            ], width=3, align="center"),
-            dbc.Col([
-                html.Strong(html.P("Equality Filter", style={"text-align":"center"}, id=prefix+"_group_centrality_equality")),
-                dbc.Tooltip("Chosen Equality Filter for the Centrality", target=prefix+"_group_centrality_equality", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
-            ], width=6, align="center"),
-            dbc.Col([
-                html.Strong(html.P("Reference Value", style={"text-align":"center"}, id=prefix+"_group_centrality_value")),
-                dbc.Tooltip("Reference Value for Filtering", target=prefix+"_group_centrality_value", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
-            ], width=3, align="center")
+            dbc.Col([html.Font("Kind", style={"text-align":"center"})], width=2, align="center"),
+            dbc.Col([dcc.Dropdown(options=[{"label":prop,"value":",".join([node["data"]["ID"] for node in nodes if prop in node["data"]["kind"]])} for prop in ["Drug","Target"]], multi=True, className="DropdownMenu", id=prefix+"_highlight_dropdown_kind")], width=7, align="center"),
+            dbc.Col([conjunction(prefix+"_conjunction_kind")], width=2, align="center")
         ], justify="around", align="center"),
+        html.Hr()
     ]
     for centrality in ["Degree","Closeness Centrality","Betweenness Centrality", "Eigenvector Centrality","Clustering Coefficient","VoteRank Score"]:
         all_cent=sorted(set([node["data"][centrality] for node in nodes]))
@@ -510,10 +532,6 @@ def plots(prefix, graph, title):
                 html.H3("Charts and Plots"),
                 dbc.Row(
                 children=children
-                # [
-                #     # dbc.Col([dbc.Spinner(dbc.Container(dcc.Graph(id=prefix+"_piechart", responsive=True)))], style={"padding":"0px"}, xs=12, lg=6),
-                #     # dbc.Col([dbc.Spinner(dcc.Graph(figure=degree_distribution(graph,title), id=prefix+"_degree_distribution", responsive=True))], style={"padding":"0px"}, xs=12, lg=6)
-                # ]
                 , justify="around", align="center", no_gutters=True)
             ], id=prefix+"_plots", fluid=True, style={"padding":"3%"})
 
@@ -720,7 +738,7 @@ def interactome(prefix):
 
     figure=go.Figure(data=edges_trace)
     data={
-        "Viral Genes":{
+        "Viral Proteins":{
             "x":[],
             "y":[],
             "labels":[],
@@ -728,7 +746,7 @@ def interactome(prefix):
             "symbol":"circle",
             "size":8
         },
-        "Human Genes":{
+        "Human Proteins":{
             "x":[],
             "y":[],
             "labels":[],
@@ -736,7 +754,7 @@ def interactome(prefix):
             "symbol":"circle",
             "size":6
         },
-        "Targeted Genes":{
+        "Targeted Proteins":{
             "x":[],
             "y":[],
             "labels":[],
@@ -755,21 +773,21 @@ def interactome(prefix):
     }
     for node,node_data in G.nodes(data=True):
         if node_data["Viral"]:
-            data["Viral Genes"]["x"].append(node_data["pos"][0])
-            data["Viral Genes"]["y"].append(node_data["pos"][1])
-            data["Viral Genes"]["labels"].append(node_data["Gene"])
+            data["Viral Proteins"]["x"].append(node_data["pos"][0])
+            data["Viral Proteins"]["y"].append(node_data["pos"][1])
+            data["Viral Proteins"]["labels"].append(node_data["Gene"])
         elif node_data["Drug"]:
             data["Drugs"]["x"].append(node_data["pos"][0])
             data["Drugs"]["y"].append(node_data["pos"][1])
             data["Drugs"]["labels"].append(node_data["Gene"])
         elif node_data["Targeted"]:
-            data["Targeted Genes"]["x"].append(node_data["pos"][0])
-            data["Targeted Genes"]["y"].append(node_data["pos"][1])
-            data["Targeted Genes"]["labels"].append(node_data["Gene"])
+            data["Targeted Proteins"]["x"].append(node_data["pos"][0])
+            data["Targeted Proteins"]["y"].append(node_data["pos"][1])
+            data["Targeted Proteins"]["labels"].append(node_data["Gene"])
         else:
-            data["Human Genes"]["x"].append(node_data["pos"][0])
-            data["Human Genes"]["y"].append(node_data["pos"][1])
-            data["Human Genes"]["labels"].append(node_data["Gene"])
+            data["Human Proteins"]["x"].append(node_data["pos"][0])
+            data["Human Proteins"]["y"].append(node_data["pos"][1])
+            data["Human Proteins"]["labels"].append(node_data["Gene"])
     for name, d in data.items():
         figure.add_trace(go.Scatter(x=d["x"], y=d["y"], hoverinfo="text", mode="markers", marker={"color":d["color"], "symbol":d["symbol"], "size":d["size"], "opacity":0.9}, text=d["labels"], name=name))
     figure.update_layout({"margin":{"t":10,"b":2,"l":10,"r":10}, "dragmode":"pan", "xaxis":{"showgrid":False, "zeroline":False, "showticklabels":False},"yaxis":{"showgrid":False, "zeroline":False, "showticklabels":False},"paper_bgcolor": "rgba(0, 0, 0, 0)","plot_bgcolor": "rgba(0, 0, 0, 0)", "modebar":{"bgcolor":"rgba(0, 0, 0, 0)","color":"silver","activecolor":"grey"}}) # for a transparent background but keeping modebar acceptable colors
