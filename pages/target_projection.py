@@ -24,8 +24,9 @@ except:
 
 nodes=[{"data":{key:value for key,value in attributes.items()}, "position":{"x":pos[node][0],"y":pos[node][1]}} for node,attributes in dict(G.nodes(data=True)).items()]
 edges=[{"data":{"source":source,"target":target}} for source,target in G.edges]
+print("\tComputing edges to show ...")
 dt=nx.read_gpickle("data/graphs/drug_target/drug_target.gpickle")
-neighbors=list(dt.neighbors("Fostamatinib"))+list(dt.neighbors("Artenimol"))
+neighbors=set(dt.neighbors("Fostamatinib")).difference(set(dt.neighbors("Artenimol")))
 edges_to_show=[edge for edge in edges if not (edge["data"]["source"] in neighbors and edge["data"]["target"] in neighbors)]
 
 
@@ -34,10 +35,13 @@ layout=dbc.Col([
                 dbc.ModalHeader("Show Edges"),
                 dbc.ModalBody([
                     html.Center([
-                        html.P("The Target Projection has %d edges and displaying all of them would severely slow down the page loading and responsiveness"%len(G.edges), style={"font-size":"110%"}),
-                        html.P("In order to improve the user experience, we decided to hide the ones connecting the neighbors of Fostamatinib and Artenimol (%d),"%(len(edges)-len(edges_to_show)), style={"font-size":"110%","margin-bottom":0}),
-                        html.P("most of them would be hidden behind the two jumbles induced by these two drugs anyway", style={"font-size":"110%"}),
-                        html.P("This will only affect the visualization, analyses will not be influenced", style={"font-size":"133%"}),
+                        # html.P("The Target Projection has %d edges and displaying all of them would severely slow down the page loading and responsiveness"%len(G.edges), style={"font-size":"110%"}),
+                        html.Br(),
+                        html.P("In order to improve the user experience, we decided to hide some of the edges connecting the neighbors of Fostamatinib and Artenimol (%d),"%(len(edges)-len(edges_to_show)), style={"font-size":"110%"}),
+                        html.Br(),
+                        # html.P("most of them would be hidden behind the two jumbles induced by these two drugs anyway", style={"font-size":"110%"}),
+                        html.P("! This will only affect the visualization, analyses will not be influenced !", style={"font-size":"133%"}),
+                        html.Br(),
                         html.Hr(),
                         html.P("It is possible to override this choice here:", style={"font-size":"110%"}),
                         daq.BooleanSwitch(on=False, label="Show All Edges", id=prefix+"_show_all_edges_modal"),
@@ -45,7 +49,7 @@ layout=dbc.Col([
                         html.P([
                             "This selection can be changed at any time from the ",
                             html.I(className="fa fa-question-circle"),
-                            " button on top of the graph"
+                            " button at the top-left of the graph"
                         ], style={"font-size":"110%"}),
                     ])
                 ]),

@@ -310,42 +310,42 @@ def group_highlighting(prefix, nodes):
                 {"label":"Less than or Equal to (\u2264)","value":"<="},
                 {"label":"Less than (<)","value":"<"},
             ], value=">=", multi=False, searchable=False,clearable=False, className="DropdownMenu")
-    if prefix in ["drug_projection","target_projection"]:
-        modal_body=[
-            dbc.Row([
-                dbc.Col([
-                    html.Strong(html.P("Property", style={"text-align":"center"}, id=prefix+"_group_property")),
-                    dbc.Tooltip("Available Nodes' Properties for Highlighting", target=prefix+"_group_property", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
-                ], width=2, align="center"),
-                dbc.Col([
-                    html.Strong(html.P("Filter", style={"text-align":"center"}, id=prefix+"_group_filter")),
-                    dbc.Tooltip("Chosen Filter for the Properties", target=prefix+"_group_filter", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
-                ], width=7, align="center"),
-                dbc.Col([
-                    html.Strong(html.P("Logical Conjunction", style={"text-align":"center"}, id=prefix+"_group_conjunction")),
-                    dbc.Tooltip("Logical Operation for Joining Filters", target=prefix+"_group_conjunction", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
-                ], width=2, align="center")
-            ], justify="around", align="center")
-        ]
-        # if prefix == "drug_target":
-        #     return html.Div([
-        #             dbc.Button("Highlight by Property", id=prefix+"_group_highlighter_open", block=True, className="btn btn-outline-primary", disabled=True),
-        #             ])
-        if prefix == "drug_projection":
-            properties=["ATC Code Level 1", "ATC Code Level 2", "ATC Code Level 3", "ATC Code Level 4", "Targets", "Enzymes", "Carriers", "Transporters", "Drug Interactions"]
+    modal_body=[
+        dbc.Row([
+            dbc.Col([
+                html.Strong(html.P("Property", style={"text-align":"center"}, id=prefix+"_group_property")),
+                dbc.Tooltip("Available Nodes' Properties for Highlighting", target=prefix+"_group_property", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
+            ], width=2, align="center"),
+            dbc.Col([
+                html.Strong(html.P("Filter", style={"text-align":"center"}, id=prefix+"_group_filter")),
+                dbc.Tooltip("Chosen Filter for the Properties", target=prefix+"_group_filter", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
+            ], width=7, align="center"),
+            dbc.Col([
+                html.Strong(html.P("Logical Conjunction", style={"text-align":"center"}, id=prefix+"_group_conjunction")),
+                dbc.Tooltip("Logical Operation for Joining Filters", target=prefix+"_group_conjunction", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
+            ], width=2, align="center")
+        ], justify="around", align="center")
+    ]
+    # if prefix == "drug_target":
+    #     return html.Div([
+    #             dbc.Button("Highlight by Property", id=prefix+"_group_highlighter_open", block=True, className="btn btn-outline-primary", disabled=True),
+    #             ])
+    if prefix == "drug_projection":
+        properties=["ATC Code Level 1", "ATC Code Level 2", "ATC Code Level 3", "ATC Code Level 4", "Targets", "Enzymes", "Carriers", "Transporters", "Drug Interactions"]
 
-        else:# prefix == "target_projection":
-            properties=["STRING Interaction Partners", "Drugs", "Diseases"]
-            for property in ["Organism", "Protein Class", "Protein Family", "Cellular Location"]:
-                all_prop=sorted(set([node["data"][property] for node in nodes]))
-                options=[{"label":prop,"value":",".join([node["data"]["ID"] for node in nodes if prop == node["data"][property]])} for prop in all_prop]
-                modal_body.append(
-                    dbc.Row([
-                        dbc.Col([html.Font(property, style={"text-align":"center"})], width=2, align="center"),
-                        dbc.Col([dcc.Dropdown(options=options, multi=True, className="DropdownMenu", id=prefix+"_highlight_dropdown_"+property)], width=7, align="center"),
-                        dbc.Col([conjunction(prefix+"_conjunction_"+property)], width=2, align="center")
-                    ], justify="around", align="center")
-                )
+    elif prefix == "target_projection":
+        properties=["STRING Interaction Partners", "Drugs", "Diseases"]
+        for property in ["Organism", "Protein Class", "Protein Family", "Cellular Location"]:
+            all_prop=sorted(set([node["data"][property] for node in nodes]))
+            options=[{"label":prop,"value":",".join([node["data"]["ID"] for node in nodes if prop == node["data"][property]])} for prop in all_prop]
+            modal_body.append(
+                dbc.Row([
+                    dbc.Col([html.Font(property, style={"text-align":"center"})], width=2, align="center"),
+                    dbc.Col([dcc.Dropdown(options=options, multi=True, className="DropdownMenu", id=prefix+"_highlight_dropdown_"+property)], width=7, align="center"),
+                    dbc.Col([conjunction(prefix+"_conjunction_"+property)], width=2, align="center")
+                ], justify="around", align="center")
+            )
+    if prefix in ["drug_projection", "target_projection"]:
         for property in properties:
             all_prop=sorted(set([prop for node in nodes for prop in node["data"][property]]))
             options=[{"label":prop,"value":",".join([node["data"]["ID"] for node in nodes if prop in node["data"][property]])} for prop in all_prop]
@@ -358,30 +358,29 @@ def group_highlighting(prefix, nodes):
             )
         modal_body.append(html.Hr())
     else:
-        modal_body=[
+        modal_body+=[#it shouldn't have been hard coded # it is only to hide the label
             dbc.Row([
-                dbc.Col([
-                    html.Strong(html.P("Centrality", style={"text-align":"center"}, id=prefix+"_group_centrality")),
-                    dbc.Tooltip("Available Nodes' Centralities for Highlighting", target=prefix+"_group_centrality", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
-                ], width=3, align="center"),
-                dbc.Col([
-                    html.Strong(html.P("Equality Filter", style={"text-align":"center"}, id=prefix+"_group_centrality_equality")),
-                    dbc.Tooltip("Chosen Equality Filter for the Centrality", target=prefix+"_group_centrality_equality", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
-                ], width=6, align="center"),
-                dbc.Col([
-                    html.Strong(html.P("Reference Value", style={"text-align":"center"}, id=prefix+"_group_centrality_value")),
-                    dbc.Tooltip("Reference Value for Filtering", target=prefix+"_group_centrality_value", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
-                ], width=3, align="center")
+                dbc.Col(width=2, align="center"),#[html.Font("Kind", style={"text-align":"center"})]
+                dbc.Col([dcc.Dropdown(options=[{"label":prop,"value":",".join([node["data"]["ID"] for node in nodes if prop in node["data"]["kind"]])} for prop in ["Drug","Target"]], multi=True, className="DropdownMenu", id=prefix+"_highlight_dropdown_kind")], width=7, align="center"),
+                dbc.Col([conjunction(prefix+"_conjunction_kind")], width=2, align="center")
             ], justify="around", align="center"),
+            html.Hr()
         ]
-
-    modal_body+=[#it shouldn't have been hard coded
+    modal_body+=[
         dbc.Row([
-            dbc.Col([html.Font("Kind", style={"text-align":"center"})], width=2, align="center"),
-            dbc.Col([dcc.Dropdown(options=[{"label":prop,"value":",".join([node["data"]["ID"] for node in nodes if prop in node["data"]["kind"]])} for prop in ["Drug","Target"]], multi=True, className="DropdownMenu", id=prefix+"_highlight_dropdown_kind")], width=7, align="center"),
-            dbc.Col([conjunction(prefix+"_conjunction_kind")], width=2, align="center")
+            dbc.Col([
+                html.Strong(html.P("Centrality", style={"text-align":"center"}, id=prefix+"_group_centrality")),
+                dbc.Tooltip("Available Nodes' Centralities for Highlighting", target=prefix+"_group_centrality", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
+            ], width=3, align="center"),
+            dbc.Col([
+                html.Strong(html.P("Equality Filter", style={"text-align":"center"}, id=prefix+"_group_centrality_equality")),
+                dbc.Tooltip("Chosen Equality Filter for the Centrality", target=prefix+"_group_centrality_equality", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
+            ], width=6, align="center"),
+            dbc.Col([
+                html.Strong(html.P("Reference Value", style={"text-align":"center"}, id=prefix+"_group_centrality_value")),
+                dbc.Tooltip("Reference Value for Filtering", target=prefix+"_group_centrality_value", placement="top", hide_arrow=True, delay={"show":500, "hide":250})
+            ], width=3, align="center")
         ], justify="around", align="center"),
-        html.Hr()
     ]
     for centrality in ["Degree","Closeness Centrality","Betweenness Centrality", "Eigenvector Centrality","Clustering Coefficient","VoteRank Score"]:
         all_cent=sorted(set([node["data"][centrality] for node in nodes]))
