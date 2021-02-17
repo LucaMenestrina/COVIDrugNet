@@ -7,7 +7,6 @@ import dash_daq as daq
 from dash.dependencies import Output,Input, State
 import plotly.graph_objs as go
 import plotly.express as px
-import dash_table
 
 from urllib.request import quote
 
@@ -165,6 +164,21 @@ def sidebar(prefix):
         return dbc.NavbarSimple([
                     dbc.Col(items, align="center", style={"padding":"0px"}),
                 ],expand="xl", color="light", className="navbar navbar-light bg-light position-sticky nav", style={"position":"sticky", "top":"10vh"}),
+    elif prefix == "help":
+        items=[
+            dbc.NavItem(dbc.NavLink("Main", href="#"+prefix+"_main", external_link=True, active=True, className="nav-link"), className="nav-item", id=prefix+"_help_main_side"),
+            dbc.Tooltip("Jump to Main Section Description", target=prefix+"_help_main_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}),
+            dbc.NavItem(dbc.NavLink("Charts and Plots", href="#"+prefix+"_charts_and_plots", external_link=True, active=True, className="nav-link"), className="nav-item", id=prefix+"_help_charts_and_plots_side"),
+            dbc.Tooltip("Jump to Charts and Plots Section Description", target=prefix+"_help_charts_and_plots_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}),
+            dbc.NavItem(dbc.NavLink("Advanced Degree Distribution", href="#"+prefix+"_advanced_degree_distribution", external_link=True, active=True, className="nav-link"), className="nav-item", id=prefix+"_help_advanced_degree_distribution_side"),
+            dbc.Tooltip("Jump to Advanced Degree Distribution Section Description", target=prefix+"_help_advanced_degree_distribution_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}),
+            html.Hr(),
+            dbc.NavItem(dbc.NavLink("Glossary", href="#"+prefix+"_glossary", external_link=True, active=True, className="nav-link"), className="nav-item", id=prefix+"_help_glossary_side"),
+            dbc.Tooltip("Jump to Glossary Section", target=prefix+"_help_glossary_side", placement="right", hide_arrow=True, delay={"show":500, "hide":250}),
+        ]
+        return dbc.NavbarSimple([
+                    dbc.Col(items, align="center", style={"padding":"0px"}),
+                ],expand="xl", color="light", className="navbar navbar-light bg-light position-sticky nav", style={"position":"sticky", "top":"10vh"}),
     else:
         return []
 
@@ -200,10 +214,13 @@ def graph_help(prefix):
         body+=[
             html.Center([
                 html.Hr(),
-                daq.BooleanSwitch(on=False, label="Show All Edges", id=prefix+"_show_all_edges_help"),
-                html.Br(),
+                daq.BooleanSwitch(on=False, label="Show All Edges", id=prefix+"_show_all_edges_help", style={"margin-bottom":"0.5em"})
             ])
         ]
+    body+=[
+        html.Hr(),
+        html.A(html.Center(html.H5("Glossary")), id=prefix+"_graph_help_glossary", href="/covidrugnet/help#help_glossary", target="_blank", style={"margin-bottom":"0.5em"})
+    ]
     return html.Div([
             dbc.Button(html.I(className="fa fa-question-circle", style={"font-size":"0.9rem"}), id=prefix+"_help_open", block=True, className="btn btn-outline-primary"),#"Help"
             dbc.Popover([
@@ -274,9 +291,12 @@ def coloring_dropdown(prefix):
         {"label":"Betweenness Centrality", "value":"Betweenness Centrality"},
         {"label":"Betweenness Centrality (Major Component)", "value":"Betweenness Centrality_maj"},
         {"label":"Eigenvector Centrality", "value":"Eigenvector Centrality"},
-        {"label":"Eigenvector Centrality (Major Component)", "value":"Eigenvector Centrality_maj"},
+        {"label":"Eigenvector Centrality (Major Component)", "value":"Eigenvector Centrality_maj"}]
+    if prefix != "drug_target":
+        options+=[
         {"label":"Clustering Coefficient", "value":"Clustering Coefficient"},
-        {"label":"Clustering Coefficient (Major Component)", "value":"Clustering Coefficient_maj"},
+        {"label":"Clustering Coefficient (Major Component)", "value":"Clustering Coefficient_maj"}]
+    options+=[
         {"label":"VoteRank Score", "value":"VoteRank Score"},
         {"label":"VoteRank Score (Major Component)", "value":"VoteRank Score_maj"},
         {"label":"Spectral Clustering", "value":"spectral_group"},
@@ -587,8 +607,9 @@ def graph_properties(prefix):
                                 {"label":"100","value":100},
                                 {"label":"all","value":"all"}
                             ], value=10, className="DropdownMenu", clearable=False, searchable=False, optionHeight=25)
-                        ], align="center", xs=10, lg=1),
-                        dbc.Col(html.A(dbc.Button("Download", className="btn btn-outline-primary"), target="_blank", download="graph_properties.tsv", id=prefix+"_download_graph_properties"), align="center")
+                        ], align="center"),#, xs=10, lg=1
+                        dbc.Col(html.A(dbc.Button("Download", className="btn btn-outline-primary"), target="_blank", download="graph_properties.tsv", id=prefix+"_download_graph_properties"), align="center"),
+                        dbc.Col(html.A(html.Center(html.I(className="fa fa-question-circle", style={"font-size":"1rem"})), id=prefix+"_graph_properties_glossary", href="/covidrugnet/help#help_glossary", target="_blank"),align="center")
                     ], justify="around", align="center"),
                     html.Br(),
                     dcc.Loading(dbc.Container(id=prefix+"_graph_properties_table_container", fluid=True), type="dot", color="grey")

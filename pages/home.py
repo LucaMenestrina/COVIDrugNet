@@ -25,7 +25,7 @@ layout=dbc.Col([
                         html.P("Visualize and Analyze Networks about Drugs and Targets Related to COVID-19", style={"text-align":"center","font-size":"x-large","font-weight":"bold","background":"white","box-shadow":"0rem 0rem 0.25rem white", "border-radius": "5rem"}),
                         html.P("COVIDrugNet is a free and open web tool", style={"text-align":"center","font-size":"large","background":"white","box-shadow":"0rem 0rem 0.25rem white", "border-radius": "5rem", "margin-bottom":0}),
                         html.P("based on networks and designed to support the exploration and investigation of the landscape of medicines currently in clinical trial for the treatment of COVID-19", style={"text-align":"center","font-size":"large","background":"white","box-shadow":"0rem 0rem 0.25rem white", "border-radius": "5rem", "margin-bottom":0}),
-                        html.P("(acconding to DrugBank Dashboard dedicated to COVID-19)", style={"text-align":"center","font-size":"medium","background":"white","box-shadow":"0rem 0rem 0.25rem white", "border-radius": "5rem"})
+                        html.P(["(according to ",html.A("DrugBank Dashboard dedicated to COVID-19", href="https://go.drugbank.com/covid-19", target="_blank", style={"color":"black"}),")"], style={"text-align":"center","font-size":"medium","background":"white","box-shadow":"0rem 0rem 0.25rem white", "border-radius": "5rem"})
                     ], xs=10, lg=3, align="center", style={"position":"relative","z-index":"1"})
                 ], justify="center", align="center", style={"padding-top":"7.5vh", "padding-bottom":"7.5vh"}),
                 # html.Center(html.H4("Visualize and Analyze Networks about Drugs and Targets Related to COVID-19")),

@@ -29,7 +29,8 @@ stylesheet_base=[
         "style":{
             "background-color":"data(fill_color)",
             "border-color":"data(line_color)",
-            "border-width":3
+            "border-width":3,
+            "font-size":"40px"
         }
     },
     {
@@ -39,7 +40,7 @@ stylesheet_base=[
             "border-color":"#FFDD4A",
             "border-width":3
         }
-    }
+    },
 ]
 
 def collapse_headbar_callback():
@@ -208,8 +209,16 @@ def inspected_table_callback(prefix):
                     results+=[
                         html.Br(),
                         dbc.Row([
-                            html.H4("Inspected Drugs"),
-                            html.A(dbc.Button("Download", className="btn btn-outline-primary"),href=drugs_href, download="inspected_drugs.tsv", target="_blank"),
+                            dbc.Col(html.H4("Inspected Drugs"), xs=12, lg=10),
+                            dbc.Col(
+                                dbc.Row([
+                                    html.A(dbc.Button("Download", className="btn btn-outline-primary"),href=drugs_href, download="inspected_drugs.tsv", target="_blank"),
+                                    dbc.Col(html.A(dbc.Row([
+                                            html.I(className="fa fa-question-circle", style={"font-size":"1rem"}),
+                                            html.H5("Glossary", style={"margin-bottom":0, "margin-left":"0.5rem"}),
+                                        ], justify="center", align="center"), id=prefix+"_inspected_table_drugs_glossary", href="/covidrugnet/help#glossary", target="_blank"),align="center")
+                                ], justify="end", align="center")
+                            )
                         ], justify="around", align="center"),
                         html.Br(),
                         drugs_table]
@@ -245,8 +254,16 @@ def inspected_table_callback(prefix):
                     results+=[
                         html.Br(),
                         dbc.Row([
-                            html.H4("Inspected Targets"),
-                            html.A(dbc.Button("Download", className="btn btn-outline-primary"),href=targets_href, download="inspected_targets.tsv", target="_blank"),
+                            dbc.Col(html.H4("Inspected Targets"), xs=12, lg=10),
+                            dbc.Col(
+                                dbc.Row([
+                                    html.A(dbc.Button("Download", className="btn btn-outline-primary"),href=targets_href, download="inspected_targets.tsv", target="_blank"),
+                                    dbc.Col(html.A(dbc.Row([
+                                                html.I(className="fa fa-question-circle", style={"font-size":"1rem"}),
+                                                html.H5("Glossary", style={"margin-bottom":0, "margin-left":"0.5rem"}),
+                                            ], justify="center", align="center"), id=prefix+"_inspected_table_targets_glossary", href="/covidrugnet/help#glossary", target="_blank"),align="center")
+                                ], justify="end", align="center")
+                            )
                         ], justify="around", align="center"),
                         html.Br(),
                         targets_table]
@@ -727,7 +744,7 @@ def highlighter_callback(prefix,G,nodes,L,evals,evects,n_clusters,clusters,L_maj
                     pie=greedy_modularity_custom_pie
 
                 legend_body=html.P(["Nodes are colored on the corresponding cluster/community, check the ",html.A("clustering", href="#"+prefix+"_clustering")," or ",html.A("plots sections", href="#"+prefix+"_plots")," for more info"])
-            pie.update_layout(plot_bgcolor="rgba(0, 0, 0, 0)", paper_bgcolor="rgba(0, 0, 0, 0)", modebar={"bgcolor":"rgba(0, 0, 0, 0)","color":"silver","activecolor":"grey"}, uniformtext_minsize=8, uniformtext_mode="hide", showlegend=False)#title={"text":"Groups' Node Distribution","x":0.5, "xanchor": "center"}
+            pie.update_layout(plot_bgcolor="rgba(0, 0, 0, 0)", paper_bgcolor="rgba(0, 0, 0, 0)", modebar={"bgcolor":"rgba(0, 0, 0, 0)","color":"silver","activecolor":"grey"}, uniformtext_minsize=8, uniformtext_mode="hide", showlegend=False, template="ggplot2")#title={"text":"Groups' Node Distribution","x":0.5, "xanchor": "center"}
         else:
             stylesheet=[style for style in current_stylesheet if style["style"].get("border-style") != "double"]
             pie=current_pie
@@ -750,8 +767,10 @@ def highlighter_callback(prefix,G,nodes,L,evals,evects,n_clusters,clusters,L_maj
                         "style":{
                             "content":"data(id)",
                             "border-style":"double",
-                            "border-width":25,
-                            "border-color":"#0ddfa6"
+                            "border-width":40,
+                            "border-color":"magenta",##0ddfa6 springgreen
+                            "width":60,
+                            "height":60,
                         }
                     }
                 ]
