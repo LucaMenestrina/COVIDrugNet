@@ -32,7 +32,7 @@ loading_banner = html.Div(
             dbc.Fade(
                 dbc.Jumbotron([
                     html.Center(
-                        html.Img(src="/assets/imgs/logo.svg", alt="COVIDrugNet", style={"height":"33vh"})
+                        html.Img(src="/assets/imgs/logo.svg", alt="COVIDrugNet", style={"width":"40%"})
                     ),
                     html.Br(),
                     html.H2("Sorry, it's taking some time to load ..."),
@@ -842,7 +842,7 @@ def interactome(prefix):
         html.Br(),
         dbc.Row([
             dbc.Col([
-                    dbc.Spinner(dcc.Graph(figure=figure, id=prefix+"_virus_host_interactome_graph", responsive=True, style={"height":"80vh"}, config={"scrollZoom":True}))
+                    dbc.Spinner(dcc.Graph(figure=figure, id=prefix+"_virus_host_interactome_graph", responsive=True, style={"height":"80vh"}, config={"scrollZoom":True, "modeBarButtonsToRemove":["select2d", "lasso2d", "zoomIn2d", "zoomOut2d", "toggleSpikelines", "hoverClosestCartesian", "hoverCompareCartesian"]}))
             ], align="center", xs=10, md=8, style={"padding":"0px"})
         ], justify="center", align="center"),
         html.Br()
