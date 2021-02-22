@@ -42,7 +42,7 @@ layout=dbc.Col([
                         # html.P("most of them would be hidden behind the two jumbles induced by these two drugs anyway", style={"font-size":"110%"}),
                         html.P("! This will only affect the visualization, analyses will not be influenced !", style={"font-size":"133%"}),
                         html.Br(),
-                        html.Hr(),
+                        html.Br(),#H
                         html.P("It is possible to override this choice here:", style={"font-size":"110%"}),
                         daq.BooleanSwitch(on=False, label="Show All Edges", id=prefix+"_show_all_edges_modal"),
                         html.Br(),
@@ -51,10 +51,16 @@ layout=dbc.Col([
                             html.I(className="fa fa-question-circle"),
                             " button at the top-left of the graph"
                         ], style={"font-size":"110%"}),
+                        html.Br(),
+                        html.Br(),#H
+                        html.P("Please wait a few seconds while the page loads..."),
+                        dcc.Interval(id=prefix+"_progress_interval",n_intervals=0, interval=500, max_intervals=3),
+                        dbc.Progress(id=prefix+"_loading_progress"),
+                        html.Br(),
                     ])
                 ]),
                 dbc.ModalFooter([
-                    dbc.Button("OK", id=prefix+"_show_edges_close", className="btn btn-outline-primary")
+                    dbc.Button("OK", id=prefix+"_show_edges_close", className="btn btn-outline-primary", style={"visibility":"hidden"})
                 ]),
             ], is_open=True, id=prefix+"_show_edges_modal",size="xl", style={"margin":"10rem auto"}),
             dbc.Row([
@@ -84,5 +90,20 @@ layout=dbc.Col([
 
 
 ##  ----------  CALLBACKS   ------------
+
+@app.callback(
+    [
+        Output(prefix+"_loading_progress", "value"),
+        Output(prefix+"_show_edges_close", "style"),
+    ],
+    [Input(prefix+"_progress_interval", "n_intervals")],
+)
+def update_progress(n):
+    progress = (n/3)*100
+    if progress == 100:
+        visibility=None
+    else:
+        visibility={"visibility":"hidden"}
+    return progress, visibility
 
 build_callbacks(prefix,G,nodes,edges,edges_to_show,*common_data_generator(prefix,G))
