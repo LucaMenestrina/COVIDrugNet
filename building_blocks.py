@@ -766,7 +766,7 @@ def interactome(prefix):
             "symbol":"circle",
             "size":8
         },
-        "Human Proteins":{
+        "Human Proteins (Not Targeted by Drug)":{
             "x":[],
             "y":[],
             "labels":[],
@@ -774,7 +774,7 @@ def interactome(prefix):
             "symbol":"circle",
             "size":6
         },
-        "Targeted Proteins":{
+        "Human Proteins (Targeted by Drug)":{
             "x":[],
             "y":[],
             "labels":[],
@@ -801,13 +801,13 @@ def interactome(prefix):
             data["Drugs"]["y"].append(node_data["pos"][1])
             data["Drugs"]["labels"].append(node_data["Gene"])
         elif node_data["Targeted"]:
-            data["Targeted Proteins"]["x"].append(node_data["pos"][0])
-            data["Targeted Proteins"]["y"].append(node_data["pos"][1])
-            data["Targeted Proteins"]["labels"].append(node_data["Gene"])
+            data["Human Proteins (Targeted by Drug)"]["x"].append(node_data["pos"][0])
+            data["Human Proteins (Targeted by Drug)"]["y"].append(node_data["pos"][1])
+            data["Human Proteins (Targeted by Drug)"]["labels"].append(node_data["Gene"])
         else:
-            data["Human Proteins"]["x"].append(node_data["pos"][0])
-            data["Human Proteins"]["y"].append(node_data["pos"][1])
-            data["Human Proteins"]["labels"].append(node_data["Gene"])
+            data["Human Proteins (Not Targeted by Drug)"]["x"].append(node_data["pos"][0])
+            data["Human Proteins (Not Targeted by Drug)"]["y"].append(node_data["pos"][1])
+            data["Human Proteins (Not Targeted by Drug)"]["labels"].append(node_data["Gene"])
     for name, d in data.items():
         figure.add_trace(go.Scatter(x=d["x"], y=d["y"], hoverinfo="text", mode="markers", marker={"color":d["color"], "symbol":d["symbol"], "size":d["size"], "opacity":0.9}, text=d["labels"], name=name))
     figure.update_layout({"margin":{"t":10,"b":2,"l":10,"r":10}, "dragmode":"pan", "xaxis":{"showgrid":False, "zeroline":False, "showticklabels":False},"yaxis":{"showgrid":False, "zeroline":False, "showticklabels":False},"paper_bgcolor": "rgba(0, 0, 0, 0)","plot_bgcolor": "rgba(0, 0, 0, 0)", "modebar":{"bgcolor":"rgba(0, 0, 0, 0)","color":"silver","activecolor":"grey"}}) # for a transparent background but keeping modebar acceptable colors
@@ -843,7 +843,7 @@ def interactome(prefix):
         dbc.Row([
             dbc.Col([
                     dbc.Spinner(dcc.Graph(figure=figure, id=prefix+"_virus_host_interactome_graph", responsive=True, style={"height":"80vh"}, config={"scrollZoom":True, "modeBarButtonsToRemove":["select2d", "lasso2d", "zoomIn2d", "zoomOut2d", "toggleSpikelines", "hoverClosestCartesian", "hoverCompareCartesian"]}))
-            ], align="center", xs=10, md=8, style={"padding":"0px"})
+            ], align="center", xs=10, md=9, style={"padding":"0px"})
         ], justify="center", align="center"),
         html.Br()
     ], id=prefix+"_virus_host_interactome", fluid=True, style={"padding":"1%"})
