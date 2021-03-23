@@ -59,17 +59,37 @@ def common_data_generator(prefix,graph):
         with open("data/groups/"+prefix+"_communities.pickle","rb") as bkp:
             girvan_newman,girvan_newman_maj,communities_modularity,communities_modularity_maj,n_comm,n_comm_maj=pickle.load(bkp)
     else:
-        girvan_newman={len(comm):comm for comm in tqdm(nx.algorithms.community.girvan_newman(graph))}
-        girvan_newman_maj={len(comm):comm for comm in tqdm(nx.algorithms.community.girvan_newman(maj))}
-        communities_modularity={modularity(graph,community):n for n,community in girvan_newman.items()}
-        n_comm=communities_modularity[max(communities_modularity)]
-        communities_modularity_maj={modularity(maj,community):n for n,community in girvan_newman_maj.items()}
-        n_comm_maj=communities_modularity_maj[max(communities_modularity_maj)]
-        name="data/groups/"+prefix+"_communities.pickle"
-        with open(name,"wb") as bkp:
-            pickle.dump([girvan_newman,girvan_newman_maj,communities_modularity,communities_modularity_maj,n_comm,n_comm_maj],bkp)
-        if os.path.isfile(name+".bkp"):
-            os.remove(name+".bkp")
+        import ray
+        try:
+            ray.init()
+        except:
+            ray.shutdown()
+            ray.init()
+
+        def collect_GN_communities(graph,prefix):
+            maj=graph.subgraph(max(list(nx.connected_components(graph)), key=len))
+            nested_ids=[compute_GN_communities.remote(g) for g in [graph,maj]]
+            results, maj_results=ray.get(nested_ids)
+            print("\t\tGirvan Newman Communities Computed for %s"%prefix.replace("_"," ").title())
+            return [r[i] for i in range(len(results)) for r in [results,maj_results]]
+
+        @ray.remote
+        def compute_GN_communities(graph):
+            girvan_newman={len(comm):comm for comm in nx.algorithms.community.girvan_newman(graph)}
+            communities_modularity={modularity(graph,community):n for n,community in girvan_newman.items()}
+            n_comm=communities_modularity[max(communities_modularity)]
+            return girvan_newman,girvan_newman_maj,communities_modularity,communities_modularity_maj,n_comm,n_comm_maj
+
+        communities=collect_GN_communities(graph, prefix)
+        print("\tCommunities Computed! Saving...")
+        for data in communities:
+            name="data/groups/"+prefix+"_communities.pickle"
+            with open(name,"wb") as bkp:
+                pickle.dump(data,bkp)
+            if os.path.isfile(name+".bkp"):
+                os.remove(name+".bkp")
+        ray.shutdown()
+
     print("\tSpectral Clustering Data Precomputing ...")
     if os.path.isfile("data/groups/"+prefix+"_spectral.pickle"):
         with open("data/groups/"+prefix+"_spectral.pickle","rb") as bkp:

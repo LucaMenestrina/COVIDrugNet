@@ -222,27 +222,29 @@ test_distribution(observed_tt_removed,samples=1E5, title="Target Projection Remo
 
 
 
-#for method validation
+# #for method validation
+#
+# def barabasi_albert(title="Barabasi Albert", samples=1E5, nedges=2):
+#     """builds and tests a set of Barabasi Albert networks (with 1000 nodes)"""
+#     BA=nx.barabasi_albert_graph(n=1000,m=nedges,seed=1).to_undirected()
+#     BAK=dict(nx.degree(BA))
+#     # observed_K=np.array(list(ERK.values()))
+#     observed_K=np.array([n for n in BAK.values() if n > 0])
+#     test_distribution(observed_K,samples=samples, title=title+" m "+str(nedges))
+#
+# if not os.path.isdir("method_validation"):
+#     os.mkdir("method_validation")
+# os.chdir("method_validation")
+# files = os.listdir('.')
+# for file in ["words.txt","worm.txt","blackouts.txt"]:
+#     if file not in files:
+#         import urllib.request
+#         urllib.request.urlretrieve("https://raw.github.com/jeffalstott/powerlaw/master/manuscript/"+file, file)
+#     test_distribution(np.genfromtxt(file), samples=1E5, title=file.split(".")[0]) #for method validation
+# if not os.path.isdir("Barabasi_Albert"):
+#     os.mkdir("Barabasi_Albert")
+# os.chdir("Barabasi_Albert")
+# for nedges in [1,2,3,4,5,7,10,15]:
+#     barabasi_albert(nedges=nedges)
 
-def barabasi_albert(title="Barabasi Albert", samples=1E5, nedges=2):
-    """builds and tests a set of Barabasi Albert networks (with 1000 nodes)"""
-    BA=nx.barabasi_albert_graph(n=1000,m=nedges,seed=1).to_undirected()
-    BAK=dict(nx.degree(BA))
-    # observed_K=np.array(list(ERK.values()))
-    observed_K=np.array([n for n in BAK.values() if n > 0])
-    test_distribution(observed_K,samples=samples, title=title+" m "+str(nedges))
-
-if not os.path.isdir("method_validation"):
-    os.mkdir("method_validation")
-os.chdir("method_validation")
-files = os.listdir('.')
-for file in ["words.txt","worm.txt","blackouts.txt"]:
-    if file not in files:
-        import urllib.request
-        urllib.request.urlretrieve("https://raw.github.com/jeffalstott/powerlaw/master/manuscript/"+file, file)
-    test_distribution(np.genfromtxt(file), samples=1E5, title=file.split(".")[0]) #for method validation
-if not os.path.isdir("Barabasi_Albert"):
-    os.mkdir("Barabasi_Albert")
-os.chdir("Barabasi_Albert")
-for nedges in [1,2,3,4,5,7,10,15]:
-    barabasi_albert(nedges=nedges)
+ray.shutdown()

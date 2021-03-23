@@ -15,6 +15,7 @@ import json
 import itertools
 import networkx as nx
 from networkx.algorithms import bipartite
+from networkx.algorithms.community import modularity
 
 class drug():
     def __init__(self,name,accession_number):
@@ -172,10 +173,10 @@ class protein():
             response = requests.get(url)
             page = response.content
             soup = BeautifulSoup(page, 'html5lib')
-            table=soup.find("table",attrs={"class":"table noborder tablesorter allStructuresList"})
+            table=soup.find("div", attrs={"id":"allmodelsDiv"}).find("table")
             pdbid=table.findAll("a")[0]["href"].split("/")[-1]
-            if "template" in pdbid:
-                pdbid=pdbid.split("=")[-1][:-1]
+            if "." in pdbid:#es check with https://swissmodel.expasy.org/repository/uniprot/Q02641
+                pdbid=pdbid.split(".")[0]
             self.pdbid=pdbid.upper()
         except:
             self.pdbid="Not Available"
@@ -239,7 +240,7 @@ class collector():
                 bkp_class=pickle.load(bkp)
             self.drugs=bkp_class.drugs
             self.excluded=bkp_class.excluded
-            self.__proteins=bkp_class._collector__proteins #da modificare quando cambierò il nome della classe
+            self.__proteins=bkp_class._collector__proteins #do not change class name! (sure there is a more elegant way...)
             for d in tqdm(drug_tags):
                 if d.get_text() not in [drug.name for drug in self.drugs]+self.excluded:
                     try:
@@ -259,6 +260,8 @@ class collector():
                         self.__proteins.update(added_proteins)
                     except:
                         self.excluded.append(d.get_text())
+        self.save()
+    def save(self):
         with open("data/SARS-CoV-2_drug_database.pickle","wb") as bkp:
             pickle.dump(self,bkp)
     def summary(self,group):
@@ -303,6 +306,40 @@ class collector():
             graph=stringify_list_attributes(graph)
             nx.write_gexf(graph,"data/graphs/%s/%s.gexf"%(name,name))
             nx.write_graphml(graph,"data/graphs/%s/%s.graphml"%(name,name))
+    def communities(self):
+        print("Precomputing Girvan Newman Communities...")
+        import ray
+        try:
+            ray.init()
+        except:
+            ray.shutdown()
+            ray.init()
+
+        @ray.remote
+        def collect_GN_communities(graph,name):
+            maj=graph.subgraph(max(list(nx.connected_components(graph)), key=len))
+            nested_ids=[compute_GN_communities.remote(g) for g in [graph,maj]]
+            results, maj_results=ray.get(nested_ids)
+            print("\tGirvan Newman Communities Computed for %s"%name.replace("_"," ").title())
+            return name, [r[i] for i in range(len(results)) for r in [results,maj_results]]
+
+        @ray.remote
+        def compute_GN_communities(graph):
+            girvan_newman={len(comm):comm for comm in nx.algorithms.community.girvan_newman(graph)}
+            communities_modularity={modularity(graph,community):n for n,community in girvan_newman.items()}
+            n_comm=communities_modularity[max(communities_modularity)]
+            return girvan_newman,girvan_newman_maj,communities_modularity,communities_modularity_maj,n_comm,n_comm_maj
+
+        ids=[collect_GN_communities.remote(graph,name) for graph, name in [(self.__drugtarget,"drug_target"),(self.__drugdrug,"drug_projection"),(self.__targettarget,"target_projection")]]
+        communities=ray.get(ids)
+        print("\tCommunities Computed! Saving...")
+        for name, data in communities:
+            name="data/groups/"+name+"_communities.pickle"
+            with open(name,"wb") as bkp:
+                pickle.dump(data,bkp)
+            if os.path.isfile(name+".bkp"):
+                os.remove(name+".bkp")
+        ray.shutdown()
     def similarity(self,sparse=True,save=True):
         self.similarities={drug1.name:{drug2.name:DataStructs.FingerprintSimilarity(drug1.fingerprint,drug2.fingerprint) for drug2 in self.drugs if drug2.fingerprint} for drug1 in self.drugs if drug1.fingerprint}
         df=pd.DataFrame(self.similarities)
@@ -338,7 +375,7 @@ class collector():
         drug_attributes={drug.name:(drug.summary().T.to_dict()[drug.name]) for drug in self.drugs}
         protein_attributes={target.name:(target.summary().T.to_dict()[target.name]) for target in self.__proteins.values() if target.name in set(df["Target"])}
         structures={mol.name:"https://www.drugbank.ca/structures/%s/image.svg"%mol.id for mol in self.drugs} # direttamente da drugbank
-        for prot in self.__proteins.values():
+        for prot in tqdm(self.__proteins.values()):
             if prot.name in set(df["Target"]):
                 url="https://cdn.rcsb.org/images/structures/%s/%s/%s_%s-1.jpeg"%(prot.pdbid[1:3].lower(),prot.pdbid.lower(),prot.pdbid.lower(),"assembly")
                 if requests.head(url).status_code == 200:
@@ -358,6 +395,7 @@ class collector():
         nx.set_node_attributes(G,{node:("#FB3640" if G.nodes[node]["kind"] == "Drug" else "#0EBEBE") for node in G.nodes()},"line_color")
         self.__drugtarget=G
         self.save_graph(self.added_new_drugs,df,G,"drug_target")
+        self.save()
     def drugdrug(self,tab=False):
         print("Building Drug Projection ...")
         drug_attributes={drug.name:(drug.summary().T.to_dict()[drug.name]) for drug in self.drugs}
@@ -368,6 +406,7 @@ class collector():
         self.__drugdrug=G
         df=nx.to_pandas_edgelist(G)
         self.save_graph(self.added_new_drugs,df,G,"drug_projection")
+        self.save()
     def targettarget(self,tab=False):
         print("Building Target Projection ...")
         nodes=[t for d in self.drugs for t in d.targets]
@@ -376,6 +415,7 @@ class collector():
         self.__targettarget=G
         df=nx.to_pandas_edgelist(G)
         self.save_graph(self.added_new_drugs,df,G,"target_projection")
+        self.save()
     def targetinteractors(self,tab=False):
         targets_list=set([target for drug in self.drugs for target in drug.targets.values()])
         targetinteractors=[{"Source":source.gene,"Target":target,"Score":source.string_interaction_partners[target]["score"]} for source in targets_list for target in source.string_interaction_partners]
@@ -484,7 +524,7 @@ if __name__ == "__main__":
     COVID_drugs=collector()
 
     # for debugging
-    # rem=drug("Remdesivir","DB14761").advanced_init([])
+    # rem, pr=drug("Remdesivir","DB14761").advanced_init([])
     # print(COVID_drugs.excluded)
 
     # COVID_drugs.drugtarget()
@@ -492,6 +532,7 @@ if __name__ == "__main__":
     # COVID_drugs.targettarget()
 
     if COVID_drugs.added_new_drugs:
+        print("New drugs have been added, analyses should be re-runned.")
         # COVID_drugs.chemicalspace()
         COVID_drugs.drugtarget()
         COVID_drugs.drugdrug()
@@ -504,3 +545,5 @@ if __name__ == "__main__":
                 name="data/groups/"+prefix+"_"+group+".pickle"
                 if os.path.isfile(name):
                     os.rename(name,name+".bkp")
+        COVID_drugs.communities()
+    print("Done!")

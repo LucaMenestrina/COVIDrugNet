@@ -8,6 +8,11 @@ The COVID-19 pandemic poses a huge problem of public health that requires the im
 
 In [our article](https://www.biorxiv.org/content/early/2021/03/09/2021.03.05.433897), we describe the web app and show through some examples how one can explore the whole landscape of medicines in clinical trial for the treatment of COVID-19 and try to probe the consistency of the current approaches with the available biological and pharmacological evidence. We conclude that careful analyses of the COVID-19 drug-target system based on COVIDrugNet can help to understand the biological implications of the proposed drug options, and eventually improve the search for more effective therapies.
 
+### Updates  
+
+Last Database Update: 15th March 2021  
+Analyses Update:      15th March 2021
+
 ### Cite
 
 Please cite [our paper](https://www.biorxiv.org/content/early/2021/03/09/2021.03.05.433897) (and the respective papers of the methods used) if you use *COVIDrugNet* in your own work:

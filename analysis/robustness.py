@@ -145,10 +145,10 @@ def test_robustness(graph,title,iterations=100):
 
 
 
-test_robustness(dd,"Drug Projection",100)
+test_robustness(dd,"Drug Projection",50)#reduced to 50 (from 100) for speeding up updates
 clustering_coefficient_vs_degree(dd,2,"Drug Projection")
 
-test_robustness(tt,"Target Projection",100)
+test_robustness(tt,"Target Projection",50)#reduced to 50 (from 100) for speeding up updates
 clustering_coefficient_vs_degree(tt,2,"Target Projection")
 
 
@@ -167,7 +167,9 @@ targets=[node for node in dt_removed if dt_removed.nodes()[node]["kind"]=="Targe
 tt_removed=bipartite.weighted_projected_graph(dt_removed,targets)
 
 clustering_coefficient_vs_degree(dd_removed,2,"Drug Projection Removed")
-test_robustness(dd_removed,"Drug Projection Removed",100)
+test_robustness(dd_removed,"Drug Projection Removed",50)#reduced to 50 (from 100) for speeding up updates
 
-test_robustness(tt_removed,"Target Projection Removed",100)
+test_robustness(tt_removed,"Target Projection Removed",50)#reduced to 50 (from 100) for speeding up updates
 clustering_coefficient_vs_degree(tt_removed,2,"Target Projection Removed")
+
+ray.shutdown()

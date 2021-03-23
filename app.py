@@ -80,7 +80,7 @@ class CustomDash(dash.Dash):
             metas=kwargs["metas"],
             favicon=kwargs["favicon"],
             css=kwargs["css"],
-            app_entry=app_entry,#kwargs["app_entry"],
+            app_entry=app_entry,
             config=kwargs["config"],
             scripts=kwargs["scripts"],
             renderer=kwargs["renderer"])
