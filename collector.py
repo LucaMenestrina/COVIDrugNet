@@ -175,6 +175,8 @@ class protein():
             soup = BeautifulSoup(page, 'html5lib')
             table=soup.find("div", attrs={"id":"allmodelsDiv"}).find("table")
             pdbid=table.findAll("a")[0]["href"].split("/")[-1]
+            if "template" in pdbid:#es check with https://swissmodel.expasy.org/repository/uniprot/K9N7C7
+                pdbid=pdbid.split("=")[1][:-1]
             if "." in pdbid:#es check with https://swissmodel.expasy.org/repository/uniprot/Q02641
                 pdbid=pdbid.split(".")[0]
             self.pdbid=pdbid.upper()
