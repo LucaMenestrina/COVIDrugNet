@@ -67,7 +67,6 @@ def common_data_generator(prefix,graph):
             ray.init()
 
         def collect_GN_communities(graph,prefix):
-            maj=graph.subgraph(max(list(nx.connected_components(graph)), key=len))
             nested_ids=[compute_GN_communities.remote(g) for g in [graph,maj]]
             results, maj_results=ray.get(nested_ids)
             print("\t\tGirvan Newman Communities Computed for %s"%prefix.replace("_"," ").title())
@@ -78,16 +77,16 @@ def common_data_generator(prefix,graph):
             girvan_newman={len(comm):comm for comm in nx.algorithms.community.girvan_newman(graph)}
             communities_modularity={modularity(graph,community):n for n,community in girvan_newman.items()}
             n_comm=communities_modularity[max(communities_modularity)]
-            return girvan_newman,girvan_newman_maj,communities_modularity,communities_modularity_maj,n_comm,n_comm_maj
+            return girvan_newman,communities_modularity,n_comm
 
         communities=collect_GN_communities(graph, prefix)
+        girvan_newman,girvan_newman_maj,communities_modularity,communities_modularity_maj,n_comm,n_comm_maj = communities
         print("\tCommunities Computed! Saving...")
-        for data in communities:
-            name="data/groups/"+prefix+"_communities.pickle"
-            with open(name,"wb") as bkp:
-                pickle.dump(data,bkp)
-            if os.path.isfile(name+".bkp"):
-                os.remove(name+".bkp")
+        name="data/groups/"+prefix+"_communities.pickle"
+        with open(name,"wb") as bkp:
+            pickle.dump([girvan_newman,girvan_newman_maj,communities_modularity,communities_modularity_maj,n_comm,n_comm_maj],bkp)
+        if os.path.isfile(name+".bkp"):
+            os.remove(name+".bkp")
         ray.shutdown()
 
     print("\tSpectral Clustering Data Precomputing ...")

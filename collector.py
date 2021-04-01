@@ -330,7 +330,7 @@ class collector():
             girvan_newman={len(comm):comm for comm in nx.algorithms.community.girvan_newman(graph)}
             communities_modularity={modularity(graph,community):n for n,community in girvan_newman.items()}
             n_comm=communities_modularity[max(communities_modularity)]
-            return girvan_newman,girvan_newman_maj,communities_modularity,communities_modularity_maj,n_comm,n_comm_maj
+            return girvan_newman,communities_modularity,n_comm
 
         ids=[collect_GN_communities.remote(graph,name) for graph, name in [(self.__drugtarget,"drug_target"),(self.__drugdrug,"drug_projection"),(self.__targettarget,"target_projection")]]
         communities=ray.get(ids)
