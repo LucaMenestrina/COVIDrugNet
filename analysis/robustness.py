@@ -13,6 +13,8 @@ import seaborn as sns
 
 import ray
 
+print("Starting Robustness Analysis ...")
+
 dt=nx.read_gpickle("../data/graphs/drug_target/drug_target.gpickle")
 dd=nx.read_gpickle("../data/graphs/drug_projection/drug_projection.gpickle")
 tt=nx.read_gpickle("../data/graphs/target_projection/target_projection.gpickle")
@@ -172,4 +174,7 @@ test_robustness(dd_removed,"Drug Projection Removed",50)#reduced to 50 (from 100
 test_robustness(tt_removed,"Target Projection Removed",50)#reduced to 50 (from 100) for speeding up updates
 clustering_coefficient_vs_degree(tt_removed,2,"Target Projection Removed")
 
+
 ray.shutdown()
+
+print("Robustness Analysis Done!")

@@ -17,6 +17,7 @@ from time import time
 from datetime import timedelta
 
 
+print("Starting Fitting Analysis ...")
 
 dt=nx.read_gpickle("../data/graphs/drug_target/drug_target.gpickle")
 dd=nx.read_gpickle("../data/graphs/drug_projection/drug_projection.gpickle")
@@ -247,4 +248,7 @@ test_distribution(observed_tt_removed,samples=1E5, title="Target Projection Remo
 # for nedges in [1,2,3,4,5,7,10,15]:
 #     barabasi_albert(nedges=nedges)
 
+
 ray.shutdown()
+
+print("Fitting Analysis Done!")
