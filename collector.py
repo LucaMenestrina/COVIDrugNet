@@ -342,6 +342,31 @@ class collector():
             if os.path.isfile(name+".bkp"):
                 os.remove(name+".bkp")
         ray.shutdown()
+    def spectral_clustering(self):
+        print("\tSpectral Clustering Data Precomputing ...")
+        from sklearn.cluster import KMeans
+        from scipy.stats import halfnorm
+        for graph, prefix in [(self.__drugtarget,"drug_target"),(self.__drugdrug,"drug_projection"),(self.__targettarget,"target_projection")]:
+            maj=graph.subgraph(max(list(nx.connected_components(graph)), key=len))
+            L=nx.normalized_laplacian_matrix(graph).toarray()
+            evals,evects=np.linalg.eigh(L)
+            relevant=[n for n,dif in enumerate(np.diff(evals)) if dif > halfnorm.ppf(0.99,*halfnorm.fit(np.diff(evals)))]
+            relevant=[relevant[n] for n in range(len(relevant)-1) if relevant[n]+1 != relevant[n+1]]+[relevant[-1]] #keeps only the highest value if there are consecutive ones
+            n_clusters=relevant[0]+1 if (relevant[0] > 1 and relevant[0]+1 != nx.number_connected_components(graph)) else relevant[1]+1
+            km=KMeans(n_clusters=n_clusters, n_init=100)
+            clusters=km.fit_predict(evects[:,:n_clusters])
+            L_maj=nx.normalized_laplacian_matrix(maj).toarray()
+            evals_maj,evects_maj=np.linalg.eigh(L_maj)
+            relevant_maj=[n for n,dif in enumerate(np.diff(evals_maj)) if dif > halfnorm.ppf(0.99,*halfnorm.fit(np.diff(evals_maj)))]
+            relevant_maj=[relevant_maj[n] for n in range(len(relevant_maj)-1) if relevant_maj[n]+1 != relevant_maj[n+1]]+[relevant_maj[-1]] #keeps only the highest value if there are consecutive ones
+            n_clusters_maj=relevant_maj[0]+1 if (relevant_maj[0] > 1 and relevant_maj[0]+1 != nx.number_connected_components(maj)) else relevant_maj[1]+1
+            km_maj=KMeans(n_clusters=n_clusters_maj, n_init=100)
+            clusters_maj=km_maj.fit_predict(evects_maj[:,:n_clusters_maj])
+            name="data/groups/"+prefix+"_spectral.pickle"
+            with open(name,"wb") as bkp:
+                pickle.dump([L,evals,evects,n_clusters,clusters,L_maj,evals_maj,evects_maj,n_clusters_maj,clusters_maj],bkp)
+            if os.path.isfile(name+".bkp"):
+                os.remove(name+".bkp")
     def similarity(self,sparse=True,save=True):
         self.similarities={drug1.name:{drug2.name:DataStructs.FingerprintSimilarity(drug1.fingerprint,drug2.fingerprint) for drug2 in self.drugs if drug2.fingerprint} for drug1 in self.drugs if drug1.fingerprint}
         df=pd.DataFrame(self.similarities)
@@ -548,4 +573,5 @@ if __name__ == "__main__":
                 if os.path.isfile(name):
                     os.rename(name,name+".bkp")
         COVID_drugs.communities()
+        COVID_drugs.spectral_clustering()
     print("Done!")
