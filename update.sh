@@ -14,7 +14,7 @@ fi
 wget https://github.com/LucaMenestrina/COVIDrugNet/archive/refs/heads/master.zip
 unzip master.zip
 rm master.zip
-if test -f "COVIDrugNet.bkp"; then
+if test -d "COVIDrugNet.bkp"; then
   rm -r COVIDrugNet.bkp
 fi
 mv COVIDrugNet COVIDrugNet.bkp
@@ -31,6 +31,7 @@ if test -f "../send_message.py"; then
 fi
 if [ "$elapsed" -gt 15 ] # it is assumed that if the database takes less than 15 seconds to update there are not any new drugs/proteins
 then
+  echo "Download time: $elapsed"
   echo "Starting Analyses ..."
   if test -f "../send_message.py"; then
     python ../send_message.py -m "Starting Analyses ..."
@@ -48,11 +49,15 @@ then
   if test -f "../../send_message.py"; then
     python ../../send_message.py -m "Robustness Analysis Done"
   fi
+  cd ..
 else
   echo "Nothing to Update"
+  if test -f "../send_message.py"; then
+    python ../send_message.py -m "Nothing to Update"
+  fi
 fi
 date
 echo "Update Completed!"
-if test -f "../../send_message.py"; then
-  python ../../send_message.py -m "Update Completed!"
+if test -f "../send_message.py"; then
+  python ../send_message.py -m "Update Completed!"
 fi
