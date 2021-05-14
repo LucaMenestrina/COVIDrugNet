@@ -1,5 +1,5 @@
 #collector.py
-# GMT Tue Mar 30 17:51:40 2021
+# GMT Mon May 10 07:49:34 2021
 # 
 Trimethoprim	1
 Dihydrofolate reductase	{}
@@ -1180,9 +1180,10 @@ Captopril	{}
 Remdesivir	2
 Replicase polyprotein 1ab	{}
 RNA-directed RNA polymerase L	{}
-Replicase polyprotein 1ab	2
+Replicase polyprotein 1ab	3
 GC-376 free acid	{}
 GS-441524	{}
+PF-07304814	{}
 RNA-directed RNA polymerase L	3
 Ribavirin	{}
 GS-441524	{}
@@ -3286,3 +3287,4 @@ Aminopeptidase N	{}
 B2 bradykinin receptor	0
 Aminopeptidase N	0
 Ozanimod	0
+PF-07304814	0

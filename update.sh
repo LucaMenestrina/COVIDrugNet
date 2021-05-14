@@ -29,7 +29,7 @@ echo "Database Updated"
 if test -f "../send_message.py"; then
   python ../send_message.py -m "Database Updated"
 fi
-if [ "$elapsed" -gt 15 ] # it is assumed that if the database takes less than 15 seconds to update there are not any new drugs/proteins
+if [ "$elapsed" -gt 60 ] # it is assumed that if the database takes less than 60 seconds to update there are not any new drugs/proteins
 then
   echo "Download time: $elapsed"
   echo "Starting Analyses ..."

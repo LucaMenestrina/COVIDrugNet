@@ -39,7 +39,7 @@ class drug():
                 url = "https://www.drugbank.ca/drugs/"+self.id
                 response = requests.get(url)
                 page = response.content
-                soup = BeautifulSoup(page, 'html5lib')
+                soup = BeautifulSoup(page, "html5lib")
                 self.smiles = soup.findAll("div",attrs={"class":"wrap"})[2].get_text()
             except:
                 self.smiles="Not Available"
@@ -52,7 +52,7 @@ class drug():
         url="https://www.drugbank.ca/drugs/"+self.id
         response = requests.get(url)
         page = response.content
-        soup = BeautifulSoup(page, 'html5lib')
+        soup = BeautifulSoup(page, "html5lib")
         atc_together=[a["href"].split("/")[-1] for dd in soup.findAll("dd", attrs = {"class":"col-xl-10 col-md-9 col-sm-8"}) for a in dd.findAll("a") if "/atc/" in a["href"]][::-1]
         if atc_together != []:
             atc_grouped=[atc_together[i-5:i] for i in range(5,len(atc_together)+1,5)]
@@ -101,7 +101,7 @@ class drug():
         total=content["recordsTotal"]
         data=content["data"]
         for d in data:
-            dd=BeautifulSoup(d[0], 'html5lib')
+            dd=BeautifulSoup(d[0], "html5lib")
             drug_name=dd.text
             drug_id=dd.a["href"].split("/")[-1]
             self.drug_interactions[drug(drug_name,drug_id)]=d[1]
@@ -112,7 +112,7 @@ class drug():
             content=response.json()
             data=content["data"]
             for d in data:
-                dd=BeautifulSoup(d[0], 'html5lib')
+                dd=BeautifulSoup(d[0], "html5lib")
                 drug_name=dd.text
                 drug_id=dd.a["href"].split("/")[-1]
                 self.drug_interactions[drug(drug_name,drug_id)]=d[1]
@@ -131,7 +131,7 @@ class protein():
         self.id = url.split("/")[-1]
         response = requests.get(url)
         page = response.content
-        soup = BeautifulSoup(page, 'html5lib')
+        soup = BeautifulSoup(page, "html5lib")
         self.name = soup.find("h1").get_text()
         relations = soup.find('table', attrs = {'id':'target-relations'})
         self.gene=soup.findAll("dd",attrs={"class":"col-xl-10 col-md-9 col-sm-8"})[2].get_text()
@@ -162,7 +162,7 @@ class protein():
                 disgenet_url="https://www.disgenet.org/api/gda/gene/%s?min_ei=1&type=group&format=tsv"%self.gene #min evidence index 1 (EI = 1 indicates that all the publications support the GDA)
                 response=requests.get(disgenet_url)
                 page=response.content
-                soup = BeautifulSoup(page, 'html5lib')
+                soup = BeautifulSoup(page, "html5lib")
                 lines=soup.find("body").get_text().split("\n")
                 index=lines[0].split("\t").index("disease_name")
                 self.diseases=[line.split("\t")[index] for line in lines[1:-1]]
@@ -172,7 +172,7 @@ class protein():
             url="https://swissmodel.expasy.org/repository/uniprot/"+self.id
             response = requests.get(url)
             page = response.content
-            soup = BeautifulSoup(page, 'html5lib')
+            soup = BeautifulSoup(page, "html5lib")
             table=soup.find("div", attrs={"id":"allmodelsDiv"}).find("table")
             pdbid=table.findAll("a")[0]["href"].split("/")[-1]
             if "template" in pdbid:#es check with https://swissmodel.expasy.org/repository/uniprot/K9N7C7
@@ -230,7 +230,7 @@ class collector():
         url = "https://www.drugbank.ca/covid-19"
         response = requests.get(url)
         page = response.content
-        soup = BeautifulSoup(page, 'html5lib')
+        soup = BeautifulSoup(page, "html5lib")
         tables = soup.findAll('table', attrs = {'class':'table table-sm datatable dt-responsive'})
         experimental_unapproved_treatments=pd.read_html(str(tables[0]))[0]
         #potential_drug_targets=pd.read_html(str(tables[1]))[0]

@@ -1,5 +1,5 @@
 #collector.py
-# GMT Tue Mar 30 17:51:40 2021
+# GMT Mon May 10 07:49:34 2021
 # 
 Trimethoprim	Dihydrofolate reductase
 Dihydrofolate reductase	Methotrexate
@@ -419,7 +419,7 @@ Ramipril	Angiotensin-converting enzyme	B1 bradykinin receptor
 Angiotensin-converting enzyme	Quinapril	Enalapril	Benazepril	Perindopril	Captopril	Fosinopril	Trandolapril	Moexipril	Lisinopril
 B1 bradykinin receptor	Captopril
 Remdesivir	Replicase polyprotein 1ab	RNA-directed RNA polymerase L
-Replicase polyprotein 1ab	GC-376 free acid	GS-441524
+Replicase polyprotein 1ab	GC-376 free acid	GS-441524	PF-07304814
 RNA-directed RNA polymerase L	Ribavirin	GS-441524	Galidesivir
 Thrombin	Proteinase-activated receptor 1	Proteinase-activated receptor 4	Coagulation factor XI	Coagulation factor XIII A chain	Coagulation factor XIII B chain	Fibrinogen alpha chain	Fibrinogen beta chain	Fibrinogen gamma chain	Coagulation factor V	Coagulation factor VIII
 Proteinase-activated receptor 1
@@ -1461,3 +1461,4 @@ Icatibant	B2 bradykinin receptor	Aminopeptidase N
 B2 bradykinin receptor
 Aminopeptidase N
 Ozanimod
+PF-07304814
