@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# launch with: bash update.sh >& ../update.log &
+# launch with: bash update.sh &> ../update.log &
 
 date
 echo "Starting Update ..."
