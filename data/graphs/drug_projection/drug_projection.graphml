@@ -460,7 +460,7 @@
   <data key="d15">Drug</data>
   <data key="d16">16</data>
   <data key="d17">0.28109132893373046</data>
-  <data key="d18">0.015134322004559721</data>
+  <data key="d18">0.015134322004559723</data>
   <data key="d19">0.09386657144034238</data>
   <data key="d24">0.4083333333333333</data>
   <data key="d21">93</data>
@@ -1448,7 +1448,7 @@
   <data key="d15">Drug</data>
   <data key="d16">28</data>
   <data key="d17">0.2784789559882497</data>
-  <data key="d18">0.020313633182577725</data>
+  <data key="d18">0.020313633182577732</data>
   <data key="d19">0.11063940523393528</data>
   <data key="d24">0.22486772486772486</data>
   <data key="d21">127</data>
@@ -1786,7 +1786,7 @@
   <data key="d15">Drug</data>
   <data key="d16">16</data>
   <data key="d17">0.2779622974428169</data>
-  <data key="d18">0.0015130317281714253</data>
+  <data key="d18">0.001513031728171425</data>
   <data key="d19">0.12327651601238038</data>
   <data key="d24">0.6916666666666667</data>
   <data key="d21">57</data>
@@ -3580,7 +3580,7 @@
   <data key="d15">Drug</data>
   <data key="d16">50</data>
   <data key="d17">0.34600849496923397</data>
-  <data key="d18">0.09813295849016568</data>
+  <data key="d18">0.09813295849016569</data>
   <data key="d19">0.27404941195085664</data>
   <data key="d24">0.20244897959183675</data>
   <data key="d21">131</data>
@@ -4724,7 +4724,7 @@
   <data key="d15">Drug</data>
   <data key="d16">22</data>
   <data key="d17">0.2875656013851791</data>
-  <data key="d18">0.006089255871385553</data>
+  <data key="d18">0.006089255871385552</data>
   <data key="d19">0.1556913295469796</data>
   <data key="d24">0.48917748917748916</data>
   <data key="d21">13</data>
@@ -5088,7 +5088,7 @@
   <data key="d15">Drug</data>
   <data key="d16">9</data>
   <data key="d17">0.25222504767959314</data>
-  <data key="d18">0.00028789744641587205</data>
+  <data key="d18">0.0002878974464158721</data>
   <data key="d19">0.04683840690112612</data>
   <data key="d24">0.8888888888888888</data>
   <data key="d21">0</data>
@@ -5166,7 +5166,7 @@
   <data key="d15">Drug</data>
   <data key="d16">14</data>
   <data key="d17">0.2665866162307443</data>
-  <data key="d18">0.0018410294009577185</data>
+  <data key="d18">0.0018410294009577187</data>
   <data key="d19">0.08320340427764353</data>
   <data key="d24">0.4945054945054945</data>
   <data key="d21">79</data>
@@ -5712,7 +5712,7 @@
   <data key="d15">Drug</data>
   <data key="d16">19</data>
   <data key="d17">0.2738970353229951</data>
-  <data key="d18">0.01947605569754713</data>
+  <data key="d18">0.019476055697547127</data>
   <data key="d19">0.06332377726679919</data>
   <data key="d24">0.2807017543859649</data>
   <data key="d21">119</data>
@@ -5946,7 +5946,7 @@
   <data key="d15">Drug</data>
   <data key="d16">20</data>
   <data key="d17">0.3063838002488309</data>
-  <data key="d18">0.02754647918689295</data>
+  <data key="d18">0.027546479186892955</data>
   <data key="d19">0.12923200602542878</data>
   <data key="d24">0.4368421052631579</data>
   <data key="d21">99</data>
@@ -7090,7 +7090,7 @@
   <data key="d15">Drug</data>
   <data key="d16">10</data>
   <data key="d17">0.25307715932715935</data>
-  <data key="d18">0.0007164861676399283</data>
+  <data key="d18">0.0007164861676399282</data>
   <data key="d19">0.047121702349703004</data>
   <data key="d24">0.7333333333333333</data>
   <data key="d21">9</data>
@@ -7496,148 +7496,187 @@
 <edge source="Elbasvir" target="Daclatasvir">
   <data key="d25">1</data>
 </edge>
-<edge source="Elbasvir" target="Ledipasvir">
-  <data key="d25">1</data>
-</edge>
 <edge source="Elbasvir" target="Velpatasvir">
   <data key="d25">1</data>
 </edge>
-<edge source="Amlodipine" target="Cannabidiol">
+<edge source="Elbasvir" target="Ledipasvir">
   <data key="d25">1</data>
 </edge>
-<edge source="Amlodipine" target="Amiodarone">
-  <data key="d25">3</data>
+<edge source="Amlodipine" target="Spironolactone">
+  <data key="d25">5</data>
 </edge>
-<edge source="Amlodipine" target="Chlorpromazine">
+<edge source="Amlodipine" target="Cannabidiol">
   <data key="d25">1</data>
 </edge>
 <edge source="Amlodipine" target="Nifedipine">
   <data key="d25">2</data>
 </edge>
+<edge source="Amlodipine" target="Chlorpromazine">
+  <data key="d25">1</data>
+</edge>
 <edge source="Amlodipine" target="Verapamil">
   <data key="d25">2</data>
-</edge>
-<edge source="Amlodipine" target="Spironolactone">
-  <data key="d25">5</data>
-</edge>
-<edge source="Amlodipine" target="Diltiazem">
-  <data key="d25">1</data>
 </edge>
 <edge source="Amlodipine" target="Levomenthol">
   <data key="d25">2</data>
 </edge>
-<edge source="Roxithromycin" target="Tetrandrine">
+<edge source="Amlodipine" target="Diltiazem">
   <data key="d25">1</data>
+</edge>
+<edge source="Amlodipine" target="Amiodarone">
+  <data key="d25">3</data>
 </edge>
 <edge source="Roxithromycin" target="Clarithromycin">
   <data key="d25">1</data>
 </edge>
-<edge source="Metformin" target="Acetylsalicylic acid">
+<edge source="Roxithromycin" target="Tetrandrine">
   <data key="d25">1</data>
 </edge>
 <edge source="Metformin" target="Fostamatinib">
   <data key="d25">1</data>
 </edge>
-<edge source="Spironolactone" target="Norelgestromin">
-  <data key="d25">2</data>
-</edge>
-<edge source="Spironolactone" target="Progesterone">
-  <data key="d25">6</data>
-</edge>
-<edge source="Spironolactone" target="Ritonavir">
+<edge source="Metformin" target="Acetylsalicylic acid">
   <data key="d25">1</data>
-</edge>
-<edge source="Spironolactone" target="Cannabidiol">
-  <data key="d25">4</data>
-</edge>
-<edge source="Spironolactone" target="Hydrocortisone">
-  <data key="d25">1</data>
-</edge>
-<edge source="Spironolactone" target="Amiodarone">
-  <data key="d25">9</data>
-</edge>
-<edge source="Spironolactone" target="Fenofibrate">
-  <data key="d25">1</data>
-</edge>
-<edge source="Spironolactone" target="Dexamethasone">
-  <data key="d25">2</data>
-</edge>
-<edge source="Spironolactone" target="Diltiazem">
-  <data key="d25">2</data>
-</edge>
-<edge source="Spironolactone" target="Ethinylestradiol">
-  <data key="d25">1</data>
-</edge>
-<edge source="Spironolactone" target="Dutasteride">
-  <data key="d25">2</data>
 </edge>
 <edge source="Spironolactone" target="Piperine">
-  <data key="d25">1</data>
-</edge>
-<edge source="Spironolactone" target="Nifedipine">
-  <data key="d25">8</data>
-</edge>
-<edge source="Spironolactone" target="Mometasone furoate">
-  <data key="d25">2</data>
-</edge>
-<edge source="Spironolactone" target="Budesonide">
-  <data key="d25">1</data>
-</edge>
-<edge source="Spironolactone" target="Resveratrol">
-  <data key="d25">1</data>
-</edge>
-<edge source="Spironolactone" target="Mometasone">
-  <data key="d25">2</data>
-</edge>
-<edge source="Spironolactone" target="Toremifene">
-  <data key="d25">1</data>
-</edge>
-<edge source="Spironolactone" target="Levomenthol">
-  <data key="d25">9</data>
-</edge>
-<edge source="Spironolactone" target="Vitamin E">
-  <data key="d25">1</data>
-</edge>
-<edge source="Spironolactone" target="Prednisone">
-  <data key="d25">1</data>
-</edge>
-<edge source="Spironolactone" target="Tamoxifen">
-  <data key="d25">3</data>
-</edge>
-<edge source="Spironolactone" target="Methylprednisolone">
-  <data key="d25">1</data>
-</edge>
-<edge source="Spironolactone" target="Enzalutamide">
-  <data key="d25">1</data>
-</edge>
-<edge source="Spironolactone" target="Ciclesonide">
-  <data key="d25">1</data>
-</edge>
-<edge source="Spironolactone" target="Prednisolone">
-  <data key="d25">1</data>
-</edge>
-<edge source="Spironolactone" target="Bicalutamide">
-  <data key="d25">1</data>
-</edge>
-<edge source="Spironolactone" target="Genistein">
-  <data key="d25">2</data>
-</edge>
-<edge source="Spironolactone" target="Finasteride">
-  <data key="d25">2</data>
-</edge>
-<edge source="Spironolactone" target="Quercetin">
-  <data key="d25">2</data>
-</edge>
-<edge source="Spironolactone" target="Verapamil">
-  <data key="d25">5</data>
-</edge>
-<edge source="Spironolactone" target="Prednisolone acetate">
   <data key="d25">1</data>
 </edge>
 <edge source="Spironolactone" target="Estradiol">
   <data key="d25">1</data>
 </edge>
+<edge source="Spironolactone" target="Budesonide">
+  <data key="d25">1</data>
+</edge>
+<edge source="Spironolactone" target="Finasteride">
+  <data key="d25">2</data>
+</edge>
+<edge source="Spironolactone" target="Fenofibrate">
+  <data key="d25">1</data>
+</edge>
+<edge source="Spironolactone" target="Cannabidiol">
+  <data key="d25">4</data>
+</edge>
+<edge source="Spironolactone" target="Ethinylestradiol">
+  <data key="d25">1</data>
+</edge>
+<edge source="Spironolactone" target="Prednisolone acetate">
+  <data key="d25">1</data>
+</edge>
+<edge source="Spironolactone" target="Mometasone">
+  <data key="d25">2</data>
+</edge>
+<edge source="Spironolactone" target="Bicalutamide">
+  <data key="d25">1</data>
+</edge>
+<edge source="Spironolactone" target="Dutasteride">
+  <data key="d25">2</data>
+</edge>
+<edge source="Spironolactone" target="Enzalutamide">
+  <data key="d25">1</data>
+</edge>
+<edge source="Spironolactone" target="Mometasone furoate">
+  <data key="d25">2</data>
+</edge>
+<edge source="Spironolactone" target="Diltiazem">
+  <data key="d25">2</data>
+</edge>
+<edge source="Spironolactone" target="Prednisone">
+  <data key="d25">1</data>
+</edge>
+<edge source="Spironolactone" target="Ritonavir">
+  <data key="d25">1</data>
+</edge>
+<edge source="Spironolactone" target="Quercetin">
+  <data key="d25">2</data>
+</edge>
+<edge source="Spironolactone" target="Hydrocortisone">
+  <data key="d25">1</data>
+</edge>
+<edge source="Spironolactone" target="Resveratrol">
+  <data key="d25">1</data>
+</edge>
+<edge source="Spironolactone" target="Norelgestromin">
+  <data key="d25">2</data>
+</edge>
+<edge source="Spironolactone" target="Genistein">
+  <data key="d25">2</data>
+</edge>
+<edge source="Spironolactone" target="Dexamethasone">
+  <data key="d25">2</data>
+</edge>
+<edge source="Spironolactone" target="Ciclesonide">
+  <data key="d25">1</data>
+</edge>
+<edge source="Spironolactone" target="Toremifene">
+  <data key="d25">1</data>
+</edge>
+<edge source="Spironolactone" target="Nifedipine">
+  <data key="d25">8</data>
+</edge>
 <edge source="Spironolactone" target="Betamethasone">
+  <data key="d25">1</data>
+</edge>
+<edge source="Spironolactone" target="Vitamin E">
+  <data key="d25">1</data>
+</edge>
+<edge source="Spironolactone" target="Methylprednisolone">
+  <data key="d25">1</data>
+</edge>
+<edge source="Spironolactone" target="Levomenthol">
+  <data key="d25">9</data>
+</edge>
+<edge source="Spironolactone" target="Prednisolone">
+  <data key="d25">1</data>
+</edge>
+<edge source="Spironolactone" target="Amiodarone">
+  <data key="d25">9</data>
+</edge>
+<edge source="Spironolactone" target="Tamoxifen">
+  <data key="d25">3</data>
+</edge>
+<edge source="Spironolactone" target="Progesterone">
+  <data key="d25">6</data>
+</edge>
+<edge source="Spironolactone" target="Verapamil">
+  <data key="d25">5</data>
+</edge>
+<edge source="Quercetin" target="Piperine">
+  <data key="d25">1</data>
+</edge>
+<edge source="Quercetin" target="Estradiol">
+  <data key="d25">3</data>
+</edge>
+<edge source="Quercetin" target="Diosmin">
+  <data key="d25">1</data>
+</edge>
+<edge source="Quercetin" target="Curcumin">
+  <data key="d25">1</data>
+</edge>
+<edge source="Quercetin" target="Atorvastatin">
+  <data key="d25">1</data>
+</edge>
+<edge source="Quercetin" target="Fenofibrate">
+  <data key="d25">1</data>
+</edge>
+<edge source="Quercetin" target="Cannabidiol">
+  <data key="d25">1</data>
+</edge>
+<edge source="Quercetin" target="Artenimol">
+  <data key="d25">1</data>
+</edge>
+<edge source="Quercetin" target="Toremifene">
+  <data key="d25">2</data>
+</edge>
+<edge source="Quercetin" target="Ethinylestradiol">
+  <data key="d25">2</data>
+</edge>
+<edge source="Quercetin" target="Nifedipine">
+  <data key="d25">1</data>
+</edge>
+<edge source="Quercetin" target="Menadione">
+  <data key="d25">1</data>
+</edge>
+<edge source="Quercetin" target="Vitamin E">
   <data key="d25">1</data>
 </edge>
 <edge source="Quercetin" target="Omeprazole">
@@ -7646,91 +7685,37 @@
 <edge source="Quercetin" target="Ritonavir">
   <data key="d25">1</data>
 </edge>
-<edge source="Quercetin" target="Progesterone">
-  <data key="d25">3</data>
-</edge>
-<edge source="Quercetin" target="Cannabidiol">
-  <data key="d25">1</data>
-</edge>
-<edge source="Quercetin" target="Vitamin E">
-  <data key="d25">1</data>
-</edge>
-<edge source="Quercetin" target="Curcumin">
-  <data key="d25">1</data>
-</edge>
-<edge source="Quercetin" target="Estradiol">
-  <data key="d25">3</data>
-</edge>
-<edge source="Quercetin" target="Fenofibrate">
-  <data key="d25">1</data>
-</edge>
-<edge source="Quercetin" target="Diosmin">
-  <data key="d25">1</data>
-</edge>
-<edge source="Quercetin" target="Dexamethasone">
-  <data key="d25">1</data>
-</edge>
-<edge source="Quercetin" target="Artenimol">
-  <data key="d25">1</data>
+<edge source="Quercetin" target="Melatonin">
+  <data key="d25">2</data>
 </edge>
 <edge source="Quercetin" target="Tamoxifen">
   <data key="d25">4</data>
 </edge>
-<edge source="Quercetin" target="Ethinylestradiol">
-  <data key="d25">2</data>
+<edge source="Quercetin" target="Primaquine">
+  <data key="d25">1</data>
 </edge>
-<edge source="Quercetin" target="Atorvastatin">
+<edge source="Quercetin" target="Progesterone">
+  <data key="d25">3</data>
+</edge>
+<edge source="Quercetin" target="Fostamatinib">
+  <data key="d25">5</data>
+</edge>
+<edge source="Quercetin" target="Resveratrol">
+  <data key="d25">6</data>
+</edge>
+<edge source="Quercetin" target="Duvelisib">
   <data key="d25">1</data>
 </edge>
 <edge source="Quercetin" target="Genistein">
   <data key="d25">5</data>
 </edge>
-<edge source="Quercetin" target="Leflunomide">
-  <data key="d25">1</data>
-</edge>
-<edge source="Quercetin" target="Duvelisib">
-  <data key="d25">1</data>
-</edge>
-<edge source="Quercetin" target="Piperine">
-  <data key="d25">1</data>
-</edge>
-<edge source="Quercetin" target="Nifedipine">
-  <data key="d25">1</data>
-</edge>
-<edge source="Quercetin" target="Resveratrol">
-  <data key="d25">6</data>
-</edge>
-<edge source="Quercetin" target="Toremifene">
-  <data key="d25">2</data>
-</edge>
-<edge source="Quercetin" target="Melatonin">
-  <data key="d25">2</data>
-</edge>
 <edge source="Quercetin" target="Ginseng">
   <data key="d25">1</data>
 </edge>
-<edge source="Quercetin" target="Menadione">
+<edge source="Quercetin" target="Dexamethasone">
   <data key="d25">1</data>
 </edge>
-<edge source="Quercetin" target="Primaquine">
-  <data key="d25">1</data>
-</edge>
-<edge source="Quercetin" target="Fostamatinib">
-  <data key="d25">5</data>
-</edge>
-<edge source="Valsartan" target="Olmesartan">
-  <data key="d25">1</data>
-</edge>
-<edge source="Valsartan" target="Irbesartan">
-  <data key="d25">1</data>
-</edge>
-<edge source="Valsartan" target="Azilsartan medoxomil">
-  <data key="d25">1</data>
-</edge>
-<edge source="Valsartan" target="Angiotensin II">
-  <data key="d25">1</data>
-</edge>
-<edge source="Valsartan" target="Candesartan">
+<edge source="Quercetin" target="Leflunomide">
   <data key="d25">1</data>
 </edge>
 <edge source="Valsartan" target="Losartan">
@@ -7739,40 +7724,25 @@
 <edge source="Valsartan" target="Candesartan cilexetil">
   <data key="d25">1</data>
 </edge>
-<edge source="Valsartan" target="Telmisartan">
+<edge source="Valsartan" target="Azilsartan medoxomil">
+  <data key="d25">1</data>
+</edge>
+<edge source="Valsartan" target="Olmesartan">
+  <data key="d25">1</data>
+</edge>
+<edge source="Valsartan" target="Angiotensin II">
   <data key="d25">1</data>
 </edge>
 <edge source="Valsartan" target="Eprosartan">
   <data key="d25">1</data>
 </edge>
-<edge source="Nimesulide" target="Indomethacin">
+<edge source="Valsartan" target="Candesartan">
   <data key="d25">1</data>
 </edge>
-<edge source="Nimesulide" target="Cannabidiol">
+<edge source="Valsartan" target="Telmisartan">
   <data key="d25">1</data>
 </edge>
-<edge source="Nimesulide" target="Naproxen">
-  <data key="d25">1</data>
-</edge>
-<edge source="Nimesulide" target="Acetylsalicylic acid">
-  <data key="d25">1</data>
-</edge>
-<edge source="Nimesulide" target="Celecoxib">
-  <data key="d25">1</data>
-</edge>
-<edge source="Nimesulide" target="Resveratrol">
-  <data key="d25">1</data>
-</edge>
-<edge source="Nimesulide" target="Ginseng">
-  <data key="d25">1</data>
-</edge>
-<edge source="Nimesulide" target="Ibuprofen">
-  <data key="d25">1</data>
-</edge>
-<edge source="Nimesulide" target="Acetaminophen">
-  <data key="d25">1</data>
-</edge>
-<edge source="Nimesulide" target="Thalidomide">
+<edge source="Valsartan" target="Irbesartan">
   <data key="d25">1</data>
 </edge>
 <edge source="Nimesulide" target="Lenalidomide">
@@ -7781,37 +7751,79 @@
 <edge source="Nimesulide" target="Icosapent">
   <data key="d25">1</data>
 </edge>
-<edge source="Valproic acid" target="Clofazimine">
+<edge source="Nimesulide" target="Thalidomide">
   <data key="d25">1</data>
 </edge>
-<edge source="Valproic acid" target="Tramadol">
+<edge source="Nimesulide" target="Naproxen">
   <data key="d25">1</data>
 </edge>
-<edge source="Valproic acid" target="Cannabidiol">
+<edge source="Nimesulide" target="Acetaminophen">
   <data key="d25">1</data>
 </edge>
-<edge source="Valproic acid" target="Propofol">
-  <data key="d25">2</data>
+<edge source="Nimesulide" target="Resveratrol">
+  <data key="d25">1</data>
 </edge>
-<edge source="Valproic acid" target="Amiodarone">
-  <data key="d25">2</data>
+<edge source="Nimesulide" target="Cannabidiol">
+  <data key="d25">1</data>
 </edge>
-<edge source="Valproic acid" target="Curcumin">
+<edge source="Nimesulide" target="Celecoxib">
+  <data key="d25">1</data>
+</edge>
+<edge source="Nimesulide" target="Acetylsalicylic acid">
+  <data key="d25">1</data>
+</edge>
+<edge source="Nimesulide" target="Indomethacin">
+  <data key="d25">1</data>
+</edge>
+<edge source="Nimesulide" target="Ginseng">
+  <data key="d25">1</data>
+</edge>
+<edge source="Nimesulide" target="Ibuprofen">
   <data key="d25">1</data>
 </edge>
 <edge source="Valproic acid" target="Fenofibrate">
   <data key="d25">1</data>
 </edge>
-<edge source="Valproic acid" target="Omega-3 fatty acids">
-  <data key="d25">2</data>
-</edge>
 <edge source="Valproic acid" target="Lidocaine">
   <data key="d25">4</data>
 </edge>
-<edge source="Valproic acid" target="Ibuprofen">
-  <data key="d25">2</data>
+<edge source="Valproic acid" target="Curcumin">
+  <data key="d25">1</data>
 </edge>
 <edge source="Valproic acid" target="Atorvastatin">
+  <data key="d25">1</data>
+</edge>
+<edge source="Valproic acid" target="Cannabidiol">
+  <data key="d25">1</data>
+</edge>
+<edge source="Valproic acid" target="Oleic Acid">
+  <data key="d25">3</data>
+</edge>
+<edge source="Valproic acid" target="alpha-Linolenic acid">
+  <data key="d25">3</data>
+</edge>
+<edge source="Valproic acid" target="Amiodarone">
+  <data key="d25">2</data>
+</edge>
+<edge source="Valproic acid" target="Icosapent">
+  <data key="d25">3</data>
+</edge>
+<edge source="Valproic acid" target="Propofol">
+  <data key="d25">2</data>
+</edge>
+<edge source="Valproic acid" target="Resveratrol">
+  <data key="d25">2</data>
+</edge>
+<edge source="Valproic acid" target="Tramadol">
+  <data key="d25">1</data>
+</edge>
+<edge source="Valproic acid" target="Omega-3 fatty acids">
+  <data key="d25">2</data>
+</edge>
+<edge source="Valproic acid" target="Clofazimine">
+  <data key="d25">1</data>
+</edge>
+<edge source="Valproic acid" target="Simvastatin">
   <data key="d25">1</data>
 </edge>
 <edge source="Valproic acid" target="Indomethacin">
@@ -7820,64 +7832,49 @@
 <edge source="Valproic acid" target="Pioglitazone">
   <data key="d25">1</data>
 </edge>
-<edge source="Valproic acid" target="Simvastatin">
-  <data key="d25">1</data>
-</edge>
-<edge source="Valproic acid" target="Oleic Acid">
-  <data key="d25">3</data>
-</edge>
-<edge source="Valproic acid" target="Resveratrol">
-  <data key="d25">2</data>
-</edge>
-<edge source="Valproic acid" target="alpha-Linolenic acid">
-  <data key="d25">3</data>
-</edge>
 <edge source="Valproic acid" target="Telmisartan">
   <data key="d25">1</data>
 </edge>
-<edge source="Valproic acid" target="Icosapent">
-  <data key="d25">3</data>
-</edge>
-<edge source="Metoprolol" target="Amiodarone">
+<edge source="Valproic acid" target="Ibuprofen">
   <data key="d25">2</data>
 </edge>
 <edge source="Metoprolol" target="Formoterol">
   <data key="d25">2</data>
 </edge>
-<edge source="Morphine" target="Progesterone">
-  <data key="d25">1</data>
-</edge>
-<edge source="Morphine" target="Tramadol">
-  <data key="d25">3</data>
-</edge>
-<edge source="Morphine" target="Cannabidiol">
+<edge source="Metoprolol" target="Amiodarone">
   <data key="d25">2</data>
 </edge>
 <edge source="Morphine" target="Naltrexone">
   <data key="d25">3</data>
 </edge>
+<edge source="Morphine" target="Progesterone">
+  <data key="d25">1</data>
+</edge>
 <edge source="Morphine" target="Oxycodone">
   <data key="d25">3</data>
 </edge>
-<edge source="Morphine" target="Ketamine">
+<edge source="Morphine" target="Cannabidiol">
+  <data key="d25">2</data>
+</edge>
+<edge source="Morphine" target="Metenkefalin">
+  <data key="d25">2</data>
+</edge>
+<edge source="Morphine" target="Tramadol">
   <data key="d25">3</data>
 </edge>
 <edge source="Morphine" target="Levomenthol">
   <data key="d25">1</data>
 </edge>
-<edge source="Morphine" target="Metenkefalin">
-  <data key="d25">2</data>
-</edge>
-<edge source="Sitagliptin" target="Atorvastatin">
-  <data key="d25">1</data>
+<edge source="Morphine" target="Ketamine">
+  <data key="d25">3</data>
 </edge>
 <edge source="Sitagliptin" target="Linagliptin">
   <data key="d25">1</data>
 </edge>
-<edge source="Ginseng" target="Omeprazole">
+<edge source="Sitagliptin" target="Atorvastatin">
   <data key="d25">1</data>
 </edge>
-<edge source="Ginseng" target="Cannabidiol">
+<edge source="Ginseng" target="Lenalidomide">
   <data key="d25">1</data>
 </edge>
 <edge source="Ginseng" target="Naproxen">
@@ -7886,64 +7883,70 @@
 <edge source="Ginseng" target="Diosmin">
   <data key="d25">1</data>
 </edge>
-<edge source="Ginseng" target="Ibuprofen">
-  <data key="d25">1</data>
-</edge>
-<edge source="Ginseng" target="Acetaminophen">
-  <data key="d25">1</data>
-</edge>
 <edge source="Ginseng" target="Atorvastatin">
+  <data key="d25">1</data>
+</edge>
+<edge source="Ginseng" target="Cannabidiol">
+  <data key="d25">1</data>
+</edge>
+<edge source="Ginseng" target="Omeprazole">
+  <data key="d25">1</data>
+</edge>
+<edge source="Ginseng" target="Icosapent">
   <data key="d25">1</data>
 </edge>
 <edge source="Ginseng" target="Thalidomide">
   <data key="d25">1</data>
 </edge>
-<edge source="Ginseng" target="Lenalidomide">
-  <data key="d25">1</data>
-</edge>
-<edge source="Ginseng" target="Indomethacin">
-  <data key="d25">1</data>
-</edge>
-<edge source="Ginseng" target="Acetylsalicylic acid">
-  <data key="d25">1</data>
-</edge>
-<edge source="Ginseng" target="Celecoxib">
-  <data key="d25">1</data>
-</edge>
-<edge source="Ginseng" target="Leflunomide">
+<edge source="Ginseng" target="Acetaminophen">
   <data key="d25">1</data>
 </edge>
 <edge source="Ginseng" target="Resveratrol">
   <data key="d25">2</data>
 </edge>
-<edge source="Ginseng" target="Icosapent">
+<edge source="Ginseng" target="Celecoxib">
   <data key="d25">1</data>
 </edge>
-<edge source="Melatonin" target="Progesterone">
+<edge source="Ginseng" target="Acetylsalicylic acid">
   <data key="d25">1</data>
 </edge>
-<edge source="Melatonin" target="Tamoxifen">
+<edge source="Ginseng" target="Indomethacin">
   <data key="d25">1</data>
 </edge>
-<edge source="Melatonin" target="Levocarnitine">
+<edge source="Ginseng" target="Ibuprofen">
   <data key="d25">1</data>
 </edge>
-<edge source="Melatonin" target="Ethinylestradiol">
+<edge source="Ginseng" target="Leflunomide">
   <data key="d25">1</data>
 </edge>
-<edge source="Melatonin" target="Ramelteon">
-  <data key="d25">2</data>
-</edge>
-<edge source="Melatonin" target="Genistein">
+<edge source="Melatonin" target="Estradiol">
   <data key="d25">1</data>
 </edge>
-<edge source="Melatonin" target="Chlorpromazine">
+<edge source="Melatonin" target="Toremifene">
   <data key="d25">1</data>
 </edge>
 <edge source="Melatonin" target="Nifedipine">
   <data key="d25">1</data>
 </edge>
-<edge source="Melatonin" target="Trifluoperazine">
+<edge source="Melatonin" target="Ethinylestradiol">
+  <data key="d25">1</data>
+</edge>
+<edge source="Melatonin" target="Menadione">
+  <data key="d25">1</data>
+</edge>
+<edge source="Melatonin" target="Primaquine">
+  <data key="d25">1</data>
+</edge>
+<edge source="Melatonin" target="Levocarnitine">
+  <data key="d25">1</data>
+</edge>
+<edge source="Melatonin" target="Ramelteon">
+  <data key="d25">2</data>
+</edge>
+<edge source="Melatonin" target="Tamoxifen">
+  <data key="d25">1</data>
+</edge>
+<edge source="Melatonin" target="Progesterone">
   <data key="d25">1</data>
 </edge>
 <edge source="Melatonin" target="Resveratrol">
@@ -7952,70 +7955,79 @@
 <edge source="Melatonin" target="Isoflurane">
   <data key="d25">1</data>
 </edge>
-<edge source="Melatonin" target="Toremifene">
+<edge source="Melatonin" target="Chlorpromazine">
   <data key="d25">1</data>
 </edge>
-<edge source="Melatonin" target="Menadione">
+<edge source="Melatonin" target="Genistein">
   <data key="d25">1</data>
 </edge>
-<edge source="Melatonin" target="Estradiol">
-  <data key="d25">1</data>
-</edge>
-<edge source="Melatonin" target="Primaquine">
-  <data key="d25">1</data>
-</edge>
-<edge source="Ibrutinib" target="Abivertinib">
-  <data key="d25">1</data>
-</edge>
-<edge source="Ibrutinib" target="Acalabrutinib">
-  <data key="d25">1</data>
-</edge>
-<edge source="Ibrutinib" target="Zanubrutinib">
+<edge source="Melatonin" target="Trifluoperazine">
   <data key="d25">1</data>
 </edge>
 <edge source="Ibrutinib" target="Fostamatinib">
   <data key="d25">1</data>
 </edge>
-<edge source="Velpatasvir" target="Ledipasvir">
+<edge source="Ibrutinib" target="Zanubrutinib">
+  <data key="d25">1</data>
+</edge>
+<edge source="Ibrutinib" target="Acalabrutinib">
+  <data key="d25">1</data>
+</edge>
+<edge source="Ibrutinib" target="Abivertinib">
   <data key="d25">1</data>
 </edge>
 <edge source="Velpatasvir" target="Daclatasvir">
   <data key="d25">1</data>
 </edge>
-<edge source="Tinzaparin" target="Nadroparin">
-  <data key="d25">1</data>
-</edge>
-<edge source="Tinzaparin" target="Enoxaparin">
-  <data key="d25">1</data>
-</edge>
-<edge source="Tinzaparin" target="Heparin">
+<edge source="Velpatasvir" target="Ledipasvir">
   <data key="d25">1</data>
 </edge>
 <edge source="Tinzaparin" target="Bemiparin">
   <data key="d25">1</data>
 </edge>
-<edge source="Tinzaparin" target="Sulodexide">
+<edge source="Tinzaparin" target="Heparin">
+  <data key="d25">1</data>
+</edge>
+<edge source="Tinzaparin" target="Nadroparin">
   <data key="d25">1</data>
 </edge>
 <edge source="Tinzaparin" target="Fondaparinux">
   <data key="d25">1</data>
 </edge>
-<edge source="Mecobalamin" target="Cyanocobalamin">
+<edge source="Tinzaparin" target="Enoxaparin">
+  <data key="d25">1</data>
+</edge>
+<edge source="Tinzaparin" target="Sulodexide">
   <data key="d25">1</data>
 </edge>
 <edge source="Mecobalamin" target="Thimerosal">
   <data key="d25">1</data>
 </edge>
-<edge source="Methylprednisolone" target="Prednisolone">
-  <data key="d25">1</data>
-</edge>
-<edge source="Methylprednisolone" target="Progesterone">
+<edge source="Mecobalamin" target="Cyanocobalamin">
   <data key="d25">1</data>
 </edge>
 <edge source="Methylprednisolone" target="Hydrocortisone">
   <data key="d25">2</data>
 </edge>
-<edge source="Methylprednisolone" target="Prednisone">
+<edge source="Methylprednisolone" target="Budesonide">
+  <data key="d25">2</data>
+</edge>
+<edge source="Methylprednisolone" target="Ciclesonide">
+  <data key="d25">1</data>
+</edge>
+<edge source="Methylprednisolone" target="Progesterone">
+  <data key="d25">1</data>
+</edge>
+<edge source="Methylprednisolone" target="Betamethasone">
+  <data key="d25">1</data>
+</edge>
+<edge source="Methylprednisolone" target="Prednisolone acetate">
+  <data key="d25">1</data>
+</edge>
+<edge source="Methylprednisolone" target="Mometasone">
+  <data key="d25">1</data>
+</edge>
+<edge source="Methylprednisolone" target="Prednisolone">
   <data key="d25">1</data>
 </edge>
 <edge source="Methylprednisolone" target="Dexamethasone">
@@ -8024,34 +8036,10 @@
 <edge source="Methylprednisolone" target="Mometasone furoate">
   <data key="d25">1</data>
 </edge>
-<edge source="Methylprednisolone" target="Budesonide">
-  <data key="d25">2</data>
-</edge>
-<edge source="Methylprednisolone" target="Prednisolone acetate">
-  <data key="d25">1</data>
-</edge>
-<edge source="Methylprednisolone" target="Mometasone">
-  <data key="d25">1</data>
-</edge>
-<edge source="Methylprednisolone" target="Betamethasone">
-  <data key="d25">1</data>
-</edge>
-<edge source="Methylprednisolone" target="Ciclesonide">
+<edge source="Methylprednisolone" target="Prednisone">
   <data key="d25">1</data>
 </edge>
 <edge source="Febuxostat" target="Levocarnitine">
-  <data key="d25">1</data>
-</edge>
-<edge source="Azilsartan medoxomil" target="Olmesartan">
-  <data key="d25">1</data>
-</edge>
-<edge source="Azilsartan medoxomil" target="Irbesartan">
-  <data key="d25">1</data>
-</edge>
-<edge source="Azilsartan medoxomil" target="Angiotensin II">
-  <data key="d25">1</data>
-</edge>
-<edge source="Azilsartan medoxomil" target="Candesartan">
   <data key="d25">1</data>
 </edge>
 <edge source="Azilsartan medoxomil" target="Losartan">
@@ -8060,10 +8048,25 @@
 <edge source="Azilsartan medoxomil" target="Candesartan cilexetil">
   <data key="d25">1</data>
 </edge>
-<edge source="Azilsartan medoxomil" target="Telmisartan">
+<edge source="Azilsartan medoxomil" target="Olmesartan">
+  <data key="d25">1</data>
+</edge>
+<edge source="Azilsartan medoxomil" target="Angiotensin II">
   <data key="d25">1</data>
 </edge>
 <edge source="Azilsartan medoxomil" target="Eprosartan">
+  <data key="d25">1</data>
+</edge>
+<edge source="Azilsartan medoxomil" target="Candesartan">
+  <data key="d25">1</data>
+</edge>
+<edge source="Azilsartan medoxomil" target="Telmisartan">
+  <data key="d25">1</data>
+</edge>
+<edge source="Azilsartan medoxomil" target="Irbesartan">
+  <data key="d25">1</data>
+</edge>
+<edge source="Cysteine" target="Glutathione">
   <data key="d25">1</data>
 </edge>
 <edge source="Cysteine" target="Acetylcysteine">
@@ -8072,16 +8075,13 @@
 <edge source="Cysteine" target="Serine">
   <data key="d25">1</data>
 </edge>
-<edge source="Cysteine" target="Glutathione">
-  <data key="d25">1</data>
-</edge>
-<edge source="Bicalutamide" target="Norelgestromin">
+<edge source="Bicalutamide" target="Tamoxifen">
   <data key="d25">1</data>
 </edge>
 <edge source="Bicalutamide" target="Progesterone">
   <data key="d25">1</data>
 </edge>
-<edge source="Bicalutamide" target="Tamoxifen">
+<edge source="Bicalutamide" target="Norelgestromin">
   <data key="d25">1</data>
 </edge>
 <edge source="Bicalutamide" target="Enzalutamide">
@@ -8090,16 +8090,25 @@
 <edge source="Formoterol" target="Amiodarone">
   <data key="d25">3</data>
 </edge>
-<edge source="Prednisolone acetate" target="Prednisolone">
+<edge source="Prednisolone acetate" target="Hydrocortisone">
+  <data key="d25">1</data>
+</edge>
+<edge source="Prednisolone acetate" target="Budesonide">
+  <data key="d25">1</data>
+</edge>
+<edge source="Prednisolone acetate" target="Ciclesonide">
   <data key="d25">1</data>
 </edge>
 <edge source="Prednisolone acetate" target="Progesterone">
   <data key="d25">1</data>
 </edge>
-<edge source="Prednisolone acetate" target="Hydrocortisone">
+<edge source="Prednisolone acetate" target="Betamethasone">
   <data key="d25">1</data>
 </edge>
-<edge source="Prednisolone acetate" target="Prednisone">
+<edge source="Prednisolone acetate" target="Mometasone">
+  <data key="d25">1</data>
+</edge>
+<edge source="Prednisolone acetate" target="Prednisolone">
   <data key="d25">1</data>
 </edge>
 <edge source="Prednisolone acetate" target="Dexamethasone">
@@ -8108,56 +8117,44 @@
 <edge source="Prednisolone acetate" target="Mometasone furoate">
   <data key="d25">1</data>
 </edge>
-<edge source="Prednisolone acetate" target="Budesonide">
-  <data key="d25">1</data>
-</edge>
-<edge source="Prednisolone acetate" target="Mometasone">
-  <data key="d25">1</data>
-</edge>
-<edge source="Prednisolone acetate" target="Betamethasone">
-  <data key="d25">1</data>
-</edge>
-<edge source="Prednisolone acetate" target="Ciclesonide">
-  <data key="d25">1</data>
-</edge>
-<edge source="Enzalutamide" target="Norelgestromin">
-  <data key="d25">1</data>
-</edge>
-<edge source="Enzalutamide" target="Progesterone">
+<edge source="Prednisolone acetate" target="Prednisone">
   <data key="d25">1</data>
 </edge>
 <edge source="Enzalutamide" target="Tamoxifen">
   <data key="d25">1</data>
 </edge>
-<edge source="Estradiol" target="Progesterone">
-  <data key="d25">2</data>
-</edge>
-<edge source="Estradiol" target="Ritonavir">
+<edge source="Enzalutamide" target="Progesterone">
   <data key="d25">1</data>
 </edge>
-<edge source="Estradiol" target="Vitamin E">
+<edge source="Enzalutamide" target="Norelgestromin">
+  <data key="d25">1</data>
+</edge>
+<edge source="Estradiol" target="Piperine">
   <data key="d25">1</data>
 </edge>
 <edge source="Estradiol" target="Fenofibrate">
   <data key="d25">1</data>
 </edge>
-<edge source="Estradiol" target="Dexamethasone">
+<edge source="Estradiol" target="Toremifene">
+  <data key="d25">1</data>
+</edge>
+<edge source="Estradiol" target="Nifedipine">
+  <data key="d25">1</data>
+</edge>
+<edge source="Estradiol" target="Vitamin E">
+  <data key="d25">1</data>
+</edge>
+<edge source="Estradiol" target="Ethinylestradiol">
+  <data key="d25">2</data>
+</edge>
+<edge source="Estradiol" target="Ritonavir">
   <data key="d25">1</data>
 </edge>
 <edge source="Estradiol" target="Tamoxifen">
   <data key="d25">3</data>
 </edge>
-<edge source="Estradiol" target="Ethinylestradiol">
+<edge source="Estradiol" target="Progesterone">
   <data key="d25">2</data>
-</edge>
-<edge source="Estradiol" target="Genistein">
-  <data key="d25">4</data>
-</edge>
-<edge source="Estradiol" target="Piperine">
-  <data key="d25">1</data>
-</edge>
-<edge source="Estradiol" target="Nifedipine">
-  <data key="d25">1</data>
 </edge>
 <edge source="Estradiol" target="Resveratrol">
   <data key="d25">2</data>
@@ -8165,58 +8162,70 @@
 <edge source="Estradiol" target="Isoflurane">
   <data key="d25">1</data>
 </edge>
-<edge source="Estradiol" target="Toremifene">
-  <data key="d25">1</data>
+<edge source="Estradiol" target="Genistein">
+  <data key="d25">4</data>
 </edge>
-<edge source="Ibudilast" target="Dipyridamole">
+<edge source="Estradiol" target="Dexamethasone">
   <data key="d25">1</data>
 </edge>
 <edge source="Ibudilast" target="Iloprost">
   <data key="d25">4</data>
 </edge>
-<edge source="Rosuvastatin" target="Atorvastatin">
+<edge source="Ibudilast" target="Dipyridamole">
+  <data key="d25">1</data>
+</edge>
+<edge source="Rosuvastatin" target="Cannabidiol">
   <data key="d25">1</data>
 </edge>
 <edge source="Rosuvastatin" target="Simvastatin">
   <data key="d25">2</data>
 </edge>
-<edge source="Rosuvastatin" target="Cannabidiol">
-  <data key="d25">1</data>
-</edge>
-<edge source="Thimerosal" target="Cyanocobalamin">
+<edge source="Rosuvastatin" target="Atorvastatin">
   <data key="d25">1</data>
 </edge>
 <edge source="Thimerosal" target="Acetylcysteine">
   <data key="d25">1</data>
 </edge>
-<edge source="alpha-Linolenic acid" target="Clofazimine">
-  <data key="d25">1</data>
-</edge>
-<edge source="alpha-Linolenic acid" target="Tramadol">
-  <data key="d25">1</data>
-</edge>
-<edge source="alpha-Linolenic acid" target="Cannabidiol">
-  <data key="d25">2</data>
-</edge>
-<edge source="alpha-Linolenic acid" target="Amiodarone">
-  <data key="d25">2</data>
-</edge>
-<edge source="alpha-Linolenic acid" target="Curcumin">
+<edge source="Thimerosal" target="Cyanocobalamin">
   <data key="d25">1</data>
 </edge>
 <edge source="alpha-Linolenic acid" target="Fenofibrate">
   <data key="d25">1</data>
 </edge>
-<edge source="alpha-Linolenic acid" target="Omega-3 fatty acids">
+<edge source="alpha-Linolenic acid" target="Curcumin">
+  <data key="d25">1</data>
+</edge>
+<edge source="alpha-Linolenic acid" target="Oleic Acid">
+  <data key="d25">4</data>
+</edge>
+<edge source="alpha-Linolenic acid" target="Cannabidiol">
   <data key="d25">2</data>
 </edge>
-<edge source="alpha-Linolenic acid" target="Ibuprofen">
+<edge source="alpha-Linolenic acid" target="Camphor">
+  <data key="d25">1</data>
+</edge>
+<edge source="alpha-Linolenic acid" target="Amiodarone">
   <data key="d25">2</data>
+</edge>
+<edge source="alpha-Linolenic acid" target="Icosapent">
+  <data key="d25">6</data>
 </edge>
 <edge source="alpha-Linolenic acid" target="Acetaminophen">
   <data key="d25">1</data>
 </edge>
-<edge source="alpha-Linolenic acid" target="Camphor">
+<edge source="alpha-Linolenic acid" target="Resveratrol">
+  <data key="d25">2</data>
+</edge>
+<edge source="alpha-Linolenic acid" target="Tramadol">
+  <data key="d25">1</data>
+</edge>
+<edge source="alpha-Linolenic acid" target="Omega-3 fatty acids">
+  <data key="d25">2</data>
+</edge>
+<edge source="alpha-Linolenic acid" target="Resiniferatoxin">
+  <data key="d25">1</data>
+</edge>
+<edge source="alpha-Linolenic acid" target="Clofazimine">
   <data key="d25">1</data>
 </edge>
 <edge source="alpha-Linolenic acid" target="Indomethacin">
@@ -8225,86 +8234,95 @@
 <edge source="alpha-Linolenic acid" target="Pioglitazone">
   <data key="d25">1</data>
 </edge>
-<edge source="alpha-Linolenic acid" target="Resiniferatoxin">
-  <data key="d25">1</data>
-</edge>
-<edge source="alpha-Linolenic acid" target="Resveratrol">
-  <data key="d25">2</data>
-</edge>
 <edge source="alpha-Linolenic acid" target="Telmisartan">
   <data key="d25">1</data>
 </edge>
-<edge source="alpha-Linolenic acid" target="Oleic Acid">
-  <data key="d25">4</data>
-</edge>
-<edge source="alpha-Linolenic acid" target="Icosapent">
-  <data key="d25">6</data>
-</edge>
-<edge source="Prazosin" target="Fluvoxamine">
-  <data key="d25">1</data>
-</edge>
-<edge source="Prazosin" target="Tramadol">
+<edge source="alpha-Linolenic acid" target="Ibuprofen">
   <data key="d25">2</data>
-</edge>
-<edge source="Prazosin" target="Amiodarone">
-  <data key="d25">1</data>
-</edge>
-<edge source="Prazosin" target="Erythromycin">
-  <data key="d25">1</data>
-</edge>
-<edge source="Prazosin" target="Chlorpromazine">
-  <data key="d25">6</data>
-</edge>
-<edge source="Prazosin" target="Yohimbine">
-  <data key="d25">2</data>
-</edge>
-<edge source="Prazosin" target="Quetiapine">
-  <data key="d25">5</data>
-</edge>
-<edge source="Prazosin" target="Verapamil">
-  <data key="d25">4</data>
-</edge>
-<edge source="Prazosin" target="Trifluoperazine">
-  <data key="d25">1</data>
 </edge>
 <edge source="Prazosin" target="Tamoxifen">
-  <data key="d25">1</data>
-</edge>
-<edge source="Prazosin" target="Clarithromycin">
   <data key="d25">1</data>
 </edge>
 <edge source="Prazosin" target="Fluoxetine">
   <data key="d25">1</data>
 </edge>
+<edge source="Prazosin" target="Tramadol">
+  <data key="d25">2</data>
+</edge>
 <edge source="Prazosin" target="Dexmedetomidine">
   <data key="d25">1</data>
 </edge>
-<edge source="Tamoxifen" target="Norelgestromin">
-  <data key="d25">1</data>
+<edge source="Prazosin" target="Chlorpromazine">
+  <data key="d25">6</data>
 </edge>
-<edge source="Tamoxifen" target="Progesterone">
+<edge source="Prazosin" target="Verapamil">
   <data key="d25">4</data>
 </edge>
-<edge source="Tamoxifen" target="Ritonavir">
+<edge source="Prazosin" target="Fluvoxamine">
   <data key="d25">1</data>
 </edge>
-<edge source="Tamoxifen" target="Vitamin E">
-  <data key="d25">3</data>
+<edge source="Prazosin" target="Yohimbine">
+  <data key="d25">2</data>
 </edge>
-<edge source="Tamoxifen" target="Amiodarone">
+<edge source="Prazosin" target="Trifluoperazine">
   <data key="d25">1</data>
 </edge>
-<edge source="Tamoxifen" target="Erythromycin">
+<edge source="Prazosin" target="Quetiapine">
+  <data key="d25">5</data>
+</edge>
+<edge source="Prazosin" target="Erythromycin">
+  <data key="d25">1</data>
+</edge>
+<edge source="Prazosin" target="Clarithromycin">
+  <data key="d25">1</data>
+</edge>
+<edge source="Prazosin" target="Amiodarone">
+  <data key="d25">1</data>
+</edge>
+<edge source="Tamoxifen" target="Piperine">
+  <data key="d25">1</data>
+</edge>
+<edge source="Tamoxifen" target="Fluoxetine">
   <data key="d25">1</data>
 </edge>
 <edge source="Tamoxifen" target="Fenofibrate">
   <data key="d25">1</data>
 </edge>
-<edge source="Tamoxifen" target="Dexamethasone">
-  <data key="d25">1</data>
+<edge source="Tamoxifen" target="Toremifene">
+  <data key="d25">2</data>
 </edge>
 <edge source="Tamoxifen" target="Ethinylestradiol">
   <data key="d25">2</data>
+</edge>
+<edge source="Tamoxifen" target="Nifedipine">
+  <data key="d25">1</data>
+</edge>
+<edge source="Tamoxifen" target="Vitamin E">
+  <data key="d25">3</data>
+</edge>
+<edge source="Tamoxifen" target="Ritonavir">
+  <data key="d25">1</data>
+</edge>
+<edge source="Tamoxifen" target="Clarithromycin">
+  <data key="d25">1</data>
+</edge>
+<edge source="Tamoxifen" target="Amiodarone">
+  <data key="d25">1</data>
+</edge>
+<edge source="Tamoxifen" target="Progesterone">
+  <data key="d25">4</data>
+</edge>
+<edge source="Tamoxifen" target="Resveratrol">
+  <data key="d25">2</data>
+</edge>
+<edge source="Tamoxifen" target="Fostamatinib">
+  <data key="d25">5</data>
+</edge>
+<edge source="Tamoxifen" target="Norelgestromin">
+  <data key="d25">1</data>
+</edge>
+<edge source="Tamoxifen" target="Chlorpromazine">
+  <data key="d25">1</data>
 </edge>
 <edge source="Tamoxifen" target="Fluvoxamine">
   <data key="d25">1</data>
@@ -8312,37 +8330,25 @@
 <edge source="Tamoxifen" target="Genistein">
   <data key="d25">4</data>
 </edge>
-<edge source="Tamoxifen" target="Piperine">
-  <data key="d25">1</data>
-</edge>
-<edge source="Tamoxifen" target="Nifedipine">
-  <data key="d25">1</data>
-</edge>
-<edge source="Tamoxifen" target="Chlorpromazine">
-  <data key="d25">1</data>
-</edge>
-<edge source="Tamoxifen" target="Resveratrol">
-  <data key="d25">2</data>
-</edge>
 <edge source="Tamoxifen" target="Verapamil">
   <data key="d25">1</data>
 </edge>
-<edge source="Tamoxifen" target="Toremifene">
-  <data key="d25">2</data>
-</edge>
-<edge source="Tamoxifen" target="Clarithromycin">
+<edge source="Tamoxifen" target="Dexamethasone">
   <data key="d25">1</data>
 </edge>
-<edge source="Tamoxifen" target="Fluoxetine">
+<edge source="Tamoxifen" target="Erythromycin">
   <data key="d25">1</data>
 </edge>
 <edge source="Tamoxifen" target="Minocycline">
   <data key="d25">1</data>
 </edge>
-<edge source="Tamoxifen" target="Fostamatinib">
-  <data key="d25">5</data>
-</edge>
 <edge source="Disulfiram" target="Ascorbic acid">
+  <data key="d25">1</data>
+</edge>
+<edge source="Diosmin" target="Atorvastatin">
+  <data key="d25">1</data>
+</edge>
+<edge source="Diosmin" target="Resveratrol">
   <data key="d25">1</data>
 </edge>
 <edge source="Diosmin" target="Omeprazole">
@@ -8351,14 +8357,23 @@
 <edge source="Diosmin" target="Leflunomide">
   <data key="d25">1</data>
 </edge>
-<edge source="Diosmin" target="Resveratrol">
-  <data key="d25">1</data>
-</edge>
-<edge source="Diosmin" target="Atorvastatin">
-  <data key="d25">1</data>
-</edge>
 <edge source="TMC-310911" target="Nelfinavir">
   <data key="d25">1</data>
+</edge>
+<edge source="Glutathione" target="Acetylcysteine">
+  <data key="d25">1</data>
+</edge>
+<edge source="Glutathione" target="Curcumin">
+  <data key="d25">1</data>
+</edge>
+<edge source="Glutathione" target="Captopril">
+  <data key="d25">1</data>
+</edge>
+<edge source="Glutathione" target="Chloroquine">
+  <data key="d25">2</data>
+</edge>
+<edge source="Glutathione" target="Cannabidiol">
+  <data key="d25">2</data>
 </edge>
 <edge source="Glutathione" target="Indomethacin">
   <data key="d25">1</data>
@@ -8366,22 +8381,7 @@
 <edge source="Glutathione" target="Tranilast">
   <data key="d25">1</data>
 </edge>
-<edge source="Glutathione" target="Cannabidiol">
-  <data key="d25">2</data>
-</edge>
-<edge source="Glutathione" target="Curcumin">
-  <data key="d25">1</data>
-</edge>
-<edge source="Glutathione" target="Acetylcysteine">
-  <data key="d25">1</data>
-</edge>
-<edge source="Glutathione" target="Chloroquine">
-  <data key="d25">2</data>
-</edge>
 <edge source="Glutathione" target="Minocycline">
-  <data key="d25">1</data>
-</edge>
-<edge source="Glutathione" target="Captopril">
   <data key="d25">1</data>
 </edge>
 <edge source="Aliskiren" target="Lisinopril">
@@ -8390,22 +8390,13 @@
 <edge source="Levamisole" target="Fluoxetine">
   <data key="d25">1</data>
 </edge>
-<edge source="Dexamethasone" target="Ritonavir">
+<edge source="Dexamethasone" target="Piperine">
   <data key="d25">1</data>
 </edge>
-<edge source="Dexamethasone" target="Progesterone">
-  <data key="d25">1</data>
-</edge>
-<edge source="Dexamethasone" target="Hydrocortisone">
+<edge source="Dexamethasone" target="Budesonide">
   <data key="d25">2</data>
 </edge>
-<edge source="Dexamethasone" target="Vitamin E">
-  <data key="d25">1</data>
-</edge>
-<edge source="Dexamethasone" target="Citrulline">
-  <data key="d25">1</data>
-</edge>
-<edge source="Dexamethasone" target="Prednisone">
+<edge source="Dexamethasone" target="Ciclesonide">
   <data key="d25">1</data>
 </edge>
 <edge source="Dexamethasone" target="Fenofibrate">
@@ -8414,40 +8405,55 @@
 <edge source="Dexamethasone" target="Ethinylestradiol">
   <data key="d25">1</data>
 </edge>
-<edge source="Dexamethasone" target="Ciclesonide">
-  <data key="d25">1</data>
-</edge>
-<edge source="Dexamethasone" target="Prednisolone">
-  <data key="d25">1</data>
-</edge>
-<edge source="Dexamethasone" target="Genistein">
-  <data key="d25">1</data>
-</edge>
-<edge source="Dexamethasone" target="Piperine">
-  <data key="d25">1</data>
-</edge>
 <edge source="Dexamethasone" target="Nifedipine">
-  <data key="d25">1</data>
-</edge>
-<edge source="Dexamethasone" target="Mometasone furoate">
-  <data key="d25">1</data>
-</edge>
-<edge source="Dexamethasone" target="Budesonide">
-  <data key="d25">2</data>
-</edge>
-<edge source="Dexamethasone" target="Resveratrol">
   <data key="d25">1</data>
 </edge>
 <edge source="Dexamethasone" target="Mometasone">
   <data key="d25">1</data>
 </edge>
-<edge source="Dexamethasone" target="Minocycline">
-  <data key="d25">1</data>
-</edge>
 <edge source="Dexamethasone" target="Betamethasone">
   <data key="d25">1</data>
 </edge>
+<edge source="Dexamethasone" target="Vitamin E">
+  <data key="d25">1</data>
+</edge>
+<edge source="Dexamethasone" target="Citrulline">
+  <data key="d25">1</data>
+</edge>
+<edge source="Dexamethasone" target="Prednisolone">
+  <data key="d25">1</data>
+</edge>
+<edge source="Dexamethasone" target="Mometasone furoate">
+  <data key="d25">1</data>
+</edge>
+<edge source="Dexamethasone" target="Ritonavir">
+  <data key="d25">1</data>
+</edge>
+<edge source="Dexamethasone" target="Prednisone">
+  <data key="d25">1</data>
+</edge>
+<edge source="Dexamethasone" target="Hydrocortisone">
+  <data key="d25">2</data>
+</edge>
+<edge source="Dexamethasone" target="Progesterone">
+  <data key="d25">1</data>
+</edge>
+<edge source="Dexamethasone" target="Resveratrol">
+  <data key="d25">1</data>
+</edge>
+<edge source="Dexamethasone" target="Genistein">
+  <data key="d25">1</data>
+</edge>
+<edge source="Dexamethasone" target="Minocycline">
+  <data key="d25">1</data>
+</edge>
 <edge source="Fingolimod" target="Ozanimod">
+  <data key="d25">2</data>
+</edge>
+<edge source="Nadroparin" target="Bemiparin">
+  <data key="d25">1</data>
+</edge>
+<edge source="Nadroparin" target="Heparin">
   <data key="d25">2</data>
 </edge>
 <edge source="Nadroparin" target="Acetylsalicylic acid">
@@ -8456,19 +8462,10 @@
 <edge source="Nadroparin" target="Enoxaparin">
   <data key="d25">1</data>
 </edge>
-<edge source="Nadroparin" target="Heparin">
-  <data key="d25">2</data>
-</edge>
-<edge source="Nadroparin" target="Bemiparin">
-  <data key="d25">1</data>
-</edge>
 <edge source="Nadroparin" target="Sulodexide">
   <data key="d25">1</data>
 </edge>
 <edge source="Nadroparin" target="Fondaparinux">
-  <data key="d25">1</data>
-</edge>
-<edge source="Moxifloxacin" target="Genistein">
   <data key="d25">1</data>
 </edge>
 <edge source="Moxifloxacin" target="Etoposide">
@@ -8477,44 +8474,77 @@
 <edge source="Moxifloxacin" target="Levofloxacin">
   <data key="d25">2</data>
 </edge>
-<edge source="Mometasone" target="Norelgestromin">
+<edge source="Moxifloxacin" target="Genistein">
   <data key="d25">1</data>
-</edge>
-<edge source="Mometasone" target="Prednisolone">
-  <data key="d25">1</data>
-</edge>
-<edge source="Mometasone" target="Progesterone">
-  <data key="d25">2</data>
 </edge>
 <edge source="Mometasone" target="Hydrocortisone">
   <data key="d25">1</data>
 </edge>
-<edge source="Mometasone" target="Prednisone">
-  <data key="d25">1</data>
-</edge>
-<edge source="Mometasone" target="Mometasone furoate">
-  <data key="d25">2</data>
-</edge>
 <edge source="Mometasone" target="Budesonide">
-  <data key="d25">1</data>
-</edge>
-<edge source="Mometasone" target="Betamethasone">
   <data key="d25">1</data>
 </edge>
 <edge source="Mometasone" target="Ciclesonide">
   <data key="d25">1</data>
 </edge>
+<edge source="Mometasone" target="Progesterone">
+  <data key="d25">2</data>
+</edge>
+<edge source="Mometasone" target="Norelgestromin">
+  <data key="d25">1</data>
+</edge>
+<edge source="Mometasone" target="Betamethasone">
+  <data key="d25">1</data>
+</edge>
+<edge source="Mometasone" target="Prednisolone">
+  <data key="d25">1</data>
+</edge>
+<edge source="Mometasone" target="Mometasone furoate">
+  <data key="d25">2</data>
+</edge>
+<edge source="Mometasone" target="Prednisone">
+  <data key="d25">1</data>
+</edge>
 <edge source="Ceftriaxone" target="Piperacillin">
   <data key="d25">1</data>
 </edge>
-<edge source="Tramadol" target="Progesterone">
-  <data key="d25">1</data>
+<edge source="Tramadol" target="Fluoxetine">
+  <data key="d25">2</data>
+</edge>
+<edge source="Tramadol" target="Ifenprodil">
+  <data key="d25">2</data>
+</edge>
+<edge source="Tramadol" target="Acetylcysteine">
+  <data key="d25">5</data>
 </edge>
 <edge source="Tramadol" target="Defibrotide">
   <data key="d25">1</data>
 </edge>
+<edge source="Tramadol" target="Oxycodone">
+  <data key="d25">3</data>
+</edge>
 <edge source="Tramadol" target="Cannabidiol">
   <data key="d25">4</data>
+</edge>
+<edge source="Tramadol" target="Metenkefalin">
+  <data key="d25">2</data>
+</edge>
+<edge source="Tramadol" target="Camphor">
+  <data key="d25">1</data>
+</edge>
+<edge source="Tramadol" target="Aprepitant">
+  <data key="d25">1</data>
+</edge>
+<edge source="Tramadol" target="Levomenthol">
+  <data key="d25">1</data>
+</edge>
+<edge source="Tramadol" target="Yohimbine">
+  <data key="d25">4</data>
+</edge>
+<edge source="Tramadol" target="Quetiapine">
+  <data key="d25">6</data>
+</edge>
+<edge source="Tramadol" target="Naltrexone">
+  <data key="d25">3</data>
 </edge>
 <edge source="Tramadol" target="Icosapent">
   <data key="d25">1</data>
@@ -8522,59 +8552,29 @@
 <edge source="Tramadol" target="Propofol">
   <data key="d25">1</data>
 </edge>
-<edge source="Tramadol" target="Quetiapine">
-  <data key="d25">6</data>
-</edge>
-<edge source="Tramadol" target="Ketamine">
-  <data key="d25">10</data>
-</edge>
-<edge source="Tramadol" target="Aprepitant">
-  <data key="d25">1</data>
-</edge>
-<edge source="Tramadol" target="Dexmedetomidine">
+<edge source="Tramadol" target="Progesterone">
   <data key="d25">1</data>
 </edge>
 <edge source="Tramadol" target="Acetaminophen">
   <data key="d25">1</data>
 </edge>
-<edge source="Tramadol" target="Oxycodone">
-  <data key="d25">3</data>
-</edge>
-<edge source="Tramadol" target="Camphor">
-  <data key="d25">1</data>
-</edge>
-<edge source="Tramadol" target="Fluvoxamine">
-  <data key="d25">1</data>
-</edge>
-<edge source="Tramadol" target="Ifenprodil">
-  <data key="d25">2</data>
-</edge>
-<edge source="Tramadol" target="Naltrexone">
-  <data key="d25">3</data>
-</edge>
-<edge source="Tramadol" target="Acetylcysteine">
-  <data key="d25">5</data>
-</edge>
-<edge source="Tramadol" target="Yohimbine">
-  <data key="d25">4</data>
-</edge>
-<edge source="Tramadol" target="Chlorpromazine">
-  <data key="d25">6</data>
-</edge>
-<edge source="Tramadol" target="Metenkefalin">
-  <data key="d25">2</data>
-</edge>
-<edge source="Tramadol" target="Verapamil">
-  <data key="d25">1</data>
-</edge>
-<edge source="Tramadol" target="Fluoxetine">
-  <data key="d25">2</data>
-</edge>
-<edge source="Tramadol" target="Levomenthol">
+<edge source="Tramadol" target="Dexmedetomidine">
   <data key="d25">1</data>
 </edge>
 <edge source="Tramadol" target="Resiniferatoxin">
   <data key="d25">1</data>
+</edge>
+<edge source="Tramadol" target="Chlorpromazine">
+  <data key="d25">6</data>
+</edge>
+<edge source="Tramadol" target="Fluvoxamine">
+  <data key="d25">1</data>
+</edge>
+<edge source="Tramadol" target="Verapamil">
+  <data key="d25">1</data>
+</edge>
+<edge source="Tramadol" target="Ketamine">
+  <data key="d25">10</data>
 </edge>
 <edge source="Tramadol" target="Pentoxifylline">
   <data key="d25">1</data>
@@ -8588,20 +8588,14 @@
 <edge source="Finasteride" target="Dutasteride">
   <data key="d25">2</data>
 </edge>
-<edge source="Minocycline" target="Vitamin E">
-  <data key="d25">1</data>
-</edge>
-<edge source="Minocycline" target="Acetylsalicylic acid">
-  <data key="d25">8</data>
-</edge>
-<edge source="Minocycline" target="Citrulline">
-  <data key="d25">1</data>
-</edge>
 <edge source="Minocycline" target="Montelukast">
   <data key="d25">1</data>
 </edge>
 <edge source="Minocycline" target="Artenimol">
   <data key="d25">1</data>
+</edge>
+<edge source="Minocycline" target="Fostamatinib">
+  <data key="d25">8</data>
 </edge>
 <edge source="Minocycline" target="Resveratrol">
   <data key="d25">1</data>
@@ -8609,22 +8603,28 @@
 <edge source="Minocycline" target="Captopril">
   <data key="d25">1</data>
 </edge>
-<edge source="Minocycline" target="Fostamatinib">
+<edge source="Minocycline" target="Acetylsalicylic acid">
   <data key="d25">8</data>
 </edge>
-<edge source="Tenofovir" target="Emtricitabine">
+<edge source="Minocycline" target="Vitamin E">
+  <data key="d25">1</data>
+</edge>
+<edge source="Minocycline" target="Citrulline">
+  <data key="d25">1</data>
+</edge>
+<edge source="Tenofovir" target="Tenofovir disoproxil">
   <data key="d25">1</data>
 </edge>
 <edge source="Tenofovir" target="Tenofovir alafenamide">
   <data key="d25">3</data>
 </edge>
-<edge source="Tenofovir" target="Tenofovir disoproxil">
-  <data key="d25">1</data>
-</edge>
-<edge source="Pantoprazole" target="Omeprazole">
+<edge source="Tenofovir" target="Emtricitabine">
   <data key="d25">1</data>
 </edge>
 <edge source="Pantoprazole" target="Citrulline">
+  <data key="d25">1</data>
+</edge>
+<edge source="Pantoprazole" target="Omeprazole">
   <data key="d25">1</data>
 </edge>
 <edge source="Pantoprazole" target="Rabeprazole">
@@ -8633,35 +8633,50 @@
 <edge source="Piclidenoson" target="Fostamatinib">
   <data key="d25">1</data>
 </edge>
-<edge source="Ibuprofen" target="Clofazimine">
+<edge source="Ibuprofen" target="Lenalidomide">
   <data key="d25">1</data>
-</edge>
-<edge source="Ibuprofen" target="Cannabidiol">
-  <data key="d25">3</data>
 </edge>
 <edge source="Ibuprofen" target="Naproxen">
   <data key="d25">2</data>
 </edge>
-<edge source="Ibuprofen" target="Amiodarone">
-  <data key="d25">2</data>
+<edge source="Ibuprofen" target="Fenofibrate">
+  <data key="d25">1</data>
 </edge>
 <edge source="Ibuprofen" target="Curcumin">
   <data key="d25">1</data>
 </edge>
-<edge source="Ibuprofen" target="Fenofibrate">
-  <data key="d25">1</data>
-</edge>
-<edge source="Ibuprofen" target="Omega-3 fatty acids">
+<edge source="Ibuprofen" target="Oleic Acid">
   <data key="d25">2</data>
 </edge>
-<edge source="Ibuprofen" target="Acetaminophen">
+<edge source="Ibuprofen" target="Cannabidiol">
+  <data key="d25">3</data>
+</edge>
+<edge source="Ibuprofen" target="Amiodarone">
   <data key="d25">2</data>
+</edge>
+<edge source="Ibuprofen" target="Icosapent">
+  <data key="d25">4</data>
 </edge>
 <edge source="Ibuprofen" target="Thalidomide">
   <data key="d25">1</data>
 </edge>
-<edge source="Ibuprofen" target="Lenalidomide">
+<edge source="Ibuprofen" target="Acetaminophen">
+  <data key="d25">2</data>
+</edge>
+<edge source="Ibuprofen" target="Resveratrol">
+  <data key="d25">4</data>
+</edge>
+<edge source="Ibuprofen" target="Omega-3 fatty acids">
+  <data key="d25">2</data>
+</edge>
+<edge source="Ibuprofen" target="Celecoxib">
   <data key="d25">1</data>
+</edge>
+<edge source="Ibuprofen" target="Clofazimine">
+  <data key="d25">1</data>
+</edge>
+<edge source="Ibuprofen" target="Acetylsalicylic acid">
+  <data key="d25">2</data>
 </edge>
 <edge source="Ibuprofen" target="Indomethacin">
   <data key="d25">4</data>
@@ -8669,43 +8684,13 @@
 <edge source="Ibuprofen" target="Pioglitazone">
   <data key="d25">1</data>
 </edge>
-<edge source="Ibuprofen" target="Acetylsalicylic acid">
-  <data key="d25">2</data>
-</edge>
-<edge source="Ibuprofen" target="Celecoxib">
-  <data key="d25">1</data>
-</edge>
-<edge source="Ibuprofen" target="Resveratrol">
-  <data key="d25">4</data>
-</edge>
 <edge source="Ibuprofen" target="Telmisartan">
-  <data key="d25">1</data>
-</edge>
-<edge source="Ibuprofen" target="Oleic Acid">
-  <data key="d25">2</data>
-</edge>
-<edge source="Ibuprofen" target="Icosapent">
-  <data key="d25">4</data>
-</edge>
-<edge source="Alprostadil" target="Indomethacin">
   <data key="d25">1</data>
 </edge>
 <edge source="Alprostadil" target="Iloprost">
   <data key="d25">2</data>
 </edge>
-<edge source="Leflunomide" target="Omeprazole">
-  <data key="d25">1</data>
-</edge>
-<edge source="Leflunomide" target="Atovaquone">
-  <data key="d25">1</data>
-</edge>
-<edge source="Leflunomide" target="Genistein">
-  <data key="d25">1</data>
-</edge>
-<edge source="Leflunomide" target="Brequinar">
-  <data key="d25">1</data>
-</edge>
-<edge source="Leflunomide" target="Resveratrol">
+<edge source="Alprostadil" target="Indomethacin">
   <data key="d25">1</data>
 </edge>
 <edge source="Leflunomide" target="Baricitinib">
@@ -8714,79 +8699,100 @@
 <edge source="Leflunomide" target="Atorvastatin">
   <data key="d25">1</data>
 </edge>
+<edge source="Leflunomide" target="Brequinar">
+  <data key="d25">1</data>
+</edge>
 <edge source="Leflunomide" target="Fostamatinib">
   <data key="d25">1</data>
 </edge>
-<edge source="Fondaparinux" target="Apixaban">
+<edge source="Leflunomide" target="Resveratrol">
   <data key="d25">1</data>
 </edge>
-<edge source="Fondaparinux" target="Edoxaban">
+<edge source="Leflunomide" target="Omeprazole">
   <data key="d25">1</data>
 </edge>
-<edge source="Fondaparinux" target="Rivaroxaban">
+<edge source="Leflunomide" target="Genistein">
   <data key="d25">1</data>
 </edge>
-<edge source="Fondaparinux" target="Heparin">
-  <data key="d25">2</data>
-</edge>
-<edge source="Fondaparinux" target="Enoxaparin">
-  <data key="d25">2</data>
-</edge>
-<edge source="Fondaparinux" target="Nafamostat">
+<edge source="Leflunomide" target="Atovaquone">
   <data key="d25">1</data>
 </edge>
 <edge source="Fondaparinux" target="Bemiparin">
   <data key="d25">2</data>
 </edge>
+<edge source="Fondaparinux" target="Edoxaban">
+  <data key="d25">1</data>
+</edge>
+<edge source="Fondaparinux" target="Nafamostat">
+  <data key="d25">1</data>
+</edge>
+<edge source="Fondaparinux" target="Heparin">
+  <data key="d25">2</data>
+</edge>
+<edge source="Fondaparinux" target="Rivaroxaban">
+  <data key="d25">1</data>
+</edge>
+<edge source="Fondaparinux" target="Enoxaparin">
+  <data key="d25">2</data>
+</edge>
 <edge source="Fondaparinux" target="Sulodexide">
   <data key="d25">1</data>
 </edge>
-<edge source="Acetaminophen" target="Cannabidiol">
-  <data key="d25">3</data>
-</edge>
-<edge source="Acetaminophen" target="Naproxen">
-  <data key="d25">2</data>
-</edge>
-<edge source="Acetaminophen" target="Thalidomide">
-  <data key="d25">1</data>
-</edge>
-<edge source="Acetaminophen" target="Camphor">
+<edge source="Fondaparinux" target="Apixaban">
   <data key="d25">1</data>
 </edge>
 <edge source="Acetaminophen" target="Lenalidomide">
   <data key="d25">1</data>
 </edge>
-<edge source="Acetaminophen" target="Indomethacin">
+<edge source="Acetaminophen" target="Naproxen">
   <data key="d25">2</data>
 </edge>
-<edge source="Acetaminophen" target="Acetylsalicylic acid">
-  <data key="d25">2</data>
+<edge source="Acetaminophen" target="Cannabidiol">
+  <data key="d25">3</data>
 </edge>
-<edge source="Acetaminophen" target="Celecoxib">
-  <data key="d25">1</data>
-</edge>
-<edge source="Acetaminophen" target="Resveratrol">
-  <data key="d25">2</data>
-</edge>
-<edge source="Acetaminophen" target="Resiniferatoxin">
+<edge source="Acetaminophen" target="Camphor">
   <data key="d25">1</data>
 </edge>
 <edge source="Acetaminophen" target="Icosapent">
   <data key="d25">3</data>
 </edge>
-<edge source="Emtricitabine" target="Tenofovir alafenamide">
+<edge source="Acetaminophen" target="Thalidomide">
+  <data key="d25">1</data>
+</edge>
+<edge source="Acetaminophen" target="Resveratrol">
+  <data key="d25">2</data>
+</edge>
+<edge source="Acetaminophen" target="Celecoxib">
+  <data key="d25">1</data>
+</edge>
+<edge source="Acetaminophen" target="Acetylsalicylic acid">
+  <data key="d25">2</data>
+</edge>
+<edge source="Acetaminophen" target="Indomethacin">
+  <data key="d25">2</data>
+</edge>
+<edge source="Acetaminophen" target="Resiniferatoxin">
   <data key="d25">1</data>
 </edge>
 <edge source="Emtricitabine" target="Tenofovir disoproxil">
   <data key="d25">1</data>
 </edge>
-<edge source="Ramipril" target="Perindopril">
-  <data key="d25">1</data>
-</edge>
-<edge source="Ramipril" target="Fosinopril">
+<edge source="Emtricitabine" target="Tenofovir alafenamide">
   <data key="d25">1</data>
 </edge>
 <edge source="Ramipril" target="Enalapril">
+  <data key="d25">1</data>
+</edge>
+<edge source="Ramipril" target="Moexipril">
+  <data key="d25">1</data>
+</edge>
+<edge source="Ramipril" target="Lisinopril">
+  <data key="d25">1</data>
+</edge>
+<edge source="Ramipril" target="Captopril">
+  <data key="d25">2</data>
+</edge>
+<edge source="Ramipril" target="Fosinopril">
   <data key="d25">1</data>
 </edge>
 <edge source="Ramipril" target="Benazepril">
@@ -8798,14 +8804,14 @@
 <edge source="Ramipril" target="Trandolapril">
   <data key="d25">1</data>
 </edge>
-<edge source="Ramipril" target="Lisinopril">
+<edge source="Ramipril" target="Perindopril">
   <data key="d25">1</data>
 </edge>
-<edge source="Ramipril" target="Moexipril">
+<edge source="Remdesivir" target="Ribavirin">
   <data key="d25">1</data>
 </edge>
-<edge source="Ramipril" target="Captopril">
-  <data key="d25">2</data>
+<edge source="Remdesivir" target="GC-376 free acid">
+  <data key="d25">1</data>
 </edge>
 <edge source="Remdesivir" target="GS-441524">
   <data key="d25">2</data>
@@ -8813,22 +8819,7 @@
 <edge source="Remdesivir" target="Galidesivir">
   <data key="d25">1</data>
 </edge>
-<edge source="Remdesivir" target="Ribavirin">
-  <data key="d25">1</data>
-</edge>
 <edge source="Remdesivir" target="PF-07304814">
-  <data key="d25">1</data>
-</edge>
-<edge source="Remdesivir" target="GC-376 free acid">
-  <data key="d25">1</data>
-</edge>
-<edge source="Candesartan" target="Olmesartan">
-  <data key="d25">1</data>
-</edge>
-<edge source="Candesartan" target="Irbesartan">
-  <data key="d25">1</data>
-</edge>
-<edge source="Candesartan" target="Angiotensin II">
   <data key="d25">1</data>
 </edge>
 <edge source="Candesartan" target="Losartan">
@@ -8837,19 +8828,19 @@
 <edge source="Candesartan" target="Candesartan cilexetil">
   <data key="d25">1</data>
 </edge>
-<edge source="Candesartan" target="Telmisartan">
+<edge source="Candesartan" target="Olmesartan">
+  <data key="d25">1</data>
+</edge>
+<edge source="Candesartan" target="Angiotensin II">
   <data key="d25">1</data>
 </edge>
 <edge source="Candesartan" target="Eprosartan">
   <data key="d25">1</data>
 </edge>
-<edge source="Eprosartan" target="Olmesartan">
+<edge source="Candesartan" target="Telmisartan">
   <data key="d25">1</data>
 </edge>
-<edge source="Eprosartan" target="Irbesartan">
-  <data key="d25">1</data>
-</edge>
-<edge source="Eprosartan" target="Angiotensin II">
+<edge source="Candesartan" target="Irbesartan">
   <data key="d25">1</data>
 </edge>
 <edge source="Eprosartan" target="Losartan">
@@ -8858,8 +8849,20 @@
 <edge source="Eprosartan" target="Candesartan cilexetil">
   <data key="d25">1</data>
 </edge>
+<edge source="Eprosartan" target="Olmesartan">
+  <data key="d25">1</data>
+</edge>
+<edge source="Eprosartan" target="Angiotensin II">
+  <data key="d25">1</data>
+</edge>
 <edge source="Eprosartan" target="Telmisartan">
   <data key="d25">1</data>
+</edge>
+<edge source="Eprosartan" target="Irbesartan">
+  <data key="d25">1</data>
+</edge>
+<edge source="Brexanolone" target="Sevoflurane">
+  <data key="d25">16</data>
 </edge>
 <edge source="Brexanolone" target="Propofol">
   <data key="d25">16</data>
@@ -8867,20 +8870,20 @@
 <edge source="Brexanolone" target="Isoflurane">
   <data key="d25">16</data>
 </edge>
+<edge source="Brexanolone" target="Ivermectin">
+  <data key="d25">1</data>
+</edge>
 <edge source="Brexanolone" target="Midazolam">
   <data key="d25">16</data>
 </edge>
-<edge source="Brexanolone" target="Sevoflurane">
-  <data key="d25">16</data>
-</edge>
-<edge source="Brexanolone" target="Ivermectin">
-  <data key="d25">1</data>
+<edge source="Liothyronine" target="Amiodarone">
+  <data key="d25">2</data>
 </edge>
 <edge source="Liothyronine" target="Acetylsalicylic acid">
   <data key="d25">1</data>
 </edge>
-<edge source="Liothyronine" target="Amiodarone">
-  <data key="d25">2</data>
+<edge source="Defibrotide" target="Cannabidiol">
+  <data key="d25">1</data>
 </edge>
 <edge source="Defibrotide" target="Mefloquine">
   <data key="d25">1</data>
@@ -8888,16 +8891,19 @@
 <edge source="Defibrotide" target="Pentoxifylline">
   <data key="d25">2</data>
 </edge>
-<edge source="Defibrotide" target="Cannabidiol">
+<edge source="Quinapril" target="Enalapril">
   <data key="d25">1</data>
 </edge>
-<edge source="Quinapril" target="Perindopril">
+<edge source="Quinapril" target="Moexipril">
+  <data key="d25">1</data>
+</edge>
+<edge source="Quinapril" target="Lisinopril">
+  <data key="d25">1</data>
+</edge>
+<edge source="Quinapril" target="Captopril">
   <data key="d25">1</data>
 </edge>
 <edge source="Quinapril" target="Fosinopril">
-  <data key="d25">1</data>
-</edge>
-<edge source="Quinapril" target="Enalapril">
   <data key="d25">1</data>
 </edge>
 <edge source="Quinapril" target="Benazepril">
@@ -8906,34 +8912,34 @@
 <edge source="Quinapril" target="Trandolapril">
   <data key="d25">1</data>
 </edge>
-<edge source="Quinapril" target="Lisinopril">
-  <data key="d25">1</data>
-</edge>
-<edge source="Quinapril" target="Moexipril">
-  <data key="d25">1</data>
-</edge>
-<edge source="Quinapril" target="Captopril">
-  <data key="d25">1</data>
-</edge>
-<edge source="Clarithromycin" target="Fluvoxamine">
-  <data key="d25">1</data>
-</edge>
-<edge source="Clarithromycin" target="Amiodarone">
-  <data key="d25">1</data>
-</edge>
-<edge source="Clarithromycin" target="Erythromycin">
-  <data key="d25">1</data>
-</edge>
-<edge source="Clarithromycin" target="Chlorpromazine">
-  <data key="d25">1</data>
-</edge>
-<edge source="Clarithromycin" target="Verapamil">
+<edge source="Quinapril" target="Perindopril">
   <data key="d25">1</data>
 </edge>
 <edge source="Clarithromycin" target="Fluoxetine">
   <data key="d25">1</data>
 </edge>
-<edge source="Enalapril" target="Perindopril">
+<edge source="Clarithromycin" target="Fluvoxamine">
+  <data key="d25">1</data>
+</edge>
+<edge source="Clarithromycin" target="Verapamil">
+  <data key="d25">1</data>
+</edge>
+<edge source="Clarithromycin" target="Chlorpromazine">
+  <data key="d25">1</data>
+</edge>
+<edge source="Clarithromycin" target="Erythromycin">
+  <data key="d25">1</data>
+</edge>
+<edge source="Clarithromycin" target="Amiodarone">
+  <data key="d25">1</data>
+</edge>
+<edge source="Enalapril" target="Moexipril">
+  <data key="d25">1</data>
+</edge>
+<edge source="Enalapril" target="Lisinopril">
+  <data key="d25">1</data>
+</edge>
+<edge source="Enalapril" target="Captopril">
   <data key="d25">1</data>
 </edge>
 <edge source="Enalapril" target="Fosinopril">
@@ -8945,16 +8951,16 @@
 <edge source="Enalapril" target="Trandolapril">
   <data key="d25">1</data>
 </edge>
-<edge source="Enalapril" target="Lisinopril">
+<edge source="Enalapril" target="Perindopril">
   <data key="d25">1</data>
 </edge>
-<edge source="Enalapril" target="Moexipril">
+<edge source="Benazepril" target="Moexipril">
   <data key="d25">1</data>
 </edge>
-<edge source="Enalapril" target="Captopril">
+<edge source="Benazepril" target="Lisinopril">
   <data key="d25">1</data>
 </edge>
-<edge source="Benazepril" target="Perindopril">
+<edge source="Benazepril" target="Captopril">
   <data key="d25">1</data>
 </edge>
 <edge source="Benazepril" target="Fosinopril">
@@ -8963,13 +8969,16 @@
 <edge source="Benazepril" target="Trandolapril">
   <data key="d25">1</data>
 </edge>
-<edge source="Benazepril" target="Lisinopril">
+<edge source="Benazepril" target="Perindopril">
   <data key="d25">1</data>
 </edge>
-<edge source="Benazepril" target="Moexipril">
+<edge source="Perindopril" target="Moexipril">
   <data key="d25">1</data>
 </edge>
-<edge source="Benazepril" target="Captopril">
+<edge source="Perindopril" target="Lisinopril">
+  <data key="d25">1</data>
+</edge>
+<edge source="Perindopril" target="Captopril">
   <data key="d25">1</data>
 </edge>
 <edge source="Perindopril" target="Fosinopril">
@@ -8978,16 +8987,13 @@
 <edge source="Perindopril" target="Trandolapril">
   <data key="d25">1</data>
 </edge>
-<edge source="Perindopril" target="Lisinopril">
+<edge source="Menadione" target="Primaquine">
   <data key="d25">1</data>
 </edge>
-<edge source="Perindopril" target="Moexipril">
+<edge source="Menadione" target="Resveratrol">
   <data key="d25">1</data>
 </edge>
-<edge source="Perindopril" target="Captopril">
-  <data key="d25">1</data>
-</edge>
-<edge source="Menadione" target="Suramin">
+<edge source="Menadione" target="Nafamostat">
   <data key="d25">1</data>
 </edge>
 <edge source="Menadione" target="Cannabidiol">
@@ -8996,19 +9002,31 @@
 <edge source="Menadione" target="Enoxaparin">
   <data key="d25">1</data>
 </edge>
-<edge source="Menadione" target="Nafamostat">
+<edge source="Menadione" target="Argatroban">
   <data key="d25">1</data>
 </edge>
 <edge source="Menadione" target="Bivalirudin">
   <data key="d25">1</data>
 </edge>
-<edge source="Menadione" target="Resveratrol">
+<edge source="Menadione" target="Suramin">
   <data key="d25">1</data>
 </edge>
-<edge source="Menadione" target="Argatroban">
+<edge source="Clofazimine" target="Icosapent">
   <data key="d25">1</data>
 </edge>
-<edge source="Menadione" target="Primaquine">
+<edge source="Clofazimine" target="Oleic Acid">
+  <data key="d25">1</data>
+</edge>
+<edge source="Clofazimine" target="Curcumin">
+  <data key="d25">1</data>
+</edge>
+<edge source="Clofazimine" target="Resveratrol">
+  <data key="d25">1</data>
+</edge>
+<edge source="Clofazimine" target="Cannabidiol">
+  <data key="d25">1</data>
+</edge>
+<edge source="Clofazimine" target="Omega-3 fatty acids">
   <data key="d25">1</data>
 </edge>
 <edge source="Clofazimine" target="Indomethacin">
@@ -9017,65 +9035,29 @@
 <edge source="Clofazimine" target="Pioglitazone">
   <data key="d25">1</data>
 </edge>
-<edge source="Clofazimine" target="Cannabidiol">
+<edge source="Clofazimine" target="Telmisartan">
   <data key="d25">1</data>
 </edge>
 <edge source="Clofazimine" target="Amiodarone">
   <data key="d25">1</data>
 </edge>
-<edge source="Clofazimine" target="Curcumin">
-  <data key="d25">1</data>
-</edge>
-<edge source="Clofazimine" target="Omega-3 fatty acids">
-  <data key="d25">1</data>
-</edge>
-<edge source="Clofazimine" target="Resveratrol">
-  <data key="d25">1</data>
-</edge>
-<edge source="Clofazimine" target="Telmisartan">
-  <data key="d25">1</data>
-</edge>
-<edge source="Clofazimine" target="Oleic Acid">
-  <data key="d25">1</data>
-</edge>
-<edge source="Clofazimine" target="Icosapent">
-  <data key="d25">1</data>
-</edge>
 <edge source="Naltrexone" target="Progesterone">
   <data key="d25">1</data>
-</edge>
-<edge source="Naltrexone" target="Cannabidiol">
-  <data key="d25">2</data>
 </edge>
 <edge source="Naltrexone" target="Oxycodone">
   <data key="d25">3</data>
 </edge>
-<edge source="Naltrexone" target="Ketamine">
-  <data key="d25">3</data>
-</edge>
-<edge source="Naltrexone" target="Levomenthol">
-  <data key="d25">1</data>
+<edge source="Naltrexone" target="Cannabidiol">
+  <data key="d25">2</data>
 </edge>
 <edge source="Naltrexone" target="Metenkefalin">
   <data key="d25">2</data>
 </edge>
-<edge source="Celecoxib" target="Indomethacin">
+<edge source="Naltrexone" target="Levomenthol">
   <data key="d25">1</data>
 </edge>
-<edge source="Celecoxib" target="Cannabidiol">
-  <data key="d25">1</data>
-</edge>
-<edge source="Celecoxib" target="Naproxen">
-  <data key="d25">1</data>
-</edge>
-<edge source="Celecoxib" target="Acetylsalicylic acid">
-  <data key="d25">1</data>
-</edge>
-<edge source="Celecoxib" target="Resveratrol">
-  <data key="d25">1</data>
-</edge>
-<edge source="Celecoxib" target="Thalidomide">
-  <data key="d25">1</data>
+<edge source="Naltrexone" target="Ketamine">
+  <data key="d25">3</data>
 </edge>
 <edge source="Celecoxib" target="Lenalidomide">
   <data key="d25">1</data>
@@ -9083,13 +9065,28 @@
 <edge source="Celecoxib" target="Icosapent">
   <data key="d25">1</data>
 </edge>
+<edge source="Celecoxib" target="Thalidomide">
+  <data key="d25">1</data>
+</edge>
+<edge source="Celecoxib" target="Naproxen">
+  <data key="d25">1</data>
+</edge>
 <edge source="Celecoxib" target="Fostamatinib">
   <data key="d25">1</data>
 </edge>
-<edge source="Toremifene" target="Progesterone">
-  <data key="d25">2</data>
+<edge source="Celecoxib" target="Resveratrol">
+  <data key="d25">1</data>
 </edge>
-<edge source="Toremifene" target="Genistein">
+<edge source="Celecoxib" target="Cannabidiol">
+  <data key="d25">1</data>
+</edge>
+<edge source="Celecoxib" target="Acetylsalicylic acid">
+  <data key="d25">1</data>
+</edge>
+<edge source="Celecoxib" target="Indomethacin">
+  <data key="d25">1</data>
+</edge>
+<edge source="Toremifene" target="Progesterone">
   <data key="d25">2</data>
 </edge>
 <edge source="Toremifene" target="Resveratrol">
@@ -9098,31 +9095,34 @@
 <edge source="Toremifene" target="Ethinylestradiol">
   <data key="d25">1</data>
 </edge>
-<edge source="Cholesterol" target="Cholecalciferol">
+<edge source="Toremifene" target="Genistein">
+  <data key="d25">2</data>
+</edge>
+<edge source="Cholesterol" target="Atorvastatin">
   <data key="d25">1</data>
 </edge>
 <edge source="Cholesterol" target="Curcumin">
   <data key="d25">1</data>
 </edge>
-<edge source="Cholesterol" target="Calcifediol">
+<edge source="Cholesterol" target="Resveratrol">
   <data key="d25">1</data>
 </edge>
 <edge source="Cholesterol" target="Vitamin D">
   <data key="d25">1</data>
 </edge>
-<edge source="Cholesterol" target="Resveratrol">
+<edge source="Cholesterol" target="Cholecalciferol">
   <data key="d25">1</data>
 </edge>
-<edge source="Cholesterol" target="Atorvastatin">
+<edge source="Cholesterol" target="Calcifediol">
   <data key="d25">1</data>
 </edge>
-<edge source="Nafamostat" target="Apixaban">
+<edge source="Nafamostat" target="Bemiparin">
   <data key="d25">1</data>
 </edge>
 <edge source="Nafamostat" target="Edoxaban">
   <data key="d25">1</data>
 </edge>
-<edge source="Nafamostat" target="Suramin">
+<edge source="Nafamostat" target="Heparin">
   <data key="d25">1</data>
 </edge>
 <edge source="Nafamostat" target="Camostat">
@@ -9131,52 +9131,49 @@
 <edge source="Nafamostat" target="Rivaroxaban">
   <data key="d25">1</data>
 </edge>
-<edge source="Nafamostat" target="Aprotinin">
+<edge source="Nafamostat" target="Enoxaparin">
   <data key="d25">2</data>
 </edge>
-<edge source="Nafamostat" target="Heparin">
+<edge source="Nafamostat" target="Argatroban">
   <data key="d25">1</data>
 </edge>
-<edge source="Nafamostat" target="Enoxaparin">
+<edge source="Nafamostat" target="Aprotinin">
   <data key="d25">2</data>
 </edge>
 <edge source="Nafamostat" target="Bivalirudin">
   <data key="d25">1</data>
 </edge>
-<edge source="Nafamostat" target="Bemiparin">
+<edge source="Nafamostat" target="Suramin">
   <data key="d25">1</data>
 </edge>
-<edge source="Nafamostat" target="Argatroban">
+<edge source="Nafamostat" target="Apixaban">
   <data key="d25">1</data>
 </edge>
 <edge source="Mefloquine" target="Pentoxifylline">
   <data key="d25">1</data>
 </edge>
-<edge source="Zanubrutinib" target="Abivertinib">
+<edge source="Zanubrutinib" target="Ruxolitinib">
+  <data key="d25">2</data>
+</edge>
+<edge source="Zanubrutinib" target="Baricitinib">
   <data key="d25">2</data>
 </edge>
 <edge source="Zanubrutinib" target="Nintedanib">
   <data key="d25">1</data>
 </edge>
-<edge source="Zanubrutinib" target="Acalabrutinib">
-  <data key="d25">1</data>
-</edge>
-<edge source="Zanubrutinib" target="Baricitinib">
-  <data key="d25">2</data>
-</edge>
 <edge source="Zanubrutinib" target="Lidocaine">
   <data key="d25">1</data>
 </edge>
-<edge source="Zanubrutinib" target="Ruxolitinib">
+<edge source="Zanubrutinib" target="Fostamatinib">
+  <data key="d25">15</data>
+</edge>
+<edge source="Zanubrutinib" target="Abivertinib">
   <data key="d25">2</data>
 </edge>
 <edge source="Zanubrutinib" target="Tofacitinib">
   <data key="d25">2</data>
 </edge>
-<edge source="Zanubrutinib" target="Fostamatinib">
-  <data key="d25">15</data>
-</edge>
-<edge source="Bivalirudin" target="Suramin">
+<edge source="Zanubrutinib" target="Acalabrutinib">
   <data key="d25">1</data>
 </edge>
 <edge source="Bivalirudin" target="Enoxaparin">
@@ -9185,71 +9182,74 @@
 <edge source="Bivalirudin" target="Argatroban">
   <data key="d25">1</data>
 </edge>
-<edge source="Ruxolitinib" target="Baricitinib">
-  <data key="d25">3</data>
-</edge>
-<edge source="Ruxolitinib" target="Tofacitinib">
-  <data key="d25">4</data>
+<edge source="Bivalirudin" target="Suramin">
+  <data key="d25">1</data>
 </edge>
 <edge source="Ruxolitinib" target="Fostamatinib">
   <data key="d25">4</data>
 </edge>
-<edge source="Ciclesonide" target="Prednisolone">
-  <data key="d25">1</data>
+<edge source="Ruxolitinib" target="Tofacitinib">
+  <data key="d25">4</data>
 </edge>
-<edge source="Ciclesonide" target="Progesterone">
-  <data key="d25">1</data>
+<edge source="Ruxolitinib" target="Baricitinib">
+  <data key="d25">3</data>
 </edge>
 <edge source="Ciclesonide" target="Hydrocortisone">
-  <data key="d25">1</data>
-</edge>
-<edge source="Ciclesonide" target="Prednisone">
-  <data key="d25">1</data>
-</edge>
-<edge source="Ciclesonide" target="Mometasone furoate">
   <data key="d25">1</data>
 </edge>
 <edge source="Ciclesonide" target="Budesonide">
   <data key="d25">1</data>
 </edge>
+<edge source="Ciclesonide" target="Progesterone">
+  <data key="d25">1</data>
+</edge>
 <edge source="Ciclesonide" target="Betamethasone">
   <data key="d25">1</data>
 </edge>
-<edge source="Baricitinib" target="Genistein">
+<edge source="Ciclesonide" target="Prednisolone">
   <data key="d25">1</data>
 </edge>
-<edge source="Baricitinib" target="Tofacitinib">
-  <data key="d25">3</data>
+<edge source="Ciclesonide" target="Mometasone furoate">
+  <data key="d25">1</data>
+</edge>
+<edge source="Ciclesonide" target="Prednisone">
+  <data key="d25">1</data>
 </edge>
 <edge source="Baricitinib" target="Fostamatinib">
   <data key="d25">4</data>
 </edge>
-<edge source="Simvastatin" target="Atorvastatin">
-  <data key="d25">2</data>
+<edge source="Baricitinib" target="Tofacitinib">
+  <data key="d25">3</data>
+</edge>
+<edge source="Baricitinib" target="Genistein">
+  <data key="d25">1</data>
 </edge>
 <edge source="Simvastatin" target="Cannabidiol">
   <data key="d25">1</data>
 </edge>
-<edge source="Lidocaine" target="Abivertinib">
+<edge source="Simvastatin" target="Atorvastatin">
+  <data key="d25">2</data>
+</edge>
+<edge source="Lidocaine" target="Thalidomide">
+  <data key="d25">2</data>
+</edge>
+<edge source="Lidocaine" target="Propofol">
   <data key="d25">1</data>
 </edge>
 <edge source="Lidocaine" target="Progesterone">
   <data key="d25">1</data>
 </edge>
-<edge source="Lidocaine" target="Propofol">
+<edge source="Lidocaine" target="Fostamatinib">
   <data key="d25">1</data>
-</edge>
-<edge source="Lidocaine" target="Chlorpromazine">
-  <data key="d25">2</data>
 </edge>
 <edge source="Lidocaine" target="Dipyridamole">
   <data key="d25">1</data>
 </edge>
-<edge source="Lidocaine" target="Thalidomide">
-  <data key="d25">2</data>
-</edge>
-<edge source="Lidocaine" target="Fostamatinib">
+<edge source="Lidocaine" target="Abivertinib">
   <data key="d25">1</data>
+</edge>
+<edge source="Lidocaine" target="Chlorpromazine">
+  <data key="d25">2</data>
 </edge>
 <edge source="Colchicine" target="Artenimol">
   <data key="d25">1</data>
@@ -9257,10 +9257,10 @@
 <edge source="Tranexamic acid" target="Aprotinin">
   <data key="d25">1</data>
 </edge>
-<edge source="Epoprostenol" target="Prasugrel">
+<edge source="Epoprostenol" target="Iloprost">
   <data key="d25">1</data>
 </edge>
-<edge source="Epoprostenol" target="Iloprost">
+<edge source="Epoprostenol" target="Prasugrel">
   <data key="d25">1</data>
 </edge>
 <edge source="Epoprostenol" target="Clopidogrel">
@@ -9269,40 +9269,46 @@
 <edge source="Etoposide" target="Genistein">
   <data key="d25">1</data>
 </edge>
-<edge source="Prednisolone" target="Progesterone">
-  <data key="d25">1</data>
-</edge>
 <edge source="Prednisolone" target="Hydrocortisone">
-  <data key="d25">1</data>
-</edge>
-<edge source="Prednisolone" target="Prednisone">
-  <data key="d25">1</data>
-</edge>
-<edge source="Prednisolone" target="Mometasone furoate">
   <data key="d25">1</data>
 </edge>
 <edge source="Prednisolone" target="Budesonide">
   <data key="d25">1</data>
 </edge>
+<edge source="Prednisolone" target="Progesterone">
+  <data key="d25">1</data>
+</edge>
 <edge source="Prednisolone" target="Betamethasone">
   <data key="d25">1</data>
 </edge>
-<edge source="Mometasone furoate" target="Norelgestromin">
+<edge source="Prednisolone" target="Mometasone furoate">
   <data key="d25">1</data>
 </edge>
-<edge source="Mometasone furoate" target="Progesterone">
-  <data key="d25">2</data>
+<edge source="Prednisolone" target="Prednisone">
+  <data key="d25">1</data>
 </edge>
 <edge source="Mometasone furoate" target="Hydrocortisone">
-  <data key="d25">1</data>
-</edge>
-<edge source="Mometasone furoate" target="Prednisone">
   <data key="d25">1</data>
 </edge>
 <edge source="Mometasone furoate" target="Budesonide">
   <data key="d25">1</data>
 </edge>
+<edge source="Mometasone furoate" target="Progesterone">
+  <data key="d25">2</data>
+</edge>
+<edge source="Mometasone furoate" target="Norelgestromin">
+  <data key="d25">1</data>
+</edge>
 <edge source="Mometasone furoate" target="Betamethasone">
+  <data key="d25">1</data>
+</edge>
+<edge source="Mometasone furoate" target="Prednisone">
+  <data key="d25">1</data>
+</edge>
+<edge source="Captopril" target="Moexipril">
+  <data key="d25">1</data>
+</edge>
+<edge source="Captopril" target="Lisinopril">
   <data key="d25">1</data>
 </edge>
 <edge source="Captopril" target="Fosinopril">
@@ -9311,32 +9317,29 @@
 <edge source="Captopril" target="Trandolapril">
   <data key="d25">1</data>
 </edge>
-<edge source="Captopril" target="Lisinopril">
-  <data key="d25">1</data>
-</edge>
-<edge source="Captopril" target="Moexipril">
+<edge source="Ribavirin" target="GS-441524">
   <data key="d25">1</data>
 </edge>
 <edge source="Ribavirin" target="Favipiravir">
   <data key="d25">1</data>
 </edge>
-<edge source="Ribavirin" target="GS-441524">
+<edge source="Ribavirin" target="Danoprevir">
   <data key="d25">1</data>
 </edge>
 <edge source="Ribavirin" target="Galidesivir">
   <data key="d25">1</data>
 </edge>
-<edge source="Ribavirin" target="Danoprevir">
+<edge source="Methylene blue" target="Citrulline">
   <data key="d25">1</data>
 </edge>
 <edge source="Methylene blue" target="Ketamine">
   <data key="d25">1</data>
 </edge>
-<edge source="Methylene blue" target="Citrulline">
-  <data key="d25">1</data>
-</edge>
 <edge source="Acetylcysteine" target="Ifenprodil">
   <data key="d25">2</data>
+</edge>
+<edge source="Acetylcysteine" target="Fostamatinib">
+  <data key="d25">1</data>
 </edge>
 <edge source="Acetylcysteine" target="Acetylsalicylic acid">
   <data key="d25">1</data>
@@ -9344,97 +9347,109 @@
 <edge source="Acetylcysteine" target="Ketamine">
   <data key="d25">1</data>
 </edge>
-<edge source="Acetylcysteine" target="Fostamatinib">
-  <data key="d25">1</data>
-</edge>
-<edge source="Resveratrol" target="Omeprazole">
-  <data key="d25">1</data>
-</edge>
-<edge source="Resveratrol" target="Ritonavir">
-  <data key="d25">1</data>
-</edge>
-<edge source="Resveratrol" target="Progesterone">
-  <data key="d25">1</data>
-</edge>
-<edge source="Resveratrol" target="Cannabidiol">
-  <data key="d25">3</data>
-</edge>
-<edge source="Resveratrol" target="Naproxen">
-  <data key="d25">2</data>
-</edge>
-<edge source="Resveratrol" target="Amiodarone">
-  <data key="d25">2</data>
-</edge>
-<edge source="Resveratrol" target="Fenofibrate">
-  <data key="d25">2</data>
-</edge>
-<edge source="Resveratrol" target="Omega-3 fatty acids">
-  <data key="d25">2</data>
-</edge>
-<edge source="Resveratrol" target="Artenimol">
-  <data key="d25">1</data>
-</edge>
-<edge source="Resveratrol" target="Ethinylestradiol">
-  <data key="d25">2</data>
-</edge>
 <edge source="Resveratrol" target="Lenalidomide">
-  <data key="d25">1</data>
-</edge>
-<edge source="Resveratrol" target="Indomethacin">
-  <data key="d25">4</data>
-</edge>
-<edge source="Resveratrol" target="Ramelteon">
-  <data key="d25">2</data>
-</edge>
-<edge source="Resveratrol" target="Tirofiban">
   <data key="d25">1</data>
 </edge>
 <edge source="Resveratrol" target="Piperine">
   <data key="d25">1</data>
 </edge>
-<edge source="Resveratrol" target="Nifedipine">
-  <data key="d25">1</data>
-</edge>
-<edge source="Resveratrol" target="Montelukast">
-  <data key="d25">1</data>
-</edge>
-<edge source="Resveratrol" target="Oleic Acid">
-  <data key="d25">2</data>
-</edge>
-<edge source="Resveratrol" target="Telmisartan">
-  <data key="d25">1</data>
-</edge>
-<edge source="Resveratrol" target="Icosapent">
-  <data key="d25">4</data>
-</edge>
-<edge source="Resveratrol" target="Fostamatinib">
-  <data key="d25">2</data>
-</edge>
-<edge source="Resveratrol" target="Vitamin E">
+<edge source="Resveratrol" target="Fenofibrate">
   <data key="d25">2</data>
 </edge>
 <edge source="Resveratrol" target="Curcumin">
   <data key="d25">2</data>
 </edge>
-<edge source="Resveratrol" target="Deferoxamine">
+<edge source="Resveratrol" target="Montelukast">
   <data key="d25">1</data>
 </edge>
 <edge source="Resveratrol" target="Atorvastatin">
   <data key="d25">2</data>
 </edge>
-<edge source="Resveratrol" target="Thalidomide">
+<edge source="Resveratrol" target="Cannabidiol">
+  <data key="d25">3</data>
+</edge>
+<edge source="Resveratrol" target="Deferoxamine">
   <data key="d25">1</data>
 </edge>
-<edge source="Resveratrol" target="Pioglitazone">
+<edge source="Resveratrol" target="Ethinylestradiol">
+  <data key="d25">2</data>
+</edge>
+<edge source="Resveratrol" target="Ritonavir">
   <data key="d25">1</data>
+</edge>
+<edge source="Resveratrol" target="Icosapent">
+  <data key="d25">4</data>
+</edge>
+<edge source="Resveratrol" target="Omega-3 fatty acids">
+  <data key="d25">2</data>
 </edge>
 <edge source="Resveratrol" target="Genistein">
   <data key="d25">3</data>
 </edge>
-<edge source="Resveratrol" target="Acetylsalicylic acid">
+<edge source="Resveratrol" target="Indomethacin">
+  <data key="d25">4</data>
+</edge>
+<edge source="Resveratrol" target="Pioglitazone">
+  <data key="d25">1</data>
+</edge>
+<edge source="Resveratrol" target="Naproxen">
+  <data key="d25">2</data>
+</edge>
+<edge source="Resveratrol" target="Artenimol">
+  <data key="d25">1</data>
+</edge>
+<edge source="Resveratrol" target="Oleic Acid">
+  <data key="d25">2</data>
+</edge>
+<edge source="Resveratrol" target="Nifedipine">
+  <data key="d25">1</data>
+</edge>
+<edge source="Resveratrol" target="Vitamin E">
+  <data key="d25">2</data>
+</edge>
+<edge source="Resveratrol" target="Omeprazole">
+  <data key="d25">1</data>
+</edge>
+<edge source="Resveratrol" target="Amiodarone">
   <data key="d25">2</data>
 </edge>
 <edge source="Resveratrol" target="Primaquine">
+  <data key="d25">1</data>
+</edge>
+<edge source="Resveratrol" target="Ramelteon">
+  <data key="d25">2</data>
+</edge>
+<edge source="Resveratrol" target="Thalidomide">
+  <data key="d25">1</data>
+</edge>
+<edge source="Resveratrol" target="Fostamatinib">
+  <data key="d25">2</data>
+</edge>
+<edge source="Resveratrol" target="Progesterone">
+  <data key="d25">1</data>
+</edge>
+<edge source="Resveratrol" target="Tirofiban">
+  <data key="d25">1</data>
+</edge>
+<edge source="Resveratrol" target="Acetylsalicylic acid">
+  <data key="d25">2</data>
+</edge>
+<edge source="Resveratrol" target="Telmisartan">
+  <data key="d25">1</data>
+</edge>
+<edge source="Omega-3 fatty acids" target="Icosapent">
+  <data key="d25">2</data>
+</edge>
+<edge source="Omega-3 fatty acids" target="Fenofibrate">
+  <data key="d25">1</data>
+</edge>
+<edge source="Omega-3 fatty acids" target="Oleic Acid">
+  <data key="d25">2</data>
+</edge>
+<edge source="Omega-3 fatty acids" target="Curcumin">
+  <data key="d25">1</data>
+</edge>
+<edge source="Omega-3 fatty acids" target="Cannabidiol">
   <data key="d25">1</data>
 </edge>
 <edge source="Omega-3 fatty acids" target="Indomethacin">
@@ -9443,26 +9458,14 @@
 <edge source="Omega-3 fatty acids" target="Pioglitazone">
   <data key="d25">1</data>
 </edge>
-<edge source="Omega-3 fatty acids" target="Cannabidiol">
+<edge source="Omega-3 fatty acids" target="Telmisartan">
   <data key="d25">1</data>
 </edge>
 <edge source="Omega-3 fatty acids" target="Amiodarone">
   <data key="d25">2</data>
 </edge>
-<edge source="Omega-3 fatty acids" target="Curcumin">
+<edge source="Sirolimus" target="Fostamatinib">
   <data key="d25">1</data>
-</edge>
-<edge source="Omega-3 fatty acids" target="Fenofibrate">
-  <data key="d25">1</data>
-</edge>
-<edge source="Omega-3 fatty acids" target="Telmisartan">
-  <data key="d25">1</data>
-</edge>
-<edge source="Omega-3 fatty acids" target="Oleic Acid">
-  <data key="d25">2</data>
-</edge>
-<edge source="Omega-3 fatty acids" target="Icosapent">
-  <data key="d25">2</data>
 </edge>
 <edge source="Sirolimus" target="Tacrolimus">
   <data key="d25">1</data>
@@ -9470,11 +9473,17 @@
 <edge source="Sirolimus" target="Heparin">
   <data key="d25">1</data>
 </edge>
-<edge source="Sirolimus" target="Fostamatinib">
+<edge source="Quetiapine" target="Fluoxetine">
   <data key="d25">1</data>
 </edge>
 <edge source="Quetiapine" target="Cannabidiol">
   <data key="d25">3</data>
+</edge>
+<edge source="Quetiapine" target="Ketotifen">
+  <data key="d25">1</data>
+</edge>
+<edge source="Quetiapine" target="Dexmedetomidine">
+  <data key="d25">1</data>
 </edge>
 <edge source="Quetiapine" target="Chlorpromazine">
   <data key="d25">19</data>
@@ -9482,31 +9491,19 @@
 <edge source="Quetiapine" target="Yohimbine">
   <data key="d25">10</data>
 </edge>
-<edge source="Quetiapine" target="Ketamine">
-  <data key="d25">13</data>
+<edge source="Quetiapine" target="Verapamil">
+  <data key="d25">3</data>
 </edge>
 <edge source="Quetiapine" target="Trifluoperazine">
   <data key="d25">2</data>
 </edge>
-<edge source="Quetiapine" target="Verapamil">
-  <data key="d25">3</data>
-</edge>
-<edge source="Quetiapine" target="Dexmedetomidine">
-  <data key="d25">1</data>
-</edge>
-<edge source="Quetiapine" target="Fluoxetine">
-  <data key="d25">1</data>
-</edge>
-<edge source="Quetiapine" target="Ketotifen">
-  <data key="d25">1</data>
+<edge source="Quetiapine" target="Ketamine">
+  <data key="d25">13</data>
 </edge>
 <edge source="Quetiapine" target="Diphenhydramine">
   <data key="d25">2</data>
 </edge>
-<edge source="Amiodarone" target="Cannabidiol">
-  <data key="d25">2</data>
-</edge>
-<edge source="Amiodarone" target="Erythromycin">
+<edge source="Amiodarone" target="Fluoxetine">
   <data key="d25">1</data>
 </edge>
 <edge source="Amiodarone" target="Fenofibrate">
@@ -9515,194 +9512,200 @@
 <edge source="Amiodarone" target="Curcumin">
   <data key="d25">1</data>
 </edge>
+<edge source="Amiodarone" target="Oleic Acid">
+  <data key="d25">2</data>
+</edge>
+<edge source="Amiodarone" target="Cannabidiol">
+  <data key="d25">2</data>
+</edge>
+<edge source="Amiodarone" target="Nifedipine">
+  <data key="d25">5</data>
+</edge>
+<edge source="Amiodarone" target="Levomenthol">
+  <data key="d25">8</data>
+</edge>
 <edge source="Amiodarone" target="Diltiazem">
   <data key="d25">1</data>
 </edge>
-<edge source="Amiodarone" target="Indomethacin">
+<edge source="Amiodarone" target="Icosapent">
   <data key="d25">2</data>
 </edge>
-<edge source="Amiodarone" target="Fluvoxamine">
-  <data key="d25">1</data>
-</edge>
-<edge source="Amiodarone" target="Pioglitazone">
+<edge source="Amiodarone" target="Telmisartan">
   <data key="d25">1</data>
 </edge>
 <edge source="Amiodarone" target="Chlorpromazine">
   <data key="d25">1</data>
 </edge>
-<edge source="Amiodarone" target="Nifedipine">
-  <data key="d25">5</data>
+<edge source="Amiodarone" target="Fluvoxamine">
+  <data key="d25">1</data>
 </edge>
 <edge source="Amiodarone" target="Verapamil">
   <data key="d25">2</data>
 </edge>
-<edge source="Amiodarone" target="Fluoxetine">
-  <data key="d25">1</data>
-</edge>
-<edge source="Amiodarone" target="Telmisartan">
-  <data key="d25">1</data>
-</edge>
-<edge source="Amiodarone" target="Levomenthol">
-  <data key="d25">8</data>
-</edge>
-<edge source="Amiodarone" target="Oleic Acid">
+<edge source="Amiodarone" target="Indomethacin">
   <data key="d25">2</data>
 </edge>
-<edge source="Amiodarone" target="Icosapent">
-  <data key="d25">2</data>
-</edge>
-<edge source="Diphenhydramine" target="Ketamine">
+<edge source="Amiodarone" target="Pioglitazone">
   <data key="d25">1</data>
 </edge>
-<edge source="Diphenhydramine" target="Ketotifen">
+<edge source="Amiodarone" target="Erythromycin">
   <data key="d25">1</data>
 </edge>
 <edge source="Diphenhydramine" target="Chlorpromazine">
   <data key="d25">1</data>
 </edge>
-<edge source="Sildenafil" target="Dipyridamole">
+<edge source="Diphenhydramine" target="Ketotifen">
+  <data key="d25">1</data>
+</edge>
+<edge source="Diphenhydramine" target="Ketamine">
   <data key="d25">1</data>
 </edge>
 <edge source="Sildenafil" target="Fostamatinib">
   <data key="d25">1</data>
 </edge>
-<edge source="Fosinopril" target="Trandolapril">
-  <data key="d25">1</data>
-</edge>
-<edge source="Fosinopril" target="Lisinopril">
+<edge source="Sildenafil" target="Dipyridamole">
   <data key="d25">1</data>
 </edge>
 <edge source="Fosinopril" target="Moexipril">
   <data key="d25">1</data>
 </edge>
-<edge source="Cholecalciferol" target="Curcumin">
+<edge source="Fosinopril" target="Lisinopril">
   <data key="d25">1</data>
 </edge>
-<edge source="Cholecalciferol" target="Calcifediol">
+<edge source="Fosinopril" target="Trandolapril">
   <data key="d25">1</data>
 </edge>
 <edge source="Cholecalciferol" target="Vitamin D">
   <data key="d25">1</data>
 </edge>
-<edge source="Apixaban" target="Edoxaban">
+<edge source="Cholecalciferol" target="Calcifediol">
   <data key="d25">1</data>
 </edge>
-<edge source="Apixaban" target="Rivaroxaban">
-  <data key="d25">1</data>
-</edge>
-<edge source="Apixaban" target="Heparin">
-  <data key="d25">1</data>
-</edge>
-<edge source="Apixaban" target="Enoxaparin">
+<edge source="Cholecalciferol" target="Curcumin">
   <data key="d25">1</data>
 </edge>
 <edge source="Apixaban" target="Bemiparin">
   <data key="d25">1</data>
 </edge>
-<edge source="Cannabidiol" target="Progesterone">
+<edge source="Apixaban" target="Edoxaban">
   <data key="d25">1</data>
 </edge>
-<edge source="Cannabidiol" target="Naproxen">
-  <data key="d25">2</data>
+<edge source="Apixaban" target="Heparin">
+  <data key="d25">1</data>
 </edge>
-<edge source="Cannabidiol" target="Oxycodone">
-  <data key="d25">2</data>
+<edge source="Apixaban" target="Rivaroxaban">
+  <data key="d25">1</data>
+</edge>
+<edge source="Apixaban" target="Enoxaparin">
+  <data key="d25">1</data>
 </edge>
 <edge source="Cannabidiol" target="Lenalidomide">
   <data key="d25">1</data>
 </edge>
-<edge source="Cannabidiol" target="Ivermectin">
-  <data key="d25">1</data>
-</edge>
-<edge source="Cannabidiol" target="Indomethacin">
-  <data key="d25">3</data>
-</edge>
-<edge source="Cannabidiol" target="Yohimbine">
-  <data key="d25">2</data>
-</edge>
-<edge source="Cannabidiol" target="Nifedipine">
-  <data key="d25">3</data>
-</edge>
-<edge source="Cannabidiol" target="Pentoxifylline">
-  <data key="d25">1</data>
-</edge>
-<edge source="Cannabidiol" target="Levomenthol">
-  <data key="d25">3</data>
-</edge>
-<edge source="Cannabidiol" target="Oleic Acid">
-  <data key="d25">1</data>
-</edge>
-<edge source="Cannabidiol" target="Telmisartan">
-  <data key="d25">1</data>
-</edge>
-<edge source="Cannabidiol" target="Icosapent">
-  <data key="d25">4</data>
-</edge>
 <edge source="Cannabidiol" target="Curcumin">
   <data key="d25">1</data>
 </edge>
-<edge source="Cannabidiol" target="Ketamine">
-  <data key="d25">5</data>
+<edge source="Cannabidiol" target="Oxycodone">
+  <data key="d25">2</data>
+</edge>
+<edge source="Cannabidiol" target="Metenkefalin">
+  <data key="d25">2</data>
 </edge>
 <edge source="Cannabidiol" target="Atorvastatin">
-  <data key="d25">1</data>
-</edge>
-<edge source="Cannabidiol" target="Thalidomide">
   <data key="d25">1</data>
 </edge>
 <edge source="Cannabidiol" target="Camphor">
   <data key="d25">4</data>
 </edge>
-<edge source="Cannabidiol" target="Pioglitazone">
+<edge source="Cannabidiol" target="Ivermectin">
   <data key="d25">1</data>
 </edge>
-<edge source="Cannabidiol" target="Genistein">
-  <data key="d25">1</data>
-</edge>
-<edge source="Cannabidiol" target="Acetylsalicylic acid">
-  <data key="d25">2</data>
-</edge>
-<edge source="Cannabidiol" target="Chlorpromazine">
-  <data key="d25">2</data>
-</edge>
-<edge source="Cannabidiol" target="Isoflurane">
-  <data key="d25">1</data>
-</edge>
-<edge source="Cannabidiol" target="Verapamil">
+<edge source="Cannabidiol" target="Yohimbine">
   <data key="d25">2</data>
 </edge>
 <edge source="Cannabidiol" target="Sevoflurane">
   <data key="d25">1</data>
 </edge>
+<edge source="Cannabidiol" target="Icosapent">
+  <data key="d25">4</data>
+</edge>
+<edge source="Cannabidiol" target="Isoflurane">
+  <data key="d25">1</data>
+</edge>
+<edge source="Cannabidiol" target="Chlorpromazine">
+  <data key="d25">2</data>
+</edge>
+<edge source="Cannabidiol" target="Genistein">
+  <data key="d25">1</data>
+</edge>
+<edge source="Cannabidiol" target="Indomethacin">
+  <data key="d25">3</data>
+</edge>
+<edge source="Cannabidiol" target="Ketamine">
+  <data key="d25">5</data>
+</edge>
+<edge source="Cannabidiol" target="Pioglitazone">
+  <data key="d25">1</data>
+</edge>
+<edge source="Cannabidiol" target="Naproxen">
+  <data key="d25">2</data>
+</edge>
+<edge source="Cannabidiol" target="Oleic Acid">
+  <data key="d25">1</data>
+</edge>
+<edge source="Cannabidiol" target="Nifedipine">
+  <data key="d25">3</data>
+</edge>
+<edge source="Cannabidiol" target="Levomenthol">
+  <data key="d25">3</data>
+</edge>
+<edge source="Cannabidiol" target="Thalidomide">
+  <data key="d25">1</data>
+</edge>
+<edge source="Cannabidiol" target="Progesterone">
+  <data key="d25">1</data>
+</edge>
+<edge source="Cannabidiol" target="Acetylsalicylic acid">
+  <data key="d25">2</data>
+</edge>
+<edge source="Cannabidiol" target="Verapamil">
+  <data key="d25">2</data>
+</edge>
 <edge source="Cannabidiol" target="Resiniferatoxin">
   <data key="d25">1</data>
 </edge>
-<edge source="Cannabidiol" target="Metenkefalin">
-  <data key="d25">2</data>
+<edge source="Cannabidiol" target="Pentoxifylline">
+  <data key="d25">1</data>
 </edge>
-<edge source="GC-376 free acid" target="PF-07304814">
+<edge source="Cannabidiol" target="Telmisartan">
   <data key="d25">1</data>
 </edge>
 <edge source="GC-376 free acid" target="GS-441524">
   <data key="d25">1</data>
 </edge>
-<edge source="Edoxaban" target="Rivaroxaban">
-  <data key="d25">1</data>
-</edge>
-<edge source="Edoxaban" target="Heparin">
-  <data key="d25">1</data>
-</edge>
-<edge source="Edoxaban" target="Enoxaparin">
+<edge source="GC-376 free acid" target="PF-07304814">
   <data key="d25">1</data>
 </edge>
 <edge source="Edoxaban" target="Bemiparin">
   <data key="d25">1</data>
 </edge>
-<edge source="Imatinib" target="Nintedanib">
-  <data key="d25">2</data>
+<edge source="Edoxaban" target="Heparin">
+  <data key="d25">1</data>
+</edge>
+<edge source="Edoxaban" target="Rivaroxaban">
+  <data key="d25">1</data>
+</edge>
+<edge source="Edoxaban" target="Enoxaparin">
+  <data key="d25">1</data>
 </edge>
 <edge source="Imatinib" target="Fostamatinib">
   <data key="d25">7</data>
+</edge>
+<edge source="Imatinib" target="Nintedanib">
+  <data key="d25">2</data>
+</edge>
+<edge source="Midazolam" target="Sevoflurane">
+  <data key="d25">16</data>
 </edge>
 <edge source="Midazolam" target="Propofol">
   <data key="d25">16</data>
@@ -9710,17 +9713,14 @@
 <edge source="Midazolam" target="Isoflurane">
   <data key="d25">16</data>
 </edge>
-<edge source="Midazolam" target="Sevoflurane">
-  <data key="d25">16</data>
-</edge>
 <edge source="Midazolam" target="Ivermectin">
-  <data key="d25">1</data>
-</edge>
-<edge source="Bemiparin" target="Rivaroxaban">
   <data key="d25">1</data>
 </edge>
 <edge source="Bemiparin" target="Heparin">
   <data key="d25">2</data>
+</edge>
+<edge source="Bemiparin" target="Rivaroxaban">
+  <data key="d25">1</data>
 </edge>
 <edge source="Bemiparin" target="Enoxaparin">
   <data key="d25">2</data>
@@ -9728,31 +9728,40 @@
 <edge source="Bemiparin" target="Sulodexide">
   <data key="d25">2</data>
 </edge>
-<edge source="Ritonavir" target="Vitamin E">
+<edge source="Ritonavir" target="Piperine">
   <data key="d25">1</data>
 </edge>
 <edge source="Ritonavir" target="Fenofibrate">
   <data key="d25">1</data>
 </edge>
+<edge source="Ritonavir" target="Nifedipine">
+  <data key="d25">1</data>
+</edge>
+<edge source="Ritonavir" target="Vitamin E">
+  <data key="d25">1</data>
+</edge>
 <edge source="Ritonavir" target="Ethinylestradiol">
   <data key="d25">1</data>
 </edge>
-<edge source="Ritonavir" target="Lopinavir">
+<edge source="Ritonavir" target="Darunavir">
   <data key="d25">1</data>
 </edge>
 <edge source="Ritonavir" target="Genistein">
   <data key="d25">1</data>
 </edge>
-<edge source="Ritonavir" target="Piperine">
-  <data key="d25">1</data>
-</edge>
 <edge source="Ritonavir" target="Atazanavir">
   <data key="d25">1</data>
 </edge>
-<edge source="Ritonavir" target="Nifedipine">
+<edge source="Ritonavir" target="Lopinavir">
   <data key="d25">1</data>
 </edge>
-<edge source="Ritonavir" target="Darunavir">
+<edge source="Oleic Acid" target="Icosapent">
+  <data key="d25">3</data>
+</edge>
+<edge source="Oleic Acid" target="Fenofibrate">
+  <data key="d25">1</data>
+</edge>
+<edge source="Oleic Acid" target="Curcumin">
   <data key="d25">1</data>
 </edge>
 <edge source="Oleic Acid" target="Indomethacin">
@@ -9761,17 +9770,8 @@
 <edge source="Oleic Acid" target="Pioglitazone">
   <data key="d25">1</data>
 </edge>
-<edge source="Oleic Acid" target="Curcumin">
-  <data key="d25">1</data>
-</edge>
-<edge source="Oleic Acid" target="Fenofibrate">
-  <data key="d25">1</data>
-</edge>
 <edge source="Oleic Acid" target="Telmisartan">
   <data key="d25">1</data>
-</edge>
-<edge source="Oleic Acid" target="Icosapent">
-  <data key="d25">3</data>
 </edge>
 <edge source="Vitamin D" target="Curcumin">
   <data key="d25">1</data>
@@ -9782,58 +9782,49 @@
 <edge source="Calcifediol" target="Curcumin">
   <data key="d25">1</data>
 </edge>
+<edge source="Heparin" target="Thalidomide">
+  <data key="d25">1</data>
+</edge>
 <edge source="Heparin" target="Nintedanib">
   <data key="d25">2</data>
 </edge>
-<edge source="Heparin" target="Enoxaparin">
+<edge source="Heparin" target="Fostamatinib">
   <data key="d25">2</data>
 </edge>
 <edge source="Heparin" target="Rivaroxaban">
   <data key="d25">1</data>
 </edge>
-<edge source="Heparin" target="Sulodexide">
-  <data key="d25">1</data>
-</edge>
-<edge source="Heparin" target="Thalidomide">
-  <data key="d25">1</data>
-</edge>
-<edge source="Heparin" target="Fostamatinib">
+<edge source="Heparin" target="Enoxaparin">
   <data key="d25">2</data>
 </edge>
-<edge source="Fenofibrate" target="Vitamin E">
-  <data key="d25">1</data>
-</edge>
-<edge source="Fenofibrate" target="Ethinylestradiol">
-  <data key="d25">1</data>
-</edge>
-<edge source="Fenofibrate" target="Indomethacin">
-  <data key="d25">1</data>
-</edge>
-<edge source="Fenofibrate" target="Genistein">
+<edge source="Heparin" target="Sulodexide">
   <data key="d25">1</data>
 </edge>
 <edge source="Fenofibrate" target="Piperine">
   <data key="d25">1</data>
 </edge>
+<edge source="Fenofibrate" target="Ethinylestradiol">
+  <data key="d25">1</data>
+</edge>
 <edge source="Fenofibrate" target="Nifedipine">
+  <data key="d25">1</data>
+</edge>
+<edge source="Fenofibrate" target="Vitamin E">
   <data key="d25">1</data>
 </edge>
 <edge source="Fenofibrate" target="Icosapent">
   <data key="d25">1</data>
 </edge>
-<edge source="Acetylsalicylic acid" target="Naproxen">
-  <data key="d25">2</data>
-</edge>
-<edge source="Acetylsalicylic acid" target="Ambrisentan">
+<edge source="Fenofibrate" target="Genistein">
   <data key="d25">1</data>
 </edge>
-<edge source="Acetylsalicylic acid" target="Thalidomide">
+<edge source="Fenofibrate" target="Indomethacin">
   <data key="d25">1</data>
 </edge>
 <edge source="Acetylsalicylic acid" target="Lenalidomide">
   <data key="d25">1</data>
 </edge>
-<edge source="Acetylsalicylic acid" target="Indomethacin">
+<edge source="Acetylsalicylic acid" target="Naproxen">
   <data key="d25">2</data>
 </edge>
 <edge source="Acetylsalicylic acid" target="Bardoxolone methyl">
@@ -9842,16 +9833,28 @@
 <edge source="Acetylsalicylic acid" target="Icosapent">
   <data key="d25">2</data>
 </edge>
+<edge source="Acetylsalicylic acid" target="Thalidomide">
+  <data key="d25">1</data>
+</edge>
 <edge source="Acetylsalicylic acid" target="Fostamatinib">
   <data key="d25">12</data>
+</edge>
+<edge source="Acetylsalicylic acid" target="Ambrisentan">
+  <data key="d25">1</data>
+</edge>
+<edge source="Acetylsalicylic acid" target="Indomethacin">
+  <data key="d25">2</data>
+</edge>
+<edge source="Trifluoperazine" target="Nifedipine">
+  <data key="d25">1</data>
+</edge>
+<edge source="Trifluoperazine" target="Isoflurane">
+  <data key="d25">1</data>
 </edge>
 <edge source="Trifluoperazine" target="Chlorpromazine">
   <data key="d25">3</data>
 </edge>
 <edge source="Trifluoperazine" target="Yohimbine">
-  <data key="d25">1</data>
-</edge>
-<edge source="Trifluoperazine" target="Nifedipine">
   <data key="d25">1</data>
 </edge>
 <edge source="Trifluoperazine" target="Verapamil">
@@ -9860,13 +9863,10 @@
 <edge source="Trifluoperazine" target="Ketamine">
   <data key="d25">1</data>
 </edge>
-<edge source="Trifluoperazine" target="Isoflurane">
+<edge source="Trandolapril" target="Moexipril">
   <data key="d25">1</data>
 </edge>
 <edge source="Trandolapril" target="Lisinopril">
-  <data key="d25">1</data>
-</edge>
-<edge source="Trandolapril" target="Moexipril">
   <data key="d25">1</data>
 </edge>
 <edge source="Sevoflurane" target="Propofol">
@@ -9878,25 +9878,25 @@
 <edge source="Sevoflurane" target="Ivermectin">
   <data key="d25">1</data>
 </edge>
+<edge source="Hydrocortisone" target="Budesonide">
+  <data key="d25">2</data>
+</edge>
 <edge source="Hydrocortisone" target="Progesterone">
+  <data key="d25">1</data>
+</edge>
+<edge source="Hydrocortisone" target="Betamethasone">
   <data key="d25">1</data>
 </edge>
 <edge source="Hydrocortisone" target="Prednisone">
   <data key="d25">1</data>
 </edge>
-<edge source="Hydrocortisone" target="Budesonide">
-  <data key="d25">2</data>
-</edge>
-<edge source="Hydrocortisone" target="Betamethasone">
-  <data key="d25">1</data>
-</edge>
 <edge source="Budesonide" target="Progesterone">
   <data key="d25">1</data>
 </edge>
-<edge source="Budesonide" target="Prednisone">
+<edge source="Budesonide" target="Betamethasone">
   <data key="d25">1</data>
 </edge>
-<edge source="Budesonide" target="Betamethasone">
+<edge source="Budesonide" target="Prednisone">
   <data key="d25">1</data>
 </edge>
 <edge source="Cyclosporine" target="Artenimol">
@@ -9905,10 +9905,10 @@
 <edge source="Tofacitinib" target="Fostamatinib">
   <data key="d25">4</data>
 </edge>
-<edge source="Resiniferatoxin" target="Camphor">
+<edge source="Resiniferatoxin" target="Icosapent">
   <data key="d25">1</data>
 </edge>
-<edge source="Resiniferatoxin" target="Icosapent">
+<edge source="Resiniferatoxin" target="Camphor">
   <data key="d25">1</data>
 </edge>
 <edge source="Atovaquone" target="Brequinar">
@@ -9917,16 +9917,19 @@
 <edge source="Pyridostigmine" target="Ketamine">
   <data key="d25">1</data>
 </edge>
+<edge source="Abivertinib" target="Fostamatinib">
+  <data key="d25">2</data>
+</edge>
 <edge source="Abivertinib" target="Acalabrutinib">
   <data key="d25">1</data>
 </edge>
-<edge source="Abivertinib" target="Fostamatinib">
-  <data key="d25">2</data>
+<edge source="Telmisartan" target="Curcumin">
+  <data key="d25">1</data>
 </edge>
 <edge source="Telmisartan" target="Irbesartan">
   <data key="d25">1</data>
 </edge>
-<edge source="Telmisartan" target="Curcumin">
+<edge source="Telmisartan" target="Icosapent">
   <data key="d25">1</data>
 </edge>
 <edge source="Telmisartan" target="Losartan">
@@ -9935,37 +9938,34 @@
 <edge source="Telmisartan" target="Candesartan cilexetil">
   <data key="d25">1</data>
 </edge>
-<edge source="Telmisartan" target="Indomethacin">
-  <data key="d25">1</data>
-</edge>
 <edge source="Telmisartan" target="Olmesartan">
-  <data key="d25">1</data>
-</edge>
-<edge source="Telmisartan" target="Pioglitazone">
   <data key="d25">1</data>
 </edge>
 <edge source="Telmisartan" target="Angiotensin II">
   <data key="d25">1</data>
 </edge>
-<edge source="Telmisartan" target="Icosapent">
+<edge source="Telmisartan" target="Indomethacin">
   <data key="d25">1</data>
 </edge>
-<edge source="Piperine" target="Vitamin E">
-  <data key="d25">1</data>
-</edge>
-<edge source="Piperine" target="Genistein">
+<edge source="Telmisartan" target="Pioglitazone">
   <data key="d25">1</data>
 </edge>
 <edge source="Piperine" target="Nifedipine">
   <data key="d25">1</data>
 </edge>
+<edge source="Piperine" target="Vitamin E">
+  <data key="d25">1</data>
+</edge>
 <edge source="Piperine" target="Ethinylestradiol">
   <data key="d25">1</data>
 </edge>
-<edge source="Nicotinamide" target="Artenimol">
+<edge source="Piperine" target="Genistein">
   <data key="d25">1</data>
 </edge>
 <edge source="Nicotinamide" target="Suramin">
+  <data key="d25">1</data>
+</edge>
+<edge source="Nicotinamide" target="Artenimol">
   <data key="d25">1</data>
 </edge>
 <edge source="Lopinavir" target="Atazanavir">
@@ -9974,16 +9974,19 @@
 <edge source="Lopinavir" target="Darunavir">
   <data key="d25">1</data>
 </edge>
+<edge source="Nifedipine" target="Ethinylestradiol">
+  <data key="d25">1</data>
+</edge>
 <edge source="Nifedipine" target="Vitamin E">
   <data key="d25">1</data>
+</edge>
+<edge source="Nifedipine" target="Levomenthol">
+  <data key="d25">4</data>
 </edge>
 <edge source="Nifedipine" target="Diltiazem">
   <data key="d25">1</data>
 </edge>
-<edge source="Nifedipine" target="Ethinylestradiol">
-  <data key="d25">1</data>
-</edge>
-<edge source="Nifedipine" target="Genistein">
+<edge source="Nifedipine" target="Isoflurane">
   <data key="d25">1</data>
 </edge>
 <edge source="Nifedipine" target="Chlorpromazine">
@@ -9992,19 +9995,16 @@
 <edge source="Nifedipine" target="Verapamil">
   <data key="d25">3</data>
 </edge>
-<edge source="Nifedipine" target="Isoflurane">
+<edge source="Nifedipine" target="Genistein">
   <data key="d25">1</data>
 </edge>
-<edge source="Nifedipine" target="Levomenthol">
-  <data key="d25">4</data>
+<edge source="Curcumin" target="Icosapent">
+  <data key="d25">1</data>
 </edge>
 <edge source="Curcumin" target="Indomethacin">
   <data key="d25">1</data>
 </edge>
 <edge source="Curcumin" target="Pioglitazone">
-  <data key="d25">1</data>
-</edge>
-<edge source="Curcumin" target="Icosapent">
   <data key="d25">1</data>
 </edge>
 <edge source="Prednisone" target="Progesterone">
@@ -10016,29 +10016,29 @@
 <edge source="Acalabrutinib" target="Fostamatinib">
   <data key="d25">1</data>
 </edge>
-<edge source="Erythromycin" target="Fluvoxamine">
+<edge source="Erythromycin" target="Fluoxetine">
   <data key="d25">1</data>
 </edge>
-<edge source="Erythromycin" target="Chlorpromazine">
+<edge source="Erythromycin" target="Fluvoxamine">
   <data key="d25">1</data>
 </edge>
 <edge source="Erythromycin" target="Verapamil">
   <data key="d25">1</data>
 </edge>
-<edge source="Erythromycin" target="Fluoxetine">
+<edge source="Erythromycin" target="Chlorpromazine">
   <data key="d25">1</data>
 </edge>
 <edge source="Aprotinin" target="Camostat">
   <data key="d25">1</data>
 </edge>
-<edge source="Genistein" target="Progesterone">
-  <data key="d25">3</data>
+<edge source="Genistein" target="Ethinylestradiol">
+  <data key="d25">2</data>
 </edge>
 <edge source="Genistein" target="Vitamin E">
   <data key="d25">1</data>
 </edge>
-<edge source="Genistein" target="Ethinylestradiol">
-  <data key="d25">2</data>
+<edge source="Genistein" target="Progesterone">
+  <data key="d25">3</data>
 </edge>
 <edge source="Genistein" target="Fostamatinib">
   <data key="d25">1</data>
@@ -10052,14 +10052,14 @@
 <edge source="Moexipril" target="Lisinopril">
   <data key="d25">1</data>
 </edge>
-<edge source="Fluvoxamine" target="Chlorpromazine">
-  <data key="d25">1</data>
+<edge source="Fluvoxamine" target="Fluoxetine">
+  <data key="d25">2</data>
 </edge>
 <edge source="Fluvoxamine" target="Verapamil">
   <data key="d25">2</data>
 </edge>
-<edge source="Fluvoxamine" target="Fluoxetine">
-  <data key="d25">2</data>
+<edge source="Fluvoxamine" target="Chlorpromazine">
+  <data key="d25">1</data>
 </edge>
 <edge source="Aprepitant" target="Ketamine">
   <data key="d25">1</data>
@@ -10070,17 +10070,17 @@
 <edge source="Levomenthol" target="Oxycodone">
   <data key="d25">1</data>
 </edge>
-<edge source="Levomenthol" target="Ketamine">
-  <data key="d25">1</data>
+<edge source="Levomenthol" target="Camphor">
+  <data key="d25">3</data>
 </edge>
 <edge source="Levomenthol" target="Verapamil">
   <data key="d25">2</data>
 </edge>
-<edge source="Levomenthol" target="Diltiazem">
+<edge source="Levomenthol" target="Ketamine">
   <data key="d25">1</data>
 </edge>
-<edge source="Levomenthol" target="Camphor">
-  <data key="d25">3</data>
+<edge source="Levomenthol" target="Diltiazem">
+  <data key="d25">1</data>
 </edge>
 <edge source="Propofol" target="Isoflurane">
   <data key="d25">16</data>
@@ -10094,22 +10094,22 @@
 <edge source="Rivaroxaban" target="Enoxaparin">
   <data key="d25">1</data>
 </edge>
-<edge source="Dipyridamole" target="Iloprost">
-  <data key="d25">1</data>
-</edge>
-<edge source="Dipyridamole" target="Progesterone">
-  <data key="d25">1</data>
-</edge>
-<edge source="Dipyridamole" target="Chlorpromazine">
+<edge source="Dipyridamole" target="Thalidomide">
   <data key="d25">1</data>
 </edge>
 <edge source="Dipyridamole" target="Artenimol">
   <data key="d25">1</data>
 </edge>
-<edge source="Dipyridamole" target="Thalidomide">
+<edge source="Dipyridamole" target="Progesterone">
+  <data key="d25">1</data>
+</edge>
+<edge source="Dipyridamole" target="Iloprost">
   <data key="d25">1</data>
 </edge>
 <edge source="Dipyridamole" target="Fostamatinib">
+  <data key="d25">1</data>
+</edge>
+<edge source="Dipyridamole" target="Chlorpromazine">
   <data key="d25">1</data>
 </edge>
 <edge source="Betamethasone" target="Progesterone">
@@ -10118,37 +10118,37 @@
 <edge source="Azithromycin" target="Citrulline">
   <data key="d25">1</data>
 </edge>
-<edge source="Irbesartan" target="Olmesartan">
-  <data key="d25">1</data>
-</edge>
-<edge source="Irbesartan" target="Angiotensin II">
-  <data key="d25">1</data>
-</edge>
 <edge source="Irbesartan" target="Losartan">
   <data key="d25">1</data>
 </edge>
 <edge source="Irbesartan" target="Candesartan cilexetil">
   <data key="d25">1</data>
 </edge>
-<edge source="Lenalidomide" target="Indomethacin">
+<edge source="Irbesartan" target="Olmesartan">
   <data key="d25">1</data>
 </edge>
-<edge source="Lenalidomide" target="Naproxen">
+<edge source="Irbesartan" target="Angiotensin II">
+  <data key="d25">1</data>
+</edge>
+<edge source="Lenalidomide" target="Icosapent">
   <data key="d25">1</data>
 </edge>
 <edge source="Lenalidomide" target="Thalidomide">
   <data key="d25">2</data>
 </edge>
-<edge source="Lenalidomide" target="Icosapent">
+<edge source="Lenalidomide" target="Naproxen">
+  <data key="d25">1</data>
+</edge>
+<edge source="Lenalidomide" target="Indomethacin">
   <data key="d25">1</data>
 </edge>
 <edge source="Camphor" target="Icosapent">
   <data key="d25">1</data>
 </edge>
-<edge source="Argatroban" target="Suramin">
+<edge source="Argatroban" target="Enoxaparin">
   <data key="d25">1</data>
 </edge>
-<edge source="Argatroban" target="Enoxaparin">
+<edge source="Argatroban" target="Suramin">
   <data key="d25">1</data>
 </edge>
 <edge source="Icosapent" target="Naproxen">
@@ -10166,40 +10166,40 @@
 <edge source="Alendronic acid" target="Artenimol">
   <data key="d25">1</data>
 </edge>
-<edge source="Ketamine" target="Progesterone">
-  <data key="d25">1</data>
-</edge>
-<edge source="Ketamine" target="Citrulline">
+<edge source="Ketamine" target="Fluoxetine">
   <data key="d25">1</data>
 </edge>
 <edge source="Ketamine" target="Oxycodone">
   <data key="d25">3</data>
 </edge>
+<edge source="Ketamine" target="Metenkefalin">
+  <data key="d25">2</data>
+</edge>
+<edge source="Ketamine" target="Citrulline">
+  <data key="d25">1</data>
+</edge>
 <edge source="Ketamine" target="Yohimbine">
   <data key="d25">7</data>
+</edge>
+<edge source="Ketamine" target="Progesterone">
+  <data key="d25">1</data>
 </edge>
 <edge source="Ketamine" target="Chlorpromazine">
   <data key="d25">7</data>
 </edge>
-<edge source="Ketamine" target="Fluoxetine">
-  <data key="d25">1</data>
-</edge>
-<edge source="Ketamine" target="Metenkefalin">
-  <data key="d25">2</data>
-</edge>
-<edge source="Indomethacin" target="Iloprost">
-  <data key="d25">1</data>
-</edge>
 <edge source="Indomethacin" target="Naproxen">
   <data key="d25">2</data>
+</edge>
+<edge source="Indomethacin" target="Suramin">
+  <data key="d25">1</data>
 </edge>
 <edge source="Indomethacin" target="Thalidomide">
   <data key="d25">1</data>
 </edge>
-<edge source="Indomethacin" target="Pioglitazone">
+<edge source="Indomethacin" target="Iloprost">
   <data key="d25">1</data>
 </edge>
-<edge source="Indomethacin" target="Suramin">
+<edge source="Indomethacin" target="Pioglitazone">
   <data key="d25">1</data>
 </edge>
 <edge source="Linagliptin" target="Atorvastatin">
@@ -10211,8 +10211,8 @@
 <edge source="Clopidogrel" target="Prasugrel">
   <data key="d25">1</data>
 </edge>
-<edge source="Fostamatinib" target="Nintedanib">
-  <data key="d25">12</data>
+<edge source="Fostamatinib" target="Montelukast">
+  <data key="d25">1</data>
 </edge>
 <edge source="Fostamatinib" target="Vitamin E">
   <data key="d25">1</data>
@@ -10220,19 +10220,19 @@
 <edge source="Fostamatinib" target="Thalidomide">
   <data key="d25">1</data>
 </edge>
+<edge source="Fostamatinib" target="Nintedanib">
+  <data key="d25">12</data>
+</edge>
 <edge source="Fostamatinib" target="Duvelisib">
   <data key="d25">2</data>
-</edge>
-<edge source="Fostamatinib" target="Montelukast">
-  <data key="d25">1</data>
-</edge>
-<edge source="Angiotensin II" target="Olmesartan">
-  <data key="d25">1</data>
 </edge>
 <edge source="Angiotensin II" target="Losartan">
   <data key="d25">1</data>
 </edge>
 <edge source="Angiotensin II" target="Candesartan cilexetil">
+  <data key="d25">1</data>
+</edge>
+<edge source="Angiotensin II" target="Olmesartan">
   <data key="d25">1</data>
 </edge>
 <edge source="Oxycodone" target="Progesterone">
@@ -10241,29 +10241,29 @@
 <edge source="Oxycodone" target="Metenkefalin">
   <data key="d25">2</data>
 </edge>
-<edge source="Thalidomide" target="Progesterone">
+<edge source="Thalidomide" target="Naproxen">
   <data key="d25">1</data>
 </edge>
 <edge source="Thalidomide" target="Nintedanib">
   <data key="d25">1</data>
 </edge>
-<edge source="Thalidomide" target="Naproxen">
+<edge source="Thalidomide" target="Progesterone">
   <data key="d25">1</data>
 </edge>
 <edge source="Thalidomide" target="Chlorpromazine">
   <data key="d25">2</data>
 </edge>
+<edge source="Losartan" target="Candesartan cilexetil">
+  <data key="d25">1</data>
+</edge>
 <edge source="Losartan" target="Olmesartan">
   <data key="d25">1</data>
 </edge>
-<edge source="Losartan" target="Candesartan cilexetil">
+<edge source="Progesterone" target="Ethinylestradiol">
   <data key="d25">1</data>
 </edge>
 <edge source="Progesterone" target="Norelgestromin">
   <data key="d25">2</data>
-</edge>
-<edge source="Progesterone" target="Ethinylestradiol">
-  <data key="d25">1</data>
 </edge>
 <edge source="Progesterone" target="Chlorpromazine">
   <data key="d25">1</data>
@@ -10298,10 +10298,10 @@
 <edge source="Enoxaparin" target="Sulodexide">
   <data key="d25">1</data>
 </edge>
-<edge source="Verapamil" target="Diltiazem">
+<edge source="Verapamil" target="Yohimbine">
   <data key="d25">1</data>
 </edge>
-<edge source="Verapamil" target="Yohimbine">
+<edge source="Verapamil" target="Diltiazem">
   <data key="d25">1</data>
 </edge>
 <edge source="Verapamil" target="Chlorpromazine">
@@ -10316,11 +10316,11 @@
 <edge source="Tenofovir alafenamide" target="Tenofovir disoproxil">
   <data key="d25">1</data>
 </edge>
-<edge source="Chlorpromazine" target="Dexmedetomidine">
-  <data key="d25">1</data>
-</edge>
 <edge source="Chlorpromazine" target="Yohimbine">
   <data key="d25">9</data>
+</edge>
+<edge source="Chlorpromazine" target="Dexmedetomidine">
+  <data key="d25">1</data>
 </edge>
 <edge source="Montelukast" target="Vitamin E">
   <data key="d25">1</data>
