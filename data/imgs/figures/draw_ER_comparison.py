@@ -36,7 +36,8 @@ def draw_ER_comparison(file):
     plt.title(title+" Degree Distribution")
     plt.legend(bbox_to_anchor=(0.8, -0.2))
     plt.savefig(file+"_degree_distribution.svg")
-    plt.show()
+    # plt.show()
+    plt.close()
 
 for file in ["drug_projection","target_projection"]:
     draw_ER_comparison(file)

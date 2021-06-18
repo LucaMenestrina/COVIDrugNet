@@ -50,6 +50,19 @@ then
     python ../../send_message.py -m "Robustness Analysis Done"
   fi
   cd ..
+  cd data/imgs/figures
+  echo "Updating Figures"
+  if test -f "../../../../send_message.py"; then
+    python ../../../../send_message.py -m "Updating Figures"
+  fi
+  python first_level_atc_distribution.py
+  python draw_ER_comparison.py
+  date
+  echo "Figures Updated"
+  if test -f "../../../../send_message.py"; then
+    python ../../../../send_message.py -m "Figures Updated"
+  fi
+  cd ../../../
 else
   echo "Nothing to Update"
   if test -f "../send_message.py"; then

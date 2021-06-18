@@ -206,7 +206,7 @@ layout=dbc.Col([
                         html.Li([
                             # html.I(className="fa fa-flag", style={"margin-right":"0.5rem"}),#fa-font-awesome-flag
                             html.A("Font Awesome", href="https://fontawesome.com/", target="_blank", style={"color":"black"})
-                        ], style={"background":"url(https://fontawesome.com/images/favicons/favicon-96x96.png)", "background-size":"1rem", "background-repeat":"no-repeat","background-position":"left", "padding-left":"1.5rem"}),
+                        ], style={"background":"url(https://fontawesome.com//images/favicon/icon.svg)", "background-size":"1rem", "background-repeat":"no-repeat","background-position":"left", "padding-left":"1.5rem"}),
                         html.Li([
                             html.A("Particles Random Animation in Canvas by Nokey", href="https://codepen.io/jkiss/pen/OVEeqK", target="_blank", style={"color":"black"})
                         ], style={"background":"url(https://cpwebassets.codepen.io/assets/favicon/favicon-touch-de50acbf5d634ec6791894eba4ba9cf490f709b3d742597c6fc4b734e6492a5a.png)", "background-size":"1rem", "background-repeat":"no-repeat","background-position":"left", "padding-left":"1.5rem"}),
