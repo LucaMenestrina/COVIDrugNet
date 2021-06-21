@@ -247,15 +247,16 @@ class collector():
                 if d.get_text() not in [drug.name for drug in self.drugs]+self.excluded:
                     try:
                         temp_drug,added_proteins=drug(d.get_text(),(d["href"].split("/")[-1])).advanced_init(self.__proteins)
-                        self.drugs.append(temp_drug)
-                        self.__proteins.update(added_proteins)
-                        self.added_new_drugs=True
+                        if len(temp_drug.targets):
+                            self.drugs.append(temp_drug)
+                            self.__proteins.update(added_proteins)
+                            self.added_new_drugs=True
                     except:
                         self.excluded.append(d.get_text())
         else:
             self.added_new_drugs=True
             for d in tqdm(drug_tags):
-                if d.get_text() not in [drug.name for drug in self.drugs]:
+                if d.get_text() not in [drug.name for drug in self.drugs]+self.excluded:
                     try:
                         temp_drug,added_proteins=drug(d.get_text(),(d["href"].split("/")[-1])).advanced_init(self.__proteins)
                         self.drugs.append(temp_drug)
