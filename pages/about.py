@@ -83,7 +83,7 @@ layout=dbc.Col([
                     html.Br(),
                     html.Hr(),
                     html.Br(),
-                    html.H4(["Last Database Update: ",html.Time(["5",html.Sup("th")," June 2021"], dateTime="2021-07-05"), " (No changes since 8",html.Sup("th")," June 2021)"]),
+                    html.H4(["Last Database Update: ",html.Time(["5",html.Sup("th")," July 2021"], dateTime="2021-07-05"), " (No changes since 8",html.Sup("th")," June 2021)"]),
                     html.Br(),
                     html.H5(["Data and Code Available at: ",html.A("https://github.com/LucaMenestrina/COVIDrugNet", href="https://github.com/LucaMenestrina/COVIDrugNet", target="_blank", style={"color":"black"})]),
                     html.Br(),
