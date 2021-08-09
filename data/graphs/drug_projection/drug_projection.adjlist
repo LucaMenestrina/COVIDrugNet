@@ -1,290 +1,293 @@
 #collector.py
-# GMT Tue Jun  8 13:37:19 2021
+# GMT Fri Aug  6 15:39:30 2021
 # 
-Trimethoprim	Methotrexate
-Cisatracurium	Fluoxetine
-Elbasvir	Daclatasvir	Velpatasvir	Ledipasvir
-Amlodipine	Spironolactone	Cannabidiol	Nifedipine	Chlorpromazine	Verapamil	Levomenthol	Diltiazem	Amiodarone
-Roxithromycin	Clarithromycin	Tetrandrine
-Metformin	Fostamatinib	Acetylsalicylic acid
-Spironolactone	Piperine	Estradiol	Budesonide	Finasteride	Fenofibrate	Cannabidiol	Ethinylestradiol	Prednisolone acetate	Mometasone	Bicalutamide	Dutasteride	Enzalutamide	Mometasone furoate	Diltiazem	Prednisone	Ritonavir	Quercetin	Hydrocortisone	Resveratrol	Norelgestromin	Genistein	Dexamethasone	Ciclesonide	Toremifene	Nifedipine	Betamethasone	Vitamin E	Methylprednisolone	Levomenthol	Prednisolone	Amiodarone	Tamoxifen	Progesterone	Verapamil
-Quercetin	Piperine	Estradiol	Diosmin	Curcumin	Atorvastatin	Fenofibrate	Cannabidiol	Artenimol	Toremifene	Ethinylestradiol	Nifedipine	Menadione	Vitamin E	Omeprazole	Ritonavir	Melatonin	Tamoxifen	Primaquine	Progesterone	Fostamatinib	Resveratrol	Duvelisib	Genistein	Ginseng	Dexamethasone	Leflunomide
-Valsartan	Losartan	Candesartan cilexetil	Azilsartan medoxomil	Olmesartan	Angiotensin II	Eprosartan	Candesartan	Telmisartan	Irbesartan
-Nimesulide	Lenalidomide	Icosapent	Thalidomide	Naproxen	Acetaminophen	Resveratrol	Cannabidiol	Celecoxib	Acetylsalicylic acid	Indomethacin	Ginseng	Ibuprofen
-Valproic acid	Fenofibrate	Lidocaine	Curcumin	Atorvastatin	Cannabidiol	Oleic Acid	alpha-Linolenic acid	Amiodarone	Icosapent	Propofol	Resveratrol	Tramadol	Omega-3 fatty acids	Clofazimine	Simvastatin	Indomethacin	Pioglitazone	Telmisartan	Ibuprofen
-Eflornithine
-Metoprolol	Formoterol	Amiodarone
-Morphine	Naltrexone	Progesterone	Oxycodone	Cannabidiol	Metenkefalin	Tramadol	Levomenthol	Ketamine
-Sitagliptin	Linagliptin	Atorvastatin
-Ginseng	Lenalidomide	Naproxen	Diosmin	Atorvastatin	Cannabidiol	Omeprazole	Icosapent	Thalidomide	Acetaminophen	Resveratrol	Celecoxib	Acetylsalicylic acid	Indomethacin	Ibuprofen	Leflunomide
-Melatonin	Estradiol	Toremifene	Nifedipine	Ethinylestradiol	Menadione	Primaquine	Levocarnitine	Ramelteon	Tamoxifen	Progesterone	Resveratrol	Isoflurane	Chlorpromazine	Genistein	Trifluoperazine
-Ibrutinib	Fostamatinib	Zanubrutinib	Acalabrutinib	Abivertinib
-Velpatasvir	Daclatasvir	Ledipasvir
-Tinzaparin	Bemiparin	Heparin	Nadroparin	Fondaparinux	Enoxaparin	Sulodexide
-Riboflavin
-Biotin
-Mecobalamin	Thimerosal	Cyanocobalamin
-Methylprednisolone	Hydrocortisone	Budesonide	Ciclesonide	Progesterone	Betamethasone	Prednisolone acetate	Mometasone	Prednisolone	Dexamethasone	Mometasone furoate	Prednisone
-Itraconazole
-Febuxostat	Levocarnitine
-Azilsartan medoxomil	Losartan	Candesartan cilexetil	Olmesartan	Angiotensin II	Eprosartan	Candesartan	Telmisartan	Irbesartan
-Cysteine	Glutathione	Acetylcysteine	Serine
-Bicalutamide	Tamoxifen	Progesterone	Norelgestromin	Enzalutamide
-Methotrexate
-Formoterol	Amiodarone
-Prednisolone acetate	Hydrocortisone	Budesonide	Ciclesonide	Progesterone	Betamethasone	Mometasone	Prednisolone	Dexamethasone	Mometasone furoate	Prednisone
-Enzalutamide	Tamoxifen	Progesterone	Norelgestromin
-Degarelix
-Estradiol	Piperine	Fenofibrate	Toremifene	Nifedipine	Vitamin E	Ethinylestradiol	Ritonavir	Tamoxifen	Progesterone	Resveratrol	Isoflurane	Genistein	Dexamethasone
-Ibudilast	Iloprost	Dipyridamole
-Rosuvastatin	Cannabidiol	Simvastatin	Atorvastatin
-Thimerosal	Acetylcysteine	Cyanocobalamin
-Oseltamivir
-alpha-Linolenic acid	Fenofibrate	Curcumin	Oleic Acid	Cannabidiol	Camphor	Amiodarone	Icosapent	Acetaminophen	Resveratrol	Tramadol	Omega-3 fatty acids	Resiniferatoxin	Clofazimine	Indomethacin	Pioglitazone	Telmisartan	Ibuprofen
-Prazosin	Tamoxifen	Fluoxetine	Tramadol	Dexmedetomidine	Chlorpromazine	Verapamil	Fluvoxamine	Yohimbine	Trifluoperazine	Quetiapine	Erythromycin	Clarithromycin	Amiodarone
-Tamoxifen	Piperine	Fluoxetine	Fenofibrate	Toremifene	Ethinylestradiol	Nifedipine	Vitamin E	Ritonavir	Clarithromycin	Amiodarone	Progesterone	Resveratrol	Fostamatinib	Norelgestromin	Chlorpromazine	Fluvoxamine	Genistein	Verapamil	Dexamethasone	Erythromycin	Minocycline
-Disulfiram	Ascorbic acid
-Diosmin	Atorvastatin	Resveratrol	Omeprazole	Leflunomide
-TMC-310911	Nelfinavir
-Glutathione	Acetylcysteine	Curcumin	Captopril	Chloroquine	Cannabidiol	Indomethacin	Tranilast	Minocycline
-Aliskiren	Lisinopril
-Levamisole	Fluoxetine
-Dexamethasone	Piperine	Budesonide	Ciclesonide	Fenofibrate	Ethinylestradiol	Nifedipine	Mometasone	Betamethasone	Vitamin E	Citrulline	Prednisolone	Mometasone furoate	Ritonavir	Prednisone	Hydrocortisone	Progesterone	Resveratrol	Genistein	Minocycline
-Fingolimod	Ozanimod
-Nadroparin	Bemiparin	Heparin	Acetylsalicylic acid	Enoxaparin	Sulodexide	Fondaparinux
-Moxifloxacin	Etoposide	Levofloxacin	Genistein
-Mometasone	Hydrocortisone	Budesonide	Ciclesonide	Progesterone	Norelgestromin	Betamethasone	Prednisolone	Mometasone furoate	Prednisone
-Ceftriaxone	Piperacillin
-Tramadol	Fluoxetine	Ifenprodil	Acetylcysteine	Defibrotide	Oxycodone	Cannabidiol	Metenkefalin	Camphor	Aprepitant	Levomenthol	Yohimbine	Quetiapine	Naltrexone	Icosapent	Propofol	Progesterone	Acetaminophen	Dexmedetomidine	Resiniferatoxin	Chlorpromazine	Fluvoxamine	Verapamil	Ketamine	Pentoxifylline
-Chloroquine	Thalidomide	Hydroxychloroquine
-Finasteride	Dutasteride
-Minocycline	Montelukast	Artenimol	Fostamatinib	Resveratrol	Captopril	Acetylsalicylic acid	Vitamin E	Citrulline
-Lipoic acid
-Tenofovir	Tenofovir disoproxil	Tenofovir alafenamide	Emtricitabine
-Pantoprazole	Citrulline	Omeprazole	Rabeprazole
-Clindamycin
-Piclidenoson	Fostamatinib
-Ibuprofen	Lenalidomide	Naproxen	Fenofibrate	Curcumin	Oleic Acid	Cannabidiol	Amiodarone	Icosapent	Thalidomide	Acetaminophen	Resveratrol	Omega-3 fatty acids	Celecoxib	Clofazimine	Acetylsalicylic acid	Indomethacin	Pioglitazone	Telmisartan
-Alprostadil	Iloprost	Indomethacin
-Leflunomide	Baricitinib	Atorvastatin	Brequinar	Fostamatinib	Resveratrol	Omeprazole	Genistein	Atovaquone
-Fondaparinux	Bemiparin	Edoxaban	Nafamostat	Heparin	Rivaroxaban	Enoxaparin	Sulodexide	Apixaban
-Acetaminophen	Lenalidomide	Naproxen	Cannabidiol	Camphor	Icosapent	Thalidomide	Resveratrol	Celecoxib	Acetylsalicylic acid	Indomethacin	Resiniferatoxin
-Emtricitabine	Tenofovir disoproxil	Tenofovir alafenamide
-Vitamin A
-Ramipril	Enalapril	Moexipril	Lisinopril	Captopril	Fosinopril	Benazepril	Quinapril	Trandolapril	Perindopril
-Remdesivir	Ribavirin	GC-376 free acid	GS-441524	Galidesivir	PF-07304814
-Thrombin
-Candesartan	Losartan	Candesartan cilexetil	Olmesartan	Angiotensin II	Eprosartan	Telmisartan	Irbesartan
-Eprosartan	Losartan	Candesartan cilexetil	Olmesartan	Angiotensin II	Telmisartan	Irbesartan
-Brexanolone	Sevoflurane	Propofol	Isoflurane	Ivermectin	Midazolam
-Liothyronine	Amiodarone	Acetylsalicylic acid
-Defibrotide	Cannabidiol	Mefloquine	Pentoxifylline
-Quinapril	Enalapril	Moexipril	Lisinopril	Captopril	Fosinopril	Benazepril	Trandolapril	Perindopril
-Clarithromycin	Fluoxetine	Fluvoxamine	Verapamil	Chlorpromazine	Erythromycin	Amiodarone
-Enalapril	Moexipril	Lisinopril	Captopril	Fosinopril	Benazepril	Trandolapril	Perindopril
-Benazepril	Moexipril	Lisinopril	Captopril	Fosinopril	Trandolapril	Perindopril
-Pyridoxine
-Perindopril	Moexipril	Lisinopril	Captopril	Fosinopril	Trandolapril
-Menadione	Primaquine	Resveratrol	Nafamostat	Cannabidiol	Enoxaparin	Argatroban	Bivalirudin	Suramin
-Clofazimine	Icosapent	Oleic Acid	Curcumin	Resveratrol	Cannabidiol	Omega-3 fatty acids	Indomethacin	Pioglitazone	Telmisartan	Amiodarone
-Ebselen
-Dotatate gallium Ga-68
-Naltrexone	Progesterone	Oxycodone	Cannabidiol	Metenkefalin	Levomenthol	Ketamine
-Anakinra
-Piperacillin
-Celecoxib	Lenalidomide	Icosapent	Thalidomide	Naproxen	Fostamatinib	Resveratrol	Cannabidiol	Acetylsalicylic acid	Indomethacin
-Aminolevulinic acid
-Toremifene	Progesterone	Resveratrol	Ethinylestradiol	Genistein
-Cholesterol	Atorvastatin	Curcumin	Resveratrol	Vitamin D	Cholecalciferol	Calcifediol
-Creatine
-Nafamostat	Bemiparin	Edoxaban	Heparin	Camostat	Rivaroxaban	Enoxaparin	Argatroban	Aprotinin	Bivalirudin	Suramin	Apixaban
-Mefloquine	Pentoxifylline
-Zanubrutinib	Ruxolitinib	Baricitinib	Nintedanib	Lidocaine	Fostamatinib	Abivertinib	Tofacitinib	Acalabrutinib
-Bivalirudin	Enoxaparin	Argatroban	Suramin
-Tranilast
-Selinexor
-Ruxolitinib	Fostamatinib	Tofacitinib	Baricitinib
-Ciclesonide	Hydrocortisone	Budesonide	Progesterone	Betamethasone	Prednisolone	Mometasone furoate	Prednisone
-Protoporphyrin
-Baricitinib	Fostamatinib	Tofacitinib	Genistein
-Simvastatin	Cannabidiol	Atorvastatin
-Lidocaine	Thalidomide	Propofol	Progesterone	Fostamatinib	Dipyridamole	Abivertinib	Chlorpromazine
-Colchicine	Artenimol
-Tranexamic acid	Aprotinin
-Epoprostenol	Iloprost	Prasugrel	Clopidogrel
-Etoposide	Genistein
-Demeclocycline
-Inosine
-Prednisolone	Hydrocortisone	Budesonide	Progesterone	Betamethasone	Mometasone furoate	Prednisone
-Mometasone furoate	Hydrocortisone	Budesonide	Progesterone	Norelgestromin	Betamethasone	Prednisone
-Captopril	Moexipril	Lisinopril	Fosinopril	Trandolapril
-Ribavirin	GS-441524	Favipiravir	Danoprevir	Galidesivir
-Methylene blue	Citrulline	Ketamine
-Acetylcysteine	Ifenprodil	Fostamatinib	Acetylsalicylic acid	Ketamine
-Resveratrol	Lenalidomide	Piperine	Fenofibrate	Curcumin	Montelukast	Atorvastatin	Cannabidiol	Deferoxamine	Ethinylestradiol	Ritonavir	Icosapent	Omega-3 fatty acids	Genistein	Indomethacin	Pioglitazone	Naproxen	Artenimol	Oleic Acid	Nifedipine	Vitamin E	Omeprazole	Amiodarone	Primaquine	Ramelteon	Thalidomide	Fostamatinib	Progesterone	Tirofiban	Acetylsalicylic acid	Telmisartan
-Omega-3 fatty acids	Icosapent	Fenofibrate	Oleic Acid	Curcumin	Cannabidiol	Indomethacin	Pioglitazone	Telmisartan	Amiodarone
-Sirolimus	Fostamatinib	Tacrolimus	Heparin
-Quetiapine	Fluoxetine	Cannabidiol	Ketotifen	Dexmedetomidine	Chlorpromazine	Yohimbine	Verapamil	Trifluoperazine	Ketamine	Diphenhydramine
-Amiodarone	Fluoxetine	Fenofibrate	Curcumin	Oleic Acid	Cannabidiol	Nifedipine	Levomenthol	Diltiazem	Icosapent	Telmisartan	Chlorpromazine	Fluvoxamine	Verapamil	Indomethacin	Pioglitazone	Erythromycin
-Eltrombopag
-Niacin
-Diphenhydramine	Chlorpromazine	Ketotifen	Ketamine
-Sildenafil	Fostamatinib	Dipyridamole
-Tazobactam
-Fosinopril	Moexipril	Lisinopril	Trandolapril
-Amodiaquine
-Noscapine
-Cholecalciferol	Vitamin D	Calcifediol	Curcumin
-Apixaban	Bemiparin	Edoxaban	Heparin	Rivaroxaban	Enoxaparin
-Deferoxamine
-Cannabidiol	Lenalidomide	Curcumin	Oxycodone	Metenkefalin	Atorvastatin	Camphor	Ivermectin	Yohimbine	Sevoflurane	Icosapent	Isoflurane	Chlorpromazine	Genistein	Indomethacin	Ketamine	Pioglitazone	Naproxen	Oleic Acid	Nifedipine	Levomenthol	Thalidomide	Progesterone	Acetylsalicylic acid	Verapamil	Resiniferatoxin	Pentoxifylline	Telmisartan
-GC-376 free acid	GS-441524	PF-07304814
-Edoxaban	Bemiparin	Heparin	Rivaroxaban	Enoxaparin
-Cyanocobalamin
-Imatinib	Fostamatinib	Nintedanib
-Midazolam	Sevoflurane	Propofol	Isoflurane	Ivermectin
-Bemiparin	Heparin	Rivaroxaban	Enoxaparin	Sulodexide
-Dutasteride
-Ritonavir	Piperine	Fenofibrate	Nifedipine	Vitamin E	Ethinylestradiol	Darunavir	Genistein	Atazanavir	Lopinavir
-Nitazoxanide
-Sulfamethoxazole
-Ramelteon
-Oleic Acid	Icosapent	Fenofibrate	Curcumin	Indomethacin	Pioglitazone	Telmisartan
-Vitamin D	Curcumin	Calcifediol
-Calcifediol	Curcumin
-Pentoxifylline
-Heparin	Thalidomide	Nintedanib	Fostamatinib	Rivaroxaban	Enoxaparin	Sulodexide
-Fenofibrate	Piperine	Ethinylestradiol	Nifedipine	Vitamin E	Icosapent	Genistein	Indomethacin
-Acetylsalicylic acid	Lenalidomide	Naproxen	Bardoxolone methyl	Icosapent	Thalidomide	Fostamatinib	Ambrisentan	Indomethacin
-Isotretinoin
-Trifluoperazine	Nifedipine	Isoflurane	Chlorpromazine	Yohimbine	Verapamil	Ketamine
-Trandolapril	Moexipril	Lisinopril
-Sevoflurane	Propofol	Isoflurane	Ivermectin
-Hydrocortisone	Budesonide	Progesterone	Betamethasone	Prednisone
-Budesonide	Progesterone	Betamethasone	Prednisone
-Decitabine
-Cyclosporine	Artenimol
-Tofacitinib	Fostamatinib
-Resiniferatoxin	Icosapent	Camphor
-Atovaquone	Brequinar
-Quinine
-Pyridostigmine	Ketamine
-Abivertinib	Fostamatinib	Acalabrutinib
-Sofosbuvir
-Primaquine
-Almitrine
-Telmisartan	Curcumin	Irbesartan	Icosapent	Losartan	Candesartan cilexetil	Olmesartan	Angiotensin II	Indomethacin	Pioglitazone
-Piperine	Nifedipine	Vitamin E	Ethinylestradiol	Genistein
-Razuprotafib
-Nelfinavir
-Merimepodib
-Danoprevir
-Nicotinamide	Suramin	Artenimol
-Lopinavir	Atazanavir	Darunavir
-Nifedipine	Ethinylestradiol	Vitamin E	Levomenthol	Diltiazem	Isoflurane	Chlorpromazine	Verapamil	Genistein
-Brequinar
-Curcumin	Icosapent	Indomethacin	Pioglitazone
-Tetrandrine
-Favipiravir
-Prednisone	Progesterone	Betamethasone
-Metronidazole
-Acalabrutinib	Fostamatinib
-Alpha-Cyclodextrin (Cyclohexa-Amylose)
-Erythromycin	Fluoxetine	Fluvoxamine	Verapamil	Chlorpromazine
-Aprotinin	Camostat
-Genistein	Ethinylestradiol	Vitamin E	Progesterone	Fostamatinib
-GS-441524	Galidesivir	PF-07304814
-Moexipril	Lisinopril
-Fluvoxamine	Fluoxetine	Verapamil	Chlorpromazine
-Aprepitant	Ketamine
-Famotidine
-Levomenthol	Progesterone	Oxycodone	Camphor	Verapamil	Ketamine	Diltiazem
-Propofol	Isoflurane	Ivermectin
-Ketotifen	Chlorpromazine
-Rivaroxaban	Enoxaparin
-Apremilast
-Dipyridamole	Thalidomide	Artenimol	Progesterone	Iloprost	Fostamatinib	Chlorpromazine
-Opaganib
-Betamethasone	Progesterone
-Azithromycin	Citrulline
-Serine
-Lisinopril
-Amoxicillin
-Irbesartan	Losartan	Candesartan cilexetil	Olmesartan	Angiotensin II
-Maraviroc
-Lenalidomide	Icosapent	Thalidomide	Naproxen	Indomethacin
-Camphor	Icosapent
-Levofloxacin
-Argatroban	Enoxaparin	Suramin
-Folic acid
-Icosapent	Naproxen	Thalidomide	Indomethacin	Pioglitazone
-Alendronic acid	Artenimol
-Ketamine	Fluoxetine	Oxycodone	Metenkefalin	Citrulline	Yohimbine	Progesterone	Chlorpromazine
-Indomethacin	Naproxen	Suramin	Thalidomide	Iloprost	Pioglitazone
-Linagliptin	Atorvastatin
+Bardoxolone methyl	Acetylsalicylic acid
+Irbesartan	Telmisartan	Olmesartan	Valsartan	Angiotensin II	Azilsartan medoxomil	Losartan	Candesartan	Candesartan cilexetil	Eprosartan
+Sulodexide	Enoxaparin	Bemiparin	Heparin	Tinzaparin	Fondaparinux	Nadroparin
 Thiamine
-Hesperidin	Fostamatinib
-Clopidogrel	Prasugrel
-Fostamatinib	Montelukast	Vitamin E	Thalidomide	Nintedanib	Duvelisib
-Angiotensin II	Losartan	Candesartan cilexetil	Olmesartan
-Oxycodone	Progesterone	Metenkefalin
-Thalidomide	Naproxen	Nintedanib	Progesterone	Chlorpromazine
-Losartan	Candesartan cilexetil	Olmesartan
-Progesterone	Ethinylestradiol	Norelgestromin	Chlorpromazine
-Dapagliflozin
-Tirofiban
-Atazanavir	Darunavir
-Olmesartan	Candesartan cilexetil
-Nintedanib
-Ivermectin	Isoflurane
-Fluoxetine	Chlorpromazine	Yohimbine	Verapamil
+Aminolevulinic acid
+Nitazoxanide
+Aprepitant	Ketamine	Tramadol
+Enoxaparin	Edoxaban	Nafamostat	Bemiparin	Apixaban	Argatroban	Heparin	Tinzaparin	Menadione	Suramin	Bivalirudin	Rivaroxaban	Fondaparinux	Nadroparin
+Alpha-Cyclodextrin (Cyclohexa-Amylose)
+Diltiazem	Amiodarone	Levomenthol	Amlodipine	Nifedipine	Spironolactone	Verapamil
+Montelukast	Minocycline	Resveratrol	Vitamin E	Fostamatinib
+Calcifediol	Vitamin D	Cholecalciferol	Curcumin
+Emtricitabine	Tenofovir alafenamide	Tenofovir	Tenofovir disoproxil
+Metronidazole
+Enalapril	Captopril	Perindopril	Lisinopril	Fosinopril	Ramipril	Trandolapril	Quinapril	Moexipril	Benazepril
+Velpatasvir	Ledipasvir	Elbasvir	Daclatasvir
+Progesterone	Ketamine	Mometasone	Dipyridamole	Melatonin	Estradiol	Enzalutamide	Prednisolone	Ciclesonide	Tamoxifen	Dexamethasone	Lidocaine	Morphine	Ethinylestradiol	Prednisone	Hydrocortisone	Mometasone furoate	Quercetin	Cannabidiol	Toremifene	Bicalutamide	Tramadol	Methylprednisolone	Chlorpromazine	Norelgestromin	Levomenthol	Betamethasone	Genistein	Prednisolone acetate	Naltrexone	Budesonide	Oxycodone	Spironolactone	Thalidomide	Resveratrol
+Angiotensin II	Telmisartan	Olmesartan	Valsartan	Azilsartan medoxomil	Losartan	Candesartan	Candesartan cilexetil	Eprosartan
+Ethinylestradiol	Toremifene	Melatonin	Estradiol	Ritonavir	Fenofibrate	Piperine	Tamoxifen	Dexamethasone	Vitamin E	Genistein	Nifedipine	Spironolactone	Resveratrol	Quercetin
+Telmisartan	Cannabidiol	Valsartan	Curcumin	Azilsartan medoxomil	Clofazimine	Losartan	Candesartan	Candesartan cilexetil	Valproic acid	Indomethacin	Pioglitazone	Amiodarone	Resveratrol	Olmesartan	alpha-Linolenic acid	Omega-3 fatty acids	Icosapent	Oleic Acid	Eprosartan	Ibuprofen
+Apremilast
+Ciclesonide	Mometasone	Betamethasone	Prednisolone acetate	Budesonide	Prednisolone	Prednisone	Hydrocortisone	Mometasone furoate	Spironolactone	Methylprednisolone	Dexamethasone
+Quercetin	Atorvastatin	Cannabidiol	Curcumin	Melatonin	Toremifene	Estradiol	Leflunomide	Diosmin	Ritonavir	Fenofibrate	Menadione	Omeprazole	Piperine	Tamoxifen	Dexamethasone	Vitamin E	Primaquine	Genistein	Artenimol	Fostamatinib	Nifedipine	Duvelisib	Spironolactone	Ginseng	Resveratrol
+Leflunomide	Atorvastatin	Genistein	Diosmin	Fostamatinib	Baricitinib	Omeprazole	Atovaquone	Ginseng	Brequinar	Resveratrol
 Pantothenic acid
-Tacrolimus
-Ifenprodil
-Citrulline
-Artenimol	Norelgestromin
-Baloxavir marboxil
-Candesartan cilexetil
-Suramin	Enoxaparin
-Ledipasvir	Daclatasvir
-Naproxen
-Prasugrel
-Enoxaparin	Sulodexide
-Levocarnitine
-Fisetin
-Verapamil	Yohimbine	Diltiazem	Chlorpromazine
-Isoflurane	Chlorpromazine
-Artesunate
-Sulodexide
-Iloprost
+Brequinar	Atovaquone
+Sirolimus	Heparin	Fostamatinib	Tacrolimus
+Suramin	Nafamostat	Argatroban	Bivalirudin	Menadione	Nicotinamide	Indomethacin
+Dexamethasone	Minocycline	Mometasone	Estradiol	Ritonavir	Fenofibrate	Prednisolone	Methylprednisolone	Piperine	Tamoxifen	Vitamin E	Betamethasone	Genistein	Prednisolone acetate	Budesonide	Citrulline	Prednisone	Nifedipine	Hydrocortisone	Mometasone furoate	Spironolactone	Resveratrol
+Prasugrel	Epoprostenol	Clopidogrel
+Menadione	Primaquine	Cannabidiol	Nafamostat	Melatonin	Argatroban	Bivalirudin	Resveratrol
+Ginseng	Cannabidiol	Celecoxib	Atorvastatin	Diosmin	Lenalidomide	Naproxen	Omeprazole	Indomethacin	Nimesulide	Resveratrol	Acetylsalicylic acid	Icosapent	Acetaminophen	Thalidomide	Ibuprofen
+Piperine	Vitamin E	Genistein	Estradiol	Ritonavir	Fenofibrate	Nifedipine	Spironolactone	Tamoxifen	Resveratrol
+Cannabidiol	Pentoxifylline	Celecoxib	Ketamine	Atorvastatin	Defibrotide	Quetiapine	Sevoflurane	Valproic acid	Glutathione	Amiodarone	Resveratrol	Acetaminophen	Morphine	Yohimbine	alpha-Linolenic acid	Rosuvastatin	Amlodipine	Omega-3 fatty acids	Icosapent	Camphor	Simvastatin	Curcumin	Clofazimine	Ivermectin	Resiniferatoxin	Lenalidomide	Tramadol	Chlorpromazine	Verapamil	Indomethacin	Pioglitazone	Isoflurane	Nimesulide	Levomenthol	Genistein	Naltrexone	Oxycodone	Thalidomide	Acetylsalicylic acid	Metenkefalin	Oleic Acid	Nifedipine	Spironolactone	Naproxen	Ibuprofen
+Demeclocycline
+Methylene blue	Ketamine	Citrulline
+Genistein	Melatonin	Toremifene	Estradiol	Ritonavir	Fenofibrate	Baricitinib	Etoposide	Tamoxifen	Moxifloxacin	Vitamin E	Fostamatinib	Nifedipine	Spironolactone	Resveratrol
+Thalidomide	Celecoxib	Dipyridamole	Heparin	Lenalidomide	Naproxen	Chlorpromazine	Nintedanib	Indomethacin	Lidocaine	Chloroquine	Nimesulide	Resveratrol	Fostamatinib	Acetylsalicylic acid	Icosapent	Acetaminophen	Ibuprofen
+Dipyridamole	Sildenafil	Artenimol	Fostamatinib	Iloprost	Chlorpromazine	Ibudilast	Lidocaine
+Anakinra
+Valproic acid	Atorvastatin	Curcumin	Clofazimine	Fenofibrate	Simvastatin	Tramadol	Pioglitazone	Indomethacin	Lidocaine	Amiodarone	Resveratrol	Propofol	alpha-Linolenic acid	Omega-3 fatty acids	Icosapent	Oleic Acid	Ibuprofen
+Selinexor
+Almitrine
+Erythromycin	Amiodarone	Clarithromycin	Prazosin	Fluvoxamine	Chlorpromazine	Fluoxetine	Verapamil	Tamoxifen
+Ketamine	Acetylcysteine	Quetiapine	Tramadol	Chlorpromazine	Fluoxetine	Diphenhydramine	Levomenthol	Morphine	Yohimbine	Trifluoperazine	Naltrexone	Oxycodone	Metenkefalin	Citrulline	Pyridostigmine
+Quinapril	Captopril	Perindopril	Lisinopril	Fosinopril	Ramipril	Trandolapril	Moexipril	Benazepril
+Ascorbic acid	Disulfiram
+Thimerosal	Cyanocobalamin	Mecobalamin	Acetylcysteine
+Rivaroxaban	Edoxaban	Nafamostat	Apixaban	Bemiparin	Heparin	Fondaparinux
+Resveratrol	Atorvastatin	Celecoxib	Melatonin	Estradiol	Fenofibrate	Naproxen	Omeprazole	Tamoxifen	Ramelteon	Amiodarone	alpha-Linolenic acid	Omega-3 fatty acids	Icosapent	Tirofiban	Minocycline	Curcumin	Toremifene	Clofazimine	Diosmin	Ritonavir	Lenalidomide	Spironolactone	Deferoxamine	Indomethacin	Pioglitazone	Nimesulide	Vitamin E	Primaquine	Artenimol	Fostamatinib	Acetylsalicylic acid	Oleic Acid	Nifedipine	Acetaminophen	Ibuprofen
+Oleic Acid	Curcumin	Clofazimine	Fenofibrate	Pioglitazone	Indomethacin	Amiodarone	Tretinoin	alpha-Linolenic acid	Ibuprofen	Omega-3 fatty acids	Icosapent
+Ribavirin	Danoprevir	GS-441524	Galidesivir	Favipiravir	Remdesivir
+Tenofovir disoproxil	Tenofovir alafenamide	Tenofovir
+Curcumin	Clofazimine	Cholecalciferol	Pioglitazone	Indomethacin	Glutathione	Vitamin D	Amiodarone	alpha-Linolenic acid	Ibuprofen	Omega-3 fatty acids	Icosapent
+Metenkefalin	Morphine	Naltrexone	Oxycodone	Tramadol
+Mecobalamin	Cyanocobalamin
+Resiniferatoxin	alpha-Linolenic acid	Icosapent	Tramadol	Acetaminophen	Camphor
+Levofloxacin	Moxifloxacin
+Losartan	Olmesartan	Valsartan	Azilsartan medoxomil	Candesartan	Candesartan cilexetil	Eprosartan
+Atazanavir	Darunavir	Lopinavir	Ritonavir
+Moexipril	Captopril	Perindopril	Lisinopril	Fosinopril	Ramipril	Trandolapril	Benazepril
+Imatinib	Nintedanib	Fostamatinib
+Mometasone	Betamethasone	Prednisolone acetate	Budesonide	Prednisolone	Prednisone	Hydrocortisone	Mometasone furoate	Spironolactone	Methylprednisolone	Norelgestromin
+Naproxen	Nimesulide	Celecoxib	Ibuprofen	Acetylsalicylic acid	Lenalidomide	Icosapent	Acetaminophen	Indomethacin
+Quinine
+Fosinopril	Captopril	Perindopril	Lisinopril	Ramipril	Trandolapril	Benazepril
+Budesonide	Betamethasone	Prednisolone acetate	Prednisolone	Prednisone	Hydrocortisone	Mometasone furoate	Spironolactone	Methylprednisolone
+Galidesivir	GS-441524	Remdesivir
+Oseltamivir
+Piperacillin	Ceftriaxone
+Iloprost	Alprostadil	Ibudilast	Epoprostenol	Indomethacin
+Deferoxamine
+Daclatasvir	Ledipasvir	Elbasvir
+Spironolactone	Estradiol	Enzalutamide	Fenofibrate	Prednisolone	Tamoxifen	Finasteride	Amiodarone	Amlodipine	Prednisone	Hydrocortisone	Mometasone furoate	Toremifene	Bicalutamide	Dutasteride	Ritonavir	Methylprednisolone	Verapamil	Norelgestromin	Vitamin E	Levomenthol	Betamethasone	Prednisolone acetate	Nifedipine
+Sildenafil	Fostamatinib
+Apixaban	Edoxaban	Nafamostat	Bemiparin	Heparin	Fondaparinux
+Perindopril	Captopril	Lisinopril	Ramipril	Trandolapril	Benazepril
+Bemiparin	Edoxaban	Nafamostat	Heparin	Tinzaparin	Fondaparinux	Nadroparin
+Metoprolol	Amiodarone	Formoterol
+Cisatracurium	Fluoxetine
+Valsartan	Olmesartan	Azilsartan medoxomil	Candesartan	Candesartan cilexetil	Eprosartan
+Heparin	Edoxaban	Nafamostat	Fostamatinib	Tinzaparin	Fondaparinux	Nadroparin	Nintedanib
+GC-376 free acid	GS-441524	PF-07321332	PF-07304814	Remdesivir
+Baricitinib	Ruxolitinib	Fostamatinib	Zanubrutinib	Tofacitinib
+Ledipasvir	Elbasvir
+Lisinopril	Captopril	Ramipril	Aliskiren	Trandolapril	Benazepril
+Diosmin	Atorvastatin	Omeprazole
+Ramipril	Captopril	Trandolapril	Benazepril
+Tinzaparin	Fondaparinux	Nadroparin
+Dapagliflozin
+Pantoprazole	Rabeprazole	Omeprazole	Citrulline
+Levomenthol	Amiodarone	Morphine	Naltrexone	Amlodipine	Oxycodone	Nifedipine	Tramadol	Verapamil	Camphor
+Fluvoxamine	Amiodarone	Clarithromycin	Prazosin	Tramadol	Chlorpromazine	Fluoxetine	Verapamil	Tamoxifen
+Primaquine	Melatonin
+Methotrexate	Trimethoprim
+Vitamin E	Minocycline	Estradiol	Ritonavir	Fenofibrate	Tamoxifen	Fostamatinib	Nifedipine
+Indomethacin	Celecoxib	Clofazimine	Fenofibrate	Lenalidomide	Pioglitazone	Glutathione	Amiodarone	Nimesulide	alpha-Linolenic acid	Ibuprofen	Omega-3 fatty acids	Fostamatinib	Acetylsalicylic acid	Icosapent	Alprostadil	Acetaminophen
+Niacin
+Tamoxifen	Minocycline	Melatonin	Toremifene	Bicalutamide	Estradiol	Enzalutamide	Ritonavir	Prazosin	Fenofibrate	Chlorpromazine	Fluoxetine	Verapamil	Norelgestromin	Amiodarone	Clarithromycin	Fostamatinib	Nifedipine
+Disulfiram
+Fenofibrate	Estradiol	Ritonavir	Amiodarone	alpha-Linolenic acid	Ibuprofen	Omega-3 fatty acids	Icosapent	Nifedipine
+Minocycline	Captopril	Artenimol	Fostamatinib	Acetylsalicylic acid	Citrulline	Glutathione
 Rabeprazole	Omeprazole
-Tenofovir alafenamide	Tenofovir disoproxil
-Chlorpromazine	Yohimbine	Dexmedetomidine
-Norelgestromin
-Montelukast	Vitamin E
-Vitamin E	Ethinylestradiol
-Raltegravir
-Berberine
-Pioglitazone
-Oxytocin
-Ambrisentan
-Dexmedetomidine	Yohimbine
-Atorvastatin	Omeprazole
-Galidesivir
-Metenkefalin
-Yohimbine
-Camostat
-Ethinylestradiol
-Diltiazem
-Hydroxychloroquine
-Tenofovir disoproxil
-Darunavir
-Bardoxolone methyl
-Omeprazole
-Daclatasvir
-Ascorbic acid
+Metformin	Fostamatinib	Acetylsalicylic acid
+Azilsartan medoxomil	Olmesartan	Candesartan	Candesartan cilexetil	Eprosartan
+Aprotinin	Nafamostat	Tranexamic acid	Camostat
+Etoposide	Moxifloxacin
+Simvastatin	Rosuvastatin	Atorvastatin
+Tetrandrine	Roxithromycin
+Prednisolone acetate	Betamethasone	Prednisolone	Prednisone	Hydrocortisone	Mometasone furoate	Methylprednisolone
+Sofosbuvir
+Oxycodone	Morphine	Naltrexone	Tramadol
+Ambrisentan	Acetylsalicylic acid
+Mefloquine	Pentoxifylline	Defibrotide
+Acalabrutinib	Zanubrutinib	Abivertinib	Fostamatinib	Ibrutinib
+Biotin
+Estradiol	Toremifene	Melatonin	Ritonavir	Isoflurane	Nifedipine
+Nicotinamide	Artenimol
+Prazosin	Amiodarone	Yohimbine	Trifluoperazine	Clarithromycin	Dexmedetomidine	Quetiapine	Tramadol	Chlorpromazine	Fluoxetine	Verapamil
+Artesunate
+Fostamatinib	Celecoxib	Acetylcysteine	Lidocaine	Hesperidin	Zanubrutinib	Tofacitinib	Piclidenoson	Abivertinib	Nintedanib	Ruxolitinib	Acetylsalicylic acid	Ibrutinib	Duvelisib
+Fingolimod	Ozanimod
+Colchicine	Artenimol
+Lenalidomide	Nimesulide	Celecoxib	Ibuprofen	Acetylsalicylic acid	Icosapent	Acetaminophen
+Ibrutinib	Zanubrutinib	Abivertinib
+Icosapent	Celecoxib	Clofazimine	Tramadol	Pioglitazone	Amiodarone	Nimesulide	alpha-Linolenic acid	Ibuprofen	Omega-3 fatty acids	Acetylsalicylic acid	Acetaminophen	Camphor
+alpha-Linolenic acid	Clofazimine	Tramadol	Pioglitazone	Amiodarone	Tretinoin	Omega-3 fatty acids	Acetaminophen	Camphor	Ibuprofen
+Cyanocobalamin
+Chloroquine	Bromhexine	Hydroxychloroquine	Glutathione
+Chlorpromazine	Melatonin	Quetiapine	Tramadol	Fluoxetine	Verapamil	Diphenhydramine	Lidocaine	Isoflurane	Amiodarone	Yohimbine	Trifluoperazine	Amlodipine	Clarithromycin	Dexmedetomidine	Ketotifen	Nifedipine
 Duvelisib
+Baloxavir marboxil
+Sulfamethoxazole
+Omega-3 fatty acids	Amiodarone	Clofazimine	Ibuprofen	Pioglitazone
+Fluoxetine	Amiodarone	Yohimbine	Clarithromycin	Levamisole	Quetiapine	Tramadol	Verapamil
+Opaganib
+Nintedanib	Zanubrutinib
+Tenofovir	Tenofovir alafenamide
 Interferon alfa-2b
+Remdesivir	PF-07321332	GS-441524	PF-07304814
+Serine	Cysteine
+Propofol	Ivermectin	Midazolam	Tramadol	Sevoflurane	Brexanolone	Lidocaine	Isoflurane
+Lidocaine	Abivertinib	Zanubrutinib
+Amoxicillin
 Icatibant
+Edoxaban	Nafamostat	Fondaparinux
+Lipoic acid
+Hesperidin
+Tranexamic acid
+Quetiapine	Yohimbine	Trifluoperazine	Dexmedetomidine	Ketotifen	Tramadol	Verapamil	Diphenhydramine
+Oxytocin
+Azithromycin	Citrulline
+Alendronic acid	Artenimol
+Defibrotide	Pentoxifylline	Tramadol
+Candesartan	Olmesartan	Candesartan cilexetil	Eprosartan
+Nifedipine	Melatonin	Ritonavir	Verapamil	Isoflurane	Amiodarone	Trifluoperazine	Amlodipine
+Fisetin
+Protoporphyrin
+Dexmedetomidine	Yohimbine	Tramadol
+Fondaparinux	Nafamostat	Nadroparin
+Mometasone furoate	Betamethasone	Prednisolone	Prednisone	Hydrocortisone	Methylprednisolone	Norelgestromin
+Ritonavir	Lopinavir	Darunavir
+Tazobactam
+Camphor	Tramadol	Acetaminophen
+Toremifene	Melatonin
+Finasteride	Dutasteride
 Ozanimod
-PF-07304814
+Epoprostenol	Clopidogrel
+Maraviroc
+Elbasvir
+Ketotifen	Diphenhydramine
+Danoprevir
+Ceftriaxone
+Nafamostat	Camostat	Argatroban	Bivalirudin
+Diphenhydramine
+Celecoxib	Nimesulide	Ibuprofen	Acetylsalicylic acid	Acetaminophen
+Tranilast	Tretinoin	Glutathione
+Vitamin D	Cholecalciferol
+Ivermectin	Isoflurane	Midazolam	Sevoflurane	Brexanolone
+Prednisone	Betamethasone	Prednisolone	Hydrocortisone	Methylprednisolone
+Itraconazole
+Pyridoxine
+Olmesartan	Candesartan cilexetil	Eprosartan
+Sitagliptin	Atorvastatin	Linagliptin
+Pentoxifylline	Tramadol
+Creatine
+PF-07304814	GS-441524	PF-07321332
+Erythropoietin
+Nadroparin	Acetylsalicylic acid
+Razuprotafib
+Prednisolone	Betamethasone	Hydrocortisone	Methylprednisolone
+Bromhexine	Camostat	Hydroxychloroquine
+Noscapine
+Clofazimine	Amiodarone	Ibuprofen	Pioglitazone
+Acetaminophen	Tramadol	Nimesulide	Acetylsalicylic acid	Ibuprofen
+Tramadol	Acetylcysteine	Verapamil	Morphine	Yohimbine	Ifenprodil	Naltrexone
+Isoflurane	Melatonin	Trifluoperazine	Midazolam	Sevoflurane	Brexanolone
+Acetylcysteine	Ifenprodil	Acetylsalicylic acid	Cysteine	Glutathione
+Naltrexone	Morphine
+Camostat
+Eprosartan	Candesartan cilexetil
+Berberine
+Hydrocortisone	Betamethasone	Methylprednisolone
+Norelgestromin	Bicalutamide	Artenimol	Enzalutamide
+Midazolam	Sevoflurane	Brexanolone
+Trimethoprim
+Tofacitinib	Zanubrutinib	Ruxolitinib
+Atovaquone
+Artenimol	Cyclosporine
+Nelfinavir	TMC-310911
+Levocarnitine	Febuxostat	Melatonin
+Dotatate gallium Ga-68
+Amiodarone	Verapamil	Pioglitazone	Amlodipine	Clarithromycin	Liothyronine	Formoterol	Ibuprofen
+Tretinoin	Isotretinoin	Vitamin A	Glutathione
+Glutathione	Captopril	Cysteine
+Febuxostat
+Ruxolitinib	Zanubrutinib
+Riboflavin
+Tacrolimus
+Clopidogrel
+Acetylsalicylic acid	Nimesulide	Ibuprofen	Liothyronine
+Decitabine
+Tenofovir alafenamide
+Nimesulide	Ibuprofen
+Morphine
+Levamisole
+Lopinavir	Darunavir
+Yohimbine	Trifluoperazine	Verapamil
+Liothyronine
+Bicalutamide	Enzalutamide
+Ibudilast
+Famotidine
+Omeprazole	Atorvastatin
+Trandolapril	Captopril	Benazepril
+Alprostadil
+Piclidenoson
+Betamethasone	Methylprednisolone
+Aliskiren
+Amlodipine	Verapamil
+Darunavir
+Ifenprodil
+Eltrombopag
+Candesartan cilexetil
+Benazepril	Captopril
+Clarithromycin	Roxithromycin	Verapamil
+Ibuprofen	Pioglitazone
+GS-441524	PF-07321332
+Tirofiban
+Moxifloxacin
+Abivertinib	Zanubrutinib
+Folic acid
+Formoterol
+Rosuvastatin	Atorvastatin
+PF-07321332
+Roxithromycin
+Eflornithine
+Argatroban	Bivalirudin
+Enzalutamide
+Degarelix
+Trifluoperazine	Melatonin	Verapamil
+Amodiaquine
+Cholecalciferol
+Bismuth subcitrate potassium
+Vitamin A
+Cyclosporine
+Clindamycin
+Brexanolone	Sevoflurane
+Pyridostigmine
+Dutasteride
+Captopril
+Bivalirudin
+Melatonin	Ramelteon
+Sevoflurane
+Hydroxychloroquine
+Raltegravir
+Ramelteon
+Zanubrutinib
+Pioglitazone
+Merimepodib
+Atorvastatin	Linagliptin
+Inosine
+Verapamil
+Methylprednisolone
+Cysteine
+Linagliptin
+TMC-310911
+Citrulline
+Ebselen
+Favipiravir
+Isotretinoin

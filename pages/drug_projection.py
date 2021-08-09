@@ -43,7 +43,6 @@ layout=dbc.Col([
                     graph_properties(prefix),
                     html.Br(),
                     advanced_section(prefix, G, graph_title)
-                    # custom_clustering(prefix),
                 ])
             ], no_gutters=True),
             html.Div(style={"height":"10vh"}),

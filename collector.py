@@ -24,8 +24,11 @@ class drug():
         #set DrugBank accession number as ID
         self.id = accession_number
         self.ID = self.id
-    def advanced_init(self,done_proteins):
+    def advanced_init(self, trials, done_proteins):
         """adds useful intel"""
+        self.trials = trials["Identifiers"]
+        self.trials_phases = trials["Phases"]
+        self.trials_hrefs = trials["Identifiers Hrefs"]
         #set compound object
         self.__compound = pubchem.get_compounds(self.name,"name")[0] # if it throws an exception the drug is escluded because it isn't in PubChem compounds database
         self.complexity = self.__compound.complexity
@@ -101,10 +104,13 @@ class drug():
         total=content["recordsTotal"]
         data=content["data"]
         for d in data:
-            dd=BeautifulSoup(d[0], "html5lib")
-            drug_name=dd.text
-            drug_id=dd.a["href"].split("/")[-1]
-            self.drug_interactions[drug(drug_name,drug_id)]=d[1]
+            try:  # sometimes the a tag is missing
+                dd=BeautifulSoup(d[0], "html5lib")
+                drug_name=dd.text
+                drug_id=dd.a["href"].split("/")[-1]
+                self.drug_interactions[drug(drug_name,drug_id)]=d[1]
+            except:
+                pass
         n=100
         while n < total:
             url="https://www.drugbank.ca/drugs/%s/drug_interactions.json?&start=%d&length=100"%(self.id,n)
@@ -112,17 +118,24 @@ class drug():
             content=response.json()
             data=content["data"]
             for d in data:
-                dd=BeautifulSoup(d[0], "html5lib")
-                drug_name=dd.text
-                drug_id=dd.a["href"].split("/")[-1]
-                self.drug_interactions[drug(drug_name,drug_id)]=d[1]
+                try:  # sometimes the a tag is missing
+                    dd=BeautifulSoup(d[0], "html5lib")
+                    drug_name=dd.text
+                    drug_id=dd.a["href"].split("/")[-1]
+                    self.drug_interactions[drug(drug_name,drug_id)]=d[1]
+                except:
+                    pass
             n+=100
         return self,added_proteins
+    def update_trials(self, trials):
+        self.trials = trials["Identifiers"]
+        self.trials_phases = trials["Phases"]
+        self.trials_hrefs = trials["Identifiers Hrefs"]
     def __str__(self):
         return "%s (%s)"%(self.name, self.id)
     #more functions shoud be added
     def summary(self):
-        return pd.DataFrame({"ID":self.id,"SMILES":self.smiles,"ATC Code Level 1":[self.atc1],"ATC Code Level 2":[self.atc2],"ATC Code Level 3":[self.atc3],"ATC Code Level 4":[self.atc4],"ATC Identifier":[self.atc_identifier],"Targets":[[t.name for t in self.targets.values()]],"Enzymes":[[e.name for e in self.enzymes.values()]],"Carriers":[[c.name for c in self.carriers.values()]],"Transporters":[[t.name for t in self.transporters.values()]],"Target Class":[self.target_class],"Drug Interactions":[[d.name for d in self.drug_interactions]]},index=[self.name])
+        return pd.DataFrame({"ID":self.id,"SMILES":self.smiles,"ATC Code Level 1":[self.atc1],"ATC Code Level 2":[self.atc2],"ATC Code Level 3":[self.atc3],"ATC Code Level 4":[self.atc4],"ATC Identifier":[self.atc_identifier],"Targets":[[t.name for t in self.targets.values()]],"Enzymes":[[e.name for e in self.enzymes.values()]],"Carriers":[[c.name for c in self.carriers.values()]],"Transporters":[[t.name for t in self.transporters.values()]],"Target Class":[self.target_class],"Drug Interactions":[[d.name for d in self.drug_interactions]],"Trials":[self.trials],"Trials Phases":[self.trials_phases],"Trials Hrefs":[self.trials_hrefs]},index=[self.name])
 
 
 class protein():
@@ -234,19 +247,36 @@ class collector():
         tables = soup.findAll('table', attrs = {'class':'table table-sm datatable dt-responsive'})
         experimental_unapproved_treatments=pd.read_html(str(tables[0]))[0]
         #potential_drug_targets=pd.read_html(str(tables[1]))[0]
-        clinical_trials=pd.read_html(str(tables[2]))[0]
+        clinical_trials=pd.read_html(str(tables[2]))[0][["Drug", "Phase", "Identifier"]]
+        clinical_trials.insert(len(clinical_trials.columns), "Identifier Href", [row.find_all("td")[-1].a["href"] for row in tables[2].find_all("tr")[1:]]) # retrieves and adds a columns with the clinical trials hrefs
+        grouped_trials = clinical_trials.groupby(by=["Drug"])
+        trials_info = {}
+        for d in set(clinical_trials["Drug"]):
+            group = grouped_trials.get_group(d)
+            phase = list(group["Phase"])#{phase for phases in group["Phase"] for phase in phases.split(", ")}
+            identifiers = list(group["Identifier"])
+            hrefs = list(group["Identifier Href"])
+            trials_info[d] = {"Phases":phase, "Identifiers":identifiers, "Identifiers Hrefs":hrefs}
         #clinical_trials_num=pd.read_html(str(tables[3]))[0]
         drug_tags=set([h for h in tables[0].findAll("a")+tables[2].findAll("a") if "/drugs/" in h["href"]])
+        drug_ids = {d["href"].split("/")[-1] for d in drug_tags}
         if os.path.isfile("data/SARS-CoV-2_drug_database.pickle"):
             with open("data/SARS-CoV-2_drug_database.pickle","rb") as bkp:
                 bkp_class=pickle.load(bkp)
-            self.drugs=bkp_class.drugs
+            #self.drugs=bkp_class.drugs
+            self.drugs=[]
+            for d in bkp_class.drugs: # checks if drugs have been removed
+                if d.id in drug_ids:
+                    d.update_trials(trials_info.get(d.name, {"Phases":["Not Available"], "Identifiers":["Not Available"], "Identifiers Hrefs":["Not Available"]}))
+                    self.drugs.append(d)
+                else:
+                    self.added_new_drugs=True #actually no, but this triggers the recalculation of the graph properties
             self.excluded=bkp_class.excluded
             self.__proteins=bkp_class._collector__proteins #do not change class name! (sure there is a more elegant way...)
             for d in tqdm(drug_tags):
                 if d.get_text() not in [drug.name for drug in self.drugs]+self.excluded:
                     try:
-                        temp_drug,added_proteins=drug(d.get_text(),(d["href"].split("/")[-1])).advanced_init(self.__proteins)
+                        temp_drug,added_proteins=drug(d.get_text(),(d["href"].split("/")[-1])).advanced_init(trials_info.get(d.get_text(), {"Phases":["Not Available"], "Identifiers":["Not Available"], "Identifiers Hrefs":["Not Available"]}), self.__proteins)
                         self.drugs.append(temp_drug)
                         self.__proteins.update(added_proteins)
                         if len(temp_drug.targets):
@@ -258,7 +288,7 @@ class collector():
             for d in tqdm(drug_tags):
                 if d.get_text() not in [drug.name for drug in self.drugs]+self.excluded:
                     try:
-                        temp_drug,added_proteins=drug(d.get_text(),(d["href"].split("/")[-1])).advanced_init(self.__proteins)
+                        temp_drug,added_proteins=drug(d.get_text(),(d["href"].split("/")[-1])).advanced_init(trials_info.get(d.get_text(), {"Phases":["Not Available"], "Identifiers":["Not Available"], "Identifiers Hrefs":["Not Available"]}), self.__proteins)
                         self.drugs.append(temp_drug)
                         self.__proteins.update(added_proteins)
                     except:
@@ -384,14 +414,14 @@ class collector():
         threshold=0.4
         df=pd.DataFrame([(drug1,drug2,df[drug1][drug2]) for drug1,drug2 in itertools.combinations(list(df),2) if df[drug1][drug2] > threshold], columns=["Source","Target","Weight"])
         drug_attributes={drug.name:(drug.summary().T.to_dict()[drug.name]) for drug in self.drugs}
-        structures={mol.name:"https://www.drugbank.ca/structures/%s/image.svg"%mol.id for mol in self.drugs} # direttamente da drugbank
+        structures={mol.name:"https://www.drugbank.ca/structures/%s/image.svg"%mol.id for mol in self.drugs} # straight from drugbank
 
         G=nx.from_pandas_edgelist(df,source="Source",target="Target",edge_attr="Weight")
         nx.set_node_attributes(G,drug_attributes)
         nx.set_node_attributes(G,{node:node for node in G.nodes},"Name")
         nx.set_node_attributes(G,structures,"structure")
         nx.set_node_attributes(G,{node:"#FC5F67" for node in G.nodes()},"fill_color")
-        nx.set_node_attributes(G,{node:"#CC6540" for node in G.nodes()},"line_color") #idem
+        nx.set_node_attributes(G,{node:"#CC6540" for node in G.nodes()},"line_color")
         self.graph_properties(G)
         self.__chemicalspace=G
         df.to_csv("data/graphs/chemicalspace/.tsv",sep="\t")
@@ -552,7 +582,20 @@ if __name__ == "__main__":
     COVID_drugs=collector()
 
     # for debugging
-    # rem, pr=drug("Remdesivir","DB14761").advanced_init([])
+    # url = "https://www.drugbank.ca/covid-19"
+    # response = requests.get(url)
+    # page = response.content
+    # soup = BeautifulSoup(page, "html5lib")
+    # tables = soup.findAll('table', attrs = {'class':'table table-sm datatable dt-responsive'})
+    # clinical_trials=pd.read_html(str(tables[2]))[0][["Drug", "Phase", "Identifier"]]
+    # clinical_trials.insert(len(clinical_trials.columns), "Identifier Href", [row.find_all("td")[-1].a["href"] for row in tables[2].find_all("tr")[1:]]) # retrieves and adds a columns with the clinical trials hrefs
+    # grouped_trials = clinical_trials.groupby(by=["Drug"])
+    # group = grouped_trials.get_group("Remdesivir")
+    # phase = list(group["Phase"])#{phase for phases in group["Phase"] for phase in phases.split(", ")}
+    # identifiers = list(group["Identifier"])
+    # hrefs = list(group["Identifier Href"])
+    # trials_info = {"Phases":phase, "Identifiers":identifiers, "Identifiers Hrefs":hrefs}
+    # rem, pr=drug("Remdesivir","DB14761").advanced_init(trials_info,[])
     # print(COVID_drugs.excluded)
 
     # COVID_drugs.drugtarget()
@@ -573,6 +616,6 @@ if __name__ == "__main__":
                 name="data/groups/"+prefix+"_"+group+".pickle"
                 if os.path.isfile(name):
                     os.rename(name,name+".bkp")
-        COVID_drugs.communities()
         COVID_drugs.spectral_clustering()
+        COVID_drugs.communities()
     print("Done!")

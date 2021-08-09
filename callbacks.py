@@ -118,7 +118,7 @@ def displayHoverNodeData_callback(prefix,G):
                 if not warning:
                     warning = not warning
             if data["kind"]=="Drug":
-                attributes=["ID","SMILES","ATC Code Level 1","ATC Identifier","Targets","Enzymes","Carriers","Transporters","Drug Interactions"]
+                attributes=["ID","SMILES","ATC Code Level 1","ATC Identifier","Targets","Enzymes","Carriers","Transporters","Drug Interactions", "Trials"]
                 link_drugbank="https://www.drugbank.ca/drugs/"+data["ID"]
                 if data["ID"] != "Not Available":
                     img=html.A(html.Img(src=data["structure"], height="auto", width="100%", alt="Structure Image not Available"), href="https://www.drugbank.ca/structures/small_molecule_drugs/"+data["ID"] ,target="_blank")
@@ -134,6 +134,14 @@ def displayHoverNodeData_callback(prefix,G):
                     attributes_list.append(dbc.Container(html.Li([html.Strong(attribute+": "),", ".join(data[attribute])], className="list-group-item"), style={"max-height":"20vh","overflow-y":"auto", "padding":"0"}, fluid=True))
                 elif attribute == "ID":
                     attributes_list.append(html.Li([html.Strong(attribute+": "),html.A(data[attribute], href=link_drugbank, target="_blank")], className="list-group-item"))
+                elif attribute == "Trials":
+                    trials_list = [html.Strong("Trials: ")]
+                    for n, trial in enumerate(data["Trials"]):
+                        trials_list.append(html.A(trial, href=data["Trials Hrefs"][n], target="_blank"))
+                        trials_list.append(f" (phase: {data['Trials Phases'][n]})")
+                        trials_list.append(", ")
+                    trials_list = trials_list[:-1] # in order to remove the last ", "
+                    attributes_list.append(dbc.Container(html.Li(trials_list, className="list-group-item"), style={"max-height":"20vh","overflow-y":"auto", "padding":"0"}, fluid=True))
                 elif attribute == "PDBID" and data[attribute] != "Not Available":
                     attributes_list.append(html.Li([html.Strong(attribute+": "),html.A(data[attribute], href="https://www.rcsb.org/structure/"+data[attribute], target="_blank")], className="list-group-item"))
                 elif attribute == "Gene":
@@ -341,7 +349,7 @@ def group_highlighter_callback(prefix,nodes,maj):
     if prefix == "drug_target":
         properties=["kind"]
     elif prefix == "drug_projection":
-        properties=["ATC Code Level 1", "ATC Code Level 2", "ATC Code Level 3", "ATC Code Level 4", "Targets", "Enzymes", "Carriers", "Transporters", "Drug Interactions"]
+        properties=["ATC Code Level 1", "ATC Code Level 2", "ATC Code Level 3", "ATC Code Level 4", "Targets", "Enzymes", "Carriers", "Transporters", "Drug Interactions", "Target Class", "Trials Phases"]
     elif prefix == "target_projection":
         properties=["STRING Interaction Partners", "Drugs", "Diseases", "Organism", "Protein Class", "Protein Family", "Cellular Location"]
     centralities=["Degree","Closeness Centrality","Betweenness Centrality", "Eigenvector Centrality","Clustering Coefficient","VoteRank Score"]
@@ -579,7 +587,7 @@ def highlighter_callback(prefix,G,nodes,L,evals,evects,n_clusters,clusters,L_maj
                     stylesheet={"selector":"[ID = '"+[element["data"]["ID"] for element in nodes if element["data"]["Name"]==node][0]+"']"}
                     style={"pie-size":"100%", "border-color":"#303633","border-width":2}
                     for target_class in classes:
-                        style.update({"pie-"+class2num[target_class]+"-background-color":cmap[target_class],"pie-"+class2num[target_class]+"-background-size":100/len(classes)})
+                        style.update({"pie-"+class2num[target_class]+"-background-color":cmap[target_class],"pie-"+class2num[target_class]+"-background-size":(100*classes.count(target_class))/len(classes)})
                         try:
                             classes_count[target_class]+=1/len(classes)
                         except:
@@ -595,6 +603,37 @@ def highlighter_callback(prefix,G,nodes,L,evals,evects,n_clusters,clusters,L_maj
                 table_body=[]
                 for target_class in cmap:
                     table_body.append(html.Tr([html.Td("",style={"background-color":cmap[target_class]}),html.Td(target_class)]))
+                legend_body=dbc.Table(html.Tbody(table_body), borderless=True, size="sm")
+
+            elif coloring == "trialphase":
+                trial_phases = {node["data"]["Name"]:node["data"]["Trials Phases"] for node in nodes}
+                all_phases=sorted(set([l for ll in trial_phases.values() for l in ll]))
+                cmap=dict(zip(all_phases,[rgb2hex(plt.cm.RdYlGn(n)) for n in np.arange(0,1.1,1/len(all_phases))]))
+                cmap.update({"Not Available":"#708090"})
+                phase2num={list(cmap.keys())[num]:str(num+1) for num in range(len(all_phases))}
+                stylesheets=[]
+                phases_count={}
+                tot_phases=0
+                for node,phases in trial_phases.items():
+                    stylesheet={"selector":"[ID = '"+[element["data"]["ID"] for element in nodes if element["data"]["Name"]==node][0]+"']"}
+                    style={"pie-size":"100%", "border-color":"#303633","border-width":2}
+                    for trial_phase in phases:
+                        style.update({"pie-"+phase2num[trial_phase]+"-background-color":cmap[trial_phase],"pie-"+phase2num[trial_phase]+"-background-size":(100*phases.count(trial_phase))/len(phases)})
+                        try:
+                            phases_count[trial_phase]+=1/len(phases)
+                        except:
+                            phases_count[trial_phase]=1/len(phases)
+                        tot_phases+=1
+                    stylesheet.update({"style":style})
+                    stylesheets.append(stylesheet)
+                stylesheet=stylesheets
+
+                pie_data=go.Pie(labels=[f"Phase: {p}" for p in phases_count.keys()], values=[int(value) for value in phases_count.values()], marker_colors=[cmap[trial_phase] for trial_phase in phases_count.keys()])
+                pie=go.Figure(data=pie_data, layout={"title":{"text":"Nodes' Categories Distribution","x":0.5, "xanchor": "center"}})
+                pie.update_traces(textposition="inside", textinfo="label+percent", hovertemplate=" %{label} <br> Nodes: %{value} </br> %{percent} <extra></extra>")
+                table_body=[]
+                for trial_phase in cmap:
+                    table_body.append(html.Tr([html.Td("",style={"background-color":cmap[trial_phase]}),html.Td(f"Phase: {trial_phase}")]))
                 legend_body=dbc.Table(html.Tbody(table_body), borderless=True, size="sm")
 
             elif coloring == "atc":

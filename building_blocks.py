@@ -296,7 +296,7 @@ def coloring_dropdown(prefix):
         options=[{"label":"Categorical", "value":"categorical"}]
         value="categorical"
     if prefix == "drug_projection":
-        options=[{"label":"ATC Code", "value":"atc"},{"label":"Target Class", "value":"targetclass"}]
+        options=[{"label":"ATC Code", "value":"atc"},{"label":"Target Class", "value":"targetclass"},{"label":"Trial Phase", "value":"trialphase"}]
         value="atc"
     if prefix == "target_projection":
         options=[{"label":"Protein Class", "value":"class"},{"label":"Protein Family", "value":"family"},{"label":"Cellular Location", "value":"location"}]
@@ -370,7 +370,7 @@ def group_highlighting(prefix, nodes):
     #             dbc.Button("Highlight by Property", id=prefix+"_group_highlighter_open", block=True, className="btn btn-outline-primary", disabled=True),
     #             ])
     if prefix == "drug_projection":
-        properties=["ATC Code Level 1", "ATC Code Level 2", "ATC Code Level 3", "ATC Code Level 4", "Targets", "Enzymes", "Carriers", "Transporters", "Drug Interactions"]
+        properties=["ATC Code Level 1", "ATC Code Level 2", "ATC Code Level 3", "ATC Code Level 4", "Targets", "Enzymes", "Carriers", "Transporters", "Drug Interactions", "Target Class", "Trials Phases"]
 
     elif prefix == "target_projection":
         properties=["STRING Interaction Partners", "Drugs", "Diseases"]

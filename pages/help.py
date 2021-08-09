@@ -64,6 +64,11 @@ drugs_body=[
             html.Td("Drugs that are known to interact, interfere or cause adverse reactions when taken with this drug"),
             html.Td(html.A("DrugBank", href="https://go.drugbank.com/", target="_blank"))
         ]),
+        html.Tr([
+            html.Td("Trials"),
+            html.Td("Identifiers of clinical trials with the respective phase"),
+            html.Td(html.A("DrugBank", href="https://go.drugbank.com/", target="_blank"))
+        ]),
     ])
 ]
 targets_body=[
