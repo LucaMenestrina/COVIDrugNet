@@ -19,6 +19,12 @@ if test -d "COVIDrugNet.bkp"; then
 fi
 mv COVIDrugNet COVIDrugNet.bkp
 mv COVIDrugNet-master COVIDrugNet
+if test -f ".env"; then
+  cp .env COVIDrugNet/.env
+else
+  if ! test $DISGENET_EMAIL && $DISGENET_PASSWORD; then
+    echo "No DisGeNET credentials found, gene-disease associations will not be collected"
+fi
 cd COVIDrugNet
 start_time="$(date -u +%s)"
 python collector.py

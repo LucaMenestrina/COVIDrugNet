@@ -83,7 +83,7 @@ layout=dbc.Col([
                     html.Br(),
                     html.Hr(),
                     html.Br(),
-                    html.H4(["Last Database Update: ",html.Time(["6",html.Sup("th")," August 2021"], dateTime="2021-08-06")]),#, " (No changes since 8",html.Sup("th")," June 2021)"
+                    html.H4(["Last Database Update: ",html.Time(["11",html.Sup("th")," August 2021"], dateTime="2021-08-11")]),#, " (No changes since 11",html.Sup("th")," August 2021)"
                     html.Br(),
                     html.H5(["Data and Code Available at: ",html.A("https://github.com/LucaMenestrina/COVIDrugNet", href="https://github.com/LucaMenestrina/COVIDrugNet", target="_blank", style={"color":"black"})]),
                     html.Br(),
@@ -183,6 +183,7 @@ layout=dbc.Col([
                         html.Li(html.A("powerlaw", href="https://github.com/jeffalstott/powerlaw", target="_blank", style={"color":"black"})),
                         html.Li(html.A("PubChemPy", href="https://pubchempy.readthedocs.io/", target="_blank", style={"color":"black"})),
                         html.Li(html.A("pygraphviz", href="https://pygraphviz.github.io/", target="_blank", style={"color":"black"})),
+                        html.Li(html.A("python-dotenv", href="https://github.com/theskumar/python-dotenv", target="_blank", style={"color":"black"})),
                         html.Li([
                             html.A("rdkit", href="https://www.rdkit.org/", target="_blank", style={"color":"black"}),
                             #https://rdkit-discuss.narkive.com/9QGX4Vxh/is-there-a-way-to-cite-rdkit-in-a-paper

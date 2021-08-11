@@ -296,7 +296,7 @@ def coloring_dropdown(prefix):
         options=[{"label":"Categorical", "value":"categorical"}]
         value="categorical"
     if prefix == "drug_projection":
-        options=[{"label":"ATC Code", "value":"atc"},{"label":"Target Class", "value":"targetclass"},{"label":"Trial Phase", "value":"trialphase"}]
+        options=[{"label":"ATC Code", "value":"atc"},{"label":"Target Class", "value":"targetclass"},{"label":"Clinical Trial Phase", "value":"trialphase"}]
         value="atc"
     if prefix == "target_projection":
         options=[{"label":"Protein Class", "value":"class"},{"label":"Protein Family", "value":"family"},{"label":"Cellular Location", "value":"location"}]

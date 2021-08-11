@@ -17,6 +17,32 @@ import networkx as nx
 from networkx.algorithms import bipartite
 from networkx.algorithms.community import modularity
 
+def disgenet_authentication():
+    """
+        Since June 2021 authentication is required for retrieving data from DisGeNET
+    """
+    global disgenet_session
+    try:
+        return disgenet_session
+    except:
+        try:
+            email = os.environ["DISGENET_EMAIL"]
+            password = os.environ["DISGENET_PASSWORD"]
+        except:
+            try:
+                from dotenv import dotenv_values
+                credentials = dotenv_values()
+                email = credentials["DISGENET_EMAIL"]
+                password = credentials["DISGENET_PASSWORD"]
+            except:
+                print "No DisGeNET credentials found, gene-disease associations will not be collected"
+        auth_url = "https://www.disgenet.org/api/auth/"
+        response = requests.post(auth_url, data={"email":email, "password":password})
+        token = response.json()["token"]
+        disgenet_session = requests.Session()
+        disgenet_session.headers.update({"Authorization": f"Bearer {token}"})
+        return disgenet_session
+
 class drug():
     def __init__(self,name,accession_number):
         #set name
@@ -173,7 +199,7 @@ class protein():
         else:
             try:
                 disgenet_url="https://www.disgenet.org/api/gda/gene/%s?min_ei=1&type=group&format=tsv"%self.gene #min evidence index 1 (EI = 1 indicates that all the publications support the GDA)
-                response=requests.get(disgenet_url)
+                response=disgenet_authentication().get(disgenet_url)
                 page=response.content
                 soup = BeautifulSoup(page, "html5lib")
                 lines=soup.find("body").get_text().split("\n")
@@ -618,4 +644,6 @@ if __name__ == "__main__":
                     os.rename(name,name+".bkp")
         COVID_drugs.spectral_clustering()
         COVID_drugs.communities()
+    else:
+        print("Nothing to update")
     print("Done!")

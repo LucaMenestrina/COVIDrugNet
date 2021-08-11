@@ -10,8 +10,8 @@ In [our article](https://www.biorxiv.org/content/early/2021/03/09/2021.03.05.433
 
 ### Updates  
 
-Last Database Update: 6th August 2021<!--   (No changes since 6th August 2021)-->  
-Analyses Update:      6th August 2021<!--   (No changes since 6th August 2021)-->  
+Last Database Update: 11th August 2021<!--   (No changes since 11th August 2021)-->  
+Analyses Update:      11th August 2021<!--   (No changes since 11th August 2021)-->  
 
 ### Cite
 
@@ -40,6 +40,12 @@ Please cite [our paper](https://www.biorxiv.org/content/early/2021/03/09/2021.03
 - [ChEMBL](https://www.ebi.ac.uk/chembl/)
 - [Gordon et al. Virus-Host interactome](https://doi.org/10.1038/s41586-020-2286-9)
 - [Chen et al. Virus-Host interactome](http://127.0.0.1:8050/covidrugnet/10.1101/2020.12.31.424961)
+
+#### DisGeNET Authentication Note
+Since June 2021 authentication is required for retrieving data from DisGeNET.  
+In order to use COVIDrugNet locally it is required to provide the DisGeNET credentials, otherwise it will not collect gene-disease associations.  
+COVIDrugNet supports both environmental variables and .env files (keys: DISGENET_EMAIL, DISGENET_PASSWORD).  
+Please set them before running COVIDrugNet on your machine.  
 
 ### Browser compatibility
 The website has been tested on the following browsers and OSs:
@@ -72,6 +78,7 @@ COVIDrugNet is entirely written in Python 3 and would not be possible without th
 - [powerlaw](https://github.com/jeffalstott/powerlaw)
 - [PubChemPy](https://pubchempy.readthedocs.io/)
 - [pygraphviz](https://pygraphviz.github.io/)
+- [python-dotenv](https://github.com/theskumar/python-dotenv)
 - [scikit](https://scikit-learn.org/)
 - [scipy](https://www.scipy.org/)
 - [rdkit](https://www.rdkit.org/)
