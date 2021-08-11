@@ -135,13 +135,14 @@ def displayHoverNodeData_callback(prefix,G):
                 elif attribute == "ID":
                     attributes_list.append(html.Li([html.Strong(attribute+": "),html.A(data[attribute], href=link_drugbank, target="_blank")], className="list-group-item"))
                 elif attribute == "Trials":
-                    trials_list = [html.Strong("Trials: ")]
-                    for n, trial in enumerate(data["Trials"]):
-                        trials_list.append(html.A(trial, href=data["Trials Hrefs"][n], target="_blank"))
-                        trials_list.append(f" (phase: {data['Trials Phases'][n]})")
-                        trials_list.append(", ")
-                    trials_list = trials_list[:-1] # in order to remove the last ", "
-                    attributes_list.append(dbc.Container(html.Li(trials_list, className="list-group-item"), style={"max-height":"20vh","overflow-y":"auto", "padding":"0"}, fluid=True))
+                    if not (len(data["Trials"]) == 1 and data["Trials"][0] == "Not Available"):
+                        trials_list = [html.Strong("Trials: ")]
+                        for n, trial in enumerate(data["Trials"]):
+                            trials_list.append(html.A(trial, href=data["Trials Hrefs"][n], target="_blank"))
+                            trials_list.append(f" (phase: {data['Trials Phases'][n]})")
+                            trials_list.append(", ")
+                        trials_list = trials_list[:-1] # in order to remove the last ", "
+                        attributes_list.append(dbc.Container(html.Li(trials_list, className="list-group-item"), style={"max-height":"20vh","overflow-y":"auto", "padding":"0"}, fluid=True))
                 elif attribute == "PDBID" and data[attribute] != "Not Available":
                     attributes_list.append(html.Li([html.Strong(attribute+": "),html.A(data[attribute], href="https://www.rcsb.org/structure/"+data[attribute], target="_blank")], className="list-group-item"))
                 elif attribute == "Gene":
