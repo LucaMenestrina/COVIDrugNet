@@ -35,7 +35,9 @@ def disgenet_authentication():
                 email = credentials["DISGENET_EMAIL"]
                 password = credentials["DISGENET_PASSWORD"]
             except:
-                print "No DisGeNET credentials found, gene-disease associations will not be collected"
+                print("No DisGeNET credentials found, gene-disease associations will not be collected")
+                disgenet_session = requests.Session()
+                return disgenet_session
         auth_url = "https://www.disgenet.org/api/auth/"
         response = requests.post(auth_url, data={"email":email, "password":password})
         token = response.json()["token"]
@@ -50,6 +52,7 @@ class drug():
         #set DrugBank accession number as ID
         self.id = accession_number
         self.ID = self.id
+        self.nameID = f"{self.name} ({self.id})"
     def advanced_init(self, trials, done_proteins):
         """adds useful intel"""
         self.trials = trials["Identifiers"]
@@ -59,7 +62,7 @@ class drug():
         self.__compound = pubchem.get_compounds(self.name,"name")[0] # if it throws an exception the drug is escluded because it isn't in PubChem compounds database
         self.complexity = self.__compound.complexity
         self.heavy_atoms = self.__compound.heavy_atom_count
-        if self.heavy_atoms <=6:
+        if self.heavy_atoms <= 6:
             raise Exception("Less than 6 Heavy Atoms")
         try:
             self.smiles = self.__compound.isomeric_smiles
@@ -103,21 +106,22 @@ class drug():
         self.atc_identifier=atc_codes[5]
         self.__proteins={}
         added_proteins={}
+        done_proteins_url = {prot.drugbank_url:prot for prot in done_proteins.values()}
         for kind in ["targets","enzymes","carriers","transporters"]:
             self.__proteins[kind]={}
             tables = soup.find("div", attrs = {"class":"bond-list-container %s"%kind})
             if tables:
                 for tab in tables.findAll("a"):
                     if ("class" not in tab.attrs and "target" not in tab.attrs):
-                        if tab.get_text() not in done_proteins:
+                        if f"https://www.drugbank.ca{tab['href']}" not in done_proteins_url:
                             try:
                                 prot=protein("https://www.drugbank.ca"+tab["href"])
-                                self.__proteins[kind][prot.name]=prot
-                                added_proteins[prot.name]=prot
+                                self.__proteins[kind][prot.nameID]=prot
+                                added_proteins[prot.nameID]=prot
                             except:
                                 pass
                         else:
-                            self.__proteins[kind][tab.get_text()]=done_proteins[tab.get_text()]
+                            self.__proteins[kind][done_proteins_url[f"https://www.drugbank.ca{tab['href']}"].nameID]=done_proteins_url[f"https://www.drugbank.ca{tab['href']}"]
         self.targets=self.__proteins["targets"]
         self.enzymes=self.__proteins["enzymes"]
         self.carriers=self.__proteins["carriers"]
@@ -161,17 +165,23 @@ class drug():
         return "%s (%s)"%(self.name, self.id)
     #more functions shoud be added
     def summary(self):
-        return pd.DataFrame({"ID":self.id,"SMILES":self.smiles,"ATC Code Level 1":[self.atc1],"ATC Code Level 2":[self.atc2],"ATC Code Level 3":[self.atc3],"ATC Code Level 4":[self.atc4],"ATC Identifier":[self.atc_identifier],"Targets":[[t.name for t in self.targets.values()]],"Enzymes":[[e.name for e in self.enzymes.values()]],"Carriers":[[c.name for c in self.carriers.values()]],"Transporters":[[t.name for t in self.transporters.values()]],"Target Class":[self.target_class],"Drug Interactions":[[d.name for d in self.drug_interactions]],"Trials":[self.trials],"Trials Phases":[self.trials_phases],"Trials Hrefs":[self.trials_hrefs]},index=[self.name])
+        return pd.DataFrame({"ID":self.id,"Name":self.name,"nameID":self.nameID,"SMILES":self.smiles,"ATC Code Level 1":[self.atc1],"ATC Code Level 2":[self.atc2],"ATC Code Level 3":[self.atc3],"ATC Code Level 4":[self.atc4],"ATC Identifier":[self.atc_identifier],"Targets":[[t.name for t in self.targets.values()]],"Enzymes":[[e.name for e in self.enzymes.values()]],"Carriers":[[c.name for c in self.carriers.values()]],"Transporters":[[t.name for t in self.transporters.values()]],"Target Class":[self.target_class],"Drug Interactions":[[d.name for d in self.drug_interactions]],"Trials":[self.trials],"Trials Phases":[self.trials_phases],"Trials Hrefs":[self.trials_hrefs]},index=[self.nameID])
 
 
 class protein():
     def __init__(self,url):
+        if "bio_entities" in url:
+            response = requests.get(url)
+            page = response.content
+            soup = BeautifulSoup(page, "html5lib")
+            url = "https://go.drugbank.ca"+[td.a["href"] for td in soup.findAll("dd", attrs={"class":"col-xl-10 col-md-9 col-sm-8"})[3].findAll("td") if td.get_text() == "Details"][0]
         self.drugbank_url=url
         self.id = url.split("/")[-1]
         response = requests.get(url)
         page = response.content
         soup = BeautifulSoup(page, "html5lib")
         self.name = soup.find("h1").get_text()
+        self.nameID = f"{self.name} ({self.id})"
         relations = soup.find('table', attrs = {'id':'target-relations'})
         self.gene=soup.findAll("dd",attrs={"class":"col-xl-10 col-md-9 col-sm-8"})[2].get_text()
         self.organism=soup.findAll("dd",attrs={"class":"col-xl-10 col-md-9 col-sm-8"})[3].get_text()
@@ -193,9 +203,8 @@ class protein():
             except:
                 self.string_interaction_partners={}
         #get diseases
-        self.diseases=[]
         if self.organism != "Humans":
-            self.diseases.append(self.organism)
+            self.diseases=[self.organism]
         else:
             try:
                 disgenet_url="https://www.disgenet.org/api/gda/gene/%s?min_ei=1&type=group&format=tsv"%self.gene #min evidence index 1 (EI = 1 indicates that all the publications support the GDA)
@@ -213,7 +222,7 @@ class protein():
             page = response.content
             soup = BeautifulSoup(page, "html5lib")
             table=soup.find("div", attrs={"id":"allmodelsDiv"}).find("table")
-            pdbid=table.findAll("a")[0]["href"].split("/")[-1]
+            pdbid=[a for a in table.findAll("a") if a.has_attr("href")][0]["href"].split("/")[-1]
             if "template" in pdbid:#es check with https://swissmodel.expasy.org/repository/uniprot/K9N7C7
                 pdbid=pdbid.split("=")[1][:-1]
             if "." in pdbid:#es check with https://swissmodel.expasy.org/repository/uniprot/Q02641
@@ -228,7 +237,7 @@ class protein():
         self.protein_class=self.__protein_classification["l1"] if (self.__protein_classification["l1"] and self.__protein_classification["l1"] != "Unclassified protein") else "Not Available"
         self.family=self.__protein_classification["l2"] if self.__protein_classification["l2"] else "Not Available"
     def summary(self):
-        return pd.DataFrame({"Gene":self.gene,"ID":self.id,"PDBID":self.pdbid,"Organism":self.organism,"Protein Class":self.protein_class,"Protein Family":self.family,"Cellular Location":self.location,"STRING Interaction Partners":[list(self.string_interaction_partners.keys())],"Diseases":[self.diseases],"Drugs":[[d.name for d in self.drugs]],"drugbank_url":self.drugbank_url},index=[self.name])
+        return pd.DataFrame({"Gene":self.gene,"ID":self.id,"Name":self.name,"nameID":self.nameID,"PDBID":self.pdbid,"Organism":self.organism,"Protein Class":self.protein_class,"Protein Family":self.family,"Cellular Location":self.location,"STRING Interaction Partners":[list(self.string_interaction_partners.keys())],"Diseases":[self.diseases],"Drugs":[[d.name for d in self.drugs]],"drugbank_url":self.drugbank_url},index=[self.nameID])
 
 def get_frequency(list):
   d={}
@@ -434,7 +443,7 @@ class collector():
         elif save:
             df.to_csv("data/graphs/similarity/similarity.tsv",sep="\t")
         return df
-    def chemicalspace(self,tab=False):
+    def chemicalspace(self):
         self.similarities={drug1.name:{drug2.name:DataStructs.FingerprintSimilarity(drug1.fingerprint,drug2.fingerprint) for drug2 in self.drugs if drug2.fingerprint} for drug1 in self.drugs if drug1.fingerprint}
         df=pd.DataFrame(self.similarities)
         threshold=0.4
@@ -452,25 +461,24 @@ class collector():
         self.__chemicalspace=G
         df.to_csv("data/graphs/chemicalspace/.tsv",sep="\t")
         nx.write_gpickle(G,"data/graphs/chemicalspace/chemicalspace.pickle")
-    def drugtarget(self,tab=False):
+    def drugtarget(self):
         print("Building Drug-Target Network ...")
-        drugtarget=[{"Drug":drug.name,"Target":target.name} for drug in self.drugs for target in drug.targets.values()]
+        drugtarget=[{"Drug":drug.nameID,"Target":target} for drug in self.drugs for target in drug.targets]
         df=pd.DataFrame(drugtarget)
-        drug_attributes={drug.name:(drug.summary().T.to_dict()[drug.name]) for drug in self.drugs}
-        protein_attributes={target.name:(target.summary().T.to_dict()[target.name]) for target in self.__proteins.values() if target.name in set(df["Target"])}
-        structures={mol.name:"https://www.drugbank.ca/structures/%s/image.svg"%mol.id for mol in self.drugs} # direttamente da drugbank
+        drug_attributes={drug.nameID:(drug.summary().T.to_dict()[drug.nameID]) for drug in self.drugs}
+        protein_attributes={target.nameID:(target.summary().T.to_dict()[target.nameID]) for target in self.__proteins.values() if target.nameID in set(df["Target"])}
+        structures={mol.nameID:"https://www.drugbank.ca/structures/%s/image.svg"%mol.id for mol in self.drugs} # direttamente da drugbank
         for prot in tqdm(self.__proteins.values()):
-            if prot.name in set(df["Target"]):
+            if prot.nameID in set(df["Target"]):
                 url="https://cdn.rcsb.org/images/structures/%s/%s/%s_%s-1.jpeg"%(prot.pdbid[1:3].lower(),prot.pdbid.lower(),prot.pdbid.lower(),"assembly")
                 if requests.head(url).status_code == 200:
-                    structures.update({prot.name:url})
+                    structures.update({prot.nameID:url})
                 else:
-                    structures.update({prot.name:"https://cdn.rcsb.org/images/structures/%s/%s/%s_model-1.jpeg"%(prot.pdbid[1:3].lower(),prot.pdbid.lower(),prot.pdbid.lower())})
+                    structures.update({prot.nameID:"https://cdn.rcsb.org/images/structures/%s/%s/%s_model-1.jpeg"%(prot.pdbid[1:3].lower(),prot.pdbid.lower(),prot.pdbid.lower())})
 
         G=nx.from_pandas_edgelist(df,source="Drug",target="Target")
         nx.set_node_attributes(G,drug_attributes)
         nx.set_node_attributes(G,protein_attributes)
-        nx.set_node_attributes(G,{node:node for node in G.nodes},"Name")
         nx.set_node_attributes(G,structures,"structure")
         nx.set_node_attributes(G,{node:("Drug" if node in set(df["Drug"]) else "Target") for node in G.nodes()},"kind")
         self.graph_properties(G)
@@ -480,18 +488,18 @@ class collector():
         self.__drugtarget=G
         self.save_graph(self.added_new_drugs,df,G,"drug_target")
         self.save()
-    def drugdrug(self,tab=False):
+    def drugdrug(self):
         print("Building Drug Projection ...")
-        drug_attributes={drug.name:(drug.summary().T.to_dict()[drug.name]) for drug in self.drugs}
-        structures={mol.name:"https://www.drugbank.ca/structures/%s/image.svg"%mol.id for mol in self.drugs} # direttamente da drugbank
-        nodes=[d.name for d in self.drugs if d.targets != {}]
+        drug_attributes={drug.nameID:(drug.summary().T.to_dict()[drug.nameID]) for drug in self.drugs}
+        structures={mol.nameID:"https://www.drugbank.ca/structures/%s/image.svg"%mol.id for mol in self.drugs} # direttamente da drugbank
+        nodes=[d.nameID for d in self.drugs if d.targets != {}]
         G=bipartite.weighted_projected_graph(self.__drugtarget,nodes)
         self.graph_properties(G)
         self.__drugdrug=G
         df=nx.to_pandas_edgelist(G)
         self.save_graph(self.added_new_drugs,df,G,"drug_projection")
         self.save()
-    def targettarget(self,tab=False):
+    def targettarget(self):
         print("Building Target Projection ...")
         nodes=[t for d in self.drugs for t in d.targets]
         G=bipartite.weighted_projected_graph(self.__drugtarget,nodes)
@@ -500,22 +508,22 @@ class collector():
         df=nx.to_pandas_edgelist(G)
         self.save_graph(self.added_new_drugs,df,G,"target_projection")
         self.save()
-    def targetinteractors(self,tab=False):
+    def targetinteractors(self):
         targets_list=set([target for drug in self.drugs for target in drug.targets.values()])
         targetinteractors=[{"Source":source.gene,"Target":target,"Score":source.string_interaction_partners[target]["score"]} for source in targets_list for target in source.string_interaction_partners]
         df=pd.DataFrame(targetinteractors)
-        protein_attributes={target.name:(target.summary().T.to_dict()[target.name]) for target in targets_list}
+        protein_attributes={target.nameID:(target.summary().T.to_dict()[target.nameID]) for target in targets_list}
         G=nx.from_pandas_edgelist(df,source="Source",target="Target", edge_attr="Score")
         nx.set_node_attributes(G,protein_attributes)
         nx.set_node_attributes(G,{node:node for node in G.nodes},"gene")
         self.graph_properties(G)
         self.__targetinteractors=G
         self.save_graph(self.added_new_drugs,df,G,"target_interactors")
-    def targetdiseases(self,tab=False):
+    def targetdiseases(self):
         proteins_list=set([target for drug in self.drugs for target in drug.targets.values()])
-        targetdiseases=[{"Source":protein.name,"Target":disease} for protein in proteins_list for disease in protein.diseases]
+        targetdiseases=[{"Source":protein.nameID,"Target":disease} for protein in proteins_list for disease in protein.diseases]
         df=pd.DataFrame(targetdiseases)
-        protein_attributes={protein.name:(protein.summary().T.to_dict()[protein.name]) for protein in proteins_list}
+        protein_attributes={protein.nameID:(protein.summary().T.to_dict()[protein.nameID]) for protein in proteins_list}
         G=nx.from_pandas_edgelist(df,source="Source",target="Target")
         nx.set_node_attributes(G,protein_attributes)
         nx.set_node_attributes(G,{node:node for node in G.nodes},"name")
@@ -578,8 +586,8 @@ class collector():
         targeted_genes=human.intersection(set(dict(nx.get_node_attributes(self.__targettarget,"Gene")).values()))
         drugs={}
         for name,node in self.__drugtarget.nodes(data=True):
-            if node["kind"] == "Target":
-                if node["Gene"] in human and name not in ["HCG20471, isoform CRA_c", "Glutathione peroxidase"]: #because they share the same gene name (SIGMAR1 and GPX1) with Sigma non-opioid intracellular receptor 1 and Glutathione Peroxidase 1 ## manually curation needed
+            if node["kind"] == "Target" and node.get("Organism") == "Humans":
+                if node.get("Gene") in human and name not in ["HCG20471, isoform CRA_c", "Glutathione peroxidase"]: #because they share the same gene name (SIGMAR1 and GPX1) with Sigma non-opioid intracellular receptor 1 and Glutathione Peroxidase 1 ## manually curation needed
                     drugs[node["Gene"]]=list(self.__drugtarget.neighbors(name))
         networker_edges={(source,target) for source,targets in drugs.items() for target in targets}
         edges=edges.union(networker_edges)
@@ -621,7 +629,9 @@ if __name__ == "__main__":
     # identifiers = list(group["Identifier"])
     # hrefs = list(group["Identifier Href"])
     # trials_info = {"Phases":phase, "Identifiers":identifiers, "Identifiers Hrefs":hrefs}
-    # rem, pr=drug("Remdesivir","DB14761").advanced_init(trials_info,[])
+    # rem, pr=drug("Remdesivir","DB14761").advanced_init(trials_info,{})
+    # rep = protein("https://go.drugbank.com/polypeptides/P0DTD1")
+
     # print(COVID_drugs.excluded)
 
     # COVID_drugs.drugtarget()

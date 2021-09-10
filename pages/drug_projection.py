@@ -13,7 +13,7 @@ prefix=graph_title.lower().replace(" ","_")#"drug_projection"
 print("Loading "+graph_title+" ...")
 
 G=nx.read_gpickle("data/graphs/drug_projection/drug_projection.gpickle")
-nx.set_node_attributes(G,nx.get_node_attributes(G,"Name"),"id")
+nx.set_node_attributes(G,nx.get_node_attributes(G,"nameID"),"id")
 
 
 try:

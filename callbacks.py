@@ -109,8 +109,8 @@ def displayHoverNodeData_callback(prefix,G):
     def displayHoverNodeData(data,selected_data,warning):
         img=None
         if not data:
-            data={"id":"","Properties":"Hover over a node (or select it) to show its properties"}
-            attributes=["id","Properties"]
+            data={"Name":"","Properties":"Hover over a node (or select it) to show its properties"}
+            attributes=["Name","Properties"]
             link_drugbank=""
         else:
             if selected_data and len(selected_data)==1:
@@ -149,7 +149,7 @@ def displayHoverNodeData_callback(prefix,G):
                     attributes_list.append(html.Li([html.Strong(attribute+": "),html.A(data[attribute], href="https://www.uniprot.org/uniprot/"+data["ID"], target="_blank")], className="list-group-item"))
                 else:
                     attributes_list.append(html.Li([html.Strong(attribute+": "),data[attribute]], className="list-group-item"))
-        return data["id"],img,attributes_list,warning
+        return data["Name"],img,attributes_list,warning
     return displayHoverNodeData
 
 def inspected_table_callback(prefix):
@@ -278,6 +278,8 @@ def inspected_table_callback(prefix):
                         targets_table]
 
                 return dbc.Container(results, fluid=True), True, False, visibility, open, "%d Nodes"%len(data), data
+            elif len(data)>=1:
+                return dbc.Container(results, fluid=True, style={"padding":"3%"}), False, True, visibility, open, None, data
             else:
                 return dbc.Container(results, fluid=True, style={"padding":"3%"}), False, True, visibility, open, None, []
         else:
@@ -304,10 +306,10 @@ def properties_table_callback(prefix,graph_properties_df,nodes):
         if prefix == "drug_target":
             df.drop("Clustering Coefficient", inplace=True, axis=1) # removes the clustering coefficient column from the dataframe of the Drug-Target Networks, since it is bipartited and the clustering coefficient has no meaning in this case
         if only_inspected and inspected_data:
-            df=df.loc[[node["Name"] for node in inspected_data]]
-            options=[{"label":name,"value":name} for name in [node["Name"] for node in inspected_data]]
+            df=df.loc[[node["nameID"] for node in inspected_data]]
+            options=[{"label":name,"value":name} for name in [node["nameID"] for node in inspected_data]]
         else:
-            options=[{"label":data["Name"],"value":data["Name"]} for data in [node["data"] for node in nodes]]
+            options=[{"label":data["nameID"],"value":data["nameID"]} for data in [node["data"] for node in nodes]]
         if search:
             df=df.loc[search]
         sorting=sorting.split(",")
@@ -576,7 +578,7 @@ def highlighter_callback(prefix,G,nodes,L,evals,evects,n_clusters,clusters,L_maj
                 legend_body=dbc.Table(html.Tbody([html.Tr([html.Td("",style={"background-color":"#FC5F67"}),html.Td("Drugs")]),html.Tr([html.Td("",style={"background-color":"#12EAEA"}),html.Td("Targets")])]), borderless=True, size="sm")
 
             elif coloring == "targetclass":
-                target_classes={node["data"]["Name"]:node["data"]["Target Class"] for node in nodes}
+                target_classes={node["data"]["nameID"]:node["data"]["Target Class"] for node in nodes}
                 all_classes=sorted(set([l for ll in target_classes.values() for l in ll]))
                 cmap=dict(zip(all_classes,[rgb2hex(plt.cm.Spectral(n)) for n in np.arange(0,1.1,1/len(all_classes))]))
                 cmap.update({"Not Available":"#708090"})
@@ -585,7 +587,7 @@ def highlighter_callback(prefix,G,nodes,L,evals,evects,n_clusters,clusters,L_maj
                 classes_count={}
                 tot_classes=0
                 for node,classes in target_classes.items():
-                    stylesheet={"selector":"[ID = '"+[element["data"]["ID"] for element in nodes if element["data"]["Name"]==node][0]+"']"}
+                    stylesheet={"selector":"[ID = '"+[element["data"]["ID"] for element in nodes if element["data"]["nameID"]==node][0]+"']"}
                     style={"pie-size":"100%", "border-color":"#303633","border-width":2}
                     for target_class in classes:
                         style.update({"pie-"+class2num[target_class]+"-background-color":cmap[target_class],"pie-"+class2num[target_class]+"-background-size":(100*classes.count(target_class))/len(classes)})
@@ -607,7 +609,7 @@ def highlighter_callback(prefix,G,nodes,L,evals,evects,n_clusters,clusters,L_maj
                 legend_body=dbc.Table(html.Tbody(table_body), borderless=True, size="sm")
 
             elif coloring == "trialphase":
-                trial_phases = {node["data"]["Name"]:node["data"]["Trials Phases"] for node in nodes}
+                trial_phases = {node["data"]["nameID"]:node["data"]["Trials Phases"] for node in nodes}
                 all_phases=sorted(set([l for ll in trial_phases.values() for l in ll]))
                 cmap=dict(zip(all_phases,[rgb2hex(plt.cm.RdYlGn(n)) for n in np.arange(0,1.1,1/len(all_phases))]))
                 cmap.update({"Not Available":"#708090"})
@@ -616,7 +618,7 @@ def highlighter_callback(prefix,G,nodes,L,evals,evects,n_clusters,clusters,L_maj
                 phases_count={}
                 tot_phases=0
                 for node,phases in trial_phases.items():
-                    stylesheet={"selector":"[ID = '"+[element["data"]["ID"] for element in nodes if element["data"]["Name"]==node][0]+"']"}
+                    stylesheet={"selector":"[ID = '"+[element["data"]["ID"] for element in nodes if element["data"]["nameID"]==node][0]+"']"}
                     style={"pie-size":"100%", "border-color":"#303633","border-width":2}
                     for trial_phase in phases:
                         style.update({"pie-"+phase2num[trial_phase]+"-background-color":cmap[trial_phase],"pie-"+phase2num[trial_phase]+"-background-size":(100*phases.count(trial_phase))/len(phases)})
@@ -1048,9 +1050,9 @@ def custom_clustering_section_callback(prefix,G,Evals,Evects,Evals_maj,Evects_ma
             clusters_data={}
             for n,cl in enumerate(clusters):
                 try:
-                    clusters_data[cl].append(list(dict(graph.nodes("Name")).values())[n])
+                    clusters_data[cl].append(list(dict(graph.nodes("nameID")).values())[n])
                 except:
-                    clusters_data[cl]=[list(dict(graph.nodes("Name")).values())[n]]
+                    clusters_data[cl]=[list(dict(graph.nodes("nameID")).values())[n]]
             clusters_data={n:", ".join(clusters_data[n]) for n in range(len(clusters_data))}
             table_header=[html.Thead(html.Tr([html.Th("Cluster"),html.Th("Nodes")]))]
             table_body=[]

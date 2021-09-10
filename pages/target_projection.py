@@ -14,7 +14,7 @@ prefix=graph_title.lower().replace(" ","_")#"target_projection"
 print("Loading "+graph_title+" ...")
 
 G=nx.read_gpickle("data/graphs/target_projection/target_projection.gpickle")
-nx.set_node_attributes(G,nx.get_node_attributes(G,"Name"),"id")
+nx.set_node_attributes(G,nx.get_node_attributes(G,"nameID"),"id")
 
 try:
     from networkx.drawing.nx_agraph import graphviz_layout
@@ -26,7 +26,7 @@ nodes=[{"data":{key:value for key,value in attributes.items()}, "position":{"x":
 edges=[{"data":{"source":source,"target":target}} for source,target in G.edges]
 print("\tComputing edges to show ...")
 dt=nx.read_gpickle("data/graphs/drug_target/drug_target.gpickle")
-neighbors=set(dt.neighbors("Fostamatinib")).difference(set(dt.neighbors("Artenimol")))
+neighbors=set(dt.neighbors("Fostamatinib (DB12010)")).difference(set(dt.neighbors("Artenimol (DB11638)")))
 edges_to_show=[edge for edge in edges if not (edge["data"]["source"] in neighbors and edge["data"]["target"] in neighbors)]
 
 
