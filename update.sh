@@ -24,6 +24,7 @@ if test -f ".env"; then
 else
   if ! test $DISGENET_EMAIL && $DISGENET_PASSWORD; then
     echo "No DisGeNET credentials found, gene-disease associations will not be collected"
+  fi
 fi
 cd COVIDrugNet
 start_time="$(date -u +%s)"

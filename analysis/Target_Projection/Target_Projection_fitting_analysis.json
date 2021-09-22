@@ -1,52 +1,52 @@
 {
     "observed": {
-        "alpha": 1.342688402324575,
-        "xmin": 4.0,
-        "D": 0.22070666719758425,
-        "percentage": 87.33
+        "alpha": 1.3155419044369354,
+        "xmin": 3.0,
+        "D": 0.22115784168461433,
+        "percentage": 89.35
     },
     "comparisons": {
         "truncated_power_law": {
-            "likelihood-ratio": -329.3933296763039,
+            "likelihood-ratio": -360.5409169757363,
             "pvalue": 0.0
         },
         "exponential": {
-            "likelihood-ratio": -349.2874620732912,
-            "pvalue": 1.0033287611756648e-21
+            "likelihood-ratio": -375.6921890110586,
+            "pvalue": 3.2602755945633276e-22
         },
         "stretched_exponential": {
-            "likelihood-ratio": -397.776239850632,
-            "pvalue": 1.6586532111783383e-54
+            "likelihood-ratio": -441.37802552050664,
+            "pvalue": 7.983282310579904e-64
         },
         "lognormal": {
-            "likelihood-ratio": -317.1711878225502,
-            "pvalue": 1.080033951510675e-51
+            "likelihood-ratio": -358.32714783919386,
+            "pvalue": 2.5173791501542476e-61
         }
     },
     "bootstrap": {
         "D": {
-            "estimated": 0.019488675494494047,
+            "estimated": 0.019660896484148135,
             "CI": [
-                0.012897446357396564,
-                0.02761131139914694
+                0.013001904165058866,
+                0.02786636079695518
             ],
             "pvalue": 0.0
         },
         "alpha": {
-            "estimated": 1.332170918465347,
+            "estimated": 1.324799016626495,
             "CI": [
-                1.2850491558240393,
-                1.3628209438237524
+                1.2826355522934587,
+                1.3535079432925057
             ],
-            "pvalue": 0.38413
+            "pvalue": 0.64518
         },
         "xmin": {
-            "estimated": 3.65135,
+            "estimated": 3.33202,
             "CI": [
                 2.0,
-                5.0
+                4.0
             ],
-            "pvalue": 0.63919
+            "pvalue": 0.84301
         }
     }
 }
