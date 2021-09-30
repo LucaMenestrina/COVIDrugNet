@@ -1,4 +1,3 @@
-import dash_core_components as dcc
 import dash_bootstrap_components as dbc
 import dash_html_components as html
 
@@ -60,28 +59,103 @@ layout = dbc.Col(
                                                             },
                                                         ),
                                                         html.Br(),
-                                                        html.H5("Preprint at bioRxiv"),
-                                                        # html.H5("Jurnal, Pages, Issue, Year ..."),
-                                                        # html.Br(),
-                                                        # dbc.Row([
-                                                        #     dbc.Col([
-                                                        #         html.P("Received", style={"margin-bottom":"0.5rem"}),
-                                                        #         html.P(html.Time("Not Yet",dateTime="1900-01-01")),
-                                                        #     ], align="center"),
-                                                        #     # dbc.Col([
-                                                        #     #     html.P("Hopefully Accepted", style={"margin-bottom":"0.5rem","color":"grey"}),
-                                                        #     #     html.P(html.Time("Not Yet",dateTime="1900-01-01"), style={"color":"grey"}),
-                                                        #     # ], align="center"),
-                                                        #     # dbc.Col([
-                                                        #     #     html.P("Hopefully Published", style={"margin-bottom":"0.5rem","color":"grey"}),
-                                                        #     #     html.P(html.Time("Not Yet",dateTime="1900-01-01"), style={"color":"grey"}),
-                                                        #     # ], align="center")
-                                                        # ], justify="around", align="center"),
+                                                        # html.H5("Preprint at bioRxiv"),
+                                                        html.H5(
+                                                            [
+                                                                html.I(
+                                                                    "Scientific Reports"
+                                                                ),
+                                                                " 11, Article number: 19426 (2021)",
+                                                            ]
+                                                        ),
+                                                        html.Br(),
+                                                        dbc.Row(
+                                                            [
+                                                                dbc.Col(
+                                                                    [
+                                                                        html.P(
+                                                                            "Received",
+                                                                            style={
+                                                                                "margin-bottom": "0.5rem"
+                                                                            },
+                                                                        ),
+                                                                        html.P(
+                                                                            html.Time(
+                                                                                "25 March 2021",
+                                                                                dateTime="2021-03-25",
+                                                                            )
+                                                                        ),
+                                                                    ],
+                                                                    align="center",
+                                                                ),
+                                                                dbc.Col(
+                                                                    [
+                                                                        html.P(
+                                                                            "First Decision",
+                                                                            style={
+                                                                                "margin-bottom": "0.5rem"
+                                                                            },
+                                                                        ),
+                                                                        html.P(
+                                                                            html.Time(
+                                                                                "4 Augurst 2021",
+                                                                                dateTime="2021-08-04",
+                                                                            )
+                                                                        ),
+                                                                    ],
+                                                                    align="center",
+                                                                ),
+                                                                dbc.Col(
+                                                                    [
+                                                                        html.P(
+                                                                            "Accepted",
+                                                                            style={
+                                                                                "margin-bottom": "0.5rem",
+                                                                                # "color": "grey",
+                                                                            },
+                                                                        ),
+                                                                        html.P(
+                                                                            html.Time(
+                                                                                "13 September 2021",
+                                                                                dateTime="2021-09-13",
+                                                                            ),
+                                                                            # style={
+                                                                            #     "color": "grey"
+                                                                            # },
+                                                                        ),
+                                                                    ],
+                                                                    align="center",
+                                                                ),
+                                                                dbc.Col(
+                                                                    [
+                                                                        html.P(
+                                                                            "Published",
+                                                                            style={
+                                                                                "margin-bottom": "0.5rem",
+                                                                                # "color": "grey",
+                                                                            },
+                                                                        ),
+                                                                        html.P(
+                                                                            html.Time(
+                                                                                "30 September 2021",
+                                                                                dateTime="2021-09-30",
+                                                                            ),
+                                                                            # style={
+                                                                            #     "color": "grey"
+                                                                            # },
+                                                                        ),
+                                                                    ],
+                                                                    align="center",
+                                                                ),
+                                                            ],
+                                                            justify="around",
+                                                            align="center",
+                                                        ),
                                                         html.Br(),
                                                         html.H5("DOI:"),
                                                         html.A(
-                                                            "https://doi.org/10.1101/2021.03.05.433897",
-                                                            href="https://doi.org/10.1101/2021.03.05.433897",
+                                                            "https://doi.org/10.1038/s41598-021-98812-0",  # bioRxiv https://doi.org/10.1101/2021.03.05.433897
+                                                            href="https://doi.org/10.1038/s41598-021-98812-0",
                                                             target="_blank",
                                                         ),
                                                     ],
@@ -94,7 +168,7 @@ layout = dbc.Col(
                                             align="center",
                                             id="paper",
                                         ),
-                                        href="https://www.biorxiv.org/content/10.1101/2021.03.05.433897v1",
+                                        href="https://www.nature.com/articles/s41598-021-98812-0",  # bioRxiv "https://www.biorxiv.org/content/10.1101/2021.03.05.433897v1"
                                         target="_blank",
                                         style={
                                             "color": "black",
@@ -119,7 +193,7 @@ layout = dbc.Col(
                                             [
                                                 html.A(
                                                     "In the paper",
-                                                    href="https://www.biorxiv.org/content/10.1101/2021.03.05.433897v1",
+                                                    href="https://www.nature.com/articles/s41598-021-98812-0",  # bioRxiv "https://www.biorxiv.org/content/10.1101/2021.03.05.433897v1"
                                                     target="_blank",
                                                     style={
                                                         "color": "black",
@@ -155,7 +229,7 @@ layout = dbc.Col(
                                 " please cite ",
                                 html.A(
                                     "our article",
-                                    href="https://www.biorxiv.org/content/10.1101/2021.03.05.433897v1",
+                                    href="https://www.nature.com/articles/s41598-021-98812-0#citeas",  # bioRxiv "https://www.biorxiv.org/content/10.1101/2021.03.05.433897v1"
                                     target="_blank",
                                     style={"color": "black"},
                                 ),
@@ -163,23 +237,50 @@ layout = dbc.Col(
                             ]
                         ),
                         html.Br(),
+                        # html.Pre(
+                        #     [
+                        #         "@article {Menestrina2021.03.05.433897,",
+                        #         html.Br(),
+                        #         "\t title = {COVIDrugNet: a network-based web tool to investigate the drugs currently in clinical trial to contrast COVID-19},",
+                        #         html.Br(),
+                        #         "\t author = {Menestrina, Luca and Cabrelle, Chiara and Recanatini, Maurizio},",
+                        #         html.Br(),
+                        #         "\t journal = {bioRxiv}",
+                        #         html.Br(),
+                        #         "\t year = {2021},",
+                        #         html.Br(),
+                        #         "\t doi = {10.1101/2021.03.05.433897},",
+                        #         html.Br(),
+                        #         "\t URL = {https://www.biorxiv.org/content/early/2021/03/09/2021.03.05.433897},",
+                        #         html.Br(),
+                        #         "\t publisher = {Cold Spring Harbor Laboratory},",
+                        #         html.Br(),
+                        #         "}",
+                        #     ],
+                        #     style={
+                        #         "background-color": "rgba(211,211,211,0.15)",
+                        #         "border-radius": "0.6rem",
+                        #     },
+                        # ),
                         html.Pre(
                             [
-                                "@article {Menestrina2021.03.05.433897,",
+                                "@article {Menestrina2021,",
                                 html.Br(),
                                 "\t title = {COVIDrugNet: a network-based web tool to investigate the drugs currently in clinical trial to contrast COVID-19},",
                                 html.Br(),
                                 "\t author = {Menestrina, Luca and Cabrelle, Chiara and Recanatini, Maurizio},",
                                 html.Br(),
-                                "\t journal = {bioRxiv}",
+                                "\t journal = {Scientific Reports}",
+                                html.Br(),
+                                "\t volume = {11}",
                                 html.Br(),
                                 "\t year = {2021},",
                                 html.Br(),
-                                "\t doi = {10.1101/2021.03.05.433897},",
+                                "\t doi = {10.1038/s41598-021-98812-0},",
                                 html.Br(),
-                                "\t URL = {https://www.biorxiv.org/content/early/2021/03/09/2021.03.05.433897},",
+                                "\t URL = {www.nature.com/articles/s41598-021-98812-0},",
                                 html.Br(),
-                                "\t publisher = {Cold Spring Harbor Laboratory},",
+                                "\t publisher = {Nature Publishing Group},",
                                 html.Br(),
                                 "}",
                             ],
@@ -188,7 +289,7 @@ layout = dbc.Col(
                                 "border-radius": "0.6rem",
                             },
                         ),
-                        # html.P("bib string for easy citing, come per gli altri sotto"),
+                        # html.P("bib string for easy citing"),
                         html.Br(),
                         html.Hr(),
                         html.Br(),

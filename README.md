@@ -6,7 +6,7 @@
 
 The COVID-19 pandemic poses a huge problem of public health that requires the implementation of all available means to contrast it, and drugs are one of them. In this context, we observed an unmet need of depicting the continuously evolving scenario of the ongoing drug clinical trials through an easy-to-use, freely accessible online tool. Starting from this consideration, we developed [**COVIDrugNet**](http://compmedchem.unibo.it/covidrugnet), a web application that allows users to capture a holistic view and keep up to date on how the clinical drug research is responding to the SARS-CoV-2 infection.
 
-In [our article](https://www.biorxiv.org/content/early/2021/03/09/2021.03.05.433897), we describe the web app and show through some examples how one can explore the whole landscape of medicines in clinical trial for the treatment of COVID-19 and try to probe the consistency of the current approaches with the available biological and pharmacological evidence. We conclude that careful analyses of the COVID-19 drug-target system based on COVIDrugNet can help to understand the biological implications of the proposed drug options, and eventually improve the search for more effective therapies.
+In [our article](https://www.nature.com/articles/s41598-021-98812-0), we describe the web app and show through some examples how one can explore the whole landscape of medicines in clinical trial for the treatment of COVID-19 and try to probe the consistency of the current approaches with the available biological and pharmacological evidence. We conclude that careful analyses of the COVID-19 drug-target system based on COVIDrugNet can help to understand the biological implications of the proposed drug options, and eventually improve the search for more effective therapies.
 
 ### Updates  
 
@@ -15,17 +15,18 @@ Analyses Update:      20th September 2021 (No changes since 7th September 2021)
 
 ### Cite
 
-Please cite [our paper](https://www.biorxiv.org/content/early/2021/03/09/2021.03.05.433897) (and the respective papers of the methods used) if you use *COVIDrugNet* in your own work:
+Please cite [our paper](https://www.nature.com/articles/s41598-021-98812-0) (and the respective papers of the methods used) if you use *COVIDrugNet* in your own work:
 
 ```
-@article {Menestrina2021.03.05.433897,
+@article {Menestrina2021,
 	 title = {COVIDrugNet: a network-based web tool to investigate the drugs currently in clinical trial to contrast COVID-19},
 	 author = {Menestrina, Luca and Cabrelle, Chiara and Recanatini, Maurizio},
-	 journal = {bioRxiv}
+	 journal = {Scientific Reports},
+	 volume = {11},
 	 year = {2021},
-	 doi = {10.1101/2021.03.05.433897},
-	 URL = {https://www.biorxiv.org/content/early/2021/03/09/2021.03.05.433897},
-	 publisher = {Cold Spring Harbor Laboratory},
+	 doi = {10.1038/s41598-021-98812-0},
+	 URL = {www.nature.com/articles/s41598-021-98812-0},
+	 publisher = {Nature Publishing Group},
 }
 ```
 
