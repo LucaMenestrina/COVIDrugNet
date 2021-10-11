@@ -65,7 +65,7 @@ layout = dbc.Col(
                                                                 html.I(
                                                                     "Scientific Reports"
                                                                 ),
-                                                                " 11, Article number: 19426 (2021)",
+                                                                ", 11:19426 (2021)",
                                                             ]
                                                         ),
                                                         html.Br(),
@@ -98,7 +98,7 @@ layout = dbc.Col(
                                                                         ),
                                                                         html.P(
                                                                             html.Time(
-                                                                                "4 Augurst 2021",
+                                                                                "4 August 2021",
                                                                                 dateTime="2021-08-04",
                                                                             )
                                                                         ),
