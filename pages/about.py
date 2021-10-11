@@ -297,8 +297,8 @@ layout = dbc.Col(
                             [
                                 "Last Database Update: ",
                                 html.Time(
-                                    ["20", html.Sup("th"), " September 2021"],
-                                    dateTime="2021-09-20",
+                                    ["11", html.Sup("th"), " October 2021"],
+                                    dateTime="2021-10-11",
                                 ),
                                 " (No changes since 7",
                                 html.Sup("th"),
