@@ -1,5 +1,5 @@
 #collector.py
-# GMT Tue Sep  7 17:35:38 2021
+# GMT Mon Oct 25 13:23:22 2021
 # 
 Indomethacin (DB00328)	10
 Prostaglandin G/H synthase 1 (P23219)	{}
@@ -799,8 +799,9 @@ Ketamine (DB01221)	{}
 Bromhexine (DB09019)	2
 Transmembrane protease serine 2 (O15393)	{}
 Angiotensin-converting enzyme 2 (Q9BYF1)	{}
-Transmembrane protease serine 2 (O15393)	1
+Transmembrane protease serine 2 (O15393)	2
 Camostat (DB13729)	{}
+MM3122 (DB16737)	{}
 Angiotensin-converting enzyme 2 (Q9BYF1)	2
 Hydroxychloroquine (DB01611)	{}
 Chloroquine (DB00608)	{}
@@ -3332,3 +3333,4 @@ Omeprazole (DB00338)	0
 Naproxen (DB00788)	1
 Peptostreptococcal albumin-binding protein (Q51911)	{}
 Peptostreptococcal albumin-binding protein (Q51911)	0
+MM3122 (DB16737)	0

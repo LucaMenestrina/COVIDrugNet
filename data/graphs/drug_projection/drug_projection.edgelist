@@ -1,946 +1,948 @@
-Indomethacin (DB00328)	Omega-3 fatty acids (DB11133)	{'weight': 2}
 Indomethacin (DB00328)	Fenofibrate (DB01039)	{'weight': 1}
-Indomethacin (DB00328)	Amiodarone (DB01118)	{'weight': 2}
-Indomethacin (DB00328)	Ibuprofen (DB01050)	{'weight': 4}
-Indomethacin (DB00328)	alpha-Linolenic acid (DB00132)	{'weight': 2}
-Indomethacin (DB00328)	Alprostadil (DB00770)	{'weight': 1}
-Indomethacin (DB00328)	Celecoxib (DB00482)	{'weight': 1}
-Indomethacin (DB00328)	Ginseng (DB01404)	{'weight': 1}
 Indomethacin (DB00328)	Curcumin (DB11672)	{'weight': 1}
-Indomethacin (DB00328)	Cannabidiol (DB09061)	{'weight': 3}
-Indomethacin (DB00328)	Telmisartan (DB00966)	{'weight': 1}
-Indomethacin (DB00328)	Oleic Acid (DB04224)	{'weight': 2}
-Indomethacin (DB00328)	Iloprost (DB01088)	{'weight': 1}
-Indomethacin (DB00328)	Acetaminophen (DB00316)	{'weight': 2}
-Indomethacin (DB00328)	Valproic acid (DB00313)	{'weight': 2}
-Indomethacin (DB00328)	Resveratrol (DB02709)	{'weight': 4}
 Indomethacin (DB00328)	Fostamatinib (DB12010)	{'weight': 1}
-Indomethacin (DB00328)	Lenalidomide (DB00480)	{'weight': 1}
-Indomethacin (DB00328)	Pioglitazone (DB01132)	{'weight': 1}
-Indomethacin (DB00328)	Glutathione (DB00143)	{'weight': 1}
-Indomethacin (DB00328)	Thalidomide (DB01041)	{'weight': 1}
+Indomethacin (DB00328)	Telmisartan (DB00966)	{'weight': 1}
 Indomethacin (DB00328)	Icosapent (DB00159)	{'weight': 4}
+Indomethacin (DB00328)	Alprostadil (DB00770)	{'weight': 1}
+Indomethacin (DB00328)	Thalidomide (DB01041)	{'weight': 1}
 Indomethacin (DB00328)	Clofazimine (DB00845)	{'weight': 1}
-Indomethacin (DB00328)	Naproxen (DB00788)	{'weight': 2}
-Indomethacin (DB00328)	Suramin (DB04786)	{'weight': 1}
-Indomethacin (DB00328)	Nimesulide (DB04743)	{'weight': 1}
+Indomethacin (DB00328)	Omega-3 fatty acids (DB11133)	{'weight': 2}
+Indomethacin (DB00328)	Iloprost (DB01088)	{'weight': 1}
+Indomethacin (DB00328)	Ibuprofen (DB01050)	{'weight': 4}
 Indomethacin (DB00328)	Acetylsalicylic acid (DB00945)	{'weight': 2}
+Indomethacin (DB00328)	Celecoxib (DB00482)	{'weight': 1}
+Indomethacin (DB00328)	Amiodarone (DB01118)	{'weight': 2}
+Indomethacin (DB00328)	Glutathione (DB00143)	{'weight': 1}
+Indomethacin (DB00328)	Suramin (DB04786)	{'weight': 1}
+Indomethacin (DB00328)	Acetaminophen (DB00316)	{'weight': 2}
+Indomethacin (DB00328)	Resveratrol (DB02709)	{'weight': 4}
+Indomethacin (DB00328)	Valproic acid (DB00313)	{'weight': 2}
+Indomethacin (DB00328)	alpha-Linolenic acid (DB00132)	{'weight': 2}
+Indomethacin (DB00328)	Lenalidomide (DB00480)	{'weight': 1}
+Indomethacin (DB00328)	Ginseng (DB01404)	{'weight': 1}
+Indomethacin (DB00328)	Naproxen (DB00788)	{'weight': 2}
+Indomethacin (DB00328)	Pioglitazone (DB01132)	{'weight': 1}
+Indomethacin (DB00328)	Nimesulide (DB04743)	{'weight': 1}
+Indomethacin (DB00328)	Cannabidiol (DB09061)	{'weight': 3}
+Indomethacin (DB00328)	Oleic Acid (DB04224)	{'weight': 2}
+Menadione (DB00170)	Argatroban (DB00278)	{'weight': 1}
+Menadione (DB00170)	Suramin (DB04786)	{'weight': 1}
+Menadione (DB00170)	Quercetin (DB04216)	{'weight': 1}
 Menadione (DB00170)	Primaquine (DB01087)	{'weight': 1}
+Menadione (DB00170)	Nafamostat (DB12598)	{'weight': 1}
+Menadione (DB00170)	Enoxaparin (DB01225)	{'weight': 1}
 Menadione (DB00170)	Resveratrol (DB02709)	{'weight': 1}
 Menadione (DB00170)	Melatonin (DB01065)	{'weight': 1}
-Menadione (DB00170)	Quercetin (DB04216)	{'weight': 1}
 Menadione (DB00170)	Bivalirudin (DB00006)	{'weight': 1}
-Menadione (DB00170)	Enoxaparin (DB01225)	{'weight': 1}
-Menadione (DB00170)	Argatroban (DB00278)	{'weight': 1}
 Menadione (DB00170)	Cannabidiol (DB09061)	{'weight': 1}
-Menadione (DB00170)	Suramin (DB04786)	{'weight': 1}
-Menadione (DB00170)	Nafamostat (DB12598)	{'weight': 1}
 Pantoprazole (DB00213)	Rabeprazole (DB01129)	{'weight': 1}
-Pantoprazole (DB00213)	Citrulline (DB00155)	{'weight': 1}
 Pantoprazole (DB00213)	Omeprazole (DB00338)	{'weight': 1}
+Pantoprazole (DB00213)	Citrulline (DB00155)	{'weight': 1}
 GS-441524 (DB15686)	Remdesivir (DB14761)	{'weight': 2}
 GS-441524 (DB15686)	Galidesivir (DB11676)	{'weight': 1}
-Brexanolone (DB11859)	Sevoflurane (DB01236)	{'weight': 16}
-Brexanolone (DB11859)	Isoflurane (DB00753)	{'weight': 16}
-Brexanolone (DB11859)	Ivermectin (DB00602)	{'weight': 1}
 Brexanolone (DB11859)	Midazolam (DB00683)	{'weight': 16}
+Brexanolone (DB11859)	Sevoflurane (DB01236)	{'weight': 16}
+Brexanolone (DB11859)	Ivermectin (DB00602)	{'weight': 1}
 Brexanolone (DB11859)	Propofol (DB00818)	{'weight': 16}
-Curcumin (DB11672)	Omega-3 fatty acids (DB11133)	{'weight': 1}
-Curcumin (DB11672)	Amiodarone (DB01118)	{'weight': 1}
-Curcumin (DB11672)	Ibuprofen (DB01050)	{'weight': 1}
-Curcumin (DB11672)	Quercetin (DB04216)	{'weight': 1}
-Curcumin (DB11672)	alpha-Linolenic acid (DB00132)	{'weight': 1}
-Curcumin (DB11672)	Cannabidiol (DB09061)	{'weight': 1}
-Curcumin (DB11672)	Vitamin D (DB11094)	{'weight': 1}
+Brexanolone (DB11859)	Isoflurane (DB00753)	{'weight': 16}
+Curcumin (DB11672)	Cholecalciferol (DB00169)	{'weight': 1}
 Curcumin (DB11672)	Telmisartan (DB00966)	{'weight': 1}
-Curcumin (DB11672)	Oleic Acid (DB04224)	{'weight': 1}
-Curcumin (DB11672)	Valproic acid (DB00313)	{'weight': 1}
-Curcumin (DB11672)	Resveratrol (DB02709)	{'weight': 2}
-Curcumin (DB11672)	Calcifediol (DB00146)	{'weight': 1}
-Curcumin (DB11672)	Pioglitazone (DB01132)	{'weight': 1}
-Curcumin (DB11672)	Glutathione (DB00143)	{'weight': 1}
 Curcumin (DB11672)	Icosapent (DB00159)	{'weight': 1}
 Curcumin (DB11672)	Clofazimine (DB00845)	{'weight': 1}
-Curcumin (DB11672)	Cholecalciferol (DB00169)	{'weight': 1}
+Curcumin (DB11672)	Calcifediol (DB00146)	{'weight': 1}
+Curcumin (DB11672)	Omega-3 fatty acids (DB11133)	{'weight': 1}
+Curcumin (DB11672)	Amiodarone (DB01118)	{'weight': 1}
+Curcumin (DB11672)	Glutathione (DB00143)	{'weight': 1}
+Curcumin (DB11672)	Vitamin D (DB11094)	{'weight': 1}
+Curcumin (DB11672)	Quercetin (DB04216)	{'weight': 1}
+Curcumin (DB11672)	Resveratrol (DB02709)	{'weight': 2}
+Curcumin (DB11672)	Valproic acid (DB00313)	{'weight': 1}
+Curcumin (DB11672)	alpha-Linolenic acid (DB00132)	{'weight': 1}
+Curcumin (DB11672)	Pioglitazone (DB01132)	{'weight': 1}
+Curcumin (DB11672)	Ibuprofen (DB01050)	{'weight': 1}
+Curcumin (DB11672)	Cannabidiol (DB09061)	{'weight': 1}
+Curcumin (DB11672)	Oleic Acid (DB04224)	{'weight': 1}
 Alprostadil (DB00770)	Iloprost (DB01088)	{'weight': 2}
 Piclidenoson (DB05511)	Fostamatinib (DB12010)	{'weight': 1}
-Quercetin (DB04216)	Primaquine (DB01087)	{'weight': 1}
-Quercetin (DB04216)	Omeprazole (DB00338)	{'weight': 1}
-Quercetin (DB04216)	Nifedipine (DB01115)	{'weight': 1}
-Quercetin (DB04216)	Genistein (DB01645)	{'weight': 5}
-Quercetin (DB04216)	Piperine (DB12582)	{'weight': 1}
 Quercetin (DB04216)	Fenofibrate (DB01039)	{'weight': 1}
-Quercetin (DB04216)	Melatonin (DB01065)	{'weight': 2}
-Quercetin (DB04216)	Ethinylestradiol (DB00977)	{'weight': 2}
-Quercetin (DB04216)	Spironolactone (DB00421)	{'weight': 2}
-Quercetin (DB04216)	Ginseng (DB01404)	{'weight': 1}
 Quercetin (DB04216)	Artenimol (DB11638)	{'weight': 1}
-Quercetin (DB04216)	Dexamethasone (DB01234)	{'weight': 1}
-Quercetin (DB04216)	Cannabidiol (DB09061)	{'weight': 1}
-Quercetin (DB04216)	Vitamin E (DB00163)	{'weight': 1}
-Quercetin (DB04216)	Ritonavir (DB00503)	{'weight': 1}
-Quercetin (DB04216)	Diosmin (DB08995)	{'weight': 1}
-Quercetin (DB04216)	Resveratrol (DB02709)	{'weight': 6}
-Quercetin (DB04216)	Tamoxifen (DB00675)	{'weight': 4}
 Quercetin (DB04216)	Fostamatinib (DB12010)	{'weight': 5}
-Quercetin (DB04216)	Estradiol (DB00783)	{'weight': 3}
-Quercetin (DB04216)	Toremifene (DB00539)	{'weight': 2}
+Quercetin (DB04216)	Primaquine (DB01087)	{'weight': 1}
+Quercetin (DB04216)	Vitamin E (DB00163)	{'weight': 1}
+Quercetin (DB04216)	Piperine (DB12582)	{'weight': 1}
+Quercetin (DB04216)	Genistein (DB01645)	{'weight': 5}
+Quercetin (DB04216)	Spironolactone (DB00421)	{'weight': 2}
+Quercetin (DB04216)	Nifedipine (DB01115)	{'weight': 1}
+Quercetin (DB04216)	Omeprazole (DB00338)	{'weight': 1}
+Quercetin (DB04216)	Duvelisib (DB11952)	{'weight': 1}
+Quercetin (DB04216)	Dexamethasone (DB01234)	{'weight': 1}
+Quercetin (DB04216)	Ethinylestradiol (DB00977)	{'weight': 2}
+Quercetin (DB04216)	Melatonin (DB01065)	{'weight': 2}
 Quercetin (DB04216)	Atorvastatin (DB01076)	{'weight': 1}
 Quercetin (DB04216)	Progesterone (DB00396)	{'weight': 3}
-Quercetin (DB04216)	Duvelisib (DB11952)	{'weight': 1}
+Quercetin (DB04216)	Tamoxifen (DB00675)	{'weight': 4}
+Quercetin (DB04216)	Ritonavir (DB00503)	{'weight': 1}
 Quercetin (DB04216)	Leflunomide (DB01097)	{'weight': 1}
-Methylene blue (DB09241)	Ketamine (DB01221)	{'weight': 1}
+Quercetin (DB04216)	Resveratrol (DB02709)	{'weight': 6}
+Quercetin (DB04216)	Diosmin (DB08995)	{'weight': 1}
+Quercetin (DB04216)	Ginseng (DB01404)	{'weight': 1}
+Quercetin (DB04216)	Estradiol (DB00783)	{'weight': 3}
+Quercetin (DB04216)	Toremifene (DB00539)	{'weight': 2}
+Quercetin (DB04216)	Cannabidiol (DB09061)	{'weight': 1}
 Methylene blue (DB09241)	Citrulline (DB00155)	{'weight': 1}
-Bivalirudin (DB00006)	Enoxaparin (DB01225)	{'weight': 1}
+Methylene blue (DB09241)	Ketamine (DB01221)	{'weight': 1}
 Bivalirudin (DB00006)	Argatroban (DB00278)	{'weight': 1}
 Bivalirudin (DB00006)	Suramin (DB04786)	{'weight': 1}
 Bivalirudin (DB00006)	Nafamostat (DB12598)	{'weight': 1}
+Bivalirudin (DB00006)	Enoxaparin (DB01225)	{'weight': 1}
 Serine (DB00133)	Cysteine (DB00151)	{'weight': 1}
 Prasugrel (DB06209)	Epoprostenol (DB01240)	{'weight': 1}
 Prasugrel (DB06209)	Clopidogrel (DB00758)	{'weight': 1}
 Febuxostat (DB04854)	Levocarnitine (DB00583)	{'weight': 1}
 Calcifediol (DB00146)	Vitamin D (DB11094)	{'weight': 1}
 Calcifediol (DB00146)	Cholecalciferol (DB00169)	{'weight': 1}
-Genistein (DB01645)	Moxifloxacin (DB00218)	{'weight': 1}
-Genistein (DB01645)	Nifedipine (DB01115)	{'weight': 1}
-Genistein (DB01645)	Piperine (DB12582)	{'weight': 1}
 Genistein (DB01645)	Fenofibrate (DB01039)	{'weight': 1}
-Genistein (DB01645)	Melatonin (DB01065)	{'weight': 1}
-Genistein (DB01645)	Etoposide (DB00773)	{'weight': 1}
-Genistein (DB01645)	Ethinylestradiol (DB00977)	{'weight': 2}
-Genistein (DB01645)	Spironolactone (DB00421)	{'weight': 2}
-Genistein (DB01645)	Cannabidiol (DB09061)	{'weight': 1}
-Genistein (DB01645)	Dexamethasone (DB01234)	{'weight': 1}
-Genistein (DB01645)	Vitamin E (DB00163)	{'weight': 1}
-Genistein (DB01645)	Ritonavir (DB00503)	{'weight': 1}
-Genistein (DB01645)	Resveratrol (DB02709)	{'weight': 3}
-Genistein (DB01645)	Tamoxifen (DB00675)	{'weight': 4}
 Genistein (DB01645)	Fostamatinib (DB12010)	{'weight': 1}
+Genistein (DB01645)	Vitamin E (DB00163)	{'weight': 1}
+Genistein (DB01645)	Piperine (DB12582)	{'weight': 1}
+Genistein (DB01645)	Spironolactone (DB00421)	{'weight': 2}
+Genistein (DB01645)	Nifedipine (DB01115)	{'weight': 1}
+Genistein (DB01645)	Melatonin (DB01065)	{'weight': 1}
+Genistein (DB01645)	Ethinylestradiol (DB00977)	{'weight': 2}
+Genistein (DB01645)	Dexamethasone (DB01234)	{'weight': 1}
+Genistein (DB01645)	Etoposide (DB00773)	{'weight': 1}
+Genistein (DB01645)	Progesterone (DB00396)	{'weight': 3}
+Genistein (DB01645)	Tamoxifen (DB00675)	{'weight': 4}
+Genistein (DB01645)	Ritonavir (DB00503)	{'weight': 1}
+Genistein (DB01645)	Leflunomide (DB01097)	{'weight': 1}
+Genistein (DB01645)	Resveratrol (DB02709)	{'weight': 3}
+Genistein (DB01645)	Moxifloxacin (DB00218)	{'weight': 1}
 Genistein (DB01645)	Estradiol (DB00783)	{'weight': 4}
 Genistein (DB01645)	Toremifene (DB00539)	{'weight': 2}
 Genistein (DB01645)	Baricitinib (DB11817)	{'weight': 1}
-Genistein (DB01645)	Progesterone (DB00396)	{'weight': 3}
-Genistein (DB01645)	Leflunomide (DB01097)	{'weight': 1}
-Omega-3 fatty acids (DB11133)	Valproic acid (DB00313)	{'weight': 2}
-Omega-3 fatty acids (DB11133)	Resveratrol (DB02709)	{'weight': 2}
-Omega-3 fatty acids (DB11133)	Fenofibrate (DB01039)	{'weight': 1}
-Omega-3 fatty acids (DB11133)	Amiodarone (DB01118)	{'weight': 2}
-Omega-3 fatty acids (DB11133)	Ibuprofen (DB01050)	{'weight': 2}
-Omega-3 fatty acids (DB11133)	Pioglitazone (DB01132)	{'weight': 1}
-Omega-3 fatty acids (DB11133)	alpha-Linolenic acid (DB00132)	{'weight': 2}
-Omega-3 fatty acids (DB11133)	Icosapent (DB00159)	{'weight': 2}
-Omega-3 fatty acids (DB11133)	Clofazimine (DB00845)	{'weight': 1}
+Genistein (DB01645)	Cannabidiol (DB09061)	{'weight': 1}
 Omega-3 fatty acids (DB11133)	Cannabidiol (DB09061)	{'weight': 1}
+Omega-3 fatty acids (DB11133)	Amiodarone (DB01118)	{'weight': 2}
+Omega-3 fatty acids (DB11133)	Fenofibrate (DB01039)	{'weight': 1}
+Omega-3 fatty acids (DB11133)	Resveratrol (DB02709)	{'weight': 2}
 Omega-3 fatty acids (DB11133)	Telmisartan (DB00966)	{'weight': 1}
+Omega-3 fatty acids (DB11133)	Valproic acid (DB00313)	{'weight': 2}
+Omega-3 fatty acids (DB11133)	Icosapent (DB00159)	{'weight': 2}
+Omega-3 fatty acids (DB11133)	alpha-Linolenic acid (DB00132)	{'weight': 2}
+Omega-3 fatty acids (DB11133)	Clofazimine (DB00845)	{'weight': 1}
+Omega-3 fatty acids (DB11133)	Pioglitazone (DB01132)	{'weight': 1}
+Omega-3 fatty acids (DB11133)	Ibuprofen (DB01050)	{'weight': 2}
 Omega-3 fatty acids (DB11133)	Oleic Acid (DB04224)	{'weight': 2}
-Tenofovir disoproxil (DB00300)	Tenofovir (DB14126)	{'weight': 1}
 Tenofovir disoproxil (DB00300)	Tenofovir alafenamide (DB09299)	{'weight': 1}
 Tenofovir disoproxil (DB00300)	Emtricitabine (DB00879)	{'weight': 1}
+Tenofovir disoproxil (DB00300)	Tenofovir (DB14126)	{'weight': 1}
+Lopinavir (DB01601)	Atazanavir (DB01072)	{'weight': 1}
 Lopinavir (DB01601)	Darunavir (DB01264)	{'weight': 1}
 Lopinavir (DB01601)	Ritonavir (DB00503)	{'weight': 1}
-Lopinavir (DB01601)	Atazanavir (DB01072)	{'weight': 1}
-Rivaroxaban (DB06228)	Fondaparinux (DB00569)	{'weight': 1}
-Rivaroxaban (DB06228)	Enoxaparin (DB01225)	{'weight': 1}
-Rivaroxaban (DB06228)	Heparin (DB01109)	{'weight': 1}
-Rivaroxaban (DB06228)	Apixaban (DB06605)	{'weight': 1}
 Rivaroxaban (DB06228)	Edoxaban (DB09075)	{'weight': 1}
+Rivaroxaban (DB06228)	Heparin (DB01109)	{'weight': 1}
 Rivaroxaban (DB06228)	Bemiparin (DB09258)	{'weight': 1}
+Rivaroxaban (DB06228)	Enoxaparin (DB01225)	{'weight': 1}
+Rivaroxaban (DB06228)	Apixaban (DB06605)	{'weight': 1}
 Rivaroxaban (DB06228)	Nafamostat (DB12598)	{'weight': 1}
-Angiotensin II (DB11842)	Eprosartan (DB00876)	{'weight': 1}
+Rivaroxaban (DB06228)	Fondaparinux (DB00569)	{'weight': 1}
 Angiotensin II (DB11842)	Azilsartan medoxomil (DB08822)	{'weight': 1}
-Angiotensin II (DB11842)	Olmesartan (DB00275)	{'weight': 1}
 Angiotensin II (DB11842)	Candesartan (DB13919)	{'weight': 1}
-Angiotensin II (DB11842)	Valsartan (DB00177)	{'weight': 1}
-Angiotensin II (DB11842)	Losartan (DB00678)	{'weight': 1}
-Angiotensin II (DB11842)	Irbesartan (DB01029)	{'weight': 1}
 Angiotensin II (DB11842)	Candesartan cilexetil (DB00796)	{'weight': 1}
+Angiotensin II (DB11842)	Valsartan (DB00177)	{'weight': 1}
 Angiotensin II (DB11842)	Telmisartan (DB00966)	{'weight': 1}
-Minocycline (DB01017)	Resveratrol (DB02709)	{'weight': 1}
-Minocycline (DB01017)	Tamoxifen (DB00675)	{'weight': 1}
-Minocycline (DB01017)	Fostamatinib (DB12010)	{'weight': 8}
-Minocycline (DB01017)	Montelukast (DB00471)	{'weight': 1}
+Angiotensin II (DB11842)	Losartan (DB00678)	{'weight': 1}
+Angiotensin II (DB11842)	Eprosartan (DB00876)	{'weight': 1}
+Angiotensin II (DB11842)	Olmesartan (DB00275)	{'weight': 1}
+Angiotensin II (DB11842)	Irbesartan (DB01029)	{'weight': 1}
 Minocycline (DB01017)	Glutathione (DB00143)	{'weight': 1}
-Minocycline (DB01017)	Captopril (DB01197)	{'weight': 1}
-Minocycline (DB01017)	Dexamethasone (DB01234)	{'weight': 1}
-Minocycline (DB01017)	Citrulline (DB00155)	{'weight': 1}
-Minocycline (DB01017)	Vitamin E (DB00163)	{'weight': 1}
+Minocycline (DB01017)	Tamoxifen (DB00675)	{'weight': 1}
 Minocycline (DB01017)	Artenimol (DB11638)	{'weight': 1}
+Minocycline (DB01017)	Fostamatinib (DB12010)	{'weight': 8}
+Minocycline (DB01017)	Resveratrol (DB02709)	{'weight': 1}
+Minocycline (DB01017)	Vitamin E (DB00163)	{'weight': 1}
+Minocycline (DB01017)	Citrulline (DB00155)	{'weight': 1}
+Minocycline (DB01017)	Montelukast (DB00471)	{'weight': 1}
+Minocycline (DB01017)	Dexamethasone (DB01234)	{'weight': 1}
+Minocycline (DB01017)	Captopril (DB01197)	{'weight': 1}
 Minocycline (DB01017)	Acetylsalicylic acid (DB00945)	{'weight': 8}
-Fluoxetine (DB00472)	Tramadol (DB00193)	{'weight': 2}
-Fluoxetine (DB00472)	Tamoxifen (DB00675)	{'weight': 1}
-Fluoxetine (DB00472)	Ketamine (DB01221)	{'weight': 1}
-Fluoxetine (DB00472)	Amiodarone (DB01118)	{'weight': 1}
-Fluoxetine (DB00472)	Chlorpromazine (DB00477)	{'weight': 2}
 Fluoxetine (DB00472)	Prazosin (DB00457)	{'weight': 1}
-Fluoxetine (DB00472)	Clarithromycin (DB01211)	{'weight': 1}
+Fluoxetine (DB00472)	Amiodarone (DB01118)	{'weight': 1}
 Fluoxetine (DB00472)	Fluvoxamine (DB00176)	{'weight': 2}
+Fluoxetine (DB00472)	Levamisole (DB00848)	{'weight': 1}
+Fluoxetine (DB00472)	Ketamine (DB01221)	{'weight': 1}
+Fluoxetine (DB00472)	Erythromycin (DB00199)	{'weight': 1}
+Fluoxetine (DB00472)	Tamoxifen (DB00675)	{'weight': 1}
 Fluoxetine (DB00472)	Cisatracurium (DB00565)	{'weight': 1}
 Fluoxetine (DB00472)	Verapamil (DB00661)	{'weight': 2}
-Fluoxetine (DB00472)	Erythromycin (DB00199)	{'weight': 1}
-Fluoxetine (DB00472)	Quetiapine (DB01224)	{'weight': 1}
-Fluoxetine (DB00472)	Levamisole (DB00848)	{'weight': 1}
+Fluoxetine (DB00472)	Tramadol (DB00193)	{'weight': 2}
 Fluoxetine (DB00472)	Yohimbine (DB01392)	{'weight': 1}
-Amiodarone (DB01118)	Nifedipine (DB01115)	{'weight': 5}
+Fluoxetine (DB00472)	Clarithromycin (DB01211)	{'weight': 1}
+Fluoxetine (DB00472)	Chlorpromazine (DB00477)	{'weight': 2}
+Fluoxetine (DB00472)	Quetiapine (DB01224)	{'weight': 1}
+Amiodarone (DB01118)	Metoprolol (DB00264)	{'weight': 2}
 Amiodarone (DB01118)	Fenofibrate (DB01039)	{'weight': 1}
-Amiodarone (DB01118)	Liothyronine (DB00279)	{'weight': 2}
-Amiodarone (DB01118)	Ibuprofen (DB01050)	{'weight': 2}
+Amiodarone (DB01118)	Amlodipine (DB00381)	{'weight': 3}
+Amiodarone (DB01118)	Erythromycin (DB00199)	{'weight': 1}
+Amiodarone (DB01118)	Telmisartan (DB00966)	{'weight': 1}
+Amiodarone (DB01118)	Icosapent (DB00159)	{'weight': 2}
+Amiodarone (DB01118)	Nifedipine (DB01115)	{'weight': 5}
 Amiodarone (DB01118)	Spironolactone (DB00421)	{'weight': 9}
-Amiodarone (DB01118)	Chlorpromazine (DB00477)	{'weight': 1}
+Amiodarone (DB01118)	Clofazimine (DB00845)	{'weight': 1}
+Amiodarone (DB01118)	Diltiazem (DB00343)	{'weight': 1}
+Amiodarone (DB01118)	Formoterol (DB00983)	{'weight': 3}
+Amiodarone (DB01118)	Prazosin (DB00457)	{'weight': 1}
+Amiodarone (DB01118)	Fluvoxamine (DB00176)	{'weight': 1}
+Amiodarone (DB01118)	Tamoxifen (DB00675)	{'weight': 1}
+Amiodarone (DB01118)	Resveratrol (DB02709)	{'weight': 2}
+Amiodarone (DB01118)	Valproic acid (DB00313)	{'weight': 2}
+Amiodarone (DB01118)	Verapamil (DB00661)	{'weight': 2}
+Amiodarone (DB01118)	Liothyronine (DB00279)	{'weight': 2}
 Amiodarone (DB01118)	alpha-Linolenic acid (DB00132)	{'weight': 2}
 Amiodarone (DB01118)	Clarithromycin (DB01211)	{'weight': 1}
-Amiodarone (DB01118)	Formoterol (DB00983)	{'weight': 3}
-Amiodarone (DB01118)	Fluvoxamine (DB00176)	{'weight': 1}
-Amiodarone (DB01118)	Cannabidiol (DB09061)	{'weight': 2}
-Amiodarone (DB01118)	Telmisartan (DB00966)	{'weight': 1}
-Amiodarone (DB01118)	Diltiazem (DB00343)	{'weight': 1}
-Amiodarone (DB01118)	Oleic Acid (DB04224)	{'weight': 2}
-Amiodarone (DB01118)	Valproic acid (DB00313)	{'weight': 2}
-Amiodarone (DB01118)	Resveratrol (DB02709)	{'weight': 2}
-Amiodarone (DB01118)	Tamoxifen (DB00675)	{'weight': 1}
-Amiodarone (DB01118)	Pioglitazone (DB01132)	{'weight': 1}
 Amiodarone (DB01118)	Levomenthol (DB00825)	{'weight': 8}
-Amiodarone (DB01118)	Prazosin (DB00457)	{'weight': 1}
-Amiodarone (DB01118)	Amlodipine (DB00381)	{'weight': 3}
-Amiodarone (DB01118)	Icosapent (DB00159)	{'weight': 2}
-Amiodarone (DB01118)	Verapamil (DB00661)	{'weight': 2}
-Amiodarone (DB01118)	Clofazimine (DB00845)	{'weight': 1}
-Amiodarone (DB01118)	Metoprolol (DB00264)	{'weight': 2}
-Amiodarone (DB01118)	Erythromycin (DB00199)	{'weight': 1}
+Amiodarone (DB01118)	Chlorpromazine (DB00477)	{'weight': 1}
+Amiodarone (DB01118)	Pioglitazone (DB01132)	{'weight': 1}
+Amiodarone (DB01118)	Ibuprofen (DB01050)	{'weight': 2}
+Amiodarone (DB01118)	Cannabidiol (DB09061)	{'weight': 2}
+Amiodarone (DB01118)	Oleic Acid (DB04224)	{'weight': 2}
 Elbasvir (DB11574)	Velpatasvir (DB11613)	{'weight': 1}
-Elbasvir (DB11574)	Ledipasvir (DB09027)	{'weight': 1}
 Elbasvir (DB11574)	Daclatasvir (DB09102)	{'weight': 1}
-Fenofibrate (DB01039)	Nifedipine (DB01115)	{'weight': 1}
-Fenofibrate (DB01039)	Piperine (DB12582)	{'weight': 1}
-Fenofibrate (DB01039)	Ibuprofen (DB01050)	{'weight': 1}
-Fenofibrate (DB01039)	Ethinylestradiol (DB00977)	{'weight': 1}
-Fenofibrate (DB01039)	Spironolactone (DB00421)	{'weight': 1}
-Fenofibrate (DB01039)	alpha-Linolenic acid (DB00132)	{'weight': 1}
-Fenofibrate (DB01039)	Dexamethasone (DB01234)	{'weight': 1}
-Fenofibrate (DB01039)	Oleic Acid (DB04224)	{'weight': 1}
+Elbasvir (DB11574)	Ledipasvir (DB09027)	{'weight': 1}
 Fenofibrate (DB01039)	Vitamin E (DB00163)	{'weight': 1}
+Fenofibrate (DB01039)	Icosapent (DB00159)	{'weight': 1}
+Fenofibrate (DB01039)	Piperine (DB12582)	{'weight': 1}
+Fenofibrate (DB01039)	Spironolactone (DB00421)	{'weight': 1}
+Fenofibrate (DB01039)	Nifedipine (DB01115)	{'weight': 1}
+Fenofibrate (DB01039)	Dexamethasone (DB01234)	{'weight': 1}
+Fenofibrate (DB01039)	Ethinylestradiol (DB00977)	{'weight': 1}
+Fenofibrate (DB01039)	Tamoxifen (DB00675)	{'weight': 1}
 Fenofibrate (DB01039)	Ritonavir (DB00503)	{'weight': 1}
 Fenofibrate (DB01039)	Resveratrol (DB02709)	{'weight': 2}
-Fenofibrate (DB01039)	Tamoxifen (DB00675)	{'weight': 1}
 Fenofibrate (DB01039)	Valproic acid (DB00313)	{'weight': 1}
+Fenofibrate (DB01039)	alpha-Linolenic acid (DB00132)	{'weight': 1}
+Fenofibrate (DB01039)	Ibuprofen (DB01050)	{'weight': 1}
 Fenofibrate (DB01039)	Estradiol (DB00783)	{'weight': 1}
-Fenofibrate (DB01039)	Icosapent (DB00159)	{'weight': 1}
-Baricitinib (DB11817)	Fostamatinib (DB12010)	{'weight': 4}
-Baricitinib (DB11817)	Zanubrutinib (DB15035)	{'weight': 2}
+Fenofibrate (DB01039)	Oleic Acid (DB04224)	{'weight': 1}
 Baricitinib (DB11817)	Ruxolitinib (DB08877)	{'weight': 3}
-Baricitinib (DB11817)	Tofacitinib (DB08895)	{'weight': 3}
+Baricitinib (DB11817)	Fostamatinib (DB12010)	{'weight': 4}
 Baricitinib (DB11817)	Leflunomide (DB01097)	{'weight': 1}
+Baricitinib (DB11817)	Tofacitinib (DB08895)	{'weight': 3}
+Baricitinib (DB11817)	Zanubrutinib (DB15035)	{'weight': 2}
 Enoxaparin (DB01225)	Tinzaparin (DB06822)	{'weight': 1}
-Enoxaparin (DB01225)	Sulodexide (DB06271)	{'weight': 1}
-Enoxaparin (DB01225)	Fondaparinux (DB00569)	{'weight': 2}
 Enoxaparin (DB01225)	Nadroparin (DB08813)	{'weight': 1}
-Enoxaparin (DB01225)	Heparin (DB01109)	{'weight': 2}
 Enoxaparin (DB01225)	Argatroban (DB00278)	{'weight': 1}
-Enoxaparin (DB01225)	Apixaban (DB06605)	{'weight': 1}
 Enoxaparin (DB01225)	Suramin (DB04786)	{'weight': 1}
 Enoxaparin (DB01225)	Edoxaban (DB09075)	{'weight': 1}
-Enoxaparin (DB01225)	Bemiparin (DB09258)	{'weight': 2}
+Enoxaparin (DB01225)	Heparin (DB01109)	{'weight': 2}
 Enoxaparin (DB01225)	Nafamostat (DB12598)	{'weight': 2}
-Chlorpromazine (DB00477)	Nifedipine (DB01115)	{'weight': 1}
-Chlorpromazine (DB00477)	Isoflurane (DB00753)	{'weight': 1}
+Enoxaparin (DB01225)	Bemiparin (DB09258)	{'weight': 2}
+Enoxaparin (DB01225)	Sulodexide (DB06271)	{'weight': 1}
+Enoxaparin (DB01225)	Apixaban (DB06605)	{'weight': 1}
+Enoxaparin (DB01225)	Fondaparinux (DB00569)	{'weight': 2}
+Chlorpromazine (DB00477)	Ketamine (DB01221)	{'weight': 7}
+Chlorpromazine (DB00477)	Amlodipine (DB00381)	{'weight': 1}
 Chlorpromazine (DB00477)	Dipyridamole (DB00975)	{'weight': 1}
+Chlorpromazine (DB00477)	Erythromycin (DB00199)	{'weight': 1}
+Chlorpromazine (DB00477)	Nifedipine (DB01115)	{'weight': 1}
+Chlorpromazine (DB00477)	Thalidomide (DB01041)	{'weight': 2}
 Chlorpromazine (DB00477)	Melatonin (DB01065)	{'weight': 1}
-Chlorpromazine (DB00477)	Diphenhydramine (DB01075)	{'weight': 1}
-Chlorpromazine (DB00477)	Clarithromycin (DB01211)	{'weight': 1}
-Chlorpromazine (DB00477)	Fluvoxamine (DB00176)	{'weight': 1}
-Chlorpromazine (DB00477)	Cannabidiol (DB09061)	{'weight': 2}
 Chlorpromazine (DB00477)	Quetiapine (DB01224)	{'weight': 19}
 Chlorpromazine (DB00477)	Ketotifen (DB00920)	{'weight': 1}
-Chlorpromazine (DB00477)	Tramadol (DB00193)	{'weight': 6}
-Chlorpromazine (DB00477)	Tamoxifen (DB00675)	{'weight': 1}
-Chlorpromazine (DB00477)	Ketamine (DB01221)	{'weight': 7}
-Chlorpromazine (DB00477)	Lidocaine (DB00281)	{'weight': 2}
-Chlorpromazine (DB00477)	Dexmedetomidine (DB00633)	{'weight': 1}
-Chlorpromazine (DB00477)	Prazosin (DB00457)	{'weight': 6}
 Chlorpromazine (DB00477)	Progesterone (DB00396)	{'weight': 1}
-Chlorpromazine (DB00477)	Amlodipine (DB00381)	{'weight': 1}
-Chlorpromazine (DB00477)	Thalidomide (DB01041)	{'weight': 2}
-Chlorpromazine (DB00477)	Verapamil (DB00661)	{'weight': 4}
+Chlorpromazine (DB00477)	Isoflurane (DB00753)	{'weight': 1}
+Chlorpromazine (DB00477)	Lidocaine (DB00281)	{'weight': 2}
+Chlorpromazine (DB00477)	Prazosin (DB00457)	{'weight': 6}
+Chlorpromazine (DB00477)	Dexmedetomidine (DB00633)	{'weight': 1}
+Chlorpromazine (DB00477)	Fluvoxamine (DB00176)	{'weight': 1}
+Chlorpromazine (DB00477)	Tamoxifen (DB00675)	{'weight': 1}
+Chlorpromazine (DB00477)	Diphenhydramine (DB01075)	{'weight': 1}
 Chlorpromazine (DB00477)	Trifluoperazine (DB00831)	{'weight': 3}
-Chlorpromazine (DB00477)	Erythromycin (DB00199)	{'weight': 1}
+Chlorpromazine (DB00477)	Verapamil (DB00661)	{'weight': 4}
+Chlorpromazine (DB00477)	Tramadol (DB00193)	{'weight': 6}
 Chlorpromazine (DB00477)	Yohimbine (DB01392)	{'weight': 9}
+Chlorpromazine (DB00477)	Clarithromycin (DB01211)	{'weight': 1}
+Chlorpromazine (DB00477)	Cannabidiol (DB09061)	{'weight': 2}
 Pyridostigmine (DB00545)	Ketamine (DB01221)	{'weight': 1}
-Bromhexine (DB09019)	Hydroxychloroquine (DB01611)	{'weight': 1}
 Bromhexine (DB09019)	Chloroquine (DB00608)	{'weight': 1}
 Bromhexine (DB09019)	Camostat (DB13729)	{'weight': 1}
-Ritonavir (DB00503)	Nifedipine (DB01115)	{'weight': 1}
+Bromhexine (DB09019)	MM3122 (DB16737)	{'weight': 1}
+Bromhexine (DB09019)	Hydroxychloroquine (DB01611)	{'weight': 1}
+Ritonavir (DB00503)	Atazanavir (DB01072)	{'weight': 1}
+Ritonavir (DB00503)	Vitamin E (DB00163)	{'weight': 1}
 Ritonavir (DB00503)	Piperine (DB12582)	{'weight': 1}
-Ritonavir (DB00503)	Ethinylestradiol (DB00977)	{'weight': 1}
+Ritonavir (DB00503)	Nifedipine (DB01115)	{'weight': 1}
 Ritonavir (DB00503)	Spironolactone (DB00421)	{'weight': 1}
 Ritonavir (DB00503)	Dexamethasone (DB01234)	{'weight': 1}
-Ritonavir (DB00503)	Vitamin E (DB00163)	{'weight': 1}
-Ritonavir (DB00503)	Estradiol (DB00783)	{'weight': 1}
-Ritonavir (DB00503)	Resveratrol (DB02709)	{'weight': 1}
-Ritonavir (DB00503)	Tamoxifen (DB00675)	{'weight': 1}
-Ritonavir (DB00503)	Atazanavir (DB01072)	{'weight': 1}
+Ritonavir (DB00503)	Ethinylestradiol (DB00977)	{'weight': 1}
 Ritonavir (DB00503)	Darunavir (DB01264)	{'weight': 1}
-Ramipril (DB00178)	Perindopril (DB00790)	{'weight': 1}
-Ramipril (DB00178)	Trandolapril (DB00519)	{'weight': 1}
-Ramipril (DB00178)	Moexipril (DB00691)	{'weight': 1}
+Ritonavir (DB00503)	Tamoxifen (DB00675)	{'weight': 1}
+Ritonavir (DB00503)	Resveratrol (DB02709)	{'weight': 1}
+Ritonavir (DB00503)	Estradiol (DB00783)	{'weight': 1}
+Ramipril (DB00178)	Enalapril (DB00584)	{'weight': 1}
 Ramipril (DB00178)	Benazepril (DB00542)	{'weight': 1}
-Ramipril (DB00178)	Captopril (DB01197)	{'weight': 2}
 Ramipril (DB00178)	Quinapril (DB00881)	{'weight': 1}
 Ramipril (DB00178)	Lisinopril (DB00722)	{'weight': 1}
+Ramipril (DB00178)	Perindopril (DB00790)	{'weight': 1}
+Ramipril (DB00178)	Trandolapril (DB00519)	{'weight': 1}
+Ramipril (DB00178)	Captopril (DB01197)	{'weight': 2}
+Ramipril (DB00178)	Moexipril (DB00691)	{'weight': 1}
 Ramipril (DB00178)	Fosinopril (DB00492)	{'weight': 1}
-Ramipril (DB00178)	Enalapril (DB00584)	{'weight': 1}
-Nintedanib (DB09079)	Imatinib (DB00619)	{'weight': 2}
 Nintedanib (DB09079)	Fostamatinib (DB12010)	{'weight': 12}
-Nintedanib (DB09079)	Zanubrutinib (DB15035)	{'weight': 1}
 Nintedanib (DB09079)	Heparin (DB01109)	{'weight': 2}
 Nintedanib (DB09079)	Thalidomide (DB01041)	{'weight': 1}
+Nintedanib (DB09079)	Zanubrutinib (DB15035)	{'weight': 1}
+Nintedanib (DB09079)	Imatinib (DB00619)	{'weight': 2}
 Aliskiren (DB09026)	Lisinopril (DB00722)	{'weight': 1}
 GC-376 free acid (DB15796)	PF-07321332 (DB16691)	{'weight': 1}
 GC-376 free acid (DB15796)	Remdesivir (DB14761)	{'weight': 2}
 GC-376 free acid (DB15796)	PF-07304814 (DB16514)	{'weight': 1}
-Isoflurane (DB00753)	Sevoflurane (DB01236)	{'weight': 19}
-Isoflurane (DB00753)	Estradiol (DB00783)	{'weight': 1}
-Isoflurane (DB00753)	Nifedipine (DB01115)	{'weight': 1}
-Isoflurane (DB00753)	Ivermectin (DB00602)	{'weight': 1}
-Isoflurane (DB00753)	Melatonin (DB01065)	{'weight': 1}
 Isoflurane (DB00753)	Midazolam (DB00683)	{'weight': 16}
-Isoflurane (DB00753)	Propofol (DB00818)	{'weight': 16}
+Isoflurane (DB00753)	Sevoflurane (DB01236)	{'weight': 19}
 Isoflurane (DB00753)	Trifluoperazine (DB00831)	{'weight': 1}
+Isoflurane (DB00753)	Nifedipine (DB01115)	{'weight': 1}
+Isoflurane (DB00753)	Propofol (DB00818)	{'weight': 16}
+Isoflurane (DB00753)	Melatonin (DB01065)	{'weight': 1}
+Isoflurane (DB00753)	Ivermectin (DB00602)	{'weight': 1}
+Isoflurane (DB00753)	Estradiol (DB00783)	{'weight': 1}
 Isoflurane (DB00753)	Cannabidiol (DB09061)	{'weight': 1}
+Diosmin (DB08995)	Leflunomide (DB01097)	{'weight': 1}
 Diosmin (DB08995)	Resveratrol (DB02709)	{'weight': 1}
 Diosmin (DB08995)	Omeprazole (DB00338)	{'weight': 1}
 Diosmin (DB08995)	Atorvastatin (DB01076)	{'weight': 1}
 Diosmin (DB08995)	Ginseng (DB01404)	{'weight': 1}
-Diosmin (DB08995)	Leflunomide (DB01097)	{'weight': 1}
 Bicalutamide (DB01128)	Tamoxifen (DB00675)	{'weight': 1}
-Bicalutamide (DB01128)	Norelgestromin (DB06713)	{'weight': 1}
-Bicalutamide (DB01128)	Spironolactone (DB00421)	{'weight': 1}
-Bicalutamide (DB01128)	Progesterone (DB00396)	{'weight': 1}
 Bicalutamide (DB01128)	Enzalutamide (DB08899)	{'weight': 1}
+Bicalutamide (DB01128)	Spironolactone (DB00421)	{'weight': 1}
+Bicalutamide (DB01128)	Norelgestromin (DB06713)	{'weight': 1}
+Bicalutamide (DB01128)	Progesterone (DB00396)	{'weight': 1}
 Darunavir (DB01264)	Atazanavir (DB01072)	{'weight': 1}
-Ciclesonide (DB01410)	Methylprednisolone (DB00959)	{'weight': 1}
+Ciclesonide (DB01410)	Mometasone furoate (DB14512)	{'weight': 1}
+Ciclesonide (DB01410)	Prednisolone acetate (DB15566)	{'weight': 1}
+Ciclesonide (DB01410)	Hydrocortisone (DB00741)	{'weight': 1}
+Ciclesonide (DB01410)	Betamethasone (DB00443)	{'weight': 1}
+Ciclesonide (DB01410)	Mometasone (DB00764)	{'weight': 1}
 Ciclesonide (DB01410)	Prednisolone (DB00860)	{'weight': 1}
 Ciclesonide (DB01410)	Budesonide (DB01222)	{'weight': 1}
 Ciclesonide (DB01410)	Spironolactone (DB00421)	{'weight': 1}
-Ciclesonide (DB01410)	Mometasone furoate (DB14512)	{'weight': 1}
-Ciclesonide (DB01410)	Progesterone (DB00396)	{'weight': 1}
-Ciclesonide (DB01410)	Mometasone (DB00764)	{'weight': 1}
-Ciclesonide (DB01410)	Prednisolone acetate (DB15566)	{'weight': 1}
+Ciclesonide (DB01410)	Methylprednisolone (DB00959)	{'weight': 1}
 Ciclesonide (DB01410)	Dexamethasone (DB01234)	{'weight': 1}
 Ciclesonide (DB01410)	Prednisone (DB00635)	{'weight': 1}
-Ciclesonide (DB01410)	Hydrocortisone (DB00741)	{'weight': 1}
-Ciclesonide (DB01410)	Betamethasone (DB00443)	{'weight': 1}
-Candesartan cilexetil (DB00796)	Eprosartan (DB00876)	{'weight': 1}
+Ciclesonide (DB01410)	Progesterone (DB00396)	{'weight': 1}
 Candesartan cilexetil (DB00796)	Azilsartan medoxomil (DB08822)	{'weight': 1}
-Candesartan cilexetil (DB00796)	Olmesartan (DB00275)	{'weight': 1}
 Candesartan cilexetil (DB00796)	Candesartan (DB13919)	{'weight': 1}
 Candesartan cilexetil (DB00796)	Valsartan (DB00177)	{'weight': 1}
-Candesartan cilexetil (DB00796)	Losartan (DB00678)	{'weight': 1}
-Candesartan cilexetil (DB00796)	Irbesartan (DB01029)	{'weight': 1}
 Candesartan cilexetil (DB00796)	Telmisartan (DB00966)	{'weight': 1}
+Candesartan cilexetil (DB00796)	Losartan (DB00678)	{'weight': 1}
+Candesartan cilexetil (DB00796)	Eprosartan (DB00876)	{'weight': 1}
+Candesartan cilexetil (DB00796)	Olmesartan (DB00275)	{'weight': 1}
+Candesartan cilexetil (DB00796)	Irbesartan (DB01029)	{'weight': 1}
+Lisinopril (DB00722)	Enalapril (DB00584)	{'weight': 1}
+Lisinopril (DB00722)	Benazepril (DB00542)	{'weight': 1}
+Lisinopril (DB00722)	Quinapril (DB00881)	{'weight': 1}
 Lisinopril (DB00722)	Perindopril (DB00790)	{'weight': 1}
 Lisinopril (DB00722)	Trandolapril (DB00519)	{'weight': 1}
-Lisinopril (DB00722)	Moexipril (DB00691)	{'weight': 1}
-Lisinopril (DB00722)	Benazepril (DB00542)	{'weight': 1}
 Lisinopril (DB00722)	Captopril (DB01197)	{'weight': 1}
-Lisinopril (DB00722)	Quinapril (DB00881)	{'weight': 1}
+Lisinopril (DB00722)	Moexipril (DB00691)	{'weight': 1}
 Lisinopril (DB00722)	Fosinopril (DB00492)	{'weight': 1}
-Lisinopril (DB00722)	Enalapril (DB00584)	{'weight': 1}
-Dexamethasone (DB01234)	Nifedipine (DB01115)	{'weight': 1}
-Dexamethasone (DB01234)	Methylprednisolone (DB00959)	{'weight': 2}
-Dexamethasone (DB01234)	Piperine (DB12582)	{'weight': 1}
-Dexamethasone (DB01234)	Budesonide (DB01222)	{'weight': 2}
-Dexamethasone (DB01234)	Ethinylestradiol (DB00977)	{'weight': 1}
-Dexamethasone (DB01234)	Spironolactone (DB00421)	{'weight': 2}
-Dexamethasone (DB01234)	Vitamin E (DB00163)	{'weight': 1}
-Dexamethasone (DB01234)	Betamethasone (DB00443)	{'weight': 1}
 Dexamethasone (DB01234)	Hydrocortisone (DB00741)	{'weight': 2}
-Dexamethasone (DB01234)	Resveratrol (DB02709)	{'weight': 1}
-Dexamethasone (DB01234)	Tamoxifen (DB00675)	{'weight': 1}
+Dexamethasone (DB01234)	Betamethasone (DB00443)	{'weight': 1}
 Dexamethasone (DB01234)	Estradiol (DB00783)	{'weight': 1}
+Dexamethasone (DB01234)	Vitamin E (DB00163)	{'weight': 1}
 Dexamethasone (DB01234)	Prednisolone (DB00860)	{'weight': 1}
-Dexamethasone (DB01234)	Mometasone furoate (DB14512)	{'weight': 1}
+Dexamethasone (DB01234)	Spironolactone (DB00421)	{'weight': 2}
+Dexamethasone (DB01234)	Piperine (DB12582)	{'weight': 1}
+Dexamethasone (DB01234)	Nifedipine (DB01115)	{'weight': 1}
+Dexamethasone (DB01234)	Ethinylestradiol (DB00977)	{'weight': 1}
 Dexamethasone (DB01234)	Progesterone (DB00396)	{'weight': 1}
-Dexamethasone (DB01234)	Mometasone (DB00764)	{'weight': 1}
-Dexamethasone (DB01234)	Prednisone (DB00635)	{'weight': 1}
+Dexamethasone (DB01234)	Mometasone furoate (DB14512)	{'weight': 1}
 Dexamethasone (DB01234)	Prednisolone acetate (DB15566)	{'weight': 1}
+Dexamethasone (DB01234)	Tamoxifen (DB00675)	{'weight': 1}
+Dexamethasone (DB01234)	Resveratrol (DB02709)	{'weight': 1}
+Dexamethasone (DB01234)	Mometasone (DB00764)	{'weight': 1}
+Dexamethasone (DB01234)	Budesonide (DB01222)	{'weight': 2}
+Dexamethasone (DB01234)	Methylprednisolone (DB00959)	{'weight': 2}
+Dexamethasone (DB01234)	Prednisone (DB00635)	{'weight': 1}
 Dexamethasone (DB01234)	Citrulline (DB00155)	{'weight': 1}
 Dipyridamole (DB00975)	Fostamatinib (DB12010)	{'weight': 1}
-Dipyridamole (DB00975)	Lidocaine (DB00281)	{'weight': 1}
 Dipyridamole (DB00975)	Sildenafil (DB00203)	{'weight': 1}
-Dipyridamole (DB00975)	Progesterone (DB00396)	{'weight': 1}
 Dipyridamole (DB00975)	Thalidomide (DB01041)	{'weight': 1}
 Dipyridamole (DB00975)	Ibudilast (DB05266)	{'weight': 1}
 Dipyridamole (DB00975)	Iloprost (DB01088)	{'weight': 1}
+Dipyridamole (DB00975)	Progesterone (DB00396)	{'weight': 1}
+Dipyridamole (DB00975)	Lidocaine (DB00281)	{'weight': 1}
 Rabeprazole (DB01129)	Omeprazole (DB00338)	{'weight': 1}
-Valsartan (DB00177)	Eprosartan (DB00876)	{'weight': 1}
 Valsartan (DB00177)	Azilsartan medoxomil (DB08822)	{'weight': 1}
-Valsartan (DB00177)	Olmesartan (DB00275)	{'weight': 1}
 Valsartan (DB00177)	Candesartan (DB13919)	{'weight': 1}
-Valsartan (DB00177)	Losartan (DB00678)	{'weight': 1}
-Valsartan (DB00177)	Irbesartan (DB01029)	{'weight': 1}
 Valsartan (DB00177)	Telmisartan (DB00966)	{'weight': 1}
+Valsartan (DB00177)	Losartan (DB00678)	{'weight': 1}
+Valsartan (DB00177)	Eprosartan (DB00876)	{'weight': 1}
+Valsartan (DB00177)	Olmesartan (DB00275)	{'weight': 1}
+Valsartan (DB00177)	Irbesartan (DB01029)	{'weight': 1}
 Ibudilast (DB05266)	Iloprost (DB01088)	{'weight': 4}
 Vitamin D (DB11094)	Cholecalciferol (DB00169)	{'weight': 1}
-Atorvastatin (DB01076)	Valproic acid (DB00313)	{'weight': 1}
-Atorvastatin (DB01076)	Simvastatin (DB00641)	{'weight': 2}
-Atorvastatin (DB01076)	Resveratrol (DB02709)	{'weight': 2}
-Atorvastatin (DB01076)	Omeprazole (DB00338)	{'weight': 1}
-Atorvastatin (DB01076)	Sitagliptin (DB01261)	{'weight': 1}
 Atorvastatin (DB01076)	Linagliptin (DB08882)	{'weight': 1}
+Atorvastatin (DB01076)	Leflunomide (DB01097)	{'weight': 1}
+Atorvastatin (DB01076)	Resveratrol (DB02709)	{'weight': 2}
+Atorvastatin (DB01076)	Valproic acid (DB00313)	{'weight': 1}
+Atorvastatin (DB01076)	Omeprazole (DB00338)	{'weight': 1}
 Atorvastatin (DB01076)	Rosuvastatin (DB01098)	{'weight': 1}
 Atorvastatin (DB01076)	Ginseng (DB01404)	{'weight': 1}
-Atorvastatin (DB01076)	Leflunomide (DB01097)	{'weight': 1}
+Atorvastatin (DB01076)	Sitagliptin (DB01261)	{'weight': 1}
 Atorvastatin (DB01076)	Cannabidiol (DB09061)	{'weight': 1}
-Prazosin (DB00457)	Tramadol (DB00193)	{'weight': 2}
-Prazosin (DB00457)	Tamoxifen (DB00675)	{'weight': 1}
-Prazosin (DB00457)	Dexmedetomidine (DB00633)	{'weight': 1}
-Prazosin (DB00457)	Clarithromycin (DB01211)	{'weight': 1}
+Atorvastatin (DB01076)	Simvastatin (DB00641)	{'weight': 2}
 Prazosin (DB00457)	Fluvoxamine (DB00176)	{'weight': 1}
-Prazosin (DB00457)	Verapamil (DB00661)	{'weight': 4}
-Prazosin (DB00457)	Trifluoperazine (DB00831)	{'weight': 1}
+Prazosin (DB00457)	Dexmedetomidine (DB00633)	{'weight': 1}
 Prazosin (DB00457)	Erythromycin (DB00199)	{'weight': 1}
-Prazosin (DB00457)	Quetiapine (DB01224)	{'weight': 5}
+Prazosin (DB00457)	Tamoxifen (DB00675)	{'weight': 1}
+Prazosin (DB00457)	Trifluoperazine (DB00831)	{'weight': 1}
+Prazosin (DB00457)	Verapamil (DB00661)	{'weight': 4}
+Prazosin (DB00457)	Tramadol (DB00193)	{'weight': 2}
 Prazosin (DB00457)	Yohimbine (DB01392)	{'weight': 2}
+Prazosin (DB00457)	Clarithromycin (DB01211)	{'weight': 1}
+Prazosin (DB00457)	Quetiapine (DB01224)	{'weight': 5}
 Iloprost (DB01088)	Epoprostenol (DB01240)	{'weight': 1}
-Lenalidomide (DB00480)	Resveratrol (DB02709)	{'weight': 1}
-Lenalidomide (DB00480)	Acetylsalicylic acid (DB00945)	{'weight': 1}
-Lenalidomide (DB00480)	Ibuprofen (DB01050)	{'weight': 1}
-Lenalidomide (DB00480)	Celecoxib (DB00482)	{'weight': 1}
-Lenalidomide (DB00480)	Ginseng (DB01404)	{'weight': 1}
-Lenalidomide (DB00480)	Thalidomide (DB01041)	{'weight': 2}
-Lenalidomide (DB00480)	Icosapent (DB00159)	{'weight': 1}
-Lenalidomide (DB00480)	Naproxen (DB00788)	{'weight': 1}
 Lenalidomide (DB00480)	Cannabidiol (DB09061)	{'weight': 1}
-Lenalidomide (DB00480)	Nimesulide (DB04743)	{'weight': 1}
+Lenalidomide (DB00480)	Celecoxib (DB00482)	{'weight': 1}
+Lenalidomide (DB00480)	Resveratrol (DB02709)	{'weight': 1}
 Lenalidomide (DB00480)	Acetaminophen (DB00316)	{'weight': 1}
+Lenalidomide (DB00480)	Icosapent (DB00159)	{'weight': 1}
+Lenalidomide (DB00480)	Acetylsalicylic acid (DB00945)	{'weight': 1}
+Lenalidomide (DB00480)	Thalidomide (DB01041)	{'weight': 2}
+Lenalidomide (DB00480)	Ginseng (DB01404)	{'weight': 1}
+Lenalidomide (DB00480)	Naproxen (DB00788)	{'weight': 1}
+Lenalidomide (DB00480)	Ibuprofen (DB01050)	{'weight': 1}
+Lenalidomide (DB00480)	Nimesulide (DB04743)	{'weight': 1}
 Nelfinavir (DB00220)	TMC-310911 (DB15623)	{'weight': 1}
-Ibuprofen (DB01050)	alpha-Linolenic acid (DB00132)	{'weight': 2}
-Ibuprofen (DB01050)	Celecoxib (DB00482)	{'weight': 1}
-Ibuprofen (DB01050)	Ginseng (DB01404)	{'weight': 1}
-Ibuprofen (DB01050)	Cannabidiol (DB09061)	{'weight': 3}
 Ibuprofen (DB01050)	Telmisartan (DB00966)	{'weight': 1}
-Ibuprofen (DB01050)	Oleic Acid (DB04224)	{'weight': 2}
+Ibuprofen (DB01050)	Icosapent (DB00159)	{'weight': 4}
+Ibuprofen (DB01050)	Thalidomide (DB01041)	{'weight': 1}
+Ibuprofen (DB01050)	Clofazimine (DB00845)	{'weight': 1}
+Ibuprofen (DB01050)	Acetylsalicylic acid (DB00945)	{'weight': 2}
+Ibuprofen (DB01050)	Celecoxib (DB00482)	{'weight': 1}
+Ibuprofen (DB01050)	Resveratrol (DB02709)	{'weight': 4}
 Ibuprofen (DB01050)	Acetaminophen (DB00316)	{'weight': 2}
 Ibuprofen (DB01050)	Valproic acid (DB00313)	{'weight': 2}
-Ibuprofen (DB01050)	Resveratrol (DB02709)	{'weight': 4}
-Ibuprofen (DB01050)	Pioglitazone (DB01132)	{'weight': 1}
-Ibuprofen (DB01050)	Thalidomide (DB01041)	{'weight': 1}
-Ibuprofen (DB01050)	Icosapent (DB00159)	{'weight': 4}
-Ibuprofen (DB01050)	Clofazimine (DB00845)	{'weight': 1}
+Ibuprofen (DB01050)	alpha-Linolenic acid (DB00132)	{'weight': 2}
+Ibuprofen (DB01050)	Ginseng (DB01404)	{'weight': 1}
 Ibuprofen (DB01050)	Naproxen (DB00788)	{'weight': 2}
+Ibuprofen (DB01050)	Pioglitazone (DB01132)	{'weight': 1}
 Ibuprofen (DB01050)	Nimesulide (DB04743)	{'weight': 1}
-Ibuprofen (DB01050)	Acetylsalicylic acid (DB00945)	{'weight': 2}
+Ibuprofen (DB01050)	Cannabidiol (DB09061)	{'weight': 3}
+Ibuprofen (DB01050)	Oleic Acid (DB04224)	{'weight': 2}
+Azilsartan medoxomil (DB08822)	Candesartan (DB13919)	{'weight': 1}
+Azilsartan medoxomil (DB08822)	Telmisartan (DB00966)	{'weight': 1}
+Azilsartan medoxomil (DB08822)	Losartan (DB00678)	{'weight': 1}
 Azilsartan medoxomil (DB08822)	Eprosartan (DB00876)	{'weight': 1}
 Azilsartan medoxomil (DB08822)	Olmesartan (DB00275)	{'weight': 1}
-Azilsartan medoxomil (DB08822)	Candesartan (DB13919)	{'weight': 1}
-Azilsartan medoxomil (DB08822)	Losartan (DB00678)	{'weight': 1}
 Azilsartan medoxomil (DB08822)	Irbesartan (DB01029)	{'weight': 1}
-Azilsartan medoxomil (DB08822)	Telmisartan (DB00966)	{'weight': 1}
-Montelukast (DB00471)	Resveratrol (DB02709)	{'weight': 1}
 Montelukast (DB00471)	Fostamatinib (DB12010)	{'weight': 1}
 Montelukast (DB00471)	Vitamin E (DB00163)	{'weight': 1}
+Montelukast (DB00471)	Resveratrol (DB02709)	{'weight': 1}
+Amlodipine (DB00381)	Verapamil (DB00661)	{'weight': 2}
 Amlodipine (DB00381)	Nifedipine (DB01115)	{'weight': 2}
 Amlodipine (DB00381)	Spironolactone (DB00421)	{'weight': 5}
 Amlodipine (DB00381)	Levomenthol (DB00825)	{'weight': 2}
-Amlodipine (DB00381)	Verapamil (DB00661)	{'weight': 2}
-Amlodipine (DB00381)	Cannabidiol (DB09061)	{'weight': 1}
 Amlodipine (DB00381)	Diltiazem (DB00343)	{'weight': 1}
-Tofacitinib (DB08895)	Fostamatinib (DB12010)	{'weight': 4}
+Amlodipine (DB00381)	Cannabidiol (DB09061)	{'weight': 1}
 Tofacitinib (DB08895)	Zanubrutinib (DB15035)	{'weight': 2}
 Tofacitinib (DB08895)	Ruxolitinib (DB08877)	{'weight': 4}
-Edoxaban (DB09075)	Fondaparinux (DB00569)	{'weight': 1}
+Tofacitinib (DB08895)	Fostamatinib (DB12010)	{'weight': 4}
 Edoxaban (DB09075)	Heparin (DB01109)	{'weight': 1}
-Edoxaban (DB09075)	Apixaban (DB06605)	{'weight': 1}
 Edoxaban (DB09075)	Bemiparin (DB09258)	{'weight': 1}
+Edoxaban (DB09075)	Apixaban (DB06605)	{'weight': 1}
 Edoxaban (DB09075)	Nafamostat (DB12598)	{'weight': 1}
+Edoxaban (DB09075)	Fondaparinux (DB00569)	{'weight': 1}
+Candesartan (DB13919)	Telmisartan (DB00966)	{'weight': 1}
+Candesartan (DB13919)	Losartan (DB00678)	{'weight': 1}
 Candesartan (DB13919)	Eprosartan (DB00876)	{'weight': 1}
 Candesartan (DB13919)	Olmesartan (DB00275)	{'weight': 1}
-Candesartan (DB13919)	Losartan (DB00678)	{'weight': 1}
 Candesartan (DB13919)	Irbesartan (DB01029)	{'weight': 1}
-Candesartan (DB13919)	Telmisartan (DB00966)	{'weight': 1}
-Clofazimine (DB00845)	Valproic acid (DB00313)	{'weight': 1}
-Clofazimine (DB00845)	Resveratrol (DB02709)	{'weight': 1}
-Clofazimine (DB00845)	Pioglitazone (DB01132)	{'weight': 1}
-Clofazimine (DB00845)	alpha-Linolenic acid (DB00132)	{'weight': 1}
-Clofazimine (DB00845)	Icosapent (DB00159)	{'weight': 1}
 Clofazimine (DB00845)	Cannabidiol (DB09061)	{'weight': 1}
+Clofazimine (DB00845)	Resveratrol (DB02709)	{'weight': 1}
 Clofazimine (DB00845)	Telmisartan (DB00966)	{'weight': 1}
+Clofazimine (DB00845)	Valproic acid (DB00313)	{'weight': 1}
+Clofazimine (DB00845)	Icosapent (DB00159)	{'weight': 1}
+Clofazimine (DB00845)	alpha-Linolenic acid (DB00132)	{'weight': 1}
+Clofazimine (DB00845)	Pioglitazone (DB01132)	{'weight': 1}
 Clofazimine (DB00845)	Oleic Acid (DB04224)	{'weight': 1}
 Tetrandrine (DB14066)	Roxithromycin (DB00778)	{'weight': 1}
-Camphor (DB01744)	Tramadol (DB00193)	{'weight': 1}
 Camphor (DB01744)	Resiniferatoxin (DB06515)	{'weight': 1}
-Camphor (DB01744)	Levomenthol (DB00825)	{'weight': 3}
-Camphor (DB01744)	alpha-Linolenic acid (DB00132)	{'weight': 1}
-Camphor (DB01744)	Icosapent (DB00159)	{'weight': 1}
-Camphor (DB01744)	Cannabidiol (DB09061)	{'weight': 4}
 Camphor (DB01744)	Acetaminophen (DB00316)	{'weight': 1}
+Camphor (DB01744)	Icosapent (DB00159)	{'weight': 1}
+Camphor (DB01744)	alpha-Linolenic acid (DB00132)	{'weight': 1}
+Camphor (DB01744)	Tramadol (DB00193)	{'weight': 1}
+Camphor (DB01744)	Levomenthol (DB00825)	{'weight': 3}
+Camphor (DB01744)	Cannabidiol (DB09061)	{'weight': 4}
 Colchicine (DB01394)	Artenimol (DB11638)	{'weight': 1}
+Leflunomide (DB01097)	Atovaquone (DB01117)	{'weight': 1}
+Leflunomide (DB01097)	Fostamatinib (DB12010)	{'weight': 1}
 Leflunomide (DB01097)	Resveratrol (DB02709)	{'weight': 1}
 Leflunomide (DB01097)	Omeprazole (DB00338)	{'weight': 1}
 Leflunomide (DB01097)	Brequinar (DB03523)	{'weight': 1}
-Leflunomide (DB01097)	Fostamatinib (DB12010)	{'weight': 1}
 Leflunomide (DB01097)	Ginseng (DB01404)	{'weight': 1}
-Leflunomide (DB01097)	Atovaquone (DB01117)	{'weight': 1}
-Metenkefalin (DB12668)	Tramadol (DB00193)	{'weight': 2}
-Metenkefalin (DB12668)	Ketamine (DB01221)	{'weight': 2}
-Metenkefalin (DB12668)	Naltrexone (DB00704)	{'weight': 2}
-Metenkefalin (DB12668)	Oxycodone (DB00497)	{'weight': 2}
 Metenkefalin (DB12668)	Cannabidiol (DB09061)	{'weight': 2}
+Metenkefalin (DB12668)	Ketamine (DB01221)	{'weight': 2}
+Metenkefalin (DB12668)	Tramadol (DB00193)	{'weight': 2}
+Metenkefalin (DB12668)	Naltrexone (DB00704)	{'weight': 2}
 Metenkefalin (DB12668)	Morphine (DB00295)	{'weight': 2}
-Quetiapine (DB01224)	Tramadol (DB00193)	{'weight': 6}
-Quetiapine (DB01224)	Ketamine (DB01221)	{'weight': 13}
+Metenkefalin (DB12668)	Oxycodone (DB00497)	{'weight': 2}
 Quetiapine (DB01224)	Dexmedetomidine (DB00633)	{'weight': 1}
+Quetiapine (DB01224)	Ketamine (DB01221)	{'weight': 13}
 Quetiapine (DB01224)	Diphenhydramine (DB01075)	{'weight': 2}
-Quetiapine (DB01224)	Verapamil (DB00661)	{'weight': 3}
 Quetiapine (DB01224)	Trifluoperazine (DB00831)	{'weight': 2}
-Quetiapine (DB01224)	Cannabidiol (DB09061)	{'weight': 3}
-Quetiapine (DB01224)	Ketotifen (DB00920)	{'weight': 1}
+Quetiapine (DB01224)	Verapamil (DB00661)	{'weight': 3}
 Quetiapine (DB01224)	Yohimbine (DB01392)	{'weight': 10}
-Ruxolitinib (DB08877)	Fostamatinib (DB12010)	{'weight': 4}
+Quetiapine (DB01224)	Tramadol (DB00193)	{'weight': 6}
+Quetiapine (DB01224)	Ketotifen (DB00920)	{'weight': 1}
+Quetiapine (DB01224)	Cannabidiol (DB09061)	{'weight': 3}
 Ruxolitinib (DB08877)	Zanubrutinib (DB15035)	{'weight': 2}
-Acetylcysteine (DB06151)	Tramadol (DB00193)	{'weight': 5}
-Acetylcysteine (DB06151)	Cysteine (DB00151)	{'weight': 1}
-Acetylcysteine (DB06151)	Fostamatinib (DB12010)	{'weight': 1}
+Ruxolitinib (DB08877)	Fostamatinib (DB12010)	{'weight': 4}
 Acetylcysteine (DB06151)	Ketamine (DB01221)	{'weight': 1}
 Acetylcysteine (DB06151)	Ifenprodil (DB08954)	{'weight': 2}
 Acetylcysteine (DB06151)	Glutathione (DB00143)	{'weight': 1}
+Acetylcysteine (DB06151)	Cysteine (DB00151)	{'weight': 1}
+Acetylcysteine (DB06151)	Fostamatinib (DB12010)	{'weight': 1}
+Acetylcysteine (DB06151)	Tramadol (DB00193)	{'weight': 5}
 Acetylcysteine (DB06151)	Thimerosal (DB11590)	{'weight': 1}
 Acetylcysteine (DB06151)	Acetylsalicylic acid (DB00945)	{'weight': 1}
-Diphenhydramine (DB01075)	Ketamine (DB01221)	{'weight': 1}
 Diphenhydramine (DB01075)	Ketotifen (DB00920)	{'weight': 1}
+Diphenhydramine (DB01075)	Ketamine (DB01221)	{'weight': 1}
+Losartan (DB00678)	Telmisartan (DB00966)	{'weight': 1}
 Losartan (DB00678)	Eprosartan (DB00876)	{'weight': 1}
 Losartan (DB00678)	Olmesartan (DB00275)	{'weight': 1}
 Losartan (DB00678)	Irbesartan (DB01029)	{'weight': 1}
-Losartan (DB00678)	Telmisartan (DB00966)	{'weight': 1}
-Prednisolone (DB00860)	Methylprednisolone (DB00959)	{'weight': 1}
-Prednisolone (DB00860)	Budesonide (DB01222)	{'weight': 1}
-Prednisolone (DB00860)	Spironolactone (DB00421)	{'weight': 1}
 Prednisolone (DB00860)	Mometasone furoate (DB14512)	{'weight': 1}
-Prednisolone (DB00860)	Progesterone (DB00396)	{'weight': 1}
-Prednisolone (DB00860)	Mometasone (DB00764)	{'weight': 1}
 Prednisolone (DB00860)	Prednisolone acetate (DB15566)	{'weight': 1}
-Prednisolone (DB00860)	Prednisone (DB00635)	{'weight': 1}
 Prednisolone (DB00860)	Hydrocortisone (DB00741)	{'weight': 1}
 Prednisolone (DB00860)	Betamethasone (DB00443)	{'weight': 1}
-Tranilast (DB07615)	Glutathione (DB00143)	{'weight': 1}
+Prednisolone (DB00860)	Mometasone (DB00764)	{'weight': 1}
+Prednisolone (DB00860)	Budesonide (DB01222)	{'weight': 1}
+Prednisolone (DB00860)	Spironolactone (DB00421)	{'weight': 1}
+Prednisolone (DB00860)	Methylprednisolone (DB00959)	{'weight': 1}
+Prednisolone (DB00860)	Prednisone (DB00635)	{'weight': 1}
+Prednisolone (DB00860)	Progesterone (DB00396)	{'weight': 1}
 Tranilast (DB07615)	Tretinoin (DB00755)	{'weight': 1}
+Tranilast (DB07615)	Glutathione (DB00143)	{'weight': 1}
 Sildenafil (DB00203)	Fostamatinib (DB12010)	{'weight': 1}
 Bemiparin (DB09258)	Tinzaparin (DB06822)	{'weight': 1}
-Bemiparin (DB09258)	Sulodexide (DB06271)	{'weight': 2}
-Bemiparin (DB09258)	Fondaparinux (DB00569)	{'weight': 2}
 Bemiparin (DB09258)	Nadroparin (DB08813)	{'weight': 1}
 Bemiparin (DB09258)	Heparin (DB01109)	{'weight': 2}
+Bemiparin (DB09258)	Sulodexide (DB06271)	{'weight': 2}
 Bemiparin (DB09258)	Apixaban (DB06605)	{'weight': 1}
 Bemiparin (DB09258)	Nafamostat (DB12598)	{'weight': 1}
-Oleic Acid (DB04224)	alpha-Linolenic acid (DB00132)	{'weight': 4}
-Oleic Acid (DB04224)	Cannabidiol (DB09061)	{'weight': 1}
+Bemiparin (DB09258)	Fondaparinux (DB00569)	{'weight': 2}
 Oleic Acid (DB04224)	Telmisartan (DB00966)	{'weight': 1}
-Oleic Acid (DB04224)	Tretinoin (DB00755)	{'weight': 1}
-Oleic Acid (DB04224)	Valproic acid (DB00313)	{'weight': 3}
-Oleic Acid (DB04224)	Resveratrol (DB02709)	{'weight': 2}
-Oleic Acid (DB04224)	Pioglitazone (DB01132)	{'weight': 1}
 Oleic Acid (DB04224)	Icosapent (DB00159)	{'weight': 3}
-Ginseng (DB01404)	Omeprazole (DB00338)	{'weight': 1}
-Ginseng (DB01404)	Celecoxib (DB00482)	{'weight': 1}
-Ginseng (DB01404)	Cannabidiol (DB09061)	{'weight': 1}
-Ginseng (DB01404)	Acetaminophen (DB00316)	{'weight': 1}
-Ginseng (DB01404)	Resveratrol (DB02709)	{'weight': 2}
-Ginseng (DB01404)	Thalidomide (DB01041)	{'weight': 1}
+Oleic Acid (DB04224)	Tretinoin (DB00755)	{'weight': 1}
+Oleic Acid (DB04224)	Resveratrol (DB02709)	{'weight': 2}
+Oleic Acid (DB04224)	Valproic acid (DB00313)	{'weight': 3}
+Oleic Acid (DB04224)	alpha-Linolenic acid (DB00132)	{'weight': 4}
+Oleic Acid (DB04224)	Pioglitazone (DB01132)	{'weight': 1}
+Oleic Acid (DB04224)	Cannabidiol (DB09061)	{'weight': 1}
 Ginseng (DB01404)	Icosapent (DB00159)	{'weight': 1}
+Ginseng (DB01404)	Omeprazole (DB00338)	{'weight': 1}
+Ginseng (DB01404)	Thalidomide (DB01041)	{'weight': 1}
+Ginseng (DB01404)	Acetylsalicylic acid (DB00945)	{'weight': 1}
+Ginseng (DB01404)	Celecoxib (DB00482)	{'weight': 1}
+Ginseng (DB01404)	Resveratrol (DB02709)	{'weight': 2}
+Ginseng (DB01404)	Acetaminophen (DB00316)	{'weight': 1}
 Ginseng (DB01404)	Naproxen (DB00788)	{'weight': 1}
 Ginseng (DB01404)	Nimesulide (DB04743)	{'weight': 1}
-Ginseng (DB01404)	Acetylsalicylic acid (DB00945)	{'weight': 1}
+Ginseng (DB01404)	Cannabidiol (DB09061)	{'weight': 1}
 Azithromycin (DB00207)	Citrulline (DB00155)	{'weight': 1}
-Ramelteon (DB00980)	Melatonin (DB01065)	{'weight': 2}
 Ramelteon (DB00980)	Resveratrol (DB02709)	{'weight': 2}
+Ramelteon (DB00980)	Melatonin (DB01065)	{'weight': 2}
+Verapamil (DB00661)	Erythromycin (DB00199)	{'weight': 1}
 Verapamil (DB00661)	Nifedipine (DB01115)	{'weight': 3}
 Verapamil (DB00661)	Spironolactone (DB00421)	{'weight': 5}
-Verapamil (DB00661)	Clarithromycin (DB01211)	{'weight': 1}
-Verapamil (DB00661)	Fluvoxamine (DB00176)	{'weight': 2}
-Verapamil (DB00661)	Cannabidiol (DB09061)	{'weight': 2}
 Verapamil (DB00661)	Diltiazem (DB00343)	{'weight': 1}
-Verapamil (DB00661)	Tramadol (DB00193)	{'weight': 1}
+Verapamil (DB00661)	Fluvoxamine (DB00176)	{'weight': 2}
 Verapamil (DB00661)	Tamoxifen (DB00675)	{'weight': 1}
-Verapamil (DB00661)	Levomenthol (DB00825)	{'weight': 2}
 Verapamil (DB00661)	Trifluoperazine (DB00831)	{'weight': 1}
-Verapamil (DB00661)	Erythromycin (DB00199)	{'weight': 1}
+Verapamil (DB00661)	Tramadol (DB00193)	{'weight': 1}
 Verapamil (DB00661)	Yohimbine (DB01392)	{'weight': 1}
+Verapamil (DB00661)	Clarithromycin (DB01211)	{'weight': 1}
+Verapamil (DB00661)	Levomenthol (DB00825)	{'weight': 2}
+Verapamil (DB00661)	Cannabidiol (DB09061)	{'weight': 2}
 Ifenprodil (DB08954)	Tramadol (DB00193)	{'weight': 2}
 Galidesivir (DB11676)	Remdesivir (DB14761)	{'weight': 1}
 Clopidogrel (DB00758)	Epoprostenol (DB01240)	{'weight': 1}
 Pentoxifylline (DB00806)	Tramadol (DB00193)	{'weight': 1}
-Pentoxifylline (DB00806)	Defibrotide (DB04932)	{'weight': 2}
 Pentoxifylline (DB00806)	Mefloquine (DB00358)	{'weight': 1}
 Pentoxifylline (DB00806)	Cannabidiol (DB09061)	{'weight': 1}
+Pentoxifylline (DB00806)	Defibrotide (DB04932)	{'weight': 2}
 Glutathione (DB00143)	Cysteine (DB00151)	{'weight': 1}
 Glutathione (DB00143)	Captopril (DB01197)	{'weight': 1}
+Glutathione (DB00143)	Tretinoin (DB00755)	{'weight': 1}
 Glutathione (DB00143)	Cannabidiol (DB09061)	{'weight': 2}
 Glutathione (DB00143)	Chloroquine (DB00608)	{'weight': 2}
-Glutathione (DB00143)	Tretinoin (DB00755)	{'weight': 1}
 Sulodexide (DB06271)	Tinzaparin (DB06822)	{'weight': 1}
-Sulodexide (DB06271)	Fondaparinux (DB00569)	{'weight': 1}
-Sulodexide (DB06271)	Heparin (DB01109)	{'weight': 1}
 Sulodexide (DB06271)	Nadroparin (DB08813)	{'weight': 1}
+Sulodexide (DB06271)	Heparin (DB01109)	{'weight': 1}
+Sulodexide (DB06271)	Fondaparinux (DB00569)	{'weight': 1}
+Telmisartan (DB00966)	Icosapent (DB00159)	{'weight': 1}
+Telmisartan (DB00966)	Irbesartan (DB01029)	{'weight': 1}
+Telmisartan (DB00966)	Resveratrol (DB02709)	{'weight': 1}
+Telmisartan (DB00966)	Valproic acid (DB00313)	{'weight': 1}
 Telmisartan (DB00966)	Eprosartan (DB00876)	{'weight': 1}
 Telmisartan (DB00966)	Olmesartan (DB00275)	{'weight': 1}
 Telmisartan (DB00966)	alpha-Linolenic acid (DB00132)	{'weight': 1}
-Telmisartan (DB00966)	Cannabidiol (DB09061)	{'weight': 1}
-Telmisartan (DB00966)	Valproic acid (DB00313)	{'weight': 1}
-Telmisartan (DB00966)	Resveratrol (DB02709)	{'weight': 1}
 Telmisartan (DB00966)	Pioglitazone (DB01132)	{'weight': 1}
-Telmisartan (DB00966)	Icosapent (DB00159)	{'weight': 1}
-Telmisartan (DB00966)	Irbesartan (DB01029)	{'weight': 1}
-Ivermectin (DB00602)	Sevoflurane (DB01236)	{'weight': 1}
+Telmisartan (DB00966)	Cannabidiol (DB09061)	{'weight': 1}
 Ivermectin (DB00602)	Midazolam (DB00683)	{'weight': 1}
+Ivermectin (DB00602)	Sevoflurane (DB01236)	{'weight': 1}
 Ivermectin (DB00602)	Propofol (DB00818)	{'weight': 1}
 Ivermectin (DB00602)	Cannabidiol (DB09061)	{'weight': 1}
 Daclatasvir (DB09102)	Velpatasvir (DB11613)	{'weight': 1}
 Daclatasvir (DB09102)	Ledipasvir (DB09027)	{'weight': 1}
 Duvelisib (DB11952)	Fostamatinib (DB12010)	{'weight': 2}
-Acetaminophen (DB00316)	Resiniferatoxin (DB06515)	{'weight': 1}
-Acetaminophen (DB00316)	alpha-Linolenic acid (DB00132)	{'weight': 1}
-Acetaminophen (DB00316)	Celecoxib (DB00482)	{'weight': 1}
-Acetaminophen (DB00316)	Cannabidiol (DB09061)	{'weight': 3}
-Acetaminophen (DB00316)	Resveratrol (DB02709)	{'weight': 2}
-Acetaminophen (DB00316)	Tramadol (DB00193)	{'weight': 1}
-Acetaminophen (DB00316)	Thalidomide (DB01041)	{'weight': 1}
 Acetaminophen (DB00316)	Icosapent (DB00159)	{'weight': 3}
+Acetaminophen (DB00316)	Thalidomide (DB01041)	{'weight': 1}
+Acetaminophen (DB00316)	Acetylsalicylic acid (DB00945)	{'weight': 2}
+Acetaminophen (DB00316)	Celecoxib (DB00482)	{'weight': 1}
+Acetaminophen (DB00316)	Resiniferatoxin (DB06515)	{'weight': 1}
+Acetaminophen (DB00316)	Resveratrol (DB02709)	{'weight': 2}
+Acetaminophen (DB00316)	alpha-Linolenic acid (DB00132)	{'weight': 1}
+Acetaminophen (DB00316)	Tramadol (DB00193)	{'weight': 1}
 Acetaminophen (DB00316)	Naproxen (DB00788)	{'weight': 2}
 Acetaminophen (DB00316)	Nimesulide (DB04743)	{'weight': 1}
-Acetaminophen (DB00316)	Acetylsalicylic acid (DB00945)	{'weight': 2}
-Valproic acid (DB00313)	alpha-Linolenic acid (DB00132)	{'weight': 3}
-Valproic acid (DB00313)	Propofol (DB00818)	{'weight': 2}
-Valproic acid (DB00313)	Cannabidiol (DB09061)	{'weight': 1}
-Valproic acid (DB00313)	Resveratrol (DB02709)	{'weight': 2}
-Valproic acid (DB00313)	Tramadol (DB00193)	{'weight': 1}
+Acetaminophen (DB00316)	Cannabidiol (DB09061)	{'weight': 3}
+Valproic acid (DB00313)	Icosapent (DB00159)	{'weight': 3}
 Valproic acid (DB00313)	Simvastatin (DB00641)	{'weight': 1}
 Valproic acid (DB00313)	Lidocaine (DB00281)	{'weight': 4}
+Valproic acid (DB00313)	Resveratrol (DB02709)	{'weight': 2}
+Valproic acid (DB00313)	Tramadol (DB00193)	{'weight': 1}
+Valproic acid (DB00313)	alpha-Linolenic acid (DB00132)	{'weight': 3}
+Valproic acid (DB00313)	Propofol (DB00818)	{'weight': 2}
 Valproic acid (DB00313)	Pioglitazone (DB01132)	{'weight': 1}
-Valproic acid (DB00313)	Icosapent (DB00159)	{'weight': 3}
-alpha-Linolenic acid (DB00132)	Resiniferatoxin (DB06515)	{'weight': 1}
-alpha-Linolenic acid (DB00132)	Cannabidiol (DB09061)	{'weight': 2}
+Valproic acid (DB00313)	Cannabidiol (DB09061)	{'weight': 1}
+alpha-Linolenic acid (DB00132)	Icosapent (DB00159)	{'weight': 6}
 alpha-Linolenic acid (DB00132)	Tretinoin (DB00755)	{'weight': 1}
+alpha-Linolenic acid (DB00132)	Resiniferatoxin (DB06515)	{'weight': 1}
 alpha-Linolenic acid (DB00132)	Resveratrol (DB02709)	{'weight': 2}
 alpha-Linolenic acid (DB00132)	Tramadol (DB00193)	{'weight': 1}
 alpha-Linolenic acid (DB00132)	Pioglitazone (DB01132)	{'weight': 1}
-alpha-Linolenic acid (DB00132)	Icosapent (DB00159)	{'weight': 6}
-Toremifene (DB00539)	Estradiol (DB00783)	{'weight': 1}
-Toremifene (DB00539)	Resveratrol (DB02709)	{'weight': 1}
+alpha-Linolenic acid (DB00132)	Cannabidiol (DB09061)	{'weight': 2}
 Toremifene (DB00539)	Tamoxifen (DB00675)	{'weight': 2}
+Toremifene (DB00539)	Resveratrol (DB02709)	{'weight': 1}
+Toremifene (DB00539)	Spironolactone (DB00421)	{'weight': 1}
 Toremifene (DB00539)	Melatonin (DB01065)	{'weight': 1}
 Toremifene (DB00539)	Ethinylestradiol (DB00977)	{'weight': 1}
-Toremifene (DB00539)	Spironolactone (DB00421)	{'weight': 1}
+Toremifene (DB00539)	Estradiol (DB00783)	{'weight': 1}
 Toremifene (DB00539)	Progesterone (DB00396)	{'weight': 2}
 Fondaparinux (DB00569)	Tinzaparin (DB06822)	{'weight': 1}
 Fondaparinux (DB00569)	Nadroparin (DB08813)	{'weight': 1}
 Fondaparinux (DB00569)	Heparin (DB01109)	{'weight': 2}
 Fondaparinux (DB00569)	Apixaban (DB06605)	{'weight': 1}
 Fondaparinux (DB00569)	Nafamostat (DB12598)	{'weight': 1}
-Simvastatin (DB00641)	Rosuvastatin (DB01098)	{'weight': 2}
 Simvastatin (DB00641)	Cannabidiol (DB09061)	{'weight': 1}
+Simvastatin (DB00641)	Rosuvastatin (DB01098)	{'weight': 2}
 Hydroxychloroquine (DB01611)	Chloroquine (DB00608)	{'weight': 2}
 Argatroban (DB00278)	Suramin (DB04786)	{'weight': 1}
 Argatroban (DB00278)	Nafamostat (DB12598)	{'weight': 1}
 Roxithromycin (DB00778)	Clarithromycin (DB01211)	{'weight': 1}
-Trifluoperazine (DB00831)	Nifedipine (DB01115)	{'weight': 1}
 Trifluoperazine (DB00831)	Ketamine (DB01221)	{'weight': 1}
-Trifluoperazine (DB00831)	Melatonin (DB01065)	{'weight': 1}
+Trifluoperazine (DB00831)	Nifedipine (DB01115)	{'weight': 1}
 Trifluoperazine (DB00831)	Yohimbine (DB01392)	{'weight': 1}
-Emtricitabine (DB00879)	Tenofovir (DB14126)	{'weight': 1}
+Trifluoperazine (DB00831)	Melatonin (DB01065)	{'weight': 1}
 Emtricitabine (DB00879)	Tenofovir alafenamide (DB09299)	{'weight': 1}
-Perindopril (DB00790)	Trandolapril (DB00519)	{'weight': 1}
-Perindopril (DB00790)	Moexipril (DB00691)	{'weight': 1}
-Perindopril (DB00790)	Benazepril (DB00542)	{'weight': 1}
-Perindopril (DB00790)	Captopril (DB01197)	{'weight': 1}
-Perindopril (DB00790)	Quinapril (DB00881)	{'weight': 1}
-Perindopril (DB00790)	Fosinopril (DB00492)	{'weight': 1}
+Emtricitabine (DB00879)	Tenofovir (DB14126)	{'weight': 1}
 Perindopril (DB00790)	Enalapril (DB00584)	{'weight': 1}
+Perindopril (DB00790)	Benazepril (DB00542)	{'weight': 1}
+Perindopril (DB00790)	Quinapril (DB00881)	{'weight': 1}
+Perindopril (DB00790)	Trandolapril (DB00519)	{'weight': 1}
+Perindopril (DB00790)	Captopril (DB01197)	{'weight': 1}
+Perindopril (DB00790)	Moexipril (DB00691)	{'weight': 1}
+Perindopril (DB00790)	Fosinopril (DB00492)	{'weight': 1}
 Eprosartan (DB00876)	Olmesartan (DB00275)	{'weight': 1}
 Eprosartan (DB00876)	Irbesartan (DB01029)	{'weight': 1}
-Hydrocortisone (DB00741)	Methylprednisolone (DB00959)	{'weight': 2}
-Hydrocortisone (DB00741)	Budesonide (DB01222)	{'weight': 2}
-Hydrocortisone (DB00741)	Spironolactone (DB00421)	{'weight': 1}
 Hydrocortisone (DB00741)	Mometasone furoate (DB14512)	{'weight': 1}
-Hydrocortisone (DB00741)	Progesterone (DB00396)	{'weight': 1}
-Hydrocortisone (DB00741)	Mometasone (DB00764)	{'weight': 1}
 Hydrocortisone (DB00741)	Prednisolone acetate (DB15566)	{'weight': 1}
-Hydrocortisone (DB00741)	Prednisone (DB00635)	{'weight': 1}
 Hydrocortisone (DB00741)	Betamethasone (DB00443)	{'weight': 1}
+Hydrocortisone (DB00741)	Budesonide (DB01222)	{'weight': 2}
+Hydrocortisone (DB00741)	Mometasone (DB00764)	{'weight': 1}
+Hydrocortisone (DB00741)	Spironolactone (DB00421)	{'weight': 1}
+Hydrocortisone (DB00741)	Methylprednisolone (DB00959)	{'weight': 2}
+Hydrocortisone (DB00741)	Prednisone (DB00635)	{'weight': 1}
+Hydrocortisone (DB00741)	Progesterone (DB00396)	{'weight': 1}
 Metoprolol (DB00264)	Formoterol (DB00983)	{'weight': 2}
 Hesperidin (DB04703)	Fostamatinib (DB12010)	{'weight': 1}
-Clarithromycin (DB01211)	Tamoxifen (DB00675)	{'weight': 1}
 Clarithromycin (DB01211)	Fluvoxamine (DB00176)	{'weight': 1}
 Clarithromycin (DB01211)	Erythromycin (DB00199)	{'weight': 1}
-Camostat (DB13729)	Aprotinin (DB06692)	{'weight': 1}
+Clarithromycin (DB01211)	Tamoxifen (DB00675)	{'weight': 1}
 Camostat (DB13729)	Nafamostat (DB12598)	{'weight': 1}
+Camostat (DB13729)	MM3122 (DB16737)	{'weight': 1}
+Camostat (DB13729)	Aprotinin (DB06692)	{'weight': 1}
 Sirolimus (DB00877)	Fostamatinib (DB12010)	{'weight': 1}
-Sirolimus (DB00877)	Heparin (DB01109)	{'weight': 1}
 Sirolimus (DB00877)	Tacrolimus (DB00864)	{'weight': 1}
+Sirolimus (DB00877)	Heparin (DB01109)	{'weight': 1}
 Velpatasvir (DB11613)	Ledipasvir (DB09027)	{'weight': 1}
 Liothyronine (DB00279)	Acetylsalicylic acid (DB00945)	{'weight': 1}
 Tinzaparin (DB06822)	Nadroparin (DB08813)	{'weight': 1}
 Tinzaparin (DB06822)	Heparin (DB01109)	{'weight': 1}
-Cannabidiol (DB09061)	Nifedipine (DB01115)	{'weight': 3}
-Cannabidiol (DB09061)	Celecoxib (DB00482)	{'weight': 1}
-Cannabidiol (DB09061)	Tramadol (DB00193)	{'weight': 4}
-Cannabidiol (DB09061)	Defibrotide (DB04932)	{'weight': 1}
-Cannabidiol (DB09061)	Ketamine (DB01221)	{'weight': 5}
-Cannabidiol (DB09061)	Resveratrol (DB02709)	{'weight': 3}
-Cannabidiol (DB09061)	Levomenthol (DB00825)	{'weight': 3}
-Cannabidiol (DB09061)	Progesterone (DB00396)	{'weight': 1}
-Cannabidiol (DB09061)	Icosapent (DB00159)	{'weight': 4}
-Cannabidiol (DB09061)	Morphine (DB00295)	{'weight': 2}
-Cannabidiol (DB09061)	Yohimbine (DB01392)	{'weight': 2}
-Cannabidiol (DB09061)	Acetylsalicylic acid (DB00945)	{'weight': 2}
-Cannabidiol (DB09061)	Resiniferatoxin (DB06515)	{'weight': 1}
-Cannabidiol (DB09061)	Rosuvastatin (DB01098)	{'weight': 1}
 Cannabidiol (DB09061)	Spironolactone (DB00421)	{'weight': 4}
-Cannabidiol (DB09061)	Oxycodone (DB00497)	{'weight': 2}
-Cannabidiol (DB09061)	Sevoflurane (DB01236)	{'weight': 1}
-Cannabidiol (DB09061)	Pioglitazone (DB01132)	{'weight': 1}
 Cannabidiol (DB09061)	Naltrexone (DB00704)	{'weight': 2}
-Cannabidiol (DB09061)	Thalidomide (DB01041)	{'weight': 1}
+Cannabidiol (DB09061)	Defibrotide (DB04932)	{'weight': 1}
+Cannabidiol (DB09061)	Acetylsalicylic acid (DB00945)	{'weight': 2}
+Cannabidiol (DB09061)	Celecoxib (DB00482)	{'weight': 1}
+Cannabidiol (DB09061)	Resiniferatoxin (DB06515)	{'weight': 1}
+Cannabidiol (DB09061)	Sevoflurane (DB01236)	{'weight': 1}
+Cannabidiol (DB09061)	Tramadol (DB00193)	{'weight': 4}
+Cannabidiol (DB09061)	Levomenthol (DB00825)	{'weight': 3}
 Cannabidiol (DB09061)	Naproxen (DB00788)	{'weight': 2}
+Cannabidiol (DB09061)	Oxycodone (DB00497)	{'weight': 2}
+Cannabidiol (DB09061)	Ketamine (DB01221)	{'weight': 5}
+Cannabidiol (DB09061)	Icosapent (DB00159)	{'weight': 4}
+Cannabidiol (DB09061)	Nifedipine (DB01115)	{'weight': 3}
+Cannabidiol (DB09061)	Thalidomide (DB01041)	{'weight': 1}
+Cannabidiol (DB09061)	Progesterone (DB00396)	{'weight': 1}
+Cannabidiol (DB09061)	Resveratrol (DB02709)	{'weight': 3}
+Cannabidiol (DB09061)	Yohimbine (DB01392)	{'weight': 2}
+Cannabidiol (DB09061)	Rosuvastatin (DB01098)	{'weight': 1}
+Cannabidiol (DB09061)	Morphine (DB00295)	{'weight': 2}
+Cannabidiol (DB09061)	Pioglitazone (DB01132)	{'weight': 1}
 Cannabidiol (DB09061)	Nimesulide (DB04743)	{'weight': 1}
-Tramadol (DB00193)	Resiniferatoxin (DB06515)	{'weight': 1}
-Tramadol (DB00193)	Oxycodone (DB00497)	{'weight': 3}
-Tramadol (DB00193)	Propofol (DB00818)	{'weight': 1}
-Tramadol (DB00193)	Fluvoxamine (DB00176)	{'weight': 1}
-Tramadol (DB00193)	Defibrotide (DB04932)	{'weight': 1}
 Tramadol (DB00193)	Ketamine (DB01221)	{'weight': 10}
-Tramadol (DB00193)	Aprepitant (DB00673)	{'weight': 1}
-Tramadol (DB00193)	Dexmedetomidine (DB00633)	{'weight': 1}
-Tramadol (DB00193)	Levomenthol (DB00825)	{'weight': 1}
-Tramadol (DB00193)	Naltrexone (DB00704)	{'weight': 3}
-Tramadol (DB00193)	Progesterone (DB00396)	{'weight': 1}
 Tramadol (DB00193)	Icosapent (DB00159)	{'weight': 1}
-Tramadol (DB00193)	Morphine (DB00295)	{'weight': 3}
+Tramadol (DB00193)	Aprepitant (DB00673)	{'weight': 1}
+Tramadol (DB00193)	Naltrexone (DB00704)	{'weight': 3}
+Tramadol (DB00193)	Defibrotide (DB04932)	{'weight': 1}
+Tramadol (DB00193)	Progesterone (DB00396)	{'weight': 1}
+Tramadol (DB00193)	Fluvoxamine (DB00176)	{'weight': 1}
+Tramadol (DB00193)	Resiniferatoxin (DB06515)	{'weight': 1}
+Tramadol (DB00193)	Dexmedetomidine (DB00633)	{'weight': 1}
 Tramadol (DB00193)	Yohimbine (DB01392)	{'weight': 4}
-Prednisone (DB00635)	Methylprednisolone (DB00959)	{'weight': 1}
-Prednisone (DB00635)	Budesonide (DB01222)	{'weight': 1}
-Prednisone (DB00635)	Spironolactone (DB00421)	{'weight': 1}
+Tramadol (DB00193)	Levomenthol (DB00825)	{'weight': 1}
+Tramadol (DB00193)	Propofol (DB00818)	{'weight': 1}
+Tramadol (DB00193)	Morphine (DB00295)	{'weight': 3}
+Tramadol (DB00193)	Oxycodone (DB00497)	{'weight': 3}
 Prednisone (DB00635)	Mometasone furoate (DB14512)	{'weight': 1}
-Prednisone (DB00635)	Progesterone (DB00396)	{'weight': 1}
-Prednisone (DB00635)	Mometasone (DB00764)	{'weight': 1}
 Prednisone (DB00635)	Prednisolone acetate (DB15566)	{'weight': 1}
 Prednisone (DB00635)	Betamethasone (DB00443)	{'weight': 1}
+Prednisone (DB00635)	Mometasone (DB00764)	{'weight': 1}
+Prednisone (DB00635)	Budesonide (DB01222)	{'weight': 1}
+Prednisone (DB00635)	Spironolactone (DB00421)	{'weight': 1}
+Prednisone (DB00635)	Methylprednisolone (DB00959)	{'weight': 1}
+Prednisone (DB00635)	Progesterone (DB00396)	{'weight': 1}
 Imatinib (DB00619)	Fostamatinib (DB12010)	{'weight': 7}
 Resiniferatoxin (DB06515)	Icosapent (DB00159)	{'weight': 1}
-Celecoxib (DB00482)	Resveratrol (DB02709)	{'weight': 1}
 Celecoxib (DB00482)	Fostamatinib (DB12010)	{'weight': 1}
+Celecoxib (DB00482)	Resveratrol (DB02709)	{'weight': 1}
+Celecoxib (DB00482)	Icosapent (DB00159)	{'weight': 1}
 Celecoxib (DB00482)	Acetylsalicylic acid (DB00945)	{'weight': 1}
 Celecoxib (DB00482)	Thalidomide (DB01041)	{'weight': 1}
-Celecoxib (DB00482)	Icosapent (DB00159)	{'weight': 1}
 Celecoxib (DB00482)	Naproxen (DB00788)	{'weight': 1}
 Celecoxib (DB00482)	Nimesulide (DB04743)	{'weight': 1}
-Primaquine (DB01087)	Resveratrol (DB02709)	{'weight': 1}
 Primaquine (DB01087)	Melatonin (DB01065)	{'weight': 1}
-Fluvoxamine (DB00176)	Tamoxifen (DB00675)	{'weight': 1}
+Primaquine (DB01087)	Resveratrol (DB02709)	{'weight': 1}
 Fluvoxamine (DB00176)	Erythromycin (DB00199)	{'weight': 1}
+Fluvoxamine (DB00176)	Tamoxifen (DB00675)	{'weight': 1}
 Tenofovir alafenamide (DB09299)	Tenofovir (DB14126)	{'weight': 3}
+Propofol (DB00818)	Midazolam (DB00683)	{'weight': 16}
 Propofol (DB00818)	Sevoflurane (DB01236)	{'weight': 16}
 Propofol (DB00818)	Lidocaine (DB00281)	{'weight': 1}
-Propofol (DB00818)	Midazolam (DB00683)	{'weight': 16}
 Nadroparin (DB08813)	Heparin (DB01109)	{'weight': 2}
 Nadroparin (DB08813)	Acetylsalicylic acid (DB00945)	{'weight': 1}
 Nicotinamide (DB02701)	Artenimol (DB11638)	{'weight': 1}
 Nicotinamide (DB02701)	Suramin (DB04786)	{'weight': 1}
 Mefloquine (DB00358)	Defibrotide (DB04932)	{'weight': 1}
 Dexmedetomidine (DB00633)	Yohimbine (DB01392)	{'weight': 1}
-Mometasone (DB00764)	Methylprednisolone (DB00959)	{'weight': 1}
-Mometasone (DB00764)	Norelgestromin (DB06713)	{'weight': 1}
-Mometasone (DB00764)	Budesonide (DB01222)	{'weight': 1}
-Mometasone (DB00764)	Spironolactone (DB00421)	{'weight': 2}
 Mometasone (DB00764)	Mometasone furoate (DB14512)	{'weight': 2}
-Mometasone (DB00764)	Progesterone (DB00396)	{'weight': 2}
 Mometasone (DB00764)	Prednisolone acetate (DB15566)	{'weight': 1}
 Mometasone (DB00764)	Betamethasone (DB00443)	{'weight': 1}
+Mometasone (DB00764)	Spironolactone (DB00421)	{'weight': 2}
+Mometasone (DB00764)	Budesonide (DB01222)	{'weight': 1}
+Mometasone (DB00764)	Methylprednisolone (DB00959)	{'weight': 1}
+Mometasone (DB00764)	Norelgestromin (DB06713)	{'weight': 1}
+Mometasone (DB00764)	Progesterone (DB00396)	{'weight': 2}
 Heparin (DB01109)	Fostamatinib (DB12010)	{'weight': 2}
 Heparin (DB01109)	Thalidomide (DB01041)	{'weight': 1}
 Heparin (DB01109)	Apixaban (DB06605)	{'weight': 1}
 Heparin (DB01109)	Nafamostat (DB12598)	{'weight': 1}
-Levomenthol (DB00825)	Nifedipine (DB01115)	{'weight': 4}
+Levomenthol (DB00825)	Diltiazem (DB00343)	{'weight': 1}
 Levomenthol (DB00825)	Ketamine (DB01221)	{'weight': 1}
+Levomenthol (DB00825)	Nifedipine (DB01115)	{'weight': 4}
 Levomenthol (DB00825)	Spironolactone (DB00421)	{'weight': 9}
 Levomenthol (DB00825)	Naltrexone (DB00704)	{'weight': 1}
-Levomenthol (DB00825)	Progesterone (DB00396)	{'weight': 1}
-Levomenthol (DB00825)	Oxycodone (DB00497)	{'weight': 1}
-Levomenthol (DB00825)	Diltiazem (DB00343)	{'weight': 1}
 Levomenthol (DB00825)	Morphine (DB00295)	{'weight': 1}
+Levomenthol (DB00825)	Oxycodone (DB00497)	{'weight': 1}
+Levomenthol (DB00825)	Progesterone (DB00396)	{'weight': 1}
 Cyanocobalamin (DB00115)	Thimerosal (DB11590)	{'weight': 1}
 Cyanocobalamin (DB00115)	Mecobalamin (DB03614)	{'weight': 1}
-Zanubrutinib (DB15035)	Fostamatinib (DB12010)	{'weight': 15}
 Zanubrutinib (DB15035)	Ibrutinib (DB09053)	{'weight': 1}
-Zanubrutinib (DB15035)	Lidocaine (DB00281)	{'weight': 1}
-Zanubrutinib (DB15035)	Abivertinib (DB15327)	{'weight': 2}
 Zanubrutinib (DB15035)	Acalabrutinib (DB11703)	{'weight': 1}
+Zanubrutinib (DB15035)	Abivertinib (DB15327)	{'weight': 2}
+Zanubrutinib (DB15035)	Fostamatinib (DB12010)	{'weight': 15}
+Zanubrutinib (DB15035)	Lidocaine (DB00281)	{'weight': 1}
 Mecobalamin (DB03614)	Thimerosal (DB11590)	{'weight': 1}
-Quinapril (DB00881)	Trandolapril (DB00519)	{'weight': 1}
-Quinapril (DB00881)	Moexipril (DB00691)	{'weight': 1}
-Quinapril (DB00881)	Benazepril (DB00542)	{'weight': 1}
-Quinapril (DB00881)	Captopril (DB01197)	{'weight': 1}
-Quinapril (DB00881)	Fosinopril (DB00492)	{'weight': 1}
 Quinapril (DB00881)	Enalapril (DB00584)	{'weight': 1}
-Abivertinib (DB15327)	Fostamatinib (DB12010)	{'weight': 2}
+Quinapril (DB00881)	Benazepril (DB00542)	{'weight': 1}
+Quinapril (DB00881)	Trandolapril (DB00519)	{'weight': 1}
+Quinapril (DB00881)	Captopril (DB01197)	{'weight': 1}
+Quinapril (DB00881)	Moexipril (DB00691)	{'weight': 1}
+Quinapril (DB00881)	Fosinopril (DB00492)	{'weight': 1}
 Abivertinib (DB15327)	Ibrutinib (DB09053)	{'weight': 1}
-Abivertinib (DB15327)	Lidocaine (DB00281)	{'weight': 1}
 Abivertinib (DB15327)	Acalabrutinib (DB11703)	{'weight': 1}
+Abivertinib (DB15327)	Fostamatinib (DB12010)	{'weight': 2}
+Abivertinib (DB15327)	Lidocaine (DB00281)	{'weight': 1}
+Captopril (DB01197)	Enalapril (DB00584)	{'weight': 1}
+Captopril (DB01197)	Benazepril (DB00542)	{'weight': 1}
 Captopril (DB01197)	Trandolapril (DB00519)	{'weight': 1}
 Captopril (DB01197)	Moexipril (DB00691)	{'weight': 1}
-Captopril (DB01197)	Benazepril (DB00542)	{'weight': 1}
 Captopril (DB01197)	Fosinopril (DB00492)	{'weight': 1}
-Captopril (DB01197)	Enalapril (DB00584)	{'weight': 1}
 Brequinar (DB03523)	Atovaquone (DB01117)	{'weight': 1}
-Norelgestromin (DB06713)	Tamoxifen (DB00675)	{'weight': 1}
-Norelgestromin (DB06713)	Spironolactone (DB00421)	{'weight': 2}
 Norelgestromin (DB06713)	Mometasone furoate (DB14512)	{'weight': 1}
-Norelgestromin (DB06713)	Progesterone (DB00396)	{'weight': 2}
-Norelgestromin (DB06713)	Enzalutamide (DB08899)	{'weight': 1}
+Norelgestromin (DB06713)	Tamoxifen (DB00675)	{'weight': 1}
 Norelgestromin (DB06713)	Artenimol (DB11638)	{'weight': 1}
-Ethinylestradiol (DB00977)	Nifedipine (DB01115)	{'weight': 1}
-Ethinylestradiol (DB00977)	Piperine (DB12582)	{'weight': 1}
-Ethinylestradiol (DB00977)	Melatonin (DB01065)	{'weight': 1}
-Ethinylestradiol (DB00977)	Spironolactone (DB00421)	{'weight': 1}
+Norelgestromin (DB06713)	Enzalutamide (DB08899)	{'weight': 1}
+Norelgestromin (DB06713)	Spironolactone (DB00421)	{'weight': 2}
+Norelgestromin (DB06713)	Progesterone (DB00396)	{'weight': 2}
 Ethinylestradiol (DB00977)	Vitamin E (DB00163)	{'weight': 1}
-Ethinylestradiol (DB00977)	Estradiol (DB00783)	{'weight': 2}
-Ethinylestradiol (DB00977)	Resveratrol (DB02709)	{'weight': 2}
-Ethinylestradiol (DB00977)	Tamoxifen (DB00675)	{'weight': 2}
+Ethinylestradiol (DB00977)	Piperine (DB12582)	{'weight': 1}
+Ethinylestradiol (DB00977)	Nifedipine (DB01115)	{'weight': 1}
+Ethinylestradiol (DB00977)	Spironolactone (DB00421)	{'weight': 1}
+Ethinylestradiol (DB00977)	Melatonin (DB01065)	{'weight': 1}
 Ethinylestradiol (DB00977)	Progesterone (DB00396)	{'weight': 1}
+Ethinylestradiol (DB00977)	Tamoxifen (DB00675)	{'weight': 2}
+Ethinylestradiol (DB00977)	Resveratrol (DB02709)	{'weight': 2}
+Ethinylestradiol (DB00977)	Estradiol (DB00783)	{'weight': 2}
 Finasteride (DB01216)	Dutasteride (DB01126)	{'weight': 2}
 Finasteride (DB01216)	Spironolactone (DB00421)	{'weight': 2}
-Fostamatinib (DB12010)	Tamoxifen (DB00675)	{'weight': 5}
-Fostamatinib (DB12010)	Metformin (DB00331)	{'weight': 1}
-Fostamatinib (DB12010)	Resveratrol (DB02709)	{'weight': 2}
-Fostamatinib (DB12010)	Acetylsalicylic acid (DB00945)	{'weight': 12}
-Fostamatinib (DB12010)	Ibrutinib (DB09053)	{'weight': 1}
-Fostamatinib (DB12010)	Acalabrutinib (DB11703)	{'weight': 1}
 Fostamatinib (DB12010)	Vitamin E (DB00163)	{'weight': 1}
-Fostamatinib (DB12010)	Lidocaine (DB00281)	{'weight': 1}
+Fostamatinib (DB12010)	Acetylsalicylic acid (DB00945)	{'weight': 12}
+Fostamatinib (DB12010)	Acalabrutinib (DB11703)	{'weight': 1}
+Fostamatinib (DB12010)	Tamoxifen (DB00675)	{'weight': 5}
 Fostamatinib (DB12010)	Thalidomide (DB01041)	{'weight': 1}
-Lidocaine (DB00281)	Progesterone (DB00396)	{'weight': 1}
+Fostamatinib (DB12010)	Lidocaine (DB00281)	{'weight': 1}
+Fostamatinib (DB12010)	Ibrutinib (DB09053)	{'weight': 1}
+Fostamatinib (DB12010)	Resveratrol (DB02709)	{'weight': 2}
+Fostamatinib (DB12010)	Metformin (DB00331)	{'weight': 1}
 Lidocaine (DB00281)	Thalidomide (DB01041)	{'weight': 2}
+Lidocaine (DB00281)	Progesterone (DB00396)	{'weight': 1}
 Suramin (DB04786)	Nafamostat (DB12598)	{'weight': 1}
 Tirofiban (DB00775)	Resveratrol (DB02709)	{'weight': 1}
-Ketamine (DB01221)	Oxycodone (DB00497)	{'weight': 3}
-Ketamine (DB01221)	Citrulline (DB00155)	{'weight': 1}
 Ketamine (DB01221)	Aprepitant (DB00673)	{'weight': 1}
 Ketamine (DB01221)	Naltrexone (DB00704)	{'weight': 3}
+Ketamine (DB01221)	Citrulline (DB00155)	{'weight': 1}
 Ketamine (DB01221)	Progesterone (DB00396)	{'weight': 1}
-Ketamine (DB01221)	Morphine (DB00295)	{'weight': 3}
 Ketamine (DB01221)	Yohimbine (DB01392)	{'weight': 7}
+Ketamine (DB01221)	Morphine (DB00295)	{'weight': 3}
+Ketamine (DB01221)	Oxycodone (DB00497)	{'weight': 3}
 Isotretinoin (DB00982)	Tretinoin (DB00755)	{'weight': 2}
 Ibrutinib (DB09053)	Acalabrutinib (DB11703)	{'weight': 1}
 Fingolimod (DB08868)	Ozanimod (DB12612)	{'weight': 2}
+Benazepril (DB00542)	Enalapril (DB00584)	{'weight': 1}
 Benazepril (DB00542)	Trandolapril (DB00519)	{'weight': 1}
 Benazepril (DB00542)	Moexipril (DB00691)	{'weight': 1}
 Benazepril (DB00542)	Fosinopril (DB00492)	{'weight': 1}
-Benazepril (DB00542)	Enalapril (DB00584)	{'weight': 1}
-Moxifloxacin (DB00218)	Levofloxacin (DB01137)	{'weight': 2}
 Moxifloxacin (DB00218)	Etoposide (DB00773)	{'weight': 1}
+Moxifloxacin (DB00218)	Levofloxacin (DB01137)	{'weight': 2}
 Midazolam (DB00683)	Sevoflurane (DB01236)	{'weight': 16}
 Enzalutamide (DB08899)	Tamoxifen (DB00675)	{'weight': 1}
 Enzalutamide (DB08899)	Spironolactone (DB00421)	{'weight': 1}
 Enzalutamide (DB08899)	Progesterone (DB00396)	{'weight': 1}
 Sitagliptin (DB01261)	Linagliptin (DB08882)	{'weight': 1}
 Acetylsalicylic acid (DB00945)	Ambrisentan (DB06403)	{'weight': 1}
+Acetylsalicylic acid (DB00945)	Icosapent (DB00159)	{'weight': 2}
+Acetylsalicylic acid (DB00945)	Thalidomide (DB01041)	{'weight': 1}
 Acetylsalicylic acid (DB00945)	Bardoxolone methyl (DB05983)	{'weight': 1}
 Acetylsalicylic acid (DB00945)	Resveratrol (DB02709)	{'weight': 2}
-Acetylsalicylic acid (DB00945)	Metformin (DB00331)	{'weight': 1}
-Acetylsalicylic acid (DB00945)	Thalidomide (DB01041)	{'weight': 1}
-Acetylsalicylic acid (DB00945)	Icosapent (DB00159)	{'weight': 2}
 Acetylsalicylic acid (DB00945)	Naproxen (DB00788)	{'weight': 2}
 Acetylsalicylic acid (DB00945)	Nimesulide (DB04743)	{'weight': 1}
+Acetylsalicylic acid (DB00945)	Metformin (DB00331)	{'weight': 1}
 Erythromycin (DB00199)	Tamoxifen (DB00675)	{'weight': 1}
-Melatonin (DB01065)	Nifedipine (DB01115)	{'weight': 1}
 Melatonin (DB01065)	Levocarnitine (DB00583)	{'weight': 1}
-Melatonin (DB01065)	Estradiol (DB00783)	{'weight': 1}
-Melatonin (DB01065)	Resveratrol (DB02709)	{'weight': 4}
-Melatonin (DB01065)	Tamoxifen (DB00675)	{'weight': 1}
+Melatonin (DB01065)	Nifedipine (DB01115)	{'weight': 1}
 Melatonin (DB01065)	Progesterone (DB00396)	{'weight': 1}
+Melatonin (DB01065)	Tamoxifen (DB00675)	{'weight': 1}
+Melatonin (DB01065)	Resveratrol (DB02709)	{'weight': 4}
+Melatonin (DB01065)	Estradiol (DB00783)	{'weight': 1}
 Vitamin A (DB00162)	Tretinoin (DB00755)	{'weight': 2}
 Olmesartan (DB00275)	Irbesartan (DB01029)	{'weight': 1}
+Moexipril (DB00691)	Enalapril (DB00584)	{'weight': 1}
 Moexipril (DB00691)	Trandolapril (DB00519)	{'weight': 1}
 Moexipril (DB00691)	Fosinopril (DB00492)	{'weight': 1}
-Moexipril (DB00691)	Enalapril (DB00584)	{'weight': 1}
-Estradiol (DB00783)	Nifedipine (DB01115)	{'weight': 1}
-Estradiol (DB00783)	Piperine (DB12582)	{'weight': 1}
-Estradiol (DB00783)	Spironolactone (DB00421)	{'weight': 1}
 Estradiol (DB00783)	Vitamin E (DB00163)	{'weight': 1}
-Estradiol (DB00783)	Resveratrol (DB02709)	{'weight': 2}
-Estradiol (DB00783)	Tamoxifen (DB00675)	{'weight': 3}
+Estradiol (DB00783)	Piperine (DB12582)	{'weight': 1}
+Estradiol (DB00783)	Nifedipine (DB01115)	{'weight': 1}
+Estradiol (DB00783)	Spironolactone (DB00421)	{'weight': 1}
 Estradiol (DB00783)	Progesterone (DB00396)	{'weight': 2}
+Estradiol (DB00783)	Tamoxifen (DB00675)	{'weight': 3}
+Estradiol (DB00783)	Resveratrol (DB02709)	{'weight': 2}
 Ascorbic acid (DB00126)	Disulfiram (DB00822)	{'weight': 1}
-Piperine (DB12582)	Resveratrol (DB02709)	{'weight': 1}
-Piperine (DB12582)	Nifedipine (DB01115)	{'weight': 1}
 Piperine (DB12582)	Tamoxifen (DB00675)	{'weight': 1}
-Piperine (DB12582)	Spironolactone (DB00421)	{'weight': 1}
+Piperine (DB12582)	Resveratrol (DB02709)	{'weight': 1}
 Piperine (DB12582)	Vitamin E (DB00163)	{'weight': 1}
+Piperine (DB12582)	Nifedipine (DB01115)	{'weight': 1}
+Piperine (DB12582)	Spironolactone (DB00421)	{'weight': 1}
 Pioglitazone (DB01132)	Resveratrol (DB02709)	{'weight': 1}
 Pioglitazone (DB01132)	Icosapent (DB00159)	{'weight': 1}
-Betamethasone (DB00443)	Methylprednisolone (DB00959)	{'weight': 1}
+Betamethasone (DB00443)	Mometasone furoate (DB14512)	{'weight': 1}
+Betamethasone (DB00443)	Prednisolone acetate (DB15566)	{'weight': 1}
 Betamethasone (DB00443)	Budesonide (DB01222)	{'weight': 1}
 Betamethasone (DB00443)	Spironolactone (DB00421)	{'weight': 1}
-Betamethasone (DB00443)	Mometasone furoate (DB14512)	{'weight': 1}
+Betamethasone (DB00443)	Methylprednisolone (DB00959)	{'weight': 1}
 Betamethasone (DB00443)	Progesterone (DB00396)	{'weight': 1}
-Betamethasone (DB00443)	Prednisolone acetate (DB15566)	{'weight': 1}
 Nimesulide (DB04743)	Resveratrol (DB02709)	{'weight': 1}
-Nimesulide (DB04743)	Thalidomide (DB01041)	{'weight': 1}
 Nimesulide (DB04743)	Icosapent (DB00159)	{'weight': 1}
+Nimesulide (DB04743)	Thalidomide (DB01041)	{'weight': 1}
 Nimesulide (DB04743)	Naproxen (DB00788)	{'weight': 1}
 Apixaban (DB06605)	Nafamostat (DB12598)	{'weight': 1}
-Resveratrol (DB02709)	Nifedipine (DB01115)	{'weight': 1}
-Resveratrol (DB02709)	Tamoxifen (DB00675)	{'weight': 2}
-Resveratrol (DB02709)	Progesterone (DB00396)	{'weight': 1}
-Resveratrol (DB02709)	Icosapent (DB00159)	{'weight': 4}
-Resveratrol (DB02709)	Omeprazole (DB00338)	{'weight': 1}
-Resveratrol (DB02709)	Spironolactone (DB00421)	{'weight': 1}
 Resveratrol (DB02709)	Vitamin E (DB00163)	{'weight': 2}
-Resveratrol (DB02709)	Deferoxamine (DB00746)	{'weight': 1}
-Resveratrol (DB02709)	Thalidomide (DB01041)	{'weight': 1}
+Resveratrol (DB02709)	Spironolactone (DB00421)	{'weight': 1}
+Resveratrol (DB02709)	Tamoxifen (DB00675)	{'weight': 2}
 Resveratrol (DB02709)	Naproxen (DB00788)	{'weight': 2}
 Resveratrol (DB02709)	Artenimol (DB11638)	{'weight': 1}
+Resveratrol (DB02709)	Deferoxamine (DB00746)	{'weight': 1}
+Resveratrol (DB02709)	Icosapent (DB00159)	{'weight': 4}
+Resveratrol (DB02709)	Nifedipine (DB01115)	{'weight': 1}
+Resveratrol (DB02709)	Omeprazole (DB00338)	{'weight': 1}
+Resveratrol (DB02709)	Thalidomide (DB01041)	{'weight': 1}
+Resveratrol (DB02709)	Progesterone (DB00396)	{'weight': 1}
 Artenimol (DB11638)	Cyclosporine (DB00091)	{'weight': 1}
-Prednisolone acetate (DB15566)	Methylprednisolone (DB00959)	{'weight': 1}
+Prednisolone acetate (DB15566)	Mometasone furoate (DB14512)	{'weight': 1}
 Prednisolone acetate (DB15566)	Budesonide (DB01222)	{'weight': 1}
 Prednisolone acetate (DB15566)	Spironolactone (DB00421)	{'weight': 1}
-Prednisolone acetate (DB15566)	Mometasone furoate (DB14512)	{'weight': 1}
+Prednisolone acetate (DB15566)	Methylprednisolone (DB00959)	{'weight': 1}
 Prednisolone acetate (DB15566)	Progesterone (DB00396)	{'weight': 1}
 Chloroquine (DB00608)	Thalidomide (DB01041)	{'weight': 1}
+Nifedipine (DB01115)	Vitamin E (DB00163)	{'weight': 1}
 Nifedipine (DB01115)	Spironolactone (DB00421)	{'weight': 8}
 Nifedipine (DB01115)	Diltiazem (DB00343)	{'weight': 1}
-Nifedipine (DB01115)	Vitamin E (DB00163)	{'weight': 1}
 Nifedipine (DB01115)	Tamoxifen (DB00675)	{'weight': 1}
-Budesonide (DB01222)	Methylprednisolone (DB00959)	{'weight': 2}
-Budesonide (DB01222)	Spironolactone (DB00421)	{'weight': 1}
 Budesonide (DB01222)	Mometasone furoate (DB14512)	{'weight': 1}
+Budesonide (DB01222)	Spironolactone (DB00421)	{'weight': 1}
+Budesonide (DB01222)	Methylprednisolone (DB00959)	{'weight': 2}
 Budesonide (DB01222)	Progesterone (DB00396)	{'weight': 1}
-Fosinopril (DB00492)	Trandolapril (DB00519)	{'weight': 1}
 Fosinopril (DB00492)	Enalapril (DB00584)	{'weight': 1}
+Fosinopril (DB00492)	Trandolapril (DB00519)	{'weight': 1}
 Icosapent (DB00159)	Thalidomide (DB01041)	{'weight': 1}
 Icosapent (DB00159)	Naproxen (DB00788)	{'weight': 2}
-Tamoxifen (DB00675)	Spironolactone (DB00421)	{'weight': 3}
 Tamoxifen (DB00675)	Vitamin E (DB00163)	{'weight': 3}
+Tamoxifen (DB00675)	Spironolactone (DB00421)	{'weight': 3}
 Tamoxifen (DB00675)	Progesterone (DB00396)	{'weight': 4}
 Naltrexone (DB00704)	Progesterone (DB00396)	{'weight': 1}
-Naltrexone (DB00704)	Oxycodone (DB00497)	{'weight': 3}
 Naltrexone (DB00704)	Morphine (DB00295)	{'weight': 3}
-Mometasone furoate (DB14512)	Methylprednisolone (DB00959)	{'weight': 1}
+Naltrexone (DB00704)	Oxycodone (DB00497)	{'weight': 3}
 Mometasone furoate (DB14512)	Spironolactone (DB00421)	{'weight': 2}
+Mometasone furoate (DB14512)	Methylprednisolone (DB00959)	{'weight': 1}
 Mometasone furoate (DB14512)	Progesterone (DB00396)	{'weight': 2}
 Tranexamic acid (DB00302)	Aprotinin (DB06692)	{'weight': 1}
 Vitamin E (DB00163)	Spironolactone (DB00421)	{'weight': 1}
 Enalapril (DB00584)	Trandolapril (DB00519)	{'weight': 1}
 Nafamostat (DB12598)	Aprotinin (DB06692)	{'weight': 2}
+Spironolactone (DB00421)	Diltiazem (DB00343)	{'weight': 2}
 Spironolactone (DB00421)	Dutasteride (DB01126)	{'weight': 2}
 Spironolactone (DB00421)	Progesterone (DB00396)	{'weight': 6}
 Spironolactone (DB00421)	Methylprednisolone (DB00959)	{'weight': 1}
-Spironolactone (DB00421)	Diltiazem (DB00343)	{'weight': 2}
 Ceftriaxone (DB01212)	Piperacillin (DB00319)	{'weight': 1}
 Methylprednisolone (DB00959)	Progesterone (DB00396)	{'weight': 1}
 PF-07304814 (DB16514)	PF-07321332 (DB16691)	{'weight': 1}
 PF-07304814 (DB16514)	Remdesivir (DB14761)	{'weight': 1}
-Progesterone (DB00396)	Morphine (DB00295)	{'weight': 1}
 Progesterone (DB00396)	Oxycodone (DB00497)	{'weight': 1}
 Progesterone (DB00396)	Thalidomide (DB01041)	{'weight': 1}
+Progesterone (DB00396)	Morphine (DB00295)	{'weight': 1}
 Thalidomide (DB01041)	Naproxen (DB00788)	{'weight': 1}
 PF-07321332 (DB16691)	Remdesivir (DB14761)	{'weight': 1}
 Oxycodone (DB00497)	Morphine (DB00295)	{'weight': 3}

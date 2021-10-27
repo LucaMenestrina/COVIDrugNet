@@ -569,6 +569,7 @@ Cholinesterase (P06276)	Ketamine (DB01221)	{}
 Bromhexine (DB09019)	Transmembrane protease serine 2 (O15393)	{}
 Bromhexine (DB09019)	Angiotensin-converting enzyme 2 (Q9BYF1)	{}
 Transmembrane protease serine 2 (O15393)	Camostat (DB13729)	{}
+Transmembrane protease serine 2 (O15393)	MM3122 (DB16737)	{}
 Angiotensin-converting enzyme 2 (Q9BYF1)	Hydroxychloroquine (DB01611)	{}
 Angiotensin-converting enzyme 2 (Q9BYF1)	Chloroquine (DB00608)	{}
 Ramipril (DB00178)	Angiotensin-converting enzyme (P12821)	{}

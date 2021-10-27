@@ -1,5 +1,5 @@
 #collector.py
-# GMT Tue Sep  7 17:35:38 2021
+# GMT Mon Oct 25 13:23:22 2021
 # 
 Indomethacin (DB00328)	Prostaglandin G/H synthase 1 (P23219)	Prostaglandin G/H synthase 2 (P35354)	Phospholipase A2, membrane associated (P14555)	Prostaglandin reductase 2 (Q8N8N7)	Peroxisome proliferator-activated receptor gamma (P37231)	Lactoylglutathione lyase (Q04760)	Prostaglandin D2 receptor 2 (Q9Y5Y4)	Peroxisome proliferator-activated receptor alpha (Q07869)	Aldo-keto reductase family 1 member C3 (P42330)	Interferon-induced, double-stranded RNA-activated protein kinase (P19525)
 Prostaglandin G/H synthase 1 (P23219)	Ibuprofen (DB01050)	Acetaminophen (DB00316)	Cannabidiol (DB09061)	Acetylsalicylic acid (DB00945)	Resveratrol (DB02709)	Icosapent (DB00159)	Naproxen (DB00788)
@@ -229,7 +229,7 @@ Pyridostigmine (DB00545)	Acetylcholinesterase (P22303)	Cholinesterase (P06276)
 Acetylcholinesterase (P22303)
 Cholinesterase (P06276)	Ketamine (DB01221)
 Bromhexine (DB09019)	Transmembrane protease serine 2 (O15393)	Angiotensin-converting enzyme 2 (Q9BYF1)
-Transmembrane protease serine 2 (O15393)	Camostat (DB13729)
+Transmembrane protease serine 2 (O15393)	Camostat (DB13729)	MM3122 (DB16737)
 Angiotensin-converting enzyme 2 (Q9BYF1)	Hydroxychloroquine (DB01611)	Chloroquine (DB00608)
 Ritonavir (DB00503)
 Ramipril (DB00178)	Angiotensin-converting enzyme (P12821)	B1 bradykinin receptor (P46663)
@@ -1484,3 +1484,4 @@ Remdesivir (DB14761)
 Omeprazole (DB00338)
 Naproxen (DB00788)	Peptostreptococcal albumin-binding protein (Q51911)
 Peptostreptococcal albumin-binding protein (Q51911)
+MM3122 (DB16737)
