@@ -1,5 +1,5 @@
 #collector.py
-# GMT Mon Oct 25 13:23:22 2021
+# GMT Mon Jan 31 07:54:28 2022
 # 
 Indomethacin (DB00328)	Prostaglandin G/H synthase 1 (P23219)	Prostaglandin G/H synthase 2 (P35354)	Phospholipase A2, membrane associated (P14555)	Prostaglandin reductase 2 (Q8N8N7)	Peroxisome proliferator-activated receptor gamma (P37231)	Lactoylglutathione lyase (Q04760)	Prostaglandin D2 receptor 2 (Q9Y5Y4)	Peroxisome proliferator-activated receptor alpha (Q07869)	Aldo-keto reductase family 1 member C3 (P42330)	Interferon-induced, double-stranded RNA-activated protein kinase (P19525)
 Prostaglandin G/H synthase 1 (P23219)	Ibuprofen (DB01050)	Acetaminophen (DB00316)	Cannabidiol (DB09061)	Acetylsalicylic acid (DB00945)	Resveratrol (DB02709)	Icosapent (DB00159)	Naproxen (DB00788)
@@ -258,7 +258,7 @@ Purine nucleoside phosphorylase DeoD-type (P0ABP8)
 Aliskiren (DB09026)	Renin (P00797)
 Renin (P00797)	Lisinopril (DB00722)
 GC-376 free acid (DB15796)	Replicase polyprotein 1ab (P0DTD1)	Replicase polyprotein 1a (P0DTC1)	Replicase polyprotein 1ab (Q98VG9)	Replicase polyprotein 1a (K9N638)	Replicase polyprotein 1ab (K9N7C7)
-Replicase polyprotein 1ab (P0DTD1)	PF-07304814 (DB16514)	PF-07321332 (DB16691)	Remdesivir (DB14761)
+Replicase polyprotein 1ab (P0DTD1)	PF-07304814 (DB16514)	PF-07321332 (DB16691)	Remdesivir (DB14761)	Nirmatrelvir (DB16691)
 Replicase polyprotein 1a (P0DTC1)
 Replicase polyprotein 1ab (Q98VG9)
 Replicase polyprotein 1a (K9N638)
@@ -1485,3 +1485,4 @@ Omeprazole (DB00338)
 Naproxen (DB00788)	Peptostreptococcal albumin-binding protein (Q51911)
 Peptostreptococcal albumin-binding protein (Q51911)
 MM3122 (DB16737)
+Nirmatrelvir (DB16691)

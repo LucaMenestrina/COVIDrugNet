@@ -1,5 +1,5 @@
 #collector.py
-# GMT Mon Oct 25 13:23:22 2021
+# GMT Mon Jan 31 07:54:28 2022
 # 
 Indomethacin (DB00328)	10
 Prostaglandin G/H synthase 1 (P23219)	{}
@@ -886,10 +886,11 @@ Replicase polyprotein 1a (P0DTC1)	{}
 Replicase polyprotein 1ab (Q98VG9)	{}
 Replicase polyprotein 1a (K9N638)	{}
 Replicase polyprotein 1ab (K9N7C7)	{}
-Replicase polyprotein 1ab (P0DTD1)	3
+Replicase polyprotein 1ab (P0DTD1)	4
 PF-07304814 (DB16514)	{}
 PF-07321332 (DB16691)	{}
 Remdesivir (DB14761)	{}
+Nirmatrelvir (DB16691)	{}
 Replicase polyprotein 1a (P0DTC1)	0
 Replicase polyprotein 1ab (Q98VG9)	0
 Replicase polyprotein 1a (K9N638)	0
@@ -3334,3 +3335,4 @@ Naproxen (DB00788)	1
 Peptostreptococcal albumin-binding protein (Q51911)	{}
 Peptostreptococcal albumin-binding protein (Q51911)	0
 MM3122 (DB16737)	0
+Nirmatrelvir (DB16691)	0

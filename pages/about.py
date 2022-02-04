@@ -297,12 +297,12 @@ layout = dbc.Col(
                             [
                                 "Last Database Update: ",
                                 html.Time(
-                                    ["10", html.Sup("th"), " January 2022"],
-                                    dateTime="2022-01-10",
+                                    ["31", html.Sup("st"), " January 2022"],
+                                    dateTime="2022-01-31",
                                 ),
-                                " (No changes since 25",
-                                html.Sup("th"),
-                                " October 2021)",
+                                # " (No changes since 31",
+                                # html.Sup("st"),
+                                # " January 2022)",
                             ]
                         ),
                         html.Br(),

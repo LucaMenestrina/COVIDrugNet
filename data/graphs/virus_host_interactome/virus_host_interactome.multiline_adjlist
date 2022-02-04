@@ -1,1601 +1,1601 @@
 #collector.py
-# GMT Mon Oct 25 13:24:32 2021
+# GMT Mon Jan 31 07:55:39 2022
 # 
-N	113
-TTLL4	{'Source': ['Chen_SFB_TAP']}
-NFX1	{'Source': ['Chen_SFB_TAP']}
-PTOV1	{'Source': ['Chen_SFB_TAP']}
-MELK	{'Source': ['Chen_SFB_TAP']}
-BMS1	{'Source': ['Chen_SFB_TAP']}
-SRFBP1	{'Source': ['Chen_SFB_TAP']}
-ZNF668	{'Source': ['Chen_SFB_TAP']}
-RPL10	{'Source': ['Chen_SFB_TAP']}
-RBMXL1	{'Source': ['Chen_SFB_TAP']}
-RPL7L1	{'Source': ['Chen_SFB_TAP']}
-RPS9	{'Source': ['Chen_SFB_TAP']}
-ABT1	{'Source': ['Chen_SFB_TAP']}
-RILPL2	{'Source': ['Chen_BioID2']}
-DGKZ	{'Source': ['Chen_SFB_TAP']}
-MAP7D1	{'Source': ['Chen_SFB_TAP']}
-HERC5	{'Source': ['Chen_SFB_TAP']}
-KAT7	{'Source': ['Chen_SFB_TAP']}
-SNIP1	{'Source': ['Gordon']}
-SRSF10	{'Source': ['Chen_SFB_TAP']}
-RPS3A	{'Source': ['Chen_SFB_TAP']}
-ZNF574	{'Source': ['Chen_SFB_TAP']}
-NSA2	{'Source': ['Chen_SFB_TAP']}
-LARP1	{'Source': ['Gordon']}
-FBL	{'Source': ['Chen_SFB_TAP']}
-YBX3	{'Source': ['Chen_SFB_TAP']}
-NOC4L	{'Source': ['Chen_SFB_TAP']}
-FMNL3	{'Source': ['Chen_SFB_TAP']}
-USP36	{'Source': ['Chen_SFB_TAP']}
-TRIM3	{'Source': ['Chen_SFB_TAP']}
-MOV10	{'Source': ['Gordon']}
-RPS2	{'Source': ['Chen_SFB_TAP']}
-CSNK2A2	{'Source': ['Gordon']}
-RPS11	{'Source': ['Chen_SFB_TAP']}
-GSK3B	{'Source': ['Chen_SFB_TAP']}
-NOP14	{'Source': ['Chen_SFB_TAP']}
-RRP9	{'Source': ['Gordon']}
-OBSL1	{'Source': ['Chen_SFB_TAP']}
-CAMTA1	{'Source': ['Chen_SFB_TAP']}
-ZNF746	{'Source': ['Chen_SFB_TAP']}
-METTL17	{'Source': ['Chen_SFB_TAP']}
-RPS13	{'Source': ['Chen_SFB_TAP']}
-G3BP2	{'Source': ['Chen_SFB_TAP', 'Gordon']}
-ZNF768	{'Source': ['Chen_SFB_TAP']}
-YY1AP1	{'Source': ['Chen_SFB_TAP']}
-U2AF1L4	{'Source': ['Chen_SFB_TAP']}
-TRIM71	{'Source': ['Chen_SFB_TAP']}
-THAP4	{'Source': ['Chen_SFB_TAP']}
-SCAPER	{'Source': ['Chen_SFB_TAP']}
-FAM98A	{'Source': ['Chen_SFB_TAP', 'Gordon']}
-ZKSCAN8	{'Source': ['Chen_SFB_TAP']}
-RPS8	{'Source': ['Chen_SFB_TAP']}
-DEPDC1	{'Source': ['Chen_SFB_TAP']}
-DDX21	{'Source': ['Chen_SFB_TAP', 'Gordon']}
-KRI1	{'Source': ['Chen_SFB_TAP']}
-ZC3H7B	{'Source': ['Chen_SFB_TAP']}
-MCRS1	{'Source': ['Chen_SFB_TAP']}
-GTPBP4	{'Source': ['Chen_SFB_TAP']}
-C11orf98	{'Source': ['Chen_SFB_TAP']}
-CSNK2B	{'Source': ['Gordon']}
-MCM10	{'Source': ['Chen_SFB_TAP']}
-ZNF48	{'Source': ['Chen_SFB_TAP']}
-ZNF100	{'Source': ['Chen_SFB_TAP']}
-RPL26	{'Source': ['Chen_SFB_TAP']}
-RPL31	{'Source': ['Chen_SFB_TAP']}
-RPL36	{'Source': ['Gordon']}
-PRDM10	{'Source': ['Chen_SFB_TAP']}
-CCDC137	{'Source': ['Chen_SFB_TAP']}
-DHX37	{'Source': ['Chen_SFB_TAP']}
-TUT7	{'Source': ['Chen_SFB_TAP']}
-VEZF1	{'Source': ['Chen_SFB_TAP']}
-RBM28	{'Source': ['Gordon']}
-ZBTB11	{'Source': ['Chen_SFB_TAP']}
-PABPC4	{'Source': ['Gordon']}
-IGHMBP2	{'Source': ['Chen_SFB_TAP']}
-KRR1	{'Source': ['Chen_SFB_TAP']}
-RPL19	{'Source': ['Chen_SFB_TAP']}
-RCL1	{'Source': ['Chen_SFB_TAP']}
-CAVIN1	{'Source': ['Chen_SFB_TAP']}
-DHX33	{'Source': ['Chen_SFB_TAP']}
-SRSF3	{'Source': ['Chen_SFB_TAP']}
-PABPC1	{'Source': ['Gordon']}
-ZNF22	{'Source': ['Chen_SFB_TAP']}
-RPS24	{'Source': ['Chen_SFB_TAP']}
-FARP1	{'Source': ['Chen_SFB_TAP']}
-UPF1	{'Source': ['Gordon']}
-YBX1	{'Source': ['Chen_SFB_TAP']}
-DUSP11	{'Source': ['Chen_SFB_TAP']}
-BOP1	{'Source': ['Chen_SFB_TAP']}
-RPL23A	{'Source': ['Chen_SFB_TAP']}
-MEX3D	{'Source': ['Chen_SFB_TAP']}
-PPAN	{'Source': ['Chen_SFB_TAP']}
-RPS17	{'Source': ['Chen_SFB_TAP']}
-RPS4X	{'Source': ['Chen_SFB_TAP']}
-DDX28	{'Source': ['Chen_SFB_TAP']}
-G3BP1	{'Source': ['Chen_SFB_TAP', 'Gordon']}
-PLCH1	{'Source': ['Chen_SFB_TAP']}
-SDAD1	{'Source': ['Chen_BioID2']}
-CHD1	{'Source': ['Chen_SFB_TAP']}
-PINX1	{'Source': ['Chen_SFB_TAP']}
-WDR12	{'Source': ['Chen_SFB_TAP']}
-ZNF346	{'Source': ['Chen_SFB_TAP']}
-RPS6	{'Source': ['Chen_SFB_TAP']}
-MAP7	{'Source': ['Chen_SFB_TAP']}
-YTHDC2	{'Source': ['Chen_SFB_TAP']}
-HNRNPU	{'Source': ['Chen_SFB_TAP']}
-SHPRH	{'Source': ['Chen_SFB_TAP']}
-DDX10	{'Source': ['Chen_SFB_TAP']}
-RPL39	{'Source': ['Chen_SFB_TAP']}
-RPS15	{'Source': ['Chen_SFB_TAP']}
-RPL26L1	{'Source': ['Chen_SFB_TAP']}
-PITX2	{'Source': ['Chen_SFB_TAP']}
-DDX50	{'Source': ['Chen_SFB_TAP']}
-NOP56	{'Source': ['Chen_SFB_TAP']}
-TTLL4	0
-NFX1	0
-NSP10	23
-GSTCD	{'Source': ['Chen_SFB_TAP']}
-MIB2	{'Source': ['Chen_SFB_TAP']}
-MED29	{'Source': ['Chen_SFB_TAP']}
-PPIH	{'Source': ['Chen_SFB_TAP']}
-RGS19	{'Source': ['Chen_SFB_TAP']}
-ERGIC1	{'Source': ['Gordon']}
-ACP6	{'Source': ['Chen_SFB_TAP']}
-TTC19	{'Source': ['Chen_SFB_TAP']}
-AP2M1	{'Source': ['Gordon']}
-SUOX	{'Source': ['Chen_SFB_TAP']}
-PLEKHH2	{'Source': ['Chen_SFB_TAP']}
-FBLN1	{'Source': ['Chen_SFB_TAP']}
-CNK3/IPCEF1	{'Source': ['Chen_SFB_TAP']}
-MLF2	{'Source': ['Chen_SFB_TAP']}
-GRPEL1	{'Source': ['Gordon']}
-AKAP12	{'Source': ['Chen_SFB_TAP']}
-DIABLO	{'Source': ['Chen_SFB_TAP']}
-TUBA3E	{'Source': ['Chen_BioID2']}
-ZZEF1	{'Source': ['Chen_SFB_TAP']}
-LACTB	{'Source': ['Chen_SFB_TAP']}
-HECTD3	{'Source': ['Chen_SFB_TAP']}
-AP2A2	{'Source': ['Gordon']}
-GFER	{'Source': ['Gordon']}
-GSTCD	0
-MIB2	0
-PTOV1	0
-MELK	1
-Fostamatinib (DB12010)	{'Source': ['COVIDrugNet']}
-NSP1	11
-PKP2	{'Source': ['Gordon']}
-POLA1	{'Source': ['Chen_SFB_TAP', 'Chen_BioID2', 'Gordon']}
-MVK	{'Source': ['Chen_SFB_TAP']}
-EIF3G	{'Source': ['Chen_BioID2']}
-PRIM1	{'Source': ['Chen_SFB_TAP', 'Gordon']}
-PYCR1	{'Source': ['Chen_SFB_TAP']}
-COLGALT1	{'Source': ['Gordon']}
-EIF3I	{'Source': ['Chen_BioID2']}
-PYCR2	{'Source': ['Chen_SFB_TAP']}
-POLA2	{'Source': ['Chen_BioID2', 'Gordon']}
-PRIM2	{'Source': ['Chen_SFB_TAP', 'Gordon']}
-PKP2	0
-NSP8	28
-GLRX3	{'Source': ['Chen_SFB_TAP']}
-MRPS25	{'Source': ['Gordon']}
-CCDC86	{'Source': ['Gordon']}
-MEPCE	{'Source': ['Gordon']}
-SRP19	{'Source': ['Gordon']}
-NARS2	{'Source': ['Gordon']}
-SEPSECS	{'Source': ['Gordon']}
-NGDN	{'Source': ['Gordon']}
-LARP7	{'Source': ['Gordon']}
-AATF	{'Source': ['Gordon']}
-EXOSC2	{'Source': ['Gordon']}
-NSD2	{'Source': ['Gordon']}
-TAS2R39	{'Source': ['Chen_BioID2']}
-SRP54	{'Source': ['Gordon']}
-SKP1	{'Source': ['Chen_SFB_TAP']}
-HECTD1	{'Source': ['Gordon']}
-EXOSC3	{'Source': ['Gordon']}
-NOL10	{'Source': ['Gordon']}
-CIAPIN1	{'Source': ['Chen_SFB_TAP']}
-MRPS27	{'Source': ['Gordon']}
-MRPS5	{'Source': ['Gordon']}
-MPHOSPH10	{'Source': ['Gordon']}
-EXOSC8	{'Source': ['Gordon']}
-MRPS2	{'Source': ['Gordon']}
-SRP72	{'Source': ['Gordon']}
-EXOSC5	{'Source': ['Gordon']}
-ATE1	{'Source': ['Gordon']}
-DDX10	{'Source': ['Gordon']}
-GLRX3	0
-NSP7	51
-SMCHD1	{'Source': ['Chen_SFB_TAP']}
-RALA	{'Source': ['Gordon']}
-BICD2	{'Source': ['Chen_SFB_TAP']}
-PTGES2	{'Source': ['Gordon']}
-SELENOS	{'Source': ['Gordon']}
-GNG5	{'Source': ['Gordon']}
-CNOT2	{'Source': ['Chen_SFB_TAP']}
-CYB5B	{'Source': ['Gordon']}
-SCARB1	{'Source': ['Gordon']}
-MOGS	{'Source': ['Gordon']}
-RAB8A	{'Source': ['Gordon']}
-NDUFAF2	{'Source': ['Gordon']}
-DVL2	{'Source': ['Chen_SFB_TAP']}
-NSFL1C	{'Source': ['Chen_SFB_TAP']}
-DVL1	{'Source': ['Chen_SFB_TAP']}
-HS2ST1	{'Source': ['Gordon']}
-CNOT1	{'Source': ['Chen_SFB_TAP']}
-RHOA	{'Source': ['Gordon']}
-CNOT3	{'Source': ['Chen_SFB_TAP']}
-MTARC1	{'Source': ['Gordon']}
-RAB14	{'Source': ['Gordon']}
-EIF4G3	{'Source': ['Chen_SFB_TAP']}
-TNKS1BP1	{'Source': ['Chen_SFB_TAP']}
-DHX29	{'Source': ['Chen_SFB_TAP']}
-GNB1	{'Source': ['Gordon']}
-ACSL3	{'Source': ['Gordon']}
-RAB5C	{'Source': ['Gordon']}
-THOC6	{'Source': ['Chen_SFB_TAP']}
-RBSN	{'Source': ['Chen_SFB_TAP']}
-THOC1	{'Source': ['Chen_SFB_TAP']}
-AGPS	{'Source': ['Gordon']}
-RAB10	{'Source': ['Gordon']}
-NAT14	{'Source': ['Gordon']}
-FAM162A	{'Source': ['Gordon']}
-RAB7A	{'Source': ['Gordon']}
-QSOX2	{'Source': ['Gordon']}
-RAB1A	{'Source': ['Gordon']}
-RAB18	{'Source': ['Gordon']}
-DNAJC19	{'Source': ['Gordon']}
-RAB2A	{'Source': ['Gordon']}
-TOR1AIP1	{'Source': ['Gordon']}
-DDX12P	{'Source': ['Chen_BioID2']}
-OBI1	{'Source': ['Chen_SFB_TAP']}
-AHNAK	{'Source': ['Chen_SFB_TAP']}
-DVL3	{'Source': ['Chen_SFB_TAP']}
-DCAKD	{'Source': ['Gordon']}
-COMT	{'Source': ['Gordon']}
-LMAN2	{'Source': ['Gordon']}
-CNOT6L	{'Source': ['Chen_SFB_TAP']}
-CYB5R3	{'Source': ['Gordon']}
-SCCPDH	{'Source': ['Gordon']}
-SMCHD1	0
-E	12
-AKT3	{'Source': ['Chen_SFB_TAP']}
-SET	{'Source': ['Chen_SFB_TAP']}
-PICALM	{'Source': ['Chen_SFB_TAP']}
-AP3B1	{'Source': ['Gordon']}
-KLHL36	{'Source': ['Chen_SFB_TAP']}
-MAN2C1	{'Source': ['Chen_SFB_TAP']}
-BRD2	{'Source': ['Gordon']}
-ZC3H18	{'Source': ['Gordon']}
-CWC27	{'Source': ['Gordon']}
-PABPC3	{'Source': ['Chen_BioID2']}
-SLC44A2	{'Source': ['Gordon']}
-BRD4	{'Source': ['Gordon']}
-AKT3	0
-ORF7b	63
-RUFY2	{'Source': ['Chen_SFB_TAP']}
-VTI1A	{'Source': ['Chen_SFB_TAP']}
-NAPA	{'Source': ['Chen_SFB_TAP']}
-STX16	{'Source': ['Chen_SFB_TAP']}
-ARFIP1	{'Source': ['Chen_SFB_TAP']}
-CTNNA1	{'Source': ['Chen_SFB_TAP']}
-SEMA4B	{'Source': ['Chen_SFB_TAP']}
-CD302	{'Source': ['Chen_SFB_TAP']}
-TMEM192	{'Source': ['Chen_SFB_TAP', 'Chen_BioID2']}
-STEAP3	{'Source': ['Chen_SFB_TAP']}
-BMPR1A	{'Source': ['Chen_SFB_TAP']}
-LMAN2	{'Source': ['Chen_SFB_TAP']}
-VAMP8	{'Source': ['Chen_SFB_TAP']}
-ANO6	{'Source': ['Chen_BioID2']}
-SCAP	{'Source': ['Chen_BioID2']}
-RTN2	{'Source': ['Chen_SFB_TAP']}
-LPAR1	{'Source': ['Chen_SFB_TAP']}
-PTPRG	{'Source': ['Chen_SFB_TAP']}
-ATP13A1	{'Source': ['Chen_BioID2']}
-KLHDC2	{'Source': ['Chen_SFB_TAP']}
-PTTG1IP	{'Source': ['Chen_SFB_TAP']}
-SMIM1	{'Source': ['Chen_SFB_TAP']}
-ABCC4	{'Source': ['Chen_SFB_TAP']}
-MCAM	{'Source': ['Chen_SFB_TAP']}
-ROGDI	{'Source': ['Chen_SFB_TAP']}
-VAMP2	{'Source': ['Chen_SFB_TAP']}
-VAMP4	{'Source': ['Chen_SFB_TAP']}
-TTC28	{'Source': ['Chen_SFB_TAP']}
-CDH2	{'Source': ['Chen_SFB_TAP']}
-HIP1R	{'Source': ['Chen_SFB_TAP']}
-SNAP29	{'Source': ['Chen_SFB_TAP']}
-KHDC1	{'Source': ['Chen_SFB_TAP']}
-ATP7A	{'Source': ['Chen_SFB_TAP']}
-TMC7	{'Source': ['Chen_SFB_TAP']}
-FAM171A2	{'Source': ['Chen_SFB_TAP']}
-NAPG	{'Source': ['Chen_SFB_TAP']}
-STX10	{'Source': ['Chen_SFB_TAP']}
-NCEH1	{'Source': ['Chen_SFB_TAP']}
-VPS45	{'Source': ['Chen_SFB_TAP']}
-ALG14	{'Source': ['Chen_SFB_TAP']}
-INTS7	{'Source': ['Chen_SFB_TAP']}
-STX6	{'Source': ['Chen_SFB_TAP']}
-ALG5	{'Source': ['Chen_SFB_TAP']}
-IL18R1	{'Source': ['Chen_SFB_TAP']}
-MOB1B	{'Source': ['Chen_SFB_TAP']}
-EGFR	{'Source': ['Chen_SFB_TAP']}
-RUFY1	{'Source': ['Chen_SFB_TAP']}
-STX12	{'Source': ['Chen_SFB_TAP']}
-LRRC8E	{'Source': ['Chen_SFB_TAP']}
-BSCL2	{'Source': ['Chen_SFB_TAP']}
-LRFN1	{'Source': ['Chen_SFB_TAP']}
-VAMP3	{'Source': ['Chen_SFB_TAP']}
-FXYD6	{'Source': ['Chen_SFB_TAP']}
-DAGLB	{'Source': ['Chen_SFB_TAP']}
-GPAT3	{'Source': ['Chen_SFB_TAP']}
-ERBB2	{'Source': ['Chen_SFB_TAP']}
-DDR1	{'Source': ['Chen_SFB_TAP', 'Chen_BioID2']}
-FRMD5	{'Source': ['Chen_SFB_TAP']}
-ERBB4	{'Source': ['Chen_SFB_TAP']}
-UTP6	{'Source': ['Chen_SFB_TAP']}
-ARFIP2	{'Source': ['Chen_SFB_TAP']}
-ADGRE5	{'Source': ['Chen_SFB_TAP']}
-SEMA4C	{'Source': ['Chen_SFB_TAP']}
-RUFY2	0
-M	83
-PITRM1	{'Source': ['Gordon']}
-ASAP3	{'Source': ['Chen_BioID2']}
-AP1M1	{'Source': ['Chen_BioID2']}
-FAM8A1	{'Source': ['Gordon']}
-DENND4A	{'Source': ['Chen_BioID2']}
-TMEM94	{'Source': ['Chen_SFB_TAP']}
-ARHGAP32	{'Source': ['Chen_BioID2']}
-ATP1B1	{'Source': ['Gordon']}
-AHNAK2	{'Source': ['Chen_BioID2']}
-TUBGCP2	{'Source': ['Gordon']}
-SNX12	{'Source': ['Chen_BioID2']}
-C2CD5	{'Source': ['Chen_BioID2']}
-MICOS13	{'Source': ['Chen_BioID2']}
-FASTKD5	{'Source': ['Gordon']}
-AAR2	{'Source': ['Gordon']}
-STOM	{'Source': ['Gordon']}
-ANO6	{'Source': ['Gordon']}
-REEP6	{'Source': ['Gordon']}
-ATF6	{'Source': ['Chen_SFB_TAP']}
-IGF2R	{'Source': ['Chen_BioID2']}
-AKAP8L	{'Source': ['Gordon']}
-SAAL1	{'Source': ['Gordon']}
-RTN4	{'Source': ['Gordon']}
-USP33	{'Source': ['Chen_SFB_TAP']}
-BTN2A2	{'Source': ['Chen_SFB_TAP']}
-ATP6V1A	{'Source': ['Gordon']}
-ANO5	{'Source': ['Chen_SFB_TAP']}
-CREG1	{'Source': ['Chen_BioID2']}
-CAV1	{'Source': ['Chen_BioID2']}
-ATP2A3	{'Source': ['Chen_SFB_TAP']}
-STX10	{'Source': ['Chen_BioID2']}
-SH3D19	{'Source': ['Chen_BioID2']}
-BIN1	{'Source': ['Chen_BioID2']}
-AP4E1	{'Source': ['Chen_BioID2']}
-ETFA	{'Source': ['Gordon']}
-FAM219A	{'Source': ['Chen_BioID2']}
-DLG1	{'Source': ['Chen_BioID2']}
-AP1G1	{'Source': ['Chen_BioID2']}
-SLC12A4	{'Source': ['Chen_SFB_TAP']}
-GUCY1B1	{'Source': ['Chen_SFB_TAP']}
-INTS4	{'Source': ['Gordon']}
-REEP5	{'Source': ['Gordon']}
-KCNG1	{'Source': ['Chen_SFB_TAP']}
-TAX1BP1	{'Source': ['Chen_BioID2']}
-KIF13A	{'Source': ['Chen_BioID2']}
-PDZD8	{'Source': ['Chen_SFB_TAP']}
-STX6	{'Source': ['Chen_BioID2']}
-TARS2	{'Source': ['Gordon']}
-CYP2J2	{'Source': ['Chen_SFB_TAP']}
-PACSIN2	{'Source': ['Chen_BioID2']}
-GGCX	{'Source': ['Gordon']}
-FCHO2	{'Source': ['Chen_BioID2']}
-MTHFR	{'Source': ['Chen_SFB_TAP']}
-TUBGCP3	{'Source': ['Gordon']}
-PSMD8	{'Source': ['Gordon']}
-SLC30A9	{'Source': ['Gordon']}
-SLC30A7	{'Source': ['Gordon']}
-NACAD	{'Source': ['Chen_SFB_TAP']}
-TPD52L2	{'Source': ['Chen_BioID2']}
-BZW2	{'Source': ['Gordon']}
-ABCD4	{'Source': ['Chen_SFB_TAP']}
-SH3GL3	{'Source': ['Chen_BioID2']}
-PMPCA	{'Source': ['Gordon']}
-ANKIB1	{'Source': ['Chen_SFB_TAP']}
-FCHSD2	{'Source': ['Chen_BioID2']}
-SLC25A21	{'Source': ['Gordon']}
-VPS13C	{'Source': ['Chen_BioID2']}
-EPB41L1	{'Source': ['Chen_BioID2']}
-TMEM39A	{'Source': ['Chen_SFB_TAP']}
-FLT4	{'Source': ['Chen_SFB_TAP']}
-TPD52L1	{'Source': ['Chen_BioID2']}
-AMFR	{'Source': ['Chen_SFB_TAP']}
-CGRRF1	{'Source': ['Chen_SFB_TAP']}
-PMPCB	{'Source': ['Gordon']}
-COQ8B	{'Source': ['Gordon']}
-YIF1A	{'Source': ['Gordon']}
-PEX5	{'Source': ['Chen_SFB_TAP']}
-AASS	{'Source': ['Gordon']}
-SREBF1	{'Source': ['Chen_SFB_TAP']}
-AP1S1	{'Source': ['Chen_BioID2']}
-KCNT2	{'Source': ['Chen_SFB_TAP']}
-PPFIBP2	{'Source': ['Chen_BioID2']}
-ACADM	{'Source': ['Gordon']}
-PITRM1	1
-ORF3b	{'Source': ['Chen_SFB_TAP']}
-ASAP3	0
-NSP2	9
-RAP1GDS1	{'Source': ['Gordon']}
-MOCS2	{'Source': ['Chen_BioID2']}
-POR	{'Source': ['Gordon']}
-SLC27A2	{'Source': ['Gordon']}
-FKBP15	{'Source': ['Gordon']}
-WASHC4	{'Source': ['Gordon']}
-GIGYF2	{'Source': ['Gordon']}
-EIF4E2	{'Source': ['Gordon']}
-MAP3K14	{'Source': ['Chen_SFB_TAP']}
-RAP1GDS1	0
-RALA	0
-NSP5	8
-MDC1	{'Source': ['Chen_BioID2']}
-GPX1	{'Source': ['Gordon']}
-USP11	{'Source': ['Chen_SFB_TAP']}
-HDAC2	{'Source': ['Gordon']}
-BRCA1	{'Source': ['Chen_BioID2']}
-PCMT1	{'Source': ['Chen_SFB_TAP']}
-OAS3	{'Source': ['Chen_BioID2']}
-TRMT1	{'Source': ['Gordon']}
-MDC1	0
-AP1M1	0
-BMS1	0
-MED29	0
-NSP11	3
-TBCA	{'Source': ['Gordon']}
-SNAPC1	{'Source': ['Chen_BioID2']}
-UBE4B	{'Source': ['Chen_SFB_TAP']}
-TBCA	0
-SRFBP1	0
-MOCS2	0
-ZNF668	0
-FAM8A1	0
-NSP13	42
-FYCO1	{'Source': ['Gordon']}
-PCNT	{'Source': ['Gordon']}
-TBKBP1	{'Source': ['Gordon']}
-GCC2	{'Source': ['Gordon']}
-ERC1	{'Source': ['Gordon']}
-TLE3	{'Source': ['Gordon']}
-HSPD1	{'Source': ['Chen_SFB_TAP']}
-CEP112	{'Source': ['Gordon']}
-HOOK1	{'Source': ['Gordon']}
-GOLGA3	{'Source': ['Gordon']}
-AKAP9	{'Source': ['Gordon']}
-HSBP1	{'Source': ['Gordon']}
-TBK1	{'Source': ['Gordon']}
-CLIP4	{'Source': ['Gordon']}
-CEP43	{'Source': ['Gordon']}
-GORASP1	{'Source': ['Gordon']}
-CENPF	{'Source': ['Gordon']}
-CDK5RAP2	{'Source': ['Gordon']}
-JAKMIP1	{'Source': ['Gordon']}
-NINL	{'Source': ['Gordon']}
-CEP135	{'Source': ['Gordon']}
-PRKAR2B	{'Source': ['Gordon']}
-NIN	{'Source': ['Gordon']}
-PRKACA	{'Source': ['Gordon']}
-CNTRL	{'Source': ['Gordon']}
-CEP250	{'Source': ['Gordon']}
-TLE1	{'Source': ['Gordon']}
-C1orf50	{'Source': ['Gordon']}
-MIPOL1	{'Source': ['Gordon']}
-GOLGA2	{'Source': ['Gordon']}
-CIT	{'Source': ['Gordon']}
-CEP68	{'Source': ['Gordon']}
-USP13	{'Source': ['Gordon']}
-CEP350	{'Source': ['Gordon']}
-GRIPAP1	{'Source': ['Gordon']}
-PRKAR2A	{'Source': ['Gordon']}
-TLE5	{'Source': ['Gordon']}
-PDE4DIP	{'Source': ['Gordon']}
-TUBA3E	{'Source': ['Chen_BioID2']}
-RDX	{'Source': ['Gordon']}
-GCC1	{'Source': ['Gordon']}
-GOLGB1	{'Source': ['Gordon']}
-FYCO1	0
-NSP6	49
-ATP5MG	{'Source': ['Gordon']}
-PHB2	{'Source': ['Chen_SFB_TAP']}
-PGAP6	{'Source': ['Chen_SFB_TAP']}
-ENDOD1	{'Source': ['Chen_SFB_TAP']}
-RDH12	{'Source': ['Chen_SFB_TAP']}
-SIGMAR1	{'Source': ['Chen_SFB_TAP', 'Gordon']}
-VDAC1	{'Source': ['Chen_SFB_TAP']}
-SPG7	{'Source': ['Chen_SFB_TAP']}
-EMC7	{'Source': ['Chen_SFB_TAP']}
-LRIT3	{'Source': ['Chen_BioID2']}
-GNPTAB	{'Source': ['Chen_SFB_TAP']}
-APOB	{'Source': ['Chen_SFB_TAP']}
-DHFR	{'Source': ['Chen_BioID2']}
-B4GALT3	{'Source': ['Chen_SFB_TAP']}
-ATP5F1D	{'Source': ['Chen_SFB_TAP']}
-EMC4	{'Source': ['Chen_SFB_TAP']}
-MRS2	{'Source': ['Chen_SFB_TAP']}
-FAM114A2	{'Source': ['Chen_SFB_TAP']}
-SLC6A15	{'Source': ['Chen_SFB_TAP']}
-SLC4A2	{'Source': ['Chen_SFB_TAP']}
-FAM160B1	{'Source': ['Chen_SFB_TAP']}
-ATP5PO	{'Source': ['Chen_SFB_TAP']}
-RPS6KA6	{'Source': ['Chen_BioID2']}
-GNPTG	{'Source': ['Chen_SFB_TAP']}
-WFS1	{'Source': ['Chen_SFB_TAP']}
-ATP13A3	{'Source': ['Chen_SFB_TAP', 'Gordon']}
-DHX32	{'Source': ['Chen_SFB_TAP']}
-SLC39A10	{'Source': ['Chen_SFB_TAP']}
-VDAC2	{'Source': ['Chen_SFB_TAP']}
-MYG1	{'Source': ['Chen_SFB_TAP']}
-NCAPD2	{'Source': ['Chen_SFB_TAP']}
-C6orf47	{'Source': ['Chen_SFB_TAP']}
-ABR	{'Source': ['Chen_SFB_TAP']}
-SARM1	{'Source': ['Chen_SFB_TAP']}
-EMC3	{'Source': ['Chen_SFB_TAP']}
-ATP5PB	{'Source': ['Chen_SFB_TAP']}
-ATP5F1B	{'Source': ['Chen_SFB_TAP']}
-DDHD2	{'Source': ['Chen_SFB_TAP']}
-ATP6AP1	{'Source': ['Chen_SFB_TAP', 'Gordon']}
-PHB	{'Source': ['Chen_SFB_TAP']}
-ATP5PD	{'Source': ['Chen_SFB_TAP']}
-CAV1	{'Source': ['Chen_SFB_TAP']}
-PSME1	{'Source': ['Chen_SFB_TAP']}
-ABHD14A	{'Source': ['Chen_SFB_TAP']}
-NDUFAF1	{'Source': ['Chen_SFB_TAP']}
-RNF121	{'Source': ['Chen_SFB_TAP']}
-ATP5PF	{'Source': ['Chen_SFB_TAP']}
-TTC30A	{'Source': ['Chen_SFB_TAP']}
-ZDHHC13	{'Source': ['Chen_SFB_TAP']}
-ATP5MG	0
-PCNT	0
-DENND4A	0
 ORF8	52
-NGLY1	{'Source': ['Gordon']}
-INHBE	{'Source': ['Gordon']}
-OLFML2A	{'Source': ['Chen_BioID2']}
-ERO1B	{'Source': ['Gordon']}
+POFUT1	{'Source': ['Gordon']}
+ADAMTS1	{'Source': ['Gordon']}
+HS6ST2	{'Source': ['Gordon']}
 PLOD2	{'Source': ['Gordon']}
-COL18A1	{'Source': ['Chen_BioID2']}
-NPC2	{'Source': ['Gordon']}
-PLAT	{'Source': ['Gordon']}
-EDEM3	{'Source': ['Gordon']}
-GGH	{'Source': ['Gordon']}
-PLEKHF2	{'Source': ['Gordon']}
-FKBP10	{'Source': ['Gordon']}
-LOX	{'Source': ['Gordon']}
-ITGB1	{'Source': ['Gordon']}
-CHPF	{'Source': ['Gordon']}
-FBXL12	{'Source': ['Gordon']}
-MANBA	{'Source': ['Chen_BioID2']}
-MFGE8	{'Source': ['Gordon']}
-CISD3	{'Source': ['Gordon']}
 CHPF2	{'Source': ['Gordon']}
-TM2D3	{'Source': ['Gordon']}
-SIL1	{'Source': ['Gordon']}
+FOXRED2	{'Source': ['Gordon']}
+ERLEC1	{'Source': ['Gordon']}
+CISD3	{'Source': ['Gordon']}
+GDF15	{'Source': ['Gordon']}
+OS9	{'Source': ['Gordon']}
+FKBP7	{'Source': ['Gordon']}
+GGH	{'Source': ['Gordon']}
+POGLUT2	{'Source': ['Gordon']}
+PLD3	{'Source': ['Gordon']}
+NPTX1	{'Source': ['Chen_BioID2', 'Gordon']}
+NPC2	{'Source': ['Gordon']}
+ADAM9	{'Source': ['Gordon']}
+SMOC1	{'Source': ['Gordon']}
+NGLY1	{'Source': ['Gordon']}
+FBF1	{'Source': ['Chen_SFB_TAP']}
+UGGT2	{'Source': ['Gordon']}
+SDF2	{'Source': ['Gordon']}
+COL6A1	{'Source': ['Gordon']}
 HYOU1	{'Source': ['Gordon']}
+FKBP10	{'Source': ['Gordon']}
+ITGB1	{'Source': ['Gordon']}
+TM2D3	{'Source': ['Gordon']}
+EMC1	{'Source': ['Gordon']}
+POGLUT3	{'Source': ['Gordon']}
+SIL1	{'Source': ['Gordon']}
+PLEKHF2	{'Source': ['Gordon']}
+GDF11	{'Source': ['Chen_BioID2']}
+PVR	{'Source': ['Gordon']}
+ERO1B	{'Source': ['Gordon']}
 STC2	{'Source': ['Gordon']}
 ERP44	{'Source': ['Gordon']}
-UGGT2	{'Source': ['Gordon']}
-FOXRED2	{'Source': ['Gordon']}
-DNMT1	{'Source': ['Gordon']}
-FKBP7	{'Source': ['Gordon']}
-POGLUT2	{'Source': ['Gordon']}
-SMOC1	{'Source': ['Gordon']}
-NEU1	{'Source': ['Gordon']}
-OS9	{'Source': ['Gordon']}
-EMC1	{'Source': ['Gordon']}
-ADAM9	{'Source': ['Gordon']}
-PVR	{'Source': ['Gordon']}
-POGLUT3	{'Source': ['Gordon']}
-GDF15	{'Source': ['Gordon']}
-PLD3	{'Source': ['Gordon']}
+OLFML2A	{'Source': ['Chen_BioID2']}
+INHBE	{'Source': ['Gordon']}
+EDEM3	{'Source': ['Gordon']}
+FBXL12	{'Source': ['Gordon']}
 PCSK6	{'Source': ['Gordon']}
-COL6A1	{'Source': ['Gordon']}
+CHPF	{'Source': ['Gordon']}
+NEU1	{'Source': ['Gordon']}
+LOX	{'Source': ['Gordon']}
+DNMT1	{'Source': ['Gordon']}
+MFGE8	{'Source': ['Gordon']}
+PLAT	{'Source': ['Gordon']}
+COL18A1	{'Source': ['Chen_BioID2']}
+MANBA	{'Source': ['Chen_BioID2']}
 PUSL1	{'Source': ['Gordon']}
-IL17RA	{'Source': ['Gordon']}
-FBF1	{'Source': ['Chen_SFB_TAP']}
-NPTX1	{'Source': ['Chen_BioID2', 'Gordon']}
-ADAMTS1	{'Source': ['Gordon']}
-ERLEC1	{'Source': ['Gordon']}
-SDF2	{'Source': ['Gordon']}
 TOR1A	{'Source': ['Gordon']}
-POFUT1	{'Source': ['Gordon']}
-HS6ST2	{'Source': ['Gordon']}
-GDF11	{'Source': ['Chen_BioID2']}
-NGLY1	0
-RPL10	1
-Artenimol (DB11638)	{'Source': ['COVIDrugNet']}
-INHBE	0
-NSP9	17
-DCAF7	{'Source': ['Gordon']}
-NUP214	{'Source': ['Gordon']}
-NUP88	{'Source': ['Gordon']}
-MIB1	{'Source': ['Chen_SFB_TAP', 'Gordon']}
-FBN2	{'Source': ['Gordon']}
-PASK	{'Source': ['Chen_BioID2']}
-NEK9	{'Source': ['Gordon']}
-MAT2B	{'Source': ['Gordon']}
-SPART	{'Source': ['Gordon']}
-GTF2F2	{'Source': ['Gordon']}
-NUP62	{'Source': ['Gordon']}
-FBN1	{'Source': ['Gordon']}
-NUP58	{'Source': ['Gordon']}
-NUP54	{'Source': ['Gordon']}
-ZNF503	{'Source': ['Gordon']}
-FBLN5	{'Source': ['Gordon']}
-EIF4H	{'Source': ['Gordon']}
-DCAF7	0
-ORF7a	4
-MDN1	{'Source': ['Gordon']}
-ALDH3B1	{'Source': ['Chen_SFB_TAP']}
-HEATR3	{'Source': ['Gordon']}
-SLC5A2	{'Source': ['Chen_BioID2']}
-MDN1	0
-RBMXL1	0
-OLFML2A	0
-NSP12	22
-SLU7	{'Source': ['Gordon']}
-UBAP2L	{'Source': ['Gordon']}
-DCD	{'Source': ['Chen_SFB_TAP']}
-CRTC3	{'Source': ['Gordon']}
-USP54	{'Source': ['Gordon']}
-PDZD11	{'Source': ['Gordon']}
-ZC3H7A	{'Source': ['Gordon']}
-SBNO1	{'Source': ['Gordon']}
-ZNF318	{'Source': ['Gordon']}
-PPIL3	{'Source': ['Gordon']}
-RIPK1	{'Source': ['Gordon']}
-BCKDK	{'Source': ['Gordon']}
-TCF12	{'Source': ['Gordon']}
-AKAP8	{'Source': ['Gordon']}
-UBAP2	{'Source': ['Gordon']}
-MYCBP2	{'Source': ['Gordon']}
-PLEKHA5	{'Source': ['Gordon']}
-PRRC2B	{'Source': ['Gordon']}
-RBM41	{'Source': ['Gordon']}
-TYSND1	{'Source': ['Gordon']}
-OR2AE1	{'Source': ['Chen_BioID2']}
-LARP4B	{'Source': ['Gordon']}
-SLU7	0
-TMEM94	0
-VTI1A	0
-ERBB4	2
-Fostamatinib (DB12010)	{'Source': ['COVIDrugNet']}
-Zanubrutinib (DB15035)	{'Source': ['COVIDrugNet']}
-Fostamatinib (DB12010)	16
-EGFR	{'Source': ['COVIDrugNet']}
-DDR1	{'Source': ['COVIDrugNet']}
-GSK3B	{'Source': ['COVIDrugNet']}
-RIPK1	{'Source': ['COVIDrugNet']}
-ERBB2	{'Source': ['COVIDrugNet']}
-MARK1	{'Source': ['COVIDrugNet']}
-MARK2	{'Source': ['COVIDrugNet']}
-RPS6KA6	{'Source': ['COVIDrugNet']}
-COQ8B	{'Source': ['COVIDrugNet']}
-CIT	{'Source': ['COVIDrugNet']}
-FLT4	{'Source': ['COVIDrugNet']}
-NEK9	{'Source': ['COVIDrugNet']}
-PRKACA	{'Source': ['COVIDrugNet']}
-TBK1	{'Source': ['COVIDrugNet']}
-CSNK2A2	{'Source': ['COVIDrugNet']}
-MARK3	{'Source': ['COVIDrugNet']}
-ERO1B	0
-TBKBP1	0
-PHB2	0
-GCC2	0
-PLOD2	1
-Ascorbic acid (DB00126)	{'Source': ['COVIDrugNet']}
-PPIH	0
+IL17RA	{'Source': ['Gordon']}
+POFUT1	0
 ORF9c	26
-TMEM97	{'Source': ['Gordon']}
-DPY19L1	{'Source': ['Gordon']}
-GPAA1	{'Source': ['Gordon']}
 RETREG3	{'Source': ['Gordon']}
-SCAP	{'Source': ['Gordon']}
+TAPT1	{'Source': ['Gordon']}
 PIGO	{'Source': ['Gordon']}
 ECSIT	{'Source': ['Gordon']}
-ACAD9	{'Source': ['Gordon']}
-TMEM39B	{'Source': ['Gordon']}
-BCS1L	{'Source': ['Gordon']}
-FAR2	{'Source': ['Gordon']}
-TMED5	{'Source': ['Gordon']}
+ERMP1	{'Source': ['Gordon']}
 F2RL1	{'Source': ['Gordon']}
-NDFIP2	{'Source': ['Gordon']}
+TMEM39B	{'Source': ['Gordon']}
+SCAP	{'Source': ['Gordon']}
+BCS1L	{'Source': ['Gordon']}
 NDUFB9	{'Source': ['Gordon']}
-PIGS	{'Source': ['Gordon']}
-WFS1	{'Source': ['Gordon']}
-SLC30A6	{'Source': ['Gordon']}
-NDUFAF1	{'Source': ['Gordon']}
 GHITM	{'Source': ['Gordon']}
+UBXN8	{'Source': ['Gordon']}
+ACAD9	{'Source': ['Gordon']}
+PIGS	{'Source': ['Gordon']}
+GPAA1	{'Source': ['Gordon']}
+TMED5	{'Source': ['Gordon']}
+SLC30A6	{'Source': ['Gordon']}
+WFS1	{'Source': ['Gordon']}
 NLRX1	{'Source': ['Gordon']}
 ALG8	{'Source': ['Gordon']}
-UBXN8	{'Source': ['Gordon']}
+TMEM97	{'Source': ['Gordon']}
 ABCC1	{'Source': ['Gordon']}
-TAPT1	{'Source': ['Gordon']}
-ERMP1	{'Source': ['Gordon']}
-TMEM97	0
-BICD2	0
-RPL7L1	0
-COL18A1	0
+DPY19L1	{'Source': ['Gordon']}
+NDUFAF1	{'Source': ['Gordon']}
+NDFIP2	{'Source': ['Gordon']}
+FAR2	{'Source': ['Gordon']}
+RETREG3	0
+ORF14	5
+LRRC8A	{'Source': ['Chen_BioID2']}
+LRRC8C	{'Source': ['Chen_BioID2']}
+SLC4A2	{'Source': ['Chen_BioID2']}
+ACTG1	{'Source': ['Chen_SFB_TAP']}
+LRRC8E	{'Source': ['Chen_BioID2']}
+LRRC8A	0
+N	113
+MAP7	{'Source': ['Chen_SFB_TAP']}
+GTPBP4	{'Source': ['Chen_SFB_TAP']}
+RPL31	{'Source': ['Chen_SFB_TAP']}
+TRIM3	{'Source': ['Chen_SFB_TAP']}
+CAVIN1	{'Source': ['Chen_SFB_TAP']}
+PINX1	{'Source': ['Chen_SFB_TAP']}
+OBSL1	{'Source': ['Chen_SFB_TAP']}
+SHPRH	{'Source': ['Chen_SFB_TAP']}
+RBM28	{'Source': ['Gordon']}
+FAM98A	{'Source': ['Chen_SFB_TAP', 'Gordon']}
+RCL1	{'Source': ['Chen_SFB_TAP']}
+FARP1	{'Source': ['Chen_SFB_TAP']}
+PTOV1	{'Source': ['Chen_SFB_TAP']}
+RPL39	{'Source': ['Chen_SFB_TAP']}
+DDX28	{'Source': ['Chen_SFB_TAP']}
+RRP9	{'Source': ['Gordon']}
+TUT7	{'Source': ['Chen_SFB_TAP']}
+SNIP1	{'Source': ['Gordon']}
+RILPL2	{'Source': ['Chen_BioID2']}
+ZNF22	{'Source': ['Chen_SFB_TAP']}
+RPL19	{'Source': ['Chen_SFB_TAP']}
+DHX33	{'Source': ['Chen_SFB_TAP']}
+ZNF346	{'Source': ['Chen_SFB_TAP']}
+RPS9	{'Source': ['Chen_SFB_TAP']}
+MCM10	{'Source': ['Chen_SFB_TAP']}
+ZKSCAN8	{'Source': ['Chen_SFB_TAP']}
+MCRS1	{'Source': ['Chen_SFB_TAP']}
+DHX37	{'Source': ['Chen_SFB_TAP']}
+RPS2	{'Source': ['Chen_SFB_TAP']}
+KAT7	{'Source': ['Chen_SFB_TAP']}
+ZBTB11	{'Source': ['Chen_SFB_TAP']}
+RPS6	{'Source': ['Chen_SFB_TAP']}
+PRDM10	{'Source': ['Chen_SFB_TAP']}
+G3BP1	{'Source': ['Chen_SFB_TAP', 'Gordon']}
+DDX10	{'Source': ['Chen_SFB_TAP']}
+PITX2	{'Source': ['Chen_SFB_TAP']}
+BOP1	{'Source': ['Chen_SFB_TAP']}
+TTLL4	{'Source': ['Chen_SFB_TAP']}
+RPS13	{'Source': ['Chen_SFB_TAP']}
+RPL26L1	{'Source': ['Chen_SFB_TAP']}
+METTL17	{'Source': ['Chen_SFB_TAP']}
+RPS3A	{'Source': ['Chen_SFB_TAP']}
+MELK	{'Source': ['Chen_SFB_TAP']}
+PLCH1	{'Source': ['Chen_SFB_TAP']}
+CAMTA1	{'Source': ['Chen_SFB_TAP']}
+HNRNPU	{'Source': ['Chen_SFB_TAP']}
+WDR12	{'Source': ['Chen_SFB_TAP']}
+LARP1	{'Source': ['Gordon']}
+RPL23A	{'Source': ['Chen_SFB_TAP']}
+RPL36	{'Source': ['Gordon']}
+MAP7D1	{'Source': ['Chen_SFB_TAP']}
+NFX1	{'Source': ['Chen_SFB_TAP']}
+MOV10	{'Source': ['Gordon']}
+DGKZ	{'Source': ['Chen_SFB_TAP']}
+SDAD1	{'Source': ['Chen_BioID2']}
+ZNF768	{'Source': ['Chen_SFB_TAP']}
+TRIM71	{'Source': ['Chen_SFB_TAP']}
+RPS11	{'Source': ['Chen_SFB_TAP']}
+NOP14	{'Source': ['Chen_SFB_TAP']}
+U2AF1L4	{'Source': ['Chen_SFB_TAP']}
+RPS17	{'Source': ['Chen_SFB_TAP']}
+DEPDC1	{'Source': ['Chen_SFB_TAP']}
+SCAPER	{'Source': ['Chen_SFB_TAP']}
+SRSF3	{'Source': ['Chen_SFB_TAP']}
+RPL7L1	{'Source': ['Chen_SFB_TAP']}
+NOC4L	{'Source': ['Chen_SFB_TAP']}
+MEX3D	{'Source': ['Chen_SFB_TAP']}
+YY1AP1	{'Source': ['Chen_SFB_TAP']}
+PPAN	{'Source': ['Chen_SFB_TAP']}
+PABPC4	{'Source': ['Gordon']}
+RPL26	{'Source': ['Chen_SFB_TAP']}
+FMNL3	{'Source': ['Chen_SFB_TAP']}
+RPS4X	{'Source': ['Chen_SFB_TAP']}
+ZNF100	{'Source': ['Chen_SFB_TAP']}
+ZNF574	{'Source': ['Chen_SFB_TAP']}
+GSK3B	{'Source': ['Chen_SFB_TAP']}
+DDX50	{'Source': ['Chen_SFB_TAP']}
+RPS15	{'Source': ['Chen_SFB_TAP']}
+ZC3H7B	{'Source': ['Chen_SFB_TAP']}
+ZNF668	{'Source': ['Chen_SFB_TAP']}
+SRSF10	{'Source': ['Chen_SFB_TAP']}
+USP36	{'Source': ['Chen_SFB_TAP']}
+PABPC1	{'Source': ['Gordon']}
+KRR1	{'Source': ['Chen_SFB_TAP']}
+ZNF746	{'Source': ['Chen_SFB_TAP']}
+RPL10	{'Source': ['Chen_SFB_TAP']}
+CHD1	{'Source': ['Chen_SFB_TAP']}
+HERC5	{'Source': ['Chen_SFB_TAP']}
+YBX3	{'Source': ['Chen_SFB_TAP']}
+NOP56	{'Source': ['Chen_SFB_TAP']}
+VEZF1	{'Source': ['Chen_SFB_TAP']}
+YTHDC2	{'Source': ['Chen_SFB_TAP']}
+SRFBP1	{'Source': ['Chen_SFB_TAP']}
+RPS8	{'Source': ['Chen_SFB_TAP']}
+BMS1	{'Source': ['Chen_SFB_TAP']}
+G3BP2	{'Source': ['Chen_SFB_TAP', 'Gordon']}
+NSA2	{'Source': ['Chen_SFB_TAP']}
+DUSP11	{'Source': ['Chen_SFB_TAP']}
+YBX1	{'Source': ['Chen_SFB_TAP']}
+CSNK2A2	{'Source': ['Gordon']}
+RBMXL1	{'Source': ['Chen_SFB_TAP']}
+KRI1	{'Source': ['Chen_SFB_TAP']}
+IGHMBP2	{'Source': ['Chen_SFB_TAP']}
+THAP4	{'Source': ['Chen_SFB_TAP']}
+CCDC137	{'Source': ['Chen_SFB_TAP']}
+RPS24	{'Source': ['Chen_SFB_TAP']}
+UPF1	{'Source': ['Gordon']}
+ZNF48	{'Source': ['Chen_SFB_TAP']}
+ABT1	{'Source': ['Chen_SFB_TAP']}
+DDX21	{'Source': ['Chen_SFB_TAP', 'Gordon']}
+C11orf98	{'Source': ['Chen_SFB_TAP']}
+FBL	{'Source': ['Chen_SFB_TAP']}
+CSNK2B	{'Source': ['Gordon']}
+MAP7	0
+NSP8	28
+DDX10	{'Source': ['Gordon']}
+SEPSECS	{'Source': ['Gordon']}
+TAS2R39	{'Source': ['Chen_BioID2']}
+SRP54	{'Source': ['Gordon']}
+NGDN	{'Source': ['Gordon']}
+LARP7	{'Source': ['Gordon']}
+EXOSC5	{'Source': ['Gordon']}
+EXOSC3	{'Source': ['Gordon']}
+MRPS5	{'Source': ['Gordon']}
+CCDC86	{'Source': ['Gordon']}
+CIAPIN1	{'Source': ['Chen_SFB_TAP']}
+NSD2	{'Source': ['Gordon']}
+MRPS2	{'Source': ['Gordon']}
+MEPCE	{'Source': ['Gordon']}
+NARS2	{'Source': ['Gordon']}
+SKP1	{'Source': ['Chen_SFB_TAP']}
+MPHOSPH10	{'Source': ['Gordon']}
+NOL10	{'Source': ['Gordon']}
+HECTD1	{'Source': ['Gordon']}
+SRP72	{'Source': ['Gordon']}
+ATE1	{'Source': ['Gordon']}
+GLRX3	{'Source': ['Chen_SFB_TAP']}
+EXOSC2	{'Source': ['Gordon']}
+AATF	{'Source': ['Gordon']}
+SRP19	{'Source': ['Gordon']}
+EXOSC8	{'Source': ['Gordon']}
+MRPS27	{'Source': ['Gordon']}
+MRPS25	{'Source': ['Gordon']}
+DDX10	0
+NSP9	17
+NUP54	{'Source': ['Gordon']}
+MAT2B	{'Source': ['Gordon']}
+SPART	{'Source': ['Gordon']}
+NUP214	{'Source': ['Gordon']}
+FBN2	{'Source': ['Gordon']}
+NUP62	{'Source': ['Gordon']}
+GTF2F2	{'Source': ['Gordon']}
+FBN1	{'Source': ['Gordon']}
+NUP58	{'Source': ['Gordon']}
+ZNF503	{'Source': ['Gordon']}
+EIF4H	{'Source': ['Gordon']}
+MIB1	{'Source': ['Chen_SFB_TAP', 'Gordon']}
+FBLN5	{'Source': ['Gordon']}
+NEK9	{'Source': ['Gordon']}
+PASK	{'Source': ['Chen_BioID2']}
+NUP88	{'Source': ['Gordon']}
+DCAF7	{'Source': ['Gordon']}
+NUP54	0
+ADAMTS1	0
+GTPBP4	0
+RPL31	0
 ORF10	12
-TIMM8B	{'Source': ['Gordon']}
-PPT1	{'Source': ['Gordon']}
 SEC63	{'Source': ['Chen_BioID2']}
-BCL9	{'Source': ['Chen_BioID2']}
-ZYG11B	{'Source': ['Gordon']}
-SERPINB5	{'Source': ['Chen_SFB_TAP']}
-CUL2	{'Source': ['Gordon']}
-ELOB	{'Source': ['Gordon']}
-ELOC	{'Source': ['Gordon']}
 MAP7D1	{'Source': ['Gordon']}
-THTPA	{'Source': ['Gordon']}
 RBX1	{'Source': ['Gordon']}
-TIMM8B	0
-MRPS25	0
-NAPA	0
-ORF3a	33
-VPS18	{'Source': ['Chen_BioID2']}
-ARFGEF3	{'Source': ['Chen_BioID2']}
-NEDD1	{'Source': ['Chen_BioID2']}
-NBEA	{'Source': ['Chen_BioID2']}
-TUBGCP5	{'Source': ['Chen_BioID2']}
-ARL6IP6	{'Source': ['Gordon']}
-VPS41	{'Source': ['Chen_BioID2']}
-SYT1	{'Source': ['Chen_BioID2']}
-ATF6B	{'Source': ['Chen_BioID2']}
-TUBGCP3	{'Source': ['Chen_BioID2']}
-VPS11	{'Source': ['Chen_SFB_TAP', 'Chen_BioID2', 'Gordon']}
-TUBGCP6	{'Source': ['Chen_BioID2']}
-TRAPPC10	{'Source': ['Chen_BioID2']}
-MBNL1	{'Source': ['Chen_SFB_TAP']}
-TUBGCP2	{'Source': ['Chen_BioID2']}
-RASEF	{'Source': ['Chen_BioID2']}
-PTPRJ	{'Source': ['Chen_BioID2']}
-HMOX1	{'Source': ['Gordon']}
-KIAA1549	{'Source': ['Chen_BioID2']}
-SUN2	{'Source': ['Gordon']}
-TUBG2	{'Source': ['Chen_BioID2']}
-VPS39	{'Source': ['Chen_SFB_TAP', 'Chen_BioID2', 'Gordon']}
-TRAPPC9	{'Source': ['Chen_BioID2']}
-RPS6KC1	{'Source': ['Chen_BioID2']}
-ATF6	{'Source': ['Chen_BioID2']}
-TUBGCP4	{'Source': ['Chen_BioID2']}
-LRP2	{'Source': ['Chen_BioID2']}
-ALG5	{'Source': ['Gordon']}
-MZT2A	{'Source': ['Chen_BioID2']}
-TRIM59	{'Source': ['Gordon']}
-VPS16	{'Source': ['Chen_BioID2']}
-TUBG1	{'Source': ['Chen_BioID2']}
-CLCC1	{'Source': ['Chen_SFB_TAP', 'Chen_BioID2', 'Gordon']}
-VPS18	0
-RPS9	1
-Artenimol (DB11638)	{'Source': ['COVIDrugNet']}
+THTPA	{'Source': ['Gordon']}
+SERPINB5	{'Source': ['Chen_SFB_TAP']}
+ZYG11B	{'Source': ['Gordon']}
+PPT1	{'Source': ['Gordon']}
+BCL9	{'Source': ['Chen_BioID2']}
+TIMM8B	{'Source': ['Gordon']}
+ELOB	{'Source': ['Gordon']}
+CUL2	{'Source': ['Gordon']}
+ELOC	{'Source': ['Gordon']}
+SEC63	0
+M	83
+AASS	{'Source': ['Gordon']}
+SH3GL3	{'Source': ['Chen_BioID2']}
+AP1M1	{'Source': ['Chen_BioID2']}
+SREBF1	{'Source': ['Chen_SFB_TAP']}
+AP1G1	{'Source': ['Chen_BioID2']}
+REEP6	{'Source': ['Gordon']}
+FAM219A	{'Source': ['Chen_BioID2']}
+IGF2R	{'Source': ['Chen_BioID2']}
+CYP2J2	{'Source': ['Chen_SFB_TAP']}
+SLC30A7	{'Source': ['Gordon']}
+FASTKD5	{'Source': ['Gordon']}
+BIN1	{'Source': ['Chen_BioID2']}
+PMPCB	{'Source': ['Gordon']}
+ACADM	{'Source': ['Gordon']}
+CGRRF1	{'Source': ['Chen_SFB_TAP']}
+MICOS13	{'Source': ['Chen_BioID2']}
+TMEM39A	{'Source': ['Chen_SFB_TAP']}
+SH3D19	{'Source': ['Chen_BioID2']}
+KCNG1	{'Source': ['Chen_SFB_TAP']}
+DENND4A	{'Source': ['Chen_BioID2']}
+CREG1	{'Source': ['Chen_BioID2']}
+TUBGCP3	{'Source': ['Gordon']}
+COQ8B	{'Source': ['Gordon']}
+C2CD5	{'Source': ['Chen_BioID2']}
+AAR2	{'Source': ['Gordon']}
+KCNT2	{'Source': ['Chen_SFB_TAP']}
+TPD52L2	{'Source': ['Chen_BioID2']}
+INTS4	{'Source': ['Gordon']}
+BTN2A2	{'Source': ['Chen_SFB_TAP']}
+TMEM94	{'Source': ['Chen_SFB_TAP']}
+ANO5	{'Source': ['Chen_SFB_TAP']}
+STX6	{'Source': ['Chen_BioID2']}
+AP4E1	{'Source': ['Chen_BioID2']}
+MTHFR	{'Source': ['Chen_SFB_TAP']}
+PPFIBP2	{'Source': ['Chen_BioID2']}
+ANO6	{'Source': ['Gordon']}
+FCHO2	{'Source': ['Chen_BioID2']}
+EPB41L1	{'Source': ['Chen_BioID2']}
+PDZD8	{'Source': ['Chen_SFB_TAP']}
+TAX1BP1	{'Source': ['Chen_BioID2']}
+ARHGAP32	{'Source': ['Chen_BioID2']}
+REEP5	{'Source': ['Gordon']}
+PACSIN2	{'Source': ['Chen_BioID2']}
+ABCD4	{'Source': ['Chen_SFB_TAP']}
+SLC25A21	{'Source': ['Gordon']}
+NACAD	{'Source': ['Chen_SFB_TAP']}
+KIF13A	{'Source': ['Chen_BioID2']}
+ANKIB1	{'Source': ['Chen_SFB_TAP']}
+FCHSD2	{'Source': ['Chen_BioID2']}
+STOM	{'Source': ['Gordon']}
+SAAL1	{'Source': ['Gordon']}
+ATP2A3	{'Source': ['Chen_SFB_TAP']}
+FLT4	{'Source': ['Chen_SFB_TAP']}
+ETFA	{'Source': ['Gordon']}
+AKAP8L	{'Source': ['Gordon']}
+BZW2	{'Source': ['Gordon']}
+TPD52L1	{'Source': ['Chen_BioID2']}
+FAM8A1	{'Source': ['Gordon']}
+GUCY1B1	{'Source': ['Chen_SFB_TAP']}
+ASAP3	{'Source': ['Chen_BioID2']}
+CAV1	{'Source': ['Chen_BioID2']}
+TUBGCP2	{'Source': ['Gordon']}
+PSMD8	{'Source': ['Gordon']}
+ATP6V1A	{'Source': ['Gordon']}
+AMFR	{'Source': ['Chen_SFB_TAP']}
+PMPCA	{'Source': ['Gordon']}
+PEX5	{'Source': ['Chen_SFB_TAP']}
+AHNAK2	{'Source': ['Chen_BioID2']}
+YIF1A	{'Source': ['Gordon']}
+PITRM1	{'Source': ['Gordon']}
+STX10	{'Source': ['Chen_BioID2']}
+TARS2	{'Source': ['Gordon']}
+DLG1	{'Source': ['Chen_BioID2']}
+USP33	{'Source': ['Chen_SFB_TAP']}
+VPS13C	{'Source': ['Chen_BioID2']}
+SLC12A4	{'Source': ['Chen_SFB_TAP']}
+ATF6	{'Source': ['Chen_SFB_TAP']}
+GGCX	{'Source': ['Gordon']}
+SLC30A9	{'Source': ['Gordon']}
+ATP1B1	{'Source': ['Gordon']}
+SNX12	{'Source': ['Chen_BioID2']}
+AP1S1	{'Source': ['Chen_BioID2']}
+RTN4	{'Source': ['Gordon']}
+AASS	0
+MAP7D1	0
+NSP6	49
+SLC4A2	{'Source': ['Chen_SFB_TAP']}
+NCAPD2	{'Source': ['Chen_SFB_TAP']}
+C6orf47	{'Source': ['Chen_SFB_TAP']}
+SPG7	{'Source': ['Chen_SFB_TAP']}
+PGAP6	{'Source': ['Chen_SFB_TAP']}
+SARM1	{'Source': ['Chen_SFB_TAP']}
+MRS2	{'Source': ['Chen_SFB_TAP']}
+LRIT3	{'Source': ['Chen_BioID2']}
+ATP5PB	{'Source': ['Chen_SFB_TAP']}
+DDHD2	{'Source': ['Chen_SFB_TAP']}
+DHX32	{'Source': ['Chen_SFB_TAP']}
+ATP5F1B	{'Source': ['Chen_SFB_TAP']}
+B4GALT3	{'Source': ['Chen_SFB_TAP']}
+RPS6KA6	{'Source': ['Chen_BioID2']}
+VDAC2	{'Source': ['Chen_SFB_TAP']}
+ENDOD1	{'Source': ['Chen_SFB_TAP']}
+APOB	{'Source': ['Chen_SFB_TAP']}
+PHB2	{'Source': ['Chen_SFB_TAP']}
+VDAC1	{'Source': ['Chen_SFB_TAP']}
+MYG1	{'Source': ['Chen_SFB_TAP']}
+EMC7	{'Source': ['Chen_SFB_TAP']}
+SLC39A10	{'Source': ['Chen_SFB_TAP']}
+TTC30A	{'Source': ['Chen_SFB_TAP']}
+ZDHHC13	{'Source': ['Chen_SFB_TAP']}
+GNPTG	{'Source': ['Chen_SFB_TAP']}
+ATP5F1D	{'Source': ['Chen_SFB_TAP']}
+PSME1	{'Source': ['Chen_SFB_TAP']}
+ATP5PF	{'Source': ['Chen_SFB_TAP']}
+ABHD14A	{'Source': ['Chen_SFB_TAP']}
+DHFR	{'Source': ['Chen_BioID2']}
+EMC3	{'Source': ['Chen_SFB_TAP']}
+GNPTAB	{'Source': ['Chen_SFB_TAP']}
+EMC4	{'Source': ['Chen_SFB_TAP']}
+ABR	{'Source': ['Chen_SFB_TAP']}
+CAV1	{'Source': ['Chen_SFB_TAP']}
+SLC6A15	{'Source': ['Chen_SFB_TAP']}
+WFS1	{'Source': ['Chen_SFB_TAP']}
+ATP6AP1	{'Source': ['Chen_SFB_TAP', 'Gordon']}
+NDUFAF1	{'Source': ['Chen_SFB_TAP']}
+FAM160B1	{'Source': ['Chen_SFB_TAP']}
+SIGMAR1	{'Source': ['Chen_SFB_TAP', 'Gordon']}
+PHB	{'Source': ['Chen_SFB_TAP']}
+ATP5MG	{'Source': ['Gordon']}
+ATP13A3	{'Source': ['Chen_SFB_TAP', 'Gordon']}
+FAM114A2	{'Source': ['Chen_SFB_TAP']}
+RDH12	{'Source': ['Chen_SFB_TAP']}
+ATP5PD	{'Source': ['Chen_SFB_TAP']}
+RNF121	{'Source': ['Chen_SFB_TAP']}
+ATP5PO	{'Source': ['Chen_SFB_TAP']}
+SLC4A2	0
+NSP12	22
+UBAP2	{'Source': ['Gordon']}
+ZC3H7A	{'Source': ['Gordon']}
+SBNO1	{'Source': ['Gordon']}
+PDZD11	{'Source': ['Gordon']}
+LARP4B	{'Source': ['Gordon']}
+RBM41	{'Source': ['Gordon']}
+DCD	{'Source': ['Chen_SFB_TAP']}
+TCF12	{'Source': ['Gordon']}
+TYSND1	{'Source': ['Gordon']}
+PLEKHA5	{'Source': ['Gordon']}
+UBAP2L	{'Source': ['Gordon']}
+PRRC2B	{'Source': ['Gordon']}
+ZNF318	{'Source': ['Gordon']}
+BCKDK	{'Source': ['Gordon']}
+PPIL3	{'Source': ['Gordon']}
+OR2AE1	{'Source': ['Chen_BioID2']}
+RIPK1	{'Source': ['Gordon']}
+USP54	{'Source': ['Gordon']}
+MYCBP2	{'Source': ['Gordon']}
+SLU7	{'Source': ['Gordon']}
+CRTC3	{'Source': ['Gordon']}
+AKAP8	{'Source': ['Gordon']}
+UBAP2	0
+SH3GL3	0
+NSP7	51
+PTGES2	{'Source': ['Gordon']}
+RBSN	{'Source': ['Chen_SFB_TAP']}
+SCCPDH	{'Source': ['Gordon']}
+DVL1	{'Source': ['Chen_SFB_TAP']}
+SCARB1	{'Source': ['Gordon']}
+QSOX2	{'Source': ['Gordon']}
+BICD2	{'Source': ['Chen_SFB_TAP']}
+RAB14	{'Source': ['Gordon']}
+CNOT1	{'Source': ['Chen_SFB_TAP']}
+DDX12P	{'Source': ['Chen_BioID2']}
+DVL3	{'Source': ['Chen_SFB_TAP']}
+DVL2	{'Source': ['Chen_SFB_TAP']}
+TNKS1BP1	{'Source': ['Chen_SFB_TAP']}
+HS2ST1	{'Source': ['Gordon']}
+RAB18	{'Source': ['Gordon']}
+TOR1AIP1	{'Source': ['Gordon']}
+FAM162A	{'Source': ['Gordon']}
+EIF4G3	{'Source': ['Chen_SFB_TAP']}
+COMT	{'Source': ['Gordon']}
+RALA	{'Source': ['Gordon']}
+DHX29	{'Source': ['Chen_SFB_TAP']}
+OBI1	{'Source': ['Chen_SFB_TAP']}
+THOC6	{'Source': ['Chen_SFB_TAP']}
+AHNAK	{'Source': ['Chen_SFB_TAP']}
+GNB1	{'Source': ['Gordon']}
+MOGS	{'Source': ['Gordon']}
+CYB5R3	{'Source': ['Gordon']}
+NAT14	{'Source': ['Gordon']}
+CNOT6L	{'Source': ['Chen_SFB_TAP']}
+RAB1A	{'Source': ['Gordon']}
+RAB2A	{'Source': ['Gordon']}
+CNOT2	{'Source': ['Chen_SFB_TAP']}
+CNOT3	{'Source': ['Chen_SFB_TAP']}
+GNG5	{'Source': ['Gordon']}
+MTARC1	{'Source': ['Gordon']}
+SELENOS	{'Source': ['Gordon']}
+SMCHD1	{'Source': ['Chen_SFB_TAP']}
+LMAN2	{'Source': ['Gordon']}
+NDUFAF2	{'Source': ['Gordon']}
+RAB8A	{'Source': ['Gordon']}
+NSFL1C	{'Source': ['Chen_SFB_TAP']}
+RHOA	{'Source': ['Gordon']}
+AGPS	{'Source': ['Gordon']}
+RAB5C	{'Source': ['Gordon']}
+DNAJC19	{'Source': ['Gordon']}
+DCAKD	{'Source': ['Gordon']}
+RAB10	{'Source': ['Gordon']}
+THOC1	{'Source': ['Chen_SFB_TAP']}
+CYB5B	{'Source': ['Gordon']}
+ACSL3	{'Source': ['Gordon']}
+RAB7A	{'Source': ['Gordon']}
 PTGES2	0
-ARFGEF3	0
-NPC2	0
-NSP3	18
-SSRP1	{'Source': ['Chen_BioID2']}
-PSIP1	{'Source': ['Chen_BioID2']}
-SMARCA4	{'Source': ['Chen_BioID2']}
-HYOU1	{'Source': ['Chen_SFB_TAP']}
-CBX5	{'Source': ['Chen_BioID2']}
-MACROH2A1	{'Source': ['Chen_BioID2']}
-XPNPEP3	{'Source': ['Chen_SFB_TAP']}
-SUPT16H	{'Source': ['Chen_BioID2']}
-MECP2	{'Source': ['Chen_BioID2']}
-MACROH2A2	{'Source': ['Chen_BioID2']}
-PUM3	{'Source': ['Chen_BioID2']}
-CHAF1A	{'Source': ['Chen_BioID2']}
-DEK	{'Source': ['Chen_BioID2']}
-BAZ1A	{'Source': ['Chen_BioID2']}
-LMNA	{'Source': ['Chen_BioID2']}
-VRK1	{'Source': ['Chen_BioID2']}
-BAZ1B	{'Source': ['Chen_BioID2']}
-FKBP10	{'Source': ['Chen_SFB_TAP']}
-SSRP1	0
-ORF6	9
-VPS13B	{'Source': ['Chen_SFB_TAP']}
-SEC24A	{'Source': ['Chen_BioID2']}
-MTCH1	{'Source': ['Gordon']}
-RAE1	{'Source': ['Gordon']}
-TRIP11	{'Source': ['Chen_BioID2']}
-SEC23A	{'Source': ['Chen_BioID2']}
-ZC3H4	{'Source': ['Chen_SFB_TAP']}
-SEC31A	{'Source': ['Chen_BioID2']}
-NUP98	{'Source': ['Gordon']}
-VPS13B	0
-ARHGAP32	0
-ERC1	0
-DPY19L1	0
-ABT1	0
+TRIM3	0
+CAVIN1	0
+PINX1	0
 ORF9b	16
-SLC39A11	{'Source': ['Chen_SFB_TAP']}
-DPH5	{'Source': ['Gordon']}
-MARK3	{'Source': ['Gordon']}
-BAG5	{'Source': ['Gordon']}
-DCTPP1	{'Source': ['Gordon']}
-CSDE1	{'Source': ['Gordon']}
 MARK1	{'Source': ['Gordon']}
-TOMM70	{'Source': ['Chen_SFB_TAP', 'Chen_BioID2', 'Gordon']}
-HSPA8	{'Source': ['Chen_SFB_TAP']}
-PTBP2	{'Source': ['Gordon']}
-HSPA1L	{'Source': ['Chen_SFB_TAP']}
-HSPA1A	{'Source': ['Chen_SFB_TAP']}
-SLC9A3R1	{'Source': ['Gordon']}
-MARK2	{'Source': ['Gordon']}
-CHMP2A	{'Source': ['Gordon']}
 RNF187	{'Source': ['Chen_SFB_TAP']}
-SLC39A11	0
-SELENOS	0
-NUP214	0
-POR	0
-RGS19	0
-S	12
-PTPN14	{'Source': ['Chen_BioID2']}
-SFN	{'Source': ['Chen_SFB_TAP']}
-A2M	{'Source': ['Chen_SFB_TAP']}
-ZDHHC5	{'Source': ['Gordon']}
-SEC11A	{'Source': ['Chen_SFB_TAP']}
-DEPDC7	{'Source': ['Chen_BioID2']}
-SPCS3	{'Source': ['Chen_SFB_TAP']}
-PPP1R16B	{'Source': ['Chen_BioID2']}
-SPCS1	{'Source': ['Chen_SFB_TAP']}
-GOLGA7	{'Source': ['Gordon']}
-SPCS2	{'Source': ['Chen_SFB_TAP']}
-EZR	{'Source': ['Chen_BioID2']}
-PTPN14	0
-DPH5	0
-POLA1	0
-SFN	0
-SLC27A2	0
-PGAP6	0
-ERGIC1	0
-SEC24A	0
-STX16	0
-FKBP15	0
-ATP1B1	0
-ORF3b	3
-ACSS1	{'Source': ['Chen_SFB_TAP']}
-STOML2	{'Source': ['Gordon']}
-SORD	{'Source': ['Chen_BioID2']}
-ACSS1	0
-GNG5	0
-RILPL2	0
-MVK	0
-A2M	0
-NSP14	5
-IMPDH2	{'Source': ['Gordon']}
-TUBA1B	{'Source': ['Chen_SFB_TAP']}
-DES	{'Source': ['Chen_BioID2']}
-SIRT5	{'Source': ['Gordon']}
-GLA	{'Source': ['Gordon']}
-IMPDH2	1
-Ribavirin (DB00811)	{'Source': ['COVIDrugNet']}
-GPX1	2
-Cannabidiol (DB09061)	{'Source': ['COVIDrugNet']}
-Glutathione (DB00143)	{'Source': ['COVIDrugNet']}
-ARFIP1	0
-CTNNA1	0
-EIF3G	0
-NUP88	0
-MTHFR	1
-Cyanocobalamin (DB00115)	{'Source': ['COVIDrugNet']}
-Cyanocobalamin (DB00115)	0
-NEDD1	0
-PLAT	1
-Iloprost (DB01088)	{'Source': ['COVIDrugNet']}
-PSIP1	0
-ENDOD1	0
-RDH12	1
-Vitamin A (DB00162)	{'Source': ['COVIDrugNet']}
-DGKZ	0
-AHNAK2	0
-UBAP2L	0
-SLC5A2	1
-Dapagliflozin (DB06292)	{'Source': ['COVIDrugNet']}
-Dapagliflozin (DB06292)	0
-DCD	0
-SEMA4B	0
-MARK3	0
-EDEM3	0
-TLE3	0
-Artenimol (DB11638)	7
-RPS8	{'Source': ['COVIDrugNet']}
-RPS13	{'Source': ['COVIDrugNet']}
-HSPA8	{'Source': ['COVIDrugNet']}
-ACTG1	{'Source': ['COVIDrugNet']}
-RPS6	{'Source': ['COVIDrugNet']}
-RPL23A	{'Source': ['COVIDrugNet']}
-RPS17	{'Source': ['COVIDrugNet']}
-USP11	0
-TUBGCP2	0
-PPT1	0
-GGH	0
-CNOT2	0
-CD302	0
+DCTPP1	{'Source': ['Gordon']}
+MARK2	{'Source': ['Gordon']}
+MARK3	{'Source': ['Gordon']}
+HSPA1A	{'Source': ['Chen_SFB_TAP']}
+CSDE1	{'Source': ['Gordon']}
+HSPA1L	{'Source': ['Chen_SFB_TAP']}
+DPH5	{'Source': ['Gordon']}
+PTBP2	{'Source': ['Gordon']}
+SLC39A11	{'Source': ['Chen_SFB_TAP']}
+SLC9A3R1	{'Source': ['Gordon']}
+CHMP2A	{'Source': ['Gordon']}
+TOMM70	{'Source': ['Chen_SFB_TAP', 'Chen_BioID2', 'Gordon']}
+BAG5	{'Source': ['Gordon']}
+HSPA8	{'Source': ['Chen_SFB_TAP']}
+MARK1	1
+Fostamatinib (DB12010)	{'Source': ['COVIDrugNet']}
 NSP15	10
+RNF41	{'Source': ['Gordon']}
+PRPS1L1	{'Source': ['Chen_SFB_TAP']}
+PEBP1	{'Source': ['Chen_BioID2']}
+ANXA5	{'Source': ['Chen_BioID2']}
+ARPC1B	{'Source': ['Chen_BioID2']}
+ZPR1	{'Source': ['Chen_BioID2']}
+NT5DC1	{'Source': ['Chen_BioID2']}
 NUTF2	{'Source': ['Gordon']}
 ANXA6	{'Source': ['Chen_BioID2']}
-PEBP1	{'Source': ['Chen_BioID2']}
-PRPS1L1	{'Source': ['Chen_SFB_TAP']}
-ZPR1	{'Source': ['Chen_BioID2']}
-ANXA5	{'Source': ['Chen_BioID2']}
 ARF6	{'Source': ['Gordon']}
-RNF41	{'Source': ['Gordon']}
-ARPC1B	{'Source': ['Chen_BioID2']}
-NT5DC1	{'Source': ['Chen_BioID2']}
-NUTF2	0
-NBEA	0
-SNX12	0
-ALDH3B1	0
+RNF41	0
+AP1M1	0
+SREBF1	1
+Omega-3 fatty acids (DB11133)	{'Source': ['COVIDrugNet']}
+Omega-3 fatty acids (DB11133)	0
+NSP1	11
+PRIM2	{'Source': ['Chen_SFB_TAP', 'Gordon']}
+PYCR2	{'Source': ['Chen_SFB_TAP']}
+PYCR1	{'Source': ['Chen_SFB_TAP']}
+POLA2	{'Source': ['Chen_BioID2', 'Gordon']}
+PKP2	{'Source': ['Gordon']}
+PRIM1	{'Source': ['Chen_SFB_TAP', 'Gordon']}
+COLGALT1	{'Source': ['Gordon']}
+POLA1	{'Source': ['Chen_SFB_TAP', 'Chen_BioID2', 'Gordon']}
+EIF3G	{'Source': ['Chen_BioID2']}
+MVK	{'Source': ['Chen_SFB_TAP']}
+EIF3I	{'Source': ['Chen_BioID2']}
+PRIM2	0
 NSP4	10
-SERPINB4	{'Source': ['Chen_SFB_TAP']}
-ALG11	{'Source': ['Gordon']}
-TIMM9	{'Source': ['Gordon']}
-TAP1	{'Source': ['Chen_BioID2']}
-NUP210	{'Source': ['Gordon']}
-IDE	{'Source': ['Gordon']}
-DNAJC11	{'Source': ['Gordon']}
-TIMM10B	{'Source': ['Gordon']}
 TIMM10	{'Source': ['Gordon']}
+TIMM9	{'Source': ['Gordon']}
+ALG11	{'Source': ['Gordon']}
 TIMM29	{'Source': ['Gordon']}
-SERPINB4	0
-ALG11	0
-TMEM192	0
-PLEKHF2	0
-C2CD5	0
-MAP7D1	0
-TUBGCP5	0
-SIGMAR1	1
-Naltrexone (DB00704)	{'Source': ['COVIDrugNet']}
-BAG5	0
-CCDC86	0
-VDAC1	1
-Cannabidiol (DB09061)	{'Source': ['COVIDrugNet']}
-SEC63	0
-HERC5	0
-MICOS13	0
-KAT7	0
-BCL9	0
-GPAA1	0
-FKBP10	0
-SNIP1	0
-LOX	0
-SPG7	0
-SRSF10	0
-MIB1	0
-CYB5B	0
-FBN2	0
-RPS3A	0
-SCARB1	0
-EGFR	3
-Lidocaine (DB00281)	{'Source': ['COVIDrugNet']}
+DNAJC11	{'Source': ['Gordon']}
+IDE	{'Source': ['Gordon']}
+SERPINB4	{'Source': ['Chen_SFB_TAP']}
+NUP210	{'Source': ['Gordon']}
+TIMM10B	{'Source': ['Gordon']}
+TAP1	{'Source': ['Chen_BioID2']}
+TIMM10	0
+PRPS1L1	0
+NSP3	18
+DEK	{'Source': ['Chen_BioID2']}
+MACROH2A2	{'Source': ['Chen_BioID2']}
+SSRP1	{'Source': ['Chen_BioID2']}
+MECP2	{'Source': ['Chen_BioID2']}
+CBX5	{'Source': ['Chen_BioID2']}
+HYOU1	{'Source': ['Chen_SFB_TAP']}
+PUM3	{'Source': ['Chen_BioID2']}
+CHAF1A	{'Source': ['Chen_BioID2']}
+LMNA	{'Source': ['Chen_BioID2']}
+PSIP1	{'Source': ['Chen_BioID2']}
+FKBP10	{'Source': ['Chen_SFB_TAP']}
+BAZ1A	{'Source': ['Chen_BioID2']}
+SUPT16H	{'Source': ['Chen_BioID2']}
+MACROH2A1	{'Source': ['Chen_BioID2']}
+SMARCA4	{'Source': ['Chen_BioID2']}
+BAZ1B	{'Source': ['Chen_BioID2']}
+XPNPEP3	{'Source': ['Chen_SFB_TAP']}
+VRK1	{'Source': ['Chen_BioID2']}
+DEK	0
+OBSL1	0
+NCAPD2	0
+ORF3b	4
+PITRM1	{'Source': ['Chen_SFB_TAP']}
+STOML2	{'Source': ['Gordon']}
+ACSS1	{'Source': ['Chen_SFB_TAP']}
+SORD	{'Source': ['Chen_BioID2']}
+PITRM1	0
+ORF3a	33
+ATF6B	{'Source': ['Chen_BioID2']}
+LRP2	{'Source': ['Chen_BioID2']}
+NBEA	{'Source': ['Chen_BioID2']}
+TUBG1	{'Source': ['Chen_BioID2']}
+CLCC1	{'Source': ['Chen_SFB_TAP', 'Chen_BioID2', 'Gordon']}
+TRAPPC10	{'Source': ['Chen_BioID2']}
+VPS39	{'Source': ['Chen_SFB_TAP', 'Chen_BioID2', 'Gordon']}
+TRAPPC9	{'Source': ['Chen_BioID2']}
+VPS18	{'Source': ['Chen_BioID2']}
+TUBGCP3	{'Source': ['Chen_BioID2']}
+KIAA1549	{'Source': ['Chen_BioID2']}
+ARFGEF3	{'Source': ['Chen_BioID2']}
+NEDD1	{'Source': ['Chen_BioID2']}
+VPS41	{'Source': ['Chen_BioID2']}
+PTPRJ	{'Source': ['Chen_BioID2']}
+TUBGCP2	{'Source': ['Chen_BioID2']}
+TUBG2	{'Source': ['Chen_BioID2']}
+MBNL1	{'Source': ['Chen_SFB_TAP']}
+RASEF	{'Source': ['Chen_BioID2']}
+TUBGCP4	{'Source': ['Chen_BioID2']}
+ALG5	{'Source': ['Gordon']}
+HMOX1	{'Source': ['Gordon']}
+TUBGCP6	{'Source': ['Chen_BioID2']}
+TUBGCP5	{'Source': ['Chen_BioID2']}
+VPS11	{'Source': ['Chen_SFB_TAP', 'Chen_BioID2', 'Gordon']}
+RPS6KC1	{'Source': ['Chen_BioID2']}
+SYT1	{'Source': ['Chen_BioID2']}
+TRIM59	{'Source': ['Gordon']}
+ATF6	{'Source': ['Chen_BioID2']}
+ARL6IP6	{'Source': ['Gordon']}
+VPS16	{'Source': ['Chen_BioID2']}
+SUN2	{'Source': ['Gordon']}
+MZT2A	{'Source': ['Chen_BioID2']}
+ATF6B	0
+HS6ST2	0
+RBX1	0
+PLOD2	1
+Ascorbic acid (DB00126)	{'Source': ['COVIDrugNet']}
+CHPF2	0
+NSP13	42
+GOLGA2	{'Source': ['Gordon']}
+FYCO1	{'Source': ['Gordon']}
+GCC1	{'Source': ['Gordon']}
+PRKACA	{'Source': ['Gordon']}
+TLE3	{'Source': ['Gordon']}
+AKAP9	{'Source': ['Gordon']}
+PRKAR2B	{'Source': ['Gordon']}
+PRKAR2A	{'Source': ['Gordon']}
+MIPOL1	{'Source': ['Gordon']}
+JAKMIP1	{'Source': ['Gordon']}
+CDK5RAP2	{'Source': ['Gordon']}
+HOOK1	{'Source': ['Gordon']}
+PDE4DIP	{'Source': ['Gordon']}
+PCNT	{'Source': ['Gordon']}
+RDX	{'Source': ['Gordon']}
+CEP135	{'Source': ['Gordon']}
+C1orf50	{'Source': ['Gordon']}
+TBK1	{'Source': ['Gordon']}
+CEP68	{'Source': ['Gordon']}
+CNTRL	{'Source': ['Gordon']}
+GOLGA3	{'Source': ['Gordon']}
+TLE5	{'Source': ['Gordon']}
+CLIP4	{'Source': ['Gordon']}
+GCC2	{'Source': ['Gordon']}
+CEP112	{'Source': ['Gordon']}
+TUBA3E	{'Source': ['Chen_BioID2']}
+HSBP1	{'Source': ['Gordon']}
+ERC1	{'Source': ['Gordon']}
+CEP43	{'Source': ['Gordon']}
+NINL	{'Source': ['Gordon']}
+GOLGB1	{'Source': ['Gordon']}
+CENPF	{'Source': ['Gordon']}
+NIN	{'Source': ['Gordon']}
+TLE1	{'Source': ['Gordon']}
+HSPD1	{'Source': ['Chen_SFB_TAP']}
+GRIPAP1	{'Source': ['Gordon']}
+CEP350	{'Source': ['Gordon']}
+CIT	{'Source': ['Gordon']}
+TBKBP1	{'Source': ['Gordon']}
+GORASP1	{'Source': ['Gordon']}
+CEP250	{'Source': ['Gordon']}
+USP13	{'Source': ['Gordon']}
+GOLGA2	0
+SHPRH	0
+C6orf47	0
+FYCO1	0
+SEPSECS	0
+MAT2B	0
+LRP2	0
+NBEA	0
+E	12
+BRD2	{'Source': ['Gordon']}
+SET	{'Source': ['Chen_SFB_TAP']}
+PICALM	{'Source': ['Chen_SFB_TAP']}
+PABPC3	{'Source': ['Chen_BioID2']}
+CWC27	{'Source': ['Gordon']}
+SLC44A2	{'Source': ['Gordon']}
+MAN2C1	{'Source': ['Chen_SFB_TAP']}
+KLHL36	{'Source': ['Chen_SFB_TAP']}
+ZC3H18	{'Source': ['Gordon']}
+BRD4	{'Source': ['Gordon']}
+AP3B1	{'Source': ['Gordon']}
+AKT3	{'Source': ['Chen_SFB_TAP']}
+BRD2	0
+EGFR	5
+Fostamatinib (DB12010)	{'Source': ['COVIDrugNet']}
 Abivertinib (DB15327)	{'Source': ['COVIDrugNet']}
 Zanubrutinib (DB15035)	{'Source': ['COVIDrugNet']}
-RETREG3	0
-FASTKD5	0
-STEAP3	0
-ZNF574	0
-MOGS	0
-ACP6	0
-EMC7	0
-NSA2	0
-LRIT3	0
-ZDHHC5	0
-GNPTAB	0
-Lidocaine (DB00281)	0
-PRIM1	0
-HSPD1	0
-ANXA6	0
-CEP112	0
-ITGB1	0
-PASK	0
-BMPR1A	0
-LMAN2	0
-CHPF	0
-SEC11A	0
-PEBP1	0
-SET	0
-APOB	0
-ARL6IP6	0
-DCTPP1	0
-LARP1	0
-STOML2	0
-MEPCE	0
-TUBA1B	0
-DHFR	1
-Methotrexate (DB00563)	{'Source': ['COVIDrugNet']}
-SRP19	0
-NARS2	0
-FBXL12	0
-VAMP8	0
-ANO6	0
-ORF14	5
-LRRC8C	{'Source': ['Chen_BioID2']}
-ACTG1	{'Source': ['Chen_SFB_TAP']}
-SLC4A2	{'Source': ['Chen_BioID2']}
-LRRC8A	{'Source': ['Chen_BioID2']}
-LRRC8E	{'Source': ['Chen_BioID2']}
-LRRC8C	0
-SCAP	0
-MANBA	0
-PIGO	0
-SMARCA4	0
-AAR2	0
-MFGE8	0
-DDR1	1
-Imatinib (DB00619)	{'Source': ['COVIDrugNet']}
-FBL	0
-NEK9	0
-YBX3	0
-PICALM	0
-HOOK1	0
-RAB8A	0
-B4GALT3	0
-PYCR1	0
-STOM	0
-ECSIT	0
+Lidocaine (DB00281)	{'Source': ['COVIDrugNet']}
+ORF7b	{'Source': ['Chen_SFB_TAP']}
+Fostamatinib (DB12010)	16
+ERBB2	{'Source': ['COVIDrugNet']}
+RIPK1	{'Source': ['COVIDrugNet']}
+NEK9	{'Source': ['COVIDrugNet']}
+PRKACA	{'Source': ['COVIDrugNet']}
+CSNK2A2	{'Source': ['COVIDrugNet']}
+DDR1	{'Source': ['COVIDrugNet']}
+COQ8B	{'Source': ['COVIDrugNet']}
+RPS6KA6	{'Source': ['COVIDrugNet']}
+FLT4	{'Source': ['COVIDrugNet']}
+ERBB4	{'Source': ['COVIDrugNet']}
+MELK	{'Source': ['COVIDrugNet']}
+CIT	{'Source': ['COVIDrugNet']}
+TBK1	{'Source': ['COVIDrugNet']}
+GSK3B	{'Source': ['COVIDrugNet']}
+MARK3	{'Source': ['COVIDrugNet']}
+MARK2	{'Source': ['COVIDrugNet']}
+RBSN	0
+ORF7b	62
+CD302	{'Source': ['Chen_SFB_TAP']}
+STEAP3	{'Source': ['Chen_SFB_TAP']}
+ATP7A	{'Source': ['Chen_SFB_TAP']}
+TMEM192	{'Source': ['Chen_SFB_TAP', 'Chen_BioID2']}
+GPAT3	{'Source': ['Chen_SFB_TAP']}
+SCAP	{'Source': ['Chen_BioID2']}
+LPAR1	{'Source': ['Chen_SFB_TAP']}
+LRFN1	{'Source': ['Chen_SFB_TAP']}
+ATP13A1	{'Source': ['Chen_BioID2']}
+ARFIP2	{'Source': ['Chen_SFB_TAP']}
+VAMP2	{'Source': ['Chen_SFB_TAP']}
+FRMD5	{'Source': ['Chen_SFB_TAP']}
+ALG14	{'Source': ['Chen_SFB_TAP']}
+VPS45	{'Source': ['Chen_SFB_TAP']}
+DAGLB	{'Source': ['Chen_SFB_TAP']}
+RTN2	{'Source': ['Chen_SFB_TAP']}
+DDR1	{'Source': ['Chen_SFB_TAP', 'Chen_BioID2']}
+FAM171A2	{'Source': ['Chen_SFB_TAP']}
+MOB1B	{'Source': ['Chen_SFB_TAP']}
+TMC7	{'Source': ['Chen_SFB_TAP']}
+ROGDI	{'Source': ['Chen_SFB_TAP']}
+NAPA	{'Source': ['Chen_SFB_TAP']}
+SEMA4C	{'Source': ['Chen_SFB_TAP']}
+IL18R1	{'Source': ['Chen_SFB_TAP']}
+INTS7	{'Source': ['Chen_SFB_TAP']}
+VAMP3	{'Source': ['Chen_SFB_TAP']}
+VAMP4	{'Source': ['Chen_SFB_TAP']}
+ERBB4	{'Source': ['Chen_SFB_TAP']}
+ADGRE5	{'Source': ['Chen_SFB_TAP']}
+STX12	{'Source': ['Chen_SFB_TAP']}
+SNAP29	{'Source': ['Chen_SFB_TAP']}
+NCEH1	{'Source': ['Chen_SFB_TAP']}
+HIP1R	{'Source': ['Chen_SFB_TAP']}
+TTC28	{'Source': ['Chen_SFB_TAP']}
+FXYD6	{'Source': ['Chen_SFB_TAP']}
+ABCC4	{'Source': ['Chen_SFB_TAP']}
+CDH2	{'Source': ['Chen_SFB_TAP']}
+SEMA4B	{'Source': ['Chen_SFB_TAP']}
+SMIM1	{'Source': ['Chen_SFB_TAP']}
+UTP6	{'Source': ['Chen_SFB_TAP']}
+ARFIP1	{'Source': ['Chen_SFB_TAP']}
+PTPRG	{'Source': ['Chen_SFB_TAP']}
+RUFY1	{'Source': ['Chen_SFB_TAP']}
+LMAN2	{'Source': ['Chen_SFB_TAP']}
+BMPR1A	{'Source': ['Chen_SFB_TAP']}
+STX10	{'Source': ['Chen_SFB_TAP']}
+LRRC8E	{'Source': ['Chen_SFB_TAP']}
+NAPG	{'Source': ['Chen_SFB_TAP']}
+VAMP8	{'Source': ['Chen_SFB_TAP']}
+RUFY2	{'Source': ['Chen_SFB_TAP']}
+PTTG1IP	{'Source': ['Chen_SFB_TAP']}
+ERBB2	{'Source': ['Chen_SFB_TAP']}
+STX6	{'Source': ['Chen_SFB_TAP']}
+KLHDC2	{'Source': ['Chen_SFB_TAP']}
+VTI1A	{'Source': ['Chen_SFB_TAP']}
+ANO6	{'Source': ['Chen_BioID2']}
+BSCL2	{'Source': ['Chen_SFB_TAP']}
+ALG5	{'Source': ['Chen_SFB_TAP']}
+STX16	{'Source': ['Chen_SFB_TAP']}
+MCAM	{'Source': ['Chen_SFB_TAP']}
+KHDC1	{'Source': ['Chen_SFB_TAP']}
+CTNNA1	{'Source': ['Chen_SFB_TAP']}
+CD302	0
+RNF187	0
+PLAT	1
+Iloprost (DB01088)	{'Source': ['COVIDrugNet']}
+Iloprost (DB01088)	0
 ERBB2	1
 Zanubrutinib (DB15035)	{'Source': ['COVIDrugNet']}
-Zanubrutinib (DB15035)	0
+ZC3H7A	0
+GCC1	0
+HSPA8	1
+Artenimol (DB11638)	{'Source': ['COVIDrugNet']}
+Artenimol (DB11638)	8
+RPL23A	{'Source': ['COVIDrugNet']}
+ACTG1	{'Source': ['COVIDrugNet']}
+RPS9	{'Source': ['COVIDrugNet']}
+RPS8	{'Source': ['COVIDrugNet']}
+RPS17	{'Source': ['COVIDrugNet']}
+RPS6	{'Source': ['COVIDrugNet']}
+RPL10	{'Source': ['COVIDrugNet']}
+RPS13	{'Source': ['COVIDrugNet']}
+SCCPDH	0
+AP1G1	0
+PRKACA	0
+RBM28	0
+SPG7	0
+SET	0
+SBNO1	0
+FAM98A	0
+RCL1	0
+S	12
+EZR	{'Source': ['Chen_BioID2']}
+A2M	{'Source': ['Chen_SFB_TAP']}
+PTPN14	{'Source': ['Chen_BioID2']}
+SFN	{'Source': ['Chen_SFB_TAP']}
+GOLGA7	{'Source': ['Gordon']}
+PPP1R16B	{'Source': ['Chen_BioID2']}
+ZDHHC5	{'Source': ['Gordon']}
+SPCS2	{'Source': ['Chen_SFB_TAP']}
+SPCS1	{'Source': ['Chen_SFB_TAP']}
+DEPDC7	{'Source': ['Chen_BioID2']}
+SEC11A	{'Source': ['Chen_SFB_TAP']}
+SPCS3	{'Source': ['Chen_SFB_TAP']}
+EZR	0
+REEP6	0
+TLE3	0
+FAM219A	0
+AKAP9	0
+FARP1	0
+PTOV1	0
+RPL39	0
+IGF2R	0
+DCTPP1	0
+STEAP3	0
+A2M	0
+PICALM	0
+ATP7A	0
+DDX28	0
+TUBG1	0
+NSP2	9
+MOCS2	{'Source': ['Chen_BioID2']}
+SLC27A2	{'Source': ['Gordon']}
+EIF4E2	{'Source': ['Gordon']}
+FKBP15	{'Source': ['Gordon']}
+RAP1GDS1	{'Source': ['Gordon']}
+GIGYF2	{'Source': ['Gordon']}
+WASHC4	{'Source': ['Gordon']}
+MAP3K14	{'Source': ['Chen_SFB_TAP']}
+POR	{'Source': ['Gordon']}
+MOCS2	0
+PEBP1	0
+CYP2J2	0
+FOXRED2	0
+SLC30A7	0
+NSP10	23
+ACP6	{'Source': ['Chen_SFB_TAP']}
+RGS19	{'Source': ['Chen_SFB_TAP']}
+TTC19	{'Source': ['Chen_SFB_TAP']}
+ZZEF1	{'Source': ['Chen_SFB_TAP']}
+FBLN1	{'Source': ['Chen_SFB_TAP']}
+GFER	{'Source': ['Gordon']}
+GRPEL1	{'Source': ['Gordon']}
+MLF2	{'Source': ['Chen_SFB_TAP']}
+MIB2	{'Source': ['Chen_SFB_TAP']}
+CNK3/IPCEF1	{'Source': ['Chen_SFB_TAP']}
+SUOX	{'Source': ['Chen_SFB_TAP']}
+PLEKHH2	{'Source': ['Chen_SFB_TAP']}
+TUBA3E	{'Source': ['Chen_BioID2']}
+DIABLO	{'Source': ['Chen_SFB_TAP']}
+MED29	{'Source': ['Chen_SFB_TAP']}
+AP2A2	{'Source': ['Gordon']}
+LACTB	{'Source': ['Chen_SFB_TAP']}
+HECTD3	{'Source': ['Chen_SFB_TAP']}
+AP2M1	{'Source': ['Gordon']}
+GSTCD	{'Source': ['Chen_SFB_TAP']}
+ERGIC1	{'Source': ['Gordon']}
+PPIH	{'Source': ['Chen_SFB_TAP']}
+AKAP12	{'Source': ['Chen_SFB_TAP']}
+ACP6	0
+SPART	0
+TMEM192	0
+ERLEC1	0
+GPAT3	0
+RRP9	0
+PGAP6	0
+RGS19	0
+NSP5	8
+OAS3	{'Source': ['Chen_BioID2']}
+BRCA1	{'Source': ['Chen_BioID2']}
+PCMT1	{'Source': ['Chen_SFB_TAP']}
+TRMT1	{'Source': ['Gordon']}
+USP11	{'Source': ['Chen_SFB_TAP']}
+HDAC2	{'Source': ['Gordon']}
+MDC1	{'Source': ['Chen_BioID2']}
+GPX1	{'Source': ['Gordon']}
+OAS3	0
+TAPT1	0
+SARM1	0
+TTC19	0
+DVL1	0
+PRKAR2B	0
+TUT7	0
+SNIP1	0
+CISD3	0
+GDF15	0
+RILPL2	0
+SCAP	0
+PRKAR2A	0
+FASTKD5	0
+RIPK1	0
+Abivertinib (DB15327)	0
+BIN1	0
+LPAR1	0
+LRFN1	0
+IMPDH2	2
+Ribavirin (DB00811)	{'Source': ['COVIDrugNet']}
+NSP14	{'Source': ['Gordon']}
+Ribavirin (DB00811)	0
+STOML2	0
+ZNF22	0
+Ascorbic acid (DB00126)	0
+TIMM9	0
+SCARB1	0
+DNMT1	1
+Decitabine (DB01262)	{'Source': ['COVIDrugNet']}
+Decitabine (DB01262)	0
+ATP13A1	0
+PMPCB	0
+RPL19	0
+MRS2	0
+PYCR2	0
+DHX33	0
+MACROH2A2	0
+NUP214	0
+ZNF346	0
+PIGO	0
+LRIT3	0
+PDZD11	0
+ATP5PB	0
+SSRP1	0
+ACADM	0
+MIPOL1	0
+QSOX2	0
+DDHD2	0
+NEK9	0
+ARFIP2	0
+MECP2	0
+ORF6	9
+MTCH1	{'Source': ['Gordon']}
+VPS13B	{'Source': ['Chen_SFB_TAP']}
+SEC24A	{'Source': ['Chen_BioID2']}
+SEC31A	{'Source': ['Chen_BioID2']}
+ZC3H4	{'Source': ['Chen_SFB_TAP']}
+SEC23A	{'Source': ['Chen_BioID2']}
+RAE1	{'Source': ['Gordon']}
+TRIP11	{'Source': ['Chen_BioID2']}
+NUP98	{'Source': ['Gordon']}
+MTCH1	0
+DHX32	0
+CBX5	0
+OS9	0
+RPS9	0
+VAMP2	0
+PABPC3	0
+FRMD5	0
+ORF7a	4
+HEATR3	{'Source': ['Gordon']}
+MDN1	{'Source': ['Gordon']}
+SLC5A2	{'Source': ['Chen_BioID2']}
+ALDH3B1	{'Source': ['Chen_SFB_TAP']}
+HEATR3	0
+MCM10	0
+THTPA	0
+ATP5F1B	0
+CGRRF1	0
+B4GALT3	0
+ZKSCAN8	0
+DHFR	1
+Methotrexate (DB00563)	{'Source': ['COVIDrugNet']}
+Methotrexate (DB00563)	0
+JAKMIP1	0
+ZZEF1	0
+MICOS13	0
+TMEM39A	0
+RPS6KA6	0
+SH3D19	0
+CDK5RAP2	0
+FKBP7	0
+ALG14	0
+VDAC2	0
+CSNK2A2	0
+PYCR1	0
+NSP11	3
+UBE4B	{'Source': ['Chen_SFB_TAP']}
+TBCA	{'Source': ['Gordon']}
+SNAPC1	{'Source': ['Chen_BioID2']}
+UBE4B	0
+LRRC8C	0
+MCRS1	0
+VPS45	0
+DHX37	0
+CLCC1	0
+SLC27A2	0
+HYOU1	0
+ECSIT	0
+BICD2	0
+RAB14	0
+NSP14	4
+DES	{'Source': ['Chen_BioID2']}
+TUBA1B	{'Source': ['Chen_SFB_TAP']}
+GLA	{'Source': ['Gordon']}
+SIRT5	{'Source': ['Gordon']}
+DES	0
+KCNG1	0
+DENND4A	0
+SERPINB5	0
+ERMP1	0
+DAGLB	0
+F2RL1	0
+RPS2	0
+BRCA1	0
+MARK2	0
+ENDOD1	0
+CREG1	0
+GGH	0
+Zanubrutinib (DB15035)	1
+ERBB4	{'Source': ['COVIDrugNet']}
+RTN2	0
+TUBGCP3	0
+MARK3	0
+DDR1	1
+Imatinib (DB00619)	{'Source': ['COVIDrugNet']}
+FAM171A2	0
+CNOT1	0
+POLA2	0
+HOOK1	0
+KAT7	0
+PDE4DIP	0
+HSPA1A	0
+POGLUT2	0
+CWC27	0
+PLD3	0
+TRAPPC10	0
+PTPN14	0
+COQ8B	0
+ZBTB11	0
+APOB	0
+CSDE1	0
+TMEM39B	0
+VPS13B	0
+RPS6	0
+PHB2	0
+DDX12P	0
+C2CD5	0
+PCMT1	0
+AAR2	0
+PCNT	0
+LARP4B	0
+PRDM10	0
+GGCX	1
+Menadione (DB00170)	{'Source': ['COVIDrugNet']}
+Menadione (DB00170)	0
+G3BP1	0
+KCNT2	0
+RBM41	0
+NPTX1	0
+TPD52L2	0
+MOB1B	0
+VPS39	0
+FBLN1	0
+PUM3	0
+DVL3	0
+VDAC1	1
+Cannabidiol (DB09061)	{'Source': ['COVIDrugNet']}
+TMC7	0
+GFER	0
+TAS2R39	0
+NPC2	0
+NEU1	1
+Oseltamivir (DB00198)	{'Source': ['COVIDrugNet']}
+Oseltamivir (DB00198)	0
+DCD	0
+PITX2	0
+MYG1	0
+FLT4	1
+Nintedanib (DB09079)	{'Source': ['COVIDrugNet']}
+Nintedanib (DB09079)	0
+INTS4	0
+BOP1	0
+TTLL4	0
+ZYG11B	0
+BTN2A2	0
+ANXA5	0
+RPS13	0
+ROGDI	0
+TMEM94	0
+DVL2	0
+TRAPPC9	0
+SRP54	0
+RPL26L1	0
+METTL17	0
+SLC44A2	0
+ANO5	0
+RPS3A	0
+ARPC1B	0
+GRPEL1	0
+NAPA	0
+STX6	0
+ADAM9	0
+AP4E1	0
+RPL23A	0
+BCS1L	0
+TNKS1BP1	0
+MELK	0
+PKP2	0
+EMC7	0
+NGDN	0
+MTHFR	1
+Cyanocobalamin (DB00115)	{'Source': ['COVIDrugNet']}
+SEMA4C	0
+VPS18	0
+SMOC1	0
+NDUFB9	0
+IL18R1	0
+PPFIBP2	0
+MLF2	0
+LARP7	0
+HSPA1L	0
+SEC24A	0
+PLCH1	0
+CAMTA1	0
+SFN	0
+FBN2	0
+HS2ST1	0
+TCF12	0
+NUP62	0
+ANO6	0
+RAB18	0
+SLC39A10	0
+ALG11	0
+CHAF1A	0
+TTC30A	0
+ACTG1	0
+MIB2	0
+HNRNPU	0
+CNK3/IPCEF1	0
+INTS7	0
+NGLY1	0
+WDR12	0
+VAMP3	0
+VAMP4	0
+TIMM29	0
+FCHO2	0
+RDX	0
+TYSND1	0
+LARP1	0
+GTF2F2	0
+EXOSC5	0
+EPB41L1	0
+PDZD8	0
+ERBB4	0
+GOLGA7	0
+TOR1AIP1	0
+SUOX	0
+ADGRE5	0
+STX12	0
+TAX1BP1	0
+FAM162A	0
+PLEKHA5	0
+RPL36	0
+EIF4G3	0
+SNAP29	0
+DPH5	0
+FBF1	0
+ZPR1	0
+CEP135	0
+ARHGAP32	0
+C1orf50	0
+KIAA1549	0
+REEP5	0
+ZDHHC13	0
+UGGT2	0
+ARFGEF3	0
+PACSIN2	0
+NCEH1	0
+NFX1	0
+MOV10	0
+GHITM	0
+DGKZ	0
+SDAD1	0
+ABCD4	0
+ZNF768	0
+SLC25A21	0
+HIP1R	0
+TTC28	0
+COMT	0
+SDF2	0
+GNPTG	0
+TBK1	0
+UBAP2L	0
+DNAJC11	0
+COL6A1	0
+NACAD	0
+RALA	0
+PTBP2	0
+SLC39A11	0
+TBCA	0
+PLEKHH2	0
+ATP5F1D	0
+EXOSC3	0
+TRIM71	0
+LMNA	0
+PPP1R16B	0
+FXYD6	0
+ZDHHC5	0
+DHX29	0
+TUBA3E	0
+PSME1	0
+IDE	0
+RPS11	0
+NOP14	0
+U2AF1L4	0
+NT5DC1	0
+EIF4E2	0
+ABCC4	0
+PPT1	0
+RPS17	0
+TUBA1B	0
+PRRC2B	0
+CEP68	0
+NEDD1	0
+CNTRL	0
+ATP5PF	0
+KIF13A	0
+DEPDC1	0
+PRIM1	0
+CDH2	0
+ANKIB1	0
+MRPS5	0
+SCAPER	0
+FKBP10	0
+ZNF318	0
+ABHD14A	0
+FCHSD2	0
+BCKDK	0
+TRMT1	0
+SIRT5	2
+Suramin (DB04786)	{'Source': ['COVIDrugNet']}
+Nicotinamide (DB02701)	{'Source': ['COVIDrugNet']}
+Suramin (DB04786)	0
+CCDC86	0
+ACSS1	0
+SRSF3	0
+STOM	0
+PPIL3	0
+OBI1	0
+SAAL1	0
+ITGB1	0
+CIAPIN1	0
+FBN1	0
+SPCS2	0
+SERPINB4	0
+NUP58	0
+NSD2	0
+RPS8	0
+VPS41	0
+SEMA4B	0
+UBXN8	0
+GOLGA3	0
+RPL7L1	0
+TLE5	0
+TM2D3	0
+CLIP4	0
+NOC4L	0
+MEX3D	0
+ACAD9	0
+NUP210	0
+SMIM1	0
+UTP6	0
+EMC1	0
+YY1AP1	0
+PSIP1	0
+PTPRJ	0
+COLGALT1	0
+POGLUT3	0
+SLC9A3R1	0
+THOC6	0
+SEC31A	0
+DIABLO	0
+MED29	0
+MRPS2	0
+ATP2A3	0
+PPAN	0
+TIMM10B	0
+AHNAK	0
+POLA1	0
+MEPCE	0
+CHMP2A	0
+OR2AE1	0
+PABPC4	0
+AP2A2	0
+Nicotinamide (DB02701)	0
+GCC2	0
+GNB1	0
+MDN1	0
 SNAPC1	0
+SIL1	0
+SPCS1	0
+HDAC2	3
+Atorvastatin (DB01076)	{'Source': ['COVIDrugNet']}
+Valproic acid (DB00313)	{'Source': ['COVIDrugNet']}
+Simvastatin (DB00641)	{'Source': ['COVIDrugNet']}
+Atorvastatin (DB01076)	0
+LACTB	0
+ETFA	0
+NARS2	0
+RPL26	0
+FMNL3	0
+DEPDC7	0
+AKAP8L	0
+TUBGCP2	0
+CEP112	0
+ARFIP1	0
+PLEKHF2	0
+RPS4X	0
+FKBP15	0
+ZNF100	0
+BCL9	0
+GDF11	0
+BZW2	0
+EMC3	0
+ZNF574	0
+ZC3H4	0
+TPD52L1	0
+TUBG2	0
+GSK3B	0
+USP11	0
+DDX50	0
+EIF3G	0
+GNPTAB	0
+PIGS	0
+SKP1	0
+RPS15	0
+GLA	0
+PTPRG	0
+ZC3H7B	0
+PVR	0
+ZNF668	0
+Lidocaine (DB00281)	0
+SRSF10	0
+ERO1B	0
+FAM8A1	0
+MOGS	0
+RUFY1	0
+GPAA1	0
+HSBP1	0
+USP36	0
+LMAN2	0
+ERC1	0
+TIMM8B	0
+STC2	0
+ERP44	0
+OLFML2A	0
+GPX1	2
+Glutathione (DB00143)	{'Source': ['COVIDrugNet']}
+Cannabidiol (DB09061)	{'Source': ['COVIDrugNet']}
+Glutathione (DB00143)	0
+ELOB	0
+CYB5R3	0
+MPHOSPH10	0
+PABPC1	0
+CEP43	0
+MBNL1	0
+MAN2C1	0
+SEC23A	0
+NOL10	0
+BMPR1A	0
+STX10	0
+GUCY1B1	0
+BAZ1A	0
+HECTD1	0
+INHBE	0
+SUPT16H	0
+ASAP3	0
+NAT14	0
 NSP16	2
 CCDC22	{'Source': ['Chen_SFB_TAP']}
 USP25	{'Source': ['Chen_BioID2']}
 CCDC22	0
-ATP5F1D	0
+LRRC8E	0
+TMED5	0
+HECTD3	0
+NAPG	0
+CIT	0
+CAV1	0
+CNOT6L	0
+KRR1	0
 EMC4	0
-REEP6	0
-RTN2	0
-AP3B1	0
-COLGALT1	0
-GSK3B	0
-NDUFAF2	0
-Imatinib (DB00619)	0
-HDAC2	3
-Atorvastatin (DB01076)	{'Source': ['COVIDrugNet']}
-Simvastatin (DB00641)	{'Source': ['COVIDrugNet']}
-Valproic acid (DB00313)	{'Source': ['COVIDrugNet']}
-ATF6	0
-IGF2R	0
-Cannabidiol (DB09061)	0
-CRTC3	0
-GOLGA3	0
-MTCH1	0
-VPS41	0
-MRS2	0
-ACTG1	0
-CISD3	0
-AKAP9	0
-PRPS1L1	0
-SYT1	0
-LPAR1	0
-PTPRG	0
-AKAP8L	0
-SAAL1	0
-ATP13A1	0
-FAM114A2	0
-NOC4L	0
-DEPDC7	0
-ATF6B	0
-FMNL3	0
-RTN4	0
+PSMD8	0
+TOMM70	0
+ZNF746	0
+EDEM3	0
+SRP72	0
+ZNF503	0
+MACROH2A1	0
+RAB1A	0
 KLHL36	0
-DES	0
-TTC19	0
-USP36	0
-TRIM3	0
-Atorvastatin (DB01076)	0
-WASHC4	0
-DVL2	0
-TUBGCP3	0
-USP54	0
-MOV10	0
-NSFL1C	0
-ZYG11B	0
-AP2M1	0
-RAE1	0
-KLHDC2	0
-HSBP1	0
-RPS2	0
-SLC4A2	0
-SLC6A15	0
-DVL1	0
-VPS11	0
-SEPSECS	0
-CSNK2A2	0
-CHPF2	0
-HS2ST1	0
-RIPK1	0
-TRIP11	0
-USP33	0
-TM2D3	0
-ACAD9	0
-NGDN	0
-RPS11	0
-SIL1	0
-HYOU1	0
-BTN2A2	0
-CNOT1	0
-MAT2B	0
-NOP14	0
 ATP6V1A	1
 Alendronic acid (DB00630)	{'Source': ['COVIDrugNet']}
-TBK1	0
-PTTG1IP	0
-RPS8	0
-SPCS3	0
-EIF3I	0
-RHOA	0
-TUBGCP6	0
-CLIP4	0
-SPART	0
-CNOT3	0
-SMIM1	0
-CBX5	0
-ANO5	0
-RRP9	0
-MTARC1	0
-MACROH2A1	0
-FAM160B1	0
-SUOX	0
-ATP5PO	0
-PLEKHH2	0
-XPNPEP3	0
-TRAPPC10	0
-MARK1	0
-OBSL1	0
-TMEM39B	0
-PDZD11	0
-BCS1L	0
-CAMTA1	0
-CREG1	0
-RAB14	0
-EIF4G3	0
-ZNF746	0
-LARP7	0
-RPS6KA6	0
-SERPINB5	0
-STC2	0
-ERP44	0
-ABCC4	0
-CEP43	0
-AATF	0
-FAR2	0
-SUPT16H	0
-GGCX	1
-Menadione (DB00170)	{'Source': ['COVIDrugNet']}
-Menadione (DB00170)	0
-GNPTG	0
-METTL17	0
-RPS13	0
-MAN2C1	0
-TNKS1BP1	0
-MBNL1	0
-MARK2	0
-GTF2F2	0
-CAV1	0
-UGGT2	0
-ZPR1	0
-GORASP1	0
-TMED5	0
-ANXA5	0
-DHX29	0
-G3BP2	0
-NEU1	1
-Oseltamivir (DB00198)	{'Source': ['COVIDrugNet']}
-Oseltamivir (DB00198)	0
-ZNF768	0
-CENPF	0
-YY1AP1	0
-Simvastatin (DB00641)	0
-MECP2	0
-CUL2	0
-U2AF1L4	0
-Valproic acid (DB00313)	0
+SLC30A6	0
+SLC5A2	1
+Dapagliflozin (DB06292)	{'Source': ['COVIDrugNet']}
+Dapagliflozin (DB06292)	0
 RASEF	0
-FBLN1	0
-PTPRJ	0
-ATP2A3	0
-GNB1	0
-SIRT5	2
-Nicotinamide (DB02701)	{'Source': ['COVIDrugNet']}
-Suramin (DB04786)	{'Source': ['COVIDrugNet']}
-ACSL3	0
-FOXRED2	0
-HMOX1	0
-DNMT1	1
-Decitabine (DB01262)	{'Source': ['COVIDrugNet']}
-SEC23A	0
-Abivertinib (DB15327)	0
-CDK5RAP2	0
-STX10	0
-F2RL1	0
-MCAM	0
-SH3D19	0
-FKBP7	0
-ZC3H7A	0
-TRIM71	0
-POGLUT2	0
-CSDE1	0
-BIN1	0
-NUP62	0
-WFS1	0
-JAKMIP1	0
-NDFIP2	0
-AP4E1	0
-ROGDI	0
-SBNO1	0
-ZNF318	0
-ETFA	0
-SMOC1	0
-NDUFB9	0
-TIMM9	0
-FAM219A	0
-CNK3/IPCEF1	0
-DLG1	0
-VAMP2	0
-ATP13A3	0
-PPIL3	0
-TOMM70	0
-THAP4	0
-SCAPER	0
-DHX32	0
-AP1G1	0
-VAMP4	0
-ZC3H4	0
-FAM98A	0
-TTC28	0
-RAB5C	0
-SLC12A4	0
-COQ8B	0
-ZKSCAN8	0
-BRD2	0
-ZC3H18	0
+RDH12	1
+Vitamin A (DB00162)	{'Source': ['COVIDrugNet']}
 Vitamin A (DB00162)	0
-DEPDC1	0
-MACROH2A2	0
-DDX21	0
-GUCY1B1	0
-PPP1R16B	0
-KRI1	0
-PUM3	0
-OS9	0
-ZC3H7B	0
-CIT	0
-GIGYF2	0
-Alendronic acid (DB00630)	0
-EMC1	0
-CDH2	0
-THOC6	0
-SLC39A10	0
-RBSN	0
-CHAF1A	0
-INTS4	0
-VDAC2	0
-MCRS1	0
-Ribavirin (DB00811)	0
-PIGS	0
-ADAM9	0
+EIF4H	0
+RAB2A	0
+CUL2	0
+VAMP8	0
+TUBGCP4	0
 NINL	0
-BCKDK	0
-PVR	0
-MYG1	0
-KIAA1549	0
-HIP1R	0
-SNAP29	0
-SORD	0
-POGLUT3	0
-Glutathione (DB00143)	0
-SUN2	0
-EIF4E2	0
-REEP5	0
-THOC1	0
-KHDC1	0
-HSPA8	0
-ATP7A	0
-LRRC8A	0
-TUBG2	0
-AGPS	0
-Iloprost (DB01088)	0
-HEATR3	0
-TMC7	0
-VPS39	0
+ABR	0
+GOLGB1	0
+AMFR	0
+USP54	0
+RPL10	0
+NUTF2	0
+CHD1	0
+AP2M1	0
+RUFY2	0
+HERC5	0
+YBX3	0
+SMARCA4	0
+ATE1	0
+CENPF	0
+PMPCA	0
+ZC3H18	0
+CNOT2	0
+NOP56	0
+SLC6A15	0
+CNOT3	0
+PEX5	0
+VEZF1	0
+BAZ1B	0
+GNG5	0
+WFS1	0
+GSTCD	0
+YTHDC2	0
+ANXA6	0
+AHNAK2	0
+GLRX3	0
+ERGIC1	0
+MYCBP2	0
+NIN	0
+SRFBP1	0
+RAP1GDS1	0
+BMS1	0
+MTARC1	0
+G3BP2	0
+BAG5	0
+BRD4	0
+FBXL12	0
+AP3B1	0
+MVK	0
 EXOSC2	0
-GTPBP4	0
-NSD2	0
-TAS2R39	0
-KCNG1	0
-NCAPD2	0
-C11orf98	0
-TAX1BP1	0
-TAP1	0
-DEK	0
-KIF13A	0
+TLE1	0
+ATP6AP1	0
+RAE1	0
+PCSK6	0
+CHPF	0
+MIB1	0
+TRIP11	0
+YIF1A	0
+NDUFAF1	0
+LOX	0
+SELENOS	0
+NSA2	0
+NLRX1	0
+ALG5	0
+FAM160B1	0
+ALG8	0
+XPNPEP3	0
+Valproic acid (DB00313)	0
+SMCHD1	0
+HMOX1	0
+SIGMAR1	1
+Naltrexone (DB00704)	{'Source': ['COVIDrugNet']}
+SEC11A	0
+PHB	0
+ATP5MG	0
+TARS2	0
+PTTG1IP	0
+MFGE8	0
+NDUFAF2	0
+FBLN5	0
+TMEM97	0
+Alendronic acid (DB00630)	0
+DUSP11	0
+RAB8A	0
+ABCC1	0
+NSFL1C	0
+HSPD1	0
+DLG1	0
+GRIPAP1	0
+TUBGCP6	0
+AATF	0
+TUBGCP5	0
+ATP13A3	0
+Cannabidiol (DB09061)	0
+CEP350	0
+COL18A1	0
+Cyanocobalamin (DB00115)	0
+YBX1	0
 CSNK2B	1
 Quercetin (DB04216)	{'Source': ['COVIDrugNet']}
-MLF2	0
-PYCR2	0
-FAM171A2	0
-CWC27	0
-SREBF1	1
-Omega-3 fatty acids (DB11133)	{'Source': ['COVIDrugNet']}
-Omega-3 fatty acids (DB11133)	0
-USP25	0
-PDZD8	0
-MCM10	0
-C6orf47	0
-BAZ1A	0
-SLC30A6	0
-ABR	0
-TRAPPC9	0
-RAB10	0
-NAPG	0
-ZNF48	0
-NDUFAF1	0
-SARM1	0
-ZNF100	0
-RPL26	0
-STX6	0
-SRP54	0
-SKP1	0
-EMC3	0
-PABPC3	0
-FLT4	1
-Nintedanib (DB09079)	{'Source': ['COVIDrugNet']}
-Nintedanib (DB09079)	0
-TARS2	0
-ARF6	0
-CYP2J2	0
-RPL31	0
-TCF12	0
-HECTD1	0
-PACSIN2	0
-AKAP8	0
-NCEH1	0
-VPS45	0
-BRCA1	0
-RPL36	0
-ALG14	0
-PTBP2	0
-INTS7	0
-PRDM10	0
-ATP5PB	0
 Quercetin (DB04216)	0
-POLA2	0
-ATP5F1B	0
-LMNA	0
-UBAP2	0
-NUP210	0
-NAT14	0
-ALG5	0
-IL18R1	0
-FCHO2	0
-FAM162A	0
-CEP135	0
-CCDC137	0
-DHX37	0
-EXOSC3	0
-NOL10	0
-TUT7	0
-ELOB	0
-DDHD2	0
-PCMT1	0
-GHITM	0
-RAB7A	0
-NLRX1	0
-VEZF1	0
-RBM28	0
-RPS6KC1	0
-GRPEL1	0
-QSOX2	0
-HSPA1L	0
-SEC31A	0
-MOB1B	0
-RAB1A	0
-RUFY1	0
-CIAPIN1	0
-ZBTB11	0
-GDF15	0
-PABPC4	0
-PRIM2	0
-IGHMBP2	0
-KRR1	0
-OAS3	0
-IDE	0
-PRKAR2B	0
+RBMXL1	0
+SLU7	0
+PPIH	0
+GIGYF2	0
+KLHDC2	0
 ELOC	0
-HSPA1A	0
-RPL19	0
-RCL1	0
-CAVIN1	0
-Decitabine (DB01262)	0
-DHX33	0
-SLC44A2	0
-PSMD8	0
-PLD3	0
-SRSF3	0
-Ascorbic acid (DB00126)	0
-AKAP12	0
-DIABLO	0
-RAB18	0
-FBN1	0
-STX12	0
-PABPC1	0
-MYCBP2	0
-SLC9A3R1	0
+VPS11	0
+KRI1	0
+USP33	0
+VPS13C	0
+TBKBP1	0
+RHOA	0
+MDC1	0
+IGHMBP2	0
+PASK	0
+SLC12A4	0
+RPS6KC1	0
+SYT1	0
+THAP4	0
+FAM114A2	0
 Naltrexone (DB00704)	0
-TUBA3E	0
-NUP58	0
-NIN	0
-LRRC8E	0
-ZNF22	0
-TUBGCP4	0
-RPS24	0
-PRKACA	0
-CNTRL	0
+TRIM59	0
+VTI1A	0
+AKAP12	0
+CCDC137	0
+ATF6	0
+WASHC4	0
+MAP3K14	0
+SPCS3	0
+CRTC3	0
+GORASP1	0
+AGPS	0
+MANBA	0
+RAB5C	0
 CEP250	0
 BSCL2	0
-ATP6AP1	0
-PLEKHA5	0
-FARP1	0
-SLC30A9	0
-SPCS1	0
-SLC30A7	0
+RPS24	0
+NUP88	0
 UPF1	0
-NACAD	0
-YBX1	0
-NUP54	0
-TLE1	0
-PCSK6	0
-GOLGA7	0
-ZZEF1	0
-PRRC2B	0
-LRFN1	0
-TPD52L2	0
-RNF41	0
-C1orf50	0
-ARPC1B	0
 DNAJC19	0
-DUSP11	0
-MIPOL1	0
-BOP1	0
-RPL23A	0
-TRMT1	0
-COL6A1	0
-LRP2	0
-MRPS27	0
-VAMP3	0
-FXYD6	0
-PHB	0
-MEX3D	0
-DNAJC11	0
-NUP98	0
-Nicotinamide (DB02701)	0
-RBM41	0
-PUSL1	0
-Methotrexate (DB00563)	0
-GOLGA2	0
-CHMP2A	0
-VRK1	0
-ATP5PD	0
-IL17RA	0
-ALG8	0
-UBXN8	0
-MRPS5	0
-MPHOSPH10	0
-PPAN	0
-BZW2	0
-FBF1	0
-NPTX1	0
-RNF187	0
-PSME1	0
-THTPA	0
-ABHD14A	0
-ZNF503	0
-RPS17	0
-ABCD4	0
-RPS4X	0
-RAB2A	0
-SH3GL3	0
-DAGLB	0
-MZT2A	0
-PMPCA	0
-DDX28	0
-G3BP1	0
-PLCH1	0
-TOR1AIP1	0
-DDX12P	0
-OBI1	0
-AHNAK	0
-ANKIB1	0
-SDAD1	0
-CEP68	0
-BAZ1B	0
-USP13	0
-CEP350	0
-DVL3	0
-SPCS2	0
-CHD1	0
-FCHSD2	0
 DCAKD	0
-EXOSC8	0
-ADAMTS1	0
-SLC25A21	0
-ABCC1	0
-ERLEC1	0
-GPAT3	0
-RBX1	0
+DPY19L1	0
+SLC30A9	0
+RAB10	0
+ATP5PD	0
+PUSL1	0
+AKAP8	0
+ARF6	0
 RNF121	0
-MRPS2	0
-GLA	0
-SRP72	0
-EXOSC5	0
-TAPT1	0
-ATE1	0
-PINX1	0
-RPS6	0
-WDR12	0
-GRIPAP1	0
-COMT	0
-LACTB	0
-ZNF346	0
-TIMM10B	0
-SDF2	0
-VPS13C	0
-EPB41L1	0
-TMEM39A	0
-MAP7	0
-TRIM59	0
-FRMD5	0
-YTHDC2	0
-HNRNPU	0
+ZNF48	0
+THOC1	0
+VRK1	0
+POR	0
+SRP19	0
+ABT1	0
+SORD	0
+CYB5B	0
+ARL6IP6	0
+Imatinib (DB00619)	0
+STX16	0
 VPS16	0
-SHPRH	0
-DDX10	0
-ERMP1	0
-PRKAR2A	0
-UTP6	0
-CNOT6L	0
-TPD52L1	0
-AMFR	0
-HECTD3	0
+USP25	0
 TOR1A	0
-TYSND1	0
-POFUT1	0
-OR2AE1	0
-ARFIP2	0
-CGRRF1	0
-TIMM10	0
-PMPCB	0
-RPL39	0
-UBE4B	0
-TLE5	0
-PDE4DIP	0
-ATP5PF	0
-YIF1A	0
-RPS15	0
-PEX5	0
-TTC30A	0
-HS6ST2	0
-BRD4	0
-TIMM29	0
-RDX	0
-EZR	0
-AASS	0
-CYB5R3	0
-FBLN5	0
+ATP5PO	0
+ATP1B1	0
+NDFIP2	0
+DDX21	0
+MCAM	0
+SNX12	0
+KHDC1	0
+ALDH3B1	0
+NUP98	0
+ACSL3	0
+EIF3I	0
+EXOSC8	0
+SUN2	0
+C11orf98	0
+IL17RA	0
+MZT2A	0
+AKT3	0
+FBL	0
+RAB7A	0
+CTNNA1	0
+DCAF7	0
+TAP1	0
+MRPS27	0
 AP1S1	0
-KCNT2	0
-ADGRE5	0
-TUBG1	0
-NT5DC1	0
-PPFIBP2	0
-AP2A2	0
-CLCC1	0
-GCC1	0
-SEMA4C	0
-GDF11	0
-RPL26L1	0
-PITX2	0
-Suramin (DB04786)	0
-ACADM	0
-LARP4B	0
-GFER	0
-GOLGB1	0
-DDX50	0
-SCCPDH	0
-ZDHHC13	0
-EIF4H	0
-MAP3K14	0
-NOP56	0
+MRPS25	0
+RTN4	0
+Simvastatin (DB00641)	0
+USP13	0
+FAR2	0

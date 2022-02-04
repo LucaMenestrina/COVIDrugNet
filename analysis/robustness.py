@@ -82,7 +82,7 @@ def targeted_attack(graph):
         )
         d = max(nx.diameter(component) for component in components)
         r[n] = (d, K_s[0][1], K_s[0][0])
-        print("%d over %d, diameter: %d" % (n, len(G.nodes()), d), flush=True)
+        # print("%d over %d, diameter: %d" % (n, len(G.nodes()), d), flush=True)
         rel[n / l] = d
     df = pd.DataFrame(
         {
@@ -121,7 +121,7 @@ def random_attack(graph):
             d,
             random_node,
         )  # ),K_s[[K_s.index(t) for t in K_s if random_node in t][0]][0])
-        print("%d over %d, diameter: %d" % (n, len(G.nodes()), d), flush=True)
+        # print("%d over %d, diameter: %d" % (n, len(G.nodes()), d), flush=True)
         rel[n / l] = d
     return r, rel
 
