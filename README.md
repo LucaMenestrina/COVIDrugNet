@@ -10,8 +10,8 @@ In [our article](https://www.nature.com/articles/s41598-021-98812-0), we describ
 
 ### Updates  
 
-Last Database Update: 31st January 2022 <!-- (No changes since 31st January 2022) -->  
-Analyses Update:      31st January 2022 <!-- (No changes since 31st January 2022) --> 
+Last Database Update: 8th March 2022 (No changes since 31st January 2022)  
+Analyses Update:      8th March 2022 (No changes since 31st January 2022)  
 
 ### Cite
 
