@@ -1,5 +1,5 @@
 #collector.py
-# GMT Mon Jan 31 07:54:28 2022
+# GMT Tue May 17 07:42:20 2022
 # 
 Indomethacin (DB00328)	10
 Prostaglandin G/H synthase 1 (P23219)	{}
@@ -3336,3 +3336,6 @@ Peptostreptococcal albumin-binding protein (Q51911)	{}
 Peptostreptococcal albumin-binding protein (Q51911)	0
 MM3122 (DB16737)	0
 Nirmatrelvir (DB16691)	0
+Zavegepant (DB15688)	1
+Calcitonin gene-related peptide type 1 receptor (Q16602)	{}
+Calcitonin gene-related peptide type 1 receptor (Q16602)	0
