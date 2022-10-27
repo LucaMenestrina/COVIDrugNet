@@ -38,9 +38,11 @@ layout = dbc.Col(
                                         dbc.Col(
                                             [
                                                 html.H4(
-                                                    html.Strong("Maurizio Recanatini")
+                                                    html.Strong(
+                                                        "Maurizio Recanatini")
                                                 ),
-                                                html.H5("Principal Investigator"),
+                                                html.H5(
+                                                    "Principal Investigator"),
                                                 html.A(
                                                     html.H5(
                                                         "maurizio.recanatini@unibo.it"
@@ -59,7 +61,8 @@ layout = dbc.Col(
                             ],
                             href="https://www.unibo.it/sitoweb/maurizio.recanatini/en",
                             target="_blank",
-                            style={"color": "black", "text-decoration": "none"},
+                            style={"color": "black",
+                                   "text-decoration": "none"},
                         ),
                         html.Br(),
                         html.Br(),
@@ -70,7 +73,7 @@ layout = dbc.Col(
                                         dbc.Col(
                                             [
                                                 html.Img(
-                                                    src="https://phd.unibo.it/biotechnology-biocomputational-pharmaceutics-pharmacology/en/students/chiara-cabrelle/@@images/4d9aadfc-4c16-42ac-b53a-22c3c064769e.jpeg",
+                                                    src="https://www.unibo.it/uniboweb/utils/UserImage.aspx?IdAnagrafica=1266359&IdFoto=51c4ed75",
                                                     style={"width": "100%"},
                                                 )
                                             ],
@@ -81,7 +84,8 @@ layout = dbc.Col(
                                         ),
                                         dbc.Col(
                                             [
-                                                html.H4(html.Strong("Chiara Cabrelle")),
+                                                html.H4(html.Strong(
+                                                    "Chiara Cabrelle")),
                                                 html.H5(
                                                     "PhD Student in Biotechnological, Biocomputational, Pharmaceutical and Pharmacological Science"
                                                 ),
@@ -103,7 +107,8 @@ layout = dbc.Col(
                             ],
                             href="https://www.unibo.it/sitoweb/chiara.cabrelle2/en",
                             target="_blank",
-                            style={"color": "black", "text-decoration": "none"},
+                            style={"color": "black",
+                                   "text-decoration": "none"},
                         ),
                         html.Br(),
                         html.Br(),
@@ -125,7 +130,8 @@ layout = dbc.Col(
                                         ),
                                         dbc.Col(
                                             [
-                                                html.H4(html.Strong("Luca Menestrina")),
+                                                html.H4(html.Strong(
+                                                    "Luca Menestrina")),
                                                 html.H5(
                                                     "PhD Student in Data Science and Computation"
                                                 ),
@@ -152,7 +158,8 @@ layout = dbc.Col(
                             ],
                             href="https://www.unibo.it/sitoweb/luca.menestrina2/en",
                             target="_blank",
-                            style={"color": "black", "text-decoration": "none"},
+                            style={"color": "black",
+                                   "text-decoration": "none"},
                         ),
                         html.Br(),
                     ],

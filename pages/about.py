@@ -29,7 +29,8 @@ layout = dbc.Col(
                                                             src=app.get_asset_url(
                                                                 "imgs/wordcloud.png"
                                                             ),
-                                                            style={"width": "100%"},
+                                                            style={
+                                                                "width": "100%"},
                                                         )
                                                     ],
                                                     align="center",
@@ -154,7 +155,8 @@ layout = dbc.Col(
                                                         html.Br(),
                                                         html.H5("DOI:"),
                                                         html.A(
-                                                            "https://doi.org/10.1038/s41598-021-98812-0",  # bioRxiv https://doi.org/10.1101/2021.03.05.433897
+                                                            # bioRxiv https://doi.org/10.1101/2021.03.05.433897
+                                                            "https://doi.org/10.1038/s41598-021-98812-0",
                                                             href="https://doi.org/10.1038/s41598-021-98812-0",
                                                             target="_blank",
                                                         ),
@@ -168,7 +170,8 @@ layout = dbc.Col(
                                             align="center",
                                             id="paper",
                                         ),
-                                        href="https://www.nature.com/articles/s41598-021-98812-0",  # bioRxiv "https://www.biorxiv.org/content/10.1101/2021.03.05.433897v1"
+                                        # bioRxiv "https://www.biorxiv.org/content/10.1101/2021.03.05.433897v1"
+                                        href="https://www.nature.com/articles/s41598-021-98812-0",
                                         target="_blank",
                                         style={
                                             "color": "black",
@@ -193,7 +196,8 @@ layout = dbc.Col(
                                             [
                                                 html.A(
                                                     "In the paper",
-                                                    href="https://www.nature.com/articles/s41598-021-98812-0",  # bioRxiv "https://www.biorxiv.org/content/10.1101/2021.03.05.433897v1"
+                                                    # bioRxiv "https://www.biorxiv.org/content/10.1101/2021.03.05.433897v1"
+                                                    href="https://www.nature.com/articles/s41598-021-98812-0",
                                                     target="_blank",
                                                     style={
                                                         "color": "black",
@@ -229,7 +233,8 @@ layout = dbc.Col(
                                 " please cite ",
                                 html.A(
                                     "our article",
-                                    href="https://www.nature.com/articles/s41598-021-98812-0#citeas",  # bioRxiv "https://www.biorxiv.org/content/10.1101/2021.03.05.433897v1"
+                                    # bioRxiv "https://www.biorxiv.org/content/10.1101/2021.03.05.433897v1"
+                                    href="https://www.nature.com/articles/s41598-021-98812-0#citeas",
                                     target="_blank",
                                     style={"color": "black"},
                                 ),
@@ -297,12 +302,12 @@ layout = dbc.Col(
                             [
                                 "Last Database Update: ",
                                 html.Time(
-                                    ["17", html.Sup("th"), " May 2022"],
-                                    dateTime="2022-05-17",
+                                    ["19", html.Sup("th"), " October 2022"],
+                                    dateTime="2022-10-19",
                                 ),
-                                # " (No changes since 17",
-                                # html.Sup("th"),
-                                # " May 2022)",
+                                " (No changes since 17",
+                                html.Sup("th"),
+                                " May 2022)",
                             ]
                         ),
                         html.Br(),
@@ -336,7 +341,8 @@ layout = dbc.Col(
                                             html.P(
                                                 [
                                                     "Wishart, David S et al. “DrugBank 5.0: a major update to the DrugBank database for 2018.” ",
-                                                    html.Em("Nucleic acids research"),
+                                                    html.Em(
+                                                        "Nucleic acids research"),
                                                     " vol. 46,D1 (2018): D1074-D1082",
                                                 ]
                                             ),
@@ -365,7 +371,8 @@ layout = dbc.Col(
                                             html.P(
                                                 [
                                                     "Szklarczyk, Damian et al. “STRING v11: protein-protein association networks with increased coverage, supporting functional discovery in genome-wide experimental datasets.” ",
-                                                    html.Em("Nucleic acids research"),
+                                                    html.Em(
+                                                        "Nucleic acids research"),
                                                     " vol. 47,D1 (2019): D607-D613",
                                                 ]
                                             ),
@@ -394,7 +401,8 @@ layout = dbc.Col(
                                             html.P(
                                                 [
                                                     "Piñero, Janet et al. “The DisGeNET knowledge platform for disease genomics: 2019 update.” ",
-                                                    html.Em("Nucleic acids research"),
+                                                    html.Em(
+                                                        "Nucleic acids research"),
                                                     " vol. 48,D1 (2020): D845-D855",
                                                 ]
                                             ),
@@ -423,10 +431,12 @@ layout = dbc.Col(
                                             html.P(
                                                 [
                                                     "Waterhouse, Andrew et al. “SWISS-MODEL: homology modelling of protein structures and complexes.” ",
-                                                    html.Em("Nucleic acids research"),
+                                                    html.Em(
+                                                        "Nucleic acids research"),
                                                     " vol. 46,W1 (2018): W296-W303",
                                                 ],
-                                                style={"margin-bottom": "0.25em"},
+                                                style={
+                                                    "margin-bottom": "0.25em"},
                                             ),
                                             href="https://doi.org/10.1093/nar/gky427",
                                             target="_blank",
@@ -439,7 +449,8 @@ layout = dbc.Col(
                                                     html.Em("Electrophoresis"),
                                                     " vol. 30 Suppl 1 (2009): S162-73",
                                                 ],
-                                                style={"margin-bottom": "0.25em"},
+                                                style={
+                                                    "margin-bottom": "0.25em"},
                                             ),
                                             href="https://doi.org/10.1002/elps.200900140",
                                             target="_blank",
@@ -449,7 +460,8 @@ layout = dbc.Col(
                                             html.P(
                                                 [
                                                     "Bienert, Stefan et al. “The SWISS-MODEL Repository-new features and functionality.” ",
-                                                    html.Em("Nucleic acids research"),
+                                                    html.Em(
+                                                        "Nucleic acids research"),
                                                     " vol. 45,D1 (2017): D313-D319",
                                                 ]
                                             ),
@@ -478,7 +490,8 @@ layout = dbc.Col(
                                             html.P(
                                                 [
                                                     "Berman, H M et al. “The Protein Data Bank.” ",
-                                                    html.Em("Nucleic acids research"),
+                                                    html.Em(
+                                                        "Nucleic acids research"),
                                                     " vol. 28,1 (2000): 235-42",
                                                 ]
                                             ),
@@ -507,7 +520,8 @@ layout = dbc.Col(
                                             html.P(
                                                 [
                                                     "UniProt Consortium. “UniProt: a worldwide hub of protein knowledge.” ",
-                                                    html.Em("Nucleic acids research"),
+                                                    html.Em(
+                                                        "Nucleic acids research"),
                                                     " vol. 47,D1 (2019): D506-D515",
                                                 ]
                                             ),
@@ -536,10 +550,12 @@ layout = dbc.Col(
                                             html.P(
                                                 [
                                                     "Gaulton, Anna et al. “The ChEMBL database in 2017.” ",
-                                                    html.Em("Nucleic acids research"),
+                                                    html.Em(
+                                                        "Nucleic acids research"),
                                                     " vol. 45,D1 (2017): D945-D954",
                                                 ],
-                                                style={"margin-bottom": "0.25em"},
+                                                style={
+                                                    "margin-bottom": "0.25em"},
                                             ),
                                             href="https://doi.org/10.1093/nar/gkw1074",
                                             target="_blank",
@@ -549,7 +565,8 @@ layout = dbc.Col(
                                             html.P(
                                                 [
                                                     "Davies, Mark et al. “ChEMBL web services: streamlining access to drug discovery data and utilities.” ",
-                                                    html.Em("Nucleic acids research"),
+                                                    html.Em(
+                                                        "Nucleic acids research"),
                                                     " vol. 43,W1 (2015): W612-20",
                                                 ]
                                             ),
@@ -576,7 +593,8 @@ layout = dbc.Col(
                                                     html.Em("Nature"),
                                                     " vol. 583,7816 (2020): 459-468",
                                                 ],
-                                                style={"margin-bottom": "0.25em"},
+                                                style={
+                                                    "margin-bottom": "0.25em"},
                                             ),
                                             href="https://doi.org/10.1038/s41586-020-2286-9",
                                             target="_blank",
@@ -634,7 +652,8 @@ layout = dbc.Col(
                                                         "datetime",
                                                         href="https://docs.python.org/3/library/datetime.html",
                                                         target="_blank",
-                                                        style={"color": "black"},
+                                                        style={
+                                                            "color": "black"},
                                                     )
                                                 ),
                                                 html.Li(
@@ -642,7 +661,8 @@ layout = dbc.Col(
                                                         "itertools",
                                                         href="https://docs.python.org/3/library/itertools.html",
                                                         target="_blank",
-                                                        style={"color": "black"},
+                                                        style={
+                                                            "color": "black"},
                                                     )
                                                 ),
                                                 html.Li(
@@ -650,7 +670,8 @@ layout = dbc.Col(
                                                         "json",
                                                         href="https://docs.python.org/3/library/json.html",
                                                         target="_blank",
-                                                        style={"color": "black"},
+                                                        style={
+                                                            "color": "black"},
                                                     )
                                                 ),
                                                 html.Li(
@@ -659,7 +680,8 @@ layout = dbc.Col(
                                                             "matplotlib pyplot",
                                                             href="https://matplotlib.org/",
                                                             target="_blank",
-                                                            style={"color": "black"},
+                                                            style={
+                                                                "color": "black"},
                                                         ),
                                                         # https://ieeexplore.ieee.org/document/4160265
                                                     ]
@@ -669,7 +691,8 @@ layout = dbc.Col(
                                                         "numpy",
                                                         href="https://numpy.org/",
                                                         target="_blank",
-                                                        style={"color": "black"},
+                                                        style={
+                                                            "color": "black"},
                                                     )
                                                 ),
                                                 html.Li(
@@ -677,7 +700,8 @@ layout = dbc.Col(
                                                         "os",
                                                         href="https://docs.python.org/3/library/os.html",
                                                         target="_blank",
-                                                        style={"color": "black"},
+                                                        style={
+                                                            "color": "black"},
                                                     )
                                                 ),
                                                 html.Li(
@@ -685,7 +709,8 @@ layout = dbc.Col(
                                                         "pandas",
                                                         href="https://pandas.pydata.org/",
                                                         target="_blank",
-                                                        style={"color": "black"},
+                                                        style={
+                                                            "color": "black"},
                                                     )
                                                 ),
                                                 html.Li(
@@ -693,7 +718,8 @@ layout = dbc.Col(
                                                         "pickle",
                                                         href="https://docs.python.org/3/library/pickle.html",
                                                         target="_blank",
-                                                        style={"color": "black"},
+                                                        style={
+                                                            "color": "black"},
                                                     )
                                                 ),
                                                 html.Li(
@@ -701,7 +727,8 @@ layout = dbc.Col(
                                                         "requests",
                                                         href="https://requests.readthedocs.io/en/master/",
                                                         target="_blank",
-                                                        style={"color": "black"},
+                                                        style={
+                                                            "color": "black"},
                                                     )
                                                 ),
                                                 html.Li(
@@ -709,7 +736,8 @@ layout = dbc.Col(
                                                         "threading",
                                                         href="https://docs.python.org/3/library/threading.html",
                                                         target="_blank",
-                                                        style={"color": "black"},
+                                                        style={
+                                                            "color": "black"},
                                                     )
                                                 ),
                                                 html.Li(
@@ -717,7 +745,8 @@ layout = dbc.Col(
                                                         "time",
                                                         href="https://docs.python.org/3/library/time.html",
                                                         target="_blank",
-                                                        style={"color": "black"},
+                                                        style={
+                                                            "color": "black"},
                                                     )
                                                 ),
                                                 html.Li(
@@ -725,7 +754,8 @@ layout = dbc.Col(
                                                         "webbrowser",
                                                         href="https://docs.python.org/3/library/webbrowser.html",
                                                         target="_blank",
-                                                        style={"color": "black"},
+                                                        style={
+                                                            "color": "black"},
                                                     )
                                                 ),
                                             ]
@@ -766,7 +796,8 @@ layout = dbc.Col(
                                                         "dash bootstrap components",
                                                         href="https://dash-bootstrap-components.opensource.faculty.ai/",
                                                         target="_blank",
-                                                        style={"color": "black"},
+                                                        style={
+                                                            "color": "black"},
                                                     )
                                                 ),
                                                 html.Li(
@@ -774,7 +805,8 @@ layout = dbc.Col(
                                                         "dash core components",
                                                         href="https://dash.plotly.com/dash-core-components",
                                                         target="_blank",
-                                                        style={"color": "black"},
+                                                        style={
+                                                            "color": "black"},
                                                     )
                                                 ),
                                                 html.Li(
@@ -782,7 +814,8 @@ layout = dbc.Col(
                                                         "dash cytoscape",
                                                         href="https://dash.plotly.com/cytoscape",
                                                         target="_blank",
-                                                        style={"color": "black"},
+                                                        style={
+                                                            "color": "black"},
                                                     )
                                                 ),
                                                 html.Li(
@@ -790,7 +823,8 @@ layout = dbc.Col(
                                                         "dash daq",
                                                         href="https://dash.plotly.com/dash-daq",
                                                         target="_blank",
-                                                        style={"color": "black"},
+                                                        style={
+                                                            "color": "black"},
                                                     )
                                                 ),
                                                 html.Li(
@@ -798,7 +832,8 @@ layout = dbc.Col(
                                                         "dash html components",
                                                         href="https://dash.plotly.com/dash-html-components",
                                                         target="_blank",
-                                                        style={"color": "black"},
+                                                        style={
+                                                            "color": "black"},
                                                     )
                                                 ),
                                                 html.Li(
@@ -806,7 +841,8 @@ layout = dbc.Col(
                                                         "dash table",
                                                         href="https://github.com/plotly/dash-table",
                                                         target="_blank",
-                                                        style={"color": "black"},
+                                                        style={
+                                                            "color": "black"},
                                                     )
                                                 ),
                                             ]
